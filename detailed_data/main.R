@@ -49,10 +49,3 @@ rmarkdown::render("./detailed_data/02_scripts/05_comparison_national_accounts.Rm
                   knit_root_dir = wd, output_dir = "./detailed_data/04_output/coverage/", intermediates_dir = "./detailed_data/04_output/coverage/")
 
 
-
-
-
-
-
-
-
