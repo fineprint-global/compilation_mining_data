@@ -1,0 +1,866 @@
+---
+title: "harmonization"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r , include = FALSE}
+
+## Harmonization includes:
+  ## Removing empty rows
+  ## Check for various variables across all sheets if harmonized values are available for respective entries (e.g. country_id, material_id, unit_id)
+  ## Actual harmonization of necessary values (e.g. country_id, material_id, unit_id)
+  ## Additional adjustment (e.g. automatic filling of specific empty cells)
+  ## Check if materials are inserted in "right" tables
+
+## Harmonization is dependent on essential information provided in file sheets_columns.csv.
+
+
+```
+
+```{r setup, include = FALSE, error = TRUE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(readxl)
+library(knitr)
+library(kableExtra)
+library(rlang)
+```
+
+<br> 
+
+```{r , include = FALSE}
+#### read input tables
+
+# list of supposed column order
+sheets_columns <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/sheets_columns.csv", delim = ";")
+
+# all other input tables
+mat_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/material_ids.csv", delim = ";")
+
+source_mat_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/source_material_ids.csv", delim = ";")
+
+source_unit_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/source_unit_ids.csv", delim = ";")
+
+source_country_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/source_country_ids.csv", delim = ";")
+
+poss_ent <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/possible_entries.csv", delim = ";")
+
+source_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
+
+# path to Excel data file
+path <- "./detailed_data/01_input/01_data/detailed_data_mining.xlsx"
+
+```
+
+<br> 
+
+```{r , echo = FALSE, warning = FALSE}
+
+#### read excel with assigned column types 
+
+# create list of supposed column types
+type_list <- split(sheets_columns$supposed_type, sheets_columns$sheet)
+
+# info on warnings()
+  # NA entries are kept in Excel to keep reported NAs there for checking
+  # Warnings occur for columns processing.mine_site_processing_incl_purchased, however there is no reason for these warnings
+
+# read all excel sheets at once in a list, provide sheets names as list items
+  # and allocate column types
+detailed <- path %>%
+  excel_sheets() %>%
+  setdiff(., c("non-fitting_info_commodities", "environmental_concerns")) %>%
+  set_names() %>% 
+  map(~ read_excel(path = path, sheet = .x, col_types = type_list[[.x]], na = c("", "-", "NA")))
+
+print(paste("Number of warnings: ", length(warnings())))
+
+## archived code of reading excel sheets
+# detailed <- lapply(excel_sheets(path), read_excel, 
+#                    path = path,
+#                    col_types = type_list[[.x]]
+#                    )
+# names(detailed) <- excel_sheets(path)
+
+```
+
+<br> 
+
+### Remove empty rows
+
+```{r , echo = FALSE}
+
+# for each sheet create an index which rows are all NA and remove them
+  # as it creates problems with further processing otherwise
+
+for (i in names(detailed)) {
+  
+  sheet <- detailed[[i]]
+  
+  ind <- apply(sheet, 1, function(x) all(is.na(x)))
+  
+  sheet <- sheet[ !ind, ]
+  
+  detailed[[i]] <- sheet
+
+}
+
+```
+
+<br> 
+
+### Overview of number of rows per table
+
+```{r , echo = FALSE}
+
+nr_rows <- map(detailed, nrow) %>% 
+  as_tibble() %>% 
+  pivot_longer(names(.)) %>% 
+  rename(sheet = name, n = value)
+
+# table for Rmd output
+kable(nr_rows, row.names = FALSE, caption = "Number of data rows per sheet") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Check of missing country_id allocations
+
+```{r , echo = FALSE}
+
+# create no_match table for countries
+no_match_country <- tibble(
+  country = setdiff(detailed$general$country, source_country_ids$sheet_country)
+  ) %>% 
+  filter(!is.na(country)) %>% 
+  distinct()
+
+# save no_match table as csv
+write_delim(no_match_country, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_country.csv", delim = ";")
+
+# table for Rmd output
+kable(no_match_country, row.names = FALSE, caption = "Missing source_country entries") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Check of missing material_id allocations across all sheets
+
+```{r , echo = FALSE}
+
+if(exists("source_materials")) rm(source_materials)
+
+# dummy table for loop
+source_materials <- tibble(sheet = NA, variable = NA, material = NA) %>% 
+  filter(!is.na(material)) %>%
+  mutate_all(as.character)
+
+# list of all variables relevant for material_ids
+sel_col <- sheets_columns %>% filter(check == "material_id")
+
+# create table with entries of all material_ids across sheets
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+
+  a <- tibble(
+    sheet = sheet_name,
+    variable = variable_name,
+    material = detailed[[sheet_name]] %>%
+      select(all_of(variable_name)) %>%
+      distinct() %>%
+      filter(!is.na(.)) %>%
+      pull()
+  )
+
+  source_materials <- source_materials %>%
+    dplyr::union(., a)
+  
+}
+
+# material_ids entries not yet in material_id table (or not relevant for allocation)
+no_match_mat <- source_materials %>% filter(!(material %in% (source_mat_ids %>% filter(source_cat == "detailed") %>% pull(source_material))))
+
+# save no_match table as csv
+write_delim(no_match_mat, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_mat.csv", delim = ";")
+
+# table for Rmd output
+kable(no_match_mat, row.names = FALSE, caption = "Missing source_material entries") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Check of missing unit_id allocations across all sheets
+
+```{r , echo = FALSE}
+
+if(exists("source_units")) rm(source_units)
+
+# dummy table for loop
+source_units <- tibble(sheet = NA, variable = NA, unit = NA) %>% 
+  filter(!is.na(unit)) %>%
+  mutate_all(as.character)
+
+# list of all variables relevant for material_ids
+sel_col <- sheets_columns %>% filter(check %in% c("unit_id", "grade_unit_id"))
+
+# create table with entries of all material_ids across sheets
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+
+  a <- tibble(
+    sheet = sheet_name,
+    variable = variable_name,
+    unit = detailed[[sheet_name]] %>%
+      select(all_of(variable_name)) %>%
+      distinct() %>%
+      filter(!is.na(.)) %>%
+      pull()
+  )
+
+  source_units <- source_units %>%
+    dplyr::union(., a)
+  
+}
+
+# source_unit_id entries not yet in source_unit_id table (or not relevant for allocation)
+no_match_unit <- source_units %>% filter(!(unit %in% source_unit_ids$source_unit))
+
+# save no_match table as csv
+write_delim(no_match_unit, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_unit.csv", delim = ";")
+
+# table for Rmd output
+kable(no_match_unit, row.names = FALSE, caption = "Missing source_unit entries") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+
+```
+
+<br> 
+
+### Check of possible entries across all sheets
+
+```{r , echo = FALSE}
+
+if(exists("source_ent")) rm(source_ent)
+
+# dummy table for loop
+source_ent <- tibble(variable = NA, entry = NA) %>% 
+  filter(!is.na(entry)) %>%
+  mutate_all(as.character)
+
+# list of all variables relevant for material_ids
+sel_col <- sheets_columns %>% filter(check == "poss_ent")
+
+# create table with entries of all material_ids across sheets
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+
+  a <- tibble(
+    variable = variable_name,
+    entry = detailed[[sheet_name]] %>%
+      select(all_of(variable_name)) %>%
+      distinct() %>%
+      filter(!is.na(.)) %>%
+      pull()
+  )
+
+  source_ent <- source_ent %>%
+    dplyr::union(., a)
+  
+}
+
+# entries not yet included in table for possible entries (or not relevant)
+no_match_entries <- source_ent %>% filter(!(entry %in% poss_ent$source_entry))
+
+# save no_match table as csv
+write_delim(no_match_entries, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_entries.csv", delim = ";")
+
+# table for Rmd output
+kable(no_match_entries, row.names = FALSE, caption = "Check entries and add to table of possible entries") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+
+
+```
+
+<br> 
+
+### Check of number of entries for each mine in sheet “general”
+
+```{r , echo = FALSE}
+
+nr_mines <- detailed$general %>%
+  group_by(mine) %>%
+  summarise(n = n()) %>%
+  filter(n > 1)
+
+# table for Rmd output
+kable(nr_mines, row.names = FALSE, caption = "Mines with more than one entry") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Check of entries for mine (and facility) names across all sheets
+
+```{r , echo = FALSE}
+
+if(exists("mine_names")) rm(mine_names)
+
+# dummy table for loop
+mine_names <- tibble(sheet = NA, variable = NA, mine_fac = NA) %>%
+  filter(!is.na(mine_fac)) %>%
+  mutate_all(as.character)
+
+# list of all variables relevant for material_ids
+sel_col <- sheets_columns %>% filter(check == "mines")
+
+# create table with entries of all material_ids across sheets
+for (i in 1:nrow(sel_col)) {
+
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+
+  a <- tibble(
+    sheet = sheet_name,
+    variable = variable_name,
+    mine_fac = detailed[[sheet_name]] %>%
+      select(all_of(variable_name)) %>%
+      distinct() %>%
+      filter(!is.na(.)) %>%
+      pull()
+  )
+
+  mine_names <- mine_names %>%
+    dplyr::union(., a)
+
+}
+
+# mine names which are different from sheet 'general'
+no_match_mines <- mine_names %>% filter(!(mine_fac %in% detailed$general$mine))
+
+# save no_match table as csv
+write_delim(no_match_mines, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_mines.csv", delim = ";")
+
+# table for Rmd output
+kable(no_match_mines, row.names = FALSE, caption = "Incorrect mine names (different than on sheet 'general')") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Check of entries for sub-site names across all sheets
+
+```{r , echo = FALSE}
+
+if(exists("sub_sites")) rm(sub_sites)
+
+# dummy table for loop
+sub_sites <- tibble(sheet = NA, variable = NA, sub_site = NA) %>%
+  filter(!is.na(sub_site)) %>%
+  mutate_all(as.character)
+
+# list of all variables relevant for material_ids
+sel_col <- sheets_columns %>% filter(check == "sub_sites")
+
+i <- 1
+
+# create table with entries of all material_ids across sheets
+for (i in 1:nrow(sel_col)) {
+
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+
+  a <- tibble(
+    sheet = sheet_name,
+    variable = variable_name,
+    sub_site = detailed[[sheet_name]] %>%
+      select(all_of(variable_name)) %>%
+      distinct() %>%
+      filter(!is.na(.)) %>%
+      pull()
+  )
+
+  sub_sites <- sub_sites %>%
+    dplyr::union(., a)
+
+}
+
+# sub-site names which are different from sheet 'sub_sites'
+no_match_sub_sites <- sub_sites %>% filter(!(sub_site %in% detailed$sub_sites$`sub_site`))
+
+# save no_match table as csv
+write_delim(no_match_sub_sites, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_sub_sites.csv", delim = ";")
+
+# table for Rmd output
+kable(no_match_mines, row.names = FALSE, caption = "Incorrect sub-site names (different than on sheet 'sub_sites)'") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Check of entries for years across all sheets
+
+```{r , echo = FALSE}
+
+if(exists("year_ranges")) rm(year_ranges)
+
+# dummy table for loop
+years <- tibble(sheet = NA, variable = NA, year = NA) %>%
+  filter(!is.na(year)) %>%
+  mutate_at(vars(sheet, variable), as.character) %>%
+  mutate_at(vars(year), as.double)
+
+# list of all variables relevant for material_ids
+sel_col <- sheets_columns %>% filter(check == "range")
+
+i <- 1
+
+# create table with entries of all material_ids across sheets
+for (i in 1:nrow(sel_col)) {
+
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+
+  a <- tibble(
+    sheet = sheet_name,
+    variable = variable_name,
+    year = detailed[[sheet_name]] %>%
+      select(all_of(variable_name)) %>%
+      distinct() %>%
+      filter(!is.na(.)) %>%
+      pull()
+  )
+
+  years <- years %>%
+    dplyr::union(., a)
+
+}
+
+# years which are lower than 1970 or higher than the current year (i.e. years which don't make much sense)
+no_match_years <- years %>% filter(year < 1970 | year > as.double(substr(Sys.Date(), 1, 4)))
+
+# save no_match table as csv
+write_delim(no_match_years, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_years.csv", delim = ";")
+
+# table for Rmd output
+kable(no_match_years, row.names = FALSE, caption = "Incorrect years") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Check of NAs where no NA possible
+
+```{r , echo = FALSE}
+
+if(exists("source_na")) rm(source_na)
+
+# dummy table for loop
+source_na <- tibble(sheet = NA, variable = NA) %>% 
+  filter(!is.na(variable)) %>%
+  mutate_all(as.character)
+
+# list of all variables relevant for material_ids
+sel_col <- sheets_columns %>% filter(na_possible == "no")
+
+# create table with entries of all material_ids across sheets
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+  
+  a <- detailed[[sheet_name]] %>%
+    filter(is.na(eval(parse(text = variable_name)))) %>%
+    mutate(sheet = sheet_name, variable = variable_name) %>%
+    distinct(sheet, variable)
+
+  source_na <- source_na %>%
+    dplyr::union(., a)
+  
+}
+
+# save no_match table as csv
+write_delim(source_na, "./detailed_data/04_output/01_harmonization/01_no_match_tables/source_na.csv", delim = ";")
+
+# table for Rmd output
+kable(source_na, row.names = FALSE, caption = "NAs where no NA possible") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+### Harm. of country_ids (only sheet general)
+
+```{r , echo = FALSE}
+
+general <- detailed$general
+
+# left join table with alphanumiso, select alphanumiso and put it at the proper position
+general <- general %>%
+  add_column(
+    general %>% left_join(., source_country_ids %>% select(sheet_country, alphanumiso), by = c("country" = "sheet_country")) %>% select(alphanumiso),
+    .after = "country"
+  )
+
+detailed$general <- general
+
+print("Done!")
+
+```
+
+<br> 
+
+### Harm. of material_ids across all sheets
+
+```{r , echo = FALSE}
+
+sel_col <- sheets_columns %>% filter(check == "material_id")
+
+# in a loop take each sheet which needs material_ids, do a left join with material_ids, select material_ids and put them at the proper position
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+  
+  sheet <- detailed[[sheet_name]]
+  
+  # replaces the respective material column with id
+    # (in contrary to just adding id, which has not been chosen because of various reasons)
+    # (however, if names should be kept due to some reason, code could be adjusted similar to adding alphanumiso above)
+  sheet <- sheet %>%
+    left_join(.,
+              source_mat_ids %>%
+                filter(source_cat == "detailed") %>%
+                select(source_material, material_id), by=setNames(nm=variable_name,
+                                                                  "source_material")
+              ) %>%
+    mutate(!!variable_name := material_id) %>%
+    select(-material_id)
+  
+  detailed[[sheet_name]] <- sheet
+
+}
+
+print("Done!")
+
+```
+
+<br> 
+
+### Harm. of unit_ids across all sheets
+
+```{r , echo = FALSE}
+
+sel_col <- sheets_columns %>% filter(check %in% c("unit_id", "grade_unit_id"))
+
+# in a loop take each sheet which needs unit_ids, do a left join with unit_ids, select unit_ids and put them at the proper position
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+  
+  sheet <- detailed[[sheet_name]]
+  
+  # replace unit entries with respective IDs
+  sheet <- sheet %>%
+    left_join(.,
+              source_unit_ids %>%
+                filter(source_cat == "detailed") %>%
+                select(source_unit, unit_id), by=setNames(nm=variable_name, "source_unit")
+              ) %>%
+    mutate(!!variable_name := unit_id) %>%
+    select(-unit_id)
+  
+  detailed[[sheet_name]] <- sheet
+  
+}
+
+print("Done!")
+
+```
+
+<br> 
+
+### Harm. of possible entries across all sheets
+
+```{r , echo = FALSE}
+
+sel_col <- sheets_columns %>% filter(check == "poss_ent")
+
+# in a loop take each sheet which needs replacement, do a left join with harmonized entry_names, select entry_names and put them at the proper position by replacing respective column
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  variable_name <- sel_col[i,2] %>% pull()
+  
+  sheet <- detailed[[sheet_name]]
+  
+  # replace unit entries with respective IDs
+  sheet <- sheet %>%
+    left_join(.,
+              poss_ent %>%
+                select(source_entry, entry_name), by=setNames(nm=variable_name, "source_entry")
+              ) %>%
+    mutate(!!variable_name := entry_name) %>%
+    select(-entry_name)
+  
+  detailed[[sheet_name]] <- sheet
+  
+}
+
+print("Done!")
+
+```
+
+<br> 
+
+### Harm. of source_ids across all sheets
+
+```{r , echo = FALSE, message = FALSE}
+
+# replace entries for sources
+
+# check and create ids
+# make distinct table of all, deselect all which already have an id in id table, then add id for each one left
+
+for (i in names(detailed)) {
+  
+  sheet <- detailed[[i]]
+  
+  # sources of current sheet
+  sources <- sheet %>% distinct(source, source_url)
+  
+  # get the highest number from current source_ids
+  last_nr <- source_ids$source_id %>% substr(., 5, 8) %>% as.integer() %>% max()
+  
+  # get new sources
+  new_sources <- setdiff(sources, source_ids %>% select(source, source_url))
+  
+  # provide new sources with ids
+  if(nrow(new_sources) > 0) {
+    new_sources <- new_sources %>%
+      mutate(source_id = paste0(
+        "det_",
+        seq(last_nr + 1, last_nr + nrow(new_sources), by=1)
+        )
+        )
+  
+  source_ids <- source_ids %>%
+    union(., new_sources)
+  
+  }
+  
+  # replace sources with respective IDs
+  sheet <- sheet %>%
+    left_join(., source_ids) %>%
+    select(-source, -source_url)
+  
+  detailed[[i]] <- sheet
+  
+}
+
+print("Done!")
+  
+
+# save new source_ids
+write_delim(source_ids, "./detailed_data/01_input/02_lists_and_concordance_tables/source_ids.csv",
+            delim = ";", na = "")
+
+```
+
+<br>
+
+### Check if material_ids are included in right table 
+
+```{r , echo = FALSE}
+
+# Based on material_categories in material_ids.csv. E.g. column "commodity" is supposed to only contain those material_ids associated with material_cat "commodities"
+
+## For minerals
+
+# Vector with IDs
+mineral_sheet_ids <- c(
+  mat_ids %>%
+    filter(material_category %in% c("mineral", "metal ore product", "ff_mineral") | 
+           material_category_2 %in% c("ore concentrate")) %>%
+    distinct(material_id) %>%
+    pull(),
+  mat_ids %>%
+    filter(material_category %in% c("mineral", "metal ore product", "ff_mineral") | 
+           material_category_2 %in% c("ore concentrate")) %>%
+    distinct(material_id_agg) %>%
+    pull(material_id_agg)
+  )
+
+mineral_sheet_ids <- mineral_sheet_ids[!is.na(mineral_sheet_ids)]
+
+sheet <- detailed$minerals_ores_conce
+
+wrong_min_entries <- sheet %>%
+  filter(!(min_ore_con %in% mineral_sheet_ids) & !is.na(min_ore_con)) %>%
+  distinct(min_ore_con)
+
+# table for Rmd output
+kable(wrong_min_entries, row.names = FALSE, caption = "Material IDs which should be in sheet 'commodity'") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+## For commodities
+comm_sheet_ids <- c(
+  mat_ids %>%
+    filter(material_category %in% c("commodity") | 
+           material_category_2 %in% c("metal alloy", "metal product")) %>%
+    distinct(material_id) %>%
+    pull(),
+  mat_ids %>%
+    filter(material_category %in% c("commodity") | 
+           material_category_2 %in% c("metal alloy", "metal product")) %>%
+    distinct(material_id_agg) %>%
+    pull(material_id_agg)
+  )
+
+comm_sheet_ids <- comm_sheet_ids[!is.na(comm_sheet_ids)]
+
+sheet <- detailed$commodities
+
+wrong_comm_entries <- sheet %>%
+  filter(!(commodity %in% comm_sheet_ids) & !is.na(commodity)) %>%
+  distinct(commodity)
+
+# table for Rmd output
+kable(wrong_comm_entries, row.names = FALSE, caption = "Material IDs which should be in sheet 'minerals_ores_conce'") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+
+<br> 
+
+```{r , echo = FALSE, message = FALSE}
+
+#### Additional adjustments for harmonization
+
+sheet_min <- detailed$minerals_ores_conce
+
+sheet_com <- detailed$commodities
+
+
+## Adjustment of "O.bulk" and "Con.bulk"
+
+# all combinations (mine, sub_site, type_mining, year) with more than one commodity/metal where min_ore_con is NA
+several_com <- sheet_com %>%
+  filter(is.na(min_ore_con)) %>%
+  group_by(mine, sub_site, type_mining, year) %>%
+  summarise(n = n()) %>%
+  filter(n > 1) %>%
+  select(-n) %>%
+  ungroup() %>%
+  mutate(bulk = "yes")
+
+sheet_min <- sheet_min %>%
+  left_join(., several_com) %>%
+  mutate(min_ore_con = ifelse(
+    is.na(min_ore_con) &
+            type_mineral %in% c("Ore mined", "Ore processed") &
+            bulk == "yes",
+    "O.bulk",
+    min_ore_con
+  )) %>%
+  select(-bulk)
+
+sheet_com <- sheet_com %>%
+  left_join(., several_com) %>%
+  mutate(min_ore_con = ifelse(
+    is.na(min_ore_con) &
+            bulk == "yes",
+    "O.bulk",
+    min_ore_con
+  )) %>%
+  select(-bulk)
+
+
+
+
+## Adjust type_mineral -> make NA = "Ore processed" and make other NA = "NM mineral"
+sheet_min <- sheet_min %>%
+  mutate(type_mineral = ifelse(
+    is.na(type_mineral) &
+      min_ore_con %in% (
+        na.omit(
+        c(
+          mat_ids[mat_ids$material_category_2 %in%
+                    c("metal ore", "non-metallic mineral ore"),]$material_id,
+          mat_ids[mat_ids$material_category_2 %in%
+                    c("metal ore", "non-metallic mineral ore"),]$material_id_agg
+          )
+        )
+      ),
+    "Ore processed",
+    type_mineral
+  )
+  ) %>% 
+  mutate(type_mineral = ifelse(
+    is.na(type_mineral) &
+      min_ore_con %in% (
+        na.omit(
+        c(
+          mat_ids[mat_ids$material_category %in%
+                    c("mineral"),]$material_id,
+          mat_ids[mat_ids$material_category %in%
+                    c("mineral"),]$material_id_agg
+          ) # (as ores have already been checked/filled, here only the first material_category is used, as only extraction should be included in this table)
+        )
+      ),
+    "NM mineral",
+    type_mineral
+  )
+  )
+
+# # Adjust type_mineral -> make NA = processed ore
+# detailed$minerals_ores_conce <- detailed$minerals_ores_conce %>%
+#   mutate(type_mineral = ifelse(
+#     is.na(type_mineral),
+#     "Ore processed",
+#     type_mineral
+#   )
+#   )
+
+
+detailed$minerals_ores_conce <- sheet_min
+
+detailed$commodities <- sheet_com
+
+```
+
+<br> 
+
+```{r , echo = FALSE}
+
+#### save harmonized tables
+
+write_rds(detailed, "./detailed_data/03_intermediate/all_tables_harmonized.rds")
+
+```
+
+<br> 
+

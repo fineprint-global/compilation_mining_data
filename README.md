@@ -1,42 +1,62 @@
-# REPO TITLE 
+# Compilation of data accounts on production of mines
 
-A short description/abstract, including reference to paper/breif if published. 
+Compilation of a dataset including a range of variables related to the production of individual mines over time.
 
-## Usage
+
+
+## General information
+
+The main purposes of these scripts are the retrieval, formatting, harmonization, and integration of various datasets from different sources. In addition various other tasks are performed, like unit conversion, gap filling and estimations, comparison versus other data.
+The desired output is a consistent dataset on the production of individual mines and related variables.
+
+Further explanations on the background can be found at http://fineprint.wu.ac.at/10_fp-wp1-mining/
+
+
+
+## Technical information
+
+### Structure
+
+#### Scripts
+
+The repository comprises scripts across different folders and sub-folders.
+
+The highest level of differentiation is by type of data source, e.g. company reports ("detailed data") or NSOs ("country-specific").
+
+Within these folders all of the required processing can be accessed from the main script main.R. This main scripts thereby also illustrates the structure of processing. No access of sub-scripts is required.
+
+In each folder the required structure and scripts are different, but mainly follow the logic of data retrieval, formatting, harmonization, integration, and checking.
+
+
+
+#### Intermediate outputs and files
+
+Most scripts save and access intermediate files in folder `./03_intermediate/`. These files are all saved as .rds-files.
+Therefore other details of data can easily be accessed through these files, e.g. by loading all_tables_converted.rds.
+
+
+
+#### Rmd outputs
+
+Several Rmd-files are created for purposes like results from harmonization or an overview of data coverage. These are saved in sub-folders `./04_output/.../`.
+
+
 
 ### Dependencies
 
 #### R
-In order to run the script, you need the following software version (e.g, `R` and `GDAL`). The scripts also depends on the following R packages from CRAN, efor example
-```{r}
-install.packages(c("tidyverse", "sf", "lwgeom", "rmapshaper", "nngeo"))
-))
-```
 
-The script might also depends on a development version of a package from Github:
-```{r}
-install.packages("devtools")
-devtools::install_github(repo = "gru-wu/gruRmarkdown", ref = "00193d4")
-))
-```
-The argument `ref` can be a reference to a commit or tag from the github repo. 
+For all required R packages, at the beginning of the first main script, their installation is checked. If not installed, an installation is started.
 
-#### git
-You only need git installed if you want to contribute to the repository or clone it without having to download it manually.
 
-#### Data sets 
 
-A description of the input data. What is the format? Is there a link to download the data? Are there restrictions to use the data? 
+#### Data sources
 
-### Get the scripts 
-To get the scripts, you can either
++ Detailed: Company reports
++ Country-specific: National statistical institutions
 
-- download the source using the "Clone or download"-button above
-- use `git clone https://github.com/fineprint-global/template-data-analysis`
 
-### How to run
-
-A short description of how to run the scripts. Are there several files, is there an order? What is the input and output of each script? 
 
 ## Acknowledgement
 This project gratefully acknowledges financial support from the ERC as part of the [FINEPRINT](https://www.fineprint.global/) project.
+

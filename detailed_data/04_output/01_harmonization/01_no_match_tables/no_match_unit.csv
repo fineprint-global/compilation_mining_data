@@ -1,0 +1,13 @@
+sheet;variable;unit
+general;unit_surface_area;square kilometer
+general;unit_concession_area;square kilometers
+general;unit_concession_area;square kilometer
+commodities;grade_or_yield_unit;troy ounces/t
+commodities;grade_or_yield_unit;ounces/ton
+processing;process_output_unit;Tons
+capacity_reserves;processing_capacity_unit;tpa
+capacity_reserves;processing_capacity_unit;thousand metric tonnes per year
+capacity_reserves;processing_capacity_unit;tonnes per year
+capacity_reserves;processing_capacity_unit;million tpa
+capacity_reserves;reserves_mineral_unit;million recoverable tonnes
+capacity_reserves;reserves_commodity_unit;Koz

@@ -1,0 +1,16 @@
+sheet;variable;material
+minerals_ores_conce;min_ore_con;6E PGM ore
+commodities;min_ore_con;6E PGM ore
+transport;product;Alumina hydrate
+transport;product;Anode slime
+transport;product;Zinc ingots
+capacity_reserves;minerals_and_ores;Iron Ore
+capacity_reserves;minerals_and_ores;6E PGM ore
+capacity_reserves;minerals_and_ores;Chromitite
+capacity_reserves;commodity;6E PGM
+capacity_reserves;commodity;Chromium(III) oxide
+capacity_reserves;commodity;Primary aluminium
+capacity_reserves;commodity;Anode carbon
+capacity_reserves;commodity;Phosphoric acid
+capacity_reserves;commodity;Chemical grade Alumina
+capacity_reserves;commodity;Phosphorus

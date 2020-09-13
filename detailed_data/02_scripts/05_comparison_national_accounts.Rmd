@@ -1,0 +1,287 @@
+---
+title: "comparison_national_accounts"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, error=TRUE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(rlang)
+library(scales)
+```
+
+<br> 
+
+```{r , echo = FALSE}
+
+## read files
+# harmonized data file
+detailed <- read_rds("./detailed_data/03_intermediate/gaps_filled.rds")
+
+load("./detailed_data/01_input/05_other_data/wmd_comb.RData")
+load("./detailed_data/01_input/05_other_data/bgs.RData")
+
+# sheets
+sheet_min <- detailed$minerals_ores_conce
+sheet_com <- detailed$commodities
+
+```
+
+<br> 
+
+#### Commodities
+
+```{r , echo = FALSE, message = FALSE}
+
+# include country_ids in sheet_com 
+agg_com <- sheet_com %>%
+  left_join(.,
+            detailed$general %>% 
+              distinct(mine, alphanumiso) %>%
+              mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
+            )
+
+a <- agg_com %>% filter(alphanumiso == "PRT620")
+
+
+# aggregate 
+agg_com <- agg_com %>%
+  group_by(alphanumiso, commodity, year) %>%
+  summarise(value = sum(value, na.rm = TRUE)) %>%
+  ungroup()
+
+
+
+# temporary: convert units in WMD table
+conv_fac <- read_delim("./detailed_data/01_input/04_factors/conversion_factors.csv", delim = ";")
+
+wmd <- wmd_comb %>%
+  left_join(.,
+            conv_fac %>% select(unit_id, conv_factor_t),
+            ) %>%
+  mutate(
+    value = value * conv_factor_t,
+    unit_id = "t"
+    )
+
+
+
+# join with national accounts
+agg_com <- agg_com %>%
+  left_join(.,
+            wmd %>% select(alphanumiso, product_id, year, value),
+            by = c("alphanumiso", "commodity" = "product_id", "year"),
+            suffix = c(".det", ".nat")
+            )
+
+
+# Data rows without allocation
+not_incl_com <- agg_com %>%
+  filter(
+    !(year %in% c(2018, 2019)),
+    is.na(alphanumiso) |
+    is.na(commodity) |
+    is.na(value.nat)
+    ) %>%
+  group_by(commodity) %>%
+  summarise(n = n())
+
+
+# share
+agg_com <- agg_com %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2),
+    share = percent(share, accuracy = 1)
+    )
+
+
+# clean table
+agg_com <- agg_com %>%
+  filter(
+    !(year %in% c(2018, 2019)),
+    !is.na(alphanumiso),
+    !is.na(commodity),
+    !is.na(value.nat)
+    )
+
+
+
+# spread by country_id and material_id
+com_cov1 <- agg_com %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year)) %>%
+  pivot_wider(., names_from = year, values_from = share) %>%
+  arrange(commodity) %>%
+  # insert national totals again in order to rank properly (couldn't be kept, because of pivot function)
+  left_join(., agg_com %>% filter(year == 2015) %>% select(-value.det, -share, -year)) %>%
+  arrange(commodity, desc(value.nat))
+
+# table for Rmd output
+kable(com_cov1, row.names = FALSE, caption = "Relative coverage by material and country") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+
+
+# spread by global totals for material_ids
+com_cov2 <- agg_com %>%
+  group_by(commodity, year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2),
+    share = percent(share, accuracy = 1)
+  ) %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year)) %>%
+  pivot_wider(., names_from = year, values_from = share) %>%
+  arrange(commodity)
+
+# table for Rmd output
+kable(com_cov2, row.names = FALSE, caption = "Relative coverage of global total by material") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+
+```
+
+<br> 
+
+#### Ores and non-metallic minerals
+
+```{r , echo = FALSE, message = FALSE}
+
+# include country_ids in sheet_com
+agg_min <- sheet_min %>%
+  left_join(.,
+            detailed$general %>% 
+              distinct(mine, alphanumiso) %>%
+              mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
+  )
+
+# aggregate 
+agg_min <- agg_min %>%
+  filter(!(type_mineral %in% c("Ore mined"))) %>%
+  filter(!is.na(min_ore_con)) %>%
+  group_by(alphanumiso, type_mineral, min_ore_con, year) %>%
+  summarise(value = sum(value, na.rm = TRUE)) %>%
+  ungroup()
+
+
+
+# temporary: convert units in BGS table
+conv_fac <- read_delim("./detailed_data/01_input/04_factors/conversion_factors.csv", delim = ";")
+
+bgs <- bgs %>%
+  left_join(.,
+            conv_fac %>% select(unit_id, conv_factor_t),
+  ) %>%
+  mutate(
+    value = value * conv_factor_t,
+    unit_id = "t"
+  )
+
+
+
+# join with national accounts
+agg_min <- agg_min %>%
+  left_join(.,
+            bgs %>% select(alphanumiso, product_id, year, value),
+            by = c("alphanumiso" = "alphanumiso", "min_ore_con" = "product_id", "year" = "year"),
+            suffix = c(".det", ".nat")
+  )
+
+
+# Data rows without allocation
+not_incl_min <- agg_min %>%
+  filter(
+    !(year %in% c(2018, 2019)),
+    is.na(alphanumiso) |
+    is.na(min_ore_con) |
+    is.na(value.nat)
+    ) %>%
+  group_by(min_ore_con) %>%
+  summarise(n = n())
+
+
+# share
+agg_min <- agg_min %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2),
+    share = percent(share, accuracy = 1)
+  )
+
+
+# clean table
+agg_min <- agg_min %>%
+  filter(
+    !(year %in% c(2018, 2019)),
+    !is.na(alphanumiso),
+    !is.na(min_ore_con),
+    !is.na(value.nat),
+  )
+
+
+
+# spread by country_id and material_id
+min_cov1 <- agg_min %>%
+  select(-value.det, -value.nat, -type_mineral) %>%
+  arrange(desc(year)) %>%
+  pivot_wider(., names_from = year, values_from = share) %>%
+  arrange(min_ore_con) %>%
+  # insert national totals again in order to rank properly (couldn't be kept, because of pivot function)
+  left_join(., agg_min %>% filter(year == 2015) %>% select(-value.det, -share, -year)) %>%
+  arrange(min_ore_con, desc(value.nat))
+
+# table for Rmd output
+kable(min_cov1, row.names = FALSE, caption = "Relative coverage by material and country") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+
+
+# spread by global totals for material_ids
+min_cov2 <- agg_min %>%
+  group_by(min_ore_con, year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2),
+    share = percent(share, accuracy = 1)
+  ) %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year)) %>%
+  pivot_wider(., names_from = year, values_from = share) %>%
+  arrange(min_ore_con)
+
+# table for Rmd output
+kable(min_cov2, row.names = FALSE, caption = "Relative coverage of global total by material") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+
+```
+
+<br> 
+
+#### Data rows not included in coverage
+
+```{r , echo = FALSE}
+# tables have been compiled above before cleaning NAs
+
+# table for Rmd output
+kable(not_incl_com, row.names = FALSE, 
+      caption = "Number of data rows not included by commodity") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+# table for Rmd output
+kable(not_incl_min, row.names = FALSE, 
+      caption = "Number of data rows not included by mineral/ore") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+
+```
+

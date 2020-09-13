@@ -1,0 +1,961 @@
+source_id;source;source_url
+det_1000;Centamin (n.d.) Sukari Statistical Overview;http://www.centamin.com/production/sukari/statistical-overview
+det_1001;Newmont Mining Corporation (2018) Ahafo Operation Facts;https://www.newmont.com/operations-projects/africa/ahafo/
+det_1002;Newmont Mining Corporation (2018) Akyem Operation Facts;https://www.newmont.com/operations-projects/africa/akyem/
+det_1003;Newmont Mining Corporation (2018) Boddingtion Operation Facts;https://www.newmont.com/operations-projects/australia/boddington/
+det_1004;Newmont Mining Corporation (2018) Kalgoorlie Operation Facts;https://www.newmont.com/operations-and-projects/australia/kalgoorlie-australia/operation-facts/default.aspx
+det_1005;Newmont Mining Corporation (2018) Tanami Operation Facts;https://www.newmont.com/operations-projects/australia/tanami/
+det_1006;Newmont Mining Corporation (2018) Nevada Operation Facts;https://www.newmont.com/operations-and-projects/north-america/nevada-us/operation-facts/default.aspx
+det_1007;Newmont Mining Corporation (2018) Cripple Creek & Victor Mine (CC&V) Operation Facts;https://www.newmont.com/operations-projects/north-america/cripple-creek/
+det_1008;Newmont Mining Corporation (2018) Annnual Report 2017;https://s1.q4cdn.com/259923520/files/doc_financials/annual/2017/2017-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf
+det_1009;Newmont Mining Corporation (2018)  Yanacocha Operation Facts;https://www.newmont.com/operations-projects/south-america/yanacocha/
+det_1010;Newmont Mining Corporation (2018) Merian Operation Facts;https://www.newmont.com/operations-and-projects/south-america/merian-suriname/operation-facts/default.aspx
+det_1011;Newmont Mining Corporation (2014) Annual Report 2013;https://s2.q4cdn.com/575378270/files/doc_financials/annual/2013-Annual-Report_full-report_FINAL_v001_x688hv.PDF
+det_1012;Newmont Mining Corporation (2016) Annual Report 2015;https://s2.q4cdn.com/575378270/files/doc_financials/annual/newmont-2015-AR.pdf
+det_1013;Southern Copper Corporation (n.d.) Integrated Operations Toquepala;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1014;Southern Copper Corporation (n.d.) Integrated Operations Cuajone;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1015;Southern Copper Corporation (n.d.) Integrated Operations La Caridad;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1016;Southern Copper Corporation (n.d.) Integrated Operations Buenavista;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1017;Southern Copper Corporation (n.d.) Integrated Operations IMMSA - Taxco;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1018;Southern Copper Corporation (n.d.) Integrated Operations IMMSA - Charcas;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1019;Southern Copper Corporation (n.d.) Integrated Operations IMMSA - Santa Eulalia;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1020;Southern Copper Corporation (n.d.) Integrated Operations IMMSA - Santa Barbara;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1021;Southern Copper Corporation (n.d.) Integrated Operations IMMSA - San Martin;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1022;Southern Copper Corporation (n.d.) Integrated Operations TANTAHUATAY Mine;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx
+det_1023;Southern Copper Corporation (n.d.) Integrated Operations Tia Maria;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx
+det_1024;Southern Copper Corporation (n.d.) Integrated Operations EL ARCO;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx
+det_1025;Southern Copper Corporation (2018) SCC Copper Reserves Development Projects;http://www.southerncoppercorp.com/ENG/intope/Pages/PGReserves.aspx#cuadros
+det_1026;Southern Copper Corporation (n.d.) Integrated Operations SAN LUIS POTOSI - Processing Facilities;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1027;Southern Copper Corporation (n.d.) Integrated Operations ILO - Processing Facilities;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1028;Barrick Gold Corporation (2019) Barrick The new value champion, February 2019;http://www.barrick.com/files/presentation/2019/Barrick-Fact-Sheet-Feb2019.pdf
+det_1029;Barrick Gold Corporation (2019) Barrick The new value champion, February 2019;"http://www.barrick.com/files/presentation/2019/Barrick-Fact-Sheet-Feb2019.pdf ; https://barrick.q4cdn.com/788666289/files/presentation/2019/07/Nevada-Gold-Mines-Launched.pdf"
+det_1030;"Barrick Gold Corporation (2019) Barrick The new value champion, February 2019 ;";"http://www.barrick.com/files/presentation/2019/Barrick-Fact-Sheet-Feb2019.pdf ; https://barrick.q4cdn.com/788666289/files/presentation/2019/07/Nevada-Gold-Mines-Launched.pdf"
+det_1031;Barrick Gold Corporation (2019) Operations Kalgoorlie;https://www.barrick.com/English/operations/kalgoorlie/default.aspx
+det_1032;Barrick Gold Corporation (2019) Operations Lumwana;https://www.barrick.com/English/operations/lumwana/
+det_1033;Barrick Gold Corporation (2019) Operations Tongon;https://www.barrick.com/English/operations/tongon/default.aspx
+det_1034;Barrick Gold Corporation (2019) Operations Golden Sunlight;https://www.barrick.com/English/operations/golden-sunlight/default.aspx
+det_1035;Barrick Gold Corporation (2019) Operations Morila;https://www.barrick.com/English/operations/morila/default.aspx
+det_1036;Barrick Gold Corporation (2019) Operations Hemlo;https://www.barrick.com/English/operations/hemlo/default.aspx
+det_1037;Barrick Gold Corporation (2019) Operations Lagunas Norte;https://www.barrick.com/English/operations/lagunas-norte/default.aspx
+det_1038;Barrick Gold Corporation (2019) Operations Porgera;https://www.barrick.com/English/operations/porgera/default.aspx
+det_1039;Barrick Gold Corporation (2019) Operations Veladero;https://www.barrick.com/English/operations/veladero/default.aspx
+det_1040;Barrick Gold Corporation (2019) Operations Jabal Sayid;https://www.barrick.com/English/operations/jabal-sayid/default.aspx
+det_1041;Barrick Gold Corporation (2019) Operations Zaldívar;https://www.barrick.com/English/operations/zaldivar/default.aspx
+det_1042;Barrick Gold Corporation (2019) Annual Report 2018;https://barrick.q4cdn.com/788666289/files/annual-report/Barrick-Annual-Report-2018.pdf
+det_1043;Barrick Gold Corporation (2015) Annual Report 2014;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2014/Barrick-Annual-Report-2014.pdf
+det_1044;Barrick Gold Corporation (2014) Annual Report 2013;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2013/Barrick-Annual-Report-2013.pdf
+det_1045;Barrick Gold Corporation (2013) Annual Report 2012;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2012/Barrick-Annual-Report-2012.pdf
+det_1046;Barrick Gold Corporation (2013) Annual Report 2013;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2012/Barrick-Annual-Report-2012.pdf
+det_1047;Barrick Gold Corporation (2013) Annual Report 2014;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2012/Barrick-Annual-Report-2012.pdf
+det_1048;Barrick Gold Corporation (2013) Annual Report 2015;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2012/Barrick-Annual-Report-2012.pdf
+det_1049;Barrick Gold Corporation (2008) Annual Report 2007;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2007/Barrick-Annual-Report-2007.pdf
+det_1050;Barrick Gold Corporation (2007) Annual Report 2006;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2006/Barrick-Annual-Report-2006.pdf
+det_1051;Barrick Gold Corporation (2006) Annual Report 2005;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2005/Barrick-Annual-Report-2005.pdf
+det_1052;Barrick Gold Corporation (2004) Annual Report 2003;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2003/Barrick-Annual-Report-2003.pdf
+det_1053;Kinross Gold (2017) Operations Fort Knox, USA;https://www.kinross.com/operations/default.aspx
+det_1054;Kinross Gold (2017) Operations Paracatu, Brazil;https://www.kinross.com/operations/default.aspx#americas-paracatu
+det_1055;Kinross Gold (2017) Operations Dvoinoye, Russia;https://www.kinross.com/operations/default.aspx#russia-dvoinoye
+det_1056;Kinross Gold (2017) Operations Kupol, Russia;https://www.kinross.com/operations/default.aspx#russia-kupol
+det_1057;Kinross Gold (2017) Projects & Exploration La Coipa, Chile;https://www.kinross.com/operations/default.aspx#exploration-lacoipa
+det_1058;Kinross Gold (2017) Operations Tasiast, Mauritania;https://www.kinross.com/operations/default.aspx#africa-tasiast
+det_1059;Kinross Gold (2017) Operations Chirano, Ghana;https://www.kinross.com/operations/default.aspx#africa-chirano
+det_1060;Kinross Gold (2019) Annual Report 2018;https://s2.q4cdn.com/496390694/files/doc_financials/quarterly_reports/2018/q4/2018-Reserves-and-Resources.pdf
+det_1061;"Kinross Gold (2017) Mineral Reserves & Resources Statement 2016 ; Kinross Gold (2019) Annual Report 2018";"https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/Kinross-Annual-Mineral-Reserve-and-Resource-Statement.pdf ; https://s2.q4cdn.com/496390694/files/doc_financials/annual/2019/2018-Kinross-Annual-Report-Final.pdf"
+det_1062;Kinross Gold (2017) Mineral Reserves & Resources Statement 2012;https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/kinross-gold-2012-mineral-reserves-and-resources.pdf
+det_1063;Kinross Gold (2017) Mineral Reserves & Resources Statement 2007;https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/2007-reserve-resource-statements.pdf
+det_1064;Kinross Gold (2008) Annual Report 2007;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2007/2007-annual-report.pdf
+det_1065;AngloGold Ashanti (2019) Integrated Annual Report 2018;http://www.aga-reports.com/18/download/AGA-IR18.pdf
+det_1066;AngloGold Ashanti (2013) Integrated Annual Report 2012;http://www.aga-reports.com/12/ir
+det_1067;AngloGold Ashanti (2014) Integrated Annual Report 2013;https://thevault.exchange/?get_group_doc=143/1502782132-2013Intergratedreport.pdf
+det_1068;AngloGold Ashanti (2009) Annual Financial Statements 2008;https://www.anglogoldashanti.com/archive/annualreports/AGA-annualfinancialstatements.zip
+det_1069;AngloGold Ashanti (2006) Annual Financial Statements 2005;https://www.anglogoldashanti.com/archive/annualreports/AGA-annualfinancialstatements.zip
+det_1070;AngloGold Ashanti (2003) Annual Report 2002;https://www.anglogoldashanti.com/wp-content/uploads/2018/10/AngloGold-Annual-Reports-1998-2003.zip
+det_1071;AngloGold Ashanti (2001) Annual Report 2000;https://www.anglogoldashanti.com/wp-content/uploads/2018/10/AngloGold-Annual-Reports-1998-2003.zip
+det_1072;AngloGold Ashanti (2017) Mineral Resource and Ore Reserve Report 2018;http://www.aga-reports.com/18/download/AGA-RR18.pdf
+det_1073;AngloGold Ashanti (2017) Mineral Resource and Ore Reserve Report 2002;https://www.anglogoldashanti.com/archive/miningreserves/Mineral%20resource%20and%20ore%20reserve%20reports%20(2002%20-%202012).zip
+det_1074;Rio Tinto (2019) Annual Report 2018;http://www.riotinto.com/documents/RT_2018_annual_report.pdf
+det_1075;Rio Tinto (2016) Annual Report 2015;https://www.riotinto.com/documents/RT_Annual_Report_2015.pdf
+det_1076;Rio Tinto (2019) Annual Report 2018;https://www.riotinto.com/invest/reports
+det_1077;Rio Tinto (2014) Annual Report 2013;http://www.riotinto.com/documents/RT_Annual_report_2013.pdf
+det_1078;Rio Tinto (2018) Pilbara Ore Reserves and Mineral Resources 2017;http://www.riotinto.com/documents/180302_Changes_to_Pilbara_Ore_Reserves_and_Mineral_Resources.pdf
+det_1079;Rio Tinto (2018) Simandou Ore Reserves and Mineral Resources 2017;http://www.riotinto.com/documents/180302_Changes_to_Simandou_Ore_Reserves_and_Mineral_Resources.pdf
+det_1080;Teck Resources Limited (2019) Highland Valley Copper;https://www.teck.com/operations/canada/operations/highland-valley-copper/
+det_1081;Teck Resources Limited (2019) Anatamina, BHP Annual Report 2019;"https://www.teck.com/operations/peru/operations-5619/antamina/ ; https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf"
+det_1082;Teck Resources Limited (2019) Carmen de Andacollo;https://www.teck.com/operations/chile/operations/carmen-de-andacollo/default
+det_1083;Teck Resources Limited (2019) Quebrada Blanca;https://www.teck.com/operations/chile/operations/quebrada-blanca/
+det_1084;Teck Resources Limited (2019) Trail Operations;https://www.teck.com/operations/canada/operations/trail-operations-5672/
+det_1085;Teck Resources Limited (2019) Red Dog;https://www.teck.com/operations/united-states/operations/red-dog/
+det_1086;Teck Resources Limited (2019) Pend Oreille;https://www.teck.com/operations/united-states/operations/pend-oreille/
+det_1087;Teck Resources Limited (2019) Reserves and Resources;https://www.teck.com/investors/reserves-&-resources/
+det_1088;Teck Resources Limited (2019) Interactive Analyst Center Operational-Details (Y);http://apps.indigotools.com/IR/IAC/?Ticker=TCK%2FB&Exchange=TSX#
+det_1089;First Quantum Minerals Limited (2018) Annual Report 2018;https://s24.q4cdn.com/617706469/files/doc_financial/annual/FQM_2018_AR_aoda.pdf
+det_1090;"First Quantum Minerals Limited (2018) Annual Report 2018 ; Coble Las Cruces website";"https://s24.q4cdn.com/617706469/files/doc_financial/annual/FQM_2018_AR_aoda.pdf ; http://www.cobrelascruces.com/?lang=en"
+det_1091;First Quantum Minerals Ltd (2016) Annual Report 2016;https://s24.q4cdn.com/617706469/files/doc_financial/annual/2016-Annual-Report.pdf
+det_1092;First Quantum Minerals Ltd Annual Report 2008;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2008.pdf
+det_1093;Sibanye-Stillwater (2018) Mineral Resources and Mineral Reserves Report;http://reports.sibanyestillwater.com/2018/download/SGL-RR18.pdf
+det_1094;Sibanye-Stillwater (2018) Mineral Resources and Mineral Reserves Report 2018;http://reports.sibanyestillwater.com/2018/download/SGL-RR18.pdf
+det_1095;Sibanye-Stillwater Integrated Annual Report 2018;http://reports.sibanyestillwater.com/2018/download/SGL-IR18.pdf
+det_1096;Newcrest Mining Limited (2018) Annual Report 2018;http://www.newcrest.com.au/media/annual_reports/Newcrest_Annual_Report_2018_1.pdf
+det_1097;Newcrest Mining Limited (2018) Annual Mineral Resources and Ore Statement - 31 December 2018;https://www.newcrest.com.au/media/resource_reserves/2018/Ore_Reserves.pdf
+det_1098;Newcrest Mining Limited (2012) Annual Report 2012;https://www.newcrest.com.au/media/annual_reports/FINAL_newcrest_annual_report_2012_72dpi.pdf
+det_1099;Newcrest Mining Limited (2002) Annual Report 2002;https://www.newcrest.com.au/media/annual_reports/FINAL_NCM_2002_Annual_Report.pdf
+det_1100;MMG (2017) Mining operations Kinsevere;http://www.mmg.com/en/Our-Operations/Mining-operations/Kinsevere.aspx
+det_1101;MMG (2017) Mining operations Dugald River;http://www.mmg.com/en/Our-Operations/Mining-operations/Dugald-River.aspx
+det_1102;MMG (2017) Mining operations Las Bambas;http://www.mmg.com/en/Our-Operations/Mining-operations/Las-Bambas.aspx
+det_1103;MMG (2017) Mining operations Rosebery;http://www.mmg.com/en/Our-Operations/Mining-operations/Rosebery.aspx
+det_1104;MMG (2017) Annual Report 2016, MMG (2014) Annual Report 2013;http://www.mmg.com/en/Investors-and-Media/Reports-and-Presentations/~/media/Files/Exchange%20Announcements/Investors%20and%20Media/News/2017/04/20/MMG_Annual-Report2016.pdf, http://www.mmg.com/en/Investors-and-Media/Reports-and-Presentations/~/media/Reports%20and%20Presentations/Annual%20Reports/2013/e_2014-04-10_2013%20Annual%20Report.ashx
+det_1105;MMG Limited (2019) Annual Report 2018;http://www.mmg.com/en/Investors-and-Media/Reports-and-Presentations/~/media/MMG1178_AR_2018_FA3_web-version.pdf
+det_1106;MMG (2017) Annual Report 2016;http://www.mmg.com/en/Investors-and-Media/Reports-and-Presentations/~/media/Files/Exchange%20Announcements/Investors%20and%20Media/News/2017/04/20/MMG_Annual-Report2016.pdf
+det_1107;Anglo American plc (2019) Integrated Annual Report 2018;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2019/aa-annual-report-2018.pdf
+det_1108;Anglo American plc (2019) Ore Reserves and Mineral Resources Report 2018;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2019/aa-ore-reserves-and-mineral-resources-2018.pdf
+det_1109;Anglo American plc (2017) Annual Report 2016;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2017/annual-report-2016-interactive-v2.pdf
+det_1110;Anglo American plc (2013) Annual Report 2012;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2013/annual-report2012.pdf
+det_1111;"Anglo American plc (2013) Annual Report 2012; Vedanta Zinc international Website";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2013/annual-report2012.pdf ; https://www.vedanta-zincinternational.com/our-operations/lisheen-mine"
+det_1112;"Anglo American plc (2013) Annual Report 2012; Vedanta Zinc international Website";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2013/annual-report2012.pdf ; https://www.vedanta-zincinternational.com/our-operations/black-mountain"
+det_1113;"Anglo American plc (2011) Annual Report 2010 ; Vedanta Zinc International Website (our operations)";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2011/angloamerican-annual-report-2010.pdf ; https://www.vedanta-zincinternational.com/our-operations/skorpion-zinc"
+det_1114;Anglo American plc (2011) Annual Report 2010;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2011/angloamerican-annual-report-2010.pdf
+det_1115;"Anglo American plc (2009) Annual Report 2008 ; Tronox Website (Global locations)";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2009/ar2008.pdf ; https://www.tronox.com/about-us/global-locations/#9423"
+det_1116;Anglo American plc (2009) Annual Report 2008;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2009/ar2008.pdf
+det_1117;Anglo American plc (2015) Annual Report 2014;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2015/aa-ar14-interactive-final.pdf
+det_1118;Anglo American plc (2010) Annual Report 2009;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2010/anglo-american-2009-annual-report.pdf
+det_1119;"KAZ minerals plc (2019) Annual Report 2018 ; KAZ Minerals Website";"https://www.kazminerals.com/media/9970/kaz-minerals-annual-report-2018.pdf ; https://www.kazminerals.com/our-business/bozshakol/"
+det_1120;KAZ minerals plc (2019) Annual Report 2018, KAZ Minerals Website;"https://www.kazminerals.com/media/9970/kaz-minerals-annual-report-2018.pdf ; https://www.kazminerals.com/our-business/aktogay/"
+det_1121;KAZ minerals plc (2019) Our business Bozymchak;https://www.kazminerals.com/our-business/bozymchak/
+det_1122;KAZ minerals plc (2020) Annual Report 2019;https://www.kazminerals.com/media/19752/ka179_2019_annual_report_web_singles_v1.pdf
+det_1123;"KAZ minerals plc (2020) Annual Report 2019 ; KAZ Minerals Website";"https://www.kazminerals.com/media/19752/ka179_2019_annual_report_web_singles_v1.pdf ; https://www.kazminerals.com/our-business/east-region/"
+det_1124;KAZ minerals plc (2017) Annual Report 2016;https://www.kazminerals.com/media/1725/ka149_book-small-cmyk-1.pdf
+det_1125;KAZ minerals plc (2009) Annual Report 2008;http://annualreports.com/HostedData/AnnualReportArchive/k/LSE_KAZ_2008.pdf
+det_1126;Boliden Group (2019) Boliden 2018 Annual and Sustainability Report;https://vp217.alertir.com/afw/files/press/boliden/201903076646-1.pdf
+det_1127;Fresnillo plc (2019) Annual Report and Accounts 2018;http://www.fresnilloplc.com/media/412015/fres-30452-annual-report-2018-web.pdf
+det_1128;Fresnillo plc (2018) Fresnillo plc December 31, 2018 Consolidated Audited Ore Reserve Statement for Fresnillo plc Operating and Development Properties, SRK Consulting (U.S.), Inc.;http://www.fresnilloplc.com/media/407956/FRES-Consolidated-Audited-Ore-Reserve-Statement-2018.pdf
+det_1129;"South32 Website ; South32 Annual Report 2019";"https://www.south32.net/our-business/southern-africa/south-africa-manganese ; https://www.south32.net/docs/default-source/all-financial-results/2019-annual-reporting-suite/annual-report-2019.pdf"
+det_1130;South32 Website;https://www.south32.net/our-business/australia/gemco
+det_1131;South32 Website;https://www.south32.net/our-business/australia/temco
+det_1132;"First Quantum Minerals Ltd (2008) Annual Report 2008 ; First Quantum Minerals Ltd (2007) Annual Report 2007";http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1133;"First Quantum Minerals Ltd (2008) Annual Report 2008 ; First Quantum Minerals Ltd (2007) Annual Report 2008";http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1134;African Barrick Gold Annual Report 2010;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2010.pdf
+det_1135;African Barrick Gold Annual Report 2010, African Barrick Gold Annual Report 2012;"http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2010.pdf ; http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2012.pdf"
+det_1136;BHP Annual Report 2019, BHP Website;"https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf?la=en ; https://www.bhp.com/our-businesses/minerals-australia/olympic-dam/"
+det_1137;BHP Annual Report 2019;https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf?la=en
+det_1138;Hudbay Minerals Inc. Annual Report 2018;https://s23.q4cdn.com/405985100/files/doc_financials/annual_reports/Hudbay_2018_Annual_CSR_Report.pdf
+det_1139;"Hudbay Minerals Inc. Annual Report 2018 ;  Hudbay Minerals Inc Managements Discussion and Analysis of Results of Operations and Financial Condicion 2014";"https://s23.q4cdn.com/405985100/files/doc_financials/annual_reports/Hudbay_2018_Annual_CSR_Report.pdf ; https://s23.q4cdn.com/405985100/files/doc_financials/quarterly_reports/2014/q4/ANNUALMDA14-(1)_v001_x4wlfk.pdf"
+det_1140;Newmont Mining Corporation (2018) Ahafo Operation Facts;https://www.newmont.com/operations-and-projects/africa/ahafo-ghana/operation-facts/default.aspx
+det_1141;Southern Copper Corporation (n.d.) Summary Operating Data;http://www.southerncoppercorp.com/ENG/PublishingImages/IntOperations/summary.jpg
+det_1142;Barrick Gold Corporation (2019) Barrick The new value champion, February 2020;http://www.barrick.com/files/presentation/2019/Barrick-Fact-Sheet-Feb2019.pdf
+det_1143;;
+det_1144;Newcrest Mining Limited (2011) Annual Report 2011;https://www.newcrest.com.au/media/annual_reports/FINAL_NCM_2011_Annual_Report_2011.pdf
+det_1145;Newcrest Mining Limited Annual Report 2018;http://www.newcrest.com.au/media/annual_reports/Newcrest_Annual_Report_2018_1.pdf
+det_1146;MMG Limited (2018) Annual Report 2018;http://www.mmg.com/en/Investors-and-Media/Reports-and-Presentations/~/media/MMG1178_AR_2018_FA3_web-version.pdf
+det_1147;Collahuasi Website;http://www.collahuasi.cl/en/que-hacemos/nuestra-operacion/
+det_1148;South32 Website;https://www.south32.net/our-business/southern-africa/south-africa-manganese
+det_1149;Hudbay Minerals Inc. (2019), Lalor and Snow Lake Operations Technical Report;https://s23.q4cdn.com/405985100/files/doc_downloads/tech_reports/canada/Lalor-NI-43-101-Technical-Report-2019-03-28.pdf
+det_1150;Kinross Gold (2019) Annual Report 2018;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2019/2018-Kinross-Annual-Report-Final.pdf
+det_1151;Hudbay Minerals Inc. (2020) Management's Discussion and Analysis of Results of Operations and Financial Condition, Q4 2019;https://s23.q4cdn.com/405985100/files/doc_financials/2019/Q4/MDA194.pdf
+det_1152;Hudbay Minerals Inc. (2018) Management's Discussion and Analysis of Results of Operations and Financial Condition, Q4 2017;https://s23.q4cdn.com/405985100/files/doc_financials/quarterly_reports/2017/q4/MDA174.pdf
+det_1153;Hudbay Minerals Inc. (2016) Management's Discussion and Analysis of Results of Operations and Financial Condition, Q4 2015;https://s23.q4cdn.com/405985100/files/doc_financials/quarterly_reports/2015/q4/YMDA415.pdf
+det_1154;Hudbay Minerals Inc. (2015) Management's Discussion and Analysis of Results of Operations and Financial Condition, Q4 2014;https://s23.q4cdn.com/405985100/files/doc_financials/quarterly_reports/2014/q4/ANNUALMDA14-(1)_v001_x4wlfk.pdf
+det_1155;KAZ minerals plc (2015) Annual Report 2014;https://www.kazminerals.com/media/2698/kaz_minerals_ara_2014.pdf
+det_1156;Kazakhmys plc  (2013) Annual Report 2012;https://www.kazminerals.com/media/2807/annual-report-and-accounts-2012-final.pdf
+det_1157;Kazakhmys plc (2011) Annual Report 2010;http://www.annualreports.com/HostedData/AnnualReportArchive/k/LSE_KAZ_2010.pdf
+det_1158;Kazakhmys plc (2009) Annual Report 2008;http://annualreports.com/HostedData/AnnualReportArchive/k/LSE_KAZ_2008.pdf
+det_1159;Anglo American plc (2005) Annual Report 2004;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2005/annual-report-2004.pdf
+det_1160;Anglo American plc (2007) Annual Report 2006;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2007/annual-report-2006.pdf
+det_1161;Boliden Group (2010) Annual Report 2009;https://vp217.alertir.com/afw/files/press/boliden/Boliden_Annual_report_2009_en.pdf
+det_1162;Boliden Group (2005) Annual Report 2004;https://vp217.alertir.com/afw/files/press/boliden/Boliden_AR2004_en.pdf
+det_1163;KAZ minerals plc (2019) Annual Report 2018;https://www.kazminerals.com/media/9970/kaz-minerals-annual-report-2018.pdf
+det_1164;Sibanye-Stillwater (2015) Integrated Annual Report 201;http://reports.sibanyegold.co.za/2015
+det_1165;Sibanye-Stillwater (2013) Annual Integrated Report 2013;http://reports.sibanyegold.co.za/2013/download/SGL-IR13.pdf
+det_1166;Newcrest Mining Limited (2018) Annual Report 2018;https://www.newcrest.com/sites/default/files/2019-10/181008_Newcrest%20Annual%20Report_1.pdf
+det_1167;Newcrest Mining Limited (2016) Annual Report 2016;https://www.newcrest.com.au/media/annual_reports/2016_Annual_Report.pdf
+det_1168;Newcrest Mining Limited (2016) Annual Report 2017;https://www.newcrest.com.au/media/annual_reports/2016_Annual_Report.pdf
+det_1169;Newcrest Mining Limited (2016) Annual Report 2018;https://www.newcrest.com.au/media/annual_reports/2016_Annual_Report.pdf
+det_1170;Acacia Mining PLC Annual Report 2018;http://www.annualreports.com/HostedData/AnnualReports/PDF/LSE_ACA_2018.pdf
+det_1171;Acacia Mining PLC Annual Report 2017;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2017.pdf
+det_1172;Acacia Mining PLC Annual Report 2015;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2015.pdf
+det_1173;African Barrick Gold Corp. Annual Report 2013;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2013.pdf
+det_1174;African Barrick Gold Corp. Annual Report 2011;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2011.pdf
+det_1175;African Barrick Gold Corp. Annual Report 2010;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2010.pdf
+det_1176;Newcrest Mining Limited (2006) Concise Annual Report 2006;https://www.newcrest.com.au/media/annual_reports/FINAL_NCM_2006_Annual_Report.pdf
+det_1177;Newcrest Mining Limited (2005) Concise Annual Report 2005;https://www.newcrest.com.au/media/annual_reports/FINAL_NCM_2005_Annual_Report.pdf
+det_1178;First Quantum Minerals Ltd (2018) Annual Report 2018;https://s24.q4cdn.com/617706469/files/doc_financial/annual/FQM_2018_AR_aoda.pdf
+det_1179;First Quantum Minerals Ltd (2014) Annual Report 2014;https://s24.q4cdn.com/617706469/files/doc_financial/annual/FQM-2014_ANNUAL-REPORT.pdf
+det_1180;MMG Limited (2012) Annual Report 2011;https://www.mmg.com/wp-content/uploads/attachments/MMG2011_AnnualReport.pdf
+det_1181;Barrick Gold Corporation (2017) Annual Report 2016;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2016/Barrick-Annual-Report-2016.pdf
+det_1182;Southern Copper Corporation (n.d.) Summary Operating Data;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1183;Kinross Gold (2017) Annual Report 2016;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2017/Kinross_AnnualReport2016.pdf
+det_1184;Kinross Gold (2015) Annual Report 2014;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2014/kinross-2014-annual-report.pdf
+det_1185;Kinross Gold (2013) Annual Report 2012;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2012/kinross-gold-annual-report-2012.pdf
+det_1186;Kinross Gold (2011) Annual Report 2010;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2010/2010-annual-report.pdf
+det_1187;Kinross Gold (2006) Annual Report 2005;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2005/05-ar.pdf
+det_1188;First Quantum Minerals Ltd (2010) Annual Report 2010;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2010.pdf
+det_1189;First Quantum Minerals Ltd (2008) Annual Report 2008;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2008.pdf
+det_1190;First Quantum Minerals Ltd (2007) Annual Report 2007;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2007.pdf
+det_1191;"AngloGold Ashanti (2014) Integrated Annual Report 2013 ; Kinross Gold (2013) Annual Report 2012";"https://thevault.exchange/?get_group_doc=143/1502782132-2013Intergratedreport.pdf ; https://s2.q4cdn.com/496390694/files/doc_financials/annual/2012/kinross-gold-annual-report-2012.pdf"
+det_1192;AngloGold Ashanti (2017) Integrated Annual Report 2018;http://www.aga-reports.com/18/download/AGA-IR18.pdf
+det_1193;MMG Limited (2014) Annual Report 2013;https://www.mmg.com/wp-content/uploads/2019/11/2013_MMG_Annual_Report.pdf
+det_1194;Newcrest Mining Limited (2018) Annual Report 2018;https://www.newcrest.com/sites/default/files/2019-10/161006_Newcrest%20Annual%20Report_0.pdf
+det_1195;First Quantum Minerals Ltd (2012) Annual Report 2012;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2012.pdf
+det_1196;First Quantum Minerals Ltd (2006) Annual Report 2006;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2006.pdf
+det_1197;Barrick Gold Corporation (2016) Annual Report 2015;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2015/Barrick-Annual-Report-2015.pdf
+det_1198;"Barrick Gold Corporation (2019) Annual Report 2018 ; Shandong Gold Mining Co., LTD. (2019) Annual Report 2018";"https://barrick.q4cdn.com/788666289/files/annual-report/Barrick-Annual-Report-2018.pdf ; http://en.sdhjgf.com.cn/upload/file/2019/04/28/ba82819612f9465a823259ee2bef4527.pdf"
+det_1199;Fresnillo plc (2012) Annual Report 2011;http://www.fresnilloplc.com/media/4323/fresnillo-annual-report-2011.pdf
+det_1200;Fresnillo plc (2014) Annual Report 2013;http://www.fresnilloplc.com/media/122000/fresnilloar13.pdf
+det_1201;Fresnillo plc (2015) Annual Report 2014;http://www.fresnilloplc.com/media/201302/fresnilloplcar14.pdf
+det_1202;First Quantum Minerals Ltd (2012) Annual Report 2012;https://s1.q4cdn.com/857957299/files/doc_financials/2012%20Annual%20Report%20-%20FINAL%20-%20May%2010.pdf
+det_1203;First Quantum Minerals Ltd (2010) Annual Report 2010;https://s1.q4cdn.com/857957299/files/doc_financials/2010AnnualReport.pdf
+det_1204;First Quantum Minerals Ltd (2008) Annual Report 2008;https://s1.q4cdn.com/857957299/files/doc_financials/2008AnnualReport.pdf
+det_1205;First Quantum Minerals Ltd (2006) Annual Report 2006;https://s1.q4cdn.com/857957299/files/doc_financials/2006AR.pdf
+det_1206;First Quantum Minerals Ltd (2005) Annual Report 2005;https://s1.q4cdn.com/857957299/files/doc_financials/2005AR.pdf
+det_1207;Fresnillo plc (2017) Annual Report and Accounts 2016;http://www.fresnilloplc.com/media/296123/FRES-25764-Annual-Report-2016-Web.pdf
+det_1208;"First Quantum Minerals Ltd (2016) Annual Report 2016 ; Boliden Group (2019) Boliden 2018 Annual and Sustainability Report";"https://s24.q4cdn.com/617706469/files/doc_financial/annual/2016-Annual-Report.pdf ; https://vp217.alertir.com/afw/files/press/boliden/201903076646-1.pdf"
+det_1209;Sibanye-Stillwater (2014) Integrated Annual Report 2013;http://reports.sibanyegold.co.za/2013/download/SGL-IR13.pdf
+det_1210;Sibanye-Stillwater (2016) Integrated Annual Report 2016;http://reports.sibanyegold.co.za/2016
+det_1211;First Quantum Minerals Ltd (2010) Annual Report 2010;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1212;First Quantum Minerals Ltd (2009) Annual Report 2009;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2009.pdf
+det_1213;First Quantum Minerals Ltd (2005) Annual Report 2005;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2005.pdf
+det_1214;First Quantum Minerals Ltd (2004) Annual Report 2004;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2004.pdf
+det_1215;KAZ minerals plc (2018) Annual Report 2017;https://www.kazminerals.com/media/6188/kaz-minerals-2017-ara-web-ready-version.pdf
+det_1216;MMG Limited (2016) Annual Report 2015;https://www.mmg.com/wp-content/uploads/attachments/MMG%20AR15_Web.pdf
+det_1217;Newcrest Mining Limited (2013) Annual Report 2013;https://www.newcrest.com.au/media/annual_reports/FINAL_AR_2013_72dpi_web.pdf
+det_1218;Newcrest Mining Limited (2014) Annual Report 2014;https://www.newcrest.com.au/media/annual_reports/FINAL_Annual_Report_2014_72dpi_web.pdf
+det_1219;Newcrest Mining Limited (2007) Concise Annual Report 2007;https://www.newcrest.com.au/media/annual_reports/FINAL_NCM_2007_Annual_Report.pdf
+det_1220;First Quantum Minerals Ltd (2017) Annual Report 2017;https://s24.q4cdn.com/617706469/files/doc_financial/annual/2017-Annual-Report.pdf
+det_1221;MMG Limited (2017) Annual Report 2016;https://www.mmg.com/wp-content/uploads/attachments/MMG_Annual-Report2016.pdf
+det_1222;MMG Limited (2018) Annual Report 2017;https://www.mmg.com/wp-content/uploads/attachments/MMG_Annual%20Report%202017.pdf
+det_1223;Newmont Mining Corporation (2013) Annual Report 2012;https://s2.q4cdn.com/575378270/files/doc_financials/annual/2012-Annual-Report_v001_e75k8c.pdf
+det_1224;Newmont Mining Corporation (2015) Annual Report 2014;https://s1.q4cdn.com/259923520/files/doc_financials/annual/861753_as-printed-Annual-Report_2014_v001_e83uds.pdf
+det_1225;MMG Limited (2019) Annual Report 2018;https://www.mmg.com/wp-content/uploads/attachments/MMG1178_AR_2018_FA3_web-version.pdf
+det_1226;Newmont Mining Corporation (2017) Annual Report 2016;https://s1.q4cdn.com/259923520/files/doc_financials/annual/2016/Newmont-2016-Annual-Report-Bookmarked-PDF-for-website.pdf
+det_1227;Newmont Mining Corporation (2018) Annual Report 2017;https://s2.q4cdn.com/575378270/files/doc_financials/annual/2017-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf
+det_1228;Newmont Mining Corporation (2018) Annual Report 2017;https://s1.q4cdn.com/259923520/files/doc_financials/annual/2017/2017-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf
+det_1229;Centamin (2019) Annual Report 2018;https://www.centamin.com/~/media/Files/C/Centamin/documents/reports/2019/01cSECURE_Smart_Centamin_AR18.pdf
+det_1230;African Barrick Gold Corp. Annual Report 2012;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2012.pdf
+det_1231;Shandong Gold Mining Co., LTD. (2019) Annual Report 2018;http://en.sdhjgf.com.cn/upload/file/2019/04/28/ba82819612f9465a823259ee2bef4527.pdf
+det_1232;Sibanye-Stillwater (2015) Integrated Annual Report 2015;http://reports.sibanyegold.co.za/2015/download/SGL-IAR15.pdf
+det_1233;Sibanye-Stillwater (2018) Integrated Annual Report 2018;http://reports.sibanyestillwater.com/2018/download/SGL-IR18.pdf
+det_1234;Centamin (2019) Annual report 2018;https://www.centamin.com/~/media/Files/C/Centamin/documents/reports/2019/01cSECURE_Smart_Centamin_AR18.pdf
+det_1235;Centamin (n.d.) Sukari Statistical Overview, Centamin (2018) Annual report 2017;"http://www.centamin.com/production/sukari/statistical-overview ;  http://www.centamin.com/~/media/Files/C/Centamin/documents/reports/2018/Smart17_Centamin.pdf"
+det_1236;Centamin (n.d.) Sukari Statistical Overview, Centamin (2018) Annual report 2017;"http://www.centamin.com/production/sukari/statistical-overview ; http://www.centamin.com/~/media/Files/C/Centamin/documents/reports/2018/Smart17_Centamin.pdf"
+det_1237;Newmont Mining Corporation (2012) Annual Report 2011;https://s1.q4cdn.com/259923520/files/doc_financials/annual/2011_Newmont_Annual_Report_and_10_K.pdf
+det_1238;Newmont Mining Corportation (2011) Annual Report 2010;https://s1.q4cdn.com/259923520/files/doc_financials/annual/Newmont_10AR.pdf
+det_1239;Newmont Mining Corporation (2010) Annual Report 2009;https://s1.q4cdn.com/259923520/files/doc_financials/annual/2009_Annual_Report.pdf
+det_1240;Newmont Mining Corporation (2011) Annual Report 2010;https://s1.q4cdn.com/259923520/files/doc_financials/annual/Newmont_10AR.pdf
+det_1241;Barrick Gold Corporation (2012) Annual Report 2011;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2011/Barrick-Annual-Report-2011.pdf
+det_1242;Barrick Gold Corporation (2011) Annual Report 2010;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2010/Barrick-Annual-Report-2010.pdf
+det_1243;Barrick Gold Corporation (2010) Annual Report 2009;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2009/Barrick-Annual-Report-2009.pdf
+det_1244;Barrick Gold Corporation (2002) Annual Report 2001;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2001/Barrick-Annual-Report-2001.pdf
+det_1245;Barrick Gold Corporation (2009) Annual Report 2008;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2008/Barrick-Annual-Report-2008.pdf
+det_1246;AngloGold Ashanti (2009) Annual Financial Statement 2008;https://www.anglogoldashanti.com/archive/annualreports/AGA-annualfinancialstatements.zip
+det_1247;First Quantum Minerals Ltd (2016) Annual Report 2016;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1248;First Quantum Minerals Ltd (2014) Annual Report 2014;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1249;First Quantum Minerals Ltd (2012) Annual Report 2012;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1250;First Quantum Minerals Ltd (2008) Annual Report 2008;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1251;First Quantum Minerals Ltd (2007) Annual Report 2007;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1252;First Quantum Minerals Ltd (2006) Annual Report 2006;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1253;First Quantum Minerals Ltd (2008) Annual Report 2009;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1254;First Quantum Minerals Ltd (2017) Annual Report 2017;http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1255;"First Quantum Minerals Ltd (2016) Annual Report 2016 ; Boliden Group (2019) Boliden 2018 Annual and Sustainability Report";http://www.annualreports.com/Company/first-quantum-minerals-ltd
+det_1256;Newcrest Mining Limited (2002) Annual Report 2002;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2002.pdf
+det_1257;Newcrest Mining Limited (2011) Annual Report 2011;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2011.pdf
+det_1258;Newcrest Mining Limited (2012) Annual Report 2012;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2012.pdf
+det_1259;Newcrest Mining Limited (2013) Annual Report 2013;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2013.pdf
+det_1260;Newcrest Mining Limited (2014) Annual Report 2014;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2014.pdf
+det_1261;Newcrest Mining Limited (2016) Annual Report 2016;https://www.newcrest.com/sites/default/files/2019-10/161006_Newcrest%20Annual%20Report_0.pdf
+det_1262;Newcrest Mining Limited (2003) Concise Annual Report 2003;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2003.pdf
+det_1263;Newcrest Mining Limited (2004) Concise Annual Report 2004;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2004.pdf
+det_1264;Newcrest Mining Limited (2005) Concise Annual Report 2005;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2005.pdf
+det_1265;Newcrest Mining Limited (2006) Concise Annual Report 2006;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2006.pdf
+det_1266;Newcrest Mining Limited (2007) Concise Annual Report 2007;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2007.pdf
+det_1267;MMG Limited (2015) Annual Report 2014;https://www.mmg.com/wp-content/uploads/2019/11/2014_MMG_Annual_Report.pdf
+det_1268;Fresnillo plc (2010) Annual Report 2009;http://www.fresnilloplc.com/media/4326/fresnillo-annual-report-2009.pdf
+det_1269;Southern Copper Corporation (n.d.) Integrated Operations La Caridad - Processing Facilities;http://www.southerncoppercorp.com/ENG/intope/Pages/PGIntOperation.aspx#cuadros
+det_1270;MMG (2014) Annual Report 2013;http://www.mmg.com/en/Investors-and-Media/Reports-and-Presentations/~/media/Reports%20and%20Presentations/Annual%20Reports/2013/e_2014-04-10_2013%20Annual%20Report.ashx
+det_1271;Barrick Gold Corporation (2019) Barrick The new value champion, February 2019;https://barrick.q4cdn.com/788666289/files/presentation/2019/Barrick-Fact-Sheet-Feb2019.pdf
+det_1272;Collahuasi Website;http://www.collahuasi.cl/en/que-hacemos/produccion-y-ventas/
+det_1273;South32 Annual Report 2019;https://www.south32.net/docs/default-source/all-financial-results/2019-annual-reporting-suite/annual-report-2019.pdf
+det_1274;Tronox South African Operations Website;https://www.tronox.com/about-us/global-locations/#9423
+det_1275;Centamin (2018) Annual report 2017;http://www.centamin.com/~/media/Files/C/Centamin/documents/reports/2018/Smart17_Centamin.pdf
+det_1276;Newmont Mining Corporation (2018) Annual report 2017;https://s1.q4cdn.com/259923520/files/doc_financials/annual/2017/2017-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf
+det_1277;Southern Copper Corporation (2018) Integrated Operations Reserves;http://www.southerncoppercorp.com/ENG/intope/Pages/PGReserves.aspx#cuadros
+det_1278;Barrick Gold Corporation (2019) Operations Loulo-Gounkoto;https://www.barrick.com/English/operations/loulo-gounkoto/default.aspx
+det_1279;Barrick Gold Corporation (2019) Operations Kibali;https://www.barrick.com/English/operations/kibali/default.aspx
+det_1280;Barrick Gold Corporation (2019) 2018 Reserves & Resources;https://barrick.q4cdn.com/788666289/files/quarterly-report/2018/Barrick-2018-Reserves-Resources.pdf
+det_1281;Kinross Gold (2017) Mineral Reserves & Resources Statement 2018;https://s2.q4cdn.com/496390694/files/doc_financials/quarterly_reports/2018/q4/2018-Reserves-and-Resources.pdf
+det_1282;Kinross Gold (2017) Mineral Reserves & Resources Statement 2016;https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/Kinross-Annual-Mineral-Reserve-and-Resource-Statement.pdf
+det_1283;Kinross Gold (2017) Mineral Reserves & Resources Statement 2010;https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/2010-mineral-reserve-and-resource-statement.pdf
+det_1284;Kinross Gold (2007) Annual Report 2006;https://s2.q4cdn.com/496390694/files/doc_financials/annual/2006/06ar.pdf
+det_1285;AngloGold Ashanti (2019) Mineral Resource and Ore Reserve Report 2018;http://www.aga-reports.com/18/download/AGA-RR18.pdf
+det_1286;AngloGold Ashanti (2014) Mineral Resource and Ore Reserve Report 2013;https://thevault.exchange/?get_group_doc=143/1502781082-MineralResourceandOreReserveReport2013.pdf
+det_1287;AngloGold Ashanti (2018) Mineral Resource and Ore Reserve Report 2017;http://www.aga-reports.com/17/download/AGA-RR17.pdf
+det_1288;AngloGold Ashanti (2015) Mineral Resource and Ore Reserve Report 2014;https://thevault.exchange/?get_group_doc=143/1502780826-MineralResourceandOreReserveReport2014.pdf
+det_1289;AngloGold Ashanti (2013) Mineral Resource and Ore Reserve Report 2012;https://www.anglogoldashanti.com/archive/miningreserves/Mineral%20resource%20and%20ore%20reserve%20reports%20(2002%20-%202012).zip
+det_1290;AngloGold Ashanti (2006) Mineral Resource and Ore Reserve Report 2005;https://www.anglogoldashanti.com/archive/miningreserves/Mineral%20resource%20and%20ore%20reserve%20reports%20(2002%20-%202012).zip
+det_1291;AngloGold Ashanti (2003) Mineral Resource and Ore Reserve Report 2002;https://www.anglogoldashanti.com/archive/miningreserves/Mineral%20resource%20and%20ore%20reserve%20reports%20(2002%20-%202012).zip
+det_1292;AngloGold Ashanti (2004) Mineral Resource and Ore Reserve Report 2003;https://www.anglogoldashanti.com/archive/miningreserves/Mineral%20resource%20and%20ore%20reserve%20reports%20(2002%20-%202012).zip
+det_1293;Rio Tinto (2018) Boron Ore Reserves and Mineral Resources 2017;http://www.riotinto.com/documents/180302_Changes_to_Boron_Ore_Reserves_and_Mineral_Resources.pdf
+det_1294;Rio Tinto (2018) Argyle Diamonds Ore Reserves and Mineral Resources 2017;http://www.riotinto.com/documents/180302_Changes_to_Argyle_Diamonds_Ore_Reserves_and_Mineral_Resources.pdf
+det_1295;First Quantum Minerals Ltd (2017) Operating Mines Ravensthorpe Reserves & Resources;https://www.first-quantum.com/Our-Business/operating-mines/Ravensthorpe/Reserves-Resources/default.aspx
+det_1296;First Quantum Minerals Ltd (2017) Operating Mines Kansanshi Reserves & Resources;https://www.first-quantum.com/Our-Business/operating-mines/Kansanshi/Reserves--Resources/default.aspx
+det_1297;First Quantum Minerals Ltd (2017) Operating Mines Sentinel Reserves & Resources;https://www.first-quantum.com/Our-Business/operating-mines/Sentinel/Reserves--Resources/default.aspx
+det_1298;First Quantum Minerals Ltd (2017) Operating Mines Guelb Moghrein Reserves & Resources;https://www.first-quantum.com/Our-Business/operating-mines/Guelb-Moghrein/Reserves--Resources/default.aspx
+det_1299;First Quantum Minerals Ltd (2017) Operating Mines Cayeli;https://www.first-quantum.com/Our-Business/operating-mines/cayeli/Reserves-and-Resources/default.aspx
+det_1300;First Quantum Minerals Ltd (2017) Operating Mines Las Cruces;https://www.first-quantum.com/Our-Business/operating-mines/Las-Cruces/Reserves-and-Resources/default.aspx
+det_1301;First Quantum Minerals Ltd (2017) Operating Mines Pyhäsalmi;https://www.first-quantum.com/Our-Business/operating-mines/Pyhasalmi/Reserves-and-Resources/default.aspx
+det_1302;MMG (2016) Annual Report 2016;http://www.mmg.com/en/Investors-and-Media/Reports-and-Presentations/~/media/Files/Exchange%20Announcements/Investors%20and%20Media/News/2017/04/20/MMG_Annual-Report2016.pdf
+det_1303;"Anglo American plc (2019) Ore Reserves and Mineral Resources Report 2018        
+";https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2019/aa-ore-reserves-and-mineral-resources-2018.pdf
+det_1304;Anglo American plc (2012) Annual Report 2011;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2012/aa-annual-report-2011.pdf
+det_1305;Anglo American plc (2008) Annual Report 2007;https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2008/ar2007.pdf
+det_1306;Nornickel Our Business Operations and Assests Taimyr Pensinula (2019);https://www.nornickel.com/business/assets/taimyr/
+det_1307;Nornickel Our Business Operations and Assests Kola Pensinula (2019);https://www.nornickel.com/business/assets/kola/
+det_1308;Nornickel Our Business Operations and Assests Trans-Baikal Territory (2019);https://www.nornickel.com/business/assets/zabaykalsky/
+det_1309;Hudbay Minerals Inc. Website, Subpage Canada (2019);https://hudbayminerals.com/canada/default.aspx
+det_1310;Hudbay Minerals Inc. Website, Subpage United States (2019);https://hudbayminerals.com/united-states/default.aspx
+det_1311;Hudbay Minerals Inc. Website, Subpage Peru (2019);https://hudbayminerals.com/peru/default.aspx
+det_1312;KAZ Minerals Annual Report 2019;https://www.kazminerals.com/media/19752/ka179_2019_annual_report_web_singles_v1.pdf
+det_1313;Centamin (n.d.) Sukari Statistical Overview;https://www.centamin.com/~/media/Files/C/Centamin/documents/reports/2018/Smart17_Centamin.pdf
+det_1314;African Barrick Gold Corp. Annual Report 2013;http://www.annualreports.com/HostedData/AnnualReportArchive/A/LSE_ACA_2012.pdf
+det_1315;First Quantum Minerals Interactive Analyst Center Kansanshi (Y), Last Updated on 2/14/2020;https://apps.indigotools.com/IR/iac/?ticker=FM&exchange=TSX#
+det_1316;First Quantum Minerals Ltd (2009) Annual Report 2009;https://s1.q4cdn.com/857957299/files/doc_financials/2009AnnualReport.pdf
+det_1317;Barrick Gold Corporation (2008) Annual Report 2007, Kinross Gold (2019) Annual Report 2018;https://barrick.q4cdn.com/788666289/files/doc_financials/annual/2007/Barrick-Annual-Report-2007.pdf, https://s2.q4cdn.com/496390694/files/doc_financials/quarterly_reports/2018/q4/2018-Reserves-and-Resources.pdf
+det_1318;"Rio Tinto (2019) Annual Report 2018 ; BHP Annual Report 2019";"http://www.riotinto.com/documents/RT_2018_annual_report.pdf ; https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf"
+det_1319;Teck Resources Limited (2019) Anatamina;https://www.teck.com/operations/peru/operations-5619/antamina/
+det_1320;"Anglo American plc (2019) Ore Reserves and Mineral Resources Report 2018 ; South32 Website";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2019/aa-ore-reserves-and-mineral-resources-2018.pdf ; https://www.south32.net/our-business/australia/gemco"
+det_1321;"Anglo American plc (2017) Annual Report 2016 ; South32 Website";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2017/annual-report-2016-interactive-v2.pdf ; https://www.south32.net/our-business/australia/temco"
+det_1322;"Newmont Mining Corporation (2018) Nevada Operation Facts ; Newmont Mining Corporation (2019) Annual Report 2018";"https://www.newmont.com/operations-and-projects/north-america/nevada-us/operation-facts/default.aspx ; https://www.newmont.com/files/doc_financials/annual/2018-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf"
+det_1323;Southern Copper Corporation (2020) Annual Report 2019;https://www.sec.gov/ix?doc=/Archives/edgar/data/1001838/000155837020001781/scco-20191231x10k32f1e0.htm
+det_1324;Rio Tinto (2004) Annual Report 2003;https://ddd.uab.cat/pub/infanu/43907/iaRIOTINTOa2003ieng.pdf
+det_1325;Rio Tinto (2010) Annual Report 2009;https://www.riotinto.com/invest/reports
+det_1326;Rio Tinto (2013) Annual Report 2012;https://www.riotinto.com/invest/reports
+det_1327;"Rio Tinto (2019) Annual Report 2018 ; Freeport-McMoRan Inc. (2020) Annual Form 10-K Report 2019";"http://www.riotinto.com/documents/RT_2018_annual_report.pdf ; http://d18rn0p25nwr6d.cloudfront.net/CIK-0000831259/2c324997-2084-4e3f-a51d-a1ec3538db27.pdf"
+det_1328;Rio Tinto (2010) Annual Report 2009;http://www.annualreports.com/HostedData/AnnualReportArchive/r/LSE_RIOA_2009.pdf
+det_1329;Rio Tinto (2007) Annual Report 2006;https://bib.kuleuven.be/files/ebib/jaarverslagen/RioTinto_2006.pdf
+det_1330;"Rio Tinto (2019) Annual Report 2018 ; Rio Tinto (2010) Annual Report 2009";"http://www.riotinto.com/documents/RT_2018_annual_report.pdf ; http://www.annualreports.com/HostedData/AnnualReportArchive/r/LSE_RIOA_2009.pdf"
+det_1331;"First Quantum Minerals Limited (2018) Annual Report 2018 ; Coble Las Cruces Website";"https://s24.q4cdn.com/617706469/files/doc_financial/annual/FQM_2018_AR_aoda.pdf ; http://www.cobrelascruces.com/?lang=en"
+det_1332;Evolution Mining Website (Cracow);https://evolutionmining.com.au/cracow/
+det_1333;Newcrest Mining Limited (2018) Annual Report 2018;http://www.annualreports.com/HostedData/AnnualReportArchive/N/ASX_NCM_2018.pdf
+det_1334;Newcrest Mining Limited (2012) Annual Report 2012;https://www.newcrest.com/sites/default/files/2019-10/181008_Newcrest%20Annual%20Report_1.pdf
+det_1335;"Anglo American plc (2013) Annual Report 2012; Vedanta Zinc international Website (Lisheen mine)";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2013/annual-report2012.pdf ; https://www.vedanta-zincinternational.com/our-operations/lisheen-mine"
+det_1336;"Anglo American plc (2013) Annual Report 2012; Vedanta Zinc international Website (Black Mountain)";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2013/annual-report2012.pdf ; https://www.vedanta-zincinternational.com/our-operations/black-mountain"
+det_1337;"Anglo American plc (2011) Annual Report 2010 ; Vedanta Zinc International Website (Skorpion Zinc)";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2011/angloamerican-annual-report-2010.pdf ;https://www.vedanta-zincinternational.com/our-operations/skorpion-zinc"
+det_1338;"KAZ minerals plc (2019) Annual Report 2018 ; KAZ Minerals Website (Bozshakol)";"https://www.kazminerals.com/media/9970/kaz-minerals-annual-report-2018.pdf ; https://www.kazminerals.com/our-business/bozshakol/"
+det_1339;KAZ minerals plc (2019) Annual Report 2018, KAZ Minerals Website (Aktogay);"https://www.kazminerals.com/media/9970/kaz-minerals-annual-report-2018.pdf ; https://www.kazminerals.com/our-business/aktogay/"
+det_1340;"KAZ minerals plc (2020) Annual Report 2019 ; KAZ Minerals Website (East Region)";"https://www.kazminerals.com/media/19752/ka179_2019_annual_report_web_singles_v1.pdf ; https://www.kazminerals.com/our-business/east-region/"
+det_1341;"South32 Website (South Africa Manganese); South32 Annual Report 2019";"https://www.south32.net/our-business/southern-africa/south-africa-manganese ; https://www.south32.net/docs/default-source/all-financial-results/2019-annual-reporting-suite/annual-report-2019.pdf"
+det_1342;South32 Website (GEMCO);https://www.south32.net/our-business/australia/gemco
+det_1343;South32 Website (TEMCO);https://www.south32.net/our-business/australia/temco
+det_1344;BHP Annual Report 2019, BHP Website (Olympic Dam);"https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf?la=en ; https://www.bhp.com/our-businesses/minerals-australia/olympic-dam/"
+det_1345;BHP Group (2019) Annual Report 2019;https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf?la=en
+det_1346;BHP Billiton (2001) Form 20-F Annual Report 2001 Description of Business and Financial Statements;https://www.bhp.com/-/media/bhp/documents/investors/reports/2001/2001bhpbillitonltdannualreport_partc.pdf?la=en
+det_1347;"BHP Group (2019) Annual Report 2019 ; BHP Billiton (2016) Annual Report 2016";https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf?la=enhttps://www.bhp.com/-/media/bhp/documents/investors/annual-reports/2016/bhpbillitonannualreport2016.pdf?la=en
+det_1348;BHP Billiton (2013) Annual Report 2013;https://www.bhp.com/-/media/bhp/documents/investors/reports/2013/bhpbillitonannualreport2013.pdf?la=en
+det_1349;BHP Billiton (2007) Form 20-F Annual Report 2007;https://www.bhp.com/-/media/bhp/documents/investors/reports/2007/20fstatement2007.pdf?la=en
+det_1350;BHP Billiton (2004) Form 20-F Annual Report 2004;https://www.bhp.com/-/media/bhp/documents/investors/reports/2004/2004form20fdescriptionofbusinessparta.pdf?la=en
+det_1351;BHP Billiton (2003) Annual Report 2003;https://www.bhp.com/-/media/bhp/documents/investors/reports/2003/limitedannualreport.pdf?la=en
+det_1352;BHP Billiton (2001) Quarterly Production Report - June 2001;https://www.bhp.com/-/media/bhp/documents/investors/news/prall.pdf?la=en
+det_1353;"BHP Billiton (2002) Annual Report 2002 ; BHP Billiton (2003) Quarterly Production Report - June 2003";"https://www.bhp.com/-/media/bhp/documents/investors/reports/2002/2002_ltd_annual_report.pdf?la=en ; https://www.bhp.com/-/media/bhp/documents/investors/reports/2003/nr2403productionreport24july2003.pdf?la=en"
+det_1354;Capstone Mining Corp. Website (Pinto Valley);https://capstonemining.com/operations/pinto-valley/overview/default.aspx
+det_1355;Capstone Mining Corp. Website (Cozamin);https://capstonemining.com/operations/cozamin/overview/default.aspx
+det_1356;Capstone Mining Corp. Website (Santo Domingo);https://capstonemining.com/operations/santo-domingo/overview/default.aspx
+det_1357;Pembridge Resources Ltd. Website (Operations);https://www.pembridgeresources.com/operations
+det_1358;OK Tedi Mining Limited Website (What we do);https://oktedi.com/what-we-do/
+det_1359;South32 Limited (2019) Annual Report 2019;https://www.south32.net/docs/default-source/all-financial-results/2019-annual-reporting-suite/annual-report-2019.pdf?sfvrsn=1f22b159_44
+det_1360;BHP Billiton (2010) Annual Report 2010;https://www.bhp.com/-/media/bhp/documents/investors/reports/2010/bhpbillitonannualreport2010.pdf?la=en
+det_1361;Hudbay Minerals Inc. (2019) Annual Report 2018;https://s23.q4cdn.com/405985100/files/doc_financials/annual_reports/Hudbay_2018_Annual_CSR_Report.pdf
+det_1362;"Hudbay Minerals Inc. (2019) Annual Report 2018 ;  Hudbay Minerals Inc Managements Discussion and Analysis of Results of Operations and Financial Condicion 2014";"https://s23.q4cdn.com/405985100/files/doc_financials/annual_reports/Hudbay_2018_Annual_CSR_Report.pdf ; https://s23.q4cdn.com/405985100/files/doc_financials/quarterly_reports/2014/q4/ANNUALMDA14-(1)_v001_x4wlfk.pdf"
+det_1363;Newmont Mining Corporation (2020) Annual Report 2019;https://s24.q4cdn.com/382246808/files/doc_financials/annual/2019/370034(1)_23_Newmont_Web-Ready-Annual-Report-and-10-K.pdf
+det_1364;"Newmont Mining Corporation (2020) Annual Report 2019 ; Coldcorp Inc. (2015) Annual Report 2014";"https://s24.q4cdn.com/382246808/files/doc_financials/annual/2019/370034(1)_23_Newmont_Web-Ready-Annual-Report-and-10-K.pdf ; https://www.extractiveshub.org/servefile/getFile/id/5311"
+det_1365;Evolution Mining Website (Red Lake);https://evolutionmining.com.au/red-lake/
+det_1366;Equinox Gold Website (Los Filos Overview);https://www.equinoxgold.com/operations/operating-mines/los-filos/#overview
+det_1367;Coldcorp Inc. (2015) Annual Report 2014;https://www.extractiveshub.org/servefile/getFile/id/5311
+det_1368;"Coldcorp Inc. (2007) Annual Report 2006 ; Coldcorp Inc. (2019) Annual Report 2018";"https://www.sec.gov/Archives/edgar/data/919239/000094523407000193/o35525exv99w2.htm ; https://www.newmont.com/files/doc_financials/mda/annual/12.31.2018-MD-A-and-Financial-Statements.pdf"
+det_1369;Coldcorp Inc. (2009) Annual Report 2008;https://www.sec.gov/Archives/edgar/data/919239/000094523409000065/o54181exv99w2.htm
+det_1370;Coldcorp Inc. (2007) Annual Report 2006;https://www.sec.gov/Archives/edgar/data/919239/000094523407000193/o35525exv99w2.htm
+det_1371;Vale S.A. (2020) Annual Report 2019;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/Vale%2020-F%202019_i.pdf
+det_1372;Vale S.A. (2017) Annual Report 2016;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/Vale_20-F_FY2016_-_i.pdf
+det_1373;Vale S.A. (2011) Annual Report 2010;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2010_i.pdf
+det_1374;Vale S.A. (2014) Annual Report 2013;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2013_i.pdf
+det_1375;Inco Limited (2004) Annual Report 2003;https://www.sec.gov/Archives/edgar/data/49996/000090956704000367/t12234e10vk.htm#125
+det_1376;Norsk Hydro Website (Alunorte);https://www.hydro.com/en/about-hydro/hydro-worldwide/south-america/brazil/barcarena/alunorte/
+det_1377;Companhia Vale Do Rio Doce (2008) Annual Report 2007;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2007_i.pdf
+det_1378;Freeport-McMoRan Inc. (2020) Annual Form 10-K Report 2019;http://d18rn0p25nwr6d.cloudfront.net/CIK-0000831259/2c324997-2084-4e3f-a51d-a1ec3538db27.pdf
+det_1379;Freeport-McMoRan Inc. (2014) Annual Form 10-K Report 2013;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/ca3fa220-7699-4dc6-9d98-09ff08563e6f.pdf
+det_1380;Freeport-McMoRan Inc. (2009) Annual Form 10-K Report 2008;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/473b5bd8-5d21-4d2e-a40e-52c1d7e77298.pdf
+det_1381;Codelco (2019) Annual Report 2018;https://www.codelco.com/memoria2018/site/docs/20190408/20190408190123/codelco_annual_report_2018.pdf
+det_1382;"Antofagasta Plc. (2020) Annual Report 2019 ; Antofagasta Plc. Website (Our History)";"https://www.antofagasta.co.uk/media/3772/antofagasta-2019-annual-report.pdf ; https://www.antofagasta.co.uk/about-us/our-history/"
+det_1383;Antofagasta Plc. (2020) Annual Report 2019;https://www.antofagasta.co.uk/media/3772/antofagasta-2019-annual-report.pdf
+det_1384;Antofagasta Plc. (2016) Annual Report 2015;https://www.antofagasta.co.uk/media/3004/antofagasta_annual-report-2015.pdf
+det_1385;Newmont Mining Corporation (2014) Regional Operating Statistics 2013;https://www.newmont.com/files/doc_financials/quarterly/2013/q4/NEM-Q4-FY-2013-Regional-Operating-Statistics_v001_k012q1.pdf
+det_1386;Newmont Mining Corporation (2013) Regional Operating Statistics 2011;https://www.newmont.com/files/doc_financials/quarterly/2011/q4/NEM-Q4-2011-Regional-Operating-Statistics-02-23-12.pdf
+det_1387;Southern Copper Corporation (2011) Annual Report 2010;https://www.sec.gov/Archives/edgar/data/1001838/000110465911011083/a11-2140_110k.htm
+det_1388;"BHP Annual Report 2019 ; BHP Billiton (2004) Form 20-F Annual Report 2004";"https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf?la=en ; https://www.bhp.com/-/media/bhp/documents/investors/reports/2004/2004form20fdescriptionofbusinessparta.pdf?la=en"
+det_1389;"BHP Billiton (2007) Form 20-F Annual Report 2007 ; BHP Billiton (2010) Annual Report 2010";"https://www.bhp.com/-/media/bhp/documents/investors/reports/2007/20fstatement2007.pdf?la=en ; https://www.bhp.com/-/media/bhp/documents/investors/reports/2010/bhpbillitonannualreport2010.pdf?la=en"
+det_1390;"BHP Annual Report 2019 ; BHP Billiton (2007) Quarterly Production Report - June 2007";"https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf?la=en ; https://www.bhp.com/-/media/bhp/documents/investors/reports/2007/bhpbprodrptqe30jun07.pdf?la=en"
+det_1391;"Evolution Mining Website (Red Lake); Coldcorp Inc. (2015) Annual Report 2014";"https://evolutionmining.com.au/red-lake/ ; https://www.extractiveshub.org/servefile/getFile/id/5311"
+det_1392;Equinox Gold Website (2020) Los Filos Overview;https://www.equinoxgold.com/operations/operating-mines/los-filos/#overview
+det_1393;Vale S.A. (2014) Annual Report 2013, Companhia Vale Do Rio Doce (2005) Annual Report 2004;"http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2013_i.pdf ; http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2004_i.pdf"
+det_1394;Companhia Vale Do Rio Doce (2008) Annual Report 2007, Companhia Vale Do Rio Doce (2005) Annual Report 2004;"http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2007_i.pdf ; http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2004_i.pdf"
+det_1395;Companhia Vale Do Rio Doce (2005) Annual Report 2004, Companhia Vale Do Rio Doce (2005) Annual Report 2004;"http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2004_i.pdf ; http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2004_i.pdf"
+det_1396;Companhia Vale Do Rio Doce (2002) Annual Report 2001;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/F2001i.pdf
+det_1397;Vale (2020) Production and Sales 4Q19 and 2019;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T19_i.pdf
+det_1398;Newmont Interactive Analyst center (last updated on 2/21/2020);http://apps.indigotools.com/IR/IAC/?Ticker=NEM&Exchange=NYSE#
+det_1399;Newmont Mining Corporation (2016) Regional Operating Statistics 2015;https://www.newmont.com/files/doc_financials/quarterly/2015/q4/Operating-Statistics-Q4-and-FY2015.pdf
+det_1400;Newmont Mining Corporation (2012) Regional Operating Statistics 2011;https://www.newmont.com/files/doc_financials/quarterly/2011/q4/NEM-Q4-2011-Regional-Operating-Statistics-02-23-12.pdf
+det_1401;Newmont Mining Corporation (2010) Regional Operating Statistics 2009;https://www.newmont.com/files/doc_financials/quarterly/2009/q4/Fourth_Quarter_and_2009_Regional_Operating_Statistics.pdf
+det_1402;Newmont Mining Corporation (2009) Regional Operating Statistics 2008;https://www.newmont.com/files/doc_financials/quarterly/2008/q4/RegionalOperatingStatistics2008update.pdf
+det_1403;First Quantum Minerals Ltd (2014) Annual Report 2014;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2014.pdf
+det_1404;First Quantum Minerals Ltd (2016) Annual Report 2016;http://www.annualreports.com/HostedData/AnnualReportArchive/f/TSX_FM_2016.pdf
+det_1405;Kinross Gold (2019) Annual Report 2018;"https://s2.q4cdn.com/496390694/files/doc_financials/annual/2019/2018-Kinross-Annual-Report-Final.pdf; https://s2.q4cdn.com/496390694/files/doc_financials/quarterly_reports/2018/q4/2018-Reserves-and-Resources.pdf"
+det_1406;Newmont Mining Corporation (2010) Regional Operating Statistics 2009;https://www.newmont.com/files/doc_financials/quarterly/2011/q4/NEM-Q4-2011-Regional-Operating-Statistics-02-23-12.pdf
+det_1407;Barrick Gold Corp. (2019) Mine Statistics Q4 2018;https://barrick.q4cdn.com/788666289/files/quarterly-report/2018/Barrick-Mine-Stats-2018-Q4.pdf
+det_1408;Barrick Gold Corp. (2017) Mine Statistics Q4 2016;https://barrick.q4cdn.com/788666289/files/doc_financials/quarterly/2016/q4/Barrick-Mine-Stats-2016-Q4.pdf
+det_1409;Barrick Gold Corp. (2015) Mine Statistics Q4 2014;https://barrick.q4cdn.com/788666289/files/doc_financials/quarterly/2014/q4/Barrick-Mine-Stats-2014-Q4.pdf
+det_1410;Barrick Gold Corp. (2013) Mine Statistics Q4 2012;https://barrick.q4cdn.com/788666289/files/doc_financials/quarterly/2012/q4/Barrick-Mine-Stats-2012-Q4.pdf
+det_1411;Barrick Gold Corp. (2011) Mine Statistics Q4 2010;https://barrick.q4cdn.com/788666289/files/doc_financials/quarterly/2010/q4/Q4-Mine-Stats_v001_r2ecj7.pdf
+det_1412;Barrick Gold Corp. (2010) Mine Statistics Q4 2009;https://barrick.q4cdn.com/788666289/files/doc_financials/quarterly/2009/q4/Q4-Mine-Statistics_v001_d03bl5.pdf
+det_1413;Barrick Gold Corp. (2009) Mine Statistics Q4 2008;https://barrick.q4cdn.com/788666289/files/doc_financials/quarterly/2008/q4/2008-Q4-Mine-Statistics_v001_n587j4.PDF
+det_1414;Barrick Gold Corp. (2007) Mine Statistics Q4 2006;https://barrick.q4cdn.com/788666289/files/doc_financials/quarterly/2006/q4/Barrick-2006-Mine-Statistics_v001_z19j9l.pdf
+det_1415;Oceana Gold Corporation Interactive Analyst Center (Last Updated On: 4/6/2020);https://apps.indigotools.com/IR/iac/?ticker=OGC&exchange=TSX#
+det_1416;Rio Tinto (2016) Annual Report 2015;https://www.riotinto.com/invest/reports
+det_1417;Rio Tinto (2014) Annual Report 2013;https://www.riotinto.com/invest/reports
+det_1418;"Rio Tinto (2010) Annual Report 2009 ; Vale (2010) Production Report Q4 2009";"https://www.riotinto.com/invest/reports ; http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T09i.pdf"
+det_1419;Southern Copper Corporation (2017) Annual Report 2016;https://www.sec.gov/Archives/edgar/data/1001838/000104746917001143/a2231031z10-k.htm#dw46203_item_7._management_s_discussio__ite03668
+det_1420;Southern Copper Corporation (2014) Annual Report 2013;https://www.sec.gov/Archives/edgar/data/1001838/000110465914014124/a13-26010_110k.htm
+det_1421;Southern Copper Corporation (2008) Annual Report 2007;https://www.sec.gov/Archives/edgar/data/1001838/000110465908014154/a08-2675_110k.htm#Item7_ManagementsDiscussionAndAna_211722
+det_1422;Southern Peru Copper Corporation (2005) Annual Report 2004;https://www.sec.gov/Archives/edgar/data/1001838/000110465905011512/a05-5161_110k.htm
+det_1423;Southern Peru Copper Corporation (2003) Annual Report 2002;https://www.sec.gov/Archives/edgar/data/1001838/000091205702011721/a2074583z10-k.txt
+det_1424;Coldcorp Inc. (2017) Annual Report 2016;https://www.newmont.com/files/doc_financials/mda/annual/2016-Annual-Report.pdf
+det_1425;Teck Cominco Limited (2008) Annual Report 2007;https://www.teck.com/media/Investors-2007_Annual_Report_T5.1.1.pdf
+det_1426;Teck Cominco Limited (2005) Annual Report 2004;https://www.teck.com/media/Investors-2004_Annual_Report_T5.1.1.pdf
+det_1427;Teck Cominco Limited (2002) Annual Report 2001;https://www.teck.com/media/Investors-2001_Annual_Report_T5.1.1.pdf
+det_1428;Teck Resources Limited (2010) Annual Report 2009;https://www.teck.com/media/Investors-Teck_2009_Annual_Report_T5.1.1.pdf
+det_1429;Teck Resources Limited (2009) Annual Report 2008;https://www.teck.com/media/Investors-Teck_2008_Annual_Report_T5.1.1.pdf
+det_1430;Coldcorp Inc. (2019) Annual Report 2018;https://www.newmont.com/files/doc_financials/mda/annual/12.31.2018-MD-A-and-Financial-Statements.pdf
+det_1431;Coldcorp Inc. (2013) Annual Report 2012;https://www.sec.gov/Archives/edgar/data/919239/000119312513087527/d482369dex992.htm
+det_1432;Coldcorp Inc. (2011) Annual Report 2010;https://www.sec.gov/Archives/edgar/data/919239/000095012311031581/o68669exv99w2.htm
+det_1433;Coldcorp Inc. (2005) Annual Report 2004;https://www.sec.gov/Archives/edgar/data/919239/000090956705000706/t16200exv99w3.htm
+det_1434;Coldcorp Inc. (2003) Annual Report 2002;https://www.sec.gov/Archives/edgar/data/919239/000090956703000686/t09902exv2.htm
+det_1435;Coldcorp Inc. (2016) Annual Report 2015;https://s24.q4cdn.com/382246808/files/doc_financials/mda/annual/Annual-Report-SEDAR-1.pdf
+det_1436;Companhia Vale Do Rio Doce (2005) Annual Report 2004;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2004_i.pdf
+det_1437;Vale (2018) Production and Sales in 4Q17;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/2017%204Q%20Production%20Report_i.pdf
+det_1438;Vale (2016) Production in 4Q15;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T15_i.pdf
+det_1439;Vale (2014) Production Report 2013;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T13_i.pdf
+det_1440;Vale (2012) Production Report 2011;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T11_i.pdf
+det_1441;Vale (2010) Production Report 2009;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T09i.pdf
+det_1442;Vale (2008) Production Report 2007;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T07i.pdf
+det_1443;Vale (2006) Production Report 2005;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/tabelas_rp_4T05_i.xls
+det_1444;Vale (2004) Production Report 2003;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/ProductionReport2003in.pdf
+det_1445;Companhia Vale Do Rio Doce (2009) Annual Report 2008;http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2008_i.pdf
+det_1446;Inco Limited (2006) Annual Report 2005;https://www.sec.gov/Archives/edgar/data/49996/000090956706000403/o30490e10vk.htm
+det_1447;Norsk Hydro (2020) Annual Report 2019;https://www.hydro.com/Document/Index?name=Annual%20report%202019%20web.pdf&id=506433
+det_1448;Norsk Hydro (2019) Annual Report 2018;https://www.hydro.com/Document/Index?name=2018%20Annual%20report.pdf&id=8525
+det_1449;Norsk Hydro (2018) Annual Report 2017;https://www.hydro.com/Document/Index?name=Hydro%20Annual%20Report%202017&id=3097
+det_1450;Norsk Hydro (2017) Annual Report 2016;https://www.hydro.com/Document/Index?name=Hydro%20Annual%20Report%202016.pdf&id=7363
+det_1451;Norsk Hydro (2016) Annual Report 2015;https://www.hydro.com/en-DE/investors/reports-and-presentations/quarterly-reports/previous-reports/
+det_1452;Norsk Hydro (2015) Annual Report 2014;https://www.hydro.com/en-DE/investors/reports-and-presentations/quarterly-reports/previous-reports/
+det_1453;Norsk Hydro (2014) Annual Report 2013;https://www.hydro.com/en-DE/investors/reports-and-presentations/quarterly-reports/previous-reports/
+det_1454;Norsk Hydro (2013) Annual Report 2012;https://www.hydro.com/en-DE/investors/reports-and-presentations/quarterly-reports/previous-reports/
+det_1455;Norsk Hydro (2012) Annual Report 2011;https://www.hydro.com/en-DE/investors/reports-and-presentations/quarterly-reports/previous-reports/
+det_1456;Lundin Mining Corp. (2020) Annual MD&A and Financial Statements 2019;https://www.lundinmining.com/site/assets/files/8020/lundin_mining_-_2019_ye.pdf
+det_1457;Lundin Mining Corp. (2018) Annual MD&A and Financial Statements 2017;https://www.lundinmining.com/site/assets/files/3725/2017ye.pdf
+det_1458;Lundin Mining Corp. (2016) Annual MD&A and Financial Statements 2015;https://www.lundinmining.com/site/assets/files/3752/2015ye.pdf
+det_1459;Phelps Dodge Corp. (2004) Annual Form 10-K Report 2003;https://www.sec.gov/Archives/edgar/data/78066/000095015304000475/p68822e10vk.htm#176
+det_1460;BHP Group (2019) Operational Review for the year ended 30 June 2019;https://www.bhp.com/-/media/documents/media/reports-and-presentations/2019/190717_bhpoperationalreviewfortheyearended30june2019.pdf?la=en
+det_1461;BHP Group (2017) Operational Review for the year ended 30 June 2017;https://www.bhp.com/-/media/documents/media/reports-and-presentations/2017/170719_operationalreviewfortheyearended30june2017.pdf?la=en
+det_1462;BHP Billiton (2015) Operational Review for the year ended 30 June 2015;https://www.bhp.com/-/media/bhp/documents/investors/reports/2015/150722_bhpbillitonoperationalreviewfortheyearended30june2015.pdf?la=en
+det_1463;BHP Billiton (2013) Production Report for the year ended 30 June 2013;https://www.bhp.com/-/media/bhp/documents/investors/reports/2013/130717_bhpbillitonproductionreportfortheyearended30june2013.pdf?la=en
+det_1464;BHP Billiton (2011) Production Report for the year ended 30 June 2011;https://www.bhp.com/-/media/bhp/documents/investors/reports/2011/110720_bhp-billiton-production-report-for-the-year-ended-30-june-2011.pdf?la=en
+det_1465;BHP Billiton (2009) Quarterly Production Report - June 2009;https://www.bhp.com/-/media/bhp/documents/investors/reports/2009/2009q2productionreport.pdf?la=en
+det_1466;BHP Billiton (2007) Quarterly Production Report - June 2007;https://www.bhp.com/-/media/bhp/documents/investors/reports/2007/bhpbprodrptqe30jun07.pdf?la=en
+det_1467;BHP Billiton (2005) Quarterly Production Report - June 2005;https://www.bhp.com/-/media/bhp/documents/investors/reports/2005/050728-bhp-billiton-prod-rpt-qe-30-jun-05.pdf?la=en
+det_1468;BHP Billiton (2003) Quarterly Production Report - June 2003;https://www.bhp.com/-/media/bhp/documents/investors/reports/2003/nr2403productionreport24july2003.pdf?la=en
+det_1469;Capstone Mining Corp (2020) Financial Statements and MD&A 2019;https://s2.q4cdn.com/231101920/files/doc_financials/2019/q4/CS-2019-Q4-Financials-MDA.pdf
+det_1470;Capstone Mining Corp (2018) Financial Statements and MD&A 2017;https://s2.q4cdn.com/231101920/files/doc_financials/2017/q4/2017-12_CS_Financials-and-MDA.pdf
+det_1471;Capstone Mining Corp (2016) Financial Statements and MD&A 2015;https://s2.q4cdn.com/231101920/files/doc_financials/q42015/2015-12-CS-FS_MDA.pdf
+det_1472;South32 Limited (2019) Quarterly Report June 2019;https://www.south32.net/docs/default-source/all-financial-results/fy2019-quarterly-results/quarterly-report-june-2019.pdf?sfvrsn=1e5d5298_4
+det_1473;South32 Limited (2017) Quarterly Report June 2017;https://www.south32.net/docs/default-source/all-financial-results/fy2017-quarterly-results/quarterly-report-june-2017_final-(asx).pdf?sfvrsn=9424756b_6
+det_1474;South32 Limited (2015) Quarterly Report June 2015;https://www.south32.net/docs/default-source/all-financial-results/fy2015-quarterly-results/south32---june-quarterly-report-2015.pdf?sfvrsn=69592cef_4
+det_1475;BHP Billiton (2004) Quarterly Production Report - June 2004;https://www.bhp.com/-/media/bhp/documents/investors/reports/2004/june04productionreport.pdf?la=en
+det_1476;BHP Billiton (2002) Quarterly Production Report - June 2002;https://www.bhp.com/-/media/bhp/documents/investors/reports/2002/nr43productionreport.pdf?la=en
+det_1477;BHP Group (2019) Annual Report 2019;https://www.bhp.com/-/media/documents/investors/annual-reports/2019/bhpannualreport2019.pdf
+det_1478;BHP Billiton (2016) Annual Report 2016;https://www.bhp.com/-/media/bhp/documents/investors/annual-reports/2016/bhpbillitonannualreport2016.pdf?la=en
+det_1479;Ok Tedi Limited (2020) Annual Review 2019;https://oktedi.com/who-we-are/annual-performance/
+det_1480;Ok Tedi Limited (2018) Annual Review 2017;https://oktedi.com/who-we-are/annual-performance/
+det_1481;Ok Tedi Limited (2017) Annual Review 2016;https://oktedi.com/who-we-are/annual-performance/
+det_1482;Ok Tedi Limited (2013) Annual Review 2012;https://oktedi.com/who-we-are/annual-performance/
+det_1483;Ok Tedi Limited (2009) Annual Review 2008;https://oktedi.com/who-we-are/annual-performance/
+det_1484;Ok Tedi Limited (2007) Annual Review 2006;https://oktedi.com/who-we-are/annual-performance/
+det_1485;Ok Tedi Limited (2005) Annual Review 2004;https://oktedi.com/who-we-are/annual-performance/
+det_1486;Ok Tedi Limited (2003) Annual Review 2002;https://oktedi.com/who-we-are/annual-performance/
+det_1487;Capstone Mining Corp (2014) Financial Statements and MD&A 2013;https://s2.q4cdn.com/231101920/files/doc_financials/q4%202013/2013-Q4.pdf
+det_1488;Capstone Mining Corp (2012) Financial Statements and MD&A 2011;https://s2.q4cdn.com/231101920/files/doc_financials/q4%202011/2011-Q4.pdf
+det_1489;Capstone Mining Corp (2010) Financial Statements and MD&A 2009;https://s2.q4cdn.com/231101920/files/doc_financials/q4%202009/2009Q4FS.pdf
+det_1490;Capstone Mining Corp (2009) Financial Statements and MD&A 2008;https://s2.q4cdn.com/231101920/files/doc_financials/q4%202008/2008Q4FS.pdf
+det_1491;Capstone Mining Corp Website (Capstone Mining Year-End and Fourth Quarter Results, 11/14/2007);https://capstonemining.com/news/news-details/2007/Capstone-Mining-Year-End-and-Fourth-Quarter-Results/default.aspx
+det_1492;Pembridge Resources Plc. (2019) Competent Person's Report Minto Mine;https://www.pembridgeresources.com/component/rsfiles/download?path=Presentations%252FPEM-20190623_Minto%2BCPR%2BFinal%2BSigned.pdf
+det_1493;Antofagasta Plc. (2012) Annual Report 2011;https://www.antofagasta.co.uk/media/2601/annual-report-2011.pdf
+det_1494;Antofagasta Plc. (2010) Annual Report 2009;https://www.antofagasta.co.uk/media/3020/ar-2009.pdf
+det_1495;Antofagasta Plc. (2008) Annual Report 2007;https://www.antofagasta.co.uk/media/3028/ar-2007.pdf
+det_1496;Antofagasta Plc. (2006) Annual Report 2005;https://www.antofagasta.co.uk/media/3030/ar-2005.pdf
+det_1497;Antofagasta Plc. (2004) Annual Report 2003;https://www.antofagasta.co.uk/media/3033/ar-2003.pdf
+det_1498;Antofagasta Plc. (2002) Annual Report 2001;https://www.antofagasta.co.uk/media/3035/ar-2001.pdf
+det_1499;Newmont Mining Corporation (2015) Annual Report 2014;https://www.newmont.com/files/doc_financials/annual/861753_as-printed-Annual-Report_2014_v001_e83uds.pdf
+det_1500;Newmont Mining Corporation (2012) Annual Report 2011;https://www.newmont.com/files/doc_financials/annual/2011_Newmont_Annual_Report_and_10_K.pdf
+det_1501;Newmont Mining Corporation (2009) Annual Report 2008;http://www.annualreports.com/HostedData/AnnualReportArchive/n/NYSE_NEM_2008.pdf
+det_1502;Newmont Mining Corporation (2008) Annual Report 2007;http://www.annualreports.com/HostedData/AnnualReportArchive/n/NYSE_NEM_2007.pdf
+det_1503;Newmont Mining Corporation (2007) Annual Report 2006;http://www.annualreports.com/HostedData/AnnualReportArchive/n/NYSE_NEM_2006.pdf
+det_1504;Newmont Mining Corporation (2017) Annual Report 2016;https://www.newmont.com/files/doc_financials/annual/Newmont-2016-Annual-Report-Bookmarked-PDF-for-website.pdf
+det_1505;Newmont Mining Corporation (2006) Annual Report 2005;http://www.annualreports.com/HostedData/AnnualReportArchive/n/NYSE_NEM_2005.pdf
+det_1506;Newmont Mining Corporation (2005) Annual Report 2004;http://www.annualreports.com/HostedData/AnnualReportArchive/n/NYSE_NEM_2004.pdf
+det_1507;Newmont Mining Corporation (2004) Annual Report 2003;http://www.annualreports.com/HostedData/AnnualReportArchive/n/NYSE_NEM_2003.pdf
+det_1508;"Newmont Interactive Analyst center (last updated on 2/21/2020) ; Newmont Mining Corporation (2019) Annual Report 2018";http://apps.indigotools.com/IR/IAC/?Ticker=NEM&Exchange=NYSE#
+det_1509;Newmont Interactive Analyst center (last updated on 2/21/2020);"http://apps.indigotools.com/IR/IAC/?Ticker=NEM&Exchange=NYSE# ; https://www.newmont.com/files/doc_financials/annual/2018-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf"
+det_1510;"Newmont Interactive Analyst center (last updated on 2/21/2020) ; Newmont Mining Corporation (2018) Annual Report 2017";"http://apps.indigotools.com/IR/IAC/?Ticker=NEM&Exchange=NYSE# ; https://www.newmont.com/files/doc_financials/annual/2017-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf"
+det_1511;"Newmont Interactive Analyst center (last updated on 2/21/2020) ; Newmont Mining Corporation (2017) Annual Report 2016";"http://apps.indigotools.com/IR/IAC/?Ticker=NEM&Exchange=NYSE# ; https://www.newmont.com/files/doc_financials/annual/Newmont-2016-Annual-Report-Bookmarked-PDF-for-website.pdf"
+det_1512;"Newmont Interactive Analyst center (last updated on 2/21/2020) ; Newmont Mining Corporation (2016) Annual Report 2015";"http://apps.indigotools.com/IR/IAC/?Ticker=NEM&Exchange=NYSE#; https://s2.q4cdn.com/575378270/files/doc_financials/annual/newmont-2015-AR.pdf"
+det_1513;"Newmont Interactive Analyst center (last updated on 2/21/2020) ; AngloGold Ashanti (2019) Integrated Annual Report 2018";"http://apps.indigotools.com/IR/IAC/?Ticker=NEM&Exchange=NYSE# ; http://www.aga-reports.com/18/download/AGA-IR18.pdf"
+det_1514;Newmont Mining Corporation (2020) Annual Report 2019;https://www.newmont.com/files/doc_financials/annual/2019/370034(1)_23_Newmont_Web-Ready-Annual-Report-and-10-K.pdf
+det_1515;Newmont Mining Corporation (2019) Annual Report 2018;https://www.newmont.com/files/doc_financials/annual/2018-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf
+det_1516;Newmont Mining Corporation (2019) Regional Operating Statistics 2018;https://www.newmont.com/files/doc_financials/quarterly/2018/q4/Newmont-Full-Year-and-Fourth-Quarter-2018-Regional-Operating-Statistics_Final.pdf
+det_1517;Newmont Mining Corporation (2018) Regional Operating Statistics 2017;https://www.newmont.com/files/doc_financials/quarterly/2017/q4/Newmont-Regional-Operating-Statistics-Q4-2017.pdf
+det_1518;Newmont Mining Corporation (2018) Annual Report 2017;https://www.newmont.com/files/doc_financials/annual/2017-Newmont-Annual-Report-Web-Posting-Bookmarked-PDF-(002).pdf
+det_1519;Newmont Mining Corporation (2016) Annual Report 2015;https://www.newmont.com/files/doc_financials/annual/newmont-2015-AR.pdf
+det_1520;"Newmont Mining Corporation (2016) Annual Report 2015 ; Oceana Gold Corporation (2016) Annual Information Form 2015";"https://s2.q4cdn.com/575378270/files/doc_financials/annual/newmont-2015-AR.pdf ; https://oceanagold.com/wp-content/uploads/2016/04/2015-OceanaGold-AIF.pdf"
+det_1521;Bengalla Ltd. (2019) Annual Review 2018;https://www.bengalla.com.au/wp-content/uploads/2019/03/Bengalla-Mine-Annual-Review-2018-Part-1-Main-Document.pdf
+det_1522;Bengalla Ltd. (2017) Annual Review 2016;https://www.bengalla.com.au/wp-content/uploads/2016/01/170331-Bengalla-Annual-Review-2016_Reduced_Part-1.pdf
+det_1523;Aur Resources Inc. (2007) Annual Report 2006;https://www.sec.gov/Archives/edgar/vprr/0702/07024126.pdf
+det_1524;Aur Resources Inc. (2006) Annual Report 2005;https://www.sec.gov/Archives/edgar/vprr/0601/06013881.pdf
+det_1525;Aur Resources Inc. (2004) Annual Report 2003;https://www.sec.gov/Archives/edgar/vprr/0402/04024198.pdf
+det_1526;"Kinross Gold (2008) Annual Report 2007 ; Coldcorp Inc. (2009) Annual Report 2008";"https://s2.q4cdn.com/496390694/files/doc_financials/annual/2007/2007-annual-report.pdf ; https://www.sec.gov/Archives/edgar/data/919239/000094523409000065/o54181exv99w2.htm"
+det_1527;Freeport-McMoRan Inc. (2017) Annual Form 10-K Report 2016;http://d18rn0p25nwr6d.cloudfront.net/CIK-0000831259/3453e93c-2322-4b36-8e56-c5170b2a4660.pdf
+det_1528;Freeport-McMoRan Inc. (2011) Annual Form 10-K Report 2010;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/6e1a9da4-c909-49f9-88bf-9c1b3546bd19.pdf
+det_1529;Freeport-McMoRan Inc. (2008) Annual Form 10-K Report 2007;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/300c2a87-0ef1-49ca-b242-f6ba1d7fa93b.pdf
+det_1530;Freeport-McMoRan Inc. (2004) Annual Form 10-K Report 2003;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/5d0ca201-8e70-403e-8fa6-03ddc32d10bb.pdf
+det_1531;Codelco (2017) Annual Report 2016;https://www.codelco.com/memoria2016/en/pdf/annual-report/annual-report-2016.pdf
+det_1532;Codelco (2015) Annual Report 2014;https://www.codelco.com/memoria2014/site/artic/20150309/asocfile/20150309130002/memoria_ingles_2014_final.pdf
+det_1533;Codelco (2013) Memoria Anual 2012;https://www.codelco.com/prontus_codelco/site/artic/20160311/asocfile/20160311173150/memoriacodelco2012_2.pdf
+det_1534;Codelco (2011) Memoria Anual 2010;https://www.codelco.com/prontus_codelco/site/artic/20160327/asocfile/20160327203832/memoria_002010.pdf
+det_1535;Codelco (2009) Memoria Anual 2008;https://www.codelco.com/prontus_codelco/site/artic/20160331/asocfile/20160331122002/memoriacodelco2008.pdf
+det_1536;Codelco (2007) Memoria Anual 2006;https://www.codelco.com/prontus_codelco/site/artic/20160403/asocfile/20160403210124/memoria2006.pdf
+det_1537;Codelco (2005) Memoria Anual 2004;https://www.codelco.com/prontus_codelco/site/artic/20160404/asocfile/20160404104028/memoria_codelco_2004.pdf
+det_1538;Codelco (2003) Memoria Anual 2002;https://www.codelco.com/prontus_codelco/site/artic/20160509/asocfile/20160509125431/memoria_2002.pdf
+det_1539;Codelco (2001) Memoria Anual 2000;https://www.codelco.com/prontus_codelco/site/artic/20160509/asocfile/20160509125232/memoria_00.pdf
+det_1540;Antofagasta Plc. (2020) Q4 2019 Production Report;https://www.antofagasta.co.uk/media/3744/aplc19q4prodreport-vf.pdf
+det_1541;Antofagasta Plc. (2018) Q4 2017 Production Report;https://www.antofagasta.co.uk/media/3320/aplc17q4prodreport-final.pdf
+det_1542;Antofagasta Plc. (2014) Annual Report 2013;https://www.antofagasta.co.uk/media/2667/annual-report-2013.pdf
+det_1543;Rio Tinto (2013) Annual Report 2012;http://www.riotinto.com/documents/RT_Annual_report_2013.pdf
+det_1544;Vale (2014) 2013 and 4Q13 Production Report;http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T13_i.pdf
+det_1545;"Vale (2010) Production Report 2009 ;Vale S.A. (2011) Annual Report 2010";"http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T09i.pdf ; http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2010_i.pdf"
+det_1546;"Vale (2008) Production Report 2007 ; Companhia Vale Do Rio Doce (2008) Annual Report 2007";"http://www.vale.com/EN/investors/information-market/quarterly-results/QuarterlyResultsDocs/PREPORT4T07i.pdf ; http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2007_i.pdf"
+det_1547;Freeport-McMoRan Inc. (2013) Annual Form 10-K Report 2012;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/7bdc495a-2712-4829-bdab-0e9d6728ce3e.pdf
+det_1548;Freeport-McMoRan Inc. (2012) Annual Form 10-K Report 2011;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/23336a2d-d981-4d79-8c9b-a1a4cc259105.pdf
+det_1549;Freeport-McMoRan Inc. (2010) Annual Form 10-K Report 2009;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/c028e297-96c1-4fa4-b633-ae2eb13e674d.pdf
+det_1550;Freeport-McMoRan Inc. (2007) Annual Form 10-K Report 2006;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/ff64124c-0657-4095-88d4-73c7b680aaa2.pdf
+det_1551;Freeport-McMoRan Inc. (2006) Annual Form 10-K Report 2005;http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/6e72582f-bd6a-4a17-8143-c95119860758.pdf
+det_1552;Collahuasi Website (Production and Sales);http://www.collahuasi.cl/en/que-hacemos/produccion-y-ventas/
+det_1553;Tronox Website (Global Locations);https://www.tronox.com/about-us/global-locations/#9423
+det_1554;Kinross Gold (2019) Mineral Reserves & Resources Statement 2018;https://s2.q4cdn.com/496390694/files/doc_financials/quarterly_reports/2018/q4/2018-Reserves-and-Resources.pdf
+det_1555;Kinross Gold (2013) Mineral Reserves & Resources Statement 2012;https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/kinross-gold-2012-mineral-reserves-and-resources.pdf
+det_1556;Kinross Gold (2011) Mineral Reserves & Resources Statement 2010;https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/2010-mineral-reserve-and-resource-statement.pdf
+det_1557;Kinross Gold (2008) Mineral Reserves & Resources Statement 2007;https://s2.q4cdn.com/496390694/files/doc_downloads/reserves_and_resources/2007-reserve-resource-statements.pdf
+det_1558;Rio Tinto (2018) Annual Report 2017;https://www.riotinto.com/invest/reports
+det_1559;Newcrest Mining Limited (2018) Annual Mineral Resources and Ore Statement - 31 December 2018;https://www.newcrest.com/sites/default/files/2019-10/181231_Newcrest%20December%202018%20Resources%20and%20Reserves%20-%20Statement.pdf
+det_1560;MMG Limited (2018) Annual Report 2018;https://www.mmg.com/wp-content/uploads/attachments/MMG1178_AR_2018_FA3_web-version.pdf
+det_1561;MMG (2016) Annual Report 2016;https://www.mmg.com/wp-content/uploads/attachments/MMG_Annual-Report2016.pdf
+det_1562;"Anglo American plc (2019) Ore Reserves and Mineral Resources Report 2018        
+";https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2019/aa-ore-reserves-and-mineral-resources-2018.pdf
+det_1563;Hudbay Minerals Inc. Website (Canada);https://hudbayminerals.com/canada/default.aspx
+det_1564;Hudbay Minerals Inc. Website (Canada);https://hudbayminerals.com/united-states/default.aspx
+det_1565;Hudbay Minerals Inc. Website (Canada);https://hudbayminerals.com/peru/default.aspx
+det_1566;Lundin Mining Corp. (2020) Annual Information Form 2019;https://www.lundinmining.com/site/assets/files/7863/lmc_-_2019_aif_-_032720.pdf
+det_1567;South32 Website (South African Manganese);https://www.south32.net/our-business/southern-africa/south-africa-manganese
+det_1568;Capstone Mining Corp (2020) Annual Information Form 2019;https://s2.q4cdn.com/231101920/files/doc_financials/2019/AIF_2019.pdf
+det_1569;Barrick Gold Corporation (2019) Operations Zaldivar;https://www.barrick.com/English/operations/zaldivar/default.aspx
+det_1570;"Anglo American plc (2019) Ore Reserves and Mineral Resources Report 2018 ; South32 Website (GEMCO)";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2019/aa-ore-reserves-and-mineral-resources-2018.pdf ; https://www.south32.net/our-business/australia/gemco"
+det_1571;"Anglo American plc (2017) Annual Report 2016 ; South32 Website (TEMCO)";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2017/annual-report-2016-interactive-v2.pdf ; https://www.south32.net/our-business/australia/temco"
+det_1572;BHP Billiton (2002) Annual Report 2002;https://www.bhp.com/-/media/bhp/documents/investors/reports/2002/2002_ltd_annual_report.pdf?la=en
+det_1573;Antofagasta Plc. Website (Los Pelambres);https://www.antofagasta.co.uk/our-business/mining-division/los-pelambres/
+det_1574;Antofagasta Plc. Website (Centinela);https://www.antofagasta.co.uk/our-business/mining-division/centinela/
+det_1575;Antofagasta Plc. Website (Antucoya);https://www.antofagasta.co.uk/our-business/mining-division/antucoya/
+det_1576;"Rio Tinto (2007) Annual Report 2006 ; Lundin Mining Corp. Website (Zinkgruvan)";"https://bib.kuleuven.be/files/ebib/jaarverslagen/RioTinto_2006.pdf ; https://www.lundinmining.com/operations/zinkgruvan/"
+det_1577;"Freeport-McMoRan Inc. (2014) Annual Form 10-K Report 2013 ; Lundin Mining Corp. (2016) Annual MD&A and Financial Statements 2015";"http://d1lge852tjjqow.cloudfront.net/CIK-0000831259/ca3fa220-7699-4dc6-9d98-09ff08563e6f.pdf ; https://www.lundinmining.com/site/assets/files/3752/2015ye.pdf"
+det_1578;"Glencore plc. Website (World Map) ; Glencore plc. Annual Report 2011";"https://www.glencore.com/world-map ; https://www.glencore.com/dam/jcr:59c1399e-1052-4acb-9251-0942ada05e32/xta-ar2011-en.pdf"
+det_1579;Xiana Mining Inc. Website (minera altos de Punitaqui);https://www.xianamining.com/operation/minera-altos-de-punitaqui/
+det_1580;Katanga Mining Ltd. Website (Key Assets);http://www.katangamining.com/operations/key-assets.aspx
+det_1581;Glencore plc. Website (World Map);https://www.glencore.com/world-map
+det_1582;CSA Mine Website (About CSA Mine);http://www.csamine.com.au/about-us/
+det_1583;McArthur River Mine Website (Our Location);https://www.mcarthurrivermine.com.au/en/about-us/Pages/our-location.aspx
+det_1584;"KGHM Polska Miedź S.A. (2019) Sustainable Report of KGHM Polska Miedź S.A. for 2018 ; KGHM Website (Polkowice-Sieroszowice)";"https://kghm.com/en/node/4991 ; https://kghm.com/en/our-business/mining-and-enrichment/polkowice-sieroszowice"
+det_1585;"KGHM Polska Miedź S.A. (2019) Sustainable Report of KGHM Polska Miedź S.A. for 2018 ; KGHM Website (Rudna)";"https://kghm.com/en/node/4991 ; https://kghm.com/en/our-business/mining-and-enrichment/rudna"
+det_1586;"KGHM Polska Miedź S.A. (2019) Sustainable Report of KGHM Polska Miedź S.A. for 2018 ; KGHM Website (Lubin)";"https://kghm.com/en/node/4991 ; https://kghm.com/en/our-business/mining-and-enrichment/lubin"
+det_1587;KGHM Polska Miedź S.A. (2019) Sustainable Report of KGHM Polska Miedź S.A. for 2018;https://kghm.com/en/node/4991
+det_1588;KGHM Polska Miedź S.A. (2018) Integrated Report for 2017;https://kghm.com/en/node/4991
+det_1589;MMC Norlisk Nickel (2020) Annual Report 2019;https://www.nornickel.com/upload/iblock/5fc/2019_Annual_Report_of_Nornickel.pdf
+det_1590;Lundin Mining Corp. Website (Chapada);https://www.lundinmining.com/operations/chapada/
+det_1591;Lundin Mining Corp. Website (Eagle);https://www.lundinmining.com/operations/eagle/
+det_1592;Lundin Mining Corp. Website (Neves-Corvo);https://www.lundinmining.com/operations/neves-corvo/
+det_1593;"Lundin Mining Corp. (2016) Annual MD&A and Financial Statements 2015 ; Rio Narcea Gold Mines Lt. (2006) Annual Report 2005";"https://www.lundinmining.com/site/assets/files/3752/2015ye.pdf ; https://www.sec.gov/Archives/edgar/data/1098506/000117571006000082/exhibit2.htm"
+det_1594;Lundin Mining Corp. (2014) Annual MD&A and Financial Statements 2013;https://www.lundinmining.com/site/assets/files/4489/2013ye.pdf
+det_1595;Lundin Mining Corp. (2008) Annual Report 2007;https://www.annualreports.com/HostedData/AnnualReportArchive/L/TSX_LUN_2007.pdf
+det_1596;Yamana Gold Inc. (2020) NI 43-101 Technical Report Jacobina Gold Mine;https://s22.q4cdn.com/899716706/files/doc_downloads/2020/06/Yamana-Jacobina-NI-43-101-May-29-2020.pdf
+det_1597;Yamana Gold Inc. Website (Cerro Morro);https://www.yamana.com/English/portfolio/producing-mines/cerro-moro/default.aspx
+det_1598;Yamana Gold Inc. Website (El Peñón);https://www.yamana.com/English/portfolio/producing-mines/elpenon/default.aspx
+det_1599;Yamana Gold Inc. Website (Minera Florida);https://www.yamana.com/English/portfolio/producing-mines/minera-florida/default.aspx
+det_1600;Yamana Gold Inc. Website (Canadian Malartic);https://www.yamana.com/English/portfolio/producing-mines/canadian-malartic/default.aspx
+det_1601;"Yamana Gold Inc. (2009) Annual Report 2008 ; Mineros S.A. Website (Argentina)";"https://s22.q4cdn.com/899716706/files/doc_financials/annual/YAM08-FF_mar31.pdf ; https://mineros.com.co/en/Operations-and-Projects/Argentina"
+det_1602;"Premier Gold Mines Ltd. Website (Mercedes) ; Yamana Gold Inc. (2013) Annual Report 2012";"https://www.premiergoldmines.com/mercedes ; https://s22.q4cdn.com/899716706/files/doc_financials/annual/2012-Yamana-AR-01-04-13-final-spreads_v001_p63n2n.pdff"
+det_1603;Equinox Gold Website (Fazenda Overview);https://www.equinoxgold.com/operations/operating-mines/fazenda/#overview
+det_1604;Aura Minerals Inc. Website (San Andres Mine);http://auraminerals.com/operations/production/san-andres-mine/
+det_1605;Aura Minerals Inc. Website (Sao Francisco Mine);http://auraminerals.com/operations/growth/sao-francisco/
+det_1606;ArcelorMittal S.A. (2020) Form 20-F Annual Report 2019;https://corporate-media.arcelormittal.com/media/yyjlil0y/2019-arcelormittal-annual-report-on-form-20-f.pdf
+det_1607;ArcelorMittal S.A. (2014) Form 20-F Annual Report 2013;https://storagearcelormittaluat.blob.core.windows.net/media/0qipmvz0/annual-report-20f-2013.pdf
+det_1608;Companhia Siderurgica Nacional (2020) Form 20-F Annual Report 2019;https://s3.amazonaws.com/mz-filemanager/29633c00-23f7-4765-9594-926012179477/6a7f628f-f63a-4cba-be58-1119543282fe_csn_20f_sec_21072020.pdff
+det_1609;"Companhia Siderurgica Nacional (2020) Form 20-F Annual Report 2019 ; Companhia Siderurgica Nacional Website (Manufacturing Units)";"https://s3.amazonaws.com/mz-filemanager/29633c00-23f7-4765-9594-926012179477/6a7f628f-f63a-4cba-be58-1119543282fe_csn_20f_sec_21072020.pdf ; http://www.csn.com.br/conteudo_eni.asp?idioma=1&conta=46&tipo=59559"
+det_1610;"MetInvest B.V. (2019) Annual Report 2018 ; MetInvest B.V. (2009) Annual Report 2008";"https://metinvestholding.com/Content/Entities/Report/23/en/Metinvest_AR_2018.pdf ; https://metinvestholding.com/Content/Entities/Report/19/en/2008.pdf"
+det_1611;MetInvest B.V. (2019) Annual Report 2018;https://metinvestholding.com/Content/Entities/Report/23/en/Metinvest_AR_2018.pdf
+det_1612;"MetInvest B.V. (2019) Annual Report 2018 ; MetInvest Website (AVDIIVKA COKE PLANT)";"https://metinvestholding.com/Content/Entities/Report/23/en/Metinvest_AR_2018.pdf ; https://akhz.metinvestholding.com/en/"
+det_1613;MetInvest B.V. (2016) Annual Report 2015;https://metinvestholding.com/Content/Entities/Report/12/en/2015.pdf
+det_1614;"MetInvest B.V. (2019) Annual Report 2018 ; MetInvest Website (AZOVSTAL IRON & STEEL WORKS)";"https://metinvestholding.com/Content/Entities/Report/23/en/Metinvest_AR_2018.pdf ; https://azovstal.metinvestholding.com/en"
+det_1615;"MetInvest B.V. (2019) Annual Report 2018 ; MetInvest Website (ILYICH IRON AND STEEL WORKS)";"https://metinvestholding.com/Content/Entities/Report/23/en/Metinvest_AR_2018.pdf ; https://ilyichsteel.metinvestholding.com/en"
+det_1616;MetInvest B.V. (2010) Annual Report 2009;https://metinvestholding.com/Content/Entities/Report/18/en/2009.pdf
+det_1617;Luossavaara-Kiirunavaara AB (2020) Year End Report 2019;https://www.lkab.com/en/SysSiteAssets/documents/finansiell-information/delarsrapport/interim-report-q4-2019.pdff
+det_1618;Cleveland-Cliffs Inc. (2020) 10-K Annual Report 2019;http://d18rn0p25nwr6d.cloudfront.net/CIK-0000764065/6d3830b8-767a-4ebd-9d7f-5e1d82430c9d.pdf
+det_1619;Cleveland-Cliffs Inc. (2015) 10-K Annual Report 2014;http://d1lge852tjjqow.cloudfront.net/CIK-0000764065/921b9c8b-eb24-4f45-9a6f-52a773330efb.pdf
+det_1620;Cleveland-Cliffs Inc. (2018) 10-K Annual Report 2017;http://d18rn0p25nwr6d.cloudfront.net/CIK-0000764065/a8e627ad-304d-4f21-9a45-06de99d92e7e.pdf
+det_1621;Cleveland-Cliffs Inc. (2009) 10-K Annual Report 2008;http://d1lge852tjjqow.cloudfront.net/CIK-0000764065/63129d7c-1b9f-46b9-b9b4-f044a4eab390.pdf
+det_1622;Cleveland-Cliffs Inc. (2014) 10-K Annual Report 2013;http://d1lge852tjjqow.cloudfront.net/CIK-0000764065/dad158f3-f421-434b-9c98-ba6d157acdfe.pdf
+det_1623;"Mineral Resources Limited (2019) Annual Report 2019 ; Mineral Resources Limited (2014) Quarter 4 Mining Activities Report FY2014";"https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2019/10/09081031/2019AnnualReport02156834.pdf ; https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/09033444/01539012.pdf"
+det_1624;"Mineral Resources Limited (2014) Quarter 4 Mining Activities Report FY2014 ; Mineral Resources Limited (2013) Annual Report 2013 ; Mineral Resources Limited (2015) Annual Report 2015";"https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/09033444/01539012.pdf ; https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2019/05/27175336/01460684.pdf ; https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/05045759/Annual-Report-2015.pdf"
+det_1625;Mineral Resources Limited (2015) Annual Report 2015;https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/05045759/Annual-Report-2015.pdf
+det_1626;Mineral Resources Limited (2015) Quarterly Exploration and Mining Activities Report - April to June 2015 (Q4 FY15);https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/09073314/Quarterly-Activities-Report6.pdf
+det_1627;"Mineral Resources Limited (2019) Annual Report 2019 ; Mineral Resources Limited (2016) Quarterly Exploration and Mining Activities Report - April to June 2016 (Q4 FY16)";"https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2019/10/09081031/2019AnnualReport02156834.pdf ; https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/08085239/01762683.pdf"
+det_1628;"Metalloinvest (2020) Annual Report 2019 ; Metalloinvest Website (LGOK)";"https://www.metalloinvest.com/upload/iblock/14a/go19en.pdf ; https://www.metalloinvest.com/en/business/mining-segment/lgok/"
+det_1629;"Metalloinvest (2020) Annual Report 2019 ; Metalloinvest Website (MGOK)";"https://www.metalloinvest.com/upload/iblock/14a/go19en.pdf ; https://www.metalloinvest.com/en/business/mining-segment/mgok/"
+det_1630;"Metalloinvest (2020) Annual Report 2019 ; Metalloinvest Website (OEMK)";"https://www.metalloinvest.com/upload/iblock/14a/go19en.pdf ; https://www.metalloinvest.com/en/business/steel/oemk/"
+det_1631;"Metalloinvest (2020) Annual Report 2019 ; Metalloinvest Website (Ural Steel)";"https://www.metalloinvest.com/upload/iblock/14a/go19en.pdf ; https://www.metalloinvest.com/en/business/steel/ural-steel/"
+det_1632;"PAO Severstal (2020) Annual Report 2019 ; Severstal Website (Karelsky Okatysh)";"https://www.severstal.com/files/37176/Severstal_annual_report_ENG_2019.pdf ; https://www.severstal.com/eng/about/businesses/karelsky_okatysh"
+det_1633;"PAO Severstal (2020) Annual Report 2019 ; Severstal Website (Olcon)";"https://www.severstal.com/files/37176/Severstal_annual_report_ENG_2019.pdf ; https://www.severstal.com/eng/about/businesses/olcon"
+det_1634;"PAO Severstal (2020) Annual Report 2019 ; Severstal Website (Vorkutaugol)";"https://www.severstal.com/files/37176/Severstal_annual_report_ENG_2019.pdf ; https://www.severstal.com/eng/about/businesses/vorkutaugol"
+det_1635;"PAO Severstal (2020) Annual Report 2019 ; Severstal Website (Yakovlevsky GOK)";"https://www.severstal.com/files/37176/Severstal_annual_report_ENG_2019.pdf ; https://www.severstal.com/eng/about/businesses/yagok/"
+det_1636;Severstal Website (Cherepovets Steel Mill);https://www.severstal.com/eng/about/businesses/chermk
+det_1637;PAO Severstal (2014) Annual Report 2013;https://www.severstal.com/files/4956/APA00121-Eng_Preview.pdf
+det_1638;"United States Steel Corp. (2020) 10-K Annual Report 2019 ; United States Steel Corp. Website (Minntac)";"https://www.ussteel.com/sites/default/files/annual_reports/As%20Filed%202019%20Form%2010-K%20woExhibits.pdf ; https://www.ussteel.com/locations/minntac"
+det_1639;"United States Steel Corp. (2020) 10-K Annual Report 2019 ; United States Steel Corp. Website (Keetac)";"https://www.ussteel.com/sites/default/files/annual_reports/As%20Filed%202019%20Form%2010-K%20woExhibits.pdf ; https://www.ussteel.com/locations/keetac"
+det_1640;United States Steel Corp. Website (Gary Works);https://www.ussteel.com/locations/gary-works
+det_1641;United States Steel Corp. Website (Great Lakes Works);https://www.ussteel.com/locations/great-lakes-works
+det_1642;United States Steel Corp. Website (Mon Valley Works Edgar Thomson Plant);https://www.ussteel.com/locations/mon-valley-works-edgar-thomson-plant
+det_1643;United States Steel Corp. Website (Mon Valley Works Clairton Plant);https://www.ussteel.com/locations/mon-valley-works-clairton-plant
+det_1644;United States Steel Corp. Website (Granite City Works);https://www.ussteel.com/locations/granite-city-works
+det_1645;United States Steel Corp. Website (Fairfield Works);https://www.ussteel.com/locations/fairfield-works
+det_1646;US Steel Kosice Website (Company profile);https://www.usske.sk/en/about-us/corporate-info/company-profile
+det_1647;United States Steel Corp. (2011) 10-K Annual Report 2010;https://www.ussteel.com/sites/default/files/annual_reports/2010%20Annual%20Report.pdf
+det_1648;Glencore plc. Annual Report 2011;https://www.glencore.com/dam/jcr:59c1399e-1052-4acb-9251-0942ada05e32/xta-ar2011-en.pdf
+det_1649;Katanga Mining Ltd. Website (Kamoto Underground Mine);http://www.katangamining.com/operations/key-assets/kamota-underground.aspx
+det_1650;Katanga Mining Ltd. Website (KOV Open Pit Mine);http://www.katangamining.com/operations/key-assets/kov-open-pit-mine.aspx
+det_1651;MetInvest B.V. (2009) Annual Report 2008;https://metinvestholding.com/Content/Entities/Report/19/en/2008.pdf
+det_1652;"Mineral Resources Limited (2015) Quarterly Exploration and Mining Activities Report - April to June 2015 (Q4 FY15) ; Mineral Resources Limited (2018) Annual Report 2018";"https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/09073314/Quarterly-Activities-Report6.pdf ; https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/05045815/MR_1401_Annual_Report_2018_INTERACTIVE.pdf"
+det_1653;PAO Severstal (2020) Annual Report 2019;https://www.severstal.com/files/37176/Severstal_annual_report_ENG_2019.pdf
+det_1654;MMC Norlisk Nickel (2017) Annual Report 2016;https://www.nornickel.com/upload/iblock/85f/annual_report_2016_nornickel_2_.pdf
+det_1655;MMC Norlisk Nickel (2014) Annual Report 2013;https://www.nornickel.com/upload/iblock/04e/nn_ar_2013_en_fin_na_20_iyunya.pdf
+det_1656;MMC Norlisk Nickel (2011) Annual Report 2010;https://www.nornickel.com/upload/iblock/de8/file1694.pdf
+det_1657;MMC Norlisk Nickel (2009) Annual Report 2008;https://www.nornickel.com/upload/iblock/4e7/annual_report_2008.pdf
+det_1658;Lundin Mining Corp. (2012) Annual MD&A and Financial Statements 2011;https://www.lundinmining.com/site/assets/files/4505/2011ye.pdf
+det_1659;Lundin Mining Corp. (2010) Annual MD&A and Financial Statements 2009;https://www.lundinmining.com/site/assets/files/3764/2009_af.pdf
+det_1660;EuroZinc Mining Corporation (2006) Annual Report 2005;http://www.eurozinc.com/i/pdf/2005_AR-EZM.pdf
+det_1661;Lundin Mining Corp. (2006) Annual Report 2005;https://www.annualreports.com/HostedData/AnnualReportArchive/L/TSX_LUN_2005.pdf
+det_1662;Rio Narcea Gold Mines Lt. (2006) Annual Report 2005;https://www.sec.gov/Archives/edgar/data/1098506/000117571006000082/exhibit2.htm
+det_1663;Yamana Gold Inc. (2019) Annual Report 2018;https://s22.q4cdn.com/899716706/files/doc_financials/annual/2018/Yamana-AR18_FINAL-FOR-WEB-02-04-19.pdf
+det_1664;Yamana Gold Inc. (2017) Annual Report 2016;https://s22.q4cdn.com/899716706/files/doc_financials/annual/2016/2016-Yamana-AR-final-for-posting-05-04-17.pdf
+det_1665;Yamana Gold Inc. (2015) Annual Report 2014;https://s22.q4cdn.com/899716706/files/doc_financials/annual/2014/2014-Yamana-AR-27-03-15-final-lowres.pdf
+det_1666;Yamana Gold Inc. (2013) Annual Report 2012;https://s22.q4cdn.com/899716706/files/doc_financials/annual/2012-Yamana-AR-01-04-13-final-spreads_v001_p63n2n.pdf
+det_1667;Yamana Gold Inc. (2011) Annual Report 2010;https://s22.q4cdn.com/899716706/files/doc_financials/annual/2010-YAMANA-AR-24-03-11_final-spreads.pdf
+det_1668;Yamana Gold Inc. (2009) Annual Report 2008;https://s22.q4cdn.com/899716706/files/doc_financials/annual/YAM08-FF_mar31.pdf
+det_1669;Yamana Gold Inc. (2020) Annual Report 2019;https://s22.q4cdn.com/899716706/files/doc_financials/annual/2019/Yamana-AR19_FINAL-for-website_24-03-20.pdf
+det_1670;ArcelorMittal S.A. (2019) Form 20-F Annual Report 2018;https://storagearcelormittaluat.blob.core.windows.net/media/dwkptku5/form-20f-2018.pdf
+det_1671;ArcelorMittal S.A. (2018) Form 20-F Annual Report 2017;https://storagearcelormittaluat.blob.core.windows.net/media/jg3ffvks/form-20f-2017.pdf
+det_1672;ArcelorMittal S.A. (2017) Form 20-F Annual Report 2016;https://storagearcelormittaluat.blob.core.windows.net/media/rbxbvl5d/20f-03-2017.pdf
+det_1673;ArcelorMittal S.A. (2016) Form 20-F Annual Report 2015;https://storagearcelormittaluat.blob.core.windows.net/media/1fid2pjq/arcelormittal-20f-2015.pdf
+det_1674;ArcelorMittal S.A. (2015) Form 20-F Annual Report 2014;https://storagearcelormittaluat.blob.core.windows.net/media/i55pz0cm/arcelormittal-20f-2014.pdf
+det_1675;ArcelorMittal S.A. (2013) Form 20-F Annual Report 2012;https://storagearcelormittaluat.blob.core.windows.net/media/lytpvjkw/arcelormittal-20f-2012.pdf
+det_1676;ArcelorMittal S.A. (2012) Form 20-F Annual Report 2011;https://storagearcelormittaluat.blob.core.windows.net/media/wuvdv0ay/20f-2011.pdf
+det_1677;ArcelorMittal S.A. (2011) Form 20-F Annual Report 2010;https://storagearcelormittaluat.blob.core.windows.net/media/43hjcxsm/479-3-3-arcelormittal_20f_feb2011.pdf
+det_1678;ArcelorMittal S.A. (2010) Form 20-F Annual Report 2009;https://storagearcelormittaluat.blob.core.windows.net/media/i4vbhhnw/479-3-2-arcelormittal20-f.pdf
+det_1679;ArcelorMittal S.A. (2009) Form 20-F Annual Report 2008;https://storagearcelormittaluat.blob.core.windows.net/media/mhcjboz1/479-3-1-200820f.pdf
+det_1680;Cleveland-Cliffs Inc. (2007) 10-K Annual Report 2006;http://d1lge852tjjqow.cloudfront.net/CIK-0000764065/9fa850a5-b379-4ea6-bc29-13fec928bbc0.pdf
+det_1681;Cleveland-Cliffs Inc. (2004) 10-K Annual Report 2003;http://d1lge852tjjqow.cloudfront.net/CIK-0000764065/1525090e-ef65-4efe-bb6e-19d5ad0b396f.pdf
+det_1682;Cleveland-Cliffs Inc. (2001) 10-K Annual Report 2000;http://d1lge852tjjqow.cloudfront.net/CIK-0000764065/0b0e1f9a-5bcc-4561-a678-0ad0e7f1c6c4.pdf
+det_1683;Companhia Siderurgica Nacional (2017) Form 20-F Annual Report 2016;https://s3.amazonaws.com/mz-filemanager/29633c00-23f7-4765-9594-926012179477/f20faba0-278f-4bf3-be75-fbefd79cddd7_CSN_20F%202016.pdf
+det_1684;Companhia Siderurgica Nacional (2014) Form 20-F Annual Report 2013;https://s3.amazonaws.com/mz-filemanager/29633c00-23f7-4765-9594-926012179477/4c8c19c8-4f14-4caf-a860-d8a1653b1943_CSN_20F%202013.pdf
+det_1685;Companhia Siderurgica Nacional (2011) Form 20-F Annual Report 2010;https://s3.amazonaws.com/mz-filemanager/29633c00-23f7-4765-9594-926012179477/a37684c7-d415-4255-949c-6d8a920dacb3_CSN_20F%202010.pdf
+det_1686;Companhia Siderurgica Nacional (2010) Form 20-F Annual Report 2009;https://www.sec.gov/Archives/edgar/data/0001049659/000129281410001853/sidform20f2009.htm
+det_1687;Companhia Siderurgica Nacional (2009) Form 20-F Annual Report 2008;https://mz-filemanager.s3.amazonaws.com/29633c00-23f7-4765-9594-926012179477/20090630/03a2c5ca3619114816b8a11d783ac3f3445cf580432349b51d22b0cfac4c8a72/annual_and_transition_report_foreign_private_issuer.pdff
+det_1688;Companhia Siderurgica Nacional (2008) Form 20-F Annual Report 2007;https://www.sec.gov/Archives/edgar/data/0001049659/000129281408001895/sidform20f2007.htm
+det_1689;Companhia Siderurgica Nacional (2007) Form 20-F Annual Report 2006;https://www.sec.gov/Archives/edgar/data/0001049659/000129281407001946/sid_form20f2006.htm
+det_1690;Companhia Siderurgica Nacional (2006) Form 20-F Annual Report 2005;https://www.sec.gov/Archives/edgar/data/0001049659/000129281406001789/sid_form20f.htm
+det_1691;Companhia Siderurgica Nacional (2005) Form 20-F Annual Report 2004;https://www.sec.gov/Archives/edgar/data/0001049659/000129281406000122/sid_form20fa.pdf
+det_1692;Companhia Siderurgica Nacional (2004) Form 20-F Annual Report 2003;https://www.sec.gov/Archives/edgar/data/0001049659/000129281404000060/sid_20f.pdf
+det_1693;Companhia Siderurgica Nacional (2003) Form 20-F Annual Report 2002;https://www.sec.gov/Archives/edgar/data/0001049659/000104965903000008/csn_20f.htm
+det_1694;MetInvest B.V. (2020) Financial Results for 2019;https://metinvestholding.com/Content/CmsFile/en/finreleases__Metinvest_Financial%20release_IFRS%20FY2019%20results.pdf
+det_1695;MetInvest B.V. (2013) Annual Report 2012;https://metinvestholding.com/Content/Entities/Report/9/en/2012.pdf
+det_1696;MetInvest B.V. (2012) Annual Report 2011;https://metinvestholding.com/Content/Entities/Report/8/en/2011.pdf
+det_1697;MetInvest B.V. (2011) Annual Report 2010;https://metinvestholding.com/Content/Entities/Report/7/en/2010.pdf
+det_1698;MetInvest B.V. (2018) Annual Report 2017;https://metinvestholding.com/Content/Entities/Report/20/en/2017.pdf
+det_1699;Luossavaara-Kiirunavaara AB (2018) Year End Report 2017;https://www.lkab.com/en/SysSiteAssets/documents/finansiell-information/en/interim-reports/interimreport_q4_2017.pdf
+det_1700;Luossavaara-Kiirunavaara AB (2017) Year End Report 2016;https://www.lkab.com/en/SysSiteAssets/documents/finansiell-information/en/interim-reports/interimreport_q4_2016.pdf
+det_1701;Luossavaara-Kiirunavaara AB (2012) Annual and Sustainability Report 2011;https://www.lkab.com/en/SysSiteAssets/documents/finansiell-information/en/annual-reports/lkab_2011_annual_and_sustainability_report.pdf
+det_1702;Cleveland-Cliffs Inc. (2019) 10-K Annual Report 2018;http://d18rn0p25nwr6d.cloudfront.net/CIK-0000764065/79fb7c4c-83fd-4040-b5ca-d072f9b1833d.pdf
+det_1703;Cleveland-Cliffs Inc. (2017) 10-K Annual Report 2016;http://d18rn0p25nwr6d.cloudfront.net/CIK-0000764065/5fb36fa7-a740-41fb-bbea-f1f6b496f058.pdf
+det_1704;Cleveland-Cliffs Inc. (2016) 10-K Annual Report 2015;http://d1lge852tjjqow.cloudfront.net/CIK-0000764065/7a1cc196-f9e9-4c48-84d3-cf58d0b150bd.pdf
+det_1705;Mineral Resources Limited (2020) Quarterly Exploration and Mining Activities Report - April to June 2020 (Q4 FY20);https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2020/07/24084449/Q4FY20_02258269.pdf
+det_1706;Mineral Resources Limited (2019) Quarterly Exploration and Mining Activities Report - April to June 2019 (Q4 FY19);https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2019/07/26104350/QuarterlyActivitesReportQ4FY1902126458.pdf
+det_1707;Mineral Resources Limited (2018) Quarterly Exploration and Mining Activities Report - April to June 2017 (Q4 FY17);https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/08071419/01879248.pdf
+det_1708;Mineral Resources Limited (2017) Quarterly Exploration and Mining Activities Report - April to June 2017 (Q4 FY17);https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/08071419/01879248.pdf
+det_1709;Mineral Resources Limited (2016) Quarterly Exploration and Mining Activities Report - April to June 2016 (Q4 FY16);https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/08085239/01762683.pdf
+det_1710;Mineral Resources Limited (2014) Quarter 4 Mining Activities Report FY2014;https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2018/11/09033444/01539012.pdf
+det_1711;Mineral Resources Limited (2013) Annual Report 2013;https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2019/05/27175336/01460684.pdf
+det_1712;Metalloinvest (2020) Operational Results for FY 2019 and Q4 2019;https://www.metalloinvest.com/upload/iblock/bf5/operational-results_2019-q4_eng.pdf
+det_1713;Metalloinvest (2018) Operational Results for Q4 2017 and FY 2017;https://www.metalloinvest.com/upload/iblock/54d/operational-results_fy-2017_eng.pdf
+det_1714;Metalloinvest (2016) Operational Results for Q4 2015 and FY 2015;https://www.metalloinvest.com/upload/iblock/f3f/metalloinvest_operational-results_2015-q4_eng.pdf
+det_1715;Metalloinvest (2014) Operational Results for Q4 2013 and FY 2013;https://www.metalloinvest.com/upload/iblock/113/operational-results-q4-2013_press_release.pdf
+det_1716;Metalloinvest (2012) Operational Results for Q4 2011 and FY 2011;https://www.metalloinvest.com/upload/iblock/020/results-q4-2011.pdf
+det_1717;PAO Severstal (2020) Q4 2019 Operational results;https://www.severstal.com/files/36342/upload2.pdf
+det_1718;PAO Severstal (2018) Q4 & FY 2017 Operational Results;https://www.severstal.com/files/21373/upload2.pdf
+det_1719;PAO Severstal (2016) Q4 2015 and FY 2015 Operational Results;https://www.severstal.com/files/13209/upload2.pdf
+det_1720;PAO Severstal (2014) Q4 2013 and FY 2013 operational results;https://www.severstal.com/files_archive/eng/ir/results_reports/operational_results/q4_2013_operational_results.pdf
+det_1721;PAO Severstal (2012) Q4 and FY 2011 operational results;https://www.severstal.com/files_archive/eng/ir/results_reports/operational_results/q4_2011_operational_results.pdf
+det_1722;PAO Severstal (2010) Q4 2009 Operational Results;https://www.severstal.com/files_archive/eng/ir/results_reports/operational_results/fy_2009_operational_results.pdf
+det_1723;PAO Severstal (2008) 2007 Operational Results;https://www.severstal.com/files_archive/eng/ir/results_reports/operational_results/2007_operational_results.pdf
+det_1724;PAO Severstal (2007) Annual Report 2005;https://www.severstal.com/files_archive/eng/ir/results_reports/annual_reports/2006_annual_report.pdf
+det_1725;United States Steel Corp. (2020) 10-K Annual Report 2019;https://www.ussteel.com/sites/default/files/annual_reports/As%20Filed%202019%20Form%2010-K%20woExhibits.pdf
+det_1726;United States Steel Corp. (2017) 10-K Annual Report 2016;https://www.ussteel.com/sites/default/files/annual_reports/USS%20Form%2010-K%20-%202016.pdf
+det_1727;United States Steel Corp. (2014) 10-K Annual Report 2013;https://www.ussteel.com/sites/default/files/annual_reports/2013%20Annual%20Report.pdf
+det_1728;United States Steel Corp. (2008) 10-K Annual Report 2007;https://www.sec.gov/Archives/edgar/data/1163302/000119312508040079/d10k.htm
+det_1729;United States Steel Corp. (2005) 10-K Annual Report 2004;https://www.sec.gov/Archives/edgar/data/1163302/000119312505037218/d10k.htm
+det_1730;United States Steel Corp. (2002) 10-K Annual Report 2001;https://www.sec.gov/Archives/edgar/data/1163302/000102140802003808/d10k.txt
+det_1731;Glencore plc. (2018) Production Report for the 12 months ended 31 December 2017;https://www.glencore.com/dam/jcr:88d8679a-0eda-47c0-bb37-409415ddd33d/GLEN-2017-Q4-Production-Report-.pdf
+det_1732;Glencore plc. (2020) Full Year 2019 Production Report;https://www.glencore.com/dam:jcr/73ac9a15-0400-4b6a-a440-285ab245dece/GLEN_2019-Q4_ProductionReport.pdf
+det_1733;Glencore plc. (2016) Production Report for the 12 months ended 31 December 2015;https://www.glencore.com/dam/jcr:1aa70281-e09f-44e9-8893-0da0c89bf282/GLEN-2015-Q4-Production-Report.pdf
+det_1734;GlencoreXstrata (2014) Production Report for the 12 months ended 31 December 2013;https://www.glencore.com/dam/jcr:1f6928b1-f58e-49f0-a23f-6ab72a43fbad/GLEN-2013-Q4-ProductionReport.pdf
+det_1735;Xstrata plc. (2012) Annual Report 2011;https://www.glencore.com/dam/jcr:59c1399e-1052-4acb-9251-0942ada05e32/xta-ar2011-en.pdf
+det_1736;Xstrata plc. (2010) Annual Report 2009;http://www.annualreports.co.uk/HostedData/AnnualReportArchive/x/LSE_XTA_2009.pdf
+det_1737;Xstrata plc. (2008) Annual Report 2007;http://www.24hgold.com/english/news-company-gold-silver-2007-annual-report.aspx?articleid=392408
+det_1738;KGHM Polska Miedź S.A. (2017) Integrated Report 2016;https://kghm.com/en/node/4991
+det_1739;Yamana Gold Inc. (2007) Annual Report 2006;https://s22.q4cdn.com/899716706/files/doc_financials/annual/Yamana-Annual-Report-2006-FINAL.pdf
+det_1740;Metalloinvest (2013) Annual Report 2012;https://www.metalloinvest.com/upload/iblock/502/annual-report-2012.pdf
+det_1741;MetInvest B.V. (2017) Annual Report 2016;https://metinvestholding.com/Content/Entities/Report/13/en/2016.pdf
+det_1742;United States Steel Corp. (2015) 10-K Annual Report 2014;https://www.ussteel.com/sites/default/files/annual_reports/2014%20Annual%20Report_0.pdf
+det_1743;United States Steel Corp. (2010) 10-K Annual Report 2009;https://www.ussteel.com/sites/default/files/annual_reports/2009%20Annual%20Report.pdf
+det_1744;Glencore plc. (2020) Annual Report 2019;https://www.glencore.com/dam:jcr/79fd3300-ee50-4ee1-870d-6372274c71b5/glen-2019-annual-report-interactive.pdf
+det_1745;Luossavaara-Kiirunavaara AB (2020) Annual and Sustainability Report 2019;https://www.lkab.com/en/SysSiteAssets/documents/finansiell-information/en/annual-reports/lkab_2019_annual_and_sustainability_report.pdf
+det_1746;Lundin Mining Corp. Website (Zinkgruvan);https://www.lundinmining.com/operations/zinkgruvan/
+det_1747;Premier Gold Mines Ltd. Website (Mercedes);https://www.premiergoldmines.com/mercedes
+det_1748;Mineral Resources Limited (2019) Annual Report 2019;https://s3-ap-southeast-2.amazonaws.com/assets.mineralresources.com.au/app/uploads/2019/10/09081031/2019AnnualReport02156834.pdf
+det_1749;Severstal Website (Karelsky Okatysh);https://www.severstal.com/eng/about/businesses/karelsky_okatysh
+det_1750;Severstal Website (Olcon);https://www.severstal.com/eng/about/businesses/olcon
+det_1751;Severstal Website (Vorkutaugol);https://www.severstal.com/eng/about/businesses/vorkutaugol
+det_1752;Severstal Website (Yakovlevsky GOK);https://www.severstal.com/eng/about/businesses/yagok/
+det_1753;Teck Resources Limited Website (NuevaUnion);https://www.teck.com/operations/chile/projects/nuevaunion/
+det_1754;Teck Resources Limited (2015) Annual Report 2014;https://www.teck.com/media/Investors-teck_2014annualreport_T5.1.1.pdf
+det_1755;"Anglo American plc (2013) Annual Report 2012; Vedanta Zinc international Website (Lisheen mine) ; Vedanta Limited (2019) Form 20-F Annual Report 2019";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2013/annual-report2012.pdf ; https://www.vedanta-zincinternational.com/our-operations/lisheen-mine ; https://www.sec.gov/Archives/edgar/data/1370431"
+det_1756;"Anglo American plc (2013) Annual Report 2012; Vedanta Zinc international Website (Black Mountain) ; Vedanta Limited (2019) Form 20-F Annual Report 2019";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2013/annual-report2012.pdf ; https://www.vedanta-zincinternational.com/our-operations/black-mountain ; https://www.sec.gov/Archives/edgar/data/1370431"
+det_1757;"Anglo American plc (2011) Annual Report 2010 ; Vedanta Zinc International Website (Skorpion Zinc) ; Vedanta Limited (2019) Form 20-F Annual Report 2019";"https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2011/angloamerican-annual-report-2010.pdf ; https://www.vedanta-zincinternational.com/our-operations/skorpion-zinc ; https://www.sec.gov/Archives/edgar/data/1370431/000119312519194036/d745879d20f.htm#toc745879_7"
+det_1758;"Vale S.A. (2011) Annual Report 2010 ; PT Aneka Tambang Tbk (2020) Annual Report 2019";"http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/20F_2010_i.pdf ; https://www.antam.com/en/reports/annual-reports"
+det_1759;"Vale S.A. (2017) Annual Report 2016 ; African Rainbow Minerals Ltd. (2014) Integrated Annual Report 2013";"http://www.vale.com/EN/investors/information-market/annual-reports/20f/20FDocs/Vale_20-F_FY2016_-_i.pdf ; http://arm.integrated-report.com/2013/operational/arm-copper"
+det_1760;"ArcelorMittal S.A. (2020) Form 20-F Annual Report 2019 ; ArcelorMittal S.A. (2015) Form 20-F Annual Report 2014";"https://corporate-media.arcelormittal.com/media/yyjlil0y/2019-arcelormittal-annual-report-on-form-20-f.pdf ; https://storagearcelormittaluat.blob.core.windows.net/media/i55pz0cm/arcelormittal-20f-2014.pdf"
+det_1761;"MetInvest B.V. (2010) Annual Report 2009 ; Unied Coal Company Website (Our Facilities)";"https://metinvestholding.com/Content/Entities/Report/18/en/2009.pdf ; https://ucc.metinvestholding.com/en/activity/facilities"
+det_1762;"African Rainbow Minerals Ltd. (2019) Integrated Annual Report 2019 ; African Rainbow Minerals Ltd. (2008) Annual Report 2007";"https://arm.co.za/wp-content/uploads/2020/05/ARM_IAR2019.pdf ; https://arm.co.za/wp-content/uploads/2020/05/ar_2007.pdf"
+det_1763;African Rainbow Minerals Ltd. (2019) Integrated Annual Report 2019;https://arm.co.za/wp-content/uploads/2020/05/ARM_IAR2019.pdf
+det_1764;"African Rainbow Minerals Ltd. (2019) Integrated Annual Report 2019 ; African Rainbow Minerals Ltd. (2008) Annual Report 2008";"https://arm.co.za/wp-content/uploads/2020/05/ARM_IAR2019.pdf ; https://arm.co.za/wp-content/uploads/2020/05/ARM_AR2008.pdf"
+det_1765;"African Rainbow Minerals Ltd. (2019) Integrated Annual Report 2019 ; African Rainbow Minerals Ltd. (2010) Annual Report 2009";"https://arm.co.za/wp-content/uploads/2020/05/ARM_IAR2019.pdf ; https://arm.co.za/wp-content/uploads/2020/05/full.pdf"
+det_1766;Assore Ltd. (2019) Integrated Annual Report 2019;https://www.assore.com/wp-content/uploads/2020/01/FY19-Annual-Report-Shortform.pdf
+det_1767;"Alcoa Corp. (2020) 10-K Annual Report 2019 ; Alcoa Corp. (n.d.) Fact Sheet Huntly Bauxite Mine ; Alcoa Corp. (n.d.) Fact Sheet Willowdale Bauxite Mine";"https://investors.alcoa.com/~/media/Files/A/Alcoa-IR/documents/annual-reports-and-proxy-information/alcoa-annual-report-2019.pdf ; https://www.alcoa.com/australia/en/pdf/mining-huntly-fact-sheet.pdf ; https://www.alcoa.com/australia/en/pdf/mining-willowdale-fact-sheet.pdf"
+det_1768;Alcoa Corp. (2020) 10-K Annual Report 2019;https://investors.alcoa.com/~/media/Files/A/Alcoa-IR/documents/annual-reports-and-proxy-information/alcoa-annual-report-2019.pdf
+det_1769;Alcoa Inc. (2016) 10-K Annual Report 2015;https://www.annualreports.com/HostedData/AnnualReportArchive/a/NYSE_AA_2015.pdf
+det_1770;Alcoa Inc. (2014) 10-K Annual Report 2013;https://www.annualreports.com/HostedData/AnnualReportArchive/a/NYSE_AA_2013.pdf
+det_1771;"Aluminium Corporation of China Ltd. (2020) 20-F Annual Report 2019 ; Aluminium Corporation of China Ltd. (2008) 20-F Annual Report 2007";"https://www.sec.gov/Archives/edgar/data/1161611/000138713120004040/ach-20f_123119.htm#acha006 ; https://www.sec.gov/Archives/edgar/data/1161611/000116161108000038/d20f.htm"
+det_1772;Aluminium Corporation of China Ltd. (2020) 20-F Annual Report 2019;https://www.sec.gov/Archives/edgar/data/1161611/000138713120004040/ach-20f_123119.htm#acha006
+det_1773;Aluminium Corporation of China Ltd. (2013) 20-F Annual Report 2012;https://www.sec.gov/Archives/edgar/data/1161611/000116161113000016/d20f_2012.htm
+det_1774;Aluminium Corporation of China Ltd. (2012) 20-F Annual Report 2011;https://www.sec.gov/Archives/edgar/data/1161611/000116161112000087/d20f_sep.htm
+det_1775;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Timan Bauxite)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/boksit-timana/"
+det_1776;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (North Urals Bauxite Mine)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/severouralskiy-boksitovyy-rudnik/"
+det_1777;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Windalco)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/windalco/"
+det_1778;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Friguia Bauxite and Alumina Complex)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/friguia-bauxite-and-alumina-complex/"
+det_1779;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Compagnie des Bauxites de Kindia (CBK))";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/kompaniya-boksitov-kindii/"
+det_1780;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Geography) ; Rusal Plc. Website (Dian Dian)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/ ; https://rusal.ru/en/about/geography/dian-dian/"
+det_1781;Rusal Plc. (2020) Annual Report 2019;https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf
+det_1782;Rusal Plc. (2018) Annual Report 2017;https://rusal.ru/upload/iblock/e95/e9506273c06e77737e36cdf8ca108cbe.pdf
+det_1783;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Geography) ; Rusal Plc. Website (Kia-Shaltyr nepheline mine)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/ ; https://rusal.ru/en/about/geography/kiya-shaltyrskiy-nefelinovyy-rudnik/"
+det_1784;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Aughinish Alumina)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/aughinish-alumina/"
+det_1785;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Nikolaev alumina refinery)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/nikolaevskiy-glinozemnyy-zavod/"
+det_1786;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Eurallumina)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/eurallumina/"
+det_1787;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Bogoslovsky Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/bogoslovskiy-alyuminievyy-zavod/"
+det_1788;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Urals Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/uralskiy-alyuminievyy-zavod/"
+det_1789;Rusal Plc. (2010) Annual Report 2009;https://rusal.ru/upload/iblock/6a4/6a4ef4aea61f70031164066a1c3d7975.pdf
+det_1790;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Bratsk Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/bratskiy-alyuminievyy-zavod/"
+det_1791;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Krasnoyarsk Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/krasnoyarskiy-alyuminievyy-zavod/"
+det_1792;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Sayanogorsk Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/sayanogorskiy-alyuminievyy-zavod/"
+det_1793;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Novokuznetsk Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/novokuznetskiy-alyuminievyy-zavod/"
+det_1794;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Khakas Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/khakasskiy-alyuminievyy-zavod/"
+det_1795;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Irkutsk Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/irkutskiy-alyuminievyy-zavod/"
+det_1796;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Kandalaksha Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/kandalakshskiy-alyuminievyy-zavod-kaz/"
+det_1797;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Volgograd Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/volgogradskiy-alyuminievyy-zavod/"
+det_1798;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Nadvoitsy Aluminium Smelter)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/nadvoitskiy-alyuminievyy-zavod/"
+det_1799;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (ALSCON)";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/alscon/"
+det_1800;"Rusal Plc. (2020) Annual Report 2019 ; Rusal Plc. Website (Kubikenborg Aluminium AB (KUBAL))";"https://rusal.ru/upload/iblock/ee0/ee03f7d07bd7bcc5bf32dceb03fced32.pdf ; https://rusal.ru/en/about/geography/kubikenborg-aluminium-ab-kubal/"
+det_1801;Rusal Plc. (2014) Annual Report 2013;https://rusal.ru/upload/iblock/97e/97ed52acc89ffbe8b9cf92198110e6a0.pdf
+det_1802;"National Aluminium Company Limited (2019) 38th Annual Report 2018-19 ; National Aluminium Company Limited Website (Bauxite Mines)";"https://nalcoindia.com/wp-content/uploads/2019/08/Annual-Report_38th-AGM.pdf ; https://nalcoindia.com/business/operation/bauxite-mines/"
+det_1803;"National Aluminium Company Limited (2019) 38th Annual Report 2018-19 ; National Aluminium Company Limited Website (Alumina Refinery)";"https://nalcoindia.com/wp-content/uploads/2019/08/Annual-Report_38th-AGM.pdf ; https://nalcoindia.com/business/operation/alumina-refinery/"
+det_1804;"National Aluminium Company Limited (2019) 38th Annual Report 2018-19 ; National Aluminium Company Limited Website (Aluminium Smelter)";"https://nalcoindia.com/wp-content/uploads/2019/08/Annual-Report_38th-AGM.pdf ; https://nalcoindia.com/business/operation/aluminium-smelter/"
+det_1805;Vedanta Limited (2019) Form 20-F Annual Report 2019;https://www.sec.gov/Archives/edgar/data/1370431/000119312519194036/d745879d20f.htm#toc745879_7
+det_1806;Sterlite Industries (India) Limited (2013) Form 20-F Annual Report 2013;https://www.sec.gov/Archives/edgar/data/1370431/000119312513309780/d573099d20f.htm
+det_1807;Vedanta Limited (2016) Form 20-F Annual Report 2016;https://www.sec.gov/Archives/edgar/data/1370431/000119312516666748/d220448d20f.htm
+det_1808;"PT Aneka Tambang Tbk (2020) Annual Report 2019 ; PT Aneka Tambang Tbk (2010) Annual Report 2009";"https://www.antam.com/en/reports/annual-reports ; https://www.antam.com/en/reports/annual-reports"
+det_1809;Aneka Tambang Tbk (2010) Annual Report 2009;"https://www.antam.com/en/reports/annual-reports ; https://www.antam.com/en/reports/annual-reports"
+det_1810;PT Aneka Tambang Tbk (2020) Annual Report 2019;https://www.antam.com/en/reports/annual-reports
+det_1811;Zijin Mining Group Co., Ltd. Website (Zeravshan Gold Mine);http://www.zijinmining.com/business/product-detail-26914.htm
+det_1812;Zijin Mining Group Co., Ltd. Website (Paddington Gold Mine);http://www.zijinmining.com/business/product-detail-26913.htm
+det_1813;Zijin Mining Group Co., Ltd. Website (Zijinshan Gold & Copper Mine);http://www.zijinmining.com/business/product-detail-26893.htm
+det_1814;Zijin Mining Group Co., Ltd. Website (Taldybulak Levoberezhny Gold Mine);http://www.zijinmining.com/business/product-detail-26915.htm
+det_1815;Zijin Mining Group Co., Ltd. Website (Shuguang Gold & Copper Mine);http://www.zijinmining.com/business/product-detail-26895.htm
+det_1816;Zijin Mining Group Co., Ltd. Website (Shanggong Gold Mine);http://www.zijinmining.com/business/product-detail-26897.htm
+det_1817;Zijin Mining Group Co., Ltd. Website (Shuiyindong Gold Mine);http://www.zijinmining.com/business/product-detail-26896.htm
+det_1818;Zijin Mining Group Co., Ltd. Website (Yixingzhai Gold Mine);http://www.zijinmining.com/business/product-detail-45950.htm
+det_1819;Zijin Mining Group Co., Ltd. (2018) Annual Report 2017;http://www.zijinmining.com/upload/file/2018/04/27/9a6346a0d816491c80713a587e5884fb.pdf
+det_1820;Zijin Mining Group Co., Ltd. (2017) Annual Report 2016;http://www.zijinmining.com/upload/file/2017/05/08/65aac8c4d4634c0e889a8231eb056da3.pdf
+det_1821;Alcoa Inc. (2013) 10-K Annual Report 2012;https://www.annualreports.com/HostedData/AnnualReportArchive/a/NYSE_AA_2012.pdf
+det_1822;Aluminium Corporation of China Ltd. (2008) 20-F Annual Report 2007;https://www.sec.gov/Archives/edgar/data/1161611/000116161108000038/d20f.htm
+det_1823;Aluminium Corporation of China Ltd. (2014) 20-F Annual Report 2013;https://www.sec.gov/Archives/edgar/data/1161611/000116161114000013/d20f-2013.htm
+det_1824;Aluminium Corporation of China Ltd. (2017) 20-F Annual Report 2016;https://www.sec.gov/Archives/edgar/data/1161611/000116161117000011/d20f.htm
+det_1825;Sterlite Industries (India) Limited (2010) Form 20-F Annual Report 2010;https://www.sec.gov/Archives/edgar/data/1370431/000095012310090497/u00698fe20vf.htm
+det_1826;African Rainbow Minerals Ltd. (2015) Integrated Annual Report 2015;https://arm.co.za/wp-content/uploads/2020/05/ArmAnnualReport2015.pdf
+det_1827;African Rainbow Minerals Ltd. (2011) Integrated Annual Report 2011;https://arm.co.za/wp-content/uploads/2020/05/ARM-annual-report-2011.pdf
+det_1828;African Rainbow Minerals Ltd. (2008) Annual Report 2008;https://arm.co.za/wp-content/uploads/2020/05/ARM_AR2008.pdf
+det_1829;African Rainbow Minerals Ltd. (2010) Annual Report 2009;https://arm.co.za/wp-content/uploads/2020/05/full.pdf
+det_1830;African Rainbow Minerals Ltd. (2014) Integrated Annual Report 2013;http://arm.integrated-report.com/2013/operational/arm-coal
+det_1831;African Rainbow Minerals Ltd. (2018) Integrated Annual Report 2017;https://arm.co.za/wp-content/uploads/2020/05/ARM_IAR2017.pdf
+det_1832;Assore Ltd. (2017) Mineral Resources and Reserves Report 2017;https://www.assore.com/wp-content/uploads/2017/10/Assore-MR-Report-2017.pdf
+det_1833;Assore Ltd. (2012) Annual Report 2012;https://www.assore.com/wp-content/uploads/Assore_AR_2012.pdf
+det_1834;Assore Ltd. (2008) Annual Report 2008;https://www.assore.com/wp-content/uploads/2008/03/fullreport_2008.pdf
+det_1835;Alcoa Corp. (2019) 10-K Annual Report 2018;https://investors.alcoa.com/~/media/Files/A/Alcoa-IR/documents/annual-reports-and-proxy-information/annual-report-2018.pdf
+det_1836;Alcoa Corp. (2018) 10-K Annual Report 2017;https://investors.alcoa.com/~/media/Files/A/Alcoa-IR/documents/annual-reports-and-proxy-information/annual-report-2017.pdf
+det_1837;Alcoa Corp. (2017) 10-K Annual Report 2016;https://investors.alcoa.com/~/media/Files/A/Alcoa-IR/documents/annual-reports-and-proxy-information/annual-report-2016.pdf
+det_1838;Alcoa Inc. (2015) 10-K Annual Report 2014;https://www.annualreports.com/HostedData/AnnualReportArchive/a/NYSE_AA_2014.pdf
+det_1839;Alcoa Inc. (2012) 10-K Annual Report 2011;https://www.annualreports.com/HostedData/AnnualReportArchive/a/NYSE_AA_2011.pdf
+det_1840;Aluminium Corporation of China Ltd. (2019) 20-F Annual Report 2018;https://www.sec.gov/Archives/edgar/data/1161611/000116161119000052/ach-20f_123118.htm
+det_1841;Aluminium Corporation of China Ltd. (2018) 20-F Annual Report 2017;https://www.sec.gov/Archives/edgar/data/1161611/000116161118000020/chalco_2017_20-f_mainbody.htm
+det_1842;Aluminium Corporation of China Ltd. (2016) 20-F Annual Report 2015;https://www.sec.gov/Archives/edgar/data/1161611/000116161116000148/d20f_2015.htm
+det_1843;Aluminium Corporation of China Ltd. (2015) 20-F Annual Report 2014;https://www.sec.gov/Archives/edgar/data/1161611/000116161115000027/d20f_2014.htm
+det_1844;Aluminium Corporation of China Ltd. (2011) 20-F Annual Report 2010;https://www.sec.gov/Archives/edgar/data/1161611/000116161111000051/d20f_full.htm
+det_1845;Aluminium Corporation of China Ltd. (2010) 20-F Annual Report 2009;https://www.sec.gov/Archives/edgar/data/1161611/000116161111000037/d20fa.htm
+det_1846;Aluminium Corporation of China Ltd. (2009) 20-F Annual Report 2008;https://www.sec.gov/Archives/edgar/data/1161611/000116161109000029/d20f.htm
+det_1847;Aluminium Corporation of China Ltd. (2006) 20-F Annual Report 2005;https://www.sec.gov/Archives/edgar/data/1161611/000116161106000031/ar.htm
+det_1848;Aluminium Corporation of China Ltd. (2005) 20-F Annual Report 2004;https://www.sec.gov/Archives/edgar/data/1161611/000116161105000014/chalco2004ar.htm
+det_1849;Aluminium Corporation of China Ltd. (2004) 20-F Annual Report 2003;https://www.sec.gov/Archives/edgar/data/1161611/000119312504111869/d20f.htm
+det_1850;Aluminium Corporation of China Ltd. (2003) 20-F Annual Report 2002;https://www.sec.gov/Archives/edgar/data/1161611/000116161103000004/chalco2002fr.htm
+det_1851;Rusal Plc. (2016) Annual Report 2015;https://rusal.ru/upload/iblock/ed5/ed5d494937dab25efdcb703f7a307832.pdf
+det_1852;Rusal Plc. (2012) Annual Report 2011;https://rusal.ru/upload/iblock/3c2/3c232ff8e5dbac43468dcde4a3b38bc2.pdf
+det_1853;National Aluminium Company Limited (2019) 38th Annual Report 2018-19;https://nalcoindia.com/wp-content/uploads/2019/08/Annual-Report_38th-AGM.pdf
+det_1854;National Aluminium Company Limited (2014) 33rd Annual Report 2013-14;https://nalcoindia.com/wp-content/uploads/2019/01/Annual-Report-2013-14.pdf
+det_1855;National Aluminium Company Limited (2012) 31st Annual Report 2011-12;https://nalcoindia.com/wp-content/uploads/2019/01/Nalco_Annual_Report.pdf
+det_1856;Sterlite Industries (India) Limited (2008) Form 20-F Annual Report 2008;https://www.sec.gov/Archives/edgar/data/1370431/000114554908001209/u93264e20vf.htm
+det_1857;Sesa Sterlite Limited (2014) Form 20-F Annual Report 2014;https://www.sec.gov/Archives/edgar/data/1370431/000119312514311974/d759484d20f.htm
+det_1858;PT Aneka Tambang Tbk (2020) Quarterly Report PT Antam Tbk For the First Twelve Month Ended December 31, 2019;https://www.antam.com/en/reports/quarterly-reports
+det_1859;PT Aneka Tambang Tbk (2018) Quarterly Report PT Antam Tbk For the First Twelve Month Period of 2017, Ended December 31, 2017;https://www.antam.com/en/reports/quarterly-reports
+det_1860;PT Aneka Tambang Tbk (2016) Quarterly Report PT Antam (Persero) Tbk For the Three Month Period Ended December 31, 2015;https://www.antam.com/en/reports/quarterly-reports
+det_1861;PT Aneka Tambang Tbk (2014) Quarterly Report PT Antam (Persero) Tbk For the Three Month Period Ended December 31, 2013;https://www.antam.com/en/reports/quarterly-reports
+det_1862;PT Aneka Tambang Tbk (2012) Quarterly Report PT Antam (Persero) Tbk For the Three-Month Period Ended December 31, 2011;https://www.antam.com/en/reports/quarterly-reports
+det_1863;PT Aneka Tambang Tbk (2010) Quarterly Report For the three months ending 31 December, 2009;https://www.antam.com/en/reports/quarterly-reports
+det_1864;PT Aneka Tambang Tbk (2008) Quarterly Report For the three months ending 31st December, 2007;https://www.antam.com/en/reports/quarterly-reports
+det_1865;PT Aneka Tambang Tbk (2006) 2005 Annual Report;https://www.antam.com/en/reports/quarterly-reports
+det_1866;PT Aneka Tambang Tbk (2001) 2000 Annual Report;https://www.antam.com/en/reports/quarterly-reports
+det_1867;Vedanta Limited (2017) Form 20-F Annual Report 2017;https://www.sec.gov/Archives/edgar/data/1370431/000119312517258701/d408997d20f.htm
+det_1868;Vedanta Limited (2018) Form 20-F Annual Report 2018;https://www.sec.gov/Archives/edgar/data/1370431/000119312518233011/d529055d20f.htm
+det_1869;Zijin Mining Group Co., Ltd. (2019) Annual Report 2018;http://www.zijinmining.com/upload/file/2019/05/15/f4f97a694fb7431984ee2f562183ae16.pdf
+det_1870;"Zijin Mining Group Co., Ltd. (2016) Annual Report 2015 ; Zijin Mining Group Co., Ltd. Website (Paddington Gold Mine)";"http://www.zijinmining.com/upload/file/2016/10/26/63b8c7f9d2a742c8a581e765cb77c6d7.pdf ; http://www.zijinmining.com/business/product-detail-26913.htm"
+det_1871;"Zijin Mining Group Co., Ltd. (2015) Annual Report 2014 ; Zijin Mining Group Co., Ltd. Website (Paddington Gold Mine)";"http://www.zijinmining.com/Portals/1/2014%20Aannual%20Report.pdf ; http://www.zijinmining.com/business/product-detail-26913.htm"
+det_1872;"Zijin Mining Group Co., Ltd. (2014) Annual Report 2013 ; Zijin Mining Group Co., Ltd. Website (Paddington Gold Mine)";"http://www.zijinmining.com/Portals/1/Annual%20Report2014.pdf ; http://www.zijinmining.com/business/product-detail-26913.htm"
+det_1873;Zijin Mining Group Co., Ltd. (2013) Annual Report 2012;http://www.zijinmining.com/Portals/1/LTN201304251235(H%20Share)%202012%20Annual%20Report.pdf
+det_1874;Zijin Mining Group Co., Ltd. (2012) Annual Report 2011;http://www.zijinmining.com/Portals/1/LTN201204261135%20Annual%20Report2011.pdf
+det_1875;Zijin Mining Group Co., Ltd. (2011) Annual Report 2010;http://www.zijinmining.com/Portals/1/Annual%20Report%202010%EF%BC%88H%E8%82%A1%EF%BC%89.pdf
+det_1876;Zijin Mining Group Co., Ltd. (2010) Annual Report 2009;http://www.zijinmining.com/Portals/1/Annual2009.pdf
+det_1877;Zijin Mining Group Co., Ltd. (2009) Annual Report 2008;http://www.zijinmining.com/Portals/1/Annual2008.pdf
+det_1878;Zijin Mining Group Co., Ltd. (2008) Annual Report 2007;http://www.zijinmining.com/Portals/1/Annual2007.pdf
+det_1879;Zijin Mining Group Co., Ltd. (2007) Annual Report 2006;http://www.zijinmining.com/Portals/1/e-AR2006.pdf
+det_1880;Zijin Mining Group Co., Ltd. (2006) Annual Report 2005;http://www.zijinmining.com/Portals/1/e-AR2005.pdf
+det_1881;Zijin Mining Group Co., Ltd. (2005) Annual Report 2004;http://www.zijinmining.com/Portals/1/e-AR2004.pdf
+det_1882;Zijin Mining Group Co., Ltd. (2004) Annual Report 2003;http://www.zijinmining.com/Portals/1/e-AR2003.pdf
+det_1883;Aluminium Corporation of China Ltd. (2007) 20-F Annual Report 2006;https://www.sec.gov/Archives/edgar/data/1161611/000116161108000007/d6k_2006ar17.htm
+det_1884;Rusal Plc. (2016) Annual Report 2014;https://rusal.ru/upload/iblock/e58/e589d7f8c959e61284b650d4b2437487.pdf
+det_1885;Vedanta Limited (2015) Form 20-F Annual Report 2015;https://www.sec.gov/Archives/edgar/data/1370431/000119312515291431/d32971d20f.htm
+det_1886;Sterlite Industries (India) Limited (2012) Form 20-F Annual Report 2012;https://www.sec.gov/Archives/edgar/data/1370431/000119312512248960/d355568d20f.htm
+det_1887;Sterlite Industries (India) Limited (2011) Form 20-F Annual Report 2011;https://www.sec.gov/Archives/edgar/data/1370431/000119312511261309/d235112d20f.htm
+det_1888;Alcoa Corp. (n.d.) Fact Sheet Huntly Bauxite Mine;https://www.alcoa.com/australia/en/pdf/mining-huntly-fact-sheet.pdf
+det_1889;Alcoa Corp. (n.d.) Fact Sheet Willowdale Bauxite Mine;https://www.alcoa.com/australia/en/pdf/mining-willowdale-fact-sheet.pdf
+det_1890;Rusal Plc. Website (Timan Bauxite);https://rusal.ru/en/about/geography/boksit-timana/
+det_1891;Rusal Plc. Website (Kia-Shaltyr nepheline mine);https://rusal.ru/en/about/geography/kiya-shaltyrskiy-nefelinovyy-rudnik/
+det_1892;National Aluminium Company Limited Website (Alumina Refinery);https://nalcoindia.com/business/operation/alumina-refinery/
+det_1893;"MMC Norlisk Nickel (2020) Annual Report 2019 ; African Rainbow Minerals Ltd. (2019) Integrated Annual Report 2019";"https://www.nornickel.com/upload/iblock/5fc/2019_Annual_Report_of_Nornickel.pdf ; https://arm.co.za/wp-content/uploads/2020/05/ARM_IAR2019.pdf"
+det_1894;"Newmont Mining Corporation (2018)  Yanacocha Operation Facts ; Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019";"https://www.newmont.com/operations-projects/south-america/yanacocha/ ; https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm"
+det_1895;"Zijin Mining Group Co., Ltd. Website (Kolwezi Copper Mine) ; Zijin Mining Group Co., Ltd. (2017) Annual Report 2016";"http://www.zijinmining.com/business/product-detail-69529.htm ; http://www.zijinmining.com/upload/file/2017/05/08/65aac8c4d4634c0e889a8231eb056da3.pdf"
+det_1896;"Zijin Mining Group Co., Ltd. Website (Ashele Copper Mine) ; Zijin Mining Group Co., Ltd. (2004) Annual Report 2003";"http://www.zijinmining.com/business/product-detail-26899.htm ; http://www.zijinmining.com/Portals/1/e-AR2003.pdf"
+det_1897;Zijin Mining Group Co., Ltd. Website (Duobaoshan Copper Mine);http://www.zijinmining.com/business/product-detail-26901.htm
+det_1898;"Zijin Mining Group Co., Ltd. Website (Deerni Copper Mine) ; Zijin Mining Group Co., Ltd. (2008) Annual Report 2007";"http://www.zijinmining.com/business/product-detail-26900.htm ; http://www.zijinmining.com/Portals/1/Annual2007.pdf"
+det_1899;Zijin Mining Group Co., Ltd. Website (Kyzyl-Tash Turk Polymetallic Mine);http://www.zijinmining.com/business/product-detail-26919.htm
+det_1900;Zijin Mining Group Co., Ltd. Website (Wulagen Lead & Zinc Mine);http://www.zijinmining.com/business/product-detail-26902.htm
+det_1901;Zijin Mining Group Co., Ltd. Website (Miaogou & Sanguikou Lead and Copper Mine);http://www.zijinmining.com/business/product-detail-26903.htm
+det_1902;"Zijin Mining Group Co., Ltd. (2019) Annual Report 2018 ; Zijin Mining Group Co., Ltd. (2005) Annual Report 2004";"http://www.zijinmining.com/upload/file/2019/05/15/f4f97a694fb7431984ee2f562183ae16.pdf ; http://www.zijinmining.com/Portals/1/e-AR2004.pdf"
+det_1903;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (Tambomayo)";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/1"
+det_1904;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (Orcopampa)";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/2"
+det_1905;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (Uchucchacua)";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/7"
+det_1906;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (Julcani)";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/9"
+det_1907;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (La Zanja)";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/3"
+det_1908;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (Coimolache)";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/4"
+det_1909;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (Colquijirca (Tajo Norte))";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/16"
+det_1910;"Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019 ; Compania de Minas Buenaventura S.A.A. Website (Colquijirca (Marcapunta))";"https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm ; https://www.buenaventura.com/en/operaciones/detalle/11"
+det_1911;"Compania de Minas Buenaventura S.A.A. (2018) Form 20-F Annual Report 2017 ; Compania de Minas Buenaventura S.A.A. (2012) Form 20-F Annual Report 2011";"https://www.sec.gov/Archives/edgar/data/1013131/000114420418023941/tv488578_20f.htm ; https://www.sec.gov/Archives/edgar/data/1013131/000114420412024749/v310700_20f.htm"
+det_1912;"Compania de Minas Buenaventura S.A.A. (2016) Form 20-F Annual Report 2015 ; Compania de Minas Buenaventura S.A.A. (2012) Form 20-F Annual Report 2011";"https://www.sec.gov/Archives/edgar/data/1013131/000114420416098224/v437647_20f.htm ; https://www.sec.gov/Archives/edgar/data/1013131/000114420412024749/v310700_20f.htm"
+det_1913;Compania de Minas Buenaventura S.A.A. (2014) Form 20-F Annual Report 2013;https://www.sec.gov/Archives/edgar/data/1013131/000114420414026370/v376089_20f.htm
+det_1914;"Compania de Minas Buenaventura S.A.A. (2014) Form 20-F Annual Report 2013 ; Compania de Minas Buenaventura S.A.A. (2004) Form 20-F Annual Report 2003";"https://www.sec.gov/Archives/edgar/data/1013131/000114420414026370/v376089_20f.htm ; https://www.sec.gov/Archives/edgar/data/1013131/000101313104000007/buenaventura.htm"
+det_1915;Compania de Minas Buenaventura S.A.A. (2012) Form 20-F Annual Report 2011;https://www.sec.gov/Archives/edgar/data/1013131/000114420412024749/v310700_20f.htm
+det_1916;Compania de Minas Buenaventura S.A.A. (2004) Form 20-F Annual Report 2003;https://www.sec.gov/Archives/edgar/data/1013131/000101313104000007/buenaventura.htm
+det_1917;"Agnico Eagle Mines Limited (2020) Annual Report 2019 ; Agnico Eagle Mines Limited Website (LaRonde Complex)";"https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf ; https://www.agnicoeagle.com/English/operations/operations/laronde/default.aspx"
+det_1918;Agnico Eagle Mines Limited (2019) Annual Report 2018;https://s21.q4cdn.com/374334112/files/doc_financials/annual/2018/AgnicoEagle-AR2018-Full.pdf
+det_1919;"Agnico Eagle Mines Limited (2020) Annual Report 2019 ; Agnico Eagle Mines Limited Website (Goldex)";"https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf ; https://www.agnicoeagle.com/English/operations/operations/goldex/default.aspx"
+det_1920;"Agnico Eagle Mines Limited (2020) Annual Report 2019 ; Agnico Eagle Mines Limited Website (Meadowbank Complex)";"https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf ;https://www.agnicoeagle.com/English/operations/operations/meadowbank/default.aspx"
+det_1921;"Agnico Eagle Mines Limited (2020) Annual Report 2019 ; Agnico Eagle Mines Limited Website (Meliadine)";"https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf ;https://www.agnicoeagle.com/English/operations/operations/meliadine/default.aspx"
+det_1922;"Agnico Eagle Mines Limited (2020) Annual Report 2019 ; Agnico Eagle Mines Limited Website (Kittila)";"https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf ;https://www.agnicoeagle.com/English/operations/operations/kittila/default.aspx"
+det_1923;"Agnico Eagle Mines Limited (2020) Annual Report 2019 ; Agnico Eagle Mines Limited Website (Pinos Altos)";"https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf ;https://www.agnicoeagle.com/English/operations/operations/pinos-altos/default.aspx"
+det_1924;"Agnico Eagle Mines Limited (2020) Annual Report 2019 ; Agnico Eagle Mines Limited Website (La India)";"https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf ;https://www.agnicoeagle.com/English/operations/operations/la-india/default.aspx"
+det_1925;Fortescue Metals Group Ltd (2020) Annual Report 2020;https://www.fmgl.com.au/docs/default-source/announcements/fy20-annual-report-and-4e.pdf?sfvrsn=c3642b54_4
+det_1926;CITIC Limited (2020) Annual Report 2019;https://www.citic.com/uploadfile/2020/0421/20200421062822309.pdf
+det_1927;CITIC Dameng Holdings Limited Website (Manganese mining);http://www.dameng.citic.com/iwcm/zxdmkg/en/ns:LHQ6MzQzLGY6NjU0LGM6LHA6LGE6LG06/channel.vsml
+det_1928;Compania de Minas Buenaventura S.A.A. (2020) Form 20-F Annual Report 2019;https://www.sec.gov/Archives/edgar/data/1013131/000110465920045603/tm206798d1_20f.htm
+det_1929;Agnico Eagle Mines Limited (2020) Annual Report 2019;https://s21.q4cdn.com/374334112/files/doc_financials/annual/2019/AgnicoAR2019-FULL.pdf
+det_1930;Compania de Minas Buenaventura S.A.A. (2018) Form 20-F Annual Report 2017;https://www.sec.gov/Archives/edgar/data/1013131/000114420418023941/tv488578_20f.htm
+det_1931;Compania de Minas Buenaventura S.A.A. (2016) Form 20-F Annual Report 2015;https://www.sec.gov/Archives/edgar/data/1013131/000114420416098224/v437647_20f.htm
+det_1932;Compania de Minas Buenaventura S.A.A. (2009) Form 20-F Annual Report 2008;https://www.sec.gov/Archives/edgar/data/1013131/000114420409031285/v150975_20f.htm
+det_1933;Compania de Minas Buenaventura S.A.A. (2019) Form 20-F Annual Report 2018;https://www.sec.gov/Archives/edgar/data/1013131/000114420419022630/tv519058_20f.htm
+det_1934;Compania de Minas Buenaventura S.A.A. (2013) Form 20-F Annual Report 2012;https://www.sec.gov/Archives/edgar/data/1013131/000114420413025112/v343000_20f.htm
+det_1935;Agnico Eagle Mines Limited (2017) Annual Report 2016;https://s21.q4cdn.com/374334112/files/doc_financials/annual/2016/AEM-2016AR.pdf
+det_1936;Agnico Eagle Mines Limited (2014) Annual Report 2013;https://s21.q4cdn.com/374334112/files/doc_financials/annual/2013/AEM-AR-2013.pdf
+det_1937;Agnico Eagle Mines Limited (2009) Form 20-F Annual Report 2008;http://d1lge852tjjqow.cloudfront.net/CIK-0000002809/2a60ef05-d2cc-4c84-b85a-17da4083b34a.pdf
+det_1938;Agnico Eagle Mines Limited (2004) Form 20-F Annual Report 2003;http://d1lge852tjjqow.cloudfront.net/CIK-0000002809/22ef3787-a01b-4d7c-8f0e-13ec9d8dfe8c.pdf
+det_1939;Fortescue Metals Group Ltd (2015) Annual Report 2015;https://www.fmgl.com.au/docs/default-source/announcements/150824-fu2017-annual-report-including-appendix-4e.pdf?sfvrsn=ed516c24_4
+det_1940;Fortescue Metals Group Ltd (2010) Annual Report 2010;https://www.fmgl.com.au/docs/default-source/announcements/101013-annual-report-(fy2010).pdf?sfvrsn=ff6e748e_4
+det_1941;Fortescue Metals Group Ltd (2009) Annual Report 2009;https://www.fmgl.com.au/docs/default-source/announcements/091012-annual-report-(fy2009).pdf?sfvrsn=5412e9bf_4
+det_1942;Fortescue Metals Group Ltd (2008) Annual Report 2008;https://www.fmgl.com.au/docs/default-source/announcements/091012-annual-report-(fy2009).pdf?sfvrsn=5412e9bf_4
+det_1943;CITIC Limited (2019) Annual Report 2018;https://www.citic.com/uploadfile/2019/0418/20190418044301701.pdf
+det_1944;CITIC Limited (2018) Annual Report 2017;https://www.citic.com/uploadfile/2018/0420/20180420052934291.pdf
+det_1945;CITIC Limited (2017) Annual Report 2016;https://www.citic.com/uploadfile/2017/0425/20170425011309169.pdf
+det_1946;CITIC Limited (2016) Annual Report 2015;https://www.citic.com/uploadfile/2017/0425/20170425014038612.pdf
+det_1947;CITIC Limited (2015) Annual Report 2014;https://www.citic.com/uploadfile/2017/0425/20170425014038612.pdf
+det_1948;Compania de Minas Buenaventura S.A.A. (2017) Form 20-F Annual Report 2016;https://www.sec.gov/Archives/edgar/data/1013131/000114420417023420/v464888_20f.htm
+det_1949;Compania de Minas Buenaventura S.A.A. (2011) Form 20-F Annual Report 2010;https://www.sec.gov/Archives/edgar/data/1013131/000114420411037918/v226924_20f.htm
+det_1950;Compania de Minas Buenaventura S.A.A. (2015) Form 20-F Annual Report 2014;https://www.sec.gov/Archives/edgar/data/1013131/000114420415026696/v408328_20f.htm
+det_1951;Compania de Minas Buenaventura S.A.A. (2011) Form 20-F Annual Report 2010;https://www.sec.gov/Archives/edgar/data/1013131/000114420412024749/v310700_20f.htm
+det_1952;Compania de Minas Buenaventura S.A.A. (2010) Form 20-F Annual Report 2009;https://www.sec.gov/Archives/edgar/data/1013131/000114420411037918/v226924_20f.htm
+det_1953;Compania de Minas Buenaventura S.A.A. (2009) Form 20-F Annual Report 2008;https://www.sec.gov/Archives/edgar/data/1013131/000114420410033153/v187992_20f.htm
+det_1954;Compania de Minas Buenaventura S.A.A. (2008) Form 20-F Annual Report 2007;https://www.sec.gov/Archives/edgar/data/1013131/000114420409031285/v150975_20f.htm
+det_1955;Zijin Mining Group Co., Ltd. Website (Kolwezi Copper Mine);http://www.zijinmining.com/business/product-detail-69529.htm
+det_1956;Zijin Mining Group Co., Ltd. Website (Ashele Copper Mine);http://www.zijinmining.com/business/product-detail-26899.htm
+det_1957;Zijin Mining Group Co., Ltd. Website (Deerni Copper Mine);http://www.zijinmining.com/business/product-detail-26900.htm
