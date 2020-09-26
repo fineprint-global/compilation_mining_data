@@ -1,5 +1,5 @@
 ---
-title: "comparison_national_accounts"
+title: "Coverage"
 output: html_document
 editor_options: 
   chunk_output_type: console
@@ -18,18 +18,174 @@ library(scales)
 
 <br> 
 
-```{r , echo = FALSE}
+```{r , echo = FALSE, message = FALSE}
 
 ## read files
+
 # harmonized data file
 detailed <- read_rds("./detailed_data/03_intermediate/gaps_filled.rds")
 
+# sheets from detailed data
+general <- detailed$general
+sheet_min <- detailed$minerals_ores_conce
+sheet_com <- detailed$commodities
+
+# national accounts
 load("./detailed_data/01_input/05_other_data/wmd_comb.RData")
 load("./detailed_data/01_input/05_other_data/bgs.RData")
 
-# sheets
-sheet_min <- detailed$minerals_ores_conce
-sheet_com <- detailed$commodities
+# IDs
+mat_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/material_ids.csv", delim = ";")
+
+source_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
+
+```
+
+<br> 
+
+#### General coverage
+
+```{r , echo = FALSE, message = FALSE}
+
+# general coverage
+
+if(exists("gen_cov")) rm(gen_cov)
+
+gen_cov <- tibble(Indicator = NA, Amount = NA) %>% 
+  filter(!is.na(Amount)) %>%
+  mutate(Indicator = as.character(Indicator), Amount = as.numeric(Amount))
+
+gen_cov <- gen_cov %>%
+  union(., tibble(
+    Indicator = "Number of countries",
+    Amount = general %>% distinct(country) %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of mines / processing facilities",
+    Amount = general %>% distinct(mine) %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of materials (w/o processing)",
+    Amount = (sheet_min %>% distinct(min_ore_con) %>% nrow()) +
+      (sheet_com %>% distinct(commodity) %>% nrow())
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of years",
+    Amount = length(union(sheet_min$year, sheet_com$year))
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of grades",
+    Amount = sheet_com %>% filter(!is.na(grade)) %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of yields",
+    Amount = sheet_com %>% filter(!is.na(yield)) %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of recovery rates",
+    Amount = sheet_com %>% filter(!is.na(recovery_rate)) %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of sources",
+    Amount = source_ids %>% nrow()
+  ))
+
+
+
+# table for Rmd output
+kable(gen_cov, row.names = FALSE, caption = "General coverage") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
+
+
+
+# Number of mines/facilities by type
+nr_min_fac <- general %>%
+  group_by(mine_or_processing) %>%
+  summarise(n = n())
+
+# table for Rmd output
+kable(nr_min_fac, row.names = FALSE, caption = "Number of mines/facilities by type") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
+
+
+# nr of materials per category
+nr_mat_by_cat <- sheet_min %>%
+  distinct(min_ore_con) %>%
+  rename(material_id = min_ore_con) %>%
+  union(.,
+        sheet_com %>%
+          distinct(commodity) %>%
+          rename(material_id = commodity)
+  ) %>%
+  filter(!is.na(material_id)) %>%
+  left_join(.,
+    mat_ids %>% select(material_category, material_category_2, material_id)
+  ) %>%
+  group_by(material_category, material_category_2) %>%
+  summarise(n = n())
+
+# table for Rmd output
+kable(nr_mat_by_cat, row.names = FALSE, caption = "Number of materials per category") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
+
+
+
+# nr of mines per country (processing not included)
+
+nr_min_fac_by_cou <- general %>%
+  group_by(alphanumiso) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
+  
+# table for Rmd output
+kable(nr_min_fac_by_cou, row.names = FALSE, caption = "Number of mines per country") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
+
+
+
+# nr of materials per country
+
+nr_mat_by_cou <- sheet_min %>%
+  distinct(mine, min_ore_con) %>%
+  rename(material_id = min_ore_con) %>%
+  union(.,
+        sheet_com %>%
+          distinct(mine, commodity) %>%
+          rename(material_id = commodity)
+        ) %>%
+  left_join(.,
+            general %>%
+              select(mine, alphanumiso)
+            ) %>%
+  distinct(material_id, alphanumiso) %>%
+  group_by(alphanumiso) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
+
+# table for Rmd output
+kable(nr_mat_by_cou, row.names = FALSE, caption = "Number of materials per country") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
+
+
+
+# nr of mines per material (processing not included)
+
+nr_mine_by_mat <- sheet_min %>%
+  distinct(mine, min_ore_con) %>%
+  rename(material_id = min_ore_con) %>%
+  union(.,
+        sheet_com %>%
+          distinct(mine, commodity) %>%
+          rename(material_id = commodity)
+        ) %>%
+  distinct(material_id, mine) %>%
+  group_by(material_id) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
+
+# table for Rmd output
+kable(nr_mine_by_mat, row.names = FALSE, caption = "Number of mines per material") %>%
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
 
 ```
 
@@ -47,7 +203,6 @@ agg_com <- sheet_com %>%
               mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
             )
 
-a <- agg_com %>% filter(alphanumiso == "PRT620")
 
 
 # aggregate 
@@ -125,7 +280,7 @@ com_cov1 <- agg_com %>%
 
 # table for Rmd output
 kable(com_cov1, row.names = FALSE, caption = "Relative coverage by material and country") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
 
 
 
@@ -145,7 +300,7 @@ com_cov2 <- agg_com %>%
 
 # table for Rmd output
 kable(com_cov2, row.names = FALSE, caption = "Relative coverage of global total by material") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
 
 
 ```
@@ -163,6 +318,8 @@ agg_min <- sheet_min %>%
               distinct(mine, alphanumiso) %>%
               mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
   )
+
+
 
 # aggregate 
 agg_min <- agg_min %>%
@@ -241,7 +398,7 @@ min_cov1 <- agg_min %>%
 
 # table for Rmd output
 kable(min_cov1, row.names = FALSE, caption = "Relative coverage by material and country") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
 
 
 
@@ -261,7 +418,7 @@ min_cov2 <- agg_min %>%
 
 # table for Rmd output
 kable(min_cov2, row.names = FALSE, caption = "Relative coverage of global total by material") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
 
 
 ```
@@ -276,12 +433,12 @@ kable(min_cov2, row.names = FALSE, caption = "Relative coverage of global total 
 # table for Rmd output
 kable(not_incl_com, row.names = FALSE, 
       caption = "Number of data rows not included by commodity") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
 
 # table for Rmd output
 kable(not_incl_min, row.names = FALSE, 
       caption = "Number of data rows not included by mineral/ore") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+  kable_styling(bootstrap_options =  c("condensed"), font_size = 14)
 
 ```
 

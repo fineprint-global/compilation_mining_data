@@ -6,7 +6,7 @@ Compilation of a dataset including a range of variables related to the productio
 
 ## General information
 
-The main purposes of these scripts are the retrieval, formatting, harmonization, and integration of various datasets from different sources. In addition various other tasks are performed, like unit conversion, gap filling and estimations, comparison versus other data.
+The main purposes of these scripts are the retrieval, formatting, harmonization, checks, and integration of various datasets from different sources. In addition various other tasks are performed, like unit conversion, gap filling and estimations, additional checks, and comparison versus other data.
 The desired output is a consistent dataset on the production of individual mines and related variables.
 
 Further explanations on the background can be found at http://fineprint.wu.ac.at/10_fp-wp1-mining/
@@ -39,6 +39,8 @@ Therefore other details of data can easily be accessed through these files, e.g.
 #### Rmd outputs
 
 Several Rmd-files are created for purposes like results from harmonization or an overview of data coverage. These are saved in sub-folders `./04_output/.../`.
+
+These files are not included in .gitignore, in order to keep older versions for comparability as well as having a general backup of these files in case of major errors during compilation. However, obviously obsolete versions of these files can be deleted manually if necessary.
 
 
 

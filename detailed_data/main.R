@@ -45,7 +45,11 @@ source("./detailed_data/02_scripts/04_gap_filling.R")
 
 ## Comparison of data coverage against national accounts with respective HTML output (html output is saved in `./detailed_data/04_output/coverage/`)
 wd <- getwd()
-rmarkdown::render("./detailed_data/02_scripts/05_comparison_national_accounts.Rmd",
-                  knit_root_dir = wd, output_dir = "./detailed_data/04_output/coverage/", intermediates_dir = "./detailed_data/04_output/coverage/")
+rmarkdown::render("./detailed_data/02_scripts/05_coverage.Rmd",
+                  knit_root_dir = wd, 
+                  output_dir = "./detailed_data/04_output/coverage/", 
+                  intermediates_dir = "./detailed_data/04_output/coverage/",
+                  output_file = paste0("coverage_", substr(Sys.time(), 1, 10),".html")
+                  )
 
 
