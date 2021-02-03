@@ -9,7 +9,7 @@ type_mineral;NM mineral;NM mineral
 type_mineral;NM mineral ore;NM mineral ore
 type_mining;Open pit;Open pit
 type_mining;Underground;Underground
-type_mining;Surface;Surface
+type_mining;Surface;Open pit
 type_mining;Open Pit;Open pit
 type_mining;Leaching;Leaching
 type_mining;Heap leach;Heap leaching
@@ -29,7 +29,7 @@ type_mining;Leach Pad;Leach pad
 type_mining;Leach pad;Leach pad
 type_mining;Open pit and Underground;Open pit, Underground
 type_mining;Dump leach ore;Dump leaching
-type_mining;Underground, Surface;Underground, Surface
+type_mining;Underground, Surface;Underground, Open pit
 type_mining;Undergrpund;Underground
 type_mining;Flotation;Flotation
 type_mining;Dump Leach;Dump leaching

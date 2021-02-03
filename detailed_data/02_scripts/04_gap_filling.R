@@ -5,7 +5,7 @@ library(rlang)
 
 ## read files
 # harmonized data file
-detailed <- read_rds("./detailed_data/03_intermediate/all_tables_converted.rds")
+detailed <- read_rds("./detailed_data/03_intermediate/aggregated.rds")
 
 # list of columns
 sheets_columns <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/sheets_columns.csv", delim = ";")
@@ -20,11 +20,11 @@ sheet_com <- detailed$commodities
 ## Add duplicates for "Ore processed" from "Ore mined" and vice versa
 ore_mined <- sheet_min %>%
   filter(type_mineral == "Ore mined") %>%
-  distinct(mine, sub_site, year)
+  distinct(mine_fac, year)
 
 ore_proc <- sheet_min %>%
   filter(type_mineral == "Ore processed") %>%
-  distinct(mine, sub_site, year)
+  distinct(mine_fac, year)
 
 # mines with reported ore mined for a year, but no ore processed for that year
 mine_list <- setdiff(ore_mined, ore_proc)
@@ -35,7 +35,6 @@ sheet_min <- sheet_min %>%
       left_join(sheet_min %>% filter(type_mineral == "Ore mined")) %>%
       mutate(type_mineral = "Ore processed")
     )
-
 
 # mines with reported ore processed, but no ore mined for that year
 mine_list <- setdiff(ore_proc, ore_mined)
@@ -49,27 +48,35 @@ sheet_min <- sheet_min %>%
 
 
 
-# aggregate the tables for columns which have same entry after harmonization
-col_names <- names(sheet_com)[!names(sheet_com) %in% c("value", "amount_sold", "metal_payable")]
+## Add duplicates for "Clean coal" from "Coal mined" and vice versa
 
-sheet_com <- sheet_com %>%
-  group_by(across(all_of(col_names))) %>%
-  summarise(
-    value = sum(value),
-    amount_sold = sum(amount_sold),
-    metal_payable = sum(metal_payable)
-    ) %>%
-  ungroup()
+ore_mined <- sheet_min %>%
+  filter(type_mineral == "Coal mined") %>%
+  distinct(mine_fac, year)
 
-col_names <- names(sheet_min)[!names(sheet_min) %in% c("value", "amount_sold", "grade")]
+ore_proc <- sheet_min %>%
+  filter(type_mineral == "Clean coal") %>%
+  distinct(mine_fac, year)
 
-sheet_min_agg <- sheet_min %>%
-  group_by(across(all_of(col_names))) %>%
-  summarise(
-    value = sum(value),
-    amount_sold = sum(amount_sold)
-    ) %>%
-  ungroup()
+# mines with reported coal mined for a year, but no Clean coal for that year
+mine_list <- setdiff(ore_mined, ore_proc)
+
+sheet_min <- sheet_min %>% 
+  union(
+    mine_list %>%
+      left_join(sheet_min %>% filter(type_mineral == "Coal mined")) %>%
+      mutate(type_mineral = "Clean coal")
+  )
+
+# mines with reported Clean coal, but no coal mined for that year
+mine_list <- setdiff(ore_proc, ore_mined)
+
+sheet_min <- sheet_min %>% 
+  union(
+    mine_list %>%
+      left_join(sheet_min %>% filter(type_mineral == "Clean coal")) %>%
+      mutate(type_mineral = "Coal mined")
+  )
 
 
 
@@ -85,10 +92,10 @@ sheet_com <- sheet_com %>%
   # with/without recovery rate and with yield
 sheet_com <- sheet_com %>%
   left_join(.,
-            sheet_min_agg %>% 
+            sheet_min %>% 
               filter(type_mineral %in% c("Ore processed", "Concentrate")) %>%
-              select(mine, sub_site, min_ore_con, type_mining, year, value),
-            by = c("mine", "sub_site", "min_ore_con", "type_mining", "year"),
+              select(mine_fac, min_ore_con, year, mine_processing, value),
+            by = c("mine_fac", "min_ore_con", "year", "mine_processing"),
             suffix = c(".com", ".min")
             ) %>%
   mutate(value.com = ifelse(
@@ -177,16 +184,16 @@ write_rds(detailed, "./detailed_data/03_intermediate/gaps_filled.rds")
 # 
 # 
 # 
-# a1 <- intersect(sheet_min$mine, sheet_com$mine)
+# a1 <- intersect(sheet_min$mine_fac, sheet_com$mine_fac)
 # 
 # a2 <- sheet_min %>% 
-#   filter(mine %in% a1) %>% 
+#   filter(mine_fac %in% a1) %>% 
 #   filter(type_mineral == "Ore processed") %>% 
-#   distinct(mine, min_ore_con, type_mining)
+#   distinct(mine_fac, min_ore_con, type_mining)
 # 
 # a3 <- sheet_com %>% 
-#   filter(mine %in% a1) %>% 
-#   distinct(mine, min_ore_con, type_mining)
+#   filter(mine_fac %in% a1) %>% 
+#   distinct(mine_fac, min_ore_con, type_mining)
 # 
 # intersect(a2, a3)
 # a <- setdiff(a2, a3)

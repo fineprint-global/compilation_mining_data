@@ -1,12 +1,77 @@
 sheet;variable;material
+minerals_ores_conce;min_ore_con;Hard coking coal
+minerals_ores_conce;min_ore_con;Sub-bituminous coal
 minerals_ores_conce;min_ore_con;6E PGM ore
+minerals_ores_conce;min_ore_con;Manganese carbonate concentrate
+minerals_ores_conce;min_ore_con;Manganese oxide concentrate
+minerals_ores_conce;min_ore_con;Sintering ore
+minerals_ores_conce;min_ore_con;Iron ore lumps
+minerals_ores_conce;min_ore_con;Bituminous coal
+minerals_ores_conce;min_ore_con;Long flame coal
+minerals_ores_conce;min_ore_con;Lignite
+minerals_ores_conce;min_ore_con;Lead Oxides
+minerals_ores_conce;min_ore_con;Copper Oxide
+minerals_ores_conce;min_ore_con;PCI Metallurgical coal
+minerals_ores_conce;min_ore_con;Copper cement
+minerals_ores_conce;min_ore_con;Tin ore
+minerals_ores_conce;min_ore_con;Limonite
+minerals_ores_conce;min_ore_con;Fluorspar ore
+minerals_ores_conce;min_ore_con;Lithium ore
+minerals_ores_conce;min_ore_con;Spodumene
+minerals_ores_conce;min_ore_con;Tantalum concentrate
+minerals_ores_conce;min_ore_con;Heavy mineral ore
+minerals_ores_conce;min_ore_con;Heavy mineral concentrate
+minerals_ores_conce;min_ore_con;Copper direct shipping ore
+minerals_ores_conce;min_ore_con;Oxide copper ore high grade
+minerals_ores_conce;min_ore_con;Oxide copper ore low grade
+minerals_ores_conce;min_ore_con;Oxide gold ore high grade
+minerals_ores_conce;min_ore_con;Oxide gold ore low grade
 commodities;min_ore_con;6E PGM ore
+commodities;min_ore_con;Manganese carbonate concentrate
+commodities;min_ore_con;Manganese oxide concentrate
+commodities;min_ore_con;Sintering ore
+commodities;min_ore_con;Lead Oxides
+commodities;min_ore_con;Copper Oxides
+commodities;min_ore_con;Tin ore
+commodities;min_ore_con;Fluorspar ore
+commodities;min_ore_con;Spodumene
+commodities;min_ore_con;Lithium ore
+commodities;min_ore_con;Tantalum concentrate
+commodities;min_ore_con;Heavy mineral concentrate
+commodities;min_ore_con;Copper direct shipping ore
+commodities;min_ore_con;Oxide copper ore high grade
+commodities;min_ore_con;Oxide copper ore low grade
+commodities;min_ore_con;Oxide gold ore high grade
+commodities;min_ore_con;Oxide gold ore low grade
+commodities;commodity;Tellurium
+commodities;commodity;Fluorspar
+commodities;commodity;Antimony
+commodities;commodity;LiO2
+commodities;commodity;Ta2O5
+commodities;commodity;Hyti
+commodities;commodity;Leucoxene
 transport;product;Alumina hydrate
 transport;product;Anode slime
 transport;product;Zinc ingots
+transport;product;Iron ore pre-concentrate
+transport;product;Iron ore lumps
+transport;product;Finished steel products
+transport;product;Steel products
+transport;product;Ferroniobium
+transport;product;Lignite
+transport;product;Mixed Sulphide
+transport;product;Limonite
 capacity_reserves;minerals_and_ores;Iron Ore
 capacity_reserves;minerals_and_ores;6E PGM ore
 capacity_reserves;minerals_and_ores;Chromitite
+capacity_reserves;minerals_and_ores;Sub-bituminous coal
+capacity_reserves;minerals_and_ores;Lignite
+capacity_reserves;minerals_and_ores;Bituminous coal
+capacity_reserves;minerals_and_ores;Tin ore
+capacity_reserves;minerals_and_ores;Limonite
+capacity_reserves;minerals_and_ores;Stockpiles
+capacity_reserves;minerals_and_ores;Spodumene
+capacity_reserves;minerals_and_ores;Heavy mineral ore
 capacity_reserves;commodity;6E PGM
 capacity_reserves;commodity;Chromium(III) oxide
 capacity_reserves;commodity;Primary aluminium
@@ -14,3 +79,16 @@ capacity_reserves;commodity;Anode carbon
 capacity_reserves;commodity;Phosphoric acid
 capacity_reserves;commodity;Chemical grade Alumina
 capacity_reserves;commodity;Phosphorus
+capacity_reserves;commodity;Rolled steel products
+capacity_reserves;commodity;Pig iron
+capacity_reserves;commodity;Liquid steel
+capacity_reserves;commodity;Steel slab
+capacity_reserves;commodity;Polyethylene
+capacity_reserves;commodity;Polypropylene
+capacity_reserves;commodity;Refined Nickel
+capacity_reserves;commodity;Refined Cobalt
+capacity_reserves;commodity;Ammonium sulphate
+capacity_reserves;commodity;Nickel contained in mixed sulphide
+capacity_reserves;commodity;Cobalt contained in mixed sulphide
+capacity_reserves;commodity;SiO2
+capacity_reserves;commodity;Li2O

@@ -5,7 +5,7 @@ detailed;4E Grade;Me.pgm
 detailed;6E Grade;Me.pgm
 detailed;Acid;
 detailed;Ag;Me.Ag
-detailed;Alumina;Me.AlO
+detailed;Alumina;Me.Al2O3
 detailed;Aluminium;Me.Al
 detailed;Aluminium fluoride;Me.AlF3
 detailed;Aluminum;Me.Al
@@ -21,7 +21,7 @@ detailed;Bulk Ore;O.bulk
 detailed;Ca;Me.Ca
 detailed;Cadmium;Me.Cd
 detailed;Carbonatite Cpmlex, Oxide;
-detailed;Cathode copper;Me.Cu
+detailed;Cathode copper;Oth.cuc
 detailed;Cathode nickel and briquettes;Me.Ni
 detailed;Chrome alloys;All.Cr
 detailed;Chrome ore;O.Cr
@@ -36,11 +36,11 @@ detailed;Copper anodes;Me.Cu
 detailed;Copper blister/anode;Me.Cu
 detailed;Copper blister/anode (third party);
 detailed;Copper blister/anodes;Me.Cu
-detailed;Copper cathode;Me.Cu
-detailed;Copper Cathode;Me.Cu
+detailed;Copper cathode;Oth.cuc
+detailed;Copper Cathode;Oth.cuc
 detailed;Copper cathode (third party);
-detailed;Copper cathode tolled;Me.Cu
-detailed;Copper cathodes;Me.Cu
+detailed;Copper cathode tolled;Oth.cuc
+detailed;Copper cathodes;Oth.cuc
 detailed;Copper concentrate;Con.Cu
 detailed;Copper Concentrate;Con.Cu
 detailed;copper concentrate;Con.Cu
@@ -54,7 +54,7 @@ detailed;Copper Secondary;
 detailed;Copper Secondary raw materials;
 detailed;Copper Secondary raw materials of which, electronics;
 detailed;Copper smelted;Me.Cu
-detailed;Coppoer cathode tolled;Me.Cu
+detailed;Coppoer cathode tolled;Oth.cuc
 detailed;Cu;Me.Cu
 detailed;Diamonds;Nm.dia
 detailed;Fe;Me.Fe
@@ -62,13 +62,13 @@ detailed;Friable Itabirite and Hematite;O.Fe
 detailed;Gold;Me.Au
 detailed;Gold ore;O.Au
 detailed;Hermatite;O.Fe
-detailed;Ilmenite;O.FeTiO
+detailed;Ilmenite;O.FeTiO3
 detailed;Iridium;Me.Ir
 detailed;Iron;Me.Fe
 detailed;Iron ore;O.Fe
 detailed;Itabirite;O.Fe
 detailed;Laterite;M.lat
-detailed;Leach Ore;O.bulk
+detailed;Leach Ore;O.oxi
 detailed;Lead;Me.Pb
 detailed;Lead alloys;All.Pb
 detailed;Lead concentrate;Con.Pb
@@ -105,9 +105,9 @@ detailed;Nickel ore;O.Ni
 detailed;Niobium;Me.Nb
 detailed;Niobium ore;O.Nb
 detailed;Non-primary Sulphide Ore;O.bulk
-detailed;Oxide;O.bulk
-detailed;Oxide ore;O.bulk
-detailed;Oxide Ore;O.bulk
+detailed;Oxide;O.oxi
+detailed;Oxide ore;O.oxi
+detailed;Oxide Ore;O.oxi
 detailed;Palladium;Me.Pd
 detailed;Palladium concentrate;Con.Pd
 detailed;Pb;Me.Pb
@@ -129,7 +129,7 @@ detailed;Pyrite;O.FeS
 detailed;Refractory ore;
 detailed;Rhodium;Me.Rh
 detailed;Ruthenium;Me.Ru
-detailed;Rutile;O.TiO
+detailed;Rutile;O.TiO2
 detailed;S;Nm.S
 detailed;Sands;
 detailed;Saprolite;O.bulk
@@ -142,9 +142,9 @@ detailed;Silver ore;O.Ag
 detailed;Sodium tripolyphosphate;Me.Na_nec
 detailed;Sulfide;O.bulk
 detailed;Sulfuric acid;Nm.H2SO4
-detailed;Sulphide;O.bulk
-detailed;Sulphide ore;O.bulk
-detailed;Sulphide Ore;O.bulk
+detailed;Sulphide;O.sul
+detailed;Sulphide ore;O.sul
+detailed;Sulphide Ore;O.sul
 detailed;Sulphur;Nm.S
 detailed;Sulphuric acid;Nm.H2SO4
 detailed;Suphide ore;O.bulk
@@ -170,7 +170,7 @@ detailed;Zn;Me.Zn
 detailed;Gold Ore;O.Au
 detailed;Phosphate ore;O.P
 detailed;Potash;O.K2O
-detailed;Kaolin;M.AlSiO
+detailed;Kaolin;M.kao
 detailed;Bulk concentrate;Con.bulk
 detailed;Iron concentrate;Con.Fe
 detailed;Iron ore pellets;Con.Fe

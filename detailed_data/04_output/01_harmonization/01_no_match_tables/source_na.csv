@@ -1,5 +1,5 @@
 sheet;variable
-general;source
-general;source_url
-commodities;commodity
+minerals_ores_conce;mine_fac
 processing;type_facility
+waste;year
+other_info;year

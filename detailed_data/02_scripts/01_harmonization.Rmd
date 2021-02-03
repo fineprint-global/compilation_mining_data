@@ -301,12 +301,12 @@ kable(no_match_entries, row.names = FALSE, caption = "Check entries and add to t
 
 <br> 
 
-### Check of number of entries for each mine in sheet “general”
+### Check of number of entries for each mine_fac in sheet “general”
 
 ```{r , echo = FALSE}
 
 nr_mines <- detailed$general %>%
-  group_by(mine) %>%
+  group_by(mine_fac) %>%
   summarise(n = n()) %>%
   filter(n > 1)
 
@@ -318,7 +318,7 @@ kable(nr_mines, row.names = FALSE, caption = "Mines with more than one entry") %
 
 <br> 
 
-### Check of entries for mine (and facility) names across all sheets
+### Check of entries for mine_fac names across all sheets
 
 ```{r , echo = FALSE}
 
@@ -353,14 +353,14 @@ for (i in 1:nrow(sel_col)) {
 
 }
 
-# mine names which are different from sheet 'general'
-no_match_mines <- mine_names %>% filter(!(mine_fac %in% detailed$general$mine))
+# mine_fac names which are different from sheet 'general'
+no_match_mines <- mine_names %>% filter(!(mine_fac %in% detailed$general$mine_fac))
 
 # save no_match table as csv
 write_delim(no_match_mines, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_mines.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_mines, row.names = FALSE, caption = "Incorrect mine names (different than on sheet 'general')") %>%
+kable(no_match_mines, row.names = FALSE, caption = "Incorrect mine_fac names (different than on sheet 'general')") %>%
   kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
 
 ```
@@ -767,10 +767,10 @@ sheet_com <- detailed$commodities
 
 ## Adjustment of "O.bulk" and "Con.bulk"
 
-# all combinations (mine, sub_site, type_mining, year) with more than one commodity/metal where min_ore_con is NA
+# all combinations (mine_fac, sub_site, type_mining, year) with more than one commodity/metal where min_ore_con is NA
 several_com <- sheet_com %>%
   filter(is.na(min_ore_con)) %>%
-  group_by(mine, sub_site, type_mining, year) %>%
+  group_by(mine_fac, sub_site, type_mining, year) %>%
   summarise(n = n()) %>%
   filter(n > 1) %>%
   select(-n) %>%

@@ -1,0 +1,4 @@
+# Ingnore output files to avoid push to remote repo 
+
+.rds
+.RData

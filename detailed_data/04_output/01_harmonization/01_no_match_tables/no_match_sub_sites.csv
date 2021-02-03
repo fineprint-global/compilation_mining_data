@@ -1,6 +1,4 @@
 sheet;variable;sub_site
-minerals_ores_conce;sub_site;Chukar
-commodities;sub_site;Cadia hill
 capacity_reserves;sub_site;Goldstrike Open Pit
 capacity_reserves;sub_site;Loulo
 capacity_reserves;sub_site;Corrego do Sitio complex
@@ -37,4 +35,4 @@ capacity_reserves;sub_site;Nchwaning Seam 1
 capacity_reserves;sub_site;Nchwaning Seam 2
 capacity_reserves;sub_site;Gloria Seam 1
 capacity_reserves;sub_site;Steelpoort Chromitite Seam
-waste;sub_site;.
+capacity_reserves;sub_site;Stockpiles and Tailings
