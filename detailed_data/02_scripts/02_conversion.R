@@ -125,6 +125,7 @@ for (i in sel_col %>% distinct(sheet) %>% pull()) {
     
     # convert values
     sheet <- sheet %>%
+      mutate(!!share_col := ifelse(is.na(eval(parse(text = share_col))), 1, (eval(parse(text = share_col))))) %>%
       mutate(!!j := eval(parse(text = j)) / eval(parse(text = share_col)))
     
   }
@@ -135,7 +136,7 @@ for (i in sel_col %>% distinct(sheet) %>% pull()) {
   
   
   
-  sheet <- detailed[[i]]
+  detailed[[i]] <- sheet 
   
 }
 
