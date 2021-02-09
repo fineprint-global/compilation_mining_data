@@ -1,9 +1,12 @@
 source_cat;source_unit;unit_id;unit_cat
 detailed;acres;ac;area
 detailed;ha;ha;area
+detailed;hectar;ha;area
 detailed;hectares;ha;area
 detailed;hectars;ha;area
 detailed;sq. km;sq.km;area
+detailed;square kilometer;sq.km;area
+detailed;square kilometers;sq.km;area
 detailed;%;pct;grade
 detailed;carats per tonne;ct/t;grade
 detailed;g/t;g/t;grade
@@ -12,8 +15,10 @@ detailed;grams per tonne;g/t;grade
 detailed;grams/tonne;g/t;grade
 detailed;kg/t;Kg/t;grade
 detailed;ounces per ton;oz/t;grade
+detailed;ounces/ton;oz/t;grade
 detailed;oz/t;oz/t;grade
 detailed;ppm;ppm;grade
+detailed;troy ounces/t;ozt/t;grade
 detailed;000 carats;Kct;mass
 detailed;000 dry short tons;Kst;mass
 detailed;000 dry tons;Kt;mass
@@ -27,15 +32,19 @@ detailed;000 tonnes;Kt;mass
 detailed;000 tons;Kt;mass
 detailed;000 troy ounces;Kozt;mass
 detailed;000 troy oz;Kozt;mass
+detailed;000 wet metric tonnes;Kwmt;mass
 detailed;000 wet tonnes;Kwmt;mass
 detailed;000s tonnes;Kt;mass
+detailed;100 million tonnes;100Mt;mass
 detailed;billion pounds;Glb;mass
+detailed;billion tonnes;Gt;mass
 detailed;containded lbs (millions);Mlb;mass
 detailed;contained lbs (millions);Mlb;mass
 detailed;contained ounces (000s);Koz;mass
 detailed;dmt;t;mass
 detailed;DMT;t;mass
 detailed;dry metric tonnes;t;mass
+detailed;dry tonnes;t;mass
 detailed;fine ounces;ozt;mass
 detailed;kdmt;Kt;mass
 detailed;kg;Kg;mass
@@ -45,17 +54,21 @@ detailed;kilograms;Kg;mass
 detailed;kilotonnes;Kt;mass
 detailed;Klbs;Klb;mass
 detailed;koz;Koz;mass
+detailed;Koz;Koz;mass
 detailed;kt;Kt;mass
 detailed;Kt;Kt;mass
 detailed;ktonnes;Kt;mass
 detailed;ktpa;Kt;mass
 detailed;kwmt;Kwmt;mass
 detailed;lbs (mm);lb;mass
+detailed;metric ton unit (mtu);t;mass
 detailed;metric tonnes;t;mass
 detailed;metric tons;t;mass
 detailed;metric tons per year;t;mass
 detailed;million dry metric tonnes;Mt;mass
 detailed;million dry tonnes;Mt;mass
+detailed;million dry tons;Mt;mass
+detailed;million dry tons;Mt;mass
 detailed;million long tonnes;Mlt;mass
 detailed;million metric tonnes;Mt;mass
 detailed;million metric tons;Mt;mass
@@ -64,12 +77,17 @@ detailed;million net tons;st;mass
 detailed;million ounces;Moz;mass
 detailed;Million ounces;Moz;mass
 detailed;million pounds;Mlb;mass
+detailed;million recoverable metric tons;Mt;mass
 detailed;million recoverable pounds;Mlb;mass
 detailed;million recoverable short tons;Mst;mass
+detailed;million recoverable tonnes;Mt;mass
 detailed;million short tonnes;Mst;mass
+detailed;million short tons;Mst;mass
+detailed;million short tons;Mst;mass
 detailed;million tonnes;Mt;mass
 detailed;Million tonnes;Mt;mass
 detailed;million tons;Mt;mass
+detailed;million tpa;Mt;mass
 detailed;million wet long tonnes;Mwlt;mass
 detailed;million wet metric tonnes;Mwmt;mass
 detailed;million wet tonnes;Mwmt;mass
@@ -87,8 +105,12 @@ detailed;mtu m;mtu;mass
 detailed;ounces;oz;mass
 detailed;ounces (000);Koz;mass
 detailed;oz;oz;mass
+detailed;pounds;lb;mass
 detailed;pounds million;Mlb;mass
+detailed;short tons;st;mass
 detailed;t;t;mass
+detailed;Thousand dry metric tonnes;Kt;mass
+detailed;thousand metric tonnes per year;Kt;mass
 detailed;thousand metric tons;Kt;mass
 detailed;thousand ounces;Koz;mass
 detailed;thousand pounds;Klb;mass
@@ -103,13 +125,24 @@ detailed;thousands of ounces;Koz;mass
 detailed;thousands of pounds;Klb;mass
 detailed;thousands of tons;Kt;mass
 detailed;tonnes;t;mass
+detailed;Tonnes;t;mass
+detailed;Tonnes;t;mass
 detailed;tonnes manganese ore per year;t;mass
 detailed;tonnes million;Mt;mass
+detailed;tonnes per year;t;mass
 detailed;tons;t;mass
+detailed;Tons;t;mass
+detailed;tpa;t;mass
 detailed;troy ounces;ozt;mass
 detailed;troy oz;ozt;mass
+detailed;wet metric tonnes;wmt;mass
 detailed;wet metric tons;wmt;mass
 detailed;Wet recoverable million tonnes;Mwmt;mass
 detailed;WMT;wmt;mass
+detailed;wmt;wmt;mass
+detailed;bank cubic meters;bcm;volume
+detailed;Bank cubic metres;bcm;volume
+detailed;bcm;bcm;volume
+detailed;thousand bcm;Kbcm;volume
 detailed;Mbcm;Mbcm;volume
 detailed;million litres;Ml;volume

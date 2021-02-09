@@ -95,8 +95,7 @@ gen_cov <- gen_cov %>%
 
 
 # table for Rmd output
-kable(gen_cov, row.names = FALSE, caption = "General coverage") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(gen_cov, rownames = FALSE, caption = "General coverage")
 
 
 
@@ -106,8 +105,7 @@ nr_min_fac <- general %>%
   summarise(n = n())
 
 # table for Rmd output
-kable(nr_min_fac, row.names = FALSE, caption = "Number of mines/facilities by type") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(nr_min_fac, rownames = FALSE, caption = "Number of mines/facilities by type")
 
 
 
@@ -128,8 +126,7 @@ nr_mat_by_cat <- sheet_min %>%
   summarise(n = n())
 
 # table for Rmd output
-kable(nr_mat_by_cat, row.names = FALSE, caption = "Number of materials per category") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(nr_mat_by_cat, rownames = FALSE, caption = "Number of materials per category")
 
 
 
@@ -141,8 +138,7 @@ nr_min_fac_by_cou <- general %>%
   arrange(desc(n))
   
 # table for Rmd output
-kable(nr_min_fac_by_cou, row.names = FALSE, caption = "Number of mines per country") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(nr_min_fac_by_cou, rownames = FALSE, caption = "Number of mines per country")
 
 
 
@@ -166,8 +162,7 @@ nr_mat_by_cou <- sheet_min %>%
   arrange(desc(n))
 
 # table for Rmd output
-kable(nr_mat_by_cou, row.names = FALSE, caption = "Number of materials per country") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(nr_mat_by_cou, rownames = FALSE, caption = "Number of materials per country")
 
 
 
@@ -187,8 +182,7 @@ nr_mine_by_mat <- sheet_min %>%
   arrange(desc(n))
 
 # table for Rmd output
-kable(nr_mine_by_mat, row.names = FALSE, caption = "Number of mines per material") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(nr_mine_by_mat, rownames = FALSE, caption = "Number of mines per material")
 
 ```
 
@@ -281,8 +275,7 @@ com_cov1 <- agg_com %>%
   arrange(commodity, desc(value.nat))
 
 # table for Rmd output
-kable(com_cov1, row.names = FALSE, caption = "Relative coverage by material and country") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(com_cov1, rownames = FALSE, caption = "Relative coverage by material and country")
 
 
 
@@ -343,8 +336,7 @@ exc_cov <- exc_cov %>%
   left_join(., temp_t)
 
 # table for Rmd output
-kable(exc_cov, row.names = FALSE, caption = "Coverages which are >100% for commodities_sheet") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(exc_cov, rownames = FALSE, caption = "Coverages which are >100% for commodities_sheet")
 
 
 
@@ -363,9 +355,7 @@ com_cov2 <- agg_com %>%
   arrange(commodity)
 
 # table for Rmd output
-kable(com_cov2, row.names = FALSE, caption = "Relative coverage of global total by material") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
-
+datatable(com_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
 
 ```
 
@@ -462,8 +452,7 @@ min_cov1 <- agg_min %>%
   arrange(min_ore_con, desc(value.nat))
 
 # table for Rmd output
-kable(min_cov1, row.names = FALSE, caption = "Relative coverage by material and country") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(min_cov1, rownames = FALSE, caption = "Relative coverage by material and country")
 
 
 
@@ -525,8 +514,7 @@ exc_cov <- exc_cov %>%
   left_join(., temp_t)
 
 # table for Rmd output
-kable(exc_cov, row.names = FALSE, caption = "Coverages which are >100% for minerals_sheet") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(exc_cov, rownames = FALSE, caption = "Coverages which are >100% for minerals_sheet")
 
 
 
@@ -545,9 +533,7 @@ min_cov2 <- agg_min %>%
   arrange(min_ore_con)
 
 # table for Rmd output
-kable(min_cov2, row.names = FALSE, caption = "Relative coverage of global total by material") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
-
+datatable(min_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
 
 ```
 
@@ -559,14 +545,10 @@ kable(min_cov2, row.names = FALSE, caption = "Relative coverage of global total 
 # tables have been compiled above before cleaning NAs
 
 # table for Rmd output
-kable(not_incl_com, row.names = FALSE, 
-      caption = "Number of data rows not included by commodity") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(not_incl_com, rownames = FALSE, caption = "Number of data rows not included by commodity")
 
 # table for Rmd output
-kable(not_incl_min, row.names = FALSE, 
-      caption = "Number of data rows not included by mineral/ore") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 12)
+datatable(not_incl_min, rownames = FALSE, caption = "Number of data rows not included by mineral/ore")
 
 ```
 

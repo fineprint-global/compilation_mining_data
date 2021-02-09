@@ -43,7 +43,7 @@ for (i in sel_col %>% distinct(sheet) %>% pull()) {
 
   # convert values
     # table join and conversion don't include a differentiation by material_id (for volumes and energy) for now
-      # but doesn't seem to be necessary to include that for now
+      # at the moment not necessary to include that, but at a later stage when conversion factors actually differ
   sheet <- sheet %>%
     left_join(.,
               conv_fac %>% select(-material_id), 

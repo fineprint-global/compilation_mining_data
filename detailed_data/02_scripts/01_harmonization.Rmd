@@ -26,8 +26,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
 library(knitr)
-library(kableExtra)
 library(rlang)
+library(DT)
 ```
 
 <br> 
@@ -77,7 +77,7 @@ detailed <- path %>%
   set_names() %>% 
   map(~ read_excel(path = path, sheet = .x, col_types = type_list[[.x]], na = c("", "-", "NA")))
 
-print(paste("Number of warnings: ", length(warnings())))
+print(paste("Number of warnings during loading of excel file: ", length(warnings())))
 
 ## archived code of reading excel sheets
 # detailed <- lapply(excel_sheets(path), read_excel, 
@@ -123,8 +123,7 @@ nr_rows <- map(detailed, nrow) %>%
   rename(sheet = name, n = value)
 
 # table for Rmd output
-kable(nr_rows, row.names = FALSE, caption = "Number of data rows per sheet") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(nr_rows, rownames = FALSE, caption = "Number of data rows per sheet")
 
 ```
 
@@ -145,8 +144,7 @@ no_match_country <- tibble(
 write_delim(no_match_country, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_country.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_country, row.names = FALSE, caption = "Missing source_country entries") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(no_match_country, rownames = FALSE, caption = "Missing source_country entries")
 
 ```
 
@@ -194,8 +192,7 @@ no_match_mat <- source_materials %>% filter(!(material %in% (source_mat_ids %>% 
 write_delim(no_match_mat, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_mat.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_mat, row.names = FALSE, caption = "Missing source_material entries") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(no_match_mat, rownames = FALSE, caption = "Missing source_material entries")
 
 ```
 
@@ -243,9 +240,7 @@ no_match_unit <- source_units %>% filter(!(unit %in% source_unit_ids$source_unit
 write_delim(no_match_unit, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_unit.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_unit, row.names = FALSE, caption = "Missing source_unit entries") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
-
+datatable(no_match_unit, rownames = FALSE, caption = "Missing source_unit entries")
 
 ```
 
@@ -292,10 +287,7 @@ no_match_entries <- source_ent %>% filter(!(entry %in% poss_ent$source_entry))
 write_delim(no_match_entries, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_entries.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_entries, row.names = FALSE, caption = "Check entries and add to table of possible entries") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
-
-
+datatable(no_match_entries, rownames = FALSE, caption = "Check entries and add to table of possible entries")
 
 ```
 
@@ -311,8 +303,7 @@ nr_mines <- detailed$general %>%
   filter(n > 1)
 
 # table for Rmd output
-kable(nr_mines, row.names = FALSE, caption = "Mines with more than one entry") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(nr_mines, rownames = FALSE, caption = "Mines with more than one entry")
 
 ```
 
@@ -360,8 +351,7 @@ no_match_mines <- mine_names %>% filter(!(mine_fac %in% detailed$general$mine_fa
 write_delim(no_match_mines, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_mines.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_mines, row.names = FALSE, caption = "Incorrect mine_fac names (different than on sheet 'general')") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(no_match_mines, rownames = FALSE, caption = "Incorrect mine_fac names (different than on sheet 'general')")
 
 ```
 
@@ -411,8 +401,7 @@ no_match_sub_sites <- sub_sites %>% filter(!(sub_site %in% detailed$sub_sites$`s
 write_delim(no_match_sub_sites, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_sub_sites.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_mines, row.names = FALSE, caption = "Incorrect sub-site names (different than on sheet 'sub_sites)'") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(no_match_sub_sites, rownames = FALSE, caption = "Incorrect sub-site names (different than on sheet 'sub_sites)'")
 
 ```
 
@@ -463,8 +452,7 @@ no_match_years <- years %>% filter(year < 1970 | year > as.double(substr(Sys.Dat
 write_delim(no_match_years, "./detailed_data/04_output/01_harmonization/01_no_match_tables/no_match_years.csv", delim = ";")
 
 # table for Rmd output
-kable(no_match_years, row.names = FALSE, caption = "Incorrect years") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(no_match_years, rownames = FALSE, caption = "Incorrect years")
 
 ```
 
@@ -504,8 +492,7 @@ for (i in 1:nrow(sel_col)) {
 write_delim(source_na, "./detailed_data/04_output/01_harmonization/01_no_match_tables/source_na.csv", delim = ";")
 
 # table for Rmd output
-kable(source_na, row.names = FALSE, caption = "NAs where no NA possible") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(source_na, rownames = FALSE, caption = "NAs where no NA possible")
 
 ```
 
@@ -723,8 +710,7 @@ wrong_min_entries <- sheet %>%
   distinct(min_ore_con)
 
 # table for Rmd output
-kable(wrong_min_entries, row.names = FALSE, caption = "Material IDs which should be in sheet 'commodity'") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(wrong_min_entries, rownames = FALSE, caption = "Material IDs which should be in sheet 'commodity'")
 
 ## For commodities
 comm_sheet_ids <- c(
@@ -749,8 +735,7 @@ wrong_comm_entries <- sheet %>%
   distinct(commodity)
 
 # table for Rmd output
-kable(wrong_comm_entries, row.names = FALSE, caption = "Material IDs which should be in sheet 'minerals_ores_conce'") %>%
-  kable_styling(bootstrap_options =  c("condensed"), font_size = 11)
+datatable(wrong_comm_entries, rownames = FALSE, caption = "Material IDs which should be in sheet 'minerals_ores_conce'")
 
 ```
 

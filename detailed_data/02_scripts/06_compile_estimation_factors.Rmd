@@ -204,7 +204,7 @@ for (i in list_comm) {
 
 
   # table for Rmd output
-DT::datatable(highest_values)  
+DT::datatable(highest_values, rownames = FALSE, caption = "Ratios for each commodity/country/year")  
 
 ```
 

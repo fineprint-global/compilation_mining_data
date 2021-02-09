@@ -3,7 +3,7 @@
 
 
 # Check if the necessary packages are installed and if not install them, then load them
-req_packages <- c("tidyverse", "readxl", "scales", "knitr", "kableExtra", "viridis", "rlang")
+req_packages <- c("tidyverse", "readxl", "scales", "knitr", "kableExtra", "viridis", "rlang", "DT")
 req_packages <- req_packages[!req_packages %in% installed.packages()]
 lapply(req_packages, install.packages)
 

@@ -21,7 +21,7 @@ detailed;Bulk Ore;O.bulk
 detailed;Ca;Me.Ca
 detailed;Cadmium;Me.Cd
 detailed;Carbonatite Cpmlex, Oxide;
-detailed;Cathode copper;Oth.cuc
+detailed;Cathode copper;Oth.cuca
 detailed;Cathode nickel and briquettes;Me.Ni
 detailed;Chrome alloys;All.Cr
 detailed;Chrome ore;O.Cr
@@ -36,11 +36,11 @@ detailed;Copper anodes;Me.Cu
 detailed;Copper blister/anode;Me.Cu
 detailed;Copper blister/anode (third party);
 detailed;Copper blister/anodes;Me.Cu
-detailed;Copper cathode;Oth.cuc
-detailed;Copper Cathode;Oth.cuc
+detailed;Copper cathode;Oth.cuca
+detailed;Copper Cathode;Oth.cuca
 detailed;Copper cathode (third party);
-detailed;Copper cathode tolled;Oth.cuc
-detailed;Copper cathodes;Oth.cuc
+detailed;Copper cathode tolled;Oth.cuca
+detailed;Copper cathodes;Oth.cuca
 detailed;Copper concentrate;Con.Cu
 detailed;Copper Concentrate;Con.Cu
 detailed;copper concentrate;Con.Cu
@@ -54,7 +54,7 @@ detailed;Copper Secondary;
 detailed;Copper Secondary raw materials;
 detailed;Copper Secondary raw materials of which, electronics;
 detailed;Copper smelted;Me.Cu
-detailed;Coppoer cathode tolled;Oth.cuc
+detailed;Coppoer cathode tolled;Oth.cuca
 detailed;Cu;Me.Cu
 detailed;Diamonds;Nm.dia
 detailed;Fe;Me.Fe
@@ -149,7 +149,7 @@ detailed;Sulphur;Nm.S
 detailed;Sulphuric acid;Nm.H2SO4
 detailed;Suphide ore;O.bulk
 detailed;Tailings;
-detailed;TCu;
+detailed;TCu;Me.Cu
 detailed;Te;Me.Te
 detailed;Thermal bituminous coal;F.sbc
 detailed;Tin alloys;All.Sn
@@ -233,3 +233,39 @@ detailed;Hematite;O.Fe
 detailed;Alumina (Aluminiumoxide);
 detailed;Reactive Silica (SiO_2);
 detailed;Steel;
+detailed;Hard coking coal;F.coc
+detailed;Sub-bituminous coal;F.sbc
+detailed;6E PGM ore;O.pgm
+detailed;Manganese carbonate concentrate;Con.MnCO3
+detailed;Manganese oxide concentrate;Con.MnO
+detailed;Sintering ore;O.Fe
+detailed;Iron ore lumps;Con.Fe
+detailed;Bituminous coal;F.obc
+detailed;Long flame coal;F.obc
+detailed;Lignite;F.lig
+detailed;Lead Oxides;O.oxi
+detailed;Copper Oxide;O.oxi
+detailed;PCI Metallurgical coal;F.coc
+detailed;Copper cement;Oth.cuce
+detailed;Tin ore;O.Sn
+detailed;Limonite;O.Fe
+detailed;Fluorspar ore;O.flu
+detailed;Lithium ore;O.Li
+detailed;Spodumene;O.Li
+detailed;Tantalum concentrate;Con.Ta
+detailed;Heavy mineral ore;O.bulk
+detailed;Heavy mineral concentrate;Con.bulk
+detailed;Copper direct shipping ore;O.Cu
+detailed;Oxide copper ore high grade;O.oxi
+detailed;Oxide copper ore low grade;O.oxi
+detailed;Oxide gold ore high grade;O.oxi
+detailed;Oxide gold ore low grade;O.oxi
+detailed;Lead Oxides;O.oxi
+detailed;Copper Oxides;O.oxi
+detailed;Tellurium;Me.Te
+detailed;Fluorspar;Nm.flu
+detailed;Antimony;Me.Sb
+detailed;Li2O;Me.Li2O
+detailed;Ta2O5;Me.Ta2O5
+detailed;Hyti;O.leu
+detailed;Leucoxene;O.leu
