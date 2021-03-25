@@ -3,8 +3,9 @@ type_mineral;Ore mined;Ore mined
 type_mineral;Ore Mined;Ore mined
 type_mineral;Concentrate;Concentrate
 type_mineral;Ore processed;Ore processed
-type_mineral;Coal mined;Coal
-type_mineral;Coal;Coal
+type_mineral;Coal mined;Coal mined
+type_mineral;Coal;Coal mined
+type_mineral;Clean coal;Clean coal
 type_mineral;NM mineral;NM mineral
 type_mineral;NM mineral ore;NM mineral ore
 type_mining;Open pit;Open pit
@@ -38,12 +39,20 @@ type_mining;Vat and Heap leaching;Vat and Heap leaching
 type_mining;leaching;Leaching
 mine_processing;SX-EW;SX-EW
 mine_processing;Heap leaching;Heap leaching
+mine_processing;heap leaching;Heap leaching
 mine_processing;Merrill-Crowe;Merrill-Crowe
 type_facility;Smelter;Smelter
 type_facility;Refinery;Refinery
+type_facility;Coke oven;Coke oven
 type_facility;Rod plant;Rod plant
 waste_type;Waste rock;Waste rock
 waste_type;Waste Rock;Waste rock
+waste_type;Overburden;Waste rock
+waste_type;Development waste;Waste rock
+waste_type;Raisebore waste;Waste rock
+waste_type;Waste mined;Waste rock
+waste_type;Waste material mined;Waste rock
 waste_type;Dry tailings;Dry tailings
+waste_type;Tailings and Sludge;Tailings
 waste_type;Acid produced;Acid produced
 waste_type;Surplus acid;Surplus acid

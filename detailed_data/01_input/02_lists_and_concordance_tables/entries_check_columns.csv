@@ -1,9 +1,0 @@
-sheet_name;column
-minerals_ores_conce;type_mineral
-minerals_ores_conce;type_mining
-commodities;type_mining
-commodities;unit
-commodities;mine_processing
-processing;type_facility
-processing;process_input
-processing;process_output

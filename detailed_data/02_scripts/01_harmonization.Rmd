@@ -129,7 +129,7 @@ datatable(nr_rows, rownames = FALSE, caption = "Number of data rows per sheet")
 
 <br> 
 
-### Check of missing country_id allocations
+### Check of missing country_id allocations & of double entries for source_country_ids
 
 ```{r , echo = FALSE}
 
@@ -146,11 +146,22 @@ write_delim(no_match_country, "./detailed_data/04_output/01_harmonization/01_no_
 # table for Rmd output
 datatable(no_match_country, rownames = FALSE, caption = "Missing source_country entries")
 
+
+
+# check for double entries in source_mat_ids
+double_source_cou <- source_country_ids %>%
+  group_by(sheet_country) %>%
+  summarise(n = n()) %>%
+  filter(n > 1)
+
+# table for Rmd output
+datatable(double_source_cou, rownames = FALSE, caption = "Double entries in source_cou_ids (Please delete)")
+
 ```
 
 <br> 
 
-### Check of missing material_id allocations across all sheets
+### Check of missing material_id allocations across all sheets & of double entries for source_mat_ids
 
 ```{r , echo = FALSE}
 
@@ -194,11 +205,22 @@ write_delim(no_match_mat, "./detailed_data/04_output/01_harmonization/01_no_matc
 # table for Rmd output
 datatable(no_match_mat, rownames = FALSE, caption = "Missing source_material entries")
 
+
+
+# check for double entries in source_mat_ids
+double_source_mat <- source_mat_ids %>%
+  group_by(source_material) %>%
+  summarise(n = n()) %>%
+  filter(n > 1)
+
+# table for Rmd output
+datatable(double_source_mat, rownames = FALSE, caption = "Double entries in source_mat_ids (Please delete)")
+
 ```
 
 <br> 
 
-### Check of missing unit_id allocations across all sheets
+### Check of missing unit_id allocations across all sheets & of double entries for source_unit_ids
 
 ```{r , echo = FALSE}
 
@@ -242,11 +264,22 @@ write_delim(no_match_unit, "./detailed_data/04_output/01_harmonization/01_no_mat
 # table for Rmd output
 datatable(no_match_unit, rownames = FALSE, caption = "Missing source_unit entries")
 
+
+
+# check for double entries in source_unit_ids
+double_source_unit <- source_unit_ids %>%
+  group_by(source_unit) %>%
+  summarise(n = n()) %>%
+  filter(n > 1)
+
+# table for Rmd output
+datatable(double_source_unit, rownames = FALSE, caption = "Double entries in source_unit_ids (Please delete)")
+
 ```
 
 <br> 
 
-### Check of possible entries across all sheets
+### Check of possible entries across all sheets & of double entries in pre-defined table for possible entries
 
 ```{r , echo = FALSE}
 
@@ -288,6 +321,17 @@ write_delim(no_match_entries, "./detailed_data/04_output/01_harmonization/01_no_
 
 # table for Rmd output
 datatable(no_match_entries, rownames = FALSE, caption = "Check entries and add to table of possible entries")
+
+
+
+# check for double entries in table for possible entries
+double_poss_ent <- poss_ent %>%
+  group_by(source_entry) %>%
+  summarise(n = n()) %>%
+  filter(n > 1)
+
+# table for Rmd output
+datatable(double_poss_ent, rownames = FALSE, caption = "Double entries in possible entries (Please delete)")
 
 ```
 

@@ -17,7 +17,7 @@ library(tidyverse)
 ## Check columns in Excel file before harmonization (i.e. number of columns, names of columns, order of columns)
 source("./detailed_data/02_scripts/01_harmonization_pre-check.R", print.eval = TRUE)
 
-## Harmonization with results on non-fitting variables (html output is saved in `./02_scripts/comparison/`)
+## Harmonization with results on non-fitting variables (html output is saved in `./detailed_data/04_output/01_harmonization/`)
 wd <- getwd()
 rmarkdown::render("./detailed_data/02_scripts/01_harmonization.Rmd",
                   knit_root_dir = wd,
@@ -29,13 +29,25 @@ rmarkdown::render("./detailed_data/02_scripts/01_harmonization.Rmd",
 
 
 ## Conversion of all absolute values to tonnes and all grades to ppm + conversion by production and reserves shares 
-source("./detailed_data/02_scripts/02_conversion.R")
+  ## (html output is saved in `./detailed_data/04_output/02_conversion/`)
+wd <- getwd()
+rmarkdown::render("./detailed_data/02_scripts/02_conversion.Rmd",
+                  knit_root_dir = wd,
+                  output_dir = "./detailed_data/04_output/02_conversion/",
+                  intermediates_dir = "./detailed_data/04_output/02_conversion/",
+                  output_file = paste0("conversion_", substr(Sys.time(), 1, 10),".html")
+)
 
 
 
-## Data checks nr. 1
-source("./detailed_data/02_scripts/03_data_check.R")
-
+## Intermediate data checks
+wd <- getwd()
+rmarkdown::render("./detailed_data/02_scripts/03_intermediate_check.Rmd",
+                  knit_root_dir = wd,
+                  output_dir = "./detailed_data/04_output/03_intermediate_check/",
+                  intermediates_dir = "./detailed_data/04_output/03_intermediate_check/",
+                  output_file = paste0("intermediate_check_", substr(Sys.time(), 1, 10),".html")
+)
 
 
 ## Gap filling
@@ -47,8 +59,8 @@ source("./detailed_data/02_scripts/04_gap_filling.R")
 wd <- getwd()
 rmarkdown::render("./detailed_data/02_scripts/05_coverage.Rmd",
                   knit_root_dir = wd, 
-                  output_dir = "./detailed_data/04_output/coverage/", 
-                  intermediates_dir = "./detailed_data/04_output/coverage/",
+                  output_dir = "./detailed_data/04_output/05_coverage/", 
+                  intermediates_dir = "./detailed_data/04_output/05_coverage/",
                   output_file = paste0("coverage_", substr(Sys.time(), 1, 10),".html")
                   )
 
@@ -66,8 +78,8 @@ rmarkdown::render("./detailed_data/02_scripts/05_coverage.Rmd",
 wd <- getwd()
 rmarkdown::render("./detailed_data/02_scripts/06_compile_estimation_factors.Rmd",
                   knit_root_dir = wd, 
-                  output_dir = "./detailed_data/04_output/est_fac/", 
-                  intermediates_dir = "./detailed_data/04_output/est_fac/",
+                  output_dir = "./detailed_data/04_output/06_est_fac/", 
+                  intermediates_dir = "./detailed_data/04_output/06_est_fac/",
                   output_file = paste0("overview_estimation_factors_", substr(Sys.time(), 1, 10),".html")
 )
 

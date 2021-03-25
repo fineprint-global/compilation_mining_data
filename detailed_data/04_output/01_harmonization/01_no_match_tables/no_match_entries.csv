@@ -1,10 +1,1 @@
 variable;entry
-type_mineral;Clean coal
-mine_processing;heap leaching
-type_facility;Coke oven
-waste_type;Overburden
-waste_type;Tailings and Sludge
-waste_type;Development waste
-waste_type;Raisebore waste
-waste_type;Waste mined
-waste_type;Waste material mined

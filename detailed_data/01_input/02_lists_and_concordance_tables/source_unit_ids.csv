@@ -68,7 +68,6 @@ detailed;metric tons per year;t;mass
 detailed;million dry metric tonnes;Mt;mass
 detailed;million dry tonnes;Mt;mass
 detailed;million dry tons;Mt;mass
-detailed;million dry tons;Mt;mass
 detailed;million long tonnes;Mlt;mass
 detailed;million metric tonnes;Mt;mass
 detailed;million metric tons;Mt;mass
@@ -82,7 +81,6 @@ detailed;million recoverable pounds;Mlb;mass
 detailed;million recoverable short tons;Mst;mass
 detailed;million recoverable tonnes;Mt;mass
 detailed;million short tonnes;Mst;mass
-detailed;million short tons;Mst;mass
 detailed;million short tons;Mst;mass
 detailed;million tonnes;Mt;mass
 detailed;Million tonnes;Mt;mass
@@ -125,7 +123,6 @@ detailed;thousands of ounces;Koz;mass
 detailed;thousands of pounds;Klb;mass
 detailed;thousands of tons;Kt;mass
 detailed;tonnes;t;mass
-detailed;Tonnes;t;mass
 detailed;Tonnes;t;mass
 detailed;tonnes manganese ore per year;t;mass
 detailed;tonnes million;Mt;mass
