@@ -50,9 +50,9 @@ no_match_conv_fac <- tibble(unit_id = NA, material_id = NA, waste_type = NA) %>%
 
 
 
-# i <- "general"
-# j <- "surface_area"
-# k <- "unit_surface_area"
+i <- "general"
+j <- "surface_area"
+k <- "unit_surface_area"
 
 
 

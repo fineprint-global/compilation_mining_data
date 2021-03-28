@@ -57,7 +57,7 @@ minerals_ores_conce;all_metals_overall_grade;numeric;;;grade_unit;;
 minerals_ores_conce;mine_processing;text;;;;;
 minerals_ores_conce;amount_sold;numeric;;;unit;min_ore_con;production_share
 minerals_ores_conce;production_share;numeric;;;;;
-minerals_ores_conce;source;text;;no;;;
+minerals_ores_conce;source;text;source;no;;;
 minerals_ores_conce;source_url;text;;no;;;
 minerals_ores_conce;comment;text;;;;;
 minerals_ores_conce;no_estimation;text;;;;;
@@ -77,7 +77,7 @@ commodities;mine_processing;text;poss_ent;;;;
 commodities;amount_sold;numeric;;;unit;commodity;production_share
 commodities;metal_payable;numeric;;;unit;commodity;production_share
 commodities;production_share;numeric;;;;;
-commodities;source;text;;no;;;
+commodities;source;text;source;no;;;
 commodities;source_url;text;;no;;;
 commodities;comment;text;;;;;
 commodities;no_estimation;text;;;;;
@@ -98,7 +98,7 @@ processing;amount_sold;numeric;;;process_output_unit;process_output;production_s
 processing;metal_payable;numeric;;;process_output_unit;process_output;production_share
 processing;production_share;numeric;;;;;
 processing;mine_site_processing_incl_purchased;text;;;;;
-processing;source;text;;no;;;
+processing;source;text;source;no;;;
 processing;source_url;text;;no;;;
 processing;comment;text;;;;;
 transport;mine_fac;text;mines;no;;;
@@ -111,7 +111,7 @@ transport;export_to;text;;;;;
 transport;year;numeric;range;;;;
 transport;unit;text;unit_id;;;;
 transport;value;numeric;;;unit;product;
-transport;source;text;;no;;;
+transport;source;text;source;no;;;
 transport;source_url;text;;no;;;
 transport;comment;text;;;;;
 capacity_reserves;mine_fac;text;mines;no;;;
@@ -148,7 +148,7 @@ waste;total_material;numeric;;;unit;;production_share
 waste;stripping_ratio;numeric;;;;;
 waste;waste_to_ore_ratio;numeric;;;;;
 waste;production_share;numeric;;;;;
-waste;source;text;;no;;;
+waste;source;text;source;no;;;
 waste;source_url;text;;no;;;
 waste;comment;text;;;;;
 other_info;mine_fac;text;mines;no;;;

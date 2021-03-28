@@ -19,8 +19,7 @@ editor_options:
 
 ```
 
-```{r setup, include = FALSE, error = TRUE}
-knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```{r setup , include = FALSE, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
@@ -50,6 +49,9 @@ source_country_ids <- read_delim("./detailed_data/01_input/02_lists_and_concorda
 poss_ent <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/possible_entries.csv", delim = ";")
 
 source_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
+
+log_diff_sources <- read_delim("./detailed_data/01_input/03_log_files/log_different_sources.csv", delim = ";")
+
 
 # path to Excel data file
 path <- "./detailed_data/01_input/01_data/detailed_data_mining.xlsx"
@@ -231,10 +233,10 @@ source_units <- tibble(sheet = NA, variable = NA, unit = NA) %>%
   filter(!is.na(unit)) %>%
   mutate_all(as.character)
 
-# list of all variables relevant for material_ids
+# list of all variables relevant for unit_ids
 sel_col <- sheets_columns %>% filter(check %in% c("unit_id", "grade_unit_id"))
 
-# create table with entries of all material_ids across sheets
+# create table with entries of all unit_ids across sheets
 for (i in 1:nrow(sel_col)) {
   
   sheet_name <- sel_col[i,1] %>% pull()
@@ -290,10 +292,10 @@ source_ent <- tibble(variable = NA, entry = NA) %>%
   filter(!is.na(entry)) %>%
   mutate_all(as.character)
 
-# list of all variables relevant for material_ids
+# list of all variables relevant for possible entries
 sel_col <- sheets_columns %>% filter(check == "poss_ent")
 
-# create table with entries of all material_ids across sheets
+# create table with entries of all entries in respective columns across sheets
 for (i in 1:nrow(sel_col)) {
   
   sheet_name <- sel_col[i,1] %>% pull()
@@ -364,10 +366,10 @@ mine_names <- tibble(sheet = NA, variable = NA, mine_fac = NA) %>%
   filter(!is.na(mine_fac)) %>%
   mutate_all(as.character)
 
-# list of all variables relevant for material_ids
+# list of all variables relevant for mine_fac
 sel_col <- sheets_columns %>% filter(check == "mines")
 
-# create table with entries of all material_ids across sheets
+# create table with entries of all mine_fac across sheets
 for (i in 1:nrow(sel_col)) {
 
   sheet_name <- sel_col[i,1] %>% pull()
@@ -412,12 +414,10 @@ sub_sites <- tibble(sheet = NA, variable = NA, sub_site = NA) %>%
   filter(!is.na(sub_site)) %>%
   mutate_all(as.character)
 
-# list of all variables relevant for material_ids
+# list of all variables relevant for sub_sites
 sel_col <- sheets_columns %>% filter(check == "sub_sites")
 
-i <- 1
-
-# create table with entries of all material_ids across sheets
+# create table with entries of all sub_sites across sheets
 for (i in 1:nrow(sel_col)) {
 
   sheet_name <- sel_col[i,1] %>% pull()
@@ -463,12 +463,10 @@ years <- tibble(sheet = NA, variable = NA, year = NA) %>%
   mutate_at(vars(sheet, variable), as.character) %>%
   mutate_at(vars(year), as.double)
 
-# list of all variables relevant for material_ids
+# list of all variables relevant for years
 sel_col <- sheets_columns %>% filter(check == "range")
 
-i <- 1
-
-# create table with entries of all material_ids across sheets
+# create table with entries of all years across sheets
 for (i in 1:nrow(sel_col)) {
 
   sheet_name <- sel_col[i,1] %>% pull()
@@ -537,6 +535,52 @@ write_delim(source_na, "./detailed_data/04_output/01_harmonization/01_no_match_t
 
 # table for Rmd output
 datatable(source_na, rownames = FALSE, caption = "NAs where no NA possible")
+
+```
+
+<br> 
+
+### Check for same mine having entries by more than one company in a year
+#### (excluding those from respective log file)
+
+```{r , echo = FALSE, message = FALSE}
+
+if(exists("double_source")) rm(double_source)
+
+# dummy table for loop
+double_source <- tibble(sheet = NA, mine_fac = NA, year = NA, n = NA) %>% 
+  filter(!is.na(sheet)) %>%
+  mutate(
+    across(c(sheet, mine_fac), as.character),
+    across(c(year, n), as.integer)
+    )
+
+# list of all variables relevant for sources
+sel_col <- sheets_columns %>% filter(check %in% c("source"))
+i <- 1
+# create table with all mine_fac with double source per year across sheets
+for (i in 1:nrow(sel_col)) {
+  
+  sheet_name <- sel_col[i,1] %>% pull()
+  
+  a <- detailed[[sheet_name]] %>%
+    mutate(source_check = substring(source, 1, 5)) %>%
+    distinct(mine_fac, year, source_check) %>%
+    group_by(mine_fac, year) %>%
+    summarise(n = n()) %>%
+    ungroup() %>%
+    filter(n > 1) %>%
+    add_column(sheet = sheet_name, .before = "mine_fac") %>%
+    filter(!(mine_fac %in% (log_diff_sources %>% filter(sheet == sheet_name) %>% pull(mine_fac))))
+
+  double_source <- double_source %>%
+    dplyr::union(., a)
+  
+}
+
+
+# table for Rmd output
+datatable(double_source, rownames = FALSE, caption = "Unchecked mine_fac with entry from more than one company per year")
 
 ```
 
@@ -734,13 +778,13 @@ write_delim(source_ids, "./detailed_data/01_input/02_lists_and_concordance_table
 # Vector with IDs
 mineral_sheet_ids <- c(
   mat_ids %>%
-    filter(material_category %in% c("mineral", "metal ore product", "ff_mineral") | 
-           material_category_2 %in% c("ore concentrate")) %>%
+    filter(material_category %in% c("mineral", "ff_mineral") | 
+           material_category_2 %in% c("ore concentrate", "metal ore product")) %>%
     distinct(material_id) %>%
     pull(),
   mat_ids %>%
-    filter(material_category %in% c("mineral", "metal ore product", "ff_mineral") | 
-           material_category_2 %in% c("ore concentrate")) %>%
+    filter(material_category %in% c("mineral", "ff_mineral") | 
+           material_category_2 %in% c("ore concentrate", "metal ore product")) %>%
     distinct(material_id_agg) %>%
     pull(material_id_agg)
   )

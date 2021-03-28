@@ -1,4 +1,7 @@
 sheet;variable;material
+minerals_ores_conce;min_ore_con;High grade gold ore
+minerals_ores_conce;min_ore_con;Low grade gold ore
+commodities;min_ore_con;Low grade gold ore
 transport;product;Alumina hydrate
 transport;product;Anode slime
 transport;product;Zinc ingots
@@ -29,3 +32,5 @@ capacity_reserves;commodity;Ammonium sulphate
 capacity_reserves;commodity;Nickel contained in mixed sulphide
 capacity_reserves;commodity;Cobalt contained in mixed sulphide
 capacity_reserves;commodity;SiO2
+capacity_reserves;commodity;Al2O3
+capacity_reserves;commodity;Phosporus

@@ -5,8 +5,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE, error=TRUE}
-knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```{r setup , include = FALSE, echo = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
@@ -38,9 +37,9 @@ sheet_com <- detailed$commodities
 
 <br> 
 
-```{r setup, include=FALSE, error=TRUE}
+```{r , echo = FALSE, message = FALSE}
 ## Add duplicates for "Ore processed" from "Ore mined" and vice versa
-  ## These duplicates are only for checking and do not represent the actual duplicates introduced later after aggregation (the main reason being that without prior aggregation the duplicates would create false values, especially due to different sub-sites, different mining types, and different ores)
+  ## These duplicates are only for checking and do not represent the actual duplicates introduced later after aggregation (the main reason being that without prior aggregation the duplicates might potentially create false values, especially due to different sub-sites, different mining types, and different ores) -> However, for this purpose here, it seems appropriate to include it prior aggregation as proxy values without differentiating by sub_site/type_mining/type_mineral, but only mine_fac and year.
 
 ore_mined <- sheet_min %>%
   filter(type_mineral == "Ore mined") %>%
@@ -74,9 +73,9 @@ sheet_min <- sheet_min %>%
 
 <br> 
 
-```{r setup, include=FALSE, error=TRUE}
+```{r , echo = FALSE, message = FALSE}
 ## Add duplicates for "Clean coal" from "Coal mined" and vice versa
-  ## These duplicates are only for checking and do not represent the actual duplicates introduced later after aggregation (the main reason being that without prior aggregation the duplicates would create false values, especially due to different sub-sites, different mining types, and different ores)
+  ## Details similar to "Ore processed" and "Ore mined" above
 
 ore_mined <- sheet_min %>%
   filter(type_mineral == "Coal mined") %>%
@@ -112,112 +111,48 @@ sheet_min <- sheet_min %>%
 
 #### Mines which are in both tables, but are not joined
 
-```{r setup, include=FALSE, error=TRUE}
+```{r , echo = FALSE, message = FALSE}
 ## check which rows from sheet_min would not be included in join of sheet_com, because variables don't fit
 
 # list of same mines in both sheets
 inter_mine <- intersect(sheet_min["mine_fac"], sheet_com["mine_fac"]) %>% distinct(mine_fac)
 
 
-# join sheet_com with sheet_min by six variables
-  # and only for those type_mineral which are to be joined
-combined <- sheet_com %>%
-  left_join(.,
-            sheet_min %>%
-              filter(type_mineral %in% c("Ore processed", "Concentrate")) %>%
-              select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing),
-            by = c("mine_fac", "sub_site", "min_ore_con", "type_mining", "year", "mine_processing"),
-            suffix = c(".com", ".min")
-            ) %>%
-  distinct(mine_fac)
+non_fit <- setdiff(
+  sheet_min %>%
+    filter(type_mineral %in% c("Ore processed", "Concentrate")) %>%
+    select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing),
+  sheet_com %>%
+    select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing)
+) %>%
+  filter(mine_fac %in% inter_mine$mine_fac) %>%
+  arrange(mine_fac, desc(year))
+
+# non_fit %>% distinct(mine_fac)
 
 
-# mines which are in both tables, but are not joined
-non_fit <- combined %>%
-  filter(!mine_fac %in% inter_mine$mine_fac)
 
+# save no_match table as csv
+write_delim(non_fit, "./detailed_data/04_output/03_intermediate_check/non_fit.csv", delim = ";")
 
 # table for Rmd output
-DT::datatable(not_fit)  
+DT::datatable(non_fit)  
 
 
-
-# exclude those from sheet_min (just for the check) which are not Oxide ores and at the same time have also a concentrate production reported (e.g. sulphide ore resulting in concentrate), because then content is likely provided for concentrate already
+# comment: maybe exclude those from sheet_min (just for the check) which are not Oxide ores and at the same time have also a concentrate production reported (e.g. sulphide ore resulting in concentrate) ??? because then content is likely provided for concentrate already
 
 
 ```
 
 <br> 
 
-#### Check for same mine having entries by more than one company in a year (sheet_min)
-```{r setup, include=FALSE, error=TRUE}
-
-a <- sheet_min %>%
-  distinct(mine_fac, year, source_id)
-
-a <- a %>%
-  group_by(mine_fac, year) %>%
-  summarise(n = n()) %>%
-  ungroup() %>%
-  filter(n > 1)
-
-# table for Rmd output
-DT::datatable(a)  
-
-```
-
-<br> 
-
-#### Check for same mine having entries by more than one company in a year (sheet_com)
-```{r setup, include=FALSE, error=TRUE}
-
-a <- sheet_com %>%
-  distinct(mine_fac, year, source_id)
-
-a <- a %>%
-  group_by(mine_fac, year) %>%
-  summarise(n = n()) %>%
-  ungroup() %>%
-  filter(n > 1)
-
-# table for Rmd output
-DT::datatable(a)  
-
-```
-
-<br> 
-
-```{r setup, include=FALSE, error=TRUE}
+```{r , echo = FALSE, message = FALSE}
 
 ### check values per mine/material for one year vs next to check for potential typos, i.e. outliers in time series
 
 
-
-# indiv_mat <- sheet_min
-# 
-# sheet_min %>%
-#   distinct(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing)
-# 
-# 
-# 
-# 
-# 
-# for (i in 1:2) {
-# 
-#   indiv_mat[,i] %>%
-#     left_join(sheet_min)
-#
-# 
-#   for (j in 1:2) {
-# 
-# 
-#   }
-# 
-# }
-
-
 # table for Rmd output
-#DT::datatable()  
+# DT::datatable()  
 
 ```
 
@@ -226,14 +161,6 @@ DT::datatable(a)
 ```{r}
 
 ### check for double counting between ores and concentrates
-
-# a <- sheet_com %>%
-#   group_by(mine_fac, sub_site, commodity, type_mining, year, mine_processing) %>%
-#   summarise(n = n()) %>%
-#   ungroup() %>%
-#   filter(n > 1) %>%
-#   left_join(sheet_com)
-
 
 
 ```
