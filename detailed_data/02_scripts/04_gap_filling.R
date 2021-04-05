@@ -17,7 +17,12 @@ sheet_com <- detailed$commodities
 
 
 
-## Add duplicates for "Ore processed" from "Ore mined" and vice versa
+
+
+## add duplicates for type_mineral in sheet_min -----------------
+  ## e.g. "Ore processed" from "Ore mined" and vice versa (+ same for coal)
+
+# mine_fac/year with "Ore mined" or "Ore processed"
 ore_mined <- sheet_min %>%
   filter(type_mineral == "Ore mined") %>%
   distinct(mine_fac, year)
@@ -29,6 +34,7 @@ ore_proc <- sheet_min %>%
 # mines with reported ore mined for a year, but no ore processed for that year
 mine_list <- setdiff(ore_mined, ore_proc)
 
+# add "Ore processed" where not reported
 sheet_min <- sheet_min %>% 
   union(
     mine_list %>%
@@ -39,6 +45,7 @@ sheet_min <- sheet_min %>%
 # mines with reported ore processed, but no ore mined for that year
 mine_list <- setdiff(ore_proc, ore_mined)
 
+# Add "Ore mined" where not reported
 sheet_min <- sheet_min %>% 
   union(
     mine_list %>%
@@ -47,20 +54,19 @@ sheet_min <- sheet_min %>%
   )
 
 
-
-## Add duplicates for "Clean coal" from "Coal mined" and vice versa
-
-ore_mined <- sheet_min %>%
+# mine_fac/year with "Coal mined" or "Clean coal"
+coal_mined <- sheet_min %>%
   filter(type_mineral == "Coal mined") %>%
   distinct(mine_fac, year)
 
-ore_proc <- sheet_min %>%
+coal_clean <- sheet_min %>%
   filter(type_mineral == "Clean coal") %>%
   distinct(mine_fac, year)
 
 # mines with reported coal mined for a year, but no Clean coal for that year
-mine_list <- setdiff(ore_mined, ore_proc)
+mine_list <- setdiff(coal_mined, coal_clean)
 
+# add "Clean coal" where not reported
 sheet_min <- sheet_min %>% 
   union(
     mine_list %>%
@@ -69,8 +75,9 @@ sheet_min <- sheet_min %>%
   )
 
 # mines with reported Clean coal, but no coal mined for that year
-mine_list <- setdiff(ore_proc, ore_mined)
+mine_list <- setdiff(coal_clean, coal_mined)
 
+# add "Coal mined" where not reported
 sheet_min <- sheet_min %>% 
   union(
     mine_list %>%
@@ -78,6 +85,59 @@ sheet_min <- sheet_min %>%
       mutate(type_mineral = "Coal mined")
   )
 
+
+
+
+
+## Gap filling (values) for sheet_min ---------------------
+
+# use amount_sold where value = NA in sheet_min
+sheet_min <- sheet_min %>% 
+  mutate(
+    value = ifelse(is.na(value) & !is.na(amount_sold), amount_sold, value))
+
+
+# join with sheet_com and estimate missing values
+  # i.e. join ores/concentrates with commodities
+  # and calculate ore based on metal value and grade
+  # with/without recovery rate and with yield (depending on whether available)
+sheet_min <- sheet_min %>% 
+  filter(type_mineral %in% c("Ore processed", "Concentrate")) %>%
+  left_join(.,
+            sheet_com %>%
+              select(mine_fac, min_ore_con, year, mine_processing, value, grade, yield, recovery_rate),
+            by = c("mine_fac", "min_ore_con", "year", "mine_processing"),
+            suffix = c(".min", ".com")
+  ) %>%
+  mutate(value.min = ifelse(
+    is.na(value.min) & !is.na(grade) & !is.na(recovery_rate),
+    value.com / (grade * 0.000001 * recovery_rate),
+    value.min
+  )) %>%
+  mutate(value.min = ifelse(
+    is.na(value.min) & !is.na(grade) & is.na(recovery_rate),
+    value.com / (grade * 0.000001), #  0.000001 because grade is in ppm
+    value.min
+  )) %>%
+  mutate(value.min = ifelse(
+    is.na(value.min) & !is.na(yield),
+    value.com / (yield * 0.000001),
+    value.min
+  )) %>%
+  select(-c(value.com, grade, yield, recovery_rate)) %>%
+  rename(value = value.min) %>% 
+  union(.,
+    sheet_min %>%
+      filter(!(type_mineral %in% c("Ore processed", "Concentrate")))
+  )
+
+
+
+
+
+
+
+## Gap filling (values) for sheet_com ---------------------
 
 
 # use amount_sold where value = NA in sheet_com
@@ -89,7 +149,9 @@ sheet_com <- sheet_com %>%
 # join commodities with ores
   # and calculate value based on ore/grade
   # and calculate grades based on ore/value
-  # with/without recovery rate and with yield
+  # mutate 3x for value: with/without recovery rate and with yield
+  # mutate 2x for grade: with/with recovery rate
+  # filtering NA for value.min is irrelevant, as it just replaces NA with NA anyway
 sheet_com <- sheet_com %>%
   left_join(.,
             sheet_min %>% 
@@ -123,28 +185,24 @@ sheet_com <- sheet_com %>%
     value.com / value.min * 1000000, #  1000000 because grade is in ppm
     grade
   )) %>%
-  select(-value.min)
+  select(-value.min) %>%
+  rename(value = value.com)
 
 
 
 # use metal_payable where value is still NA
 sheet_com <- sheet_com %>% 
-  mutate(value.com = ifelse(is.na(value.com) & !is.na(metal_payable), metal_payable, value.com))
+  mutate(value = ifelse(is.na(value) & !is.na(metal_payable), metal_payable, value))
 
 
 
 
-
-# rename variables
-sheet_com <- sheet_com %>%
-  rename(value = value.com)
 
 
 
 # include sheets again in list
 detailed$minerals_ores_conce <- sheet_min
 detailed$commodities <- sheet_com
-
 
 
 # save data

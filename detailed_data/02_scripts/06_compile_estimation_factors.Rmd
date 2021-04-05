@@ -37,7 +37,6 @@ met_price <- read_delim("./detailed_data/01_input/05_other_data/average_prices_1
 sheet_com <- detailed$commodities
 sheet_min <- detailed$minerals_ores_conce
 
-
 ```
 
 <br> 
@@ -65,8 +64,8 @@ sheet_all <- sheet_all %>%
   left_join(.,
             sheet_min %>% 
               filter(type_mineral %in% c("Ore processed")) %>%
-              select(mine_fac, min_ore_con, year, value),
-            by = c("mine_fac", "min_ore_con", "year"),
+              select(mine_fac, min_ore_con, year, value, mine_processing),
+            by = c("mine_fac", "min_ore_con", "year", "mine_processing"),
             suffix = c(".com", ".min")
   )
 
@@ -75,36 +74,137 @@ sheet_all <- sheet_all %>%
 ## Calculate stuff
 
 # Calculate value of metal
-sheet_all <- sheet_all %>%
+sheet_est <- sheet_all %>%
   mutate(met_value = value.com * 1000 * average_price) # taking into account proper units: i.e. t vs USD/kg
 
 # Calculating total value per ore, join that into table
-sheet_all <- sheet_all %>%
+sheet_est <- sheet_est %>%
   left_join(
-    sheet_all %>%
-      group_by(mine_fac, min_ore_con, year) %>%
+    sheet_est %>%
+      group_by(mine_fac, min_ore_con, year, mine_processing) %>%
       summarise(total_met_value = sum(met_value))
   )
 
 # Calculate ratio (t/t) of ore per metal (i.e. share of metal value per ore value times amount of ore, and then "ore share" per amount of metal)
-sheet_all <- sheet_all %>%
+sheet_est <- sheet_est %>%
   mutate(ore_share = (met_value / total_met_value * value.min)) %>%
   mutate(ratio_ore_per_met = ore_share / value.com)
 
 
 
-# Consolidate by country, i.e. group by country and summarize ore ratio with weighted average (weighted by amount of metal)
-est_fac <- sheet_all %>%
-  group_by(alphanumiso, commodity, year) %>%
-  summarise(ratio_ore_per_met = weighted.mean(ratio_ore_per_met, value.com, na.rm = TRUE)) %>%
-  ungroup()
+# Remove everything without a ratio (e.g. commodities like alloys or just years lacking data)
+  # + everything where value.com and value.min are NA
+est_fac_1 <- sheet_est %>%
+  filter(
+    !is.na(ratio_ore_per_met),
+    !is.na(value.com),
+    !is.na(value.min)
+    ) %>%
+  select(alphanumiso, commodity, year, value.com, ratio_ore_per_met)
+
+
+```
+
+<br> 
+
+```{r , echo = FALSE, message = FALSE, warning = FALSE}
+
+## compile additional factors based on ores vs concentrates
+  ## i.e. those cases where only concentrate content has been reported and therefore has not been matched with respective ore in table join
+  ## here using amount of ore vs metal content in concentrate
+
+# list of mines with concentrates
+mine_list_1 <- sheet_com %>%
+  filter(grepl("Con.", min_ore_con)) %>%
+  distinct(mine_fac, year)
+
+# list of mines with other commodities than concentrates
+mine_list_2 <- sheet_com %>%
+  filter(!(grepl("Con.", min_ore_con))) %>%
+  distinct(mine_fac, year)
+
+mine_list_con_only <- setdiff(mine_list_1, mine_list_2)
+
+
+## include commodities, countries, prices, and ores (with four left_joins) + aggregate sheet_com and sheet_min respectively
+  # similar to above
+  # needs to be done again, because here min_ore_con and mine_processing need to be aggregated in both sheets (as not clear relation between ore and content is given, and therefore double counting would be created during table join)
+
+sheet_all_2 <- mine_list_con_only %>%
+  left_join(.,
+            sheet_com %>%
+              select(mine_fac, commodity, year, value) %>%
+              group_by(mine_fac, commodity, year) %>%
+              summarise(value = if(all(is.na(value))) NA else sum(value, na.rm = TRUE)) %>%
+              ungroup()
+            ) %>%
+  left_join(.,
+            detailed$general %>%
+              distinct(mine_fac, alphanumiso) %>%
+              mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
+            ) %>%
+  left_join(.,
+            met_price %>% select(material_id, average_price),
+            by = c("commodity" = "material_id")
+            ) %>%
+  left_join(.,
+            sheet_min %>% 
+              filter(type_mineral %in% c("Ore processed")) %>%
+              select(mine_fac, year, value) %>%
+              group_by(mine_fac, year) %>%
+              summarise(value = if(all(is.na(value))) NA else sum(value, na.rm = TRUE)),
+            by = c("mine_fac", "year"),
+            suffix = c(".com", ".min")
+            )
+
+
+## Calculate stuff again
+
+# Calculate value of metal
+sheet_est_2 <- sheet_all_2 %>%
+  mutate(met_value = value.com * 1000 * average_price) # taking into account proper units: i.e. t vs USD/kg
+
+# Calculating total value per ore, join that into table
+sheet_est_2 <- sheet_est_2 %>%
+  left_join(
+    sheet_est_2 %>%
+      group_by(mine_fac, year) %>%
+      summarise(total_met_value = sum(met_value))
+  )
+
+# Calculate ratio (t/t) of ore per metal (i.e. share of metal value per ore value times amount of ore, and then "ore share" per amount of metal)
+sheet_est_2 <- sheet_est_2 %>%
+  mutate(ore_share = (met_value / total_met_value * value.min)) %>%
+  mutate(ratio_ore_per_met = ore_share / value.com)
 
 
 
 # Remove everything without a ratio (e.g. commodities like alloys or just years lacking data)
-est_fac <- est_fac %>%
-  filter(!is.na(ratio_ore_per_met))
+  # + everything where value.com and value.min are NA
+est_fac_2 <- sheet_est_2 %>%
+  filter(
+    !is.na(ratio_ore_per_met),
+    !is.na(value.com),
+    !is.na(value.min)
+    ) %>%
+  select(alphanumiso, commodity, year, value.com, ratio_ore_per_met)
 
+
+```
+
+<br> 
+
+```{r , echo = FALSE, message = FALSE, warning = FALSE}
+
+# Combine both tables and consolidate by country, i.e. group by country and summarize ore ratio with weighted average (weighted by amount of metal)
+
+est_fac_all <- est_fac_1 %>%
+  union(.,
+        est_fac_2
+        ) %>%
+  group_by(alphanumiso, commodity, year) %>%
+  summarise(ratio_ore_per_met = weighted.mean(ratio_ore_per_met, value.com, na.rm = TRUE)) %>%
+  ungroup()
 
 ```
 
@@ -116,16 +216,16 @@ est_fac <- est_fac %>%
 
 # Line charts for checking time series
 
-list_comm <- est_fac %>% filter(!is.na(commodity)) %>% distinct(commodity) %>% arrange(commodity) %>% pull()
-i <- "Me.Ag"
+list_comm <- est_fac_all %>% filter(!is.na(commodity)) %>% distinct(commodity) %>% arrange(commodity) %>% pull()
+
 a <- list()
 for (i in list_comm) {
 
-  nr_colour <- nrow(est_fac %>% filter(commodity == i) %>% distinct(alphanumiso))
+  nr_colour <- nrow(est_fac_all %>% filter(commodity == i) %>% distinct(alphanumiso))
 
   # print(
   #   ggplot(
-  #     est_fac %>% filter(commodity == i),
+  #     est_fac_all %>% filter(commodity == i),
   #     aes(x = year, y = ratio_ore_per_met, group = alphanumiso)) +
   #     labs(title = i, y = "Ore-to-metal ratio (t/t)") +
   #     geom_line(aes(color = alphanumiso)) +
@@ -137,7 +237,7 @@ for (i in list_comm) {
   # )
 
 
-  # a[[i]] <- est_fac %>%
+  # a[[i]] <- est_fac_all %>%
   #     filter(commodity == i) %>%
   #     ggplot2::ggplot(aes(x = year, y = ratio_ore_per_met, color = alphanumiso)) +
   #     ggseas::stat_index(index.ref = 1) +
@@ -158,7 +258,7 @@ for (i in list_comm) {
   #     htmlwidgets::onRender("function(e1, t){ checkOverlap(); }")
 
 
-  a[[i]] <- est_fac %>%
+  a[[i]] <- est_fac_all %>%
     filter(commodity == i) %>%
     plotly::plot_ly(
       x = ~year,
@@ -185,9 +285,9 @@ for (i in list_comm) {
 # Create dynamic DT::datatable to show highest and lowest values for estimation factors of each commodity (for error checking)
   # And include difference from median/mean of commodity across all years
 
-  highest_values <- est_fac %>%
+  highest_values <- est_fac_all %>%
     left_join(
-      est_fac %>%
+      est_fac_all %>%
         group_by(commodity) %>%
         summarise(
           median_ratio = median(ratio_ore_per_met, na.rm = TRUE),
@@ -207,5 +307,4 @@ for (i in list_comm) {
 DT::datatable(highest_values, rownames = FALSE, caption = "Ratios for each commodity/country/year")  
 
 ```
-
 
