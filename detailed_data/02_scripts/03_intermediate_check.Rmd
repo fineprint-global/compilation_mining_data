@@ -120,7 +120,7 @@ inter_mine <- intersect(sheet_min["mine_fac"], sheet_com["mine_fac"]) %>% distin
 
 non_fit <- setdiff(
   sheet_min %>%
-    filter(type_mineral %in% c("Ore processed", "Concentrate")) %>%
+    filter(type_mineral %in% c("Ore processed", "Concentrate") & value != 0) %>%
     select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing),
   sheet_com %>%
     select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing)
