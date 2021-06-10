@@ -113,23 +113,44 @@ sheet_min <- sheet_min %>%
 
 ```{r , echo = FALSE, message = FALSE}
 ## check which rows from sheet_min would not be included in join of sheet_com, because variables don't fit
+ ## based on six variables: mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing
 
-# list of same mines in both sheets
-inter_mine <- intersect(sheet_min["mine_fac"], sheet_com["mine_fac"]) %>% distinct(mine_fac)
-
-
-non_fit <- setdiff(
+# matching entries
+match <- intersect(
   sheet_min %>%
     filter(type_mineral %in% c("Ore processed", "Concentrate") & value != 0) %>%
     select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing),
   sheet_com %>%
     select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing)
-) %>%
-  filter(mine_fac %in% inter_mine$mine_fac) %>%
+)
+
+# mine_fac which have entries in both sheets for same year, but are not matched
+  # excluding those which could be matched
+  # returning only the respective entries from sheet_min
+non_fit <- intersect(
+  setdiff(
+    sheet_min %>%
+      filter(type_mineral %in% c("Ore processed", "Concentrate") & value != 0) %>%
+      select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing),
+    match
+    ) %>%
+    select(mine_fac, year),
+  setdiff(
+    sheet_com %>%
+      select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing),
+    match
+    ) %>%
+    select(mine_fac, year)
+  ) %>%
+  left_join(.,
+            setdiff(
+              sheet_min %>%
+                filter(type_mineral %in% c("Ore processed", "Concentrate") & value != 0) %>%
+                select(mine_fac, sub_site, min_ore_con, type_mining, year, mine_processing),
+              match
+              )
+            ) %>%
   arrange(mine_fac, desc(year))
-
-# non_fit %>% distinct(mine_fac)
-
 
 
 # save no_match table as csv
