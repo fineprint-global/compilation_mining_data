@@ -197,7 +197,6 @@ est_fac_2 <- sheet_est_2 %>%
 ```{r , echo = FALSE, message = FALSE, warning = FALSE}
 
 # Combine both tables and consolidate by country, i.e. group by country and summarize ore ratio with weighted average (weighted by amount of metal)
-
 est_fac_all <- est_fac_1 %>%
   union(.,
         est_fac_2
@@ -205,6 +204,12 @@ est_fac_all <- est_fac_1 %>%
   group_by(alphanumiso, commodity, year) %>%
   summarise(ratio_ore_per_met = weighted.mean(ratio_ore_per_met, value.com, na.rm = TRUE)) %>%
   ungroup()
+
+
+
+# save data as csv
+write_delim(est_fac_all, "./detailed_data/04_output/06_est_fac/estimation_factors.csv",
+            delim = ";", na = "")
 
 ```
 

@@ -1,4 +1,4 @@
-unit_id;unit_name;unit_cat;gru_former
+unit_id;unit_name;unit_cat;wu_former
 t;metric tons;mass;1
 Kt;thousand metric tons;mass;2
 Mt;million metric tons;mass;3
@@ -11,6 +11,7 @@ g;gramme;mass;
 Kg;kilogramme;mass;12
 ct;carat;mass;25
 Kct;thousand carat;mass;13
+Mct;million carat;mass;
 st;short tons;mass;15
 Kst;thousand short tons;mass;16
 Mst;million short tons;mass;17
@@ -29,6 +30,7 @@ ozt;troy ounces;mass;
 Kozt;thousand troy ounces;mass;
 Mozt;million troy ounces;mass;
 mtu;metric ton unit;mass;
+flask;flask;mass;
 pct;percentage;grade;
 g/t;gramme per metric ton;grade;
 oz/t;ounces per metric ton;grade;
@@ -36,6 +38,9 @@ ct/t;carats per metric ton;grade;
 kg/t;kilogramme per metric ton;grade;
 ppm;parts per million;grade;
 ozt/t;troy ounces per metric ton;grade;
+sm;square meter;volume;
+Ksm;thousand square meter;volume;
+sf;square feet;volume;
 cm;cubic meter;volume;33
 Kcm;thousand cubic meter;volume;34
 Mcm;million cubic meter;volume;6
@@ -47,6 +52,9 @@ Kcf;thousand cubic feet;volume;
 Mcf;million cubic feet;volume;
 Gcf;billion cubic feet;volume;28
 Tcf;trillion cubic feet;volume;18
+cyd;cubic yard;volume;
+Kcyd;thousand cubic yard;volume;
+Mcyd;million cubic yard;volume;
 l;litre;volume;
 Kl;thousand litre;volume;
 Ml;million litre;volume;

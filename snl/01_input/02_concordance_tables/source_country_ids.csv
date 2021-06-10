@@ -1,0 +1,4326 @@
+source;source_country_id;alphanumiso
+ISO_Numeric;784;ARE784
+ISO_Numeric;4;AFG004
+ISO_Numeric;28;ATG028
+ISO_Numeric;660;AIA660
+ISO_Numeric;8;ALB008
+ISO_Numeric;51;ARM051
+ISO_Numeric;530;ANT530
+ISO_Numeric;24;AGO024
+ISO_Numeric;32;ARG032
+ISO_Numeric;16;ASM016
+ISO_Numeric;40;AUT040
+ISO_Numeric;36;AUS036
+ISO_Numeric;533;ABW533
+ISO_Numeric;31;AZE031
+ISO_Numeric;70;BIH070
+ISO_Numeric;52;BRB052
+ISO_Numeric;50;BGD050
+ISO_Numeric;56;BEL056
+ISO_Numeric;854;BFA854
+ISO_Numeric;100;BGR100
+ISO_Numeric;48;BHR048
+ISO_Numeric;108;BDI108
+ISO_Numeric;204;BEN204
+ISO_Numeric;60;BMU060
+ISO_Numeric;96;BRN096
+ISO_Numeric;68;BOL068
+ISO_Numeric;76;BRA076
+ISO_Numeric;44;BHS044
+ISO_Numeric;64;BTN064
+ISO_Numeric;72;BWA072
+ISO_Numeric;112;BLR112
+ISO_Numeric;84;BLZ084
+ISO_Numeric;124;CAN124
+ISO_Numeric;166;CCK166
+ISO_Numeric;180;COD180
+ISO_Numeric;140;CAF140
+ISO_Numeric;178;COG178
+ISO_Numeric;756;CHE756
+ISO_Numeric;384;CIV384
+ISO_Numeric;184;COK184
+ISO_Numeric;152;CHL152
+ISO_Numeric;120;CMR120
+ISO_Numeric;156;CHN156
+ISO_Numeric;170;COL170
+ISO_Numeric;188;CRI188
+ISO_Numeric;200;CSK200
+ISO_Numeric;192;CUB192
+ISO_Numeric;132;CPV132
+ISO_Numeric;162;CXR162
+ISO_Numeric;196;CYP196
+ISO_Numeric;203;CZE203
+ISO_Numeric;276;DEU276
+ISO_Numeric;278;DDR278
+ISO_Numeric;280;DEU280
+ISO_Numeric;262;DJI262
+ISO_Numeric;208;DNK208
+ISO_Numeric;212;DMA212
+ISO_Numeric;214;DOM214
+ISO_Numeric;12;DZA012
+ISO_Numeric;218;ECU218
+ISO_Numeric;233;EST233
+ISO_Numeric;818;EGY818
+ISO_Numeric;232;ERI232
+ISO_Numeric;724;ESP724
+ISO_Numeric;231;ETH231
+ISO_Numeric;230;ETH230
+ISO_Numeric;246;FIN246
+ISO_Numeric;242;FJI242
+ISO_Numeric;238;FLK238
+ISO_Numeric;583;FSM583
+ISO_Numeric;234;FRO234
+ISO_Numeric;250;FRA250
+ISO_Numeric;266;GAB266
+ISO_Numeric;826;GBR826
+ISO_Numeric;308;GRD308
+ISO_Numeric;268;GEO268
+ISO_Numeric;254;GUF254
+ISO_Numeric;288;GHA288
+ISO_Numeric;292;GIB292
+ISO_Numeric;304;GRL304
+ISO_Numeric;270;GMB270
+ISO_Numeric;324;GIN324
+ISO_Numeric;312;GLP312
+ISO_Numeric;226;GNQ226
+ISO_Numeric;300;GRC300
+ISO_Numeric;320;GTM320
+ISO_Numeric;316;GUM316
+ISO_Numeric;624;GNB624
+ISO_Numeric;328;GUY328
+ISO_Numeric;340;HND340
+ISO_Numeric;191;HRV191
+ISO_Numeric;332;HTI332
+ISO_Numeric;348;HUN348
+ISO_Numeric;360;IDN360
+ISO_Numeric;372;IRL372
+ISO_Numeric;376;ISR376
+ISO_Numeric;356;IND356
+ISO_Numeric;86;IOT086
+ISO_Numeric;368;IRQ368
+ISO_Numeric;364;IRN364
+ISO_Numeric;352;ISL352
+ISO_Numeric;380;ITA380
+ISO_Numeric;388;JAM388
+ISO_Numeric;400;JOR400
+ISO_Numeric;392;JPN392
+ISO_Numeric;404;KEN404
+ISO_Numeric;417;KGZ417
+ISO_Numeric;116;KHM116
+ISO_Numeric;296;KIR296
+ISO_Numeric;174;COM174
+ISO_Numeric;659;KNA659
+ISO_Numeric;408;PRK408
+ISO_Numeric;410;KOR410
+ISO_Numeric;414;KWT414
+ISO_Numeric;136;CYM136
+ISO_Numeric;398;KAZ398
+ISO_Numeric;418;LAO418
+ISO_Numeric;422;LBN422
+ISO_Numeric;662;LCA662
+ISO_Numeric;438;LIE438
+ISO_Numeric;144;LKA144
+ISO_Numeric;430;LBR430
+ISO_Numeric;426;LSO426
+ISO_Numeric;440;LTU440
+ISO_Numeric;428;LVA428
+ISO_Numeric;442;LUX442
+ISO_Numeric;434;LBY434
+ISO_Numeric;504;MAR504
+ISO_Numeric;498;MDA498
+ISO_Numeric;450;MDG450
+ISO_Numeric;584;MHL584
+ISO_Numeric;807;MKD807
+ISO_Numeric;466;MLI466
+ISO_Numeric;104;MMR104
+ISO_Numeric;496;MNG496
+ISO_Numeric;580;MNP580
+ISO_Numeric;474;MTQ474
+ISO_Numeric;478;MRT478
+ISO_Numeric;500;MSR500
+ISO_Numeric;470;MLT470
+ISO_Numeric;480;MUS480
+ISO_Numeric;462;MDV462
+ISO_Numeric;454;MWI454
+ISO_Numeric;484;MEX484
+ISO_Numeric;458;MYS458
+ISO_Numeric;508;MOZ508
+ISO_Numeric;516;NAM516
+ISO_Numeric;540;NCL540
+ISO_Numeric;562;NER562
+ISO_Numeric;574;NFK574
+ISO_Numeric;566;NGA566
+ISO_Numeric;558;NIC558
+ISO_Numeric;528;NLD528
+ISO_Numeric;578;NOR578
+ISO_Numeric;524;NPL524
+ISO_Numeric;520;NRU520
+ISO_Numeric;570;NIU570
+ISO_Numeric;554;NZL554
+ISO_Numeric;512;OMN512
+ISO_Numeric;591;PAN591
+ISO_Numeric;604;PER604
+ISO_Numeric;258;PYF258
+ISO_Numeric;598;PNG598
+ISO_Numeric;608;PHL608
+ISO_Numeric;586;PAK586
+ISO_Numeric;616;POL616
+ISO_Numeric;666;SPM666
+ISO_Numeric;612;PCN612
+ISO_Numeric;630;PRI630
+ISO_Numeric;275;PSE275
+ISO_Numeric;620;PRT620
+ISO_Numeric;585;PLW585
+ISO_Numeric;600;PRY600
+ISO_Numeric;634;QAT634
+ISO_Numeric;638;REU638
+ISO_Numeric;642;ROU642
+ISO_Numeric;688;SRB688
+ISO_Numeric;643;RUS643
+ISO_Numeric;646;RWA646
+ISO_Numeric;682;SAU682
+ISO_Numeric;90;SLB090
+ISO_Numeric;690;SYC690
+ISO_Numeric;729;SDN729
+ISO_Numeric;736;SDN736
+ISO_Numeric;752;SWE752
+ISO_Numeric;702;SGP702
+ISO_Numeric;654;SHN654
+ISO_Numeric;705;SVN705
+ISO_Numeric;703;SVK703
+ISO_Numeric;694;SLE694
+ISO_Numeric;674;SMR674
+ISO_Numeric;686;SEN686
+ISO_Numeric;706;SOM706
+ISO_Numeric;740;SUR740
+ISO_Numeric;728;SSD728
+ISO_Numeric;678;STP678
+ISO_Numeric;810;SUN810
+ISO_Numeric;222;SLV222
+ISO_Numeric;760;SYR760
+ISO_Numeric;748;SWZ748
+ISO_Numeric;796;TCA796
+ISO_Numeric;148;TCD148
+ISO_Numeric;768;TGO768
+ISO_Numeric;764;THA764
+ISO_Numeric;762;TJK762
+ISO_Numeric;772;TKL772
+ISO_Numeric;626;TLS626
+ISO_Numeric;795;TKM795
+ISO_Numeric;788;TUN788
+ISO_Numeric;776;TON776
+ISO_Numeric;792;TUR792
+ISO_Numeric;780;TTO780
+ISO_Numeric;798;TUV798
+ISO_Numeric;158;TWN158
+ISO_Numeric;834;TZA834
+ISO_Numeric;804;UKR804
+ISO_Numeric;800;UGA800
+ISO_Numeric;840;USA840
+ISO_Numeric;858;URY858
+ISO_Numeric;860;UZB860
+ISO_Numeric;670;VCT670
+ISO_Numeric;862;VEN862
+ISO_Numeric;92;VGB092
+ISO_Numeric;850;VIR850
+ISO_Numeric;704;VNM704
+ISO_Numeric;548;VUT548
+ISO_Numeric;876;WLF876
+ISO_Numeric;882;WSM882
+ISO_Numeric;887;YEM887
+ISO_Numeric;886;YEM886
+ISO_Numeric;720;YMD720
+ISO_Numeric;175;MYT175
+ISO_Numeric;890;YUG890
+ISO_Numeric;710;ZAF710
+ISO_Numeric;894;ZMB894
+ISO_Numeric;716;ZWE716
+ISO_Numeric;531;CUW531
+ISO_Numeric;344;HKG344
+ISO_Numeric;499;MNE499
+ISO_Numeric;891;SCG891
+ISO_Numeric;446;MAC446
+ISO_Numeric;492;MCO492
+ISO_Numeric;732;ESH732
+ISO_Numeric;535;BES535
+ISO_Numeric;20;AND020
+ISO_CountryName;United Arab Emirates (the);ARE784
+ISO_CountryName;Afghanistan;AFG004
+ISO_CountryName;Antigua and Barbuda;ATG028
+ISO_CountryName;Anguilla;AIA660
+ISO_CountryName;Albania;ALB008
+ISO_CountryName;Armenia;ARM051
+ISO_CountryName;Netherlands Antilles;ANT530
+ISO_CountryName;Angola;AGO024
+ISO_CountryName;Argentina;ARG032
+ISO_CountryName;American Samoa;ASM016
+ISO_CountryName;Austria;AUT040
+ISO_CountryName;Australia;AUS036
+ISO_CountryName;Aruba;ABW533
+ISO_CountryName;Azerbaijan;AZE031
+ISO_CountryName;Bosnia and Herzegovina;BIH070
+ISO_CountryName;Barbados;BRB052
+ISO_CountryName;Bangladesh;BGD050
+ISO_CountryName;Belgium;BEL056
+ISO_CountryName;Burkina Faso;BFA854
+ISO_CountryName;Bulgaria;BGR100
+ISO_CountryName;Bahrain;BHR048
+ISO_CountryName;Burundi;BDI108
+ISO_CountryName;Benin;BEN204
+ISO_CountryName;Bermuda;BMU060
+ISO_CountryName;Brunei Darussalam;BRN096
+ISO_CountryName;Bolivia (Plurinational State of);BOL068
+ISO_CountryName;Brazil;BRA076
+ISO_CountryName;Bahamas (the);BHS044
+ISO_CountryName;Bhutan;BTN064
+ISO_CountryName;Botswana;BWA072
+ISO_CountryName;Belarus;BLR112
+ISO_CountryName;Belize;BLZ084
+ISO_CountryName;Canada;CAN124
+ISO_CountryName;Cocos (Keeling) Islands (the);CCK166
+ISO_CountryName;Congo (the Democratic Republic of the);COD180
+ISO_CountryName;Central African Republic (the);CAF140
+ISO_CountryName;Congo (the);COG178
+ISO_CountryName;Switzerland;CHE756
+ISO_CountryName;C么te d'Ivoire;CIV384
+ISO_CountryName;Cook Islands (the);COK184
+ISO_CountryName;Chile;CHL152
+ISO_CountryName;Cameroon;CMR120
+ISO_CountryName;China;CHN156
+ISO_CountryName;Colombia;COL170
+ISO_CountryName;Costa Rica;CRI188
+ISO_CountryName;Czechoslovakia;CSK200
+ISO_CountryName;Cuba;CUB192
+ISO_CountryName;Cabo Verde;CPV132
+ISO_CountryName;Christmas Island;CXR162
+ISO_CountryName;Cyprus;CYP196
+ISO_CountryName;Czech Republic (the);CZE203
+ISO_CountryName;Germany;DEU276
+ISO_CountryName;Djibouti;DJI262
+ISO_CountryName;Denmark;DNK208
+ISO_CountryName;Dominica;DMA212
+ISO_CountryName;Dominican Republic (the);DOM214
+ISO_CountryName;Algeria;DZA012
+ISO_CountryName;Ecuador;ECU218
+ISO_CountryName;Estonia;EST233
+ISO_CountryName;Egypt;EGY818
+ISO_CountryName;Eritrea;ERI232
+ISO_CountryName;Spain;ESP724
+ISO_CountryName;Ethiopia;ETH231
+ISO_CountryName;Ethiopia;ETH230
+ISO_CountryName;Finland;FIN246
+ISO_CountryName;Fiji;FJI242
+ISO_CountryName;Falkland Islands (the) [Malvinas];FLK238
+ISO_CountryName;Micronesia (Federated States of);FSM583
+ISO_CountryName;Faroe Islands (the);FRO234
+ISO_CountryName;France;FRA250
+ISO_CountryName;Gabon;GAB266
+ISO_CountryName;United Kingdom of Great Britain and Northern Ireland (the);GBR826
+ISO_CountryName;Grenada;GRD308
+ISO_CountryName;Georgia;GEO268
+ISO_CountryName;French Guiana;GUF254
+ISO_CountryName;Ghana;GHA288
+ISO_CountryName;Gibraltar;GIB292
+ISO_CountryName;Greenland;GRL304
+ISO_CountryName;Gambia (the);GMB270
+ISO_CountryName;Guinea;GIN324
+ISO_CountryName;Guadeloupe;GLP312
+ISO_CountryName;Equatorial Guinea;GNQ226
+ISO_CountryName;Greece;GRC300
+ISO_CountryName;Guatemala;GTM320
+ISO_CountryName;Guam;GUM316
+ISO_CountryName;Guinea-Bissau;GNB624
+ISO_CountryName;Guyana;GUY328
+ISO_CountryName;Honduras;HND340
+ISO_CountryName;Croatia;HRV191
+ISO_CountryName;Haiti;HTI332
+ISO_CountryName;Hungary;HUN348
+ISO_CountryName;Indonesia;IDN360
+ISO_CountryName;Ireland;IRL372
+ISO_CountryName;Israel;ISR376
+ISO_CountryName;India;IND356
+ISO_CountryName;British Indian Ocean Territory (the);IOT086
+ISO_CountryName;Iraq;IRQ368
+ISO_CountryName;Iran (Islamic Republic of);IRN364
+ISO_CountryName;Iceland;ISL352
+ISO_CountryName;Italy;ITA380
+ISO_CountryName;Jamaica;JAM388
+ISO_CountryName;Jordan;JOR400
+ISO_CountryName;Japan;JPN392
+ISO_CountryName;Kenya;KEN404
+ISO_CountryName;Kyrgyzstan;KGZ417
+ISO_CountryName;Cambodia;KHM116
+ISO_CountryName;Kiribati;KIR296
+ISO_CountryName;Comoros (the);COM174
+ISO_CountryName;Saint Kitts and Nevis;KNA659
+ISO_CountryName;Korea (the Democratic People's Republic of);PRK408
+ISO_CountryName;Korea (the Republic of);KOR410
+ISO_CountryName;Kuwait;KWT414
+ISO_CountryName;Cayman Islands (the);CYM136
+ISO_CountryName;Kazakhstan;KAZ398
+ISO_CountryName;Lao People's Democratic Republic (the);LAO418
+ISO_CountryName;Lebanon;LBN422
+ISO_CountryName;Saint Lucia;LCA662
+ISO_CountryName;Liechtenstein;LIE438
+ISO_CountryName;Sri Lanka;LKA144
+ISO_CountryName;Liberia;LBR430
+ISO_CountryName;Lesotho;LSO426
+ISO_CountryName;Lithuania;LTU440
+ISO_CountryName;Latvia;LVA428
+ISO_CountryName;Luxembourg;LUX442
+ISO_CountryName;Libya;LBY434
+ISO_CountryName;Morocco;MAR504
+ISO_CountryName;Moldova (the Republic of);MDA498
+ISO_CountryName;Madagascar;MDG450
+ISO_CountryName;Marshall Islands (the);MHL584
+ISO_CountryName;North Macedonia;MKD807
+ISO_CountryName;Mali;MLI466
+ISO_CountryName;Myanmar;MMR104
+ISO_CountryName;Mongolia;MNG496
+ISO_CountryName;Northern Mariana Islands (the);MNP580
+ISO_CountryName;Martinique;MTQ474
+ISO_CountryName;Mauritania;MRT478
+ISO_CountryName;Montserrat;MSR500
+ISO_CountryName;Malta;MLT470
+ISO_CountryName;Mauritius;MUS480
+ISO_CountryName;Maldives;MDV462
+ISO_CountryName;Malawi;MWI454
+ISO_CountryName;Mexico;MEX484
+ISO_CountryName;Malaysia;MYS458
+ISO_CountryName;Mozambique;MOZ508
+ISO_CountryName;Namibia;NAM516
+ISO_CountryName;New Caledonia;NCL540
+ISO_CountryName;Niger (the);NER562
+ISO_CountryName;Norfolk Island;NFK574
+ISO_CountryName;Nigeria;NGA566
+ISO_CountryName;Nicaragua;NIC558
+ISO_CountryName;Netherlands (the);NLD528
+ISO_CountryName;Norway;NOR578
+ISO_CountryName;Nepal;NPL524
+ISO_CountryName;Nauru;NRU520
+ISO_CountryName;Niue;NIU570
+ISO_CountryName;New Zealand;NZL554
+ISO_CountryName;Oman;OMN512
+ISO_CountryName;Panama;PAN591
+ISO_CountryName;Peru;PER604
+ISO_CountryName;French Polynesia;PYF258
+ISO_CountryName;Papua New Guinea;PNG598
+ISO_CountryName;Philippines (the);PHL608
+ISO_CountryName;Pakistan;PAK586
+ISO_CountryName;Poland;POL616
+ISO_CountryName;Saint Pierre and Miquelon;SPM666
+ISO_CountryName;Pitcairn;PCN612
+ISO_CountryName;Puerto Rico;PRI630
+ISO_CountryName;Palestine, State of;PSE275
+ISO_CountryName;Portugal;PRT620
+ISO_CountryName;Palau;PLW585
+ISO_CountryName;Paraguay;PRY600
+ISO_CountryName;Qatar;QAT634
+ISO_CountryName;R茅union;REU638
+ISO_CountryName;Romania;ROU642
+ISO_CountryName;Serbia;SRB688
+ISO_CountryName;Russian Federation (the);RUS643
+ISO_CountryName;Rwanda;RWA646
+ISO_CountryName;Saudi Arabia;SAU682
+ISO_CountryName;Solomon Islands;SLB090
+ISO_CountryName;Seychelles;SYC690
+ISO_CountryName;Sudan (the);SDN729
+ISO_CountryName;Sweden;SWE752
+ISO_CountryName;Singapore;SGP702
+ISO_CountryName;Saint Helena, Ascension and Tristan da Cunha;SHN654
+ISO_CountryName;Slovenia;SVN705
+ISO_CountryName;Slovakia;SVK703
+ISO_CountryName;Sierra Leone;SLE694
+ISO_CountryName;San Marino;SMR674
+ISO_CountryName;Senegal;SEN686
+ISO_CountryName;Somalia;SOM706
+ISO_CountryName;Suriname;SUR740
+ISO_CountryName;South Sudan;SSD728
+ISO_CountryName;Sao Tome and Principe;STP678
+ISO_CountryName;USSR;SUN810
+ISO_CountryName;El Salvador;SLV222
+ISO_CountryName;Syrian Arab Republic;SYR760
+ISO_CountryName;Swaziland;SWZ748
+ISO_CountryName;Turks and Caicos Islands (the);TCA796
+ISO_CountryName;Chad;TCD148
+ISO_CountryName;Togo;TGO768
+ISO_CountryName;Thailand;THA764
+ISO_CountryName;Tajikistan;TJK762
+ISO_CountryName;Tokelau;TKL772
+ISO_CountryName;Timor-Leste;TLS626
+ISO_CountryName;Turkmenistan;TKM795
+ISO_CountryName;Tunisia;TUN788
+ISO_CountryName;Tonga;TON776
+ISO_CountryName;Turkey;TUR792
+ISO_CountryName;Trinidad and Tobago;TTO780
+ISO_CountryName;Tuvalu;TUV798
+ISO_CountryName;Taiwan (Province of China);TWN158
+ISO_CountryName;Tanzania, United Republic of;TZA834
+ISO_CountryName;Ukraine;UKR804
+ISO_CountryName;Uganda;UGA800
+ISO_CountryName;United States of America (the);USA840
+ISO_CountryName;Uruguay;URY858
+ISO_CountryName;Uzbekistan;UZB860
+ISO_CountryName;Saint Vincent and the Grenadines;VCT670
+ISO_CountryName;Venezuela (Bolivarian Republic of);VEN862
+ISO_CountryName;Virgin Islands (British);VGB092
+ISO_CountryName;Virgin Islands (U.S.);VIR850
+ISO_CountryName;Viet Nam;VNM704
+ISO_CountryName;Vanuatu;VUT548
+ISO_CountryName;Wallis and Futuna;WLF876
+ISO_CountryName;Samoa;WSM882
+ISO_CountryName;Yemen;YEM887
+ISO_CountryName;Mayotte;MYT175
+ISO_CountryName;Yugoslavia;YUG890
+ISO_CountryName;South Africa;ZAF710
+ISO_CountryName;Zambia;ZMB894
+ISO_CountryName;Zimbabwe;ZWE716
+ISO_CountryName;Cura莽ao;CUW531
+ISO_CountryName;Hong Kong;HKG344
+ISO_CountryName;Montenegro;MNE499
+ISO_CountryName;Serbia and Montenegro;SCG891
+ISO_CountryName;Kosovo;UNK000
+ISO_CountryName;Macao;MAC446
+ISO_CountryName;Western Sahara;ESH732
+ISO_CountryName;Southern Rhodesia;ZWE716
+IEA_Name;United Arab Emirates;ARE784
+IEA_Name;Albania;ALB008
+IEA_Name;Armenia;ARM051
+IEA_Name;Netherlands Antilles;ANT530
+IEA_Name;Angola;AGO024
+IEA_Name;Argentina;ARG032
+IEA_Name;Austria;AUT040
+IEA_Name;Australia;AUS036
+IEA_Name;Azerbaijan;AZE031
+IEA_Name;Bosnia and Herzegovina;BIH070
+IEA_Name;Bangladesh;BGD050
+IEA_Name;Belgium;BEL056
+IEA_Name;Bulgaria;BGR100
+IEA_Name;Bahrain;BHR048
+IEA_Name;Benin;BEN204
+IEA_Name;Brunei Darussalam;BRN096
+IEA_Name;Bolivia;BOL068
+IEA_Name;Brazil;BRA076
+IEA_Name;Botswana;BWA072
+IEA_Name;Belarus;BLR112
+IEA_Name;Canada;CAN124
+IEA_Name;Democratic Republic of the Congo;COD180
+IEA_Name;Congo;COG178
+IEA_Name;Switzerland;CHE756
+IEA_Name;C么te d'Ivoire;CIV384
+IEA_Name;Chile;CHL152
+IEA_Name;Cameroon;CMR120
+IEA_Name;People's Republic of China;CHN156
+IEA_Name;Colombia;COL170
+IEA_Name;Costa Rica;CRI188
+IEA_Name;Cuba;CUB192
+IEA_Name;Cyprus;CYP196
+IEA_Name;Czech Republic;CZE203
+IEA_Name;Germany;DEU276
+IEA_Name;Denmark;DNK208
+IEA_Name;Dominican Republic;DOM214
+IEA_Name;Algeria;DZA012
+IEA_Name;Ecuador;ECU218
+IEA_Name;Estonia;EST233
+IEA_Name;Egypt;EGY818
+IEA_Name;Eritrea;ERI232
+IEA_Name;Spain;ESP724
+IEA_Name;Ethiopia;ETH231
+IEA_Name;Finland;FIN246
+IEA_Name;France;FRA250
+IEA_Name;Gabon;GAB266
+IEA_Name;United Kingdom;GBR826
+IEA_Name;Georgia;GEO268
+IEA_Name;Ghana;GHA288
+IEA_Name;Gibraltar;GIB292
+IEA_Name;Greece;GRC300
+IEA_Name;Guatemala;GTM320
+IEA_Name;Honduras;HND340
+IEA_Name;Croatia;HRV191
+IEA_Name;Haiti;HTI332
+IEA_Name;Hungary;HUN348
+IEA_Name;Indonesia;IDN360
+IEA_Name;Ireland;IRL372
+IEA_Name;Israel;ISR376
+IEA_Name;India;IND356
+IEA_Name;Iraq;IRQ368
+IEA_Name;Islamic Republic of Iran;IRN364
+IEA_Name;Iceland;ISL352
+IEA_Name;Italy;ITA380
+IEA_Name;Jamaica;JAM388
+IEA_Name;Jordan;JOR400
+IEA_Name;Japan;JPN392
+IEA_Name;Kenya;KEN404
+IEA_Name;Kyrgyzstan;KGZ417
+IEA_Name;Cambodia;KHM116
+IEA_Name;Democratic People's Republic of Korea;PRK408
+IEA_Name;Korea;KOR410
+IEA_Name;Kuwait;KWT414
+IEA_Name;Kazakhstan;KAZ398
+IEA_Name;Lebanon;LBN422
+IEA_Name;Sri Lanka;LKA144
+IEA_Name;Lithuania;LTU440
+IEA_Name;Latvia;LVA428
+IEA_Name;Luxembourg;LUX442
+IEA_Name;Libya;LBY434
+IEA_Name;Morocco;MAR504
+IEA_Name;Moldova;MDA498
+IEA_Name;Former Yugoslav Republic of Macedonia;MKD807
+IEA_Name;Myanmar;MMR104
+IEA_Name;Mongolia;MNG496
+IEA_Name;Malta;MLT470
+IEA_Name;Mauritius;MUS480
+IEA_Name;Mexico;MEX484
+IEA_Name;Malaysia;MYS458
+IEA_Name;Mozambique;MOZ508
+IEA_Name;Namibia;NAM516
+IEA_Name;Niger;NER562
+IEA_Name;Nigeria;NGA566
+IEA_Name;Nicaragua;NIC558
+IEA_Name;Netherlands;NLD528
+IEA_Name;Norway;NOR578
+IEA_Name;Nepal;NPL524
+IEA_Name;New Zealand;NZL554
+IEA_Name;Oman;OMN512
+IEA_Name;Panama;PAN591
+IEA_Name;Peru;PER604
+IEA_Name;Philippines;PHL608
+IEA_Name;Pakistan;PAK586
+IEA_Name;Poland;POL616
+IEA_Name;Portugal;PRT620
+IEA_Name;Paraguay;PRY600
+IEA_Name;Qatar;QAT634
+IEA_Name;Romania;ROU642
+IEA_Name;Serbia;SRB688
+IEA_Name;Russian Federation;RUS643
+IEA_Name;Saudi Arabia;SAU682
+IEA_Name;Sudan;SDN729
+IEA_Name;Sweden;SWE752
+IEA_Name;Singapore;SGP702
+IEA_Name;Slovenia;SVN705
+IEA_Name;Slovak Republic;SVK703
+IEA_Name;Senegal;SEN686
+IEA_Name;Suriname;SUR740
+IEA_Name;South Sudan;SSD728
+IEA_Name;Former Soviet Union (If no detail);SUN810
+IEA_Name;El Salvador;SLV222
+IEA_Name;Syrian Arab Republic;SYR760
+IEA_Name;Togo;TGO768
+IEA_Name;Thailand;THA764
+IEA_Name;Tajikistan;TJK762
+IEA_Name;Turkmenistan;TKM795
+IEA_Name;Tunisia;TUN788
+IEA_Name;Turkey;TUR792
+IEA_Name;Trinidad and Tobago;TTO780
+IEA_Name;Chinese Taipei;TWN158
+IEA_Name;Tanzania;TZA834
+IEA_Name;Ukraine;UKR804
+IEA_Name;United States;USA840
+IEA_Name;Uruguay;URY858
+IEA_Name;Uzbekistan;UZB860
+IEA_Name;Venezuela;VEN862
+IEA_Name;Viet Nam;VNM704
+IEA_Name;Yemen;YEM887
+IEA_Name;Former Yugoslavia (If no detail);YUG890
+IEA_Name;South Africa;ZAF710
+IEA_Name;Zambia;ZMB894
+IEA_Name;Zimbabwe;ZWE716
+IEA_Name;Cura莽ao;CUW531
+IEA_Name;Hong Kong (China);HKG344
+IEA_Name;Montenegro;MNE499
+IEA_Name;Kosovo;UNK000
+IEA_Code;ARE;ARE784
+IEA_Code;ALB;ALB008
+IEA_Code;ARM;ARM051
+IEA_Code;AGO;AGO024
+IEA_Code;ARG;ARG032
+IEA_Code;AUT;AUT040
+IEA_Code;AUS;AUS036
+IEA_Code;AZE;AZE031
+IEA_Code;BIH;BIH070
+IEA_Code;BGD;BGD050
+IEA_Code;BEL;BEL056
+IEA_Code;BGR;BGR100
+IEA_Code;BHR;BHR048
+IEA_Code;BEN;BEN204
+IEA_Code;BRN;BRN096
+IEA_Code;BOL;BOL068
+IEA_Code;BRA;BRA076
+IEA_Code;BWA;BWA072
+IEA_Code;BLR;BLR112
+IEA_Code;CAN;CAN124
+IEA_Code;COD;COD180
+IEA_Code;COG;COG178
+IEA_Code;CHE;CHE756
+IEA_Code;CIV;CIV384
+IEA_Code;CHL;CHL152
+IEA_Code;CMR;CMR120
+IEA_Code;CHN;CHN156
+IEA_Code;COL;COL170
+IEA_Code;CRI;CRI188
+IEA_Code;CUB;CUB192
+IEA_Code;CYP;CYP196
+IEA_Code;CZE;CZE203
+IEA_Code;DEU;DEU276
+IEA_Code;DNK;DNK208
+IEA_Code;DOM;DOM214
+IEA_Code;DZA;DZA012
+IEA_Code;ECU;ECU218
+IEA_Code;EST;EST233
+IEA_Code;EGY;EGY818
+IEA_Code;EQGUINEA;GNQ226
+IEA_Code;ERI;ERI232
+IEA_Code;ESP;ESP724
+IEA_Code;ETH;ETH231
+IEA_Code;FIN;FIN246
+IEA_Code;FRA;FRA250
+IEA_Code;GAB;GAB266
+IEA_Code;GBR;GBR826
+IEA_Code;GEO;GEO268
+IEA_Code;GHA;GHA288
+IEA_Code;GIB;GIB292
+IEA_Code;GRC;GRC300
+IEA_Code;GTM;GTM320
+IEA_Code;HND;HND340
+IEA_Code;HRV;HRV191
+IEA_Code;HTI;HTI332
+IEA_Code;HUN;HUN348
+IEA_Code;IDN;IDN360
+IEA_Code;IRL;IRL372
+IEA_Code;ISR;ISR376
+IEA_Code;IND;IND356
+IEA_Code;IRQ;IRQ368
+IEA_Code;IRN;IRN364
+IEA_Code;ISL;ISL352
+IEA_Code;ITA;ITA380
+IEA_Code;JAM;JAM388
+IEA_Code;JOR;JOR400
+IEA_Code;JPN;JPN392
+IEA_Code;KEN;KEN404
+IEA_Code;KGZ;KGZ417
+IEA_Code;KHM;KHM116
+IEA_Code;PRK;PRK408
+IEA_Code;KOR;KOR410
+IEA_Code;KWT;KWT414
+IEA_Code;KAZ;KAZ398
+IEA_Code;LAO;LAO418
+IEA_Code;LBN;LBN422
+IEA_Code;LKA;LKA144
+IEA_Code;LTU;LTU440
+IEA_Code;LVA;LVA428
+IEA_Code;LUX;LUX442
+IEA_Code;LBY;LBY434
+IEA_Code;MAR;MAR504
+IEA_Code;MDA;MDA498
+IEA_Code;NORTHMACED;MKD807
+IEA_Code;MMR;MMR104
+IEA_Code;MNG;MNG496
+IEA_Code;MLT;MLT470
+IEA_Code;MAURITIUS;MUS480
+IEA_Code;MEX;MEX484
+IEA_Code;MYS;MYS458
+IEA_Code;MOZ;MOZ508
+IEA_Code;NAM;NAM516
+IEA_Code;NER;NER562
+IEA_Code;NGA;NGA566
+IEA_Code;NIC;NIC558
+IEA_Code;NLD;NLD528
+IEA_Code;NOR;NOR578
+IEA_Code;NPL;NPL524
+IEA_Code;NZL;NZL554
+IEA_Code;OMN;OMN512
+IEA_Code;PAN;PAN591
+IEA_Code;PER;PER604
+IEA_Code;PHL;PHL608
+IEA_Code;PAK;PAK586
+IEA_Code;POL;POL616
+IEA_Code;PRT;PRT620
+IEA_Code;PRY;PRY600
+IEA_Code;QAT;QAT634
+IEA_Code;ROU;ROU642
+IEA_Code;SRB;SRB688
+IEA_Code;RUS;RUS643
+IEA_Code;SAU;SAU682
+IEA_Code;SDN;SDN729
+IEA_Code;SWE;SWE752
+IEA_Code;SGP;SGP702
+IEA_Code;SVN;SVN705
+IEA_Code;SVK;SVK703
+IEA_Code;SEN;SEN686
+IEA_Code;SUR;SUR740
+IEA_Code;SSD;SSD728
+IEA_Code;FSUND;SUN810
+IEA_Code;SLV;SLV222
+IEA_Code;SYR;SYR760
+IEA_Code;TGO;TGO768
+IEA_Code;THA;THA764
+IEA_Code;TJK;TJK762
+IEA_Code;TKM;TKM795
+IEA_Code;TUN;TUN788
+IEA_Code;TUR;TUR792
+IEA_Code;TTO;TTO780
+IEA_Code;TWN;TWN158
+IEA_Code;TZA;TZA834
+IEA_Code;UKR;UKR804
+IEA_Code;USA;USA840
+IEA_Code;URY;URY858
+IEA_Code;UZB;UZB860
+IEA_Code;VEN;VEN862
+IEA_Code;VNM;VNM704
+IEA_Code;YEM;YEM887
+IEA_Code;YUGOND;YUG890
+IEA_Code;ZAF;ZAF710
+IEA_Code;ZMB;ZMB894
+IEA_Code;ZWE;ZWE716
+IEA_Code;CUW;CUW531
+IEA_Code;HKG;HKG344
+IEA_Code;MNE;MNE499
+IEA_Code;KOSOVO;UNK000
+UNSD_Name;United Arab Emirates;ARE784
+UNSD_Name;Afghanistan;AFG004
+UNSD_Name;Antigua and Barbuda;ATG028
+UNSD_Name;Anguilla;AIA660
+UNSD_Name;Albania;ALB008
+UNSD_Name;Armenia;ARM051
+UNSD_Name;Netherlands Antilles;ANT530
+UNSD_Name;Angola;AGO024
+UNSD_Name;Argentina;ARG032
+UNSD_Name;Austria;AUT040
+UNSD_Name;Australia;AUS036
+UNSD_Name;Aruba;ABW533
+UNSD_Name;Azerbaijan;AZE031
+UNSD_Name;Bosnia and Herzegovina;BIH070
+UNSD_Name;Barbados;BRB052
+UNSD_Name;Bangladesh;BGD050
+UNSD_Name;Belgium;BEL056
+UNSD_Name;Burkina Faso;BFA854
+UNSD_Name;Bulgaria;BGR100
+UNSD_Name;Bahrain;BHR048
+UNSD_Name;Burundi;BDI108
+UNSD_Name;Benin;BEN204
+UNSD_Name;Bermuda;BMU060
+UNSD_Name;Brunei Darussalam;BRN096
+UNSD_Name;Bolivia (Plur. State of);BOL068
+UNSD_Name;Brazil;BRA076
+UNSD_Name;Bahamas;BHS044
+UNSD_Name;Bhutan;BTN064
+UNSD_Name;Botswana;BWA072
+UNSD_Name;Belarus;BLR112
+UNSD_Name;Belize;BLZ084
+UNSD_Name;Canada;CAN124
+UNSD_Name;Dem. Rep. of the Congo;COD180
+UNSD_Name;Central African Republic;CAF140
+UNSD_Name;Congo;COG178
+UNSD_Name;Switzerland;CHE756
+UNSD_Name;C么te d'Ivoire;CIV384
+UNSD_Name;Cook Islands;COK184
+UNSD_Name;Chile;CHL152
+UNSD_Name;Cameroon;CMR120
+UNSD_Name;China;CHN156
+UNSD_Name;Colombia;COL170
+UNSD_Name;Costa Rica;CRI188
+UNSD_Name;Czechoslovakia (Former);CSK200
+UNSD_Name;Cuba;CUB192
+UNSD_Name;Cabo Verde;CPV132
+UNSD_Name;Cyprus;CYP196
+UNSD_Name;Czech Republic;CZE203
+UNSD_Name;Germany;DEU276
+UNSD_Name;German Dem. R. (former);DDR278
+UNSD_Name;Germany, Fed. R. (former);DEU280
+UNSD_Name;Djibouti;DJI262
+UNSD_Name;Denmark;DNK208
+UNSD_Name;Dominica;DMA212
+UNSD_Name;Dominican Republic;DOM214
+UNSD_Name;Algeria;DZA012
+UNSD_Name;Ecuador;ECU218
+UNSD_Name;Estonia;EST233
+UNSD_Name;Egypt;EGY818
+UNSD_Name;Eritrea;ERI232
+UNSD_Name;Spain;ESP724
+UNSD_Name;Ethiopia;ETH231
+UNSD_Name;Finland;FIN246
+UNSD_Name;Fiji;FJI242
+UNSD_Name;Falkland Is. (Malvinas);FLK238
+UNSD_Name;Micronesia (FS of);FSM583
+UNSD_Name;France;FRA250
+UNSD_Name;Gabon;GAB266
+UNSD_Name;United Kingdom;GBR826
+UNSD_Name;Grenada;GRD308
+UNSD_Name;Georgia;GEO268
+UNSD_Name;Ghana;GHA288
+UNSD_Name;Greece;GIB292
+UNSD_Name;Gambia;GMB270
+UNSD_Name;Guinea;GIN324
+UNSD_Name;Equatorial Guinea;GNQ226
+UNSD_Name;Greece;GRC300
+UNSD_Name;Guatemala;GTM320
+UNSD_Name;Guinea-Bissau;GNB624
+UNSD_Name;Guyana;GUY328
+UNSD_Name;Honduras;HND340
+UNSD_Name;Croatia;HRV191
+UNSD_Name;Haiti;HTI332
+UNSD_Name;Hungary;HUN348
+UNSD_Name;Indonesia;IDN360
+UNSD_Name;Ireland;IRL372
+UNSD_Name;Israel;ISR376
+UNSD_Name;India;IND356
+UNSD_Name;Iraq;IRQ368
+UNSD_Name;Iran (Islamic Rep. of);IRN364
+UNSD_Name;Iceland;ISL352
+UNSD_Name;Italy;ITA380
+UNSD_Name;Jamaica;JAM388
+UNSD_Name;Jordan;JOR400
+UNSD_Name;Japan;JPN392
+UNSD_Name;Kenya;KEN404
+UNSD_Name;Kyrgyzstan;KGZ417
+UNSD_Name;Cambodia;KHM116
+UNSD_Name;Kiribati;KIR296
+UNSD_Name;Comoros;COM174
+UNSD_Name;Saint Lucia;KNA659
+UNSD_Name;D.P.R. of Korea;PRK408
+UNSD_Name;Korea, Republic of;KOR410
+UNSD_Name;Kuwait;KWT414
+UNSD_Name;Cayman Islands;CYM136
+UNSD_Name;Kazakhstan;KAZ398
+UNSD_Name;Lao People's DR;LAO418
+UNSD_Name;Lebanon;LBN422
+UNSD_Name;Liechtenstein;LIE438
+UNSD_Name;Sri Lanka;LKA144
+UNSD_Name;Liberia;LBR430
+UNSD_Name;Lesotho;LSO426
+UNSD_Name;Lithuania;LTU440
+UNSD_Name;Latvia;LVA428
+UNSD_Name;Luxembourg;LUX442
+UNSD_Name;Libya;LBY434
+UNSD_Name;Morocco;MAR504
+UNSD_Name;Republic of Moldova;MDA498
+UNSD_Name;Madagascar;MDG450
+UNSD_Name;Marshall Islands;MHL584
+UNSD_Name;TFYR of Macedonia;MKD807
+UNSD_Name;Mali;MLI466
+UNSD_Name;Myanmar;MMR104
+UNSD_Name;Mongolia;MNG496
+UNSD_Name;Mauritania;MRT478
+UNSD_Name;Montserrat;MSR500
+UNSD_Name;Malta;MLT470
+UNSD_Name;Mauritius;MUS480
+UNSD_Name;Maldives;MDV462
+UNSD_Name;Malawi;MWI454
+UNSD_Name;Mexico;MEX484
+UNSD_Name;Malaysia;MYS458
+UNSD_Name;Mozambique;MOZ508
+UNSD_Name;Namibia;NAM516
+UNSD_Name;New Caledonia;NCL540
+UNSD_Name;Niger;NER562
+UNSD_Name;Nigeria;NGA566
+UNSD_Name;Nicaragua;NIC558
+UNSD_Name;Netherlands;NLD528
+UNSD_Name;Norway;NOR578
+UNSD_Name;Nepal;NPL524
+UNSD_Name;Nauru;NRU520
+UNSD_Name;New Zealand;NZL554
+UNSD_Name;Oman;OMN512
+UNSD_Name;Panama;PAN591
+UNSD_Name;Peru;PER604
+UNSD_Name;French Polynesia;PYF258
+UNSD_Name;Papua New Guinea;PNG598
+UNSD_Name;Philippines;PHL608
+UNSD_Name;Pakistan;PAK586
+UNSD_Name;Poland;POL616
+UNSD_Name;Puerto Rico;PRI630
+UNSD_Name;State of Palestine;PSE275
+UNSD_Name;Portugal;PRT620
+UNSD_Name;Palau;PLW585
+UNSD_Name;Paraguay;PRY600
+UNSD_Name;Qatar;QAT634
+UNSD_Name;R茅union;REU638
+UNSD_Name;Romania;ROU642
+UNSD_Name;Serbia;SRB688
+UNSD_Name;Russian Federation;RUS643
+UNSD_Name;Rwanda;RWA646
+UNSD_Name;Saudi Arabia;SAU682
+UNSD_Name;Solomon Islands;SLB090
+UNSD_Name;Seychelles;SYC690
+UNSD_Name;Sudan;SDN729
+UNSD_Name;Sudan (former);SDN736
+UNSD_Name;Sweden;SWE752
+UNSD_Name;Singapore;SGP702
+UNSD_Name;Saint Kitts and Nevis;SHN654
+UNSD_Name;Slovenia;SVN705
+UNSD_Name;Slovakia;SVK703
+UNSD_Name;Sierra Leone;SLE694
+UNSD_Name;San Marino;SMR674
+UNSD_Name;Senegal;SEN686
+UNSD_Name;Somalia;SOM706
+UNSD_Name;Suriname;SUR740
+UNSD_Name;South Sudan;SSD728
+UNSD_Name;Sao Tome and Principe;STP678
+UNSD_Name;USSR (Former);SUN810
+UNSD_Name;El Salvador;SLV222
+UNSD_Name;Syrian Arab Republic;SYR760
+UNSD_Name;Swaziland;SWZ748
+UNSD_Name;Turks and Caicos Islands;TCA796
+UNSD_Name;Chad;TCD148
+UNSD_Name;Togo;TGO768
+UNSD_Name;Thailand;THA764
+UNSD_Name;Tajikistan;TJK762
+UNSD_Name;Timor-Leste;TLS626
+UNSD_Name;Turkmenistan;TKM795
+UNSD_Name;Tunisia;TUN788
+UNSD_Name;Tonga;TON776
+UNSD_Name;Turkey;TUR792
+UNSD_Name;Trinidad and Tobago;TTO780
+UNSD_Name;Tuvalu;TUV798
+UNSD_Name;United Rep. of Tanzania;TZA834
+UNSD_Name;Ukraine;UKR804
+UNSD_Name;Uganda;UGA800
+UNSD_Name;United States;USA840
+UNSD_Name;Uruguay;URY858
+UNSD_Name;Uzbekistan;UZB860
+UNSD_Name;St. Vincent and the Grenadines;VCT670
+UNSD_Name;Venezuela (Bolivar. Rep.);VEN862
+UNSD_Name;British Virgin Islands;VGB092
+UNSD_Name;Viet Nam;VNM704
+UNSD_Name;Vanuatu;VUT548
+UNSD_Name;Samoa;WSM882
+UNSD_Name;Yemen;YEM887
+UNSD_Name;Yemen Arab Rep. (former);YEM886
+UNSD_Name;Yemen, Dem. (former);YMD720
+UNSD_Name;Yugoslavia, SFR (former);YUG890
+UNSD_Name;South Africa;ZAF710
+UNSD_Name;Zambia;ZMB894
+UNSD_Name;Zimbabwe;ZWE716
+UNSD_Name;China: Hong Kong SAR;HKG344
+UNSD_Name;Montenegro;MNE499
+UNSD_Name;Serbia and Montenegro;SCG891
+UNSD_Name;China: Macao SAR;MAC446
+EIA_Name;United Arab Emirates;ARE784
+EIA_Name;Afghanistan;AFG004
+EIA_Name;Antigua and Barbuda;ATG028
+EIA_Name;Anguilla;AIA660
+EIA_Name;Albania;ALB008
+EIA_Name;Armenia;ARM051
+EIA_Name;Netherlands Antilles;ANT530
+EIA_Name;Angola;AGO024
+EIA_Name;Argentina;ARG032
+EIA_Name;American Samoa;ASM016
+EIA_Name;Austria;AUT040
+EIA_Name;Australia;AUS036
+EIA_Name;Aruba;ABW533
+EIA_Name;Azerbaijan;AZE031
+EIA_Name;Bosnia and Herzegovina;BIH070
+EIA_Name;Barbados;BRB052
+EIA_Name;Bangladesh;BGD050
+EIA_Name;Belgium;BEL056
+EIA_Name;Burkina Faso;BFA854
+EIA_Name;Bulgaria;BGR100
+EIA_Name;Bahrain;BHR048
+EIA_Name;Burundi;BDI108
+EIA_Name;Benin;BEN204
+EIA_Name;Bermuda;BMU060
+EIA_Name;Brunei;BRN096
+EIA_Name;Bolivia;BOL068
+EIA_Name;Brazil;BRA076
+EIA_Name;Bahamas, The;BHS044
+EIA_Name;Bhutan;BTN064
+EIA_Name;Botswana;BWA072
+EIA_Name;Belarus;BLR112
+EIA_Name;Belize;BLZ084
+EIA_Name;Canada;CAN124
+EIA_Name;Cocos (Keeling) Islands;CCK166
+EIA_Name;Congo (Kinshasa);COD180
+EIA_Name;Central African Republic;CAF140
+EIA_Name;Congo (Brazzaville);COG178
+EIA_Name;Switzerland;CHE756
+EIA_Name;Cote dIvoire (IvoryCoast);CIV384
+EIA_Name;Cook Islands;COK184
+EIA_Name;Chile;CHL152
+EIA_Name;Cameroon;CMR120
+EIA_Name;China;CHN156
+EIA_Name;Colombia;COL170
+EIA_Name;Costa Rica;CRI188
+EIA_Name;Former Czechoslovakia;CSK200
+EIA_Name;Cuba;CUB192
+EIA_Name;Cape Verde;CPV132
+EIA_Name;Christmas Island;CXR162
+EIA_Name;Cyprus;CYP196
+EIA_Name;Czech Republic;CZE203
+EIA_Name;Germany;DEU276
+EIA_Name;Germany, East;DDR278
+EIA_Name;Germany, West;DEU280
+EIA_Name;Djibouti;DJI262
+EIA_Name;Denmark;DNK208
+EIA_Name;Dominica;DMA212
+EIA_Name;Dominican Republic;DOM214
+EIA_Name;Algeria;DZA012
+EIA_Name;Ecuador;ECU218
+EIA_Name;Estonia;EST233
+EIA_Name;Egypt;EGY818
+EIA_Name;Eritrea;ERI232
+EIA_Name;Spain;ESP724
+EIA_Name;Ethiopia;ETH231
+EIA_Name;Finland;FIN246
+EIA_Name;Fiji;FJI242
+EIA_Name;Falkland Islands (Islas Malvinas);FLK238
+EIA_Name;Micronesia;FSM583
+EIA_Name;Faroe Islands;FRO234
+EIA_Name;France;FRA250
+EIA_Name;Gabon;GAB266
+EIA_Name;United Kingdom;GBR826
+EIA_Name;Grenada;GRD308
+EIA_Name;Georgia;GEO268
+EIA_Name;French Guiana;GUF254
+EIA_Name;Ghana;GHA288
+EIA_Name;Gibraltar;GIB292
+EIA_Name;Greenland;GRL304
+EIA_Name;Gambia, The;GMB270
+EIA_Name;Guinea;GIN324
+EIA_Name;Guadeloupe;GLP312
+EIA_Name;Equatorial Guinea;GNQ226
+EIA_Name;Greece;GRC300
+EIA_Name;Guatemala;GTM320
+EIA_Name;Guam;GUM316
+EIA_Name;Guinea-Bissau;GNB624
+EIA_Name;Guyana;GUY328
+EIA_Name;Honduras;HND340
+EIA_Name;Croatia;HRV191
+EIA_Name;Haiti;HTI332
+EIA_Name;Hungary;HUN348
+EIA_Name;Indonesia;IDN360
+EIA_Name;Ireland;IRL372
+EIA_Name;Israel;ISR376
+EIA_Name;India;IND356
+EIA_Name;British Indian Ocean Territory;IOT086
+EIA_Name;Iraq;IRQ368
+EIA_Name;Iran;IRN364
+EIA_Name;Iceland;ISL352
+EIA_Name;Italy;ITA380
+EIA_Name;Jamaica;JAM388
+EIA_Name;Jordan;JOR400
+EIA_Name;Japan;JPN392
+EIA_Name;Kenya;KEN404
+EIA_Name;Kyrgyzstan;KGZ417
+EIA_Name;Cambodia;KHM116
+EIA_Name;Kiribati;KIR296
+EIA_Name;Comoros;COM174
+EIA_Name;Saint Kitts and Nevis;KNA659
+EIA_Name;Korea, North;PRK408
+EIA_Name;Korea, South;KOR410
+EIA_Name;Kuwait;KWT414
+EIA_Name;Cayman Islands;CYM136
+EIA_Name;Kazakhstan;KAZ398
+EIA_Name;Laos;LAO418
+EIA_Name;Lebanon;LBN422
+EIA_Name;Saint Lucia;LCA662
+EIA_Name;Liechtenstein;LIE438
+EIA_Name;Sri Lanka;LKA144
+EIA_Name;Liberia;LBR430
+EIA_Name;Lesotho;LSO426
+EIA_Name;Lithuania;LTU440
+EIA_Name;Latvia;LVA428
+EIA_Name;Luxembourg;LUX442
+EIA_Name;Libya;LBY434
+EIA_Name;Morocco;MAR504
+EIA_Name;Moldova;MDA498
+EIA_Name;Madagascar;MDG450
+EIA_Name;Marshall Islands;MHL584
+EIA_Name;Macedonia;MKD807
+EIA_Name;Mali;MLI466
+EIA_Name;Burma (Myanmar);MMR104
+EIA_Name;Mongolia;MNG496
+EIA_Name;Northern Mariana Islands;MNP580
+EIA_Name;Martinique;MTQ474
+EIA_Name;Mauritania;MRT478
+EIA_Name;Montserrat;MSR500
+EIA_Name;Malta;MLT470
+EIA_Name;Mauritius;MUS480
+EIA_Name;Maldives;MDV462
+EIA_Name;Malawi;MWI454
+EIA_Name;Mexico;MEX484
+EIA_Name;Malaysia;MYS458
+EIA_Name;Mozambique;MOZ508
+EIA_Name;Namibia;NAM516
+EIA_Name;New Caledonia;NCL540
+EIA_Name;Niger;NER562
+EIA_Name;Norfolk Island;NFK574
+EIA_Name;Nigeria;NGA566
+EIA_Name;Nicaragua;NIC558
+EIA_Name;Netherlands;NLD528
+EIA_Name;Norway;NOR578
+EIA_Name;Nepal;NPL524
+EIA_Name;Nauru;NRU520
+EIA_Name;Niue;NIU570
+EIA_Name;New Zealand;NZL554
+EIA_Name;Oman;OMN512
+EIA_Name;Panama;PAN591
+EIA_Name;Peru;PER604
+EIA_Name;French Polynesia;PYF258
+EIA_Name;Papua New Guinea;PNG598
+EIA_Name;Philippines;PHL608
+EIA_Name;Pakistan;PAK586
+EIA_Name;Poland;POL616
+EIA_Name;Saint Pierre and Miquelon;SPM666
+EIA_Name;Pitcairn Islands;PCN612
+EIA_Name;Puerto Rico;PRI630
+EIA_Name;Palestinian Territories;PSE275
+EIA_Name;Portugal;PRT620
+EIA_Name;Palau;PLW585
+EIA_Name;Paraguay;PRY600
+EIA_Name;Qatar;QAT634
+EIA_Name;Reunion;REU638
+EIA_Name;Romania;ROU642
+EIA_Name;Serbia;SRB688
+EIA_Name;Russia;RUS643
+EIA_Name;Rwanda;RWA646
+EIA_Name;Saudi Arabia;SAU682
+EIA_Name;Solomon Islands;SLB090
+EIA_Name;Seychelles;SYC690
+EIA_Name;Sudan and South Sudan;SDN736
+EIA_Name;Sweden;SWE752
+EIA_Name;Singapore;SGP702
+EIA_Name;Saint Helena;SHN654
+EIA_Name;Slovenia;SVN705
+EIA_Name;Slovakia;SVK703
+EIA_Name;Sierra Leone;SLE694
+EIA_Name;San Marino;SMR674
+EIA_Name;Senegal;SEN686
+EIA_Name;Somalia;SOM706
+EIA_Name;Suriname;SUR740
+EIA_Name;Sao Tome and Principe;STP678
+EIA_Name;Former U.S.S.R.;SUN810
+EIA_Name;El Salvador;SLV222
+EIA_Name;Syria;SYR760
+EIA_Name;Swaziland;SWZ748
+EIA_Name;Turks and Caicos Islands;TCA796
+EIA_Name;Chad;TCD148
+EIA_Name;Togo;TGO768
+EIA_Name;Thailand;THA764
+EIA_Name;Tajikistan;TJK762
+EIA_Name;Tokelau;TKL772
+EIA_Name;Timor-Leste (East Timor);TLS626
+EIA_Name;Turkmenistan;TKM795
+EIA_Name;Tunisia;TUN788
+EIA_Name;Tonga;TON776
+EIA_Name;Turkey;TUR792
+EIA_Name;Trinidad and Tobago;TTO780
+EIA_Name;Tuvalu;TUV798
+EIA_Name;Taiwan;TWN158
+EIA_Name;Tanzania;TZA834
+EIA_Name;Ukraine;UKR804
+EIA_Name;Uganda;UGA800
+EIA_Name;United States;USA840
+EIA_Name;Uruguay;URY858
+EIA_Name;Uzbekistan;UZB860
+EIA_Name;Saint Vincent/Grenadines;VCT670
+EIA_Name;Venezuela;VEN862
+EIA_Name;Virgin Islands, British;VGB092
+EIA_Name;US Virgin Islands;VIR850
+EIA_Name;Vietnam;VNM704
+EIA_Name;Vanuatu;VUT548
+EIA_Name;Wallis and Futuna Islands;WLF876
+EIA_Name;Samoa;WSM882
+EIA_Name;Yemen;YEM887
+EIA_Name;Mayotte;MYT175
+EIA_Name;Former Yugoslavia;YUG890
+EIA_Name;South Africa;ZAF710
+EIA_Name;Zambia;ZMB894
+EIA_Name;Zimbabwe;ZWE716
+EIA_Name;Netherlands Antilles;CUW531
+EIA_Name;Hong Kong;HKG344
+EIA_Name;Montenegro;MNE499
+EIA_Name;Former Serbia and Montenegro;SCG891
+EIA_Name;Kosovo;UNK000
+EIA_Name;Macau;MAC446
+EIA_Name;Monaco;MCO492
+EIA_Name;Western Sahara;ESH732
+EIA_Code;ABW;ABW533
+EIA_Code;AFG;AFG004
+EIA_Code;AGO;AGO024
+EIA_Code;ALB;ALB008
+EIA_Code;ARE;ARE784
+EIA_Code;ARG;ARG032
+EIA_Code;ARM;ARM051
+EIA_Code;ASM;ASM016
+EIA_Code;ATG;ATG028
+EIA_Code;AUS;AUS036
+EIA_Code;AUT;AUT040
+EIA_Code;AZE;AZE031
+EIA_Code;BDI;BDI108
+EIA_Code;BEL;BEL056
+EIA_Code;BEN;BEN204
+EIA_Code;BFA;BFA854
+EIA_Code;BGD;BGD050
+EIA_Code;BGR;BGR100
+EIA_Code;BHR;BHR048
+EIA_Code;BHS;BHS044
+EIA_Code;BIH;BIH070
+EIA_Code;BLR;BLR112
+EIA_Code;BLZ;BLZ084
+EIA_Code;BMU;BMU060
+EIA_Code;BOL;BOL068
+EIA_Code;BRA;BRA076
+EIA_Code;BRB;BRB052
+EIA_Code;BRN;BRN096
+EIA_Code;BTN;BTN064
+EIA_Code;BWA;BWA072
+EIA_Code;CAF;CAF140
+EIA_Code;CAN;CAN124
+EIA_Code;CHE;CHE756
+EIA_Code;CHL;CHL152
+EIA_Code;CHN;CHN156
+EIA_Code;CIV;CIV384
+EIA_Code;CMR;CMR120
+EIA_Code;COD;COD180
+EIA_Code;COG;COG178
+EIA_Code;COK;COK184
+EIA_Code;COL;COL170
+EIA_Code;COM;COM174
+EIA_Code;CPV;CPV132
+EIA_Code;CRI;CRI188
+EIA_Code;CSK;CSK200
+EIA_Code;CUB;CUB192
+EIA_Code;CYM;CYM136
+EIA_Code;CYP;CYP196
+EIA_Code;CZE;CZE203
+EIA_Code;DDR;DDR278
+EIA_Code;DEU;DEU276
+EIA_Code;DEUW;DEU280
+EIA_Code;DJI;DJI262
+EIA_Code;DMA;DMA212
+EIA_Code;DNK;DNK208
+EIA_Code;DOM;DOM214
+EIA_Code;DZA;DZA012
+EIA_Code;ECU;ECU218
+EIA_Code;EGY;EGY818
+EIA_Code;ERI;ERI232
+EIA_Code;ESH;ESH732
+EIA_Code;ESP;ESP724
+EIA_Code;EST;EST233
+EIA_Code;ETH;ETH231
+EIA_Code;FIN;FIN246
+EIA_Code;FJI;FJI242
+EIA_Code;FLK;FLK238
+EIA_Code;FRA;FRA250
+EIA_Code;FRO;FRO234
+EIA_Code;FSM;FSM583
+EIA_Code;GAB;GAB266
+EIA_Code;GBR;GBR826
+EIA_Code;GEO;GEO268
+EIA_Code;GHA;GHA288
+EIA_Code;GIB;GIB292
+EIA_Code;GIN;GIN324
+EIA_Code;GLP;GLP312
+EIA_Code;GMB;GMB270
+EIA_Code;GNB;GNB624
+EIA_Code;GNQ;GNQ226
+EIA_Code;GRC;GRC300
+EIA_Code;GRD;GRD308
+EIA_Code;GRL;GRL304
+EIA_Code;GTM;GTM320
+EIA_Code;GUF;GUF254
+EIA_Code;GUM;GUM316
+EIA_Code;GUY;GUY328
+EIA_Code;HITZ;USA840
+EIA_Code;HKG;HKG344
+EIA_Code;HND;HND340
+EIA_Code;HRV;HRV191
+EIA_Code;HTI;HTI332
+EIA_Code;HUN;HUN348
+EIA_Code;IDN;IDN360
+EIA_Code;IND;IND356
+EIA_Code;IRL;IRL372
+EIA_Code;IRN;IRN364
+EIA_Code;IRQ;IRQ368
+EIA_Code;ISL;ISL352
+EIA_Code;ISR;ISR376
+EIA_Code;ITA;ITA380
+EIA_Code;JAM;JAM388
+EIA_Code;JOR;JOR400
+EIA_Code;JPN;JPN392
+EIA_Code;KAZ;KAZ398
+EIA_Code;KEN;KEN404
+EIA_Code;KGZ;KGZ417
+EIA_Code;KHM;KHM116
+EIA_Code;KIR;KIR296
+EIA_Code;KNA;KNA659
+EIA_Code;KOR;KOR410
+EIA_Code;KWT;KWT414
+EIA_Code;LAO;LAO418
+EIA_Code;LBN;LBN422
+EIA_Code;LBR;LBR430
+EIA_Code;LBY;LBY434
+EIA_Code;LCA;LCA662
+EIA_Code;LKA;LKA144
+EIA_Code;LSO;LSO426
+EIA_Code;LTU;LTU440
+EIA_Code;LUX;LUX442
+EIA_Code;LVA;LVA428
+EIA_Code;MAC;MAC446
+EIA_Code;MAR;MAR504
+EIA_Code;MDA;MDA498
+EIA_Code;MDG;MDG450
+EIA_Code;MDV;MDV462
+EIA_Code;MEX;MEX484
+EIA_Code;MKD;MKD807
+EIA_Code;MLI;MLI466
+EIA_Code;MLT;MLT470
+EIA_Code;MMR;MMR104
+EIA_Code;MNE;MNE499
+EIA_Code;MNG;MNG496
+EIA_Code;MNP;MNP580
+EIA_Code;MOZ;MOZ508
+EIA_Code;MRT;MRT478
+EIA_Code;MSR;MSR500
+EIA_Code;MTQ;MTQ474
+EIA_Code;MUS;MUS480
+EIA_Code;MWI;MWI454
+EIA_Code;MYS;MYS458
+EIA_Code;NAM;NAM516
+EIA_Code;NCL;NCL540
+EIA_Code;NER;NER562
+EIA_Code;NGA;NGA566
+EIA_Code;NIC;NIC558
+EIA_Code;NIU;NIU570
+EIA_Code;NLD;NLD528
+EIA_Code;NLDA;ANT530
+EIA_Code;NOR;NOR578
+EIA_Code;NPL;NPL524
+EIA_Code;NRU;NRU520
+EIA_Code;NZL;NZL554
+EIA_Code;OMN;OMN512
+EIA_Code;VEN;VEN862
+EIA_Code;PAK;PAK586
+EIA_Code;PAN;PAN591
+EIA_Code;PER;PER604
+EIA_Code;PHL;PHL608
+EIA_Code;PNG;PNG598
+EIA_Code;POL;POL616
+EIA_Code;PRI;PRI630
+EIA_Code;PRK;PRK408
+EIA_Code;PRT;PRT620
+EIA_Code;PRY;PRY600
+EIA_Code;PSE;PSE275
+EIA_Code;PYF;PYF258
+EIA_Code;QAT;QAT634
+EIA_Code;REU;REU638
+EIA_Code;ROU;ROU642
+EIA_Code;RUS;RUS643
+EIA_Code;RWA;RWA646
+EIA_Code;SAU;SAU682
+EIA_Code;SCG;SCG891
+EIA_Code;SDN;SDN729
+EIA_Code;SEN;SEN686
+EIA_Code;SGP;SGP702
+EIA_Code;SHN;SHN654
+EIA_Code;SLB;SLB090
+EIA_Code;SLE;SLE694
+EIA_Code;SLV;SLV222
+EIA_Code;SOM;SOM706
+EIA_Code;SPM;SPM666
+EIA_Code;SRB;SRB688
+EIA_Code;SSD;SSD728
+EIA_Code;STP;STP678
+EIA_Code;SUN;SUN810
+EIA_Code;SUR;SUR740
+EIA_Code;SVK;SVK703
+EIA_Code;SVN;SVN705
+EIA_Code;SWE;SWE752
+EIA_Code;SWZ;SWZ748
+EIA_Code;SYC;SYC690
+EIA_Code;SYR;SYR760
+EIA_Code;TCA;TCA796
+EIA_Code;TCD;TCD148
+EIA_Code;TGO;TGO768
+EIA_Code;THA;THA764
+EIA_Code;TJK;TJK762
+EIA_Code;TKM;TKM795
+EIA_Code;TLS;TLS626
+EIA_Code;TON;TON776
+EIA_Code;TTO;TTO780
+EIA_Code;TUN;TUN788
+EIA_Code;TUR;TUR792
+EIA_Code;TUV;TUV798
+EIA_Code;TWN;TWN158
+EIA_Code;TZA;TZA834
+EIA_Code;UGA;UGA800
+EIA_Code;UKR;UKR804
+EIA_Code;URY;URY858
+EIA_Code;USA;USA840
+EIA_Code;USOH;USA840
+EIA_Code;UZB;UZB860
+EIA_Code;VCT;VCT670
+EIA_Code;VGB;VGB092
+EIA_Code;VIR;VIR850
+EIA_Code;VNM;VNM704
+EIA_Code;VUT;VUT548
+EIA_Code;WSM;WSM882
+EIA_Code;XKS;UNK000
+EIA_Code;YEM;YEM887
+EIA_Code;YUG;YUG890
+EIA_Code;ZAF;ZAF710
+EIA_Code;ZMB;ZMB894
+EIA_Code;ZWE;ZWE716
+BGS;United Arab Emirates;ARE784
+BGS;Afghanistan;AFG004
+BGS;Albania;ALB008
+BGS;Armenia;ARM051
+BGS;Netherlands Antilles;ANT530
+BGS;Angola;AGO024
+BGS;Argentina;ARG032
+BGS;Austria;AUT040
+BGS;Australia;AUS036
+BGS;Azerbaijan;AZE031
+BGS;Bosnia & Herzegovina;BIH070
+BGS;Barbados;BRB052
+BGS;Bangladesh;BGD050
+BGS;Belgium;BEL056
+BGS;Burkina Faso;BFA854
+BGS;Bulgaria;BGR100
+BGS;Bahrain;BHR048
+BGS;Burundi;BDI108
+BGS;Benin;BEN204
+BGS;Brunei;BRN096
+BGS;Bolivia;BOL068
+BGS;Brazil;BRA076
+BGS;Bahamas;BHS044
+BGS;Bhutan;BTN064
+BGS;Botswana;BWA072
+BGS;Belarus;BLR112
+BGS;Canada;CAN124
+BGS;Congo, Democratic Republic;COD180
+BGS;Central African Republic;CAF140
+BGS;Congo;COG178
+BGS;Switzerland;CHE756
+BGS;Ivory Coast;CIV384
+BGS;Chile;CHL152
+BGS;Cameroon;CMR120
+BGS;China;CHN156
+BGS;Colombia;COL170
+BGS;Costa Rica;CRI188
+BGS;Czechoslovakia;CSK200
+BGS;Cuba;CUB192
+BGS;Cape Verde;CPV132
+BGS;Christmas Island;CXR162
+BGS;Cyprus;CYP196
+BGS;Czech Republic;CZE203
+BGS;Germany;DEU276
+BGS;German Democratic Rep;DDR278
+BGS;German Federal Republic;DEU280
+BGS;Djibouti;DJI262
+BGS;Denmark;DNK208
+BGS;Dominican Republic;DOM214
+BGS;Algeria;DZA012
+BGS;Ecuador;ECU218
+BGS;Estonia;EST233
+BGS;Egypt;EGY818
+BGS;Eritrea;ERI232
+BGS;Spain;ESP724
+BGS;Ethiopia;ETH231
+BGS;Finland;FIN246
+BGS;Fiji;FJI242
+BGS;France;FRA250
+BGS;Gabon;GAB266
+BGS;United Kingdom;GBR826
+BGS;Georgia;GEO268
+BGS;French Guiana;GUF254
+BGS;Ghana;GHA288
+BGS;Greenland;GRL304
+BGS;Gambia;GMB270
+BGS;Guinea;GIN324
+BGS;Equatorial Guinea;GNQ226
+BGS;Greece;GRC300
+BGS;Guatemala;GTM320
+BGS;Guyana;GUY328
+BGS;Honduras;HND340
+BGS;Croatia;HRV191
+BGS;Haiti;HTI332
+BGS;Hungary;HUN348
+BGS;Indonesia;IDN360
+BGS;Ireland, Republic of;IRL372
+BGS;Israel;ISR376
+BGS;India;IND356
+BGS;Iraq;IRQ368
+BGS;Iran;IRN364
+BGS;Iceland;ISL352
+BGS;Italy;ITA380
+BGS;Jamaica;JAM388
+BGS;Jordan;JOR400
+BGS;Japan;JPN392
+BGS;Kenya;KEN404
+BGS;Kyrgyzstan;KGZ417
+BGS;Cambodia;KHM116
+BGS;Banaba;KIR296
+BGS;Korea, Dem. P.R. of;PRK408
+BGS;Korea (Rep. of);KOR410
+BGS;Kuwait;KWT414
+BGS;Kazakhstan;KAZ398
+BGS;Laos;LAO418
+BGS;Lebanon;LBN422
+BGS;Sri Lanka;LKA144
+BGS;Liberia;LBR430
+BGS;Lesotho;LSO426
+BGS;Lithuania;LTU440
+BGS;Latvia;LVA428
+BGS;Luxembourg;LUX442
+BGS;Libya;LBY434
+BGS;Morocco;MAR504
+BGS;Moldova;MDA498
+BGS;Madagascar;MDG450
+BGS;Macedonia;MKD807
+BGS;Mali;MLI466
+BGS;Burma;MMR104
+BGS;Mongolia;MNG496
+BGS;Mauritania;MRT478
+BGS;Malta;MLT470
+BGS;Mauritius;MUS480
+BGS;Malawi;MWI454
+BGS;Mexico;MEX484
+BGS;Malaysia;MYS458
+BGS;Mozambique;MOZ508
+BGS;Namibia;NAM516
+BGS;New Caledonia;NCL540
+BGS;Niger;NER562
+BGS;Nigeria;NGA566
+BGS;Nicaragua;NIC558
+BGS;Netherlands;NLD528
+BGS;Norway;NOR578
+BGS;Nepal;NPL524
+BGS;Nauru;NRU520
+BGS;New Zealand;NZL554
+BGS;Oman;OMN512
+BGS;Panama;PAN591
+BGS;Peru;PER604
+BGS;Papua New Guinea;PNG598
+BGS;Philippines;PHL608
+BGS;Pakistan;PAK586
+BGS;Poland;POL616
+BGS;Portugal;PRT620
+BGS;Paraguay;PRY600
+BGS;Qatar;QAT634
+BGS;Romania;ROU642
+BGS;Serbia;SRB688
+BGS;Russia;RUS643
+BGS;Rwanda;RWA646
+BGS;Saudi Arabia;SAU682
+BGS;Solomon Islands;SLB090
+BGS;Seychelles;SYC690
+BGS;Sudan;SDN729
+BGS;Sweden;SWE752
+BGS;Singapore;SGP702
+BGS;Slovenia;SVN705
+BGS;Slovakia;SVK703
+BGS;Sierra Leone;SLE694
+BGS;Senegal;SEN686
+BGS;Somalia;SOM706
+BGS;Suriname;SUR740
+BGS;South Sudan;SSD728
+BGS;Soviet Union;SUN810
+BGS;El Salvador;SLV222
+BGS;Syria;SYR760
+BGS;Swaziland;SWZ748
+BGS;Turks and Caicos Islands;TCA796
+BGS;Chad;TCD148
+BGS;Togo;TGO768
+BGS;Thailand;THA764
+BGS;Tajikistan;TJK762
+BGS;East Timor;TLS626
+BGS;Turkmenistan;TKM795
+BGS;Tunisia;TUN788
+BGS;Turkey;TUR792
+BGS;Trinidad & Tobago;TTO780
+BGS;Taiwan;TWN158
+BGS;Tanzania;TZA834
+BGS;Ukraine;UKR804
+BGS;Uganda;UGA800
+BGS;USA;USA840
+BGS;Uruguay;URY858
+BGS;Uzbekistan;UZB860
+BGS;Venezuela;VEN862
+BGS;Vietnam;VNM704
+BGS;New Hebrides;VUT548
+BGS;Yemen, Republic of;YEM887
+BGS;Yemen Arab Republic;YEM886
+BGS;Yemen (PDR);YMD720
+BGS;Yugoslavia;YUG890
+BGS;South Africa;ZAF710
+BGS;Zambia;ZMB894
+BGS;Zimbabwe;ZWE716
+BGS;Hong Kong;HKG344
+BGS;Montenegro;MNE499
+BGS;Serbia and Montenegro;SCG891
+BGS;Kosovo;UNK000
+BGS;Spanish Sahara;ESH732
+BGS;Sharjah;ARE784
+BGS;Zaire;COD180
+BGS;Bonaire;BES535
+BGS;Rhodesia;ZWE716
+USGS;United Arab Emirates;ARE784
+USGS;Afghanistan;AFG004
+USGS;Antigua and Barbuda;ATG028
+USGS;Anguilla;AIA660
+USGS;Albania;ALB008
+USGS;Armenia;ARM051
+USGS;Netherlands Antilles;ANT530
+USGS;Angola;AGO024
+USGS;Argentina;ARG032
+USGS;American Samoa;ASM016
+USGS;Austria;AUT040
+USGS;Australia;AUS036
+USGS;Aruba;ABW533
+USGS;Azerbaijan;AZE031
+USGS;Bosnia and Herzegovina;BIH070
+USGS;Barbados;BRB052
+USGS;Bangladesh;BGD050
+USGS;Belgium;BEL056
+USGS;Burkina Faso;BFA854
+USGS;Bulgaria;BGR100
+USGS;Bahrain;BHR048
+USGS;Burundi;BDI108
+USGS;Benin;BEN204
+USGS;Bermuda;BMU060
+USGS;Brunei Darussalam;BRN096
+USGS;Bolivia;BOL068
+USGS;Brazil;BRA076
+USGS;Bahamas;BHS044
+USGS;Bhutan;BTN064
+USGS;Botswana;BWA072
+USGS;Belarus;BLR112
+USGS;Belize;BLZ084
+USGS;Canada;CAN124
+USGS;Cocos (Keeling) Islands;CCK166
+USGS;Congo (Kinshasa);COD180
+USGS;Central African Republic;CAF140
+USGS;Congo (Brazzaville);COG178
+USGS;Switzerland;CHE756
+USGS;C么te d始Ivoire (Ivory Coast);CIV384
+USGS;Cook Islands;COK184
+USGS;Chile;CHL152
+USGS;Cameroon;CMR120
+USGS;China;CHN156
+USGS;Colombia;COL170
+USGS;Costa Rica;CRI188
+USGS;Czechoslovakia;CSK200
+USGS;Cuba;CUB192
+USGS;Cape Verde;CPV132
+USGS;Christmas Island;CXR162
+USGS;Cyprus;CYP196
+USGS;Czech Republic;CZE203
+USGS;Germany;DEU276
+USGS;Djibouti;DJI262
+USGS;Denmark;DNK208
+USGS;Dominica;DMA212
+USGS;Dominican Republic;DOM214
+USGS;Algeria;DZA012
+USGS;Ecuador;ECU218
+USGS;Estonia;EST233
+USGS;Egypt;EGY818
+USGS;Eritrea;ERI232
+USGS;Spain;ESP724
+USGS;Ethiopia;ETH231
+USGS;Finland;FIN246
+USGS;Fiji;FJI242
+USGS;Falkland Islands (Malvinas);FLK238
+USGS;Micronesia;FSM583
+USGS;Faroe Islands;FRO234
+USGS;France;FRA250
+USGS;Gabon;GAB266
+USGS;United Kingdom;GBR826
+USGS;Grenada;GRD308
+USGS;Georgia;GEO268
+USGS;French Guiana;GUF254
+USGS;Ghana;GHA288
+USGS;Gibraltar;GIB292
+USGS;Gambia;GMB270
+USGS;Guinea;GIN324
+USGS;Guadeloupe;GLP312
+USGS;Equatorial Guinea;GNQ226
+USGS;Greece;GRC300
+USGS;Guatemala;GTM320
+USGS;Guam;GUM316
+USGS;Guinea-Bissau;GNB624
+USGS;Guyana;GUY328
+USGS;Honduras;HND340
+USGS;Croatia;HRV191
+USGS;Haiti;HTI332
+USGS;Hungary;HUN348
+USGS;Indonesia;IDN360
+USGS;Ireland;IRL372
+USGS;Israel;ISR376
+USGS;India;IND356
+USGS;British Indian Ocean Territory;IOT086
+USGS;Iraq;IRQ368
+USGS;Iran;IRN364
+USGS;Iceland;ISL352
+USGS;Italy;ITA380
+USGS;Jamaica;JAM388
+USGS;Jordan;JOR400
+USGS;Japan;JPN392
+USGS;Kenya;KEN404
+USGS;Kyrgyzstan;KGZ417
+USGS;Cambodia;KHM116
+USGS;Kiribati;KIR296
+USGS;Comoros;COM174
+USGS;Saint Kitts and Nevis;KNA659
+USGS;Korea, North;PRK408
+USGS;Korea, Republic of;KOR410
+USGS;Kuwait;KWT414
+USGS;Cayman Islands;CYM136
+USGS;Kazakhstan;KAZ398
+USGS;Laos;LAO418
+USGS;Lebanon;LBN422
+USGS;Saint Lucia;LCA662
+USGS;Liechtenstein;LIE438
+USGS;Sri Lanka;LKA144
+USGS;Liberia;LBR430
+USGS;Lesotho;LSO426
+USGS;Lithuania;LTU440
+USGS;Latvia;LVA428
+USGS;Luxembourg;LUX442
+USGS;Libya;LBY434
+USGS;Morocco;MAR504
+USGS;Moldova;MDA498
+USGS;Madagascar;MDG450
+USGS;Marshall Islands;MHL584
+USGS;Macedonia;MKD807
+USGS;Mali;MLI466
+USGS;Burma;MMR104
+USGS;Mongolia;MNG496
+USGS;Northern Mariana Islands;MNP580
+USGS;Martinique;MTQ474
+USGS;Mauritania;MRT478
+USGS;Montserrat;MSR500
+USGS;Malta;MLT470
+USGS;Mauritius;MUS480
+USGS;Maldives;MDV462
+USGS;Malawi;MWI454
+USGS;Mexico;MEX484
+USGS;Malaysia;MYS458
+USGS;Mozambique;MOZ508
+USGS;Namibia;NAM516
+USGS;New Caledonia;NCL540
+USGS;Niger;NER562
+USGS;Norfolk Island;NFK574
+USGS;Nigeria;NGA566
+USGS;Nicaragua;NIC558
+USGS;Netherlands;NLD528
+USGS;Norway;NOR578
+USGS;Nepal;NPL524
+USGS;Nauru;NRU520
+USGS;Niue;NIU570
+USGS;New Zealand;NZL554
+USGS;Oman;OMN512
+USGS;Panama;PAN591
+USGS;Peru;PER604
+USGS;French Polynesia;PYF258
+USGS;Papua New Guinea;PNG598
+USGS;Philippines;PHL608
+USGS;Pakistan;PAK586
+USGS;Poland;POL616
+USGS;Saint Pierre and Miquelon;SPM666
+USGS;Pitcairn Islands;PCN612
+USGS;Puerto Rico;PRI630
+USGS;Palestine;PSE275
+USGS;Portugal;PRT620
+USGS;Palau;PLW585
+USGS;Paraguay;PRY600
+USGS;Qatar;QAT634
+USGS;R茅union;REU638
+USGS;Romania;ROU642
+USGS;Serbia;SRB688
+USGS;Russia;RUS643
+USGS;Rwanda;RWA646
+USGS;Saudi Arabia;SAU682
+USGS;Solomon Islands;SLB090
+USGS;Seychelles;SYC690
+USGS;Sudan;SDN729
+USGS;Sweden;SWE752
+USGS;Singapore;SGP702
+USGS;Saint Helena;SHN654
+USGS;Slovenia;SVN705
+USGS;Slovakia;SVK703
+USGS;Sierra Leone;SLE694
+USGS;San Marino;SMR674
+USGS;Senegal;SEN686
+USGS;Somalia;SOM706
+USGS;Suriname;SUR740
+USGS;South Sudan;SSD728
+USGS;Sao Tome and Principe;STP678
+USGS;USSR;SUN810
+USGS;El Salvador;SLV222
+USGS;Syria;SYR760
+USGS;Swaziland;SWZ748
+USGS;Turks and Caicos Islands;TCA796
+USGS;Chad;TCD148
+USGS;Togo;TGO768
+USGS;Thailand;THA764
+USGS;Tajikistan;TJK762
+USGS;Tokelau;TKL772
+USGS;Timor-Leste;TLS626
+USGS;Turkmenistan;TKM795
+USGS;Tunisia;TUN788
+USGS;Tonga;TON776
+USGS;Turkey;TUR792
+USGS;Trinidad and Tobago;TTO780
+USGS;Tuvalu;TUV798
+USGS;Taiwan;TWN158
+USGS;Tanzania;TZA834
+USGS;Ukraine;UKR804
+USGS;Uganda;UGA800
+USGS;United States;USA840
+USGS;Uruguay;URY858
+USGS;Uzbekistan;UZB860
+USGS;Saint Vincent/Grenadines;VCT670
+USGS;Venezuela;VEN862
+USGS;British Virgin Islands;VGB092
+USGS;US Virgin Islands;VIR850
+USGS;Vietnam;VNM704
+USGS;Vanuatu;VUT548
+USGS;Wallis and Futuna Islands;WLF876
+USGS;Samoa;WSM882
+USGS;Yemen;YEM887
+USGS;Mayotte;MYT175
+USGS;Yugoslavia SFR;YUG890
+USGS;South Africa;ZAF710
+USGS;Zambia;ZMB894
+USGS;Zimbabwe;ZWE716
+USGS;Montenegro;MNE499
+USGS;Serbia and Montenegro;SCG891
+FAO_AreaName;United Arab Emirates;ARE784
+FAO_AreaName;Afghanistan;AFG004
+FAO_AreaName;Antigua and Barbuda;ATG028
+FAO_AreaName;Anguilla;AIA660
+FAO_AreaName;Albania;ALB008
+FAO_AreaName;Armenia;ARM051
+FAO_AreaName;Netherlands Antilles;ANT530
+FAO_AreaName;Angola;AGO024
+FAO_AreaName;Argentina;ARG032
+FAO_AreaName;American Samoa;ASM016
+FAO_AreaName;Austria;AUT040
+FAO_AreaName;Australia;AUS036
+FAO_AreaName;Aruba;ABW533
+FAO_AreaName;Azerbaijan;AZE031
+FAO_AreaName;Bosnia and Herzegovina;BIH070
+FAO_AreaName;Barbados;BRB052
+FAO_AreaName;Bangladesh;BGD050
+FAO_AreaName;Belgium;BEL056
+FAO_AreaName;Burkina Faso;BFA854
+FAO_AreaName;Bulgaria;BGR100
+FAO_AreaName;Bahrain;BHR048
+FAO_AreaName;Burundi;BDI108
+FAO_AreaName;Benin;BEN204
+FAO_AreaName;Bermuda;BMU060
+FAO_AreaName;Brunei Darussalam;BRN096
+FAO_AreaName;Bolivia (Plurinational State of);BOL068
+FAO_AreaName;Brazil;BRA076
+FAO_AreaName;Bahamas;BHS044
+FAO_AreaName;Bhutan;BTN064
+FAO_AreaName;Botswana;BWA072
+FAO_AreaName;Belarus;BLR112
+FAO_AreaName;Belize;BLZ084
+FAO_AreaName;Canada;CAN124
+FAO_AreaName;Democratic Republic of the Congo;COD180
+FAO_AreaName;Central African Republic;CAF140
+FAO_AreaName;Congo;COG178
+FAO_AreaName;Switzerland;CHE756
+FAO_AreaName;C么te d'Ivoire;CIV384
+FAO_AreaName;Cook Islands;COK184
+FAO_AreaName;Chile;CHL152
+FAO_AreaName;Cameroon;CMR120
+FAO_AreaName;China, mainland;CHN156
+FAO_AreaName;Colombia;COL170
+FAO_AreaName;Costa Rica;CRI188
+FAO_AreaName;Cuba;CUB192
+FAO_AreaName;Cabo Verde;CPV132
+FAO_AreaName;Christmas Island;CXR162
+FAO_AreaName;Cyprus;CYP196
+FAO_AreaName;Czech Republic;CZE203
+FAO_AreaName;Germany;DEU276
+FAO_AreaName;Djibouti;DJI262
+FAO_AreaName;Denmark;DNK208
+FAO_AreaName;Dominica;DMA212
+FAO_AreaName;Dominican Republic;DOM214
+FAO_AreaName;Algeria;DZA012
+FAO_AreaName;Ecuador;ECU218
+FAO_AreaName;Estonia;EST233
+FAO_AreaName;Egypt;EGY818
+FAO_AreaName;Eritrea;ERI232
+FAO_AreaName;Spain;ESP724
+FAO_AreaName;Ethiopia;ETH231
+FAO_AreaName;Ethiopia PDR;ETH230
+FAO_AreaName;Finland;FIN246
+FAO_AreaName;Fiji;FJI242
+FAO_AreaName;Falkland Islands (Malvinas);FLK238
+FAO_AreaName;Micronesia (Federated States of);FSM583
+FAO_AreaName;Faroe Islands;FRO234
+FAO_AreaName;France;FRA250
+FAO_AreaName;Gabon;GAB266
+FAO_AreaName;United Kingdom;GBR826
+FAO_AreaName;Grenada;GRD308
+FAO_AreaName;Georgia;GEO268
+FAO_AreaName;French Guiana;GUF254
+FAO_AreaName;Ghana;GHA288
+FAO_AreaName;Gibraltar;GIB292
+FAO_AreaName;Gambia;GMB270
+FAO_AreaName;Guinea;GIN324
+FAO_AreaName;Guadeloupe;GLP312
+FAO_AreaName;Equatorial Guinea;GNQ226
+FAO_AreaName;Greece;GRC300
+FAO_AreaName;Guatemala;GTM320
+FAO_AreaName;Guam;GUM316
+FAO_AreaName;Guinea-Bissau;GNB624
+FAO_AreaName;Guyana;GUY328
+FAO_AreaName;Honduras;HND340
+FAO_AreaName;Croatia;HRV191
+FAO_AreaName;Haiti;HTI332
+FAO_AreaName;Hungary;HUN348
+FAO_AreaName;Indonesia;IDN360
+FAO_AreaName;Ireland;IRL372
+FAO_AreaName;Israel;ISR376
+FAO_AreaName;India;IND356
+FAO_AreaName;Iraq;IRQ368
+FAO_AreaName;Iran (Islamic Republic of);IRN364
+FAO_AreaName;Iceland;ISL352
+FAO_AreaName;Italy;ITA380
+FAO_AreaName;Jamaica;JAM388
+FAO_AreaName;Jordan;JOR400
+FAO_AreaName;Japan;JPN392
+FAO_AreaName;Kenya;KEN404
+FAO_AreaName;Kyrgyzstan;KGZ417
+FAO_AreaName;Cambodia;KHM116
+FAO_AreaName;Kiribati;KIR296
+FAO_AreaName;Comoros;COM174
+FAO_AreaName;Saint Kitts and Nevis;KNA659
+FAO_AreaName;Democratic People's Republic of Korea;PRK408
+FAO_AreaName;Republic of Korea;KOR410
+FAO_AreaName;Kuwait;KWT414
+FAO_AreaName;Cayman Islands;CYM136
+FAO_AreaName;Kazakhstan;KAZ398
+FAO_AreaName;Lao People's Democratic Republic;LAO418
+FAO_AreaName;Lebanon;LBN422
+FAO_AreaName;Saint Lucia;LCA662
+FAO_AreaName;Liechtenstein;LIE438
+FAO_AreaName;Sri Lanka;LKA144
+FAO_AreaName;Liberia;LBR430
+FAO_AreaName;Lesotho;LSO426
+FAO_AreaName;Lithuania;LTU440
+FAO_AreaName;Latvia;LVA428
+FAO_AreaName;Luxembourg;LUX442
+FAO_AreaName;Libya;LBY434
+FAO_AreaName;Morocco;MAR504
+FAO_AreaName;Republic of Moldova;MDA498
+FAO_AreaName;Madagascar;MDG450
+FAO_AreaName;Marshall Islands;MHL584
+FAO_AreaName;The former Yugoslav Republic of Macedonia;MKD807
+FAO_AreaName;Mali;MLI466
+FAO_AreaName;Myanmar;MMR104
+FAO_AreaName;Mongolia;MNG496
+FAO_AreaName;Martinique;MTQ474
+FAO_AreaName;Mauritania;MRT478
+FAO_AreaName;Montserrat;MSR500
+FAO_AreaName;Malta;MLT470
+FAO_AreaName;Mauritius;MUS480
+FAO_AreaName;Maldives;MDV462
+FAO_AreaName;Malawi;MWI454
+FAO_AreaName;Mexico;MEX484
+FAO_AreaName;Malaysia;MYS458
+FAO_AreaName;Mozambique;MOZ508
+FAO_AreaName;Namibia;NAM516
+FAO_AreaName;New Caledonia;NCL540
+FAO_AreaName;Niger;NER562
+FAO_AreaName;Norfolk Island;NFK574
+FAO_AreaName;Nigeria;NGA566
+FAO_AreaName;Nicaragua;NIC558
+FAO_AreaName;Netherlands;NLD528
+FAO_AreaName;Norway;NOR578
+FAO_AreaName;Nepal;NPL524
+FAO_AreaName;Nauru;NRU520
+FAO_AreaName;Niue;NIU570
+FAO_AreaName;New Zealand;NZL554
+FAO_AreaName;Oman;OMN512
+FAO_AreaName;Panama;PAN591
+FAO_AreaName;Peru;PER604
+FAO_AreaName;French Polynesia;PYF258
+FAO_AreaName;Papua New Guinea;PNG598
+FAO_AreaName;Philippines;PHL608
+FAO_AreaName;Pakistan;PAK586
+FAO_AreaName;Poland;POL616
+FAO_AreaName;Saint Pierre and Miquelon;SPM666
+FAO_AreaName;Puerto Rico;PRI630
+FAO_AreaName;Occupied Palestinian Territory;PSE275
+FAO_AreaName;Portugal;PRT620
+FAO_AreaName;Paraguay;PRY600
+FAO_AreaName;Qatar;QAT634
+FAO_AreaName;R茅union;REU638
+FAO_AreaName;Romania;ROU642
+FAO_AreaName;Serbia;SRB688
+FAO_AreaName;Russian Federation;RUS643
+FAO_AreaName;Rwanda;RWA646
+FAO_AreaName;Saudi Arabia;SAU682
+FAO_AreaName;Solomon Islands;SLB090
+FAO_AreaName;Seychelles;SYC690
+FAO_AreaName;Sudan;SDN729
+FAO_AreaName;Sudan (former);SDN736
+FAO_AreaName;Sweden;SWE752
+FAO_AreaName;Singapore;SGP702
+FAO_AreaName;Saint Helena, Ascension and Tristan da Cunha;SHN654
+FAO_AreaName;Slovenia;SVN705
+FAO_AreaName;Slovakia;SVK703
+FAO_AreaName;Sierra Leone;SLE694
+FAO_AreaName;Senegal;SEN686
+FAO_AreaName;Somalia;SOM706
+FAO_AreaName;Suriname;SUR740
+FAO_AreaName;South Sudan;SSD728
+FAO_AreaName;Sao Tome and Principe;STP678
+FAO_AreaName;USSR;SUN810
+FAO_AreaName;El Salvador;SLV222
+FAO_AreaName;Syrian Arab Republic;SYR760
+FAO_AreaName;Swaziland;SWZ748
+FAO_AreaName;Turks and Caicos Islands;TCA796
+FAO_AreaName;Chad;TCD148
+FAO_AreaName;Togo;TGO768
+FAO_AreaName;Thailand;THA764
+FAO_AreaName;Tajikistan;TJK762
+FAO_AreaName;Tokelau;TKL772
+FAO_AreaName;Timor-Leste;TLS626
+FAO_AreaName;Turkmenistan;TKM795
+FAO_AreaName;Tunisia;TUN788
+FAO_AreaName;Tonga;TON776
+FAO_AreaName;Turkey;TUR792
+FAO_AreaName;Trinidad and Tobago;TTO780
+FAO_AreaName;Tuvalu;TUV798
+FAO_AreaName;China, Taiwan Province of;TWN158
+FAO_AreaName;United Republic of Tanzania;TZA834
+FAO_AreaName;Ukraine;UKR804
+FAO_AreaName;Uganda;UGA800
+FAO_AreaName;United States of America;USA840
+FAO_AreaName;Uruguay;URY858
+FAO_AreaName;Uzbekistan;UZB860
+FAO_AreaName;Saint Vincent and the Grenadines;VCT670
+FAO_AreaName;Venezuela (Bolivarian Republic of);VEN862
+FAO_AreaName;British Virgin Islands;VGB092
+FAO_AreaName;United States Virgin Islands;VIR850
+FAO_AreaName;Viet Nam;VNM704
+FAO_AreaName;Vanuatu;VUT548
+FAO_AreaName;Wallis and Futuna Islands;WLF876
+FAO_AreaName;Samoa;WSM882
+FAO_AreaName;Yemen;YEM887
+FAO_AreaName;Mayotte;MYT175
+FAO_AreaName;Yugoslav SFR;YUG890
+FAO_AreaName;South Africa;ZAF710
+FAO_AreaName;Zambia;ZMB894
+FAO_AreaName;Zimbabwe;ZWE716
+FAO_AreaName;China, Hong Kong SAR;HKG344
+FAO_AreaName;Montenegro;MNE499
+FAO_AreaName;Serbia and Montenegro;SCG891
+FAO_AreaName;China, Macao SAR;MAC446
+FAO_AreaName;Western Sahara;ESH732
+FAO_AreaName;Belgium-Luxemburg;BLGLUX
+FAO_AreaCode;225;ARE784
+FAO_AreaCode;2;AFG004
+FAO_AreaCode;8;ATG028
+FAO_AreaCode;258;AIA660
+FAO_AreaCode;3;ALB008
+FAO_AreaCode;1;ARM051
+FAO_AreaCode;151;ANT530
+FAO_AreaCode;7;AGO024
+FAO_AreaCode;9;ARG032
+FAO_AreaCode;5;ASM016
+FAO_AreaCode;11;AUT040
+FAO_AreaCode;10;AUS036
+FAO_AreaCode;22;ABW533
+FAO_AreaCode;52;AZE031
+FAO_AreaCode;80;BIH070
+FAO_AreaCode;14;BRB052
+FAO_AreaCode;16;BGD050
+FAO_AreaCode;255;BEL056
+FAO_AreaCode;233;BFA854
+FAO_AreaCode;27;BGR100
+FAO_AreaCode;13;BHR048
+FAO_AreaCode;29;BDI108
+FAO_AreaCode;53;BEN204
+FAO_AreaCode;17;BMU060
+FAO_AreaCode;26;BRN096
+FAO_AreaCode;19;BOL068
+FAO_AreaCode;21;BRA076
+FAO_AreaCode;12;BHS044
+FAO_AreaCode;18;BTN064
+FAO_AreaCode;20;BWA072
+FAO_AreaCode;57;BLR112
+FAO_AreaCode;23;BLZ084
+FAO_AreaCode;33;CAN124
+FAO_AreaCode;250;COD180
+FAO_AreaCode;37;CAF140
+FAO_AreaCode;46;COG178
+FAO_AreaCode;211;CHE756
+FAO_AreaCode;107;CIV384
+FAO_AreaCode;47;COK184
+FAO_AreaCode;40;CHL152
+FAO_AreaCode;32;CMR120
+FAO_AreaCode;41;CHN156
+FAO_AreaCode;44;COL170
+FAO_AreaCode;48;CRI188
+FAO_AreaCode;49;CUB192
+FAO_AreaCode;35;CPV132
+FAO_AreaCode;42;CXR162
+FAO_AreaCode;50;CYP196
+FAO_AreaCode;167;CZE203
+FAO_AreaCode;79;DEU276
+FAO_AreaCode;72;DJI262
+FAO_AreaCode;54;DNK208
+FAO_AreaCode;55;DMA212
+FAO_AreaCode;56;DOM214
+FAO_AreaCode;4;DZA012
+FAO_AreaCode;58;ECU218
+FAO_AreaCode;63;EST233
+FAO_AreaCode;59;EGY818
+FAO_AreaCode;178;ERI232
+FAO_AreaCode;203;ESP724
+FAO_AreaCode;238;ETH231
+FAO_AreaCode;62;ETH230
+FAO_AreaCode;67;FIN246
+FAO_AreaCode;66;FJI242
+FAO_AreaCode;65;FLK238
+FAO_AreaCode;145;FSM583
+FAO_AreaCode;64;FRO234
+FAO_AreaCode;68;FRA250
+FAO_AreaCode;74;GAB266
+FAO_AreaCode;229;GBR826
+FAO_AreaCode;86;GRD308
+FAO_AreaCode;73;GEO268
+FAO_AreaCode;69;GUF254
+FAO_AreaCode;81;GHA288
+FAO_AreaCode;82;GIB292
+FAO_AreaCode;75;GMB270
+FAO_AreaCode;90;GIN324
+FAO_AreaCode;87;GLP312
+FAO_AreaCode;61;GNQ226
+FAO_AreaCode;84;GRC300
+FAO_AreaCode;89;GTM320
+FAO_AreaCode;88;GUM316
+FAO_AreaCode;175;GNB624
+FAO_AreaCode;91;GUY328
+FAO_AreaCode;95;HND340
+FAO_AreaCode;98;HRV191
+FAO_AreaCode;93;HTI332
+FAO_AreaCode;97;HUN348
+FAO_AreaCode;101;IDN360
+FAO_AreaCode;104;IRL372
+FAO_AreaCode;105;ISR376
+FAO_AreaCode;100;IND356
+FAO_AreaCode;103;IRQ368
+FAO_AreaCode;102;IRN364
+FAO_AreaCode;99;ISL352
+FAO_AreaCode;106;ITA380
+FAO_AreaCode;109;JAM388
+FAO_AreaCode;112;JOR400
+FAO_AreaCode;110;JPN392
+FAO_AreaCode;114;KEN404
+FAO_AreaCode;113;KGZ417
+FAO_AreaCode;115;KHM116
+FAO_AreaCode;83;KIR296
+FAO_AreaCode;45;COM174
+FAO_AreaCode;188;KNA659
+FAO_AreaCode;116;PRK408
+FAO_AreaCode;117;KOR410
+FAO_AreaCode;118;KWT414
+FAO_AreaCode;36;CYM136
+FAO_AreaCode;108;KAZ398
+FAO_AreaCode;120;LAO418
+FAO_AreaCode;121;LBN422
+FAO_AreaCode;189;LCA662
+FAO_AreaCode;125;LIE438
+FAO_AreaCode;38;LKA144
+FAO_AreaCode;123;LBR430
+FAO_AreaCode;122;LSO426
+FAO_AreaCode;126;LTU440
+FAO_AreaCode;119;LVA428
+FAO_AreaCode;256;LUX442
+FAO_AreaCode;124;LBY434
+FAO_AreaCode;143;MAR504
+FAO_AreaCode;146;MDA498
+FAO_AreaCode;129;MDG450
+FAO_AreaCode;127;MHL584
+FAO_AreaCode;154;MKD807
+FAO_AreaCode;133;MLI466
+FAO_AreaCode;28;MMR104
+FAO_AreaCode;141;MNG496
+FAO_AreaCode;135;MTQ474
+FAO_AreaCode;136;MRT478
+FAO_AreaCode;142;MSR500
+FAO_AreaCode;134;MLT470
+FAO_AreaCode;137;MUS480
+FAO_AreaCode;132;MDV462
+FAO_AreaCode;130;MWI454
+FAO_AreaCode;138;MEX484
+FAO_AreaCode;131;MYS458
+FAO_AreaCode;144;MOZ508
+FAO_AreaCode;147;NAM516
+FAO_AreaCode;153;NCL540
+FAO_AreaCode;158;NER562
+FAO_AreaCode;161;NFK574
+FAO_AreaCode;159;NGA566
+FAO_AreaCode;157;NIC558
+FAO_AreaCode;150;NLD528
+FAO_AreaCode;162;NOR578
+FAO_AreaCode;149;NPL524
+FAO_AreaCode;148;NRU520
+FAO_AreaCode;160;NIU570
+FAO_AreaCode;156;NZL554
+FAO_AreaCode;221;OMN512
+FAO_AreaCode;166;PAN591
+FAO_AreaCode;170;PER604
+FAO_AreaCode;70;PYF258
+FAO_AreaCode;168;PNG598
+FAO_AreaCode;171;PHL608
+FAO_AreaCode;165;PAK586
+FAO_AreaCode;173;POL616
+FAO_AreaCode;190;SPM666
+FAO_AreaCode;177;PRI630
+FAO_AreaCode;299;PSE275
+FAO_AreaCode;174;PRT620
+FAO_AreaCode;169;PRY600
+FAO_AreaCode;179;QAT634
+FAO_AreaCode;182;REU638
+FAO_AreaCode;183;ROU642
+FAO_AreaCode;272;SRB688
+FAO_AreaCode;185;RUS643
+FAO_AreaCode;184;RWA646
+FAO_AreaCode;194;SAU682
+FAO_AreaCode;25;SLB090
+FAO_AreaCode;196;SYC690
+FAO_AreaCode;276;SDN729
+FAO_AreaCode;206;SDN736
+FAO_AreaCode;210;SWE752
+FAO_AreaCode;200;SGP702
+FAO_AreaCode;187;SHN654
+FAO_AreaCode;198;SVN705
+FAO_AreaCode;199;SVK703
+FAO_AreaCode;197;SLE694
+FAO_AreaCode;195;SEN686
+FAO_AreaCode;201;SOM706
+FAO_AreaCode;207;SUR740
+FAO_AreaCode;277;SSD728
+FAO_AreaCode;193;STP678
+FAO_AreaCode;228;SUN810
+FAO_AreaCode;60;SLV222
+FAO_AreaCode;212;SYR760
+FAO_AreaCode;209;SWZ748
+FAO_AreaCode;224;TCA796
+FAO_AreaCode;39;TCD148
+FAO_AreaCode;217;TGO768
+FAO_AreaCode;216;THA764
+FAO_AreaCode;208;TJK762
+FAO_AreaCode;218;TKL772
+FAO_AreaCode;176;TLS626
+FAO_AreaCode;213;TKM795
+FAO_AreaCode;222;TUN788
+FAO_AreaCode;219;TON776
+FAO_AreaCode;223;TUR792
+FAO_AreaCode;220;TTO780
+FAO_AreaCode;227;TUV798
+FAO_AreaCode;214;TWN158
+FAO_AreaCode;215;TZA834
+FAO_AreaCode;230;UKR804
+FAO_AreaCode;226;UGA800
+FAO_AreaCode;231;USA840
+FAO_AreaCode;234;URY858
+FAO_AreaCode;235;UZB860
+FAO_AreaCode;191;VCT670
+FAO_AreaCode;236;VEN862
+FAO_AreaCode;239;VGB092
+FAO_AreaCode;240;VIR850
+FAO_AreaCode;237;VNM704
+FAO_AreaCode;155;VUT548
+FAO_AreaCode;243;WLF876
+FAO_AreaCode;244;WSM882
+FAO_AreaCode;249;YEM887
+FAO_AreaCode;270;MYT175
+FAO_AreaCode;248;YUG890
+FAO_AreaCode;202;ZAF710
+FAO_AreaCode;251;ZMB894
+FAO_AreaCode;181;ZWE716
+FAO_AreaCode;96;HKG344
+FAO_AreaCode;273;MNE499
+FAO_AreaCode;186;SCG891
+FAO_AreaCode;128;MAC446
+FAO_AreaCode;205;ESH732
+FAO_AreaCode;15;BLGLUX
+FAO_AreaCode;6;AND020
+WMD;Afghanistan;AFG004
+WMD;Albania;ALB008
+WMD;Algeria;DZA012
+WMD;Angola;AGO024
+WMD;Argentina;ARG032
+WMD;Armenia;ARM051
+WMD;Australia;AUS036
+WMD;Austria;AUT040
+WMD;Azerbaijan;AZE031
+WMD;Bahamas;BHS044
+WMD;Bahrain;BHR048
+WMD;Bangladesh;BGD050
+WMD;Barbados;BRB052
+WMD;Belarus;BLR112
+WMD;Belgium;BEL056
+WMD;Benin;BEN204
+WMD;Bhutan;BTN064
+WMD;Bolivia;BOL068
+WMD;Bosnia-Herzegovina;BIH070
+WMD;Botswana;BWA072
+WMD;Brazil;BRA076
+WMD;Brunei;BRN096
+WMD;Bulgaria;BGR100
+WMD;Burkina Faso;BFA854
+WMD;Burundi;BDI108
+WMD;Cambodia;KHM116
+WMD;Cameroon;CMR120
+WMD;Canada;CAN124
+WMD;Cape Verde;CPV132
+WMD;Central African Republic;CAF140
+WMD;Chad;TCD148
+WMD;Chile;CHL152
+WMD;China;CHN156
+WMD;Christmas Island;CXR162
+WMD;Colombia;COL170
+WMD;Congo, D.R.;COD180
+WMD;Congo, Rep.;COG178
+WMD;Costa Rica;CRI188
+WMD;Cote d'Ivoire;CIV384
+WMD;Croatia;HRV191
+WMD;Cuba;CUB192
+WMD;Cyprus;CYP196
+WMD;Czech Republic;CZE203
+WMD;Czechoslovakia;CSK200
+WMD;Denmark;DNK208
+WMD;Dominican Republic;DOM214
+WMD;Ecuador;ECU218
+WMD;Egypt;EGY818
+WMD;El Salvador;SLV222
+WMD;Equatorial Guinea;GNQ226
+WMD;Eritrea;ERI232
+WMD;Estonia;EST233
+WMD;Eswatini;SWZ748
+WMD;Ethiopia;ETH231
+WMD;Fiji;FJI242
+WMD;Finland;FIN246
+WMD;France;FRA250
+WMD;French Guiana;GUF254
+WMD;Gabon;GAB266
+WMD;Georgia;GEO268
+WMD;German Dem. Rep;DDR278
+WMD;Germany;DEU276
+WMD;Ghana;GHA288
+WMD;Greece;GRC300
+WMD;Greenland;GRL304
+WMD;Guatemala;GTM320
+WMD;Guinea;GIN324
+WMD;Guyana;GUY328
+WMD;Honduras;HND340
+WMD;Hong Kong;HKG344
+WMD;Hungary;HUN348
+WMD;Iceland;ISL352
+WMD;India;IND356
+WMD;Indonesia;IDN360
+WMD;Iran;IRN364
+WMD;Iraq;IRQ368
+WMD;Ireland;IRL372
+WMD;Israel;ISR376
+WMD;Italy;ITA380
+WMD;Jamaica;JAM388
+WMD;Japan;JPN392
+WMD;Jordan;JOR400
+WMD;Kazakhstan;KAZ398
+WMD;Kenya;KEN404
+WMD;Korea, North;PRK408
+WMD;Korea, South;KOR410
+WMD;Kosovo;UNK000
+WMD;Kuwait;KWT414
+WMD;Kyrgyzstan;KGZ417
+WMD;Laos;LAO418
+WMD;Latvia;LVA428
+WMD;Lebanon;LBN422
+WMD;Lesotho;LSO426
+WMD;Liberia;LBR430
+WMD;Libya;LBY434
+WMD;Lithuania;LTU440
+WMD;Macedonia;MKD807
+WMD;North Macedonia;MKD807
+WMD;Madagascar;MDG450
+WMD;Malawi;MWI454
+WMD;Malaysia;MYS458
+WMD;Mali;MLI466
+WMD;Malta;MLT470
+WMD;Mauritania;MRT478
+WMD;Mauritius;MUS480
+WMD;Mexico;MEX484
+WMD;Moldova;MDA498
+WMD;Mongolia;MNG496
+WMD;Montenegro;MNE499
+WMD;Morocco;MAR504
+WMD;Mozambique;MOZ508
+WMD;Myanmar;MMR104
+WMD;Namibia;NAM516
+WMD;Nauru;NRU520
+WMD;Nepal;NPL524
+WMD;Netherlands;NLD528
+WMD;New Caledonia;NCL540
+WMD;New Zealand;NZL554
+WMD;Nicaragua;NIC558
+WMD;Niger;NER562
+WMD;Nigeria;NGA566
+WMD;Norway;NOR578
+WMD;Oman;OMN512
+WMD;Pakistan;PAK586
+WMD;Panama;PAN591
+WMD;Papua New Guinea;PNG598
+WMD;Paraguay;PRY600
+WMD;Peru;PER604
+WMD;Philippines;PHL608
+WMD;Poland;POL616
+WMD;Portugal;PRT620
+WMD;Puerto Rico;PRI630
+WMD;Qatar;QAT634
+WMD;Romania;ROU642
+WMD;Russia, Asia;RUS643
+WMD;Russia, Europe;RUS643
+WMD;Russia;RUS643
+WMD;Rwanda;RWA646
+WMD;Saudi Arabia;SAU682
+WMD;Senegal;SEN686
+WMD;Serbia;SRB688
+WMD;Serbia and Montenegro;SCG891
+WMD;Sierra Leone;SLE694
+WMD;Singapore;SGP702
+WMD;Slovakia;SVK703
+WMD;Slovenia;SVN705
+WMD;Solomon Islands;SLB090
+WMD;Somalia;SOM706
+WMD;South Africa;ZAF710
+WMD;South Sudan;SSD728
+WMD;Spain;ESP724
+WMD;Sri Lanka;LKA144
+WMD;Sudan;SDN729
+WMD;Suriname;SUR740
+WMD;Swaziland;SWZ748
+WMD;Sweden;SWE752
+WMD;Switzerland;CHE756
+WMD;Syria;SYR760
+WMD;Taiwan;TWN158
+WMD;Tajikistan;TJK762
+WMD;Tanzania;TZA834
+WMD;Thailand;THA764
+WMD;Togo;TGO768
+WMD;Trinidad and Tobago;TTO780
+WMD;Tunisia;TUN788
+WMD;Turkey;TUR792
+WMD;Turkmenistan;TKM795
+WMD;Uganda;UGA800
+WMD;Ukraine;UKR804
+WMD;United Arab Emirates;ARE784
+WMD;United Kingdom;GBR826
+WMD;United States;USA840
+WMD;Uruguay;URY858
+WMD;USSR (Asia);SUN810
+WMD;USSR (Europe);SUN810
+WMD;Uzbekistan;UZB860
+WMD;Venezuela;VEN862
+WMD;Vietnam;VNM704
+WMD;Yemen;YEM887
+WMD;Yemen Arab Republic;YEM886
+WMD;Yemen, PDR;YMD720
+WMD;Yugoslavia;YUG890
+WMD;Zaire;COD180
+WMD;Zambia;ZMB894
+WMD;Zimbabwe;ZWE716
+UNSD_Code;4;AFG004
+UNSD_Code;8;ALB008
+UNSD_Code;12;DZA012
+UNSD_Code;16;ASM016
+UNSD_Code;20;AND020
+UNSD_Code;24;AGO024
+UNSD_Code;28;ATG028
+UNSD_Code;31;AZE031
+UNSD_Code;32;ARG032
+UNSD_Code;36;AUS036
+UNSD_Code;40;AUT040
+UNSD_Code;44;BHS044
+UNSD_Code;48;BHR048
+UNSD_Code;50;BGD050
+UNSD_Code;51;ARM051
+UNSD_Code;52;BRB052
+UNSD_Code;56;BEL056
+UNSD_Code;60;BMU060
+UNSD_Code;64;BTN064
+UNSD_Code;68;BOL068
+UNSD_Code;70;BIH070
+UNSD_Code;72;BWA072
+UNSD_Code;76;BRA076
+UNSD_Code;84;BLZ084
+UNSD_Code;90;SLB090
+UNSD_Code;92;VGB092
+UNSD_Code;96;BRN096
+UNSD_Code;100;BGR100
+UNSD_Code;104;MMR104
+UNSD_Code;108;BDI108
+UNSD_Code;112;BLR112
+UNSD_Code;116;KHM116
+UNSD_Code;120;CMR120
+UNSD_Code;124;CAN124
+UNSD_Code;132;CPV132
+UNSD_Code;136;CYM136
+UNSD_Code;140;CAF140
+UNSD_Code;144;LKA144
+UNSD_Code;148;TCD148
+UNSD_Code;152;CHL152
+UNSD_Code;156;CHN156
+UNSD_Code;162;CXR162
+UNSD_Code;170;COL170
+UNSD_Code;174;COM174
+UNSD_Code;175;MYT175
+UNSD_Code;178;COG178
+UNSD_Code;180;COD180
+UNSD_Code;184;COK184
+UNSD_Code;188;CRI188
+UNSD_Code;191;HRV191
+UNSD_Code;192;CUB192
+UNSD_Code;196;CYP196
+UNSD_Code;200;CSK200
+UNSD_Code;203;CZE203
+UNSD_Code;204;BEN204
+UNSD_Code;208;DNK208
+UNSD_Code;212;DMA212
+UNSD_Code;214;DOM214
+UNSD_Code;218;ECU218
+UNSD_Code;222;SLV222
+UNSD_Code;226;GNQ226
+UNSD_Code;230;ETH230
+UNSD_Code;231;ETH231
+UNSD_Code;232;ERI232
+UNSD_Code;233;EST233
+UNSD_Code;234;FRO234
+UNSD_Code;238;FLK238
+UNSD_Code;242;FJI242
+UNSD_Code;246;FIN246
+UNSD_Code;251;FRA250
+UNSD_Code;254;GUF254
+UNSD_Code;258;PYF258
+UNSD_Code;262;DJI262
+UNSD_Code;266;GAB266
+UNSD_Code;268;GEO268
+UNSD_Code;270;GMB270
+UNSD_Code;275;PSE275
+UNSD_Code;276;DEU276
+UNSD_Code;278;DDR278
+UNSD_Code;280;DEU280
+UNSD_Code;288;GHA288
+UNSD_Code;292;GIB292
+UNSD_Code;296;KIR296
+UNSD_Code;300;GRC300
+UNSD_Code;304;GRL304
+UNSD_Code;308;GRD308
+UNSD_Code;312;GLP312
+UNSD_Code;316;GUM316
+UNSD_Code;320;GTM320
+UNSD_Code;324;GIN324
+UNSD_Code;328;GUY328
+UNSD_Code;332;HTI332
+UNSD_Code;340;HND340
+UNSD_Code;344;HKG344
+UNSD_Code;348;HUN348
+UNSD_Code;352;ISL352
+UNSD_Code;356;IND356
+UNSD_Code;360;IDN360
+UNSD_Code;364;IRN364
+UNSD_Code;368;IRQ368
+UNSD_Code;372;IRL372
+UNSD_Code;376;ISR376
+UNSD_Code;382;ITA380
+UNSD_Code;384;CIV384
+UNSD_Code;388;JAM388
+UNSD_Code;392;JPN392
+UNSD_Code;393;JPN392
+UNSD_Code;398;KAZ398
+UNSD_Code;400;JOR400
+UNSD_Code;404;KEN404
+UNSD_Code;408;PRK408
+UNSD_Code;412;UNK000
+UNSD_Code;410;KOR410
+UNSD_Code;414;KWT414
+UNSD_Code;417;KGZ417
+UNSD_Code;418;LAO418
+UNSD_Code;422;LBN422
+UNSD_Code;426;LSO426
+UNSD_Code;428;LVA428
+UNSD_Code;430;LBR430
+UNSD_Code;434;LBY434
+UNSD_Code;438;LIE438
+UNSD_Code;440;LTU440
+UNSD_Code;442;LUX442
+UNSD_Code;446;MAC446
+UNSD_Code;450;MDG450
+UNSD_Code;454;MWI454
+UNSD_Code;457;MYS458
+UNSD_Code;458;MYS458
+UNSD_Code;459;MYS458
+UNSD_Code;461;MYS458
+UNSD_Code;462;MDV462
+UNSD_Code;466;MLI466
+UNSD_Code;470;MLT470
+UNSD_Code;474;MTQ474
+UNSD_Code;478;MRT478
+UNSD_Code;480;MUS480
+UNSD_Code;484;MEX484
+UNSD_Code;496;MNG496
+UNSD_Code;498;MDA498
+UNSD_Code;499;MNE499
+UNSD_Code;500;MSR500
+UNSD_Code;504;MAR504
+UNSD_Code;508;MOZ508
+UNSD_Code;512;OMN512
+UNSD_Code;516;NAM516
+UNSD_Code;520;NRU520
+UNSD_Code;524;NPL524
+UNSD_Code;528;NLD528
+UNSD_Code;530;ANT530
+UNSD_Code;531;CUW531
+UNSD_Code;533;ABW533
+UNSD_Code;535;BES535
+UNSD_Code;540;NCL540
+UNSD_Code;548;VUT548
+UNSD_Code;554;NZL554
+UNSD_Code;558;NIC558
+UNSD_Code;562;NER562
+UNSD_Code;566;NGA566
+UNSD_Code;570;NIU570
+UNSD_Code;579;NOR578
+UNSD_Code;580;MNP580
+UNSD_Code;583;FSM583
+UNSD_Code;584;MHL584
+UNSD_Code;585;PLW585
+UNSD_Code;586;PAK586
+UNSD_Code;588;PAK586
+UNSD_Code;590;PAN591
+UNSD_Code;591;PAN591
+UNSD_Code;592;PAN591
+UNSD_Code;598;PNG598
+UNSD_Code;600;PRY600
+UNSD_Code;604;PER604
+UNSD_Code;608;PHL608
+UNSD_Code;616;POL616
+UNSD_Code;620;PRT620
+UNSD_Code;624;GNB624
+UNSD_Code;626;TLS626
+UNSD_Code;630;PRI630
+UNSD_Code;634;QAT634
+UNSD_Code;638;REU638
+UNSD_Code;642;ROU642
+UNSD_Code;643;RUS643
+UNSD_Code;646;RWA646
+UNSD_Code;647;JPN392
+UNSD_Code;654;SHN654
+UNSD_Code;658;
+UNSD_Code;659;KNA659
+UNSD_Code;660;AIA660
+UNSD_Code;662;LCA662
+UNSD_Code;666;SPM666
+UNSD_Code;670;VCT670
+UNSD_Code;678;STP678
+UNSD_Code;682;SAU682
+UNSD_Code;686;SEN686
+UNSD_Code;688;SRB688
+UNSD_Code;690;SYC690
+UNSD_Code;694;SLE694
+UNSD_Code;702;SGP702
+UNSD_Code;703;SVK703
+UNSD_Code;704;VNM704
+UNSD_Code;705;SVN705
+UNSD_Code;706;SOM706
+UNSD_Code;710;ZAF710
+UNSD_Code;716;ZWE716
+UNSD_Code;717;ZWE716
+UNSD_Code;720;YMD720
+UNSD_Code;724;ESP724
+UNSD_Code;728;SSD728
+UNSD_Code;729;SDN729
+UNSD_Code;732;ESH732
+UNSD_Code;736;SDN736
+UNSD_Code;740;SUR740
+UNSD_Code;748;SWZ748
+UNSD_Code;752;SWE752
+UNSD_Code;757;CHE756
+UNSD_Code;760;SYR760
+UNSD_Code;762;TJK762
+UNSD_Code;764;THA764
+UNSD_Code;768;TGO768
+UNSD_Code;776;TON776
+UNSD_Code;780;TTO780
+UNSD_Code;784;ARE784
+UNSD_Code;788;TUN788
+UNSD_Code;792;TUR792
+UNSD_Code;795;TKM795
+UNSD_Code;796;TCA796
+UNSD_Code;798;TUV798
+UNSD_Code;800;UGA800
+UNSD_Code;804;UKR804
+UNSD_Code;807;MKD807
+UNSD_Code;810;SUN810
+UNSD_Code;818;EGY818
+UNSD_Code;826;GBR826
+UNSD_Code;831;
+UNSD_Code;832;
+UNSD_Code;833;
+UNSD_Code;834;TZA834
+UNSD_Code;835;TZA834
+UNSD_Code;836;TZA834
+UNSD_Code;840;USA840
+UNSD_Code;850;VIR850
+UNSD_Code;854;BFA854
+UNSD_Code;858;URY858
+UNSD_Code;860;UZB860
+UNSD_Code;862;VEN862
+UNSD_Code;866;VNM704
+UNSD_Code;868;VNM704
+UNSD_Code;876;WLF876
+UNSD_Code;882;WSM882
+UNSD_Code;886;YEM886
+UNSD_Code;887;YEM887
+UNSD_Code;890;YUG890
+UNSD_Code;891;SCG891
+UNSD_Code;894;ZMB894
+USGS_ext;Afghanistan;AFG004
+USGS_ext;Albania;ALB008
+USGS_ext;Algeria;DZA012
+USGS_ext;Angola;AGO024
+USGS_ext;Argentina;ARG032
+USGS_ext;Armenia;ARM051
+USGS_ext;Australia;AUS036
+USGS_ext;Austria;AUT040
+USGS_ext;Azerbaijan;AZE031
+USGS_ext;Bahamas;BHS044
+USGS_ext;Bangladesh;BGD050
+USGS_ext;Belarus;BLR112
+USGS_ext;Belgium;BEL056
+USGS_ext;Belize;BLZ084
+USGS_ext;Benin;BEN204
+USGS_ext;Bhutan;BTN064
+USGS_ext;Bolivia;BOL068
+USGS_ext;Bonaire;BES535
+USGS_ext;Bosnia and Herzegovina;BIH070
+USGS_ext;Botswana;BWA072
+USGS_ext;Brazil;BRA076
+USGS_ext;Bulgaria;BGR100
+USGS_ext;Burkina Faso;BFA854
+USGS_ext;Burundi;BDI108
+USGS_ext;Cambodia;KHM116
+USGS_ext;Cameroon;CMR120
+USGS_ext;Canada;CAN124
+USGS_ext;Cape Verde;CPV132
+USGS_ext;Central African Republic;CAF140
+USGS_ext;Chad;TCD148
+USGS_ext;Chile;CHL152
+USGS_ext;China;CHN156
+USGS_ext;Christmas Island;CXR162
+USGS_ext;Colombia;COL170
+USGS_ext;Costa Rica;CRI188
+USGS_ext;Cote d'Ivoire;CIV384
+USGS_ext;Croatia;HRV191
+USGS_ext;Cuba;CUB192
+USGS_ext;Cyprus;CYP196
+USGS_ext;Czech Republic;CZE203
+USGS_ext;Czechoslovakia;CSK200
+USGS_ext;Denmark;DNK208
+USGS_ext;Djibouti;DJI262
+USGS_ext;Dominican Republic;DOM214
+USGS_ext;DR Congo;COD180
+USGS_ext;Ecuador;ECU218
+USGS_ext;Egypt;EGY818
+USGS_ext;El Salvador;SLV222
+USGS_ext;Equatorial Guinea;GNQ226
+USGS_ext;Eritrea;ERI232
+USGS_ext;Estonia;EST233
+USGS_ext;Ethiopia;ETH231
+USGS_ext;Fiji Islands;FJI242
+USGS_ext;Finland;FIN246
+USGS_ext;France;FRA250
+USGS_ext;French Guiana;GUF254
+USGS_ext;Gabon;GAB266
+USGS_ext;Gambia;GMB270
+USGS_ext;Georgia;GEO268
+USGS_ext;Germany;DEU276
+USGS_ext;Ghana;GHA288
+USGS_ext;Greece;GRC300
+USGS_ext;Greenland;GRL304
+USGS_ext;Guadeloupe;GLP312
+USGS_ext;Guatemala;GTM320
+USGS_ext;Guinea;GIN324
+USGS_ext;Guyana;GUY328
+USGS_ext;Haiti;HTI332
+USGS_ext;Honduras;HND340
+USGS_ext;Hong Kong;HKG344
+USGS_ext;Hungary;HUN348
+USGS_ext;Iceland;ISL352
+USGS_ext;India;IND356
+USGS_ext;Indonesia;IDN360
+USGS_ext;Iran;IRN364
+USGS_ext;Iraq;IRQ368
+USGS_ext;Ireland;IRL372
+USGS_ext;Israel;ISR376
+USGS_ext;Italy;ITA380
+USGS_ext;Jamaica;JAM388
+USGS_ext;Japan;JPN392
+USGS_ext;Jordan;JOR400
+USGS_ext;Kazakhstan;KAZ398
+USGS_ext;Kenya;KEN404
+USGS_ext;Kiribati;KIR296
+USGS_ext;Kosovo;UNK000
+USGS_ext;Kuwait;KWT414
+USGS_ext;Kyrgyzstan;KGZ417
+USGS_ext;Laos;LAO418
+USGS_ext;Latvia;LVA428
+USGS_ext;Lebanon;LBN422
+USGS_ext;Lesotho;LSO426
+USGS_ext;Liberia;LBR430
+USGS_ext;Libya;LBY434
+USGS_ext;Lithuania;LTU440
+USGS_ext;Luxembourg;LUX442
+USGS_ext;Macedonia;MKD807
+USGS_ext;Madagascar;MDG450
+USGS_ext;Malawi;MWI454
+USGS_ext;Malaysia;MYS458
+USGS_ext;Mali;MLI466
+USGS_ext;Malta;MLT470
+USGS_ext;Martinique;MTQ474
+USGS_ext;Mauritania;MRT478
+USGS_ext;Mauritius;MUS480
+USGS_ext;Mexico;MEX484
+USGS_ext;Moldova;MDA498
+USGS_ext;Mongolia;MNG496
+USGS_ext;Montenegro;MNE499
+USGS_ext;Morocco;MAR504
+USGS_ext;Mozambique;MOZ508
+USGS_ext;Myanmar;MMR104
+USGS_ext;Namibia;NAM516
+USGS_ext;Nauru;NRU520
+USGS_ext;Nepal;NPL524
+USGS_ext;Netherlands;NLD528
+USGS_ext;Netherlands Antilles (former);ANT530
+USGS_ext;New Caledonia;NCL540
+USGS_ext;New Zealand;NZL554
+USGS_ext;Nicaragua;NIC558
+USGS_ext;Niger;NER562
+USGS_ext;Nigeria;NGA566
+USGS_ext;North Korea;PRK408
+USGS_ext;Norway;NOR578
+USGS_ext;Oman;OMN512
+USGS_ext;Pakistan;PAK586
+USGS_ext;Panama;PAN591
+USGS_ext;Papua New Guinea;PNG598
+USGS_ext;Paraguay;PRY600
+USGS_ext;Peru;PER604
+USGS_ext;Philippines;PHL608
+USGS_ext;Poland;POL616
+USGS_ext;Portugal;PRT620
+USGS_ext;Puerto Rico;PRI630
+USGS_ext;Qatar;QAT634
+USGS_ext;Rep Congo;COG178
+USGS_ext;Romania;ROU642
+USGS_ext;Russian Federation;RUS643
+USGS_ext;Rwanda;RWA646
+USGS_ext;Saudi Arabia;SAU682
+USGS_ext;Senegal;SEN686
+USGS_ext;Serbia (and Montenegro);SCG891
+USGS_ext;Serbia and Montenegro;SCG891
+USGS_ext;Seychelles;SYC690
+USGS_ext;Sierra Leone;SLE694
+USGS_ext;Slovakia;SVK703
+USGS_ext;Slovenia;SVN705
+USGS_ext;Solomon Islands;SLB090
+USGS_ext;Somalia;SOM706
+USGS_ext;South Africa;ZAF710
+USGS_ext;South Korea;KOR410
+USGS_ext;South Sudan;SSD728
+USGS_ext;Spain;ESP724
+USGS_ext;Sri Lanka;LKA144
+USGS_ext;Sudan;SDN729
+USGS_ext;Suriname;SUR740
+USGS_ext;Swaziland;SWZ748
+USGS_ext;Sweden;SWE752
+USGS_ext;Switzerland;CHE756
+USGS_ext;Syria;SYR760
+USGS_ext;Taiwan;TWN158
+USGS_ext;Tajikistan;TJK762
+USGS_ext;Tanzania;TZA834
+USGS_ext;Thailand;THA764
+USGS_ext;Togo;TGO768
+USGS_ext;Trinidad and Tobago;TTO780
+USGS_ext;Tunisia;TUN788
+USGS_ext;Turkey;TUR792
+USGS_ext;Turkmenistan;TKM795
+USGS_ext;Turks and Caicos Islands;TCA796
+USGS_ext;Uganda;UGA800
+USGS_ext;Ukraine;UKR804
+USGS_ext;United Arab Emirates;ARE784
+USGS_ext;United Kingdom;GBR826
+USGS_ext;United States of America;USA840
+USGS_ext;Uruguay;URY858
+USGS_ext;USSR;SUN810
+USGS_ext;Uzbekistan;UZB860
+USGS_ext;Vanuatu;VUT548
+USGS_ext;Venezuela;VEN862
+USGS_ext;Viet Nam;VNM704
+USGS_ext;Western Sahara;ESH732
+USGS_ext;Yemen;YEM887
+USGS_ext;Yugoslavia SFR;YUG890
+USGS_ext;Zambia;ZMB894
+USGS_ext;Zimbabwe;ZWE716
+ISO_Alpha3;ARE;ARE784
+ISO_Alpha3;AFG;AFG004
+ISO_Alpha3;ATG;ATG028
+ISO_Alpha3;AIA;AIA660
+ISO_Alpha3;ALB;ALB008
+ISO_Alpha3;ARM;ARM051
+ISO_Alpha3;ANT;ANT530
+ISO_Alpha3;AGO;AGO024
+ISO_Alpha3;ARG;ARG032
+ISO_Alpha3;ASM;ASM016
+ISO_Alpha3;AUT;AUT040
+ISO_Alpha3;AUS;AUS036
+ISO_Alpha3;ABW;ABW533
+ISO_Alpha3;AZE;AZE031
+ISO_Alpha3;BIH;BIH070
+ISO_Alpha3;BRB;BRB052
+ISO_Alpha3;BGD;BGD050
+ISO_Alpha3;BEL;BEL056
+ISO_Alpha3;BFA;BFA854
+ISO_Alpha3;BGR;BGR100
+ISO_Alpha3;BHR;BHR048
+ISO_Alpha3;BDI;BDI108
+ISO_Alpha3;BEN;BEN204
+ISO_Alpha3;BMU;BMU060
+ISO_Alpha3;BRN;BRN096
+ISO_Alpha3;BOL;BOL068
+ISO_Alpha3;BRA;BRA076
+ISO_Alpha3;BHS;BHS044
+ISO_Alpha3;BTN;BTN064
+ISO_Alpha3;BWA;BWA072
+ISO_Alpha3;BLR;BLR112
+ISO_Alpha3;BLZ;BLZ084
+ISO_Alpha3;CAN;CAN124
+ISO_Alpha3;CCK;CCK166
+ISO_Alpha3;COD;COD180
+ISO_Alpha3;CAF;CAF140
+ISO_Alpha3;COG;COG178
+ISO_Alpha3;CHE;CHE756
+ISO_Alpha3;CIV;CIV384
+ISO_Alpha3;COK;COK184
+ISO_Alpha3;CHL;CHL152
+ISO_Alpha3;CMR;CMR120
+ISO_Alpha3;CHN;CHN156
+ISO_Alpha3;COL;COL170
+ISO_Alpha3;CRI;CRI188
+ISO_Alpha3;CSK;CSK200
+ISO_Alpha3;CUB;CUB192
+ISO_Alpha3;CPV;CPV132
+ISO_Alpha3;CXR;CXR162
+ISO_Alpha3;CYP;CYP196
+ISO_Alpha3;CZE;CZE203
+ISO_Alpha3;DEU;DEU276
+ISO_Alpha3;DDR;DDR278
+ISO_Alpha3;DEU;DEU280
+ISO_Alpha3;DJI;DJI262
+ISO_Alpha3;DNK;DNK208
+ISO_Alpha3;DMA;DMA212
+ISO_Alpha3;DOM;DOM214
+ISO_Alpha3;DZA;DZA012
+ISO_Alpha3;ECU;ECU218
+ISO_Alpha3;EST;EST233
+ISO_Alpha3;EGY;EGY818
+ISO_Alpha3;ERI;ERI232
+ISO_Alpha3;ESP;ESP724
+ISO_Alpha3;ETH;ETH231
+ISO_Alpha3;ETH;ETH230
+ISO_Alpha3;FIN;FIN246
+ISO_Alpha3;FJI;FJI242
+ISO_Alpha3;FLK;FLK238
+ISO_Alpha3;FSM;FSM583
+ISO_Alpha3;FRO;FRO234
+ISO_Alpha3;FRA;FRA250
+ISO_Alpha3;GAB;GAB266
+ISO_Alpha3;GBR;GBR826
+ISO_Alpha3;GRD;GRD308
+ISO_Alpha3;GEO;GEO268
+ISO_Alpha3;GUF;GUF254
+ISO_Alpha3;GHA;GHA288
+ISO_Alpha3;GIB;GIB292
+ISO_Alpha3;GRL;GRL304
+ISO_Alpha3;GMB;GMB270
+ISO_Alpha3;GIN;GIN324
+ISO_Alpha3;GLP;GLP312
+ISO_Alpha3;GNQ;GNQ226
+ISO_Alpha3;GRC;GRC300
+ISO_Alpha3;GTM;GTM320
+ISO_Alpha3;GUM;GUM316
+ISO_Alpha3;GNB;GNB624
+ISO_Alpha3;GUY;GUY328
+ISO_Alpha3;HND;HND340
+ISO_Alpha3;HRV;HRV191
+ISO_Alpha3;HTI;HTI332
+ISO_Alpha3;HUN;HUN348
+ISO_Alpha3;IDN;IDN360
+ISO_Alpha3;IRL;IRL372
+ISO_Alpha3;ISR;ISR376
+ISO_Alpha3;IND;IND356
+ISO_Alpha3;IOT;IOT086
+ISO_Alpha3;IRQ;IRQ368
+ISO_Alpha3;IRN;IRN364
+ISO_Alpha3;ISL;ISL352
+ISO_Alpha3;ITA;ITA380
+ISO_Alpha3;JAM;JAM388
+ISO_Alpha3;JOR;JOR400
+ISO_Alpha3;JPN;JPN392
+ISO_Alpha3;KEN;KEN404
+ISO_Alpha3;KGZ;KGZ417
+ISO_Alpha3;KHM;KHM116
+ISO_Alpha3;KIR;KIR296
+ISO_Alpha3;COM;COM174
+ISO_Alpha3;KNA;KNA659
+ISO_Alpha3;PRK;PRK408
+ISO_Alpha3;KOR;KOR410
+ISO_Alpha3;KWT;KWT414
+ISO_Alpha3;CYM;CYM136
+ISO_Alpha3;KAZ;KAZ398
+ISO_Alpha3;LAO;LAO418
+ISO_Alpha3;LBN;LBN422
+ISO_Alpha3;LCA;LCA662
+ISO_Alpha3;LIE;LIE438
+ISO_Alpha3;LKA;LKA144
+ISO_Alpha3;LBR;LBR430
+ISO_Alpha3;LSO;LSO426
+ISO_Alpha3;LTU;LTU440
+ISO_Alpha3;LVA;LVA428
+ISO_Alpha3;LUX;LUX442
+ISO_Alpha3;LBY;LBY434
+ISO_Alpha3;MAR;MAR504
+ISO_Alpha3;MDA;MDA498
+ISO_Alpha3;MDG;MDG450
+ISO_Alpha3;MHL;MHL584
+ISO_Alpha3;MKD;MKD807
+ISO_Alpha3;MLI;MLI466
+ISO_Alpha3;MMR;MMR104
+ISO_Alpha3;MNG;MNG496
+ISO_Alpha3;MNP;MNP580
+ISO_Alpha3;MTQ;MTQ474
+ISO_Alpha3;MRT;MRT478
+ISO_Alpha3;MSR;MSR500
+ISO_Alpha3;MLT;MLT470
+ISO_Alpha3;MUS;MUS480
+ISO_Alpha3;MDV;MDV462
+ISO_Alpha3;MWI;MWI454
+ISO_Alpha3;MEX;MEX484
+ISO_Alpha3;MYS;MYS458
+ISO_Alpha3;MOZ;MOZ508
+ISO_Alpha3;NAM;NAM516
+ISO_Alpha3;NCL;NCL540
+ISO_Alpha3;NER;NER562
+ISO_Alpha3;NFK;NFK574
+ISO_Alpha3;NGA;NGA566
+ISO_Alpha3;NIC;NIC558
+ISO_Alpha3;NLD;NLD528
+ISO_Alpha3;NOR;NOR578
+ISO_Alpha3;NPL;NPL524
+ISO_Alpha3;NRU;NRU520
+ISO_Alpha3;NIU;NIU570
+ISO_Alpha3;NZL;NZL554
+ISO_Alpha3;OMN;OMN512
+ISO_Alpha3;PAN;PAN591
+ISO_Alpha3;PER;PER604
+ISO_Alpha3;PYF;PYF258
+ISO_Alpha3;PNG;PNG598
+ISO_Alpha3;PHL;PHL608
+ISO_Alpha3;PAK;PAK586
+ISO_Alpha3;POL;POL616
+ISO_Alpha3;SPM;SPM666
+ISO_Alpha3;PCN;PCN612
+ISO_Alpha3;PRI;PRI630
+ISO_Alpha3;PSE;PSE275
+ISO_Alpha3;PRT;PRT620
+ISO_Alpha3;PLW;PLW585
+ISO_Alpha3;PRY;PRY600
+ISO_Alpha3;QAT;QAT634
+ISO_Alpha3;REU;REU638
+ISO_Alpha3;ROU;ROU642
+ISO_Alpha3;SRB;SRB688
+ISO_Alpha3;RUS;RUS643
+ISO_Alpha3;RWA;RWA646
+ISO_Alpha3;SAU;SAU682
+ISO_Alpha3;SLB;SLB090
+ISO_Alpha3;SYC;SYC690
+ISO_Alpha3;SDN;SDN729
+ISO_Alpha3;SWE;SWE752
+ISO_Alpha3;SGP;SGP702
+ISO_Alpha3;SHN;SHN654
+ISO_Alpha3;SVN;SVN705
+ISO_Alpha3;SVK;SVK703
+ISO_Alpha3;SLE;SLE694
+ISO_Alpha3;SMR;SMR674
+ISO_Alpha3;SEN;SEN686
+ISO_Alpha3;SOM;SOM706
+ISO_Alpha3;SUR;SUR740
+ISO_Alpha3;SSD;SSD728
+ISO_Alpha3;STP;STP678
+ISO_Alpha3;SUN;SUN810
+ISO_Alpha3;SLV;SLV222
+ISO_Alpha3;SYR;SYR760
+ISO_Alpha3;SWZ;SWZ748
+ISO_Alpha3;TCA;TCA796
+ISO_Alpha3;TCD;TCD148
+ISO_Alpha3;TGO;TGO768
+ISO_Alpha3;THA;THA764
+ISO_Alpha3;TJK;TJK762
+ISO_Alpha3;TKL;TKL772
+ISO_Alpha3;TLS;TLS626
+ISO_Alpha3;TKM;TKM795
+ISO_Alpha3;TUN;TUN788
+ISO_Alpha3;TON;TON776
+ISO_Alpha3;TUR;TUR792
+ISO_Alpha3;TTO;TTO780
+ISO_Alpha3;TUV;TUV798
+ISO_Alpha3;TWN;TWN158
+ISO_Alpha3;TZA;TZA834
+ISO_Alpha3;UKR;UKR804
+ISO_Alpha3;UGA;UGA800
+ISO_Alpha3;USA;USA840
+ISO_Alpha3;URY;URY858
+ISO_Alpha3;UZB;UZB860
+ISO_Alpha3;VCT;VCT670
+ISO_Alpha3;VEN;VEN862
+ISO_Alpha3;VGB;VGB092
+ISO_Alpha3;VIR;VIR850
+ISO_Alpha3;VNM;VNM704
+ISO_Alpha3;VUT;VUT548
+ISO_Alpha3;WLF;WLF876
+ISO_Alpha3;WSM;WSM882
+ISO_Alpha3;YEM;YEM887
+ISO_Alpha3;YEM;YEM886
+ISO_Alpha3;YMD;YMD720
+ISO_Alpha3;MYT;MYT175
+ISO_Alpha3;YUG;YUG890
+ISO_Alpha3;ZAF;ZAF710
+ISO_Alpha3;ZMB;ZMB894
+ISO_Alpha3;ZWE;ZWE716
+ISO_Alpha3;CUW;CUW531
+ISO_Alpha3;HKG;HKG344
+ISO_Alpha3;MNE;MNE499
+ISO_Alpha3;SCG;SCG891
+ISO_Alpha3;UNK;UNK000
+ISO_Alpha3;MAC;MAC446
+ISO_Alpha3;MCO;MCO492
+ISO_Alpha3;ESH;ESH732
+ISO_Alpha3;BES;BES535
+ISO_Alpha3;AND;AND020
+IRP_MFA;United Arab Emirates;ARE784
+IRP_MFA;Afghanistan;AFG004
+IRP_MFA;Antigua and Barbuda;ATG028
+IRP_MFA;Anguilla;AIA660
+IRP_MFA;Albania;ALB008
+IRP_MFA;Armenia;ARM051
+IRP_MFA;Netherlands Antilles;ANT530
+IRP_MFA;Angola;AGO024
+IRP_MFA;Argentina;ARG032
+IRP_MFA;American Samoa;ASM016
+IRP_MFA;Austria;AUT040
+IRP_MFA;Australia;AUS036
+IRP_MFA;Aruba;ABW533
+IRP_MFA;Azerbaijan;AZE031
+IRP_MFA;Bosnia and Herzegovina;BIH070
+IRP_MFA;Barbados;BRB052
+IRP_MFA;Bangladesh;BGD050
+IRP_MFA;Belgium;BEL056
+IRP_MFA;Burkina Faso;BFA854
+IRP_MFA;Bulgaria;BGR100
+IRP_MFA;Bahrain;BHR048
+IRP_MFA;Burundi;BDI108
+IRP_MFA;Benin;BEN204
+IRP_MFA;Bermuda;BMU060
+IRP_MFA;Brunei Darussalam;BRN096
+IRP_MFA;Bolivia;BOL068
+IRP_MFA;Brazil;BRA076
+IRP_MFA;Bahamas;BHS044
+IRP_MFA;Bhutan;BTN064
+IRP_MFA;Botswana;BWA072
+IRP_MFA;Belarus;BLR112
+IRP_MFA;Belize;BLZ084
+IRP_MFA;Canada;CAN124
+IRP_MFA;Cocos (Keeling) Islands;CCK166
+IRP_MFA;DR Congo;COD180
+IRP_MFA;Central African Republic;CAF140
+IRP_MFA;Rep Congo;COG178
+IRP_MFA;Switzerland;CHE756
+IRP_MFA;Cote d'Ivoire;CIV384
+IRP_MFA;Cook Islands;COK184
+IRP_MFA;Chile;CHL152
+IRP_MFA;Cameroon;CMR120
+IRP_MFA;China;CHN156
+IRP_MFA;Colombia;COL170
+IRP_MFA;Costa Rica;CRI188
+IRP_MFA;Czechoslovakia;CSK200
+IRP_MFA;Cuba;CUB192
+IRP_MFA;Cape Verde;CPV132
+IRP_MFA;Christmas Island;CXR162
+IRP_MFA;Cyprus;CYP196
+IRP_MFA;Czech Republic;CZE203
+IRP_MFA;Germany;DEU276
+IRP_MFA;East Germany;DDR278
+IRP_MFA;West Germany;DEU280
+IRP_MFA;Djibouti;DJI262
+IRP_MFA;Denmark;DNK208
+IRP_MFA;Dominica;DMA212
+IRP_MFA;Dominican Republic;DOM214
+IRP_MFA;Algeria;DZA012
+IRP_MFA;Ecuador;ECU218
+IRP_MFA;Estonia;EST233
+IRP_MFA;Egypt;EGY818
+IRP_MFA;Eritrea;ERI232
+IRP_MFA;Spain;ESP724
+IRP_MFA;Ethiopia;ETH231
+IRP_MFA;Ethiopia (Former);ETH230
+IRP_MFA;Finland;FIN246
+IRP_MFA;Fiji Islands;FJI242
+IRP_MFA;Falkland Islands (Malvinas);FLK238
+IRP_MFA;Micronesia;FSM583
+IRP_MFA;Faroe Islands;FRO234
+IRP_MFA;France;FRA250
+IRP_MFA;Gabon;GAB266
+IRP_MFA;United Kingdom;GBR826
+IRP_MFA;Grenada;GRD308
+IRP_MFA;Georgia;GEO268
+IRP_MFA;French Guiana;GUF254
+IRP_MFA;Ghana;GHA288
+IRP_MFA;Gibraltar;GIB292
+IRP_MFA;Greenland;GRL304
+IRP_MFA;Gambia;GMB270
+IRP_MFA;Guinea;GIN324
+IRP_MFA;Guadeloupe;GLP312
+IRP_MFA;Equatorial Guinea;GNQ226
+IRP_MFA;Greece;GRC300
+IRP_MFA;Guatemala;GTM320
+IRP_MFA;Guam;GUM316
+IRP_MFA;Guinea-Bissau;GNB624
+IRP_MFA;Guyana;GUY328
+IRP_MFA;Honduras;HND340
+IRP_MFA;Croatia;HRV191
+IRP_MFA;Haiti;HTI332
+IRP_MFA;Hungary;HUN348
+IRP_MFA;Indonesia;IDN360
+IRP_MFA;Ireland;IRL372
+IRP_MFA;Israel;ISR376
+IRP_MFA;India;IND356
+IRP_MFA;British Indian Ocean Territory;IOT086
+IRP_MFA;Iraq;IRQ368
+IRP_MFA;Iran;IRN364
+IRP_MFA;Iceland;ISL352
+IRP_MFA;Italy;ITA380
+IRP_MFA;Jamaica;JAM388
+IRP_MFA;Jordan;JOR400
+IRP_MFA;Japan;JPN392
+IRP_MFA;Kenya;KEN404
+IRP_MFA;Kyrgyzstan;KGZ417
+IRP_MFA;Cambodia;KHM116
+IRP_MFA;Kiribati;KIR296
+IRP_MFA;Comoros;COM174
+IRP_MFA;Saint Kitts and Nevis;KNA659
+IRP_MFA;North Korea;PRK408
+IRP_MFA;South Korea;KOR410
+IRP_MFA;Kuwait;KWT414
+IRP_MFA;Cayman Islands;CYM136
+IRP_MFA;Kazakhstan;KAZ398
+IRP_MFA;Laos;LAO418
+IRP_MFA;Lebanon;LBN422
+IRP_MFA;Saint Lucia;LCA662
+IRP_MFA;Liechtenstein;LIE438
+IRP_MFA;Sri Lanka;LKA144
+IRP_MFA;Liberia;LBR430
+IRP_MFA;Lesotho;LSO426
+IRP_MFA;Lithuania;LTU440
+IRP_MFA;Latvia;LVA428
+IRP_MFA;Luxembourg;LUX442
+IRP_MFA;Libya;LBY434
+IRP_MFA;Morocco;MAR504
+IRP_MFA;Moldova;MDA498
+IRP_MFA;Madagascar;MDG450
+IRP_MFA;Marshall Islands;MHL584
+IRP_MFA;North Macedonia;MKD807
+IRP_MFA;Mali;MLI466
+IRP_MFA;Myanmar;MMR104
+IRP_MFA;Mongolia;MNG496
+IRP_MFA;Northern Mariana Islands;MNP580
+IRP_MFA;Martinique;MTQ474
+IRP_MFA;Mauritania;MRT478
+IRP_MFA;Montserrat;MSR500
+IRP_MFA;Malta;MLT470
+IRP_MFA;Mauritius;MUS480
+IRP_MFA;Maldives;MDV462
+IRP_MFA;Malawi;MWI454
+IRP_MFA;Mexico;MEX484
+IRP_MFA;Malaysia;MYS458
+IRP_MFA;Mozambique;MOZ508
+IRP_MFA;Namibia;NAM516
+IRP_MFA;New Caledonia;NCL540
+IRP_MFA;Niger;NER562
+IRP_MFA;Norfolk Island;NFK574
+IRP_MFA;Nigeria;NGA566
+IRP_MFA;Nicaragua;NIC558
+IRP_MFA;Netherlands;NLD528
+IRP_MFA;Norway;NOR578
+IRP_MFA;Nepal;NPL524
+IRP_MFA;Nauru;NRU520
+IRP_MFA;Niue;NIU570
+IRP_MFA;New Zealand;NZL554
+IRP_MFA;Oman;OMN512
+IRP_MFA;Panama;PAN591
+IRP_MFA;Peru;PER604
+IRP_MFA;French Polynesia;PYF258
+IRP_MFA;Papua New Guinea;PNG598
+IRP_MFA;Philippines;PHL608
+IRP_MFA;Pakistan;PAK586
+IRP_MFA;Poland;POL616
+IRP_MFA;Saint Pierre and Miquelon;SPM666
+IRP_MFA;Pitcairn Islands;PCN612
+IRP_MFA;Puerto Rico;PRI630
+IRP_MFA;Palestine;PSE275
+IRP_MFA;Portugal;PRT620
+IRP_MFA;Palau;PLW585
+IRP_MFA;Paraguay;PRY600
+IRP_MFA;Qatar;QAT634
+IRP_MFA;Reunion;REU638
+IRP_MFA;Romania;ROU642
+IRP_MFA;Serbia;SRB688
+IRP_MFA;Russian Federation;RUS643
+IRP_MFA;Rwanda;RWA646
+IRP_MFA;Saudi Arabia;SAU682
+IRP_MFA;Solomon Islands;SLB090
+IRP_MFA;Seychelles;SYC690
+IRP_MFA;Sudan;SDN729
+IRP_MFA;Sudan (Former);SDN736
+IRP_MFA;Sweden;SWE752
+IRP_MFA;Singapore;SGP702
+IRP_MFA;Saint Helena;SHN654
+IRP_MFA;Slovenia;SVN705
+IRP_MFA;Slovakia;SVK703
+IRP_MFA;Sierra Leone;SLE694
+IRP_MFA;San Marino;SMR674
+IRP_MFA;Senegal;SEN686
+IRP_MFA;Somalia;SOM706
+IRP_MFA;Suriname;SUR740
+IRP_MFA;South Sudan;SSD728
+IRP_MFA;Sao Tome and Principe;STP678
+IRP_MFA;USSR;SUN810
+IRP_MFA;El Salvador;SLV222
+IRP_MFA;Syria;SYR760
+IRP_MFA;Swaziland;SWZ748
+IRP_MFA;Turks and Caicos Islands;TCA796
+IRP_MFA;Chad;TCD148
+IRP_MFA;Togo;TGO768
+IRP_MFA;Thailand;THA764
+IRP_MFA;Tajikistan;TJK762
+IRP_MFA;Tokelau;TKL772
+IRP_MFA;Timor-Leste;TLS626
+IRP_MFA;Turkmenistan;TKM795
+IRP_MFA;Tunisia;TUN788
+IRP_MFA;Tonga;TON776
+IRP_MFA;Turkey;TUR792
+IRP_MFA;Trinidad and Tobago;TTO780
+IRP_MFA;Tuvalu;TUV798
+IRP_MFA;Taiwan;TWN158
+IRP_MFA;Tanzania;TZA834
+IRP_MFA;Ukraine;UKR804
+IRP_MFA;Uganda;UGA800
+IRP_MFA;United States of America;USA840
+IRP_MFA;Uruguay;URY858
+IRP_MFA;Uzbekistan;UZB860
+IRP_MFA;Saint Vincent/Grenadines;VCT670
+IRP_MFA;Venezuela;VEN862
+IRP_MFA;British Virgin Islands;VGB092
+IRP_MFA;US Virgin Islands;VIR850
+IRP_MFA;Viet Nam;VNM704
+IRP_MFA;Vanuatu;VUT548
+IRP_MFA;Wallis and Futuna Islands;WLF876
+IRP_MFA;Samoa;WSM882
+IRP_MFA;Yemen;YEM887
+IRP_MFA;North Yemen;YEM886
+IRP_MFA;South Yemen;YMD720
+IRP_MFA;Mayotte;MYT175
+IRP_MFA;Yugoslavia SFR;YUG890
+IRP_MFA;South Africa;ZAF710
+IRP_MFA;Zambia;ZMB894
+IRP_MFA;Zimbabwe;ZWE716
+IRP_MFA;Cura鏰o;CUW531
+IRP_MFA;Hong Kong;HKG344
+IRP_MFA;Montenegro;MNE499
+IRP_MFA;Serbia (and Montenegro);SCG891
+IRP_MFA;Kosovo;UNK000
+IRP_MFA;Macau;MAC446
+IRP_MFA;Monaco;MCO492
+IRP_MFA;Western Sahara;ESH732
+IRP_MFA;Bonaire;BES535
+IRP_MFA;Belgium-Luxemburg;BLGLUX
+IRP_MFA;Andorra;AND020
+WMD_ext;Albania;ALB008
+WMD_ext;Algeria;DZA012
+WMD_ext;Angola;AGO024
+WMD_ext;Argentina;ARG032
+WMD_ext;Azerbaijan;AZE031
+WMD_ext;Barbados;BRB052
+WMD_ext;Belarus;BLR112
+WMD_ext;Benin;BEN204
+WMD_ext;Bhutan;BTN064
+WMD_ext;Bolivia;BOL068
+WMD_ext;Bosnia and Herzegovina;BIH070
+WMD_ext;Botswana;BWA072
+WMD_ext;Brunei;BRN096
+WMD_ext;Bulgaria;BGR100
+WMD_ext;Burkina Faso;BFA854
+WMD_ext;Cambodia;KHM116
+WMD_ext;Chile;CHL152
+WMD_ext;Costa Rica;CRI188
+WMD_ext;Cote d'Ivoire ;CIV384
+WMD_ext;Croatia;HRV191
+WMD_ext;Cyprus;CYP196
+WMD_ext;Czech Republic;CZE203
+WMD_ext;Dominican Republic;DOM214
+WMD_ext;Ecuador;ECU218
+WMD_ext;Eritrea;ERI232
+WMD_ext;Estonia;EST233
+WMD_ext;Ethiopia;ETH231
+WMD_ext;Fiji;FJI242
+WMD_ext;Finland;FIN246
+WMD_ext;France;FRA250
+WMD_ext;Georgia;GEO268
+WMD_ext;Germany;DEU276
+WMD_ext;Greece;GRC300
+WMD_ext;Guatemala;GTM320
+WMD_ext;Guinea;GIN324
+WMD_ext;Guyana;GUY328
+WMD_ext;Honduras;HND340
+WMD_ext;Hungary;HUN348
+WMD_ext;India;IND356
+WMD_ext;Indonesia;IDN360
+WMD_ext;Iran;IRN364
+WMD_ext;Ireland;IRL372
+WMD_ext;Israel;ISR376
+WMD_ext;Jamaica;JAM388
+WMD_ext;Japan;JPN392
+WMD_ext;Jordan;JOR400
+WMD_ext;Kazakhstan;KAZ398
+WMD_ext;Kyrgyzstan;KGZ417
+WMD_ext;Laos;LAO418
+WMD_ext;Latvia;LVA428
+WMD_ext;Lithuania;LTU440
+WMD_ext;Malaysia;MYS458
+WMD_ext;Mali;MLI466
+WMD_ext;Malta;MLT470
+WMD_ext;Mexico;MEX484
+WMD_ext;Moldavia;MDA498
+WMD_ext;Mongolia;MNG496
+WMD_ext;Myanmar;MMR104
+WMD_ext;Namibia;NAM516
+WMD_ext;Nepal;NPL524
+WMD_ext;Netherlands;NLD528
+WMD_ext;Nicaragua;NIC558
+WMD_ext;Niger;NER562
+WMD_ext;Nigeria;NGA566
+WMD_ext;North Macedonia;MKD807
+WMD_ext;Norway;NOR578
+WMD_ext;Oman;OMN512
+WMD_ext;Pakistan;PAK586
+WMD_ext;Panama;PAN591
+WMD_ext;Poland;POL616
+WMD_ext;Portugal;PRT620
+WMD_ext;Qatar;QAT634
+WMD_ext;Romania;ROU642
+WMD_ext;Rwanda;RWA646
+WMD_ext;Saudi Arabia;SAU682
+WMD_ext;Senegal;SEN686
+WMD_ext;Slovakia;SVK703
+WMD_ext;Slovenia;SVN705
+WMD_ext;South Africa;ZAF710
+WMD_ext;South Korea;KOR410
+WMD_ext;Spain;ESP724
+WMD_ext;Sri Lanka;LKA144
+WMD_ext;Sudan;SDN729
+WMD_ext;Sweden;SWE752
+WMD_ext;Switzerland;CHE756
+WMD_ext;Syria;SYR760
+WMD_ext;Taiwan;TWN158
+WMD_ext;Tajikistan;TJK762
+WMD_ext;Thailand;THA764
+WMD_ext;Togo;TGO768
+WMD_ext;Trinidad and Tobago;TTO780
+WMD_ext;Turkey;TUR792
+WMD_ext;Uganda;UGA800
+WMD_ext;Ukraine;UKR804
+WMD_ext;United Kingdom;GBR826
+WMD_ext;Uruguay;URY858
+WMD_ext;USA;USA840
+WMD_ext;Uzbekistan;UZB860
+WMD_ext;Venezuela;VEN862
+WMD_ext;Vietnam;VNM704
+WMD_ext;Yemen;YEM887
+WMD_ext;Zambia;ZMB894
+UNSD_cement;4;AFG004
+UNSD_cement;8;ALB008
+UNSD_cement;12;DZA012
+UNSD_cement;16;ASM016
+UNSD_cement;20;AND020
+UNSD_cement;24;AGO024
+UNSD_cement;28;ATG028
+UNSD_cement;31;AZE031
+UNSD_cement;32;ARG032
+UNSD_cement;36;AUS036
+UNSD_cement;40;AUT040
+UNSD_cement;44;BHS044
+UNSD_cement;48;BHR048
+UNSD_cement;50;BGD050
+UNSD_cement;51;ARM051
+UNSD_cement;52;BRB052
+UNSD_cement;56;BEL056
+UNSD_cement;60;BMU060
+UNSD_cement;64;BTN064
+UNSD_cement;68;BOL068
+UNSD_cement;70;BIH070
+UNSD_cement;72;BWA072
+UNSD_cement;76;BRA076
+UNSD_cement;84;BLZ084
+UNSD_cement;90;SLB090
+UNSD_cement;92;VGB092
+UNSD_cement;96;BRN096
+UNSD_cement;100;BGR100
+UNSD_cement;104;MMR104
+UNSD_cement;108;BDI108
+UNSD_cement;112;BLR112
+UNSD_cement;116;KHM116
+UNSD_cement;120;CMR120
+UNSD_cement;124;CAN124
+UNSD_cement;132;CPV132
+UNSD_cement;136;CYM136
+UNSD_cement;140;CAF140
+UNSD_cement;144;LKA144
+UNSD_cement;148;TCD148
+UNSD_cement;152;CHL152
+UNSD_cement;156;CHN156
+UNSD_cement;162;CXR162
+UNSD_cement;170;COL170
+UNSD_cement;174;COM174
+UNSD_cement;175;MYT175
+UNSD_cement;178;COG178
+UNSD_cement;180;COD180
+UNSD_cement;184;COK184
+UNSD_cement;188;CRI188
+UNSD_cement;191;HRV191
+UNSD_cement;192;CUB192
+UNSD_cement;196;CYP196
+UNSD_cement;200;CSK200
+UNSD_cement;203;CZE203
+UNSD_cement;204;BEN204
+UNSD_cement;208;DNK208
+UNSD_cement;212;DMA212
+UNSD_cement;214;DOM214
+UNSD_cement;218;ECU218
+UNSD_cement;222;SLV222
+UNSD_cement;226;GNQ226
+UNSD_cement;230;ETH230
+UNSD_cement;231;ETH231
+UNSD_cement;232;ERI232
+UNSD_cement;233;EST233
+UNSD_cement;234;FRO234
+UNSD_cement;238;FLK238
+UNSD_cement;242;FJI242
+UNSD_cement;246;FIN246
+UNSD_cement;250;FRA250
+UNSD_cement;254;GUF254
+UNSD_cement;258;PYF258
+UNSD_cement;262;DJI262
+UNSD_cement;266;GAB266
+UNSD_cement;268;GEO268
+UNSD_cement;270;GMB270
+UNSD_cement;275;PSE275
+UNSD_cement;276;DEU276
+UNSD_cement;278;DDR278
+UNSD_cement;280;DEU280
+UNSD_cement;288;GHA288
+UNSD_cement;292;GIB292
+UNSD_cement;296;KIR296
+UNSD_cement;300;GRC300
+UNSD_cement;304;GRL304
+UNSD_cement;308;GRD308
+UNSD_cement;312;GLP312
+UNSD_cement;316;GUM316
+UNSD_cement;320;GTM320
+UNSD_cement;324;GIN324
+UNSD_cement;328;GUY328
+UNSD_cement;332;HTI332
+UNSD_cement;340;HND340
+UNSD_cement;344;HKG344
+UNSD_cement;348;HUN348
+UNSD_cement;352;ISL352
+UNSD_cement;356;IND356
+UNSD_cement;360;IDN360
+UNSD_cement;364;IRN364
+UNSD_cement;368;IRQ368
+UNSD_cement;372;IRL372
+UNSD_cement;376;ISR376
+UNSD_cement;380;ITA380
+UNSD_cement;384;CIV384
+UNSD_cement;388;JAM388
+UNSD_cement;392;JPN392
+UNSD_cement;393;JPN392
+UNSD_cement;398;KAZ398
+UNSD_cement;400;JOR400
+UNSD_cement;404;KEN404
+UNSD_cement;408;PRK408
+UNSD_cement;412;UNK000
+UNSD_cement;410;KOR410
+UNSD_cement;414;KWT414
+UNSD_cement;417;KGZ417
+UNSD_cement;418;LAO418
+UNSD_cement;422;LBN422
+UNSD_cement;426;LSO426
+UNSD_cement;428;LVA428
+UNSD_cement;430;LBR430
+UNSD_cement;434;LBY434
+UNSD_cement;438;LIE438
+UNSD_cement;440;LTU440
+UNSD_cement;442;LUX442
+UNSD_cement;446;MAC446
+UNSD_cement;450;MDG450
+UNSD_cement;454;MWI454
+UNSD_cement;457;MYS458
+UNSD_cement;458;MYS458
+UNSD_cement;459;MYS458
+UNSD_cement;461;MYS458
+UNSD_cement;462;MDV462
+UNSD_cement;466;MLI466
+UNSD_cement;470;MLT470
+UNSD_cement;474;MTQ474
+UNSD_cement;478;MRT478
+UNSD_cement;480;MUS480
+UNSD_cement;484;MEX484
+UNSD_cement;496;MNG496
+UNSD_cement;498;MDA498
+UNSD_cement;499;MNE499
+UNSD_cement;500;MSR500
+UNSD_cement;504;MAR504
+UNSD_cement;508;MOZ508
+UNSD_cement;512;OMN512
+UNSD_cement;516;NAM516
+UNSD_cement;520;NRU520
+UNSD_cement;524;NPL524
+UNSD_cement;528;NLD528
+UNSD_cement;530;ANT530
+UNSD_cement;531;CUW531
+UNSD_cement;533;ABW533
+UNSD_cement;535;BES535
+UNSD_cement;540;NCL540
+UNSD_cement;548;VUT548
+UNSD_cement;554;NZL554
+UNSD_cement;558;NIC558
+UNSD_cement;562;NER562
+UNSD_cement;566;NGA566
+UNSD_cement;570;NIU570
+UNSD_cement;578;NOR578
+UNSD_cement;580;MNP580
+UNSD_cement;583;FSM583
+UNSD_cement;584;MHL584
+UNSD_cement;585;PLW585
+UNSD_cement;586;PAK586
+UNSD_cement;588;PAK586
+UNSD_cement;590;PAN591
+UNSD_cement;591;PAN591
+UNSD_cement;592;PAN591
+UNSD_cement;598;PNG598
+UNSD_cement;600;PRY600
+UNSD_cement;604;PER604
+UNSD_cement;608;PHL608
+UNSD_cement;616;POL616
+UNSD_cement;620;PRT620
+UNSD_cement;624;GNB624
+UNSD_cement;626;TLS626
+UNSD_cement;630;PRI630
+UNSD_cement;634;QAT634
+UNSD_cement;638;REU638
+UNSD_cement;642;ROU642
+UNSD_cement;643;RUS643
+UNSD_cement;646;RWA646
+UNSD_cement;647;JPN392
+UNSD_cement;654;SHN654
+UNSD_cement;658;
+UNSD_cement;659;KNA659
+UNSD_cement;660;AIA660
+UNSD_cement;662;LCA662
+UNSD_cement;666;SPM666
+UNSD_cement;670;VCT670
+UNSD_cement;678;STP678
+UNSD_cement;682;SAU682
+UNSD_cement;686;SEN686
+UNSD_cement;688;SRB688
+UNSD_cement;690;SYC690
+UNSD_cement;694;SLE694
+UNSD_cement;702;SGP702
+UNSD_cement;703;SVK703
+UNSD_cement;704;VNM704
+UNSD_cement;705;SVN705
+UNSD_cement;706;SOM706
+UNSD_cement;710;ZAF710
+UNSD_cement;716;ZWE716
+UNSD_cement;717;ZWE716
+UNSD_cement;720;YMD720
+UNSD_cement;724;ESP724
+UNSD_cement;728;SSD728
+UNSD_cement;729;SDN729
+UNSD_cement;732;ESH732
+UNSD_cement;736;SDN736
+UNSD_cement;740;SUR740
+UNSD_cement;748;SWZ748
+UNSD_cement;752;SWE752
+UNSD_cement;756;CHE756
+UNSD_cement;760;SYR760
+UNSD_cement;762;TJK762
+UNSD_cement;764;THA764
+UNSD_cement;768;TGO768
+UNSD_cement;776;TON776
+UNSD_cement;780;TTO780
+UNSD_cement;784;ARE784
+UNSD_cement;788;TUN788
+UNSD_cement;792;TUR792
+UNSD_cement;795;TKM795
+UNSD_cement;796;TCA796
+UNSD_cement;798;TUV798
+UNSD_cement;800;UGA800
+UNSD_cement;804;UKR804
+UNSD_cement;807;MKD807
+UNSD_cement;810;SUN810
+UNSD_cement;818;EGY818
+UNSD_cement;826;GBR826
+UNSD_cement;831;
+UNSD_cement;832;
+UNSD_cement;833;
+UNSD_cement;834;TZA834
+UNSD_cement;835;TZA834
+UNSD_cement;836;TZA834
+UNSD_cement;840;USA840
+UNSD_cement;850;VIR850
+UNSD_cement;854;BFA854
+UNSD_cement;858;URY858
+UNSD_cement;860;UZB860
+UNSD_cement;862;VEN862
+UNSD_cement;866;VNM704
+UNSD_cement;868;VNM704
+UNSD_cement;876;WLF876
+UNSD_cement;882;WSM882
+UNSD_cement;886;YEM886
+UNSD_cement;887;YEM887
+UNSD_cement;890;YUG890
+UNSD_cement;891;SCG891
+UNSD_cement;894;ZMB894
+Comtrade_cement;4;AFG004
+Comtrade_cement;8;ALB008
+Comtrade_cement;12;DZA012
+Comtrade_cement;16;ASM016
+Comtrade_cement;20;AND020
+Comtrade_cement;24;AGO024
+Comtrade_cement;28;ATG028
+Comtrade_cement;31;AZE031
+Comtrade_cement;32;ARG032
+Comtrade_cement;36;AUS036
+Comtrade_cement;40;AUT040
+Comtrade_cement;44;BHS044
+Comtrade_cement;48;BHR048
+Comtrade_cement;50;BGD050
+Comtrade_cement;51;ARM051
+Comtrade_cement;52;BRB052
+Comtrade_cement;56;BEL056
+Comtrade_cement;60;BMU060
+Comtrade_cement;64;BTN064
+Comtrade_cement;68;BOL068
+Comtrade_cement;70;BIH070
+Comtrade_cement;72;BWA072
+Comtrade_cement;76;BRA076
+Comtrade_cement;84;BLZ084
+Comtrade_cement;90;SLB090
+Comtrade_cement;92;VGB092
+Comtrade_cement;96;BRN096
+Comtrade_cement;100;BGR100
+Comtrade_cement;104;MMR104
+Comtrade_cement;108;BDI108
+Comtrade_cement;112;BLR112
+Comtrade_cement;116;KHM116
+Comtrade_cement;120;CMR120
+Comtrade_cement;124;CAN124
+Comtrade_cement;132;CPV132
+Comtrade_cement;136;CYM136
+Comtrade_cement;140;CAF140
+Comtrade_cement;144;LKA144
+Comtrade_cement;148;TCD148
+Comtrade_cement;152;CHL152
+Comtrade_cement;156;CHN156
+Comtrade_cement;162;CXR162
+Comtrade_cement;170;COL170
+Comtrade_cement;174;COM174
+Comtrade_cement;175;MYT175
+Comtrade_cement;178;COG178
+Comtrade_cement;180;COD180
+Comtrade_cement;184;COK184
+Comtrade_cement;188;CRI188
+Comtrade_cement;191;HRV191
+Comtrade_cement;192;CUB192
+Comtrade_cement;196;CYP196
+Comtrade_cement;200;CSK200
+Comtrade_cement;203;CZE203
+Comtrade_cement;204;BEN204
+Comtrade_cement;208;DNK208
+Comtrade_cement;212;DMA212
+Comtrade_cement;214;DOM214
+Comtrade_cement;218;ECU218
+Comtrade_cement;222;SLV222
+Comtrade_cement;226;GNQ226
+Comtrade_cement;230;ETH230
+Comtrade_cement;231;ETH231
+Comtrade_cement;232;ERI232
+Comtrade_cement;233;EST233
+Comtrade_cement;234;FRO234
+Comtrade_cement;238;FLK238
+Comtrade_cement;242;FJI242
+Comtrade_cement;246;FIN246
+Comtrade_cement;251;FRA250
+Comtrade_cement;254;GUF254
+Comtrade_cement;258;PYF258
+Comtrade_cement;262;DJI262
+Comtrade_cement;266;GAB266
+Comtrade_cement;268;GEO268
+Comtrade_cement;270;GMB270
+Comtrade_cement;275;PSE275
+Comtrade_cement;276;DEU276
+Comtrade_cement;278;DDR278
+Comtrade_cement;280;DEU280
+Comtrade_cement;288;GHA288
+Comtrade_cement;292;GIB292
+Comtrade_cement;296;KIR296
+Comtrade_cement;300;GRC300
+Comtrade_cement;304;GRL304
+Comtrade_cement;308;GRD308
+Comtrade_cement;312;GLP312
+Comtrade_cement;316;GUM316
+Comtrade_cement;320;GTM320
+Comtrade_cement;324;GIN324
+Comtrade_cement;328;GUY328
+Comtrade_cement;332;HTI332
+Comtrade_cement;340;HND340
+Comtrade_cement;344;HKG344
+Comtrade_cement;348;HUN348
+Comtrade_cement;352;ISL352
+Comtrade_cement;699;IND356
+Comtrade_cement;360;IDN360
+Comtrade_cement;364;IRN364
+Comtrade_cement;368;IRQ368
+Comtrade_cement;372;IRL372
+Comtrade_cement;376;ISR376
+Comtrade_cement;381;ITA380
+Comtrade_cement;384;CIV384
+Comtrade_cement;388;JAM388
+Comtrade_cement;392;JPN392
+Comtrade_cement;393;JPN392
+Comtrade_cement;398;KAZ398
+Comtrade_cement;400;JOR400
+Comtrade_cement;404;KEN404
+Comtrade_cement;408;PRK408
+Comtrade_cement;412;UNK000
+Comtrade_cement;410;KOR410
+Comtrade_cement;414;KWT414
+Comtrade_cement;417;KGZ417
+Comtrade_cement;418;LAO418
+Comtrade_cement;422;LBN422
+Comtrade_cement;426;LSO426
+Comtrade_cement;428;LVA428
+Comtrade_cement;430;LBR430
+Comtrade_cement;434;LBY434
+Comtrade_cement;438;LIE438
+Comtrade_cement;440;LTU440
+Comtrade_cement;442;LUX442
+Comtrade_cement;446;MAC446
+Comtrade_cement;450;MDG450
+Comtrade_cement;454;MWI454
+Comtrade_cement;457;MYS458
+Comtrade_cement;458;MYS458
+Comtrade_cement;459;MYS458
+Comtrade_cement;461;MYS458
+Comtrade_cement;462;MDV462
+Comtrade_cement;466;MLI466
+Comtrade_cement;470;MLT470
+Comtrade_cement;474;MTQ474
+Comtrade_cement;478;MRT478
+Comtrade_cement;480;MUS480
+Comtrade_cement;484;MEX484
+Comtrade_cement;496;MNG496
+Comtrade_cement;498;MDA498
+Comtrade_cement;499;MNE499
+Comtrade_cement;500;MSR500
+Comtrade_cement;504;MAR504
+Comtrade_cement;508;MOZ508
+Comtrade_cement;512;OMN512
+Comtrade_cement;516;NAM516
+Comtrade_cement;520;NRU520
+Comtrade_cement;524;NPL524
+Comtrade_cement;528;NLD528
+Comtrade_cement;530;ANT530
+Comtrade_cement;531;CUW531
+Comtrade_cement;533;ABW533
+Comtrade_cement;535;BES535
+Comtrade_cement;540;NCL540
+Comtrade_cement;548;VUT548
+Comtrade_cement;554;NZL554
+Comtrade_cement;558;NIC558
+Comtrade_cement;562;NER562
+Comtrade_cement;566;NGA566
+Comtrade_cement;570;NIU570
+Comtrade_cement;579;NOR578
+Comtrade_cement;580;MNP580
+Comtrade_cement;583;FSM583
+Comtrade_cement;584;MHL584
+Comtrade_cement;585;PLW585
+Comtrade_cement;586;PAK586
+Comtrade_cement;588;PAK586
+Comtrade_cement;590;PAN591
+Comtrade_cement;591;PAN591
+Comtrade_cement;592;PAN591
+Comtrade_cement;598;PNG598
+Comtrade_cement;600;PRY600
+Comtrade_cement;604;PER604
+Comtrade_cement;608;PHL608
+Comtrade_cement;616;POL616
+Comtrade_cement;620;PRT620
+Comtrade_cement;624;GNB624
+Comtrade_cement;626;TLS626
+Comtrade_cement;630;PRI630
+Comtrade_cement;634;QAT634
+Comtrade_cement;638;REU638
+Comtrade_cement;642;ROU642
+Comtrade_cement;643;RUS643
+Comtrade_cement;646;RWA646
+Comtrade_cement;647;JPN392
+Comtrade_cement;654;SHN654
+Comtrade_cement;658;
+Comtrade_cement;659;KNA659
+Comtrade_cement;660;AIA660
+Comtrade_cement;662;LCA662
+Comtrade_cement;666;SPM666
+Comtrade_cement;670;VCT670
+Comtrade_cement;678;STP678
+Comtrade_cement;682;SAU682
+Comtrade_cement;686;SEN686
+Comtrade_cement;688;SRB688
+Comtrade_cement;690;SYC690
+Comtrade_cement;694;SLE694
+Comtrade_cement;702;SGP702
+Comtrade_cement;703;SVK703
+Comtrade_cement;704;VNM704
+Comtrade_cement;705;SVN705
+Comtrade_cement;706;SOM706
+Comtrade_cement;710;ZAF710
+Comtrade_cement;716;ZWE716
+Comtrade_cement;717;ZWE716
+Comtrade_cement;720;YMD720
+Comtrade_cement;724;ESP724
+Comtrade_cement;728;SSD728
+Comtrade_cement;729;SDN729
+Comtrade_cement;732;ESH732
+Comtrade_cement;736;SDN736
+Comtrade_cement;740;SUR740
+Comtrade_cement;748;SWZ748
+Comtrade_cement;752;SWE752
+Comtrade_cement;757;CHE756
+Comtrade_cement;760;SYR760
+Comtrade_cement;762;TJK762
+Comtrade_cement;764;THA764
+Comtrade_cement;768;TGO768
+Comtrade_cement;776;TON776
+Comtrade_cement;780;TTO780
+Comtrade_cement;784;ARE784
+Comtrade_cement;788;TUN788
+Comtrade_cement;792;TUR792
+Comtrade_cement;795;TKM795
+Comtrade_cement;796;TCA796
+Comtrade_cement;798;TUV798
+Comtrade_cement;800;UGA800
+Comtrade_cement;804;UKR804
+Comtrade_cement;807;MKD807
+Comtrade_cement;810;SUN810
+Comtrade_cement;818;EGY818
+Comtrade_cement;826;GBR826
+Comtrade_cement;831;
+Comtrade_cement;832;
+Comtrade_cement;833;
+Comtrade_cement;834;TZA834
+Comtrade_cement;835;TZA834
+Comtrade_cement;836;TZA834
+Comtrade_cement;842;USA840
+Comtrade_cement;850;VIR850
+Comtrade_cement;854;BFA854
+Comtrade_cement;858;URY858
+Comtrade_cement;860;UZB860
+Comtrade_cement;862;VEN862
+Comtrade_cement;866;VNM704
+Comtrade_cement;868;VNM704
+Comtrade_cement;876;WLF876
+Comtrade_cement;882;WSM882
+Comtrade_cement;886;YEM886
+Comtrade_cement;887;YEM887
+Comtrade_cement;890;YUG890
+Comtrade_cement;891;SCG891
+Comtrade_cement;894;ZMB894
+former_constr;United Arab Emirates;ARE784
+former_constr;Afghanistan;AFG004
+former_constr;Antigua and Barbuda;ATG028
+former_constr;Anguilla;AIA660
+former_constr;Albania;ALB008
+former_constr;Armenia;ARM051
+former_constr;Netherlands Antilles;ANT530
+former_constr;Angola;AGO024
+former_constr;Argentina;ARG032
+former_constr;American Samoa;ASM016
+former_constr;Austria;AUT040
+former_constr;Australia;AUS036
+former_constr;Aruba;ABW533
+former_constr;Azerbaijan;AZE031
+former_constr;Bosnia and Herzegovina;BIH070
+former_constr;Barbados;BRB052
+former_constr;Bangladesh;BGD050
+former_constr;Belgium;BEL056
+former_constr;Burkina Faso;BFA854
+former_constr;Bulgaria;BGR100
+former_constr;Bahrain;BHR048
+former_constr;Burundi;BDI108
+former_constr;Benin;BEN204
+former_constr;Bermuda;BMU060
+former_constr;Brunei Darussalam;BRN096
+former_constr;Bolivia;BOL068
+former_constr;Brazil;BRA076
+former_constr;Bahamas;BHS044
+former_constr;Bhutan;BTN064
+former_constr;Botswana;BWA072
+former_constr;Belarus;BLR112
+former_constr;Belize;BLZ084
+former_constr;Canada;CAN124
+former_constr;Cocos (Keeling) Islands;CCK166
+former_constr;Congo, Democratic Rep. Of;COD180
+former_constr;Central African Republic;CAF140
+former_constr;Congo, Republic Of;COG178
+former_constr;Switzerland;CHE756
+former_constr;Cote d'Ivoire;CIV384
+former_constr;Cook Islands;COK184
+former_constr;Chile;CHL152
+former_constr;Cameroon;CMR120
+former_constr;China;CHN156
+former_constr;Colombia;COL170
+former_constr;Costa Rica;CRI188
+former_constr;Czechoslovakia;CSK200
+former_constr;Cuba;CUB192
+former_constr;Cape Verde;CPV132
+former_constr;Christmas Island;CXR162
+former_constr;Cyprus;CYP196
+former_constr;Czech Republic;CZE203
+former_constr;Germany;DEU276
+former_constr;German Democratic Republic;DDR278
+former_constr;West Germany;DEU280
+former_constr;Djibouti;DJI262
+former_constr;Denmark;DNK208
+former_constr;Dominica;DMA212
+former_constr;Dominican Republic;DOM214
+former_constr;Algeria;DZA012
+former_constr;Ecuador;ECU218
+former_constr;Estonia;EST233
+former_constr;Egypt;EGY818
+former_constr;Eritrea;ERI232
+former_constr;Spain;ESP724
+former_constr;Ethiopia;ETH231
+former_constr;Ethiopia (Former);ETH230
+former_constr;Finland;FIN246
+former_constr;Fiji Islands;FJI242
+former_constr;Falkland Islands (Malvinas);FLK238
+former_constr;Micronesia;FSM583
+former_constr;Faroe Islands;FRO234
+former_constr;France;FRA250
+former_constr;Gabon;GAB266
+former_constr;United Kingdom;GBR826
+former_constr;Grenada;GRD308
+former_constr;Georgia;GEO268
+former_constr;French Guiana;GUF254
+former_constr;Ghana;GHA288
+former_constr;Gibraltar;GIB292
+former_constr;Greenland;GRL304
+former_constr;Gambia;GMB270
+former_constr;Guinea;GIN324
+former_constr;Guadeloupe;GLP312
+former_constr;Equatorial Guinea;GNQ226
+former_constr;Greece;GRC300
+former_constr;Guatemala;GTM320
+former_constr;Guam;GUM316
+former_constr;Guinea-Bissau;GNB624
+former_constr;Guyana;GUY328
+former_constr;Honduras;HND340
+former_constr;Croatia;HRV191
+former_constr;Haiti;HTI332
+former_constr;Hungary;HUN348
+former_constr;Indonesia;IDN360
+former_constr;Ireland;IRL372
+former_constr;Israel;ISR376
+former_constr;India;IND356
+former_constr;British Indian Ocean Territory;IOT086
+former_constr;Iraq;IRQ368
+former_constr;Iran;IRN364
+former_constr;Iceland;ISL352
+former_constr;Italy;ITA380
+former_constr;Jamaica;JAM388
+former_constr;Jordan;JOR400
+former_constr;Japan;JPN392
+former_constr;Kenya;KEN404
+former_constr;Kyrgyzstan;KGZ417
+former_constr;Cambodia;KHM116
+former_constr;Kiribati;KIR296
+former_constr;Comoros;COM174
+former_constr;Saint Kitts and Nevis;KNA659
+former_constr;Korea, Dem. Ppl. Rep. (North);PRK408
+former_constr;Korea, Republic of (South);KOR410
+former_constr;Kuwait;KWT414
+former_constr;Cayman Islands;CYM136
+former_constr;Kazakhstan;KAZ398
+former_constr;Laos;LAO418
+former_constr;Lebanon;LBN422
+former_constr;Saint Lucia;LCA662
+former_constr;Liechtenstein;LIE438
+former_constr;Sri Lanka;LKA144
+former_constr;Liberia;LBR430
+former_constr;Lesotho;LSO426
+former_constr;Lithuania;LTU440
+former_constr;Latvia;LVA428
+former_constr;Luxembourg;LUX442
+former_constr;Libya;LBY434
+former_constr;Morocco;MAR504
+former_constr;Moldova;MDA498
+former_constr;Madagascar;MDG450
+former_constr;Marshall Islands;MHL584
+former_constr;Macedonia;MKD807
+former_constr;Mali;MLI466
+former_constr;Myanmar;MMR104
+former_constr;Mongolia;MNG496
+former_constr;Northern Mariana Islands;MNP580
+former_constr;Martinique;MTQ474
+former_constr;Mauritania;MRT478
+former_constr;Montserrat;MSR500
+former_constr;Malta;MLT470
+former_constr;Mauritius;MUS480
+former_constr;Maldives;MDV462
+former_constr;Malawi;MWI454
+former_constr;Mexico;MEX484
+former_constr;Malaysia;MYS458
+former_constr;Mozambique;MOZ508
+former_constr;Namibia;NAM516
+former_constr;New Caledonia;NCL540
+former_constr;Niger;NER562
+former_constr;Norfolk Island;NFK574
+former_constr;Nigeria;NGA566
+former_constr;Nicaragua;NIC558
+former_constr;Netherlands;NLD528
+former_constr;Norway;NOR578
+former_constr;Nepal;NPL524
+former_constr;Nauru;NRU520
+former_constr;Niue;NIU570
+former_constr;New Zealand;NZL554
+former_constr;Oman;OMN512
+former_constr;Panama;PAN591
+former_constr;Peru;PER604
+former_constr;French Polynesia;PYF258
+former_constr;Papua New Guinea;PNG598
+former_constr;Philippines;PHL608
+former_constr;Pakistan;PAK586
+former_constr;Poland;POL616
+former_constr;Saint Pierre and Miquelon;SPM666
+former_constr;Pitcairn Islands;PCN612
+former_constr;Puerto Rico;PRI630
+former_constr;Palestine;PSE275
+former_constr;Portugal;PRT620
+former_constr;Palau;PLW585
+former_constr;Paraguay;PRY600
+former_constr;Qatar;QAT634
+former_constr;Reunion;REU638
+former_constr;Romania;ROU642
+former_constr;Serbia;SRB688
+former_constr;Russian Federation;RUS643
+former_constr;Rwanda;RWA646
+former_constr;Saudi Arabia;SAU682
+former_constr;Solomon Islands;SLB090
+former_constr;Seychelles;SYC690
+former_constr;Sudan;SDN729
+former_constr;Sudan (Former);SDN736
+former_constr;Sweden;SWE752
+former_constr;Singapore;SGP702
+former_constr;Saint Helena;SHN654
+former_constr;Slovenia;SVN705
+former_constr;Slovakia;SVK703
+former_constr;Sierra Leone;SLE694
+former_constr;San Marino;SMR674
+former_constr;Senegal;SEN686
+former_constr;Somalia;SOM706
+former_constr;Suriname;SUR740
+former_constr;South Sudan;SSD728
+former_constr;Sao Tome and Principe;STP678
+former_constr;USSR;SUN810
+former_constr;El Salvador;SLV222
+former_constr;Syria;SYR760
+former_constr;Swaziland;SWZ748
+former_constr;Turks and Caicos Islands;TCA796
+former_constr;Chad;TCD148
+former_constr;Togo;TGO768
+former_constr;Thailand;THA764
+former_constr;Tajikistan;TJK762
+former_constr;Tokelau;TKL772
+former_constr;Timor-Leste;TLS626
+former_constr;Turkmenistan;TKM795
+former_constr;Tunisia;TUN788
+former_constr;Tonga;TON776
+former_constr;Turkey;TUR792
+former_constr;Trinidad and Tobago;TTO780
+former_constr;Tuvalu;TUV798
+former_constr;Taiwan;TWN158
+former_constr;Tanzania, United Rep. Of;TZA834
+former_constr;Ukraine;UKR804
+former_constr;Uganda;UGA800
+former_constr;United States of America;USA840
+former_constr;Uruguay;URY858
+former_constr;Uzbekistan;UZB860
+former_constr;Saint Vincent/Grenadines;VCT670
+former_constr;Venezuela;VEN862
+former_constr;British Virgin Islands;VGB092
+former_constr;US Virgin Islands;VIR850
+former_constr;Viet Nam;VNM704
+former_constr;Vanuatu;VUT548
+former_constr;Wallis and Futuna Islands;WLF876
+former_constr;Samoa;WSM882
+former_constr;Yemen;YEM887
+former_constr;North Yemen;YEM886
+former_constr;South Yemen;YMD720
+former_constr;Mayotte;MYT175
+former_constr;Yugoslavia SFR;YUG890
+former_constr;South Africa;ZAF710
+former_constr;Zambia;ZMB894
+former_constr;Zimbabwe;ZWE716
+former_constr;Cura鏰o;CUW531
+former_constr;Hong Kong;HKG344
+former_constr;Montenegro;MNE499
+former_constr;Serbia (and Montenegro);SCG891
+former_constr;Kosovo;UNK000
+former_constr;Macau;MAC446
+former_constr;Monaco;MCO492
+former_constr;Western Sahara;ESH732
+former_constr;Bonaire;BES535
+former_constr;Belgium-Luxemburg;BLGLUX
+former_constr;Andorra;AND020
+SNL;Dem. Rep. Congo;COD180

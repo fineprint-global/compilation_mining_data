@@ -1,0 +1,142 @@
+source;source_unit_id;unit_id
+WMD;metr. t;t
+WMD;metr. tons;t
+WMD;kg;Kg
+WMD;ct;ct
+WMD;ct.;ct
+WMD;Mio m3;Mcm
+WMD;Mio m³;Mcm
+BGS;Carats;ct
+BGS;kilograms;Kg
+BGS;kilograms (metal content);Kg
+BGS;million cubic metres;Mcm
+BGS;tonnes (Al2O3 content);t
+BGS;tonnes (K20 content);t
+BGS;tonnes (metal content);t
+BGS;tonnes (metric);t
+USGS;(Kilograms);Kg
+USGS;(Kilograms, contained selenium);Kg
+USGS;(Kilograms, contained tellurium);Kg
+USGS;(kilograms);Kg
+USGS;(Kilograms, gold content);Kg
+USGS;(Kilograms, niobium content);Kg
+USGS;(Metric tons of contained molybdenum);t
+USGS;(Metric tons of contained nickel);t
+USGS;(Metric tons of gross weight);t
+USGS;(Metric tons of rare earth oxide equivalent);t
+USGS;(Metric tons of rare-earth oxide equivalent);t
+USGS;(Metric tons);t
+USGS;(metric tons);t
+USGS;(Metric tons, antimony content unless otherwise specified);t
+USGS;(Metric tons, cobalt content);t
+USGS;(Metric tons, gross weight);t
+USGS;(Gross weight, metric tons);t
+USGS;(Metric tons, lead content);t
+USGS;(Metric tons, Nb content);t
+USGS;(Metric tons, tungsten content);t
+USGS;(Metric tons, vanadium content);t
+USGS;(Metric tons, zinc content of concentrate and direct shipping ore, unless otherwise specified);t
+USGS;(Metric tons, zinc content of concentrate and direct shipping, unless otherwise specified);t
+USGS;(Metric tons, antimony content);t
+USGS;(Thousand carats);Kct
+USGS;(Thousand carats, natural unless otherwise specified);Kct
+USGS;(Thousand metric tons of K2O equivalent);Kt
+USGS;(Thousand metric tons);Kt
+USGS;Carats;ct
+USGS;kilograms;Kg
+USGS;kilograms (metal content);Kg
+USGS;million cubic metres;Mcm
+USGS;tonnes;t
+USGS;tonnes (Al2O3 content);t
+USGS;tonnes (K20 content);t
+USGS;tonnes (metal content);t
+USGS;tonnes (metric);t
+USGS;tonnes (sulphur content);t
+USGS;(Kilograms of contained selenium);Kg
+USGS;(Kilograms of contained tellurium);Kg
+USGS;(Kilograms, rhenium content);Kg
+USGS;(Metric tons, antimony content, unless otherwise specified);t
+USGS;(Metric tons, contained molybdenum);t
+USGS;(Metric tons, contained vanadium);t
+USGS;(Metric tons, rare-earth-oxide equivalent);t
+USGS;(Metric tons, tin content);t
+USGS;(Metric tons, zinc content of concentrate and direct shipping ore unless otherwise specified);t
+USGS;(Thousand metric tons, K2O equivalent);Kt
+USGS;(Thousand metric tons, sulfur content);Kt
+UNSD_Code;WSO;t
+UNSD_Code;WSR;Kt
+UNSD_Code;WSU;Mt
+UNSD_Code;CSO;cm
+UNSD_Code;CSR;Kcm
+UNSD_Code;CSU;Mcm
+UNSD_Code;CSX;Gcm
+UNSD_Code;HSO;TJ
+IEA;kt;Kt
+IEA;TJ-gross;TJ
+EIA;thousand short tons;Kst
+EIA;billion cubic feet;Gcf
+EIA;thousand barrels per day;Kbpd
+wu_former;1;t
+wu_former;2;Kt
+wu_former;3;Mt
+wu_former;12;Kg
+wu_former;25;ct
+wu_former;13;Kct
+wu_former;15;st
+wu_former;16;Kst
+wu_former;17;Mst
+wu_former;33;cm
+wu_former;34;Kcm
+wu_former;4;cm
+wu_former;5;Kcm
+wu_former;6;Mcm
+wu_former;7;Gcm
+wu_former;28;Gcf
+wu_former;18;Tcf
+wu_former;19;Kbpd
+wu_former;14;TJ
+USGS_ext;76-pound flasks;flask
+USGS_ext;cubic feet;cf
+USGS_ext;gram;g
+USGS_ext;grams;g
+USGS_ext;million carat;Mct
+USGS_ext;square meter;sm
+USGS_ext;square meters;sm
+USGS_ext;thousand square meters;Ksm
+USGS_ext;tousand meters;Ksm
+USGS_ext;tousand square meters;Ksm
+WMD_ext;carats;ct
+WMD_ext;cm;cm
+WMD_ext;cm ;cm
+WMD_ext;cubic meters;cm
+WMD_ext;cubic yds;cyd
+WMD_ext;dry metric tons;t
+WMD_ext;gram;g
+WMD_ext;grams;g
+WMD_ext;kg;Kg
+WMD_ext;kt;Kt
+WMD_ext;kt ;Kt
+WMD_ext;Kt;Kt
+WMD_ext;long tons;lt
+WMD_ext;metric carats;ct
+WMD_ext;metric tonnes;t
+WMD_ext;metric tons;t
+WMD_ext;million cm;Mcm
+WMD_ext;million cubic meters;Mcm
+WMD_ext;million metric tonnes;Mt
+WMD_ext;million metric tons;Mt
+WMD_ext;million tonnes;Mt
+WMD_ext;million tons;Mt
+WMD_ext;Mt;Mt
+WMD_ext;Quilates;ct
+WMD_ext;square feet;sf
+WMD_ext;square meters;sm
+WMD_ext;thousand cm;Kcm
+WMD_ext;thousand metric tons;Kt
+WMD_ext;thousand tonnes;Kt
+WMD_ext;thousand tons;Kt
+WMD_ext;ton;t
+WMD_ext;tonne;t
+WMD_ext;tonnen;t
+WMD_ext;tonnes;t
+WMD_ext;tons;t

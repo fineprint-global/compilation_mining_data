@@ -183,7 +183,6 @@ detailed;Sintering iron ore;O.Fe
 detailed;Ore;O.bulk
 detailed;Concentrate;Con.bulk
 detailed;Nickel Concentrate;Con.Ni
-detailed;Clean coal;F.coc
 detailed;Coke;F.coc
 detailed;Tin;Me.Sn
 detailed;thermal coal;F.stc

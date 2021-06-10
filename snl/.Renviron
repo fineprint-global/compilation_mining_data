@@ -1,0 +1,10 @@
+GS_USER=fineprint
+GS_PASS=(allourdata)
+db_host=137.208.57.209
+db_port=8585
+db_tbl_mine_points=snl_mine
+db_tbl_mine_polygons=snl_mine_area
+db_name=vector_mines
+db_password=tlQ0a6aV08tSim43yCgRWRRtpRyQFScl20tqTYRv3V8NWevcg93zMhcdm15VqdTK
+db_user=app
+CKAN_KEY=281c423c-4aa0-4ef4-8bf0-08b791512df1

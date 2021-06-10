@@ -1,4 +1,4 @@
-material_category;material_category_2;material_id;material_name;material_id_agg;material_name_agg;associated_commodity;formerly_associated_wu_id
+material_category;material_category_2;material_id;material_name;material_id_agg;material_name_agg;associated_mat_id;formerly_associated_wu_id
 mineral;metal ore;O.Al;Bauxite;;;Me.Al;10
 mineral;metal ore;O.Be;Beryl;;;Me.Be;11
 mineral;metal ore;O.bulk;Bulk metal ore;;;;
@@ -20,7 +20,7 @@ mineral;metal ore;O.CeLaPO4;Monazite;;;Me.rem;340
 mineral;metal ore;O.Ni;Nickel dominant ore;;;Me.Ni;28
 mineral;metal ore;O.oxi;Oxide ore;;;;
 mineral;metal ore;O.pgm;Platinum-group metal ore;;;Me.pgm;30
-mineral;metal ore;O.K2O;Potash;;;;86
+mineral;metal ore;O.K2O;Potash;;;Me.K2O;86
 mineral;metal ore;O.rem;Rare-earth mineral;;;Me.rem;31
 mineral;metal ore;O.TiO2;Rutile;;;Me.Ti;38
 mineral;metal ore;O.Ag;Silver dominant ore;;;Me.Ag;34
@@ -28,6 +28,7 @@ mineral;metal ore;O.Sr;Strontium mineral;;;Me.Sr;35
 mineral;metal ore;O.sul;Sulphide ore;;;;
 mineral;metal ore;O.Ta;Tantalite, tantalum ore;;;Me.Ta;29
 mineral;metal ore;O.Sn;Tin dominant ore;;;Me.Sn;37
+mineral;metal ore;O.Ti;Titanium ore;;;Me.Ti;38
 mineral;metal ore;O.W;Tungsten ore;;;Me.W;39
 mineral;metal ore;O.U;Uranium ore;;;Me.U;40
 mineral;metal ore;O.Zn;Zinc dominant ore;;;Me.Zn;42
@@ -49,10 +50,12 @@ mineral;non-metallic mineral;M.coc;Common clay, clay for bricks etc.;;;;105
 mineral;non-metallic mineral;M.con;Construction Minerals nec;;;;109
 mineral;non-metallic mineral;M.crs;Crushed stone;;;;68
 mineral;non-metallic mineral;M.dia;Diatomite;;;;76
+mineral;non-metallic mineral;M.dim;Dimension stone n.e.c.;;;;
 mineral;non-metallic mineral;M.dol;Dolomite;;;;63
 mineral;non-metallic mineral;M.evs;Evaporated salt;;;;345
 mineral;non-metallic mineral;M.fel;Feldspar;;;;77
 mineral;non-metallic mineral;M.fic;Fire, refactory and flint clay, Andalusite, kyanite and sillimanite;;;;51
+mineral;non-metallic mineral;M.flu;Fluorspar;;;;78
 mineral;non-metallic mineral;M.fue;Fuller's earth;;;;52
 mineral;non-metallic mineral;M.glu;Gluesand;;;;95
 mineral;non-metallic mineral;M.gra;Graphite, natural;;;;79
@@ -71,8 +74,9 @@ mineral;non-metallic mineral;M.mag;Magnesite;;;;81
 mineral;non-metallic mineral;M.mat;Marble, travertines etc.;;;;100
 mineral;non-metallic mineral;M.mas;Marl and shell;;;;351
 mineral;non-metallic mineral;M.mic;Mica;;;;82
-mineral;non-metallic mineral;M.nep;Nepheline syenite;;;;341
 mineral;non-metallic mineral;M.och;Ochre and pigment earths;;;;83
+mineral;non-metallic mineral;M.onm;Other non-metallic minerals n.e.c.;;;;
+mineral;non-metallic mineral;M.orn;Ornamental stone;;;;
 mineral;non-metallic mineral;M.pea;Peat for agricultural use;;;;69
 mineral;non-metallic mineral;M.peg;Pegmatite sand;;;;84
 mineral;non-metallic mineral;M.per;Perlite;;;;97
@@ -90,6 +94,7 @@ mineral;non-metallic mineral;M.slc;Slate clay;;;;56
 mineral;non-metallic mineral;M.sla;Slate including fill (incl. roof slate);;;;67
 mineral;non-metallic mineral;M.soc;Sodium carbonate, natural;;;;343
 mineral;non-metallic mineral;M.spc;Special clay;;;;55
+mineral;non-metallic mineral;M.sto;Stone n.e.c.;;;;
 mineral;non-metallic mineral;M.tal;Talc (steatite, soapstone, pyrophyllite);;;;92
 mineral;non-metallic mineral;M.tas;Talcous slate;;;;93
 mineral;non-metallic mineral;M.tur;Turfaceous rock;;;;103
@@ -97,7 +102,8 @@ mineral;non-metallic mineral;M.ver;Vermiculite;;;;316
 mineral;non-metallic mineral;M.wol;Wollastonite;;;;317
 mineral;non-metallic mineral ore;O.dig;Diamond ore, gems;O.dia;Diamond ore (unspecified);Nm.dig;74
 mineral;non-metallic mineral ore;O.dii;Diamond ore, industrial;O.dia;Diamond ore (unspecified);Nm.dii;75
-mineral;non-metallic mineral ore;O.flu;Fluorspar ore;;;Nm.flu;78
+mineral;non-metallic mineral ore;O.gem;Gemstone-bearing mineral ore;;;Nm.gem;
+mineral;non-metallic mineral;O.nep;Nepheline syenite;;;Nm.nep;341
 mineral;non-metallic mineral ore;O.P;Phosphate rock;;;Nm.P;85
 mineral;non-metallic mineral ore;O.FeS;Pyrite;;;Nm.S;89
 mineral;non-metallic mineral ore;O.S;Sulphur ore;;;Nm.S;89
@@ -209,12 +215,12 @@ commodity;metal;Me.Zn;Zinc;;;;42
 commodity;metal;Me.Zr;Zirconium;;;;43
 commodity;non-metallic mineral;Nm.dig;Diamonds, gems;Nm.dia;Diamonds (unspecified);;74
 commodity;non-metallic mineral;Nm.dii;Diamonds, industrial;Nm.dia;Diamonds (unspecified);;75
-commodity;non-metallic mineral;Nm.flu;Fluorspar;;;;78
-commodity;non-metallic mineral;Nm.jad;Jade;;;;
-commodity;non-metallic mineral;;;Nm.PO;Phosphate and Phosphorus oxides;;85
+commodity;non-metallic mineral;Nm.gem;Gemstones n.e.c.;;;;
+commodity;non-metallic mineral;Nm.nep;Nepheline;;;;341
+commodity;non-metallic mineral;Nm.PO;Phosphate and Phosphorus oxides;;;Nm.P;85
 commodity;non-metallic mineral;Nm.P;Phosphorus;;;;85
 commodity;non-metallic mineral;Nm.SiO2;Silica;;;Me.Si;58
-commodity;non-metallic mineral;Nm.S;Sulphur;;;;
+commodity;non-metallic mineral;Nm.S;Sulphur;;;;89
 commodity;non-metallic mineral;Nm.H2SO4;Sulphuric acid;;;;
 commodity;non-metallic mineral;Nm.SO2;Sulphur dioxide;;;;
 other_product;ore concentrate;Con.Al;Aluminium concentrate;;;Me.Al;10
@@ -232,19 +238,24 @@ other_product;ore concentrate;Con.Li;Lithium concentrate;;;Me.Li;23
 other_product;ore concentrate;Con.MnCO3;Manganese carbonate concentrate;;;Me.Mn;25
 other_product;ore concentrate;Con.MnO;Manganese oxide concentrate;;;Me.Mn;25
 other_product;ore concentrate;Con.Mo;Molybdenum  concentrate;;;Me.Mo;27
+other_product;ore concentrate;Con.nep;Nepheline concentrate;;;Nm.nep;341
 other_product;ore concentrate;Con.Ni;Nickel concentrate;;;Me.Ni;28
 other_product;ore concentrate;Con.Pd;Palladium concentrate;;;Me.Ni;30
 other_product;ore concentrate;Con.pgm;PGM concentrate;;;Me.pgm;30
 other_product;ore concentrate;Con.rem;Rare-earth concentrate;;;Me.rem;31
 other_product;ore concentrate;Con.Ag;Silver concentrate;;;Me.Ag;34
+other_product;ore concentrate;Con.S;Sulphur concentrate;;;Nm.S;89
 other_product;ore concentrate;Con.Ta;Tantalum concentrate;;;Me.Ta;29
+other_product;ore concentrate;Con.Ti;Titanium concentrate;;;Me.Ti;38
 other_product;ore concentrate;Con.W;Tungsten concentrate;;;Me.W;39
 other_product;ore concentrate;Con.U3O8;Uranium oxide concentrate;;;Me.U;40
 other_product;ore concentrate;Con.Zn;Zinc  concentrate;;;Me.Zn;42
 other_product;ore concentrate;Con.Zr;Zirconium concentrate;;;Me.Zr;43
 other_product;metal alloy;All.FeCr;Ferrochrome;All.Cr;Chromium alloys;;
 other_product;metal alloy;All.FeMn;Ferromanganese;All.Mn;Manganese alloys;;
+other_product;metal alloy;All.FeMo;Ferromolybdenum;;;;
 other_product;metal alloy;All.FeNi;Ferronickel;;;;
+other_product;metal alloy;All.FeSi;Ferrosilicon;;;;
 other_product;metal alloy;All.FeW;Ferrotungsten;;;;
 other_product;metal alloy;All.FeV;Ferrovanadium;;;;
 other_product;metal alloy;;;All.Cr;Chromium alloys;;
@@ -253,6 +264,7 @@ other_product;metal alloy;;;All.Sn;Manganese alloys;;
 other_product;metal product;Oth.cuca;Copper cathode;;;Me.Cu;17
 other_product;metal product;Oth.cuce;Copper cement;;;Me.Cu;17
 other_product;metal product;Oth.pig;Pig iron;;;Me.Fe;7
+other_product;metal ore product;Oth.tis;Titanium slag;;;;38
 other_product;metal ore product;Oth.sif;Sinter feed;;;;
 ff_mineral;coal & peat;F.coal;Coal (unspecified);;;;
 ff_mineral;coal & peat;F.lig;Lignite;F.stc;Steam coal;;326
@@ -261,7 +273,6 @@ ff_mineral;coal & peat;F.ant;Anthracite;F.stc;Steam coal;;327
 ff_mineral;coal & peat;F.coc;Coking Coal;;;;328
 ff_mineral;coal & peat;F.obc;Other bituminous coal;F.stc;Steam coal;;329
 ff_mineral;coal & peat;F.pea;Peat for energy use;;;;6
-ff_mineral;coal & peat;F.pea;Peat for agricultural use;;;;69
 ff_mineral;oil & gas;F.cro;Crude oil;;;;3
 ff_mineral;oil & gas;F.nag;Natural gas;;;;4
 ff_mineral;oil & gas;F.ngl;Natural gas liquids;;;;5
