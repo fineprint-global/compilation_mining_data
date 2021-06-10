@@ -72,7 +72,7 @@ rmarkdown::render("./detailed_data/02_scripts/03_intermediate_check.Rmd",
 
 
 ## Aggregation
-source("./detailed_data/02_scripts/04b_aggregation.R")
+source("./detailed_data/02_scripts/04a_aggregation.R")
 
 
 
