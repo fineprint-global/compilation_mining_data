@@ -1,0 +1,147 @@
+---
+title: "Coal coverage aggregated"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, error=TRUE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(rlang)
+library(scales)
+library(DT)
+
+```
+
+<br> 
+
+```{r , echo = FALSE, message = FALSE}
+
+### read files and load data
+
+## harmonized data file (detailed data)
+detailed <- read_rds("./detailed_data/03_intermediate/gaps_filled.rds")
+
+# sheets from detailed data
+general <- detailed$general
+sheet_min <- detailed$minerals_ores_conce
+sheet_com <- detailed$commodities
+
+
+## national accounts
+
+# get the latest file for national accounts from folder
+source("./detailed_data/02_scripts/functions/lastfile.R")
+
+lastfile <- my_lastfile("./detailed_data/01_input/05_other_data/", "data_converted")
+
+nat_acc <- read_rds(lastfile)
+
+# nat_acc <- read_delim(
+#   lastfile, 
+#   delim = ";", 
+#   col_types = cols(year = "i", unit_id = "c")
+#   )
+
+
+## IDs
+mat_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/material_ids.csv", delim = ";")
+
+source_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
+
+```
+
+
+```{r , echo = FALSE, message = FALSE}
+
+#get two tables: 
+#one showing the coverage of aggregated coal produced per country
+#one showing the coverage of aggregated coal produced globally
+
+
+#all coal-related material ids
+ids <- mat_ids %>% filter(., material_category_2 == "coal & peat" & material_id != "F.pea") %>%
+  select(material_id)
+
+
+#only include the national account numbers for coal, and aggregate them for every category of coal
+nat_acc <- nat_acc %>%
+  filter(material_id %in% ids[[1]] & year > 1999) %>%
+  select(c(alphanumiso, year, value)) %>%
+  group_by(alphanumiso, year) %>% 
+  summarize(value = sum(value))
+
+
+# include country_ids in sheet_min
+agg_min <- sheet_min %>%
+  left_join(.,
+            detailed$general %>%
+              distinct(mine_fac, alphanumiso) %>%
+              mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
+  )
+
+
+
+# aggregate, and filter for type_mineral == "Clean coal" only
+agg_min <- agg_min %>%
+  filter(!(type_mineral %in% c("Ore mined", "Ore processed", "Coal mined"))) %>%
+  group_by(alphanumiso, year) %>%
+  summarise(value = sum(value, na.rm = TRUE))
+
+
+
+
+# join with national accounts
+agg_min <- agg_min %>%
+  left_join(.,
+            nat_acc,
+            by = c("alphanumiso", "year"),
+            suffix = c(".det", ".nat")
+  )
+
+# share
+agg_min <- agg_min %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2)
+  )
+
+
+
+# clean table
+agg_min <- agg_min %>%
+  filter(
+    #!(year %in% c(2018, 2019)),
+    !is.na(alphanumiso),
+    !is.na(value.nat)
+  )
+
+agg_min
+
+# spread by country_id and material_id
+min_cov1 <- agg_min %>%
+  mutate(share = percent(share, accuracy = 1)) %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year)) #%>%
+#  pivot_wider(., names_from = year, values_from = share) %>%
+#  # insert national totals again in order to rank properly (couldn't be kept, because of pivot function)
+#  left_join(., agg_min %>% filter(year == 2015) %>% select(-value.det, -share, -year)) %>%
+#  arrange(min_ore_con, desc(value.nat))
+
+# table for Rmd output
+datatable(min_cov1, rownames = FALSE, caption = "Relative coverage by material and country")
+
+
+
+
+
+
+
+```
+
+
