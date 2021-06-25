@@ -31,8 +31,7 @@ detailed <- read_rds("./detailed_data/03_intermediate/gaps_filled.rds")
 general <- detailed$general
 sheet_min <- detailed$minerals_ores_conce
 sheet_com <- detailed$commodities
-
-
+filter(sheet_min, mine_fac == "Martabe")
 ## national accounts
 
 # get the latest file for national accounts from folder
@@ -121,22 +120,40 @@ agg_min <- agg_min %>%
     !is.na(value.nat)
   )
 
-agg_min
+
 
 # spread by country_id and material_id
-min_cov1 <- agg_min %>%
+coal_cov1 <- agg_min %>%
   mutate(share = percent(share, accuracy = 1)) %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year)) %>%
+  pivot_wider(., names_from = year, values_from = share) %>%
+  # insert national totals again in order to rank properly (couldn't be kept, because of pivot function)
+  left_join(., agg_min %>% filter(year == 2015) %>% select(-value.det, -share, -year)) %>%
+  arrange(desc(value.nat))
+
+# table for Rmd output
+datatable(coal_cov1, rownames = FALSE, caption = "Relative coverage by country")
+
+
+
+
+# spread by global totals for material_ids
+coal_cov2 <- agg_min %>%
+  group_by(year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2),
+    share = percent(share, accuracy = 1)
+  ) %>%
   select(-value.det, -value.nat) %>%
   arrange(desc(year)) #%>%
 #  pivot_wider(., names_from = year, values_from = share) %>%
-#  # insert national totals again in order to rank properly (couldn't be kept, because of pivot function)
-#  left_join(., agg_min %>% filter(year == 2015) %>% select(-value.det, -share, -year)) %>%
-#  arrange(min_ore_con, desc(value.nat))
+#  arrange(min_ore_con)
 
 # table for Rmd output
-datatable(min_cov1, rownames = FALSE, caption = "Relative coverage by material and country")
-
-
+datatable(coal_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
 
 
 
