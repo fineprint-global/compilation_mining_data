@@ -31,7 +31,7 @@ detailed <- read_rds("./detailed_data/03_intermediate/gaps_filled.rds")
 general <- detailed$general
 sheet_min <- detailed$minerals_ores_conce
 sheet_com <- detailed$commodities
-filter(sheet_min, mine_fac == "Martabe")
+
 ## national accounts
 
 # get the latest file for national accounts from folder
@@ -60,7 +60,7 @@ source_ids <- read_delim("./detailed_data/01_input/02_lists_and_concordance_tabl
 
 #get two tables: 
 #one showing the coverage of aggregated coal produced per country
-#one showing the coverage of aggregated coal produced globally
+#one showing the coverage of aggregated coal produced globally, once with and once without china
 
 
 #all coal-related material ids
@@ -138,7 +138,7 @@ datatable(coal_cov1, rownames = FALSE, caption = "Relative coverage by country")
 
 
 
-# spread by global totals for material_ids
+# spread by global totals for coal aggregated
 coal_cov2 <- agg_min %>%
   group_by(year) %>%
   summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
@@ -148,14 +148,49 @@ coal_cov2 <- agg_min %>%
     share = percent(share, accuracy = 1)
   ) %>%
   select(-value.det, -value.nat) %>%
-  arrange(desc(year)) #%>%
-#  pivot_wider(., names_from = year, values_from = share) %>%
-#  arrange(min_ore_con)
+  arrange(desc(year)) 
+
+
+# spread by global totals without china for coal aggregated
+coal_cov3 <- agg_min %>%
+  filter(., alphanumiso != "CHN156") %>%
+  group_by(year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share_wo_china = value.det / value.nat,
+    share_wo_china = round(share_wo_china, digits = 2),
+    share_wo_china = percent(share_wo_china, accuracy = 1)
+  ) %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year)) 
+
+
+#join the table for global coverage with the table for global coverage without china
+coal_cov4 <- left_join(coal_cov2, coal_cov3, by = "year")
 
 # table for Rmd output
-datatable(coal_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
+datatable(coal_cov4, rownames = FALSE, caption = "Relative coverage of global total, share is global total, share_wo_china is global total without China", options = list(columnDefs = list(list(className = 'dt-center', targets = 0:2))))
 
 
+
+```
+
+```{r , echo = FALSE, message = FALSE}
+## build heatmap of the coverage per country
+plot_data <- agg_min %>%
+  select(-value.det, -value.nat) %>%
+  left_join(., agg_min %>% filter(year == 2015) %>% select(-value.det, -share, -year)) %>%
+  filter(., value.nat >= 62344000) %>%
+  arrange((value.nat))
+
+
+plot_data$ord_countries <- factor(plot_data$alphanumiso, ordered=TRUE, levels = c("CAN124", "COL170", "KAZ398", "ZAF710", "RUS643", "IDN360", "AUS036", "IND356", "USA840", "CHN156"))
+
+#uncomment this to generate the plot
+# ggplot(plot_data) + 
+#   geom_tile(aes(x = year, y = ord_countries, fill = share)) + 
+#   geom_text(aes(x = year, y = ord_countries, label = share)) + 
+#   scale_fill_gradient2(low = "red", mid = "white", high = "steelblue")
 
 
 
