@@ -22,12 +22,9 @@ lapply(req_packages, install.packages)
 library(tidyverse)
 
 
-
-
-
 #### Load all scripts ---------
 
-
+getwd()
 
 ## Check columns 
   ## i.e. in Excel file before harmonization (i.e. number of columns, names of columns, order of columns)
@@ -90,5 +87,17 @@ rmarkdown::render("./detailed_data/02_scripts/05_coverage.Rmd",
                   intermediates_dir = "./detailed_data/04_output/05_coverage/",
                   output_file = paste0("coverage_", substr(Sys.time(), 1, 10),".html")
                   )
+
+
+
+## Comparison of data coverage against national accounts with respective HTML output for COAL
+## (html output is saved in `./detailed_data/04_output/coverage/coverage_coal`)
+wd <- getwd()
+rmarkdown::render("./detailed_data/02_scripts/coverage_other/05_coverage_coal_aggregated.Rmd",
+                  knit_root_dir = wd, 
+                  output_dir = "./detailed_data/04_output/05_coverage/coverage_coal", 
+                  intermediates_dir = "./detailed_data/04_output/05_coverage/coverage_coal",
+                  output_file = paste0("coverage_coal_", substr(Sys.time(), 1, 10),".html")
+)
 
 

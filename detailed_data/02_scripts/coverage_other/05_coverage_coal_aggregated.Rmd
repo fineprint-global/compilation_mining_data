@@ -186,13 +186,18 @@ plot_data <- agg_min %>%
 
 plot_data$ord_countries <- factor(plot_data$alphanumiso, ordered=TRUE, levels = c("CAN124", "COL170", "KAZ398", "ZAF710", "RUS643", "IDN360", "AUS036", "IND356", "USA840", "CHN156"))
 
-#uncomment this to generate the plot
-# ggplot(plot_data) + 
-#   geom_tile(aes(x = year, y = ord_countries, fill = share)) + 
-#   geom_text(aes(x = year, y = ord_countries, label = share)) + 
-#   scale_fill_gradient2(low = "red", mid = "white", high = "steelblue")
+ 
+png(file = "./detailed_data/04_output/05_coverage/coverage_coal/coal_coverage_heatmap.png",   
+    width = 1200, 
+    height = 900) 
+
+ggplot(plot_data) +
+  geom_tile(aes(x = year, y = ord_countries, fill = share)) +
+  geom_text(aes(x = year, y = ord_countries, label = share)) +
+  scale_fill_gradient2(low = "red", mid = "white", high = "steelblue")
 
 
+dev.off()
 
 ```
 

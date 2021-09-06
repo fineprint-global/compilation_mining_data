@@ -19,7 +19,9 @@ mine_list <- unique(sheet_min$mine_fac)
 
 
 general <- detailed$general %>% filter(., mine_fac %in% mine_list)
+
 sub_sites <- detailed$sub_sites %>% filter(., mine_fac %in% mine_list)
+
 waste <- detailed$waste %>% 
   filter(., mine_fac %in% mine_list) %>%
   select(!c(commodity, production_share))
