@@ -177,15 +177,19 @@ datatable(coal_cov4, rownames = FALSE, caption = "Relative coverage of global to
 #create table with national coal accounts of all countries 
 national_production_coal <- nat_acc %>% 
   pivot_wider(names_from = year, values_from = value) %>%
-  arrange(desc(`2015`))
+  arrange(desc(`2015`)) %>% 
+  #join the coverage for the year 2015 to the dataframe
+  left_join(., select(coal_cov1, alphanumiso,`2015`), by = "alphanumiso") %>%
+  rename(., `coverage_2015` = `2015.y`, 
+         `2015`= `2015.x`)
 
-national_production_coal
+national_production_coal <- national_production_coal[,order(c(1,ncol(national_production_coal),c(seq(ncol(national_production_coal)-1,2,by=-1))))]
+
 
 
 # table for Rmd output
-datatable(coal_cov4, rownames = FALSE, caption = "Total national coal production", options = list(columnDefs = list(list(className = 'dt-center', targets = 0:2))))
+datatable(national_production_coal, rownames = FALSE, caption = "Total national coal production, ordered by 2015 production", options = list(columnDefs = list(list(className = 'dt-center', targets = 0:ncol(national_production_coal)-1))))
 
-###this code chunk is still incomplete !!! 
 ```
 
 
