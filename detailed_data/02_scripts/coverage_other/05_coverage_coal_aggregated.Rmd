@@ -173,6 +173,23 @@ datatable(coal_cov4, rownames = FALSE, caption = "Relative coverage of global to
 ```
 
 ```{r , echo = FALSE, message = FALSE}
+
+#create table with national coal accounts of all countries 
+national_production_coal <- nat_acc %>% 
+  pivot_wider(names_from = year, values_from = value) %>%
+  arrange(desc(`2015`))
+
+national_production_coal
+
+
+# table for Rmd output
+datatable(coal_cov4, rownames = FALSE, caption = "Total national coal production", options = list(columnDefs = list(list(className = 'dt-center', targets = 0:2))))
+
+###this code chunk is still incomplete !!! 
+```
+
+
+```{r , echo = FALSE, message = FALSE}
 ## build heatmap of the coverage per country
 plot_data <- agg_min %>%
   select(-value.det, -value.nat) %>%
