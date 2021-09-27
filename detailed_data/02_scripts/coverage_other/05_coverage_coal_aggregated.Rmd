@@ -168,7 +168,37 @@ coal_cov4 <- left_join(coal_cov2, coal_cov3, by = "year")
 # table for Rmd output
 datatable(coal_cov4, rownames = FALSE, caption = "Relative coverage of global total, share is global total, share_wo_china is global total without China", options = list(columnDefs = list(list(className = 'dt-center', targets = 0:2))))
 
+# line chart for Rmd output
 
+# spread by global totals for coal aggregated
+coal_cov_plot_global <- agg_min %>%
+  group_by(year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2), 
+    global_or_wo_china = "global")
+
+
+# spread by global totals without china for coal aggregated
+coal_cov_plot_wo_china <- agg_min %>%
+  filter(., alphanumiso != "CHN156") %>%
+  group_by(year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share_wo_china = value.det / value.nat,
+    share_wo_china = round(share_wo_china, digits = 2),
+    global_or_wo_china = "wo_china")
+
+#combine the two dfs
+coal_cov_plot <- bind_rows(coal_cov_plot_global, coal_cov_plot_wo_china)
+coal_cov_plot$share <- coalesce(coal_cov_plot$share , coal_cov_plot$share_wo_china)
+
+ggplot(coal_cov_plot, aes(x=year, y=share, group=global_or_wo_china)) +
+  geom_line(aes(linetype=global_or_wo_china, color=global_or_wo_china), size = 1.5)+
+  geom_point(aes(color=global_or_wo_china))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
 
 ```
 
