@@ -167,6 +167,36 @@ DT::datatable(non_fit)
 
 <br> 
 
+#### Mines which have the same coordinates in sheet_general and sheet_sub_sites. 
+
+```{r, echo = FALSE, message = FALSE}
+
+### check for double entries of coordinates in sheet_general and sheet_sub_sites
+
+general <- detailed$general
+sub_sites <- detailed$sub_sites
+
+#first, create a column "sub_site" which is empty for the sheet general
+general <- add_column(general, sub_site = NA, .after = "mine_fac")
+
+#then, bind the sheet general and sheet_sub_sites "below" each other
+general <- bind_rows(general, sub_sites)
+
+#detect duplicate coordinates
+general <- general[!grepl(c("Smelter|Refinery"), general$mine_or_processing, ignore.case = TRUE),]
+dupli <- filter(general, !is.na(latitude))[duplicated(na.omit(general$latitude)),]
+dupli <- filter(general, latitude %in% dupli$latitude)[order(dupli$latitude),]
+dupli <- dupli %>% select(., mine_fac, sub_site, latitude, longitude)
+
+
+# table for Rmd output
+DT::datatable(dupli)
+
+
+```
+
+<br> 
+
 ```{r , echo = FALSE, message = FALSE}
 
 ### check values per mine/material for one year vs next to check for potential typos, i.e. outliers in time series
@@ -179,7 +209,7 @@ DT::datatable(non_fit)
 
 <br> 
 
-```{r}
+```{r, echo = FALSE, message = FALSE}
 
 ### check for double counting between ores and concentrates
 

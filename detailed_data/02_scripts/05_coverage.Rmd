@@ -159,7 +159,13 @@ nr_min_fac_by_cou <- general %>%
 datatable(nr_min_fac_by_cou, rownames = FALSE, caption = "Number of mines per country")
 
 
+# graphic for Rmd output
+ggplot(data = head(nr_min_fac_by_cou), aes(x = reorder(alphanumiso, -n), y = n)) + 
+  geom_bar(stat = "identity", fill = "steelblue") + 
+  geom_text(aes(label = n), vjust = 1.6, color = "white", size = 3.5)+
+  labs(x = "Country", y = "No. of Mines")
 
+  
 # nr of materials per country
 
 nr_mat_by_cou <- sheet_min %>%
@@ -201,7 +207,21 @@ nr_mine_by_mat <- sheet_min %>%
 
 # table for Rmd output
 datatable(nr_mine_by_mat, rownames = FALSE, caption = "Number of mines per material")
+```
 
+<br> 
+
+
+```{r , echo = FALSE, message = FALSE}
+# graphic for Rmd output
+nr_mine_by_mat_plot <- left_join(nr_mine_by_mat, select(mat_ids, material_id, material_name), by = "material_id")
+nr_mine_by_mat_plot$material_name <- coalesce(nr_mine_by_mat_plot$material_name, nr_mine_by_mat_plot$material_id)
+nr_mine_by_mat_plot <- nr_mine_by_mat_plot %>% mutate(material_name = replace(material_name, material_name == "F.stc", "Steam coal"))
+
+ggplot(data = head(nr_mine_by_mat_plot), aes(x = reorder(material_name, -n), y = n)) + 
+  geom_bar(stat = "identity", fill = "steelblue") + 
+  geom_text(aes(label = n), vjust = 1.6, color = "white", size = 3.5)+
+  labs(x = "Material", y = "No. of Mines") 
 ```
 
 <br> 
@@ -367,6 +387,7 @@ com_cov2 <- agg_com %>%
 # table for Rmd output
 datatable(com_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
 
+
 ```
 
 <br> 
@@ -531,6 +552,188 @@ min_cov2 <- agg_min %>%
 
 # table for Rmd output
 datatable(min_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
+
+
+```
+
+<br>
+
+### Global coverages figures
+```{r , echo = FALSE, message = FALSE}
+### Global coverages ### 
+# create table with global coverage of selected commodities and minerals 
+
+# get global coverage of minerals
+min_cov_plot <- agg_min %>%
+  group_by(min_ore_con, year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2),
+  ) %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year))
+
+# get global coverage of commodities
+com_cov_plot <- agg_com %>%
+  group_by(commodity, year) %>%
+  summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
+  mutate(
+    share = value.det / value.nat,
+    share = round(share, digits = 2),
+  ) %>%
+  select(-value.det, -value.nat) %>%
+  arrange(desc(year))
+
+
+# combine the two dataframes
+cov_plot <- bind_rows(com_cov_plot, min_cov_plot)
+cov_plot$min_ore_con <- coalesce(cov_plot$min_ore_con , cov_plot$commodity)
+cov_plot <- left_join(cov_plot, select(mat_ids, material_id, material_name),
+                      by = c("min_ore_con" = "material_id"))
+
+#clean
+cov_plot <- cov_plot %>% 
+  select(-commodity)  %>% 
+  filter(year > 1999)
+
+
+# select which materials should be displayed
+# unique(cov_plot$min_ore_con)
+cov_plot_materials <- filter(cov_plot, min_ore_con %in% c("Me.Ag", "Me.Au",
+                                                       "Me.Cu", "Me.Mo", "Me.Ni", "Me.Pb", "Me.Zn", "Me.Co",  "Me.Sn", 
+                                                       "Me.Pd", "Me.Pt", "Me.Rh",
+                                                       "O.Al", "O.Fe")) #most materials
+
+ggplot(cov_plot_materials, aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+# create a line chart of the coverage of selected commodities and minerals groups only
+cov_plot_group1 <- filter(cov_plot, min_ore_con %in% c("Me.Ag", "Me.Au", "Me.Cu", "Me.Mo")) #gold, silver
+cov_plot_group2 <- filter(cov_plot, min_ore_con %in% c("Me.Ni", "Me.Pb", "Me.Zn", "Me.Co")) #poly-metallic
+cov_plot_group3 <- filter(cov_plot, min_ore_con %in% c("Me.Pd", "Me.Pt", "Me.Rh", "Me.Sn", "Me.Te")) #PGM 
+cov_plot_group4 <- filter(cov_plot, min_ore_con %in% c("O.Al", "O.Fe")) #Ores
+
+# group 1
+ggplot(cov_plot_group1, aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+# group 2
+ggplot(cov_plot_group2, aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") +
+  ylim(0, 1)
+
+# group 3
+ggplot(cov_plot_group3, aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") +
+  ylim(0, 1)
+
+# group 4
+ggplot(cov_plot_group4, aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") +
+  ylim(0, 1)
+
+
+### National Coverages ### 
+
+# combine the two dataframes (minerals and commodities)
+cov_plot_national <- bind_rows(agg_com, agg_min)
+cov_plot_national$min_ore_con <- coalesce(cov_plot_national$min_ore_con , cov_plot_national$commodity)
+cov_plot_national <- left_join(cov_plot_national, select(mat_ids, material_id, material_name),
+                      by = c("min_ore_con" = "material_id"))
+
+#clean and filter for only the top commodities copper, iron ore, bauxite
+cov_plot_national <- cov_plot_national %>% 
+  select(-commodity)  %>% 
+  filter(year > 1999) %>% 
+  filter(min_ore_con %in% c("Me.Cu", "O.Fe", "O.Al"))
+
+```
+
+
+<br>
+
+### National coverages figures
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage USA"}
+#USA
+ggplot(filter(cov_plot_national, alphanumiso == "USA840"), aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+```
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Australia"}
+#Australia
+ggplot(filter(cov_plot_national, alphanumiso == "AUS036"), aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+```
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage China"}
+#China
+ggplot(filter(cov_plot_national, alphanumiso == "CHN156"), aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+```
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Brazil"}
+#Brazil
+ggplot(filter(cov_plot_national, alphanumiso == "BRA076"), aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+```
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage South Africa"}
+#South Africa
+ggplot(filter(cov_plot_national, alphanumiso == "ZAF710"), aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+```
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Chile"}
+#Chile
+ggplot(filter(cov_plot_national, alphanumiso == "CHL152"), aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+  
+```
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Peru"}
+#Peru
+ggplot(filter(cov_plot_national, alphanumiso == "PER604"), aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
 
 ```
 
