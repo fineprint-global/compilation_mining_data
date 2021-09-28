@@ -38,9 +38,14 @@ sheet_com <- detailed$commodities
 # get the latest file for national accounts from folder
 source("./detailed_data/02_scripts/functions/lastfile.R")
 
-lastfile <- my_lastfile("./detailed_data/01_input/05_other_data/", "data_converted")
+lastfile <- my_lastfile("./detailed_data/01_input/05_other_data/", "data_for_comparison")
 
-nat_acc <- read_rds(lastfile)
+nat_acc <- read_delim(
+  "./detailed_data/01_input/05_other_data/data_for_comparison_2021-09-28.csv",
+  col_types = (cols(unit_id = "c")),
+  delim = ";"
+  ) %>%
+  select(-source)
 
 # nat_acc <- read_delim(
 #   lastfile, 

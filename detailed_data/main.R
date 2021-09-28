@@ -83,8 +83,8 @@ source("./detailed_data/02_scripts/04b_gap_filling.R")
 wd <- getwd()
 rmarkdown::render("./detailed_data/02_scripts/05_coverage.Rmd",
                   knit_root_dir = wd, 
-                  output_dir = "./detailed_data/04_output/05_coverage/", 
-                  intermediates_dir = "./detailed_data/04_output/05_coverage/",
+                  output_dir = "./detailed_data/04_output/05_coverage/01_general/", 
+                  intermediates_dir = "./detailed_data/04_output/05_coverage/01_general/",
                   output_file = paste0("coverage_", substr(Sys.time(), 1, 10),".html")
                   )
 
