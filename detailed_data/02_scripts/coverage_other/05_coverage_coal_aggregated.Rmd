@@ -84,7 +84,6 @@ agg_min <- sheet_min %>%
               mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
   )
 
-
 # aggregate, and filter for type_mineral == "Clean coal" only
 agg_min <- agg_min %>%
   filter((type_mineral == "Clean coal")) %>%
@@ -94,11 +93,12 @@ agg_min <- agg_min %>%
 
 # join with national accounts
 agg_min <- agg_min %>%
-  left_join(.,
+  full_join(.,
             nat_acc,
             by = c("alphanumiso", "year"),
             suffix = c(".det", ".nat")
   )
+
 
 # share
 agg_min <- agg_min %>%
@@ -118,7 +118,6 @@ agg_min <- agg_min %>%
   )
 
 
-
 # spread by country_id and material_id
 coal_cov1 <- agg_min %>%
   mutate(share = percent(share, accuracy = 1)) %>%
@@ -133,8 +132,6 @@ coal_cov1 <- agg_min %>%
 datatable(coal_cov1, rownames = FALSE, caption = "Relative coverage by country")
 
 
-
-
 # spread by global totals for coal aggregated
 coal_cov2 <- agg_min %>%
   group_by(year) %>%
@@ -144,7 +141,7 @@ coal_cov2 <- agg_min %>%
     share = round(share, digits = 2),
     share = percent(share, accuracy = 1)
   ) %>%
-  select(-value.det, -value.nat) %>%
+  #select(-value.det, -value.nat) %>%
   arrange(desc(year)) 
 
 

@@ -226,7 +226,7 @@ ggplot(data = head(nr_mine_by_mat_plot), aes(x = reorder(material_name, -n), y =
 
 <br> 
 
-#### Commodities
+#### Commodities (country)
 
 ```{r , echo = FALSE, message = FALSE}
 
@@ -260,7 +260,6 @@ agg_com <- agg_com %>%
 # data rows without allocation
 not_incl_com <- agg_com %>%
   filter(
-    !(year %in% c(2018, 2019)),
     is.na(alphanumiso) |
     is.na(commodity) |
     is.na(value.nat)
@@ -279,7 +278,6 @@ agg_com <- agg_com %>%
 # clean table
 agg_com <- agg_com %>%
   filter(
-    !(year %in% c(2018, 2019)),
     !is.na(alphanumiso),
     !is.na(commodity),
     !is.na(value.nat)
@@ -366,11 +364,54 @@ exc_cov <- exc_cov %>%
 # table for Rmd output
 datatable(exc_cov, rownames = FALSE, caption = "Coverages which are >100% for commodities_sheet")
 
+```
 
+<br> 
 
+#### Commodities (global)
+
+```{r , echo = FALSE, message = FALSE}
 
 # spread by global totals for material_ids
-com_cov2 <- agg_com %>%
+# calculate agg_com again (called agg_com_global for global coverage). 
+# this ensures that the global production is correctly calculated, and also that 
+# mines which have >100% coverage for one country are included
+
+# include country_ids in sheet_com
+agg_com_global <- sheet_com %>%
+  left_join(.,
+            detailed$general %>%
+              distinct(mine_fac, alphanumiso) %>%
+              mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
+            )
+
+
+# aggregate 
+agg_com_global <- agg_com_global %>%
+  group_by(alphanumiso, commodity, year) %>%
+  summarise(value = sum(value, na.rm = TRUE)) %>%
+  ungroup()
+
+
+# join with national accounts
+agg_com_global <- agg_com_global %>%
+  full_join(.,
+            nat_acc %>% select(alphanumiso, material_id, year, value),
+            by = c("alphanumiso", "commodity" = "material_id", "year"),
+            suffix = c(".det", ".nat")
+            )
+
+#clean table
+agg_com_global <- agg_com_global %>%
+  filter(
+    !year < 2000, 
+    !is.na(alphanumiso),
+    !is.na(commodity),
+    !is.na(value.nat)
+         ) 
+
+###
+com_cov2 <- agg_com_global %>%
   group_by(commodity, year) %>%
   summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
   mutate(
@@ -381,8 +422,11 @@ com_cov2 <- agg_com %>%
   select(-value.det, -value.nat) %>%
   arrange(desc(year)) %>%
   pivot_wider(., names_from = year, values_from = share) %>%
-  arrange(commodity)
-
+  arrange(commodity) %>%
+    filter(
+    !(`2015` == "0%"),
+    !(is.na(`2015`))
+    )
 
 # table for Rmd output
 datatable(com_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
@@ -392,7 +436,7 @@ datatable(com_cov2, rownames = FALSE, caption = "Relative coverage of global tot
 
 <br> 
 
-#### Ores and non-metallic minerals
+#### Ores and non-metallic minerals (national)
 
 ```{r , echo = FALSE, message = FALSE}
 
@@ -535,9 +579,53 @@ exc_cov <- exc_cov %>%
 datatable(exc_cov, rownames = FALSE, caption = "Coverages which are >100% for minerals_sheet")
 
 
+```
+
+<br> 
+
+#### Ores and non-metallic minerals (global)
+```{r , echo = FALSE, message = FALSE}
 
 # spread by global totals for material_ids
-min_cov2 <- agg_min %>%
+# calculate agg_min again (called agg_min_global for global coverage). 
+# this ensures that the global production is correctly calculated, and also that 
+# mines which have >100% coverage for one country are included
+
+# include country_ids in sheet_com
+agg_min_global <- sheet_min %>%
+  left_join(.,
+            detailed$general %>%
+              distinct(mine_fac, alphanumiso) %>%
+              mutate(alphanumiso = ifelse(is.na(alphanumiso), "Other", alphanumiso))
+            )
+
+
+# aggregate 
+agg_min_global <- agg_min_global %>%
+  group_by(alphanumiso, min_ore_con, year) %>%
+  summarise(value = sum(value, na.rm = TRUE)) %>%
+  ungroup()
+
+
+# join with national accounts
+agg_min_global <- agg_min_global %>%
+  full_join(.,
+            nat_acc %>% select(alphanumiso, material_id, year, value),
+            by = c("alphanumiso", "min_ore_con" = "material_id", "year"),
+            suffix = c(".det", ".nat")
+            )
+
+#clean table
+agg_min_global <- agg_min_global %>%
+  filter(
+    !year < 2000, 
+    !is.na(alphanumiso),
+    !is.na(min_ore_con),
+    !is.na(value.nat)
+         ) 
+
+###
+min_cov2 <- agg_min_global %>%
   group_by(min_ore_con, year) %>%
   summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
   mutate(
@@ -548,7 +636,12 @@ min_cov2 <- agg_min %>%
   select(-value.det, -value.nat) %>%
   arrange(desc(year)) %>%
   pivot_wider(., names_from = year, values_from = share) %>%
-  arrange(min_ore_con)
+  arrange(min_ore_con) %>%
+    filter(
+    !(`2015` == "0%"),
+    !(is.na(`2015`))
+    )
+
 
 # table for Rmd output
 datatable(min_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
@@ -564,7 +657,7 @@ datatable(min_cov2, rownames = FALSE, caption = "Relative coverage of global tot
 # create table with global coverage of selected commodities and minerals 
 
 # get global coverage of minerals
-min_cov_plot <- agg_min %>%
+min_cov_plot <- agg_min_global %>%
   group_by(min_ore_con, year) %>%
   summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
   mutate(
@@ -575,7 +668,7 @@ min_cov_plot <- agg_min %>%
   arrange(desc(year))
 
 # get global coverage of commodities
-com_cov_plot <- agg_com %>%
+com_cov_plot <- agg_com_global %>%
   group_by(commodity, year) %>%
   summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
   mutate(
@@ -585,6 +678,8 @@ com_cov_plot <- agg_com %>%
   select(-value.det, -value.nat) %>%
   arrange(desc(year))
 
+#get coverage of coal
+
 
 # combine the two dataframes
 cov_plot <- bind_rows(com_cov_plot, min_cov_plot)
@@ -592,10 +687,14 @@ cov_plot$min_ore_con <- coalesce(cov_plot$min_ore_con , cov_plot$commodity)
 cov_plot <- left_join(cov_plot, select(mat_ids, material_id, material_name),
                       by = c("min_ore_con" = "material_id"))
 
+
 #clean
 cov_plot <- cov_plot %>% 
   select(-commodity)  %>% 
-  filter(year > 1999)
+  filter(year > 1999,
+         !share == 0, 
+         !is.na(share))
+
 
 
 # select which materials should be displayed
@@ -615,7 +714,7 @@ ggplot(cov_plot_materials, aes(x=year, y=share, group=material_name)) +
 cov_plot_group1 <- filter(cov_plot, min_ore_con %in% c("Me.Ag", "Me.Au", "Me.Cu", "Me.Mo")) #gold, silver
 cov_plot_group2 <- filter(cov_plot, min_ore_con %in% c("Me.Ni", "Me.Pb", "Me.Zn", "Me.Co")) #poly-metallic
 cov_plot_group3 <- filter(cov_plot, min_ore_con %in% c("Me.Pd", "Me.Pt", "Me.Rh", "Me.Sn", "Me.Te")) #PGM 
-cov_plot_group4 <- filter(cov_plot, min_ore_con %in% c("O.Al", "O.Fe")) #Ores
+cov_plot_group4 <- filter(cov_plot, min_ore_con %in% c("O.Fe")) #Ores
 
 # group 1
 ggplot(cov_plot_group1, aes(x=year, y=share, group=material_name)) +
