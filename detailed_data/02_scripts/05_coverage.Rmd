@@ -159,12 +159,18 @@ nr_min_fac_by_cou <- general %>%
 datatable(nr_min_fac_by_cou, rownames = FALSE, caption = "Number of mines per country")
 
 
-# graphic for Rmd output
+# export figure for number of mines per country
+
+pdf(file = "./detailed_data/04_output/05_coverage/01_general/mines_per_country.pdf",   
+    width = 16, 
+    height = 8) 
+
 ggplot(data = head(nr_min_fac_by_cou), aes(x = reorder(alphanumiso, -n), y = n)) + 
   geom_bar(stat = "identity", fill = "steelblue") + 
   geom_text(aes(label = n), vjust = 1.6, color = "white", size = 3.5)+
   labs(x = "Country", y = "No. of Mines")
 
+dev.off()
   
 # nr of materials per country
 
@@ -213,20 +219,27 @@ datatable(nr_mine_by_mat, rownames = FALSE, caption = "Number of mines per mater
 
 
 ```{r , echo = FALSE, message = FALSE}
-# graphic for Rmd output
+# export figure of number of mines per material
+
 nr_mine_by_mat_plot <- left_join(nr_mine_by_mat, select(mat_ids, material_id, material_name), by = "material_id")
 nr_mine_by_mat_plot$material_name <- coalesce(nr_mine_by_mat_plot$material_name, nr_mine_by_mat_plot$material_id)
 nr_mine_by_mat_plot <- nr_mine_by_mat_plot %>% mutate(material_name = replace(material_name, material_name == "F.stc", "Steam coal"))
+
+pdf(file = "./detailed_data/04_output/05_coverage/01_general/mines_per_material.pdf",   
+    width = 16, 
+    height = 8) 
 
 ggplot(data = head(nr_mine_by_mat_plot), aes(x = reorder(material_name, -n), y = n)) + 
   geom_bar(stat = "identity", fill = "steelblue") + 
   geom_text(aes(label = n), vjust = 1.6, color = "white", size = 3.5)+
   labs(x = "Material", y = "No. of Mines") 
+
+dev.off()
 ```
 
 <br> 
 
-#### Commodities (country)
+#### Coverage Commodities (country)
 
 ```{r , echo = FALSE, message = FALSE}
 
@@ -368,7 +381,7 @@ datatable(exc_cov, rownames = FALSE, caption = "Coverages which are >100% for co
 
 <br> 
 
-#### Commodities (global)
+#### Coverage Commodities (global)
 
 ```{r , echo = FALSE, message = FALSE}
 
@@ -410,7 +423,7 @@ agg_com_global <- agg_com_global %>%
     !is.na(value.nat)
          ) 
 
-###
+# produce table of global coverage
 com_cov2 <- agg_com_global %>%
   group_by(commodity, year) %>%
   summarise(value.det = sum(value.det, na.rm = TRUE), value.nat = sum(value.nat, na.rm = TRUE)) %>%
@@ -431,12 +444,11 @@ com_cov2 <- agg_com_global %>%
 # table for Rmd output
 datatable(com_cov2, rownames = FALSE, caption = "Relative coverage of global total by material")
 
-
 ```
 
 <br> 
 
-#### Ores and non-metallic minerals (national)
+#### Coverage Ores and non-metallic minerals (national)
 
 ```{r , echo = FALSE, message = FALSE}
 
@@ -583,7 +595,8 @@ datatable(exc_cov, rownames = FALSE, caption = "Coverages which are >100% for mi
 
 <br> 
 
-#### Ores and non-metallic minerals (global)
+#### Coverage Ores and non-metallic minerals (global)
+
 ```{r , echo = FALSE, message = FALSE}
 
 # spread by global totals for material_ids
@@ -652,6 +665,7 @@ datatable(min_cov2, rownames = FALSE, caption = "Relative coverage of global tot
 <br>
 
 ### Global coverages figures
+
 ```{r , echo = FALSE, message = FALSE}
 ### Global coverages ### 
 # create table with global coverage of selected commodities and minerals 
@@ -702,7 +716,12 @@ cov_plot <- cov_plot %>%
 cov_plot_materials <- filter(cov_plot, min_ore_con %in% c("Me.Ag", "Me.Au",
                                                        "Me.Cu", "Me.Mo", "Me.Ni", "Me.Pb", "Me.Zn", "Me.Co",  "Me.Sn", 
                                                        "Me.Pd", "Me.Pt", "Me.Rh",
-                                                       "O.Al", "O.Fe")) #most materials
+                                                       "O.Al", "O.Fe")) #most materials (with at least meaningful coverage)
+
+# specify where the pdf with figures for global coverage should be put out
+pdf(file = "./detailed_data/04_output/05_coverage/01_general/coverage_global.pdf",   
+    width = 16, 
+    height = 8) 
 
 ggplot(cov_plot_materials, aes(x=year, y=share, group=material_name)) +
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
@@ -711,10 +730,11 @@ ggplot(cov_plot_materials, aes(x=year, y=share, group=material_name)) +
   ylim(0, 1)
 
 # create a line chart of the coverage of selected commodities and minerals groups only
-cov_plot_group1 <- filter(cov_plot, min_ore_con %in% c("Me.Ag", "Me.Au", "Me.Cu", "Me.Mo")) #gold, silver
+cov_plot_group1 <- filter(cov_plot, min_ore_con %in% c("Me.Ag", "Me.Au", "Me.Cu", "Me.Mo")) #gold, silver, copper, molybdenum
 cov_plot_group2 <- filter(cov_plot, min_ore_con %in% c("Me.Ni", "Me.Pb", "Me.Zn", "Me.Co")) #poly-metallic
 cov_plot_group3 <- filter(cov_plot, min_ore_con %in% c("Me.Pd", "Me.Pt", "Me.Rh", "Me.Sn", "Me.Te")) #PGM 
-cov_plot_group4 <- filter(cov_plot, min_ore_con %in% c("O.Fe")) #Ores
+cov_plot_group4 <- filter(cov_plot, min_ore_con %in% c("O.Fe")) #Ores (add Bauxite in the future when good national comparison values are available)
+
 
 # group 1
 ggplot(cov_plot_group1, aes(x=year, y=share, group=material_name)) +
@@ -744,8 +764,9 @@ ggplot(cov_plot_group4, aes(x=year, y=share, group=material_name)) +
   theme(legend.position="top") +
   ylim(0, 1)
 
+dev.off()
 
-### National Coverages ### 
+## create dataframe to calculate national coverages
 
 # combine the two dataframes (minerals and commodities)
 cov_plot_national <- bind_rows(agg_com, agg_min)
@@ -766,77 +787,74 @@ cov_plot_national <- cov_plot_national %>%
 
 ### National coverages figures
 
-```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage USA"}
+```{r , echo = FALSE, message = FALSE}
+
+# specify where the pdf with figures for national coverages should be put out
+pdf(file = "./detailed_data/04_output/05_coverage/01_general/coverage_national.pdf",   
+    width = 16, 
+    height = 8) 
+
 #USA
 ggplot(filter(cov_plot_national, alphanumiso == "USA840"), aes(x=year, y=share, group=material_name)) +
+  ggtitle("Coverage USA") + 
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
   geom_point(aes(color=material_name))+
   theme(legend.position="top") + 
   ylim(0, 1)
 
-```
 
-```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Australia"}
 #Australia
 ggplot(filter(cov_plot_national, alphanumiso == "AUS036"), aes(x=year, y=share, group=material_name)) +
+  ggtitle("Coverage Australia") + 
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
   geom_point(aes(color=material_name))+
   theme(legend.position="top") + 
   ylim(0, 1)
 
-```
-
-```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage China"}
 #China
 ggplot(filter(cov_plot_national, alphanumiso == "CHN156"), aes(x=year, y=share, group=material_name)) +
+  ggtitle("Coverage China") + 
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
   geom_point(aes(color=material_name))+
   theme(legend.position="top") + 
   ylim(0, 1)
 
-```
-
-```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Brazil"}
 #Brazil
 ggplot(filter(cov_plot_national, alphanumiso == "BRA076"), aes(x=year, y=share, group=material_name)) +
+  ggtitle("Coverage Brazil") + 
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
   geom_point(aes(color=material_name))+
   theme(legend.position="top") + 
   ylim(0, 1)
 
-```
-
-```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage South Africa"}
 #South Africa
 ggplot(filter(cov_plot_national, alphanumiso == "ZAF710"), aes(x=year, y=share, group=material_name)) +
+  ggtitle("Coverage South Africa") + 
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
   geom_point(aes(color=material_name))+
   theme(legend.position="top") + 
   ylim(0, 1)
 
-```
-
-```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Chile"}
 #Chile
 ggplot(filter(cov_plot_national, alphanumiso == "CHL152"), aes(x=year, y=share, group=material_name)) +
+  ggtitle("Coverage Chile") + 
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
   geom_point(aes(color=material_name))+
   theme(legend.position="top") + 
   ylim(0, 1)
   
-```
-
-```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage Peru"}
 #Peru
 ggplot(filter(cov_plot_national, alphanumiso == "PER604"), aes(x=year, y=share, group=material_name)) +
+  ggtitle("Coverage Peru") + 
   geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
   geom_point(aes(color=material_name))+
   theme(legend.position="top") + 
   ylim(0, 1)
 
+dev.off()
+
 ```
 
-<br> 
 
 #### Data rows not included in coverage
 

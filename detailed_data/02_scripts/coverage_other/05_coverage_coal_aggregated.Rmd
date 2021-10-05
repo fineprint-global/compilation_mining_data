@@ -139,7 +139,7 @@ coal_cov2 <- agg_min %>%
   mutate(
     share = value.det / value.nat,
     share = round(share, digits = 2),
-    share = percent(share, accuracy = 1)
+    #share = percent(share, accuracy = 1)
   ) %>%
   #select(-value.det, -value.nat) %>%
   arrange(desc(year)) 
@@ -219,6 +219,7 @@ datatable(national_production_coal, rownames = FALSE, caption = "Total national 
 
 ```
 
+<br>
 
 ```{r , echo = FALSE, message = FALSE}
 ## build heatmap of the coverage per country
@@ -232,7 +233,7 @@ plot_data <- agg_min %>%
 plot_data$ord_countries <- factor(plot_data$alphanumiso, ordered=TRUE, levels = c("CAN124", "COL170", "KAZ398", "ZAF710", "RUS643", "IDN360", "AUS036", "IND356", "USA840", "CHN156"))
 
  
-pdf(file = "./detailed_data/04_output/05_coverage/coverage_coal/coal_coverage_heatmap.pdf",   
+pdf(file = "./detailed_data/04_output/05_coverage/02_coal/coal_coverage_heatmap.pdf",   
     width = 16, 
     height = 8) 
 
@@ -246,4 +247,35 @@ dev.off()
 
 ```
 
+
+
+```{r , echo = FALSE, message = FALSE, fig.cap = "Coverage of important metals and coal"}
+# Create a plot that shows the coverage of important metals and coal 
+# Iron ore, Copper, (Gold), Coal
+cov_plot_group6 <- filter(cov_plot, min_ore_con %in% c("Me.Au", "Me.Cu", "O.Fe")) #gold, Copper, Iron ore
+
+#get coal coverage, this relies on an output of the file 05_coverage_coal_aggregated.Rmd
+coal_cov_plot <- coal_cov2 %>% 
+  select(year, share) %>% 
+  mutate(min_ore_con = "F.coal", 
+         material_name = "Coal")
+
+
+cov_plot_group6 <- bind_rows(cov_plot_group6, coal_cov_plot) %>%  filter(year < 2019)
+
+pdf(file = "./detailed_data/04_output/05_coverage/01_general/coverage_important_materials.pdf",   
+    width = 16, 
+    height = 8) 
+
+ggplot(cov_plot_group6, aes(x=year, y=share, group=material_name)) +
+  geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
+  ylab("Share of global total") + 
+  xlab("Year") +
+  #geom_point(aes(color=material_name))+
+  theme(legend.position="top") + 
+  ylim(0, 1)
+
+dev.off()
+
+```
 

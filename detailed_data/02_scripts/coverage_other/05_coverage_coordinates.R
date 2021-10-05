@@ -74,7 +74,7 @@ processing_fac <- st_as_sf(processing_fac, coords = c("longitude", "latitude"), 
 ### create plots
 
 #plot for the whole world with all commodities
-pdf(file = "./detailed_data/04_output/05_coverage/coverage_spatial/coverage_coordinates.pdf",   
+pdf(file = "./detailed_data/04_output/05_coverage/03_spatial/coverage_coordinates.pdf",   
     width = 17, 
     height = 9)
 
@@ -94,7 +94,7 @@ ggplot(data = world) +
 dev.off()
 
 # plot for the whole world with only coal 
-pdf(file = "./detailed_data/04_output/05_coverage/coverage_spatial/coverage_coordinates_coal.pdf",   
+pdf(file = "./detailed_data/04_output/05_coverage/03_spatial/coverage_coordinates_coal.pdf",   
     width = 17, 
     height = 9) 
 
