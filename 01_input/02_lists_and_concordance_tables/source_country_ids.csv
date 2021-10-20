@@ -1,0 +1,259 @@
+source_cat;source_country;alphanumiso;country
+detailed;Afghanistan;AFG004;Afghanistan
+detailed;Albania;ALB008;Albania
+detailed;Algeria;DZA012;Algeria
+detailed;American Samoa;ASM016;American Samoa
+detailed;Andorra;AND020;Andorra
+detailed;Angola;AGO024;Angola
+detailed;Anguilla;AIA660;Anguilla
+detailed;Antigua and Barbuda;ATG028;Antigua and Barbuda
+detailed;Argentina;ARG032;Argentina
+detailed;Armenia;ARM051;Armenia
+detailed;Aruba;ABW533;Aruba
+detailed;Australia;AUS036;Australia
+detailed;Austria;AUT040;Austria
+detailed;Azerbaijan;AZE031;Azerbaijan
+detailed;Bahamas;BHS044;Bahamas
+detailed;Bahrain;BHR048;Bahrain
+detailed;Bangladesh;BGD050;Bangladesh
+detailed;Barbados;BRB052;Barbados
+detailed;Belarus;BLR112;Belarus
+detailed;Belgium;BEL056;Belgium
+detailed;Belgium-Luxemburg;BLGLUX;Belgium-Luxemburg
+detailed;Belize;BLZ084;Belize
+detailed;Benin;BEN204;Benin
+detailed;Bermuda;BMU060;Bermuda
+detailed;Bhutan;BTN064;Bhutan
+detailed;Bolivia;BOL068;Bolivia
+detailed;Bonaire;BES535;Bonaire
+detailed;Bosnia and Herzegovina;BIH070;Bosnia and Herzegovina
+detailed;Botswana;BWA072;Botswana
+detailed;Brazil;BRA076;Brazil
+detailed;British Indian Ocean Territory;IOT086;British Indian Ocean Territory
+detailed;British Virgin Islands;VGB092;British Virgin Islands
+detailed;Brunei Darussalam;BRN096;Brunei Darussalam
+detailed;Bulgaria;BGR100;Bulgaria
+detailed;Burkina Faso;BFA854;Burkina Faso
+detailed;Burundi;BDI108;Burundi
+detailed;Cambodia;KHM116;Cambodia
+detailed;Cameroon;CMR120;Cameroon
+detailed;Canada;CAN124;Canada
+detailed;Cape Verde;CPV132;Cape Verde
+detailed;Cayman Islands;CYM136;Cayman Islands
+detailed;Central African Republic;CAF140;Central African Republic
+detailed;Chad;TCD148;Chad
+detailed;Chile;CHL152;Chile
+detailed;China;CHN156;China
+detailed;Christmas Island;CXR162;Christmas Island
+detailed;Cocos (Keeling) Islands;CCK166;Cocos (Keeling) Islands
+detailed;Colombia;COL170;Colombia
+detailed;Comoros;COM174;Comoros
+detailed;Cook Islands;COK184;Cook Islands
+detailed;Costa Rica;CRI188;Costa Rica
+detailed;Cote d'Ivoire;CIV384;Cote d'Ivoire
+detailed;Côte d'Ivoire;CIV384;Cote d'Ivoire
+detailed;C�te d'Ivoire;CIV384;Cote d'Ivoire
+detailed;Croatia;HRV191;Croatia
+detailed;Cuba;CUB192;Cuba
+detailed;Curaçao;CUW531;Curaçao
+detailed;Cyprus;CYP196;Cyprus
+detailed;Czech Republic;CZE203;Czech Republic
+detailed;Czechoslovakia;CSK200;Czechoslovakia
+detailed;Democratic Republic of Congo;COD180;DR Congo
+detailed;Democratic Republic of the Congo (DRC);COD180;DR Congo
+detailed;DR Congo;COD180;DR Congo
+detailed;Denmark;DNK208;Denmark
+detailed;Djibouti;DJI262;Djibouti
+detailed;Dominica;DMA212;Dominica
+detailed;Dominican Republic;DOM214;Dominican Republic
+detailed;East Germany;DDR278;East Germany
+detailed;Ecuador;ECU218;Ecuador
+detailed;Egypt;EGY818;Egypt
+detailed;El Salvador;SLV222;El Salvador
+detailed;Equatorial Guinea;GNQ226;Equatorial Guinea
+detailed;Eritrea;ERI232;Eritrea
+detailed;Estonia;EST233;Estonia
+detailed;Ethiopia;ETH231;Ethiopia
+detailed;Ethiopia (Former);ETH230;Ethiopia (Former)
+detailed;Falkland Islands (Malvinas);FLK238;Falkland Islands (Malvinas)
+detailed;Faroe Islands;FRO234;Faroe Islands
+detailed;Fiji;FJI242;Fiji Islands
+detailed;Fiji Islands;FJI242;Fiji Islands
+detailed;Finland;FIN246;Finland
+detailed;France;FRA250;France
+detailed;French Guiana;GUF254;French Guiana
+detailed;French Polynesia;PYF258;French Polynesia
+detailed;Gabon;GAB266;Gabon
+detailed;Gambia;GMB270;Gambia
+detailed;Georgia;GEO268;Georgia
+detailed;Germany;DEU276;Germany
+detailed;Ghana;GHA288;Ghana
+detailed;Gibraltar;GIB292;Gibraltar
+detailed;Greece;GRC300;Greece
+detailed;Greenland;GRL304;Greenland
+detailed;Grenada;GRD308;Grenada
+detailed;Guadeloupe;GLP312;Guadeloupe
+detailed;Guam;GUM316;Guam
+detailed;Guatemala;GTM320;Guatemala
+detailed;Guinea;GIN324;Guinea
+detailed;Guinea-Bissau;GNB624;Guinea-Bissau
+detailed;Guyana;GUY328;Guyana
+detailed;Haiti;HTI332;Haiti
+detailed;Honduras;HND340;Honduras
+detailed;Hong Kong;HKG344;Hong Kong
+detailed;Hungary;HUN348;Hungary
+detailed;Iceland;ISL352;Iceland
+detailed;India;IND356;India
+detailed;Indonesia;IDN360;Indonesia
+detailed;Iran;IRN364;Iran
+detailed;Iraq;IRQ368;Iraq
+detailed;Ireland;IRL372;Ireland
+detailed;Israel;ISR376;Israel
+detailed;Italy;ITA380;Italy
+detailed;Ivory Coast;CIV384;Cote d'Ivoire
+detailed;Jamaica;JAM388;Jamaica
+detailed;Japan;JPN392;Japan
+detailed;Jordan;JOR400;Jordan
+detailed;Kazakhstan;KAZ398;Kazakhstan
+detailed;Kenya;KEN404;Kenya
+detailed;Kingdom of Saudi Arabia;SAU682;Saudi Arabia
+detailed;Kiribati;KIR296;Kiribati
+detailed;Kosovo;UNK000;Kosovo
+detailed;Kuwait;KWT414;Kuwait
+detailed;Kyrgyzstan;KGZ417;Kyrgyzstan
+detailed;Laos;LAO418;Laos
+detailed;Latvia;LVA428;Latvia
+detailed;Lebanon;LBN422;Lebanon
+detailed;Lesotho;LSO426;Lesotho
+detailed;Liberia;LBR430;Liberia
+detailed;Libya;LBY434;Libya
+detailed;Liechtenstein;LIE438;Liechtenstein
+detailed;Lithuania;LTU440;Lithuania
+detailed;Luxembourg;LUX442;Luxembourg
+detailed;Macau;MAC446;Macau
+detailed;Macedonia;MKD807;Macedonia
+detailed;Madagascar;MDG450;Madagascar
+detailed;Malawi;MWI454;Malawi
+detailed;Malaysia;MYS458;Malaysia
+detailed;Maldives;MDV462;Maldives
+detailed;Mali;MLI466;Mali
+detailed;Malta;MLT470;Malta
+detailed;Marshall Islands;MHL584;Marshall Islands
+detailed;Martinique;MTQ474;Martinique
+detailed;Mauritania;MRT478;Mauritania
+detailed;Mauritius;MUS480;Mauritius
+detailed;Mayotte;MYT175;Mayotte
+detailed;Mexico;MEX484;Mexico
+detailed;Micronesia;FSM583;Micronesia
+detailed;Moldova;MDA498;Moldova
+detailed;Monaco;MCO492;Monaco
+detailed;Mongolia;MNG496;Mongolia
+detailed;Montenegro;MNE499;Montenegro
+detailed;Montserrat;MSR500;Montserrat
+detailed;Morocco;MAR504;Morocco
+detailed;Mozambique;MOZ508;Mozambique
+detailed;Myanmar;MMR104;Myanmar
+detailed;Namibia;NAM516;Namibia
+detailed;Nauru;NRU520;Nauru
+detailed;Nepal;NPL524;Nepal
+detailed;Netherlands;NLD528;Netherlands
+detailed;Netherlands Antilles;ANT530;Netherlands Antilles
+detailed;New Caledonia;NCL540;New Caledonia
+detailed;New Zealand;NZL554;New Zealand
+detailed;Nicaragua;NIC558;Nicaragua
+detailed;Niger;NER562;Niger
+detailed;Nigeria;NGA566;Nigeria
+detailed;Niue;NIU570;Niue
+detailed;Norfolk Island;NFK574;Norfolk Island
+detailed;North Korea;PRK408;North Korea
+detailed;North Yemen;YEM886;North Yemen
+detailed;Northern Mariana Islands;MNP580;Northern Mariana Islands
+detailed;Norway;NOR578;Norway
+detailed;Oman;OMN512;Oman
+detailed;Pakistan;PAK586;Pakistan
+detailed;Palau;PLW585;Palau
+detailed;Palestine;PSE275;Palestine
+detailed;Panama;PAN591;Panama
+detailed;Papua New Guinea;PNG598;Papua New Guinea
+detailed;Paraguay;PRY600;Paraguay
+detailed;Peru;PER604;Peru
+detailed;Philippines;PHL608;Philippines
+detailed;Pitcairn Islands;PCN612;Pitcairn Islands
+detailed;Poland;POL616;Poland
+detailed;Portugal;PRT620;Portugal
+detailed;Puerto Rico;PRI630;Puerto Rico
+detailed;Qatar;QAT634;Qatar
+detailed;Rep Congo;COG178;Rep Congo
+detailed;Reunion;REU638;Reunion
+detailed;Romania;ROU642;Romania
+detailed;Russia;RUS643;Russian Federation
+detailed;Russian Federation;RUS643;Russian Federation
+detailed;Rwanda;RWA646;Rwanda
+detailed;Saint Helena;SHN654;Saint Helena
+detailed;Saint Kitts and Nevis;KNA659;Saint Kitts and Nevis
+detailed;Saint Lucia;LCA662;Saint Lucia
+detailed;Saint Pierre and Miquelon;SPM666;Saint Pierre and Miquelon
+detailed;Saint Vincent/Grenadines;VCT670;Saint Vincent/Grenadines
+detailed;Samoa;WSM882;Samoa
+detailed;San Marino;SMR674;San Marino
+detailed;Sao Tome and Principe;STP678;Sao Tome and Principe
+detailed;Saudi Arabia;SAU682;Saudi Arabia
+detailed;Senegal;SEN686;Senegal
+detailed;Serbia;SRB688;Serbia
+detailed;Serbia (and Montenegro);SCG891;Serbia (and Montenegro)
+detailed;Seychelles;SYC690;Seychelles
+detailed;Sierra Leone;SLE694;Sierra Leone
+detailed;Singapore;SGP702;Singapore
+detailed;Slovakia;SVK703;Slovakia
+detailed;Slovak Republic;SVK703;Slovakia
+detailed;Slovenia;SVN705;Slovenia
+detailed;Solomon Islands;SLB090;Solomon Islands
+detailed;Somalia;SOM706;Somalia
+detailed;South Africa;ZAF710;South Africa
+detailed;South Korea;KOR410;South Korea
+detailed;South Sudan;SSD728;South Sudan
+detailed;South Yemen;YMD720;South Yemen
+detailed;Spain;ESP724;Spain
+detailed;Sri Lanka;LKA144;Sri Lanka
+detailed;Sudan;SDN729;Sudan
+detailed;Sudan (Former);SDN736;Sudan (Former)
+detailed;Suriname;SUR740;Suriname
+detailed;Swaziland;SWZ748;Swaziland
+detailed;Sweden;SWE752;Sweden
+detailed;Switzerland;CHE756;Switzerland
+detailed;Syria;SYR760;Syria
+detailed;Taiwan;TWN158;Taiwan
+detailed;Tajikistan;TJK762;Tajikistan
+detailed;Tanzania;TZA834;Tanzania
+detailed;Thailand;THA764;Thailand
+detailed;Timor-Leste;TLS626;Timor-Leste
+detailed;Togo;TGO768;Togo
+detailed;Tokelau;TKL772;Tokelau
+detailed;Tonga;TON776;Tonga
+detailed;Trinidad and Tobago;TTO780;Trinidad and Tobago
+detailed;Tunisia;TUN788;Tunisia
+detailed;Turkey;TUR792;Turkey
+detailed;Turkmenistan;TKM795;Turkmenistan
+detailed;Turks and Caicos Islands;TCA796;Turks and Caicos Islands
+detailed;Tuvalu;TUV798;Tuvalu
+detailed;Uganda;UGA800;Uganda
+detailed;Ukraine;UKR804;Ukraine
+detailed;United Arab Emirates;ARE784;United Arab Emirates
+detailed;United Kingdom;GBR826;United Kingdom
+detailed;United States;USA840;United States of America
+detailed;United States of America;USA840;United States of America
+detailed;Uruguay;URY858;Uruguay
+detailed;US Virgin Islands;VIR850;US Virgin Islands
+detailed;USSR;SUN810;USSR
+detailed;Uzbekistan;UZB860;Uzbekistan
+detailed;Vanuatu;VUT548;Vanuatu
+detailed;Venezuela;VEN862;Venezuela
+detailed;Viet Nam;VNM704;Viet Nam
+detailed;Wallis and Futuna Islands;WLF876;Wallis and Futuna Islands
+detailed;West Germany;DEU280;West Germany
+detailed;Western Sahara;ESH732;Western Sahara
+detailed;Yemen;YEM887;Yemen
+detailed;Yugoslavia SFR;YUG890;Yugoslavia SFR
+detailed;Zambia;ZMB894;Zambia
+detailed;Zimbabwe;ZWE716;Zimbabwe
+snl;Dem. Rep. Congo;COD180;DR Congo

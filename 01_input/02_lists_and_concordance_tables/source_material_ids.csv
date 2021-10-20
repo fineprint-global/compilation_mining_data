@@ -1,0 +1,299 @@
+source_cat;source_material_id;material_id
+detailed;2E PGM;Me.pgm
+detailed;4E;Me.pgm
+detailed;4E Grade;Me.pgm
+detailed;6E Grade;Me.pgm
+detailed;Acid;
+detailed;Ag;Me.Ag
+detailed;Alumina;Me.Al2O3
+detailed;Aluminium;Me.Al
+detailed;Aluminium fluoride;Me.AlF3
+detailed;Aluminum;Me.Al
+detailed;ASCu;Me.AsCu
+detailed;AsCu;Me.AsCu
+detailed;Au;Me.Au
+detailed;Battery raw materials;
+detailed;Bauxite;O.Al
+detailed;Blister anode;Me.Cu
+detailed;Borates;M.bor
+detailed;Bulk ore;O.bulk
+detailed;Bulk Ore;O.bulk
+detailed;Ca;Me.Ca
+detailed;Cadmium;Me.Cd
+detailed;Carbonatite Cpmlex, Oxide;
+detailed;Cathode copper;Oth.cuca
+detailed;Cathode nickel and briquettes;Me.Ni
+detailed;Chrome alloys;All.Cr
+detailed;Chrome ore;O.Cr
+detailed;Chrome concentrate;Con.Cr
+detailed;Co;Me.Co
+detailed;CO3;
+detailed;Coal;F.coal
+detailed;Cobalt;Me.Co
+detailed;Copper;Me.Cu
+detailed;Copper anode;Me.Cu
+detailed;Copper anodes;Me.Cu
+detailed;Copper blister/anode;Me.Cu
+detailed;Copper blister/anode (third party);
+detailed;Copper blister/anodes;Me.Cu
+detailed;Copper cathode;Oth.cuca
+detailed;Copper Cathode;Oth.cuca
+detailed;Copper cathode (third party);
+detailed;Copper cathode tolled;Oth.cuca
+detailed;Copper cathodes;Oth.cuca
+detailed;Copper concentrate;Con.Cu
+detailed;Copper Concentrate;Con.Cu
+detailed;copper concentrate;Con.Cu
+detailed;Copper concentrate smelted;Con.Cu
+detailed;Copper Ore;O.Cu
+detailed;Copper ore;O.Cu
+detailed;Copper oxide concentrate;Con.Cu
+detailed;Copper Primary;Me.Cu
+detailed;Copper rod;Me.Cu
+detailed;Copper Secondary;
+detailed;Copper Secondary raw materials;
+detailed;Copper Secondary raw materials of which, electronics;
+detailed;Copper smelted;Me.Cu
+detailed;Coppoer cathode tolled;Oth.cuca
+detailed;Cu;Me.Cu
+detailed;Diamonds;Nm.dia
+detailed;Fe;Me.Fe
+detailed;Friable Itabirite and Hematite;O.Fe
+detailed;Gold;Me.Au
+detailed;Gold ore;O.Au
+detailed;Hermatite;O.Fe
+detailed;Ilmenite;O.FeTiO3
+detailed;Iridium;Me.Ir
+detailed;Iron;Me.Fe
+detailed;Iron ore;O.Fe
+detailed;Itabirite;O.Fe
+detailed;Laterite;M.lat
+detailed;Leach Ore;O.oxi
+detailed;Lead;Me.Pb
+detailed;Lead alloys;All.Pb
+detailed;Lead concentrate;Con.Pb
+detailed;Lead Primary;Me.Pb
+detailed;Lead Secondary;
+detailed;Lead Secondary raw materials;
+detailed;Lead/bismuth;
+detailed;Limonite Ore;O.Fe
+detailed;Liquid sulphur dioxide;Nm.SO2
+detailed;Low grade Sulphide;O.bulk
+detailed;Magnetite concentrate;Con.Fe
+detailed;Manganese;Me.Mn
+detailed;Manganese alloys;All.Mn
+detailed;Manganese ore;O.Mn
+detailed;Manganese Ore;O.Mn
+detailed;Manganeses ore;O.Mn
+detailed;Marginal copper ore;O.Cu
+detailed;Marginal Copper ore;O.Cu
+detailed;Marginal ore;O.bulk
+detailed;Mercury;Me.Hg
+detailed;Metallurgic bituminous coal;F.coc
+detailed;Mg;Me.Mg
+detailed;Mixed ore;O.bulk
+detailed;Mixed Ore;O.bulk
+detailed;Molybdenum;Me.Mo
+detailed;Molybdenum concentrate;Con.Mo
+detailed;Nepheline ore;M.nep
+detailed;Ni;Me.Ni
+detailed;Nickel;Me.Ni
+detailed;Nickel and Manganese ore;O.Ni
+detailed;Nickel concentrate;Con.Ni
+detailed;Nickel in matte;Me.Ni
+detailed;Nickel ore;O.Ni
+detailed;Niobium;Me.Nb
+detailed;Niobium ore;O.Nb
+detailed;Non-primary Sulphide Ore;O.bulk
+detailed;Oxide;O.oxi
+detailed;Oxide ore;O.oxi
+detailed;Oxide Ore;O.oxi
+detailed;Palladium;Me.Pd
+detailed;Palladium concentrate;Con.Pd
+detailed;Pb;Me.Pb
+detailed;Pb concentrate;Con.Pb
+detailed;Pd;Me.Pd
+detailed;PGM;Me.pgm
+detailed;PGM concentrate;Con.pgm
+detailed;PGM ore;O.pgm
+detailed;4e PGM ore;O.pgm
+detailed;6e PGM ore;O.pgm
+detailed;Phosphate;Nm.PO
+detailed;Phosphates;Nm.PO
+detailed;Pig Iron;Oth.pig
+detailed;Platinum;Me.Pt
+detailed;Polymetallic Ore;O.bulk
+detailed;Primary Sulphide Ore;O.bulk
+detailed;Pt;Me.Pt
+detailed;Pyrite;O.FeS
+detailed;Refractory ore;
+detailed;Rhodium;Me.Rh
+detailed;Ruthenium;Me.Ru
+detailed;Rutile;O.TiO2
+detailed;S;Nm.S
+detailed;Sands;
+detailed;Saprolite;O.bulk
+detailed;Saprolite Ore;O.bulk
+detailed;Selenium;Me.Se
+detailed;Silica;Nm.SiO2
+detailed;Silver;Me.Ag
+detailed;Silver in concentrate;Con.Ag
+detailed;Silver ore;O.Ag
+detailed;Sodium tripolyphosphate;Me.Na_nec
+detailed;Sulfide;O.bulk
+detailed;Sulfuric acid;Nm.H2SO4
+detailed;Sulphide;O.sul
+detailed;Sulphide ore;O.sul
+detailed;Sulphide Ore;O.sul
+detailed;Sulphur;Nm.S
+detailed;Sulphuric acid;Nm.H2SO4
+detailed;Suphide ore;O.bulk
+detailed;Tailings;
+detailed;TCu;Me.Cu
+detailed;Te;Me.Te
+detailed;Thermal bituminous coal;F.sbc
+detailed;Tin alloys;All.Sn
+detailed;Titanium dioxide slag;Me.TiO2
+detailed;Tungsten Trioxide;Me.WO3
+detailed;Uranium;Me.U
+detailed;Zinc;Me.Zn
+detailed;Zinc anode;Me.Zn
+detailed;Zinc clinker;
+detailed;Zinc concentrate;Con.Zn
+detailed;Zinc Concentrate;Con.Zn
+detailed;Zinc concentrate (incl. zinc clinker);Con.Zn
+detailed;Zinc metal;Me.Zn
+detailed;Zinc of which reprocessed zinc;
+detailed;Zinc ore;O.Zn
+detailed;Zircon;O.Zr
+detailed;Zn;Me.Zn
+detailed;Gold Ore;O.Au
+detailed;Phosphate ore;O.P
+detailed;Potash;O.K2O
+detailed;Kaolin;M.kao
+detailed;Bulk concentrate;Con.bulk
+detailed;Iron concentrate;Con.Fe
+detailed;Iron ore pellets;Con.Fe
+detailed;Sinter feed;Oth.sif
+detailed;Iron ore concentrate;Con.Fe
+detailed;Iron ore fines;Con.Fe
+detailed;Spodumene concentrate;Con.Li
+detailed;Lithium DSO (direct shipping ore);O.Li
+detailed;Sintering iron ore;O.Fe
+detailed;Ore;O.bulk
+detailed;Concentrate;Con.bulk
+detailed;Nickel Concentrate;Con.Ni
+detailed;Coke;F.coc
+detailed;Tin;Me.Sn
+detailed;thermal coal;F.stc
+detailed;Thermal coal;F.stc
+detailed;hard coking coal;F.coc
+detailed;coking coal;F.coc
+detailed;coal;F.coal
+detailed;semi-soft choking coal;F.coc
+detailed;Copper (in sulphate);Me.Cu
+detailed;Metallurgical coal;F.coc
+detailed;Uranium oxide;Me.U3O8
+detailed;PGM (palladium, platinum, rhodium, ruthenium, iridium);Me.pgm
+detailed;Limestone;M.lim
+detailed;Dolomite;M.dol
+detailed;Coking coal;F.coc
+detailed;Coking coal concentrate;F.coc
+detailed;Copper Anode;Me.Cu
+detailed;Ore smelted;
+detailed;Copper concentrate and scrap;
+detailed;Direct reduction Iron, Scrap;
+detailed;Sinter feed, Iron ore Pellets, Coking coal;
+detailed;Pig Iron, Scrap;
+detailed;Copper Rod;
+detailed;Refined Zinc;Me.Zn
+detailed;Refined Silver;Me.Ag
+detailed;Refined Gold;Me.Au
+detailed;Refined Cadmium;Me.Cd
+detailed;Blister copper;Me.Cu
+detailed;Commercial grade Selenium;
+detailed;manganese ferroalloys;
+detailed;ferroalloys;
+detailed;Copper wire rod;
+detailed;OFE rod;
+detailed;Crude steel;
+detailed;Hot briquetted Iron;
+detailed;Direct reduction Iron;
+detailed;Raw steel;
+detailed;Sulphide leach;
+detailed;Low-grade ore;
+detailed;SP;
+detailed;Supergene Sulphide;
+detailed;Transitional Sulphide;
+detailed;Oxide Low Solubility;
+detailed;Hypogene Sulphide;
+detailed;Magnetite;O.Fe
+detailed;Hematite;O.Fe
+detailed;Alumina (Aluminiumoxide);
+detailed;Reactive Silica (SiO_2);
+detailed;Steel;
+detailed;Hard coking coal;F.coc
+detailed;Sub-bituminous coal;F.sbc
+detailed;6E PGM ore;O.pgm
+detailed;Manganese carbonate concentrate;Con.MnCO3
+detailed;Manganese oxide concentrate;Con.MnO
+detailed;Sintering ore;O.Fe
+detailed;Iron ore lumps;Con.Fe
+detailed;Bituminous coal;F.obc
+detailed;Long flame coal;F.obc
+detailed;Lignite;F.lig
+detailed;Lead Oxide;O.oxi
+detailed;Copper Oxide;O.oxi
+detailed;PCI Metallurgical coal;F.coc
+detailed;Copper cement;Oth.cuce
+detailed;Tin ore;O.Sn
+detailed;Limonite;O.Fe
+detailed;Fluorspar ore;O.flu
+detailed;Lithium ore;O.Li
+detailed;Spodumene;O.Li
+detailed;Tantalum concentrate;Con.Ta
+detailed;Heavy mineral ore;O.bulk
+detailed;Heavy mineral concentrate;Con.bulk
+detailed;Copper direct shipping ore;O.Cu
+detailed;Oxide copper ore high grade;O.oxi
+detailed;Oxide copper ore low grade;O.oxi
+detailed;Oxide gold ore high grade;O.oxi
+detailed;Oxide gold ore low grade;O.oxi
+detailed;Lead Oxides;O.oxi
+detailed;Copper Oxides;O.oxi
+detailed;Tellurium;Me.Te
+detailed;Fluorspar;Nm.flu
+detailed;Antimony;Me.Sb
+detailed;Li2O;Me.Li2O
+detailed;Ta2O5;Me.Ta2O5
+detailed;Hyti;O.leu
+detailed;Leucoxene;O.leu
+snl;Antimony;Me.Sb
+snl;Bismuth;Me.Bi
+snl;Cobalt;Me.Co
+snl;Copper;Me.Cu
+snl;Diamonds;Nm.dia
+snl;Gold;Me.Au
+snl;Iridium;Me.Ir
+snl;Lanthanides;Me.reo
+snl;Lead;Me.Pb
+snl;Lithium;Me.Li
+snl;Magnesium;Me.Mg
+snl;Manganese;Me.Mn
+snl;Molybdenum;Me.Mo
+snl;Nickel;Me.Ni
+snl;Niobium;Me.Nb
+snl;Palladium;Me.Pd
+snl;Phosphate;Nm.PO
+snl;Platinum;Me.Pt
+snl;Rhodium;Me.Rh
+snl;Ruthenium;Me.Ru
+snl;Silver;Me.Ag
+snl;Tantalum;Me.Ta
+snl;Tellurium;Me.Te
+snl;Tin;Me.Sn
+snl;Titanium;Me.Ti
+snl;Tungsten;Me.W
+snl;U3O8;Me.U
+snl;Vanadium;Me.V
+snl;Zinc;Me.Zn
