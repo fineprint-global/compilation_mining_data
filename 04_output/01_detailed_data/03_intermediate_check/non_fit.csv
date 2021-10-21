@@ -1,1442 +1,388 @@
-mine_fac;sub_site;min_ore_con;type_mining;year;mine_processing
-Aitik;NA;O.Cu;Open pit;2018;NA
-Aitik;NA;Con.Cu;NA;2018;NA
-Aitik;NA;O.Cu;Open pit;2017;NA
-Aitik;NA;Con.Cu;NA;2017;NA
-Aitik;NA;O.Cu;Open pit;2016;NA
-Aitik;NA;Con.Cu;NA;2016;NA
-Aitik;NA;O.Cu;Open pit;2015;NA
-Aitik;NA;Con.Cu;NA;2015;NA
-Aitik;NA;O.Cu;Open pit;2014;NA
-Aitik;NA;Con.Cu;NA;2014;NA
-Aitik;NA;O.Cu;Open pit;2013;NA
-Aitik;NA;Con.Cu;NA;2013;NA
-Aitik;NA;O.Cu;Open pit;2012;NA
-Aitik;NA;Con.Cu;NA;2012;NA
-Aitik;NA;O.Cu;Open pit;2011;NA
-Aitik;NA;Con.Cu;NA;2011;NA
-Aitik;NA;O.Cu;Open pit;2010;NA
-Aitik;NA;Con.Cu;NA;2010;NA
-Aitik;NA;O.Cu;Open pit;2009;NA
-Aitik;NA;Con.Cu;NA;2009;NA
-Aitik;NA;O.Cu;Open pit;2008;NA
-Aitik;NA;Con.Cu;NA;2008;NA
-Aitik;NA;O.Cu;Open pit;2007;NA
-Aitik;NA;Con.Cu;NA;2007;NA
-Aitik;NA;O.Cu;Open pit;2006;NA
-Aitik;NA;Con.Cu;NA;2006;NA
-Aitik;NA;O.Cu;Open pit;2005;NA
-Aitik;NA;Con.Cu;NA;2005;NA
-Aitik;NA;O.Cu;Open pit;2004;NA
-Aitik;NA;Con.Cu;NA;2004;NA
-Aitik;NA;O.Cu;Open pit;2003;NA
-Aitik;NA;Con.Cu;NA;2003;NA
-Aitik;NA;O.Cu;Open pit;2002;NA
-Aitik;NA;Con.Cu;NA;2002;NA
-Aitik;NA;O.Cu;Open pit;2001;NA
-Aitik;NA;Con.Cu;NA;2001;NA
-Aitik;NA;O.Cu;Open pit;2000;NA
-Aitik;NA;Con.Cu;NA;2000;NA
-Aktogay;NA;O.sul;Open pit;2018;NA
-Aktogay;NA;O.oxi;Open pit;2018;Heap leaching
-Aktogay;NA;O.sul;Open pit;2017;NA
-Aktogay;NA;O.oxi;Open pit;2017;Heap leaching
-Aktogay;NA;O.oxi;NA;2015;NA
-Antas;NA;O.bulk;Underground;2019;NA
-Antas;NA;O.bulk;NA;2018;NA
-Batu Hijau;NA;O.Au;NA;2015;NA
-Batu Hijau;NA;O.Au;NA;2014;NA
-Batu Hijau;NA;O.Au;NA;2013;NA
-Batu Hijau;NA;O.Au;NA;2012;NA
-Batu Hijau;NA;O.Au;NA;2011;NA
-Batu Hijau;NA;O.Au;NA;2010;NA
-Batu Hijau;NA;O.Au;NA;2009;NA
-Batu Hijau;NA;O.Au;NA;2008;NA
-Batu Hijau;NA;O.Au;NA;2007;NA
-Belousovsky;NA;O.bulk;NA;2009;NA
-Bembele;NA;O.Mn;Open pit;2019;NA
-Bembele;NA;O.Mn;Open pit;2018;NA
-Bembele;NA;O.Mn;Open pit;2017;NA
-Bembele;NA;Con.MnO;NA;2016;NA
-Bembele;NA;O.Mn;Open pit;2016;NA
-Bembele;NA;O.Mn;Open pit;2015;NA
-Bembele;NA;O.Mn;Open pit;2014;NA
-Bembele;NA;O.Mn;Open pit;2013;NA
-Bembele;NA;O.Mn;Open pit;2012;NA
-Bibiani;NA;O.Au;Open pit;2005;NA
-Bibiani;NA;O.Au;Open pit;2004;NA
-Birchtree;NA;O.Ni;NA;2019;NA
-Birchtree;NA;O.Ni;NA;2018;NA
-Black Mountain;Gamsberg;Con.Zn;Open pit;2019;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2019;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2019;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2018;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2018;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2017;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2017;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2016;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2016;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2015;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2015;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2014;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2014;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2013;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2013;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2012;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2012;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2011;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2011;NA
-Black Mountain;Black Mountain;Con.Zn;Underground;2010;NA
-Black Mountain;Black Mountain;Con.Pb;Underground;2010;NA
-Bloom Lake;NA;O.Fe;NA;2020;NA
-Bloom Lake;NA;O.Fe;NA;2019;NA
-Bloom Lake;NA;Con.Fe;NA;2018;NA
-Bloom Lake;NA;Con.Fe;NA;2014;NA
-Bloom Lake;NA;Con.Fe;NA;2013;NA
-Bonikro;NA;NA;NA;2017;NA
-Bonikro;NA;NA;NA;2016;NA
-Bonikro;NA;NA;NA;2015;NA
-Bonikro;NA;NA;NA;2014;NA
-Bonikro;NA;NA;NA;2013;NA
-Bonikro;NA;NA;NA;2012;NA
-Bozshakol;NA;O.Cu;Open pit;2018;NA
-Bozshakol;NA;O.Cu;Open pit;2017;NA
-Bozshakol;NA;O.Cu;Open pit;2016;NA
-Bozshakol;NA;O.Cu;Open pit;2015;NA
-Bozymchak;NA;O.Cu;NA;2018;NA
-Bozymchak;NA;O.Cu;NA;2017;NA
-Bozymchak;NA;O.Cu;NA;2016;NA
-Bozymchak;NA;O.Cu;NA;2015;NA
-Bozymchak;NA;O.Cu;NA;2014;NA
-Broken Hill;NA;O.Ag;NA;2008;NA
-Broken Hill;NA;O.Ag;NA;2007;NA
-Broken Hill;NA;O.Ag;NA;2006;NA
-Buenavista;NA;O.bulk;Open pit;2019;NA
-Buenavista;NA;O.bulk;Open pit;2018;NA
-Buenavista;NA;O.bulk;Open pit;2017;NA
-Buenavista;NA;O.bulk;Open pit;2016;NA
-Buenavista;NA;O.bulk;Open pit;2015;NA
-Buenavista;NA;O.bulk;Open pit;2014;NA
-Buenavista;NA;O.bulk;Open pit;2013;NA
-Buenavista;NA;O.bulk;Open pit;2012;NA
-Buenavista;NA;O.bulk;Open pit;2011;NA
-Buenavista;NA;O.bulk;Open pit;2010;NA
-Buenavista;NA;O.bulk;Open pit;2009;NA
-Buenavista;NA;O.bulk;Open pit;2008;NA
-Buenavista;NA;O.bulk;Open pit;2007;NA
-Buenavista;NA;O.bulk;Open pit;2006;NA
-Buenavista;NA;O.bulk;Open pit;2005;NA
-Bystrinsky GOK;NA;Con.Fe;NA;2019;NA
-Bystrinsky GOK;NA;Con.Fe;NA;2018;NA
-Cadia;NA;NA;NA;2018;NA
-Cadia;NA;NA;NA;2017;NA
-Cadia;NA;NA;NA;2016;NA
-Cadia;NA;NA;NA;2012;NA
-Cadia;Cadia Hill;NA;NA;2007;NA
-Cadia;Ridgeway;NA;NA;2007;NA
-Cadia;Cadia Hill;NA;NA;2006;NA
-Cadia;Ridgeway;NA;NA;2006;NA
-Cadia;Ridgeway;NA;NA;2005;NA
-Cadia;Cadia Hill;NA;NA;2005;NA
-Candelaria;NA;O.Cu;NA;2019;NA
-Candelaria;NA;O.Cu;NA;2018;NA
-Candelaria;NA;O.Cu;NA;2017;NA
-Candelaria;NA;O.Cu;NA;2016;NA
-Candelaria;NA;O.Cu;NA;2015;NA
-Carlin;NA;O.Au;Open pit;2018;NA
-Carlin;NA;O.Au;Underground;2018;NA
-Carlin;NA;O.Au;Open pit;2017;NA
-Carlin;NA;O.Au;Underground;2017;NA
-Carlin;NA;O.Au;Open pit;2016;NA
-Carlin;NA;O.Au;Underground;2016;NA
-Carlin;NA;O.Au;Open pit;2015;NA
-Carlin;NA;O.Au;Underground;2015;NA
-Carlin;NA;O.Au;Open pit;2014;NA
-Carlin;NA;O.Au;Underground;2014;NA
-Carlin;NA;O.Au;Open pit;2013;NA
-Carlin;Carlin East;O.Au;Underground;2013;NA
-Carlin;Chukar;O.Au;Underground;2013;NA
-Carlin;Leeville;O.Au;Underground;2013;NA
-Carlin;NA;O.Au;Open pit;2012;NA
-Carlin;Carlin East;O.Au;Underground;2012;NA
-Carlin;Chukar;O.Au;Underground;2012;NA
-Carlin;Leeville;O.Au;Underground;2012;NA
-Carlin;NA;O.Au;Open pit;2011;NA
-Carlin;Carlin East;O.Au;Underground;2011;NA
-Carlin;Deep Post;O.Au;Underground;2011;NA
-Carlin;Chukar;O.Au;Underground;2011;NA
-Carlin;Leeville;O.Au;Underground;2011;NA
-Carlin;NA;O.Au;Open pit;2010;NA
-Carlin;Carlin East;O.Au;Underground;2010;NA
-Carlin;Deep Post;O.Au;Underground;2010;NA
-Carlin;Chukar;O.Au;Underground;2010;NA
-Carlin;Leeville;O.Au;Underground;2010;NA
-Carlin;NA;O.Au;Open pit;2009;NA
-Carlin;Carlin East;O.Au;Underground;2009;NA
-Carlin;Deep Post;O.Au;Underground;2009;NA
-Carlin;Chukar;O.Au;Underground;2009;NA
-Carlin;Leeville;O.Au;Underground;2009;NA
-Carlin;NA;O.Au;Open pit;2008;NA
-Carlin;Carlin East;O.Au;Underground;2008;NA
-Carlin;Deep Post;O.Au;Underground;2008;NA
-Carlin;Chukar;O.Au;Underground;2008;NA
-Carlin;Leeville;O.Au;Underground;2008;NA
-Carlin;NA;O.Au;Open pit;2007;NA
-Carlin;Carlin East;O.Au;Underground;2007;NA
-Carlin;Deep Post;O.Au;Underground;2007;NA
-Carlin;Chukar;O.Au;Underground;2007;NA
-Carlin;Leeville;O.Au;Underground;2007;NA
-Casa de Pedra;NA;Con.Fe;NA;2010;NA
-Casa de Pedra;NA;Con.Fe;NA;2009;NA
-Casa de Pedra;NA;O.Fe;NA;2009;NA
-Casa de Pedra;NA;O.Fe;NA;2008;NA
-Casa de Pedra;NA;Con.Fe;NA;2008;NA
-Casa de Pedra;NA;O.Fe;NA;2007;NA
-Casa de Pedra;NA;Con.Fe;NA;2007;NA
-Casa de Pedra;NA;Con.Fe;NA;2006;NA
-Casa de Pedra;NA;O.Fe;NA;2006;NA
-Casa de Pedra;NA;Con.Fe;NA;2005;NA
-Casa de Pedra;NA;O.Fe;NA;2005;NA
-Casa de Pedra;NA;Con.Fe;NA;2004;NA
-Casa de Pedra;NA;O.Fe;NA;2004;NA
-Casa de Pedra;NA;Con.Fe;NA;2003;NA
-Casa de Pedra;NA;O.Fe;NA;2003;NA
-Casa de Pedra;NA;Con.Fe;NA;2002;NA
-Casa de Pedra;NA;O.Fe;NA;2002;NA
-Centinela;Esperanza;Con.Cu;NA;2011;NA
-Central GOK;NA;Con.Fe;NA;2019;NA
-Central GOK;NA;Con.Fe;NA;2015;NA
-Central GOK;NA;Con.Fe;NA;2014;NA
-Central GOK;NA;Con.Fe;NA;2013;NA
-Central GOK;NA;Con.Fe;NA;2012;NA
-Central GOK;NA;Con.Fe;NA;2011;NA
-Central GOK;NA;Con.Fe;NA;2010;NA
-Cerro de Pasco;Raúl Rojas;O.oxi;NA;2014;NA
-Chapada;NA;Con.bulk;NA;2018;NA
-Chapada;NA;Con.bulk;NA;2017;NA
-Chapada;NA;Con.bulk;NA;2016;NA
-Chapada;NA;Con.bulk;NA;2015;NA
-Chapada;NA;Con.bulk;NA;2014;NA
-Chapada;NA;Con.bulk;NA;2013;NA
-Chapada;NA;Con.bulk;NA;2012;NA
-Chapada;NA;Con.bulk;NA;2011;NA
-Chapada;NA;Con.bulk;NA;2010;NA
-Chapada;NA;Con.bulk;NA;2009;NA
-Chapada;NA;Con.bulk;NA;2008;NA
-Chapada;NA;Con.bulk;NA;2007;NA
-Chapada;NA;Con.bulk;NA;2006;NA
-Cienega;NA;NA;Underground;2018;NA
-Cienega;NA;NA;Underground;2017;NA
-Cienega;NA;NA;Underground;2016;NA
-Cienega;NA;NA;Underground;2015;NA
-Cienega;NA;NA;Underground;2014;NA
-Cienega;NA;NA;Underground;2013;NA
-Cienega;NA;NA;Underground;2012;NA
-Cienega;NA;NA;Underground;2011;NA
-Cienega;NA;NA;Underground;2010;NA
-Cobre Las Cruces;NA;O.Cu;NA;2018;NA
-Cobre Las Cruces;NA;O.Cu;NA;2017;NA
-Cobre Las Cruces;NA;O.Cu;NA;2016;NA
-Cobre Las Cruces;NA;O.Cu;NA;2015;NA
-Cobre Las Cruces;NA;O.Cu;NA;2014;NA
-Cobre Las Cruces;NA;O.Cu;NA;2013;NA
-Collahuasi;NA;O.sul;Open pit;2018;NA
-Collahuasi;NA;O.sul;Open pit;2017;NA
-Collahuasi;NA;O.sul;NA;2016;NA
-Collahuasi;NA;O.sul;NA;2015;NA
-Collahuasi;NA;O.oxi;NA;2015;NA
-Collahuasi;NA;O.sul;NA;2014;NA
-Collahuasi;NA;O.oxi;NA;2014;NA
-Collahuasi;NA;O.sul;NA;2013;NA
-Collahuasi;NA;O.oxi;NA;2013;NA
-Collahuasi;NA;O.oxi;NA;2012;NA
-Collahuasi;NA;O.sul;NA;2012;NA
-Collahuasi;NA;O.sul;NA;2011;NA
-Collahuasi;NA;O.oxi;NA;2011;NA
-Collahuasi;NA;O.sul;NA;2010;NA
-Collahuasi;NA;O.oxi;NA;2010;NA
-Collahuasi;NA;O.sul;NA;2009;NA
-Collahuasi;NA;O.oxi;NA;2009;NA
-Collahuasi;NA;O.sul;NA;2008;NA
-Collahuasi;NA;O.oxi;NA;2008;NA
-Collahuasi;NA;O.sul;NA;2007;NA
-Collahuasi;NA;O.oxi;NA;2007;NA
-Collahuasi;NA;O.oxi;NA;2006;NA
-Collahuasi;NA;O.sul;NA;2006;NA
-Collahuasi;NA;O.sul;NA;2005;NA
-Collahuasi;NA;O.oxi;NA;2005;NA
-Collahuasi;NA;O.sul;NA;2004;NA
-Collahuasi;NA;O.oxi;NA;2004;NA
-Collahuasi;NA;O.sul;NA;2003;NA
-Collahuasi;NA;O.oxi;NA;2003;NA
-Constancia;NA;O.bulk;NA;2019;NA
-Constancia;NA;O.bulk;NA;2018;NA
-Constancia;NA;O.bulk;NA;2017;NA
-Constancia;NA;O.bulk;NA;2016;NA
-Constancia;NA;O.bulk;NA;2015;NA
-Cozamin;NA;Con.Cu;NA;2019;NA
-Cozamin;NA;Con.Zn;NA;2019;NA
-Cozamin;NA;Con.Cu;NA;2018;NA
-Cozamin;NA;Con.Zn;NA;2018;NA
-Cozamin;NA;Con.Cu;NA;2017;NA
-Cozamin;NA;Con.Zn;NA;2017;NA
-Cozamin;NA;Con.Pb;NA;2017;NA
-Cozamin;NA;Con.Cu;NA;2016;NA
-Cozamin;NA;Con.Zn;NA;2016;NA
-Cozamin;NA;Con.Pb;NA;2016;NA
-Cozamin;NA;Con.Cu;NA;2015;NA
-Cozamin;NA;Con.Zn;NA;2015;NA
-Cozamin;NA;Con.Pb;NA;2015;NA
-Cozamin;NA;Con.Cu;NA;2014;NA
-Cozamin;NA;Con.Zn;NA;2014;NA
-Cozamin;NA;Con.Pb;NA;2014;NA
-Cozamin;NA;Con.Cu;NA;2013;NA
-Cozamin;NA;Con.Zn;NA;2013;NA
-Cozamin;NA;Con.Pb;NA;2013;NA
-Cozamin;NA;Con.Cu;NA;2012;NA
-Cozamin;NA;Con.Zn;NA;2012;NA
-Cozamin;NA;Con.Pb;NA;2012;NA
-Cozamin;NA;Con.Cu;NA;2011;NA
-Cozamin;NA;Con.Zn;NA;2011;NA
-Cozamin;NA;Con.Pb;NA;2011;NA
-Cozamin;NA;Con.Cu;NA;2010;NA
-Cozamin;NA;Con.Zn;NA;2010;NA
-Cozamin;NA;Con.Pb;NA;2010;NA
-Cozamin;NA;Con.Cu;NA;2009;NA
-Cozamin;NA;Con.Zn;NA;2009;NA
-Cozamin;NA;Con.Pb;NA;2009;NA
-Cozamin;NA;Con.Cu;NA;2008;NA
-Cozamin;NA;Con.Zn;NA;2008;NA
-Cozamin;NA;Con.Pb;NA;2008;NA
-Cracow;NA;NA;NA;2007;NA
-Cracow;NA;NA;NA;2006;NA
-Cracow;NA;NA;NA;2005;NA
-Cripple Creek & Victor;NA;NA;Open pit;2019;NA
-Cripple Creek & Victor;NA;NA;Open pit;2018;NA
-Cripple Creek & Victor;NA;NA;Open pit;2017;NA
-Cripple Creek & Victor;NA;NA;Open pit;2016;NA
-Cuajone;NA;O.bulk;Open pit;2019;NA
-Cuajone;NA;O.bulk;Open pit;2018;NA
-Cuajone;NA;O.bulk;Open pit;2017;NA
-Cuajone;NA;O.bulk;Open pit;2016;NA
-Cuajone;NA;O.bulk;Open pit;2015;NA
-Cuajone;NA;O.bulk;Open pit;2014;NA
-Cuajone;NA;O.bulk;Open pit;2013;NA
-Cuajone;NA;O.bulk;Open pit;2012;NA
-Cuajone;NA;O.bulk;Open pit;2011;NA
-Cuajone;NA;O.bulk;Open pit;2010;NA
-Cuajone;NA;O.bulk;Open pit;2009;NA
-Cuajone;NA;O.bulk;Open pit;2008;NA
-Cuajone;NA;O.bulk;Open pit;2007;NA
-Cuajone;NA;O.bulk;Open pit;2006;NA
-Cuajone;NA;O.bulk;Open pit;2005;NA
-Cuajone;NA;Con.Cu;Open pit;2004;NA
-Cuajone;NA;Con.Cu;Open pit;2003;NA
-Cuajone;NA;Con.Cu;Open pit;2002;NA
-Daxin;NA;O.Mn;Open pit;2019;NA
-Daxin;NA;O.Mn;Underground;2019;NA
-Daxin;NA;O.Mn;Open pit;2018;NA
-Daxin;NA;O.Mn;Underground;2018;NA
-Daxin;NA;O.Mn;Open pit;2017;NA
-Daxin;NA;O.Mn;Underground;2017;NA
-Daxin;NA;O.Mn;Open pit;2016;NA
-Daxin;NA;O.Mn;Underground;2016;NA
-Daxin;NA;O.Mn;Open pit;2015;NA
-Daxin;NA;O.Mn;Underground;2015;NA
-Daxin;NA;O.Mn;Open pit;2014;NA
-Daxin;NA;O.Mn;Underground;2014;NA
-Daxin;NA;O.Mn;Open pit;2013;NA
-Daxin;NA;O.Mn;Underground;2013;NA
-Daxin;NA;O.Mn;Open pit;2012;NA
-Daxin;NA;O.Mn;Underground;2012;NA
-DeGrussa;NA;O.bulk;NA;2020;NA
-DeGrussa;NA;O.bulk;NA;2019;NA
-DeGrussa;NA;O.bulk;NA;2018;NA
-DeGrussa;NA;O.bulk;NA;2017;NA
-DeGrussa;NA;O.bulk;NA;2016;NA
-DeGrussa;NA;O.bulk;NA;2015;NA
-DeGrussa;NA;O.bulk;NA;2014;NA
-DeGrussa;NA;O.bulk;NA;2013;NA
-Edikan;NA;NA;NA;2014;NA
-Edikan;NA;NA;NA;2013;NA
-Edikan;NA;NA;NA;2012;NA
-El Soldado;NA;O.Cu;NA;2018;NA
-El Soldado;NA;O.Cu;NA;2017;NA
-El Soldado;NA;O.Cu;NA;2016;NA
-El Soldado;NA;O.Cu;NA;2015;NA
-El Soldado;NA;O.Cu;NA;2014;NA
-El Soldado;NA;O.Cu;NA;2013;NA
-El Soldado;NA;O.sul;NA;2012;NA
-El Soldado;NA;O.oxi;NA;2012;NA
-El Soldado;NA;O.sul;NA;2011;NA
-El Soldado;NA;O.oxi;NA;2011;NA
-El Soldado;NA;O.oxi;NA;2010;NA
-El Soldado;NA;O.sul;NA;2010;NA
-El Soldado;NA;O.oxi;NA;2009;NA
-El Soldado;NA;O.sul;NA;2009;NA
-El Soldado;NA;O.oxi;NA;2008;NA
-El Soldado;NA;O.sul;NA;2008;NA
-El Soldado;NA;O.oxi;NA;2007;NA
-El Soldado;NA;O.sul;NA;2007;NA
-El Soldado;NA;O.oxi;NA;2006;NA
-El Soldado;NA;O.sul;NA;2006;NA
-El Soldado;NA;O.oxi;NA;2005;NA
-El Soldado;NA;O.sul;NA;2005;NA
-El Soldado;NA;O.oxi;NA;2004;NA
-El Soldado;NA;O.sul;NA;2004;NA
-El Soldado;NA;O.oxi;NA;2003;NA
-El Soldado;NA;O.sul;NA;2003;NA
-El Volcan;NA;Con.Fe;NA;2010;NA
-Fernandinho;NA;Con.Fe;NA;2016;NA
-Fernandinho;NA;Con.Fe;NA;2015;NA
-Fernandinho;NA;Con.Fe;NA;2010;NA
-FNI Cagdianao;CAGA 2;O.Ni;NA;2014;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2014;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2013;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2012;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2011;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2010;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2009;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2008;NA
-FNI Cagdianao;CAGA 4;O.Ni;NA;2007;NA
-Fresnillo;NA;NA;Underground;2018;NA
-Fresnillo;NA;NA;Underground;2017;NA
-Fresnillo;NA;NA;Underground;2016;NA
-Fresnillo;NA;NA;Underground;2015;NA
-Fresnillo;NA;NA;Underground;2014;NA
-Fresnillo;NA;NA;Underground;2013;NA
-Fresnillo;NA;NA;Underground;2012;NA
-Fresnillo;NA;NA;Underground;2011;NA
-Fresnillo;NA;NA;Underground;2010;NA
-Galena;NA;O.Ag;NA;2005;NA
-Galena;NA;O.Ag;NA;2004;NA
-Galena;NA;O.Ag;NA;2003;NA
-Galena;NA;O.Ag;NA;2002;NA
-Galena;NA;O.Ag;NA;2001;NA
-Galena;NA;O.Ag;NA;2000;NA
-Gertrude;NA;O.bulk;NA;2011;NA
-Gertrude;NA;O.bulk;NA;2010;NA
-Gertrude;NA;O.bulk;NA;2009;NA
-Golden Grove;NA;O.bulk;NA;2011;NA
-Golden Grove;NA;O.bulk;NA;2010;NA
-Gosowong;NA;NA;NA;2018;NA
-Gosowong;NA;NA;NA;2017;NA
-Gosowong;NA;NA;NA;2016;NA
-Gosowong;NA;NA;NA;2015;NA
-Gosowong;NA;NA;NA;2014;NA
-Gosowong;NA;NA;NA;2013;NA
-Gosowong;NA;NA;NA;2012;NA
-Gosowong;NA;NA;NA;2007;NA
-Gosowong;NA;NA;NA;2005;NA
-Gualcamayo;NA;NA;NA;2016;leaching
-Gualcamayo;NA;NA;NA;2015;leaching
-Gualcamayo;NA;NA;NA;2014;leaching
-Gualcamayo;NA;NA;NA;2013;leaching
-Gualcamayo;NA;NA;NA;2012;leaching
-Gualcamayo;NA;NA;NA;2011;leaching
-Gualcamayo;NA;NA;NA;2010;leaching
-Gualcamayo;NA;NA;NA;2009;leaching
-Guelb Moghrein;NA;Con.Fe;NA;2018;NA
-Guelb Moghrein;NA;NA;NA;2006;NA
-Hibbing;NA;O.Fe;NA;2019;NA
-Hibbing;NA;O.Fe;NA;2018;NA
-Hibbing;NA;O.Fe;NA;2017;NA
-Hibbing;NA;O.Fe;NA;2016;NA
-Hibbing;NA;O.Fe;NA;2015;NA
-Hibbing;NA;O.Fe;NA;2014;NA
-Hibbing;NA;O.Fe;NA;2013;NA
-Hibbing;NA;O.Fe;NA;2012;NA
-Hibbing;NA;O.Fe;NA;2011;NA
-Hibbing;NA;Con.Fe;NA;2010;NA
-Hibbing;NA;Con.Fe;NA;2009;NA
-Hibbing;NA;Con.Fe;NA;2008;NA
-Hibbing;NA;Con.Fe;NA;2007;NA
-Hibbing;NA;Con.Fe;NA;2006;NA
-Hibbing;NA;Con.Fe;NA;2005;NA
-Hibbing;NA;Con.Fe;NA;2004;NA
-Hibbing;NA;Con.Fe;NA;2003;NA
-Hibbing;NA;Con.Fe;NA;2002;NA
-Hibbing;NA;Con.Fe;NA;2001;NA
-Hibbing;NA;Con.Fe;NA;2000;NA
-Hidden Valley;NA;NA;NA;2016;NA
-Hidden Valley;NA;NA;NA;2014;NA
-Hidden Valley;NA;NA;NA;2013;NA
-Hidden Valley;NA;NA;NA;2012;NA
-Highland Valley Copper;NA;O.Cu;NA;2018;NA
-Highland Valley Copper;NA;O.Cu;NA;2017;NA
-Highland Valley Copper;NA;O.Cu;NA;2016;NA
-Highland Valley Copper;NA;O.Cu;NA;2015;NA
-Highland Valley Copper;NA;O.Cu;NA;2014;NA
-Highland Valley Copper;NA;O.Cu;NA;2013;NA
-Highland Valley Copper;NA;O.Cu;NA;2012;NA
-Highland Valley Copper;NA;O.Cu;NA;2011;NA
-Highland Valley Copper;NA;O.Cu;NA;2010;NA
-Highland Valley Copper;NA;O.Cu;NA;2007;NA
-Highland Valley Copper;NA;O.Cu;NA;2006;NA
-Highland Valley Copper;NA;O.Cu;NA;2005;NA
-Highland Valley Copper;NA;O.Cu;NA;2004;NA
-Highland Valley Copper;NA;O.Cu;NA;2003;NA
-Highland Valley Copper;NA;O.Cu;NA;2002;NA
-Highland Valley Copper;NA;O.Cu;NA;2001;NA
-Highland Valley Copper;NA;O.Cu;NA;2000;NA
-Iduapriem;NA;O.Au;Open pit;2005;NA
-Iduapriem;NA;O.Au;Open pit;2004;NA
-Iluka Virginia;NA;O.bulk;NA;2015;NA
-Iluka Virginia;NA;O.bulk;NA;2014;NA
-Iluka Virginia;NA;O.bulk;NA;2013;NA
-Iluka Virginia;NA;O.bulk;NA;2012;NA
-Iluka Virginia;NA;O.bulk;NA;2011;NA
-Iluka Virginia;NA;O.bulk;NA;2010;NA
-Iluka Western Australia;Cataby;O.bulk;NA;2019;NA
-Iluka Western Australia;NA;O.bulk;NA;2018;NA
-Iluka Western Australia;NA;O.bulk;NA;2017;NA
-Iluka Western Australia;NA;O.bulk;NA;2016;NA
-Iluka Western Australia;NA;O.bulk;NA;2015;NA
-Iluka Western Australia;NA;O.bulk;NA;2014;NA
-Iluka Western Australia;NA;O.bulk;NA;2013;NA
-Iluka Western Australia;NA;O.bulk;NA;2012;NA
-Iluka Western Australia;NA;O.bulk;NA;2011;NA
-Iluka Western Australia;NA;O.bulk;NA;2010;NA
-IMMSA - Charcas;NA;NA;NA;2013;NA
-IMMSA - Charcas;NA;NA;NA;2012;NA
-IMMSA - Charcas;NA;NA;NA;2011;NA
-IMMSA - Charcas;NA;NA;NA;2010;NA
-IMMSA - Charcas;NA;NA;NA;2009;NA
-IMMSA - Charcas;NA;NA;NA;2008;NA
-IMMSA - Charcas;NA;NA;NA;2007;NA
-IMMSA - Charcas;NA;NA;NA;2006;NA
-IMMSA - Charcas;NA;NA;NA;2005;NA
-IMMSA - San Martin;NA;NA;NA;2007;NA
-IMMSA - San Martin;NA;NA;NA;2006;NA
-IMMSA - San Martin;NA;NA;NA;2005;NA
-IMMSA - Santa Barbara;NA;NA;NA;2013;NA
-IMMSA - Santa Barbara;NA;NA;NA;2012;NA
-IMMSA - Santa Barbara;NA;NA;NA;2011;NA
-IMMSA - Santa Barbara;NA;NA;NA;2010;NA
-IMMSA - Santa Barbara;NA;NA;NA;2009;NA
-IMMSA - Santa Barbara;NA;NA;NA;2008;NA
-IMMSA - Santa Barbara;NA;NA;NA;2007;NA
-IMMSA - Santa Barbara;NA;NA;NA;2006;NA
-IMMSA - Santa Barbara;NA;NA;NA;2005;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2013;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2012;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2011;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2010;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2009;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2008;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2007;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2006;NA
-IMMSA - Santa Eulalia;NA;NA;NA;2005;NA
-IMMSA - Taxco;NA;NA;NA;2007;NA
-IMMSA - Taxco;NA;NA;NA;2006;NA
-IMMSA - Taxco;NA;NA;NA;2005;NA
-Ingulets GOK;NA;Con.Fe;NA;2019;NA
-Ingulets GOK;NA;Con.Fe;NA;2015;NA
-Ingulets GOK;NA;Con.Fe;NA;2014;NA
-Ingulets GOK;NA;Con.Fe;NA;2013;NA
-Ingulets GOK;NA;Con.Fe;NA;2012;NA
-Ingulets GOK;NA;Con.Fe;NA;2011;NA
-Ingulets GOK;NA;Con.Fe;NA;2008;NA
-Irtyshsky;NA;NA;NA;2014;NA
-Irtyshsky;NA;NA;NA;2013;NA
-Irtyshsky;NA;NA;NA;2012;NA
-Irtyshsky;NA;NA;NA;2011;NA
-Irtyshsky;NA;NA;NA;2010;NA
-Irtyshsky;NA;NA;NA;2009;NA
-Irtyshsky;NA;NA;NA;2008;NA
-Irtyshsky;NA;NA;NA;2007;NA
-Itabira;NA;O.Fe;Open pit;2019;NA
-Itabira;NA;O.Fe;Open pit;2018;NA
-Itabira;NA;O.Fe;Open pit;2017;NA
-Itabira;NA;O.Fe;Open pit;2016;NA
-Itabira;NA;O.Fe;Open pit;2015;NA
-Itabira;NA;O.Fe;Open pit;2014;NA
-Itabira;Caue;O.Fe;Open pit;2013;NA
-Itabira;Conceicao;O.Fe;Open pit;2013;NA
-Itabira;Caue;O.Fe;Open pit;2012;NA
-Itabira;Conceicao;O.Fe;Open pit;2012;NA
-Itabira;Caue;O.Fe;Open pit;2011;NA
-Itabira;Conceicao;O.Fe;Open pit;2011;NA
-Itabira;Caue;O.Fe;Open pit;2010;NA
-Itabira;Conceicao;O.Fe;Open pit;2010;NA
-Itabira;Caue;O.Fe;Open pit;2009;NA
-Itabira;Conceicao;O.Fe;Open pit;2009;NA
-Itabira;Caue;O.Fe;Open pit;2008;NA
-Itabira;Conceicao;O.Fe;Open pit;2008;NA
-Itabira;Caue;O.Fe;Open pit;2007;NA
-Itabira;Conceicao;O.Fe;Open pit;2007;NA
-Itabira;Caue;O.Fe;Open pit;2006;NA
-Itabira;Conceicao;O.Fe;Open pit;2006;NA
-Itabira;Caue;O.Fe;Open pit;2005;NA
-Itabira;Conceicao;O.Fe;Open pit;2005;NA
-Itabira;Caue;O.Fe;Open pit;2004;NA
-Itabira;Conceicao;O.Fe;Open pit;2004;NA
-Itabira;Caue;O.Fe;Open pit;2003;NA
-Itabira;Conceicao;O.Fe;Open pit;2003;NA
-Itabira;Caue;O.Fe;Open pit;2002;NA
-Itabira;Conceicao;O.Fe;Open pit;2002;NA
-Itabira;Caue;O.Fe;Open pit;2001;NA
-Itabira;Conceicao;O.Fe;Open pit;2001;NA
-Itabira;Caue;O.Fe;Open pit;2000;NA
-Itabira;Conceicao;O.Fe;Open pit;2000;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2019;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2018;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2017;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2016;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2015;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2014;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2013;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2012;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2011;NA
-Jacinth-Ambrosia;NA;O.bulk;NA;2010;NA
-Kalgoorlie;NA;O.Au;Open pit;2013;NA
-Kalgoorlie;NA;O.Au;Underground;2013;NA
-Kansanshi;NA;O.sul;NA;2018;NA
-Kansanshi;NA;O.oxi;NA;2018;NA
-Kansanshi;NA;O.sul;NA;2017;NA
-Kansanshi;NA;O.oxi;NA;2017;NA
-Kansanshi;NA;O.sul;NA;2016;NA
-Kansanshi;NA;O.oxi;NA;2016;NA
-Kansanshi;NA;O.sul;NA;2015;NA
-Kansanshi;NA;O.oxi;NA;2015;NA
-Kansanshi;NA;O.sul;NA;2014;NA
-Kansanshi;NA;O.oxi;NA;2014;NA
-Kansanshi;NA;O.sul;NA;2013;NA
-Kansanshi;NA;O.oxi;NA;2013;NA
-Kansanshi;NA;O.sul;NA;2012;NA
-Kansanshi;NA;O.oxi;NA;2012;NA
-Kansanshi;NA;O.sul;NA;2011;NA
-Kansanshi;NA;O.oxi;NA;2011;NA
-Kansanshi;NA;O.sul;NA;2010;NA
-Kansanshi;NA;O.oxi;NA;2010;NA
-Kansanshi;NA;O.sul;NA;2009;NA
-Kansanshi;NA;O.oxi;NA;2009;NA
-Kansanshi;NA;O.sul;NA;2008;NA
-Kansanshi;NA;O.oxi;NA;2008;NA
-Kansanshi;NA;O.sul;NA;2007;NA
-Kansanshi;NA;O.oxi;NA;2007;NA
-Kansanshi;NA;O.sul;NA;2006;NA
-Kansanshi;NA;O.oxi;NA;2006;NA
-Kansanshi;NA;O.sul;NA;2005;NA
-Kansanshi;NA;O.oxi;NA;2005;NA
-Kansanshi;NA;NA;NA;2004;NA
-Kayad;NA;Con.Zn;Underground;2019;NA
-Kayad;NA;Con.Pb;Underground;2019;NA
-Kayad;NA;Con.Zn;Underground;2018;NA
-Kayad;NA;Con.Pb;Underground;2018;NA
-Kayad;NA;Con.Zn;Underground;2017;NA
-Kayad;NA;Con.Pb;Underground;2017;NA
-Kayad;NA;Con.Zn;Underground;2016;NA
-Kayad;NA;Con.Pb;Underground;2016;NA
-Kayad;NA;Con.Zn;Underground;2015;NA
-Kayad;NA;Con.Pb;Underground;2015;NA
-Kayad;NA;Con.Zn;Underground;2014;NA
-Kayad;NA;Con.Pb;Underground;2014;NA
-Kevitsa;NA;Con.Cu;NA;2018;NA
-Kevitsa;NA;Con.Ni;NA;2018;NA
-Kevitsa;NA;Con.Cu;NA;2017;NA
-Kevitsa;NA;Con.Ni;NA;2017;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2019;NA
-Kryvyi Rih;NA;O.Fe;Underground;2019;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2018;NA
-Kryvyi Rih;NA;O.Fe;Underground;2018;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2017;NA
-Kryvyi Rih;NA;O.Fe;Underground;2017;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2016;NA
-Kryvyi Rih;NA;O.Fe;Underground;2016;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2015;NA
-Kryvyi Rih;NA;O.Fe;Underground;2015;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2014;NA
-Kryvyi Rih;NA;O.Fe;Underground;2014;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2013;NA
-Kryvyi Rih;NA;O.Fe;Underground;2013;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2012;NA
-Kryvyi Rih;NA;O.Fe;Underground;2012;NA
-Kryvyi Rih;NA;O.Fe;Open pit;2011;NA
-Kryvyi Rih;NA;O.Fe;Underground;2011;NA
-Kryvyi Rih;NA;Con.Fe;Open pit;2010;NA
-Kryvyi Rih;NA;Oth.sif;Underground;2010;NA
-Kryvyi Rih;NA;Con.Fe;Open pit;2009;NA
-Kryvyi Rih;NA;Oth.sif;Underground;2009;NA
-Kryvyi Rih;NA;Con.Fe;Open pit;2008;NA
-Kryvyi Rih;NA;Oth.sif;Underground;2008;NA
-Kylylahti;NA;Con.Cu;NA;2018;NA
-Kylylahti;NA;Con.Zn;NA;2018;NA
-Kylylahti;NA;Con.Cu;NA;2017;NA
-Kylylahti;NA;Con.Zn;NA;2017;NA
-Kylylahti;NA;Con.Cu;NA;2016;NA
-Kylylahti;NA;Con.Zn;NA;2016;NA
-Kylylahti;NA;Con.Cu;NA;2015;NA
-Kylylahti;NA;Con.Zn;NA;2015;NA
-La Arena;NA;O.bulk;NA;2019;NA
-La Caridad;NA;O.bulk;Open pit;2019;NA
-La Caridad;NA;O.bulk;Open pit;2018;NA
-La Caridad;NA;O.bulk;Open pit;2017;NA
-La Caridad;NA;O.bulk;Open pit;2016;NA
-La Caridad;NA;O.bulk;Open pit;2015;NA
-La Caridad;NA;O.bulk;Open pit;2014;NA
-La Caridad;NA;O.bulk;Open pit;2013;NA
-La Caridad;NA;O.bulk;Open pit;2012;NA
-La Caridad;NA;O.bulk;Open pit;2011;NA
-La Caridad;NA;O.bulk;Open pit;2010;NA
-La Caridad;NA;O.bulk;Open pit;2009;NA
-La Caridad;NA;O.bulk;Open pit;2008;NA
-La Caridad;NA;O.bulk;Open pit;2007;NA
-La Caridad;NA;O.bulk;Open pit;2006;NA
-La Caridad;NA;O.bulk;Open pit;2005;NA
-Lagunas Norte;NA;NA;NA;2018;NA
-Lagunas Norte;NA;NA;NA;2017;NA
-Las Bambas;NA;NA;NA;2018;NA
-Las Bambas;NA;NA;NA;2017;NA
-Las Bambas;NA;NA;NA;2016;NA
-Las Truchas;NA;Con.Fe;NA;2010;NA
-Las Truchas;NA;Con.Fe;NA;2009;NA
-Las Truchas;NA;Con.Fe;NA;2008;NA
-Leonora;Gwalia;O.Au;NA;2009;NA
-Lihir;NA;NA;NA;2018;NA
-Lihir;NA;NA;NA;2017;NA
-Lihir;NA;NA;NA;2016;NA
-Lihir;NA;NA;NA;2015;NA
-Lihir;NA;NA;NA;2014;NA
-Lihir;NA;NA;NA;2013;NA
-Lihir;NA;NA;NA;2012;NA
-Lisheen;NA;Con.Zn;Underground;2016;NA
-Lisheen;NA;Con.Pb;Underground;2016;NA
-Lisheen;NA;Con.Zn;Underground;2015;NA
-Lisheen;NA;Con.Pb;Underground;2015;NA
-Lisheen;NA;Con.Zn;Underground;2014;NA
-Lisheen;NA;Con.Pb;Underground;2014;NA
-Lisheen;NA;Con.Zn;Underground;2013;NA
-Lisheen;NA;Con.Pb;Underground;2013;NA
-Lisheen;NA;Con.Zn;Underground;2012;NA
-Lisheen;NA;Con.Pb;Underground;2012;NA
-Lisheen;NA;Con.Zn;Underground;2011;NA
-Lisheen;NA;Con.Pb;Underground;2011;NA
-Lisheen;NA;Con.Zn;Underground;2010;NA
-Lisheen;NA;Con.Pb;Underground;2010;NA
-Lisheen;NA;O.Zn;NA;2009;NA
-Lisheen;NA;O.Zn;NA;2008;NA
-Lisheen;NA;O.Zn;NA;2007;NA
-Lisheen;NA;O.Zn;NA;2006;NA
-Lisheen;NA;O.Zn;NA;2005;NA
-Lisheen;NA;O.Zn;NA;2004;NA
-Lisheen;NA;O.Zn;NA;2003;NA
-Long Canyon;NA;O.Au;Open pit;2018;leaching
-Long Canyon;NA;O.Au;Open pit;2017;leaching
-Long Canyon;NA;O.Au;Open pit;2016;leaching
-Los Bronces;NA;O.sul;NA;2018;NA
-Los Bronces;NA;O.sul;NA;2017;NA
-Los Bronces;NA;O.Cu;NA;2016;NA
-Los Bronces;NA;O.sul;NA;2015;NA
-Los Bronces;NA;O.sul;NA;2014;NA
-Los Bronces;NA;O.sul;NA;2013;NA
-Los Bronces;Confluencia;NA;NA;2012;NA
-Los Bronces;Las Tortolas;NA;NA;2012;NA
-Los Bronces;Las Tortolas;NA;NA;2011;NA
-Los Bronces;Confluencia;NA;NA;2011;NA
-Los Bronces;Las Tortolas;NA;NA;2010;NA
-Los Bronces;Las Tortolas;NA;NA;2009;NA
-Los Bronces;Las Tortolas;NA;NA;2008;NA
-Los Bronces;Las Tortolas;NA;NA;2007;NA
-Los Bronces;Las Tortolas;NA;NA;2006;NA
-Los Bronces;Las Tortolas;NA;NA;2005;NA
-Los Bronces;Las Tortolas;NA;NA;2004;NA
-Los Bronces;Las Tortolas;NA;NA;2003;NA
-Los Pelambres;NA;Con.Cu;NA;2011;NA
-Los Pelambres;NA;Con.Cu;NA;2010;NA
-Los Pelambres;NA;Con.Cu;NA;2009;NA
-Los Pelambres;NA;Con.Cu;NA;2008;NA
-Los Pelambres;NA;Con.Cu;NA;2007;NA
-Los Pelambres;NA;Con.Cu;NA;2006;NA
-Los Pelambres;NA;Con.Cu;NA;2005;NA
-Los Pelambres;NA;Con.Cu;NA;2004;NA
-Los Pelambres;NA;Con.Cu;NA;2003;NA
-Los Pelambres;NA;Con.Cu;NA;2002;NA
-Los Pelambres;NA;Con.Cu;NA;2001;NA
-Los Pelambres;NA;Con.Cu;NA;2000;NA
-Lounge Lizard;NA;O.Ni;NA;2012;NA
-Lubambe;NA;Con.Cu;NA;2017;NA
-Lubambe;NA;Con.Cu;NA;2016;NA
-Lubambe;NA;Con.Cu;NA;2015;NA
-Lubambe;NA;Con.Cu;NA;2014;NA
-Lubambe;NA;Con.Cu;NA;2013;NA
-Mainpat;NA;O.Al;Open pit;2019;NA
-Mainpat;NA;O.Al;Open pit;2015;NA
-Mainpat;NA;O.Al;Open pit;2014;NA
-Mantos Blancos;NA;O.sul;NA;2015;NA
-Mantos Blancos;NA;O.sul;NA;2014;NA
-Mantos Blancos;NA;O.sul;NA;2013;NA
-Mantos Blancos;NA;O.oxi;NA;2012;NA
-Mantos Blancos;NA;O.Cu;NA;2012;NA
-Mantos Blancos;NA;O.sul;NA;2012;NA
-Mantos Blancos;NA;O.sul;NA;2011;NA
-Mantos Blancos;NA;O.oxi;NA;2011;NA
-Mantos Blancos;NA;O.Cu;NA;2011;NA
-Mantos Blancos;NA;O.sul;NA;2010;NA
-Mantos Blancos;NA;O.oxi;NA;2010;NA
-Mantos Blancos;NA;O.Cu;NA;2010;NA
-Mantos Blancos;NA;O.sul;NA;2009;NA
-Mantos Blancos;NA;O.oxi;NA;2009;NA
-Mantos Blancos;NA;O.Cu;NA;2009;NA
-Mantos Blancos;NA;O.sul;NA;2008;NA
-Mantos Blancos;NA;O.oxi;NA;2008;NA
-Mantos Blancos;NA;O.Cu;NA;2008;NA
-Mantos Blancos;NA;O.sul;NA;2007;NA
-Mantos Blancos;NA;O.oxi;NA;2007;NA
-Mantos Blancos;NA;O.Cu;NA;2007;NA
-Mantos Blancos;NA;O.sul;NA;2006;NA
-Mantos Blancos;NA;O.oxi;NA;2006;NA
-Mantos Blancos;NA;O.Cu;NA;2006;NA
-Mantos Blancos;NA;O.sul;NA;2005;NA
-Mantos Blancos;NA;O.oxi;NA;2005;NA
-Mantos Blancos;NA;O.Cu;NA;2005;NA
-Mantos Blancos;NA;O.sul;NA;2004;NA
-Mantos Blancos;NA;O.oxi;NA;2004;NA
-Mantos Blancos;NA;O.Cu;NA;2004;NA
-Mantos Blancos;NA;O.sul;NA;2003;NA
-Mantos Blancos;NA;O.oxi;NA;2003;NA
-Mantos Blancos;NA;O.Cu;NA;2003;NA
-Mantoverde;NA;O.oxi;NA;2015;NA
-Mantoverde;NA;O.Cu;NA;2015;NA
-Mantoverde;NA;O.oxi;NA;2014;NA
-Mantoverde;NA;O.Cu;NA;2014;NA
-Mantoverde;NA;O.oxi;NA;2013;NA
-Mantoverde;NA;O.Cu;NA;2013;NA
-Mantoverde;NA;O.oxi;NA;2012;NA
-Mantoverde;NA;O.Cu;NA;2012;NA
-Mantoverde;NA;O.oxi;NA;2011;NA
-Mantoverde;NA;O.Cu;NA;2011;NA
-Mantoverde;NA;O.oxi;NA;2010;NA
-Mantoverde;NA;O.Cu;NA;2010;NA
-Mantoverde;NA;O.oxi;NA;2009;NA
-Mantoverde;NA;O.Cu;NA;2009;NA
-Mantoverde;NA;O.oxi;NA;2008;NA
-Mantoverde;NA;O.Cu;NA;2008;NA
-Mantoverde;NA;O.oxi;NA;2007;NA
-Mantoverde;NA;O.Cu;NA;2007;NA
-Mantoverde;NA;O.oxi;NA;2006;NA
-Mantoverde;NA;O.Cu;NA;2006;NA
-Mantoverde;NA;O.oxi;NA;2005;NA
-Mantoverde;NA;O.Cu;NA;2005;NA
-Mantoverde;NA;O.oxi;NA;2004;NA
-Mantoverde;NA;O.Cu;NA;2004;NA
-Mantoverde;NA;O.oxi;NA;2003;NA
-Mantoverde;NA;O.Cu;NA;2003;NA
-Martha;NA;O.bulk;NA;2013;NA
-Martha;NA;O.bulk;NA;2012;NA
-Martha;NA;O.bulk;NA;2011;NA
-Middleback Ranges;NA;O.Fe;NA;2011;NA
-Middleback Ranges;NA;O.Fe;NA;2010;NA
-Middleback Ranges;NA;O.Fe;NA;2009;NA
-Middleback Ranges;NA;O.Fe;NA;2008;NA
-Middleback Ranges;NA;O.Fe;NA;2006;NA
-Middleback Ranges;NA;O.Fe;NA;2005;NA
-Middleback Ranges;NA;O.Fe;NA;2001;NA
-Middleback Ranges;NA;O.Fe;NA;2000;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2019;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2018;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2017;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2016;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2015;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2014;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2013;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2012;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2011;NA
-Mikhailovsky GOK;NA;O.Fe;NA;2010;NA
-Minorca;NA;O.Fe;NA;2019;NA
-Minorca;NA;O.Fe;NA;2018;NA
-Minorca;NA;O.Fe;NA;2017;NA
-Minorca;NA;O.Fe;NA;2016;NA
-Minorca;NA;O.Fe;NA;2015;NA
-Minorca;NA;O.Fe;NA;2014;NA
-Minorca;NA;O.Fe;NA;2013;NA
-Minorca;NA;O.Fe;NA;2012;NA
-Minorca;NA;O.Fe;NA;2011;NA
-Minorca;NA;Con.Fe;NA;2010;NA
-Minorca;NA;Con.Fe;NA;2009;NA
-Minorca;NA;Con.Fe;NA;2008;NA
-Minto;NA;Con.Cu;NA;2018;NA
-Minto;NA;Con.Cu;NA;2017;NA
-Minto;NA;Con.Cu;NA;2016;NA
-Minto;NA;Con.Cu;NA;2015;NA
-Minto;NA;Con.Cu;NA;2014;NA
-Minto;NA;Con.Cu;NA;2013;NA
-Minto;NA;Con.Cu;NA;2012;NA
-Minto;NA;Con.bulk;NA;2011;NA
-Minto;NA;Con.bulk;NA;2010;NA
-Minto;NA;Con.bulk;NA;2009;NA
-Minto;NA;Con.bulk;NA;2008;NA
-Minto;NA;Con.bulk;NA;2007;NA
-Mont Wright;NA;O.Fe;NA;2019;NA
-Mont Wright;NA;O.Fe;NA;2018;NA
-Mont Wright;NA;O.Fe;NA;2017;NA
-Mont Wright;NA;O.Fe;NA;2016;NA
-Mont Wright;NA;O.Fe;NA;2015;NA
-Mont Wright;NA;O.Fe;NA;2014;NA
-Mont Wright;NA;O.Fe;NA;2013;NA
-Mont Wright;NA;O.Fe;NA;2012;NA
-Mont Wright;NA;O.Fe;NA;2011;NA
-Mont Wright;NA;Con.Fe;NA;2010;NA
-Mont Wright;NA;Con.Fe;NA;2009;NA
-Mont Wright;NA;Con.Fe;NA;2008;NA
-Mount Garnet;Copper plant;O.bulk;NA;2012;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2012;NA
-Mount Garnet;Copper plant;O.bulk;NA;2010;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2010;NA
-Mount Garnet;Copper plant;O.bulk;NA;2009;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2009;NA
-Mount Garnet;Copper plant;O.bulk;NA;2008;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2008;NA
-Mount Garnet;Copper plant;O.bulk;NA;2007;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2007;NA
-Mount Garnet;Copper plant;O.bulk;NA;2006;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2006;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2005;NA
-Mount Garnet;Polymetallic plant;Con.Zn;NA;2005;NA
-Mount Garnet;Polymetallic plant;Con.Pb;NA;2005;NA
-Mount Garnet;Polymetallic plant;Con.Cu;NA;2005;NA
-Mount Garnet;Polymetallic plant;O.bulk;NA;2004;NA
-Mount Garnet;Polymetallic plant;Con.Zn;NA;2004;NA
-Mount Garnet;Polymetallic plant;Con.Pb;NA;2004;NA
-Mount Garnet;Polymetallic plant;Con.Cu;NA;2004;NA
-Mount Keith;NA;Con.Ni;NA;2019;NA
-Mount Keith;NA;Con.Ni;NA;2018;NA
-Mount Keith;NA;Con.Ni;NA;2004;NA
-Mount Keith;NA;Con.Ni;NA;2003;NA
-Mount Keith;NA;Con.Ni;NA;2002;NA
-Mt Cattlin;NA;O.Li;NA;2016;NA
-Mt Cattlin;NA;O.Li;NA;2015;NA
-Mt Cattlin;NA;O.Li;NA;2014;NA
-Mt Cattlin;NA;O.Li;NA;2013;NA
-Mt Cattlin;NA;Con.Ta;NA;2012;NA
-Mt Lyell;NA;Con.Cu;Underground;2014;NA
-Mt Lyell;NA;Con.Cu;Underground;2013;NA
-Mt Lyell;NA;Con.Cu;Underground;2012;NA
-Mt Lyell;NA;Con.Cu;Underground;2011;NA
-Mt Lyell;NA;Con.Cu;Underground;2010;NA
-Mt Lyell;NA;Con.Cu;Underground;2009;NA
-Mt Lyell;NA;Con.Cu;Underground;2008;NA
-Mt Lyell;NA;Con.Cu;Underground;2007;NA
-Mt Lyell;NA;Con.Cu;Underground;2006;NA
-Murray Basin;NA;O.bulk;NA;2015;NA
-Murray Basin;NA;O.bulk;NA;2014;NA
-Murray Basin;NA;O.bulk;NA;2013;NA
-Murray Basin;NA;O.bulk;NA;2012;NA
-Murray Basin;NA;O.bulk;NA;2011;NA
-Murray Basin;NA;O.bulk;NA;2010;NA
-Neves Corvo;NA;O.Zn;NA;2009;NA
-Neves Corvo;NA;NA;NA;2005;NA
-Nikolayevsky;NA;NA;NA;2012;NA
-Nikolayevsky;NA;NA;NA;2011;NA
-Nikolayevsky;NA;NA;NA;2010;NA
-Nikolayevsky;NA;NA;NA;2009;NA
-Nikolayevsky;NA;NA;NA;2008;NA
-Nikolayevsky;NA;NA;NA;2007;NA
-Nkomati;NA;Con.Cr;NA;2019;NA
-Nkomati;NA;Con.Cr;NA;2018;NA
-Nkomati;NA;Con.Cr;NA;2017;NA
-Nkomati;NA;Con.Cr;NA;2016;NA
-Nkomati;NA;Con.Cr;NA;2015;NA
-Nkomati;NA;Con.Cr;NA;2014;NA
-Nkomati;NA;Con.Cr;NA;2013;NA
-Nkomati;NA;Con.Cr;NA;2012;NA
-Nkomati;NA;O.Cr;NA;2011;NA
-Nkomati;NA;Con.Cr;NA;2011;NA
-Nkomati;NA;O.bulk;NA;2010;NA
-Nkomati;NA;O.Cr;NA;2010;NA
-Nkomati;NA;Con.Cr;NA;2010;NA
-Nkomati;NA;O.bulk;NA;2009;NA
-Nkomati;NA;O.Cr;NA;2009;NA
-Nkomati;NA;Con.Cr;NA;2009;NA
-Nkomati;NA;O.bulk;NA;2008;NA
-Nkomati;NA;O.Cr;NA;2008;NA
-Nkomati;NA;O.bulk;NA;2007;NA
-Nkomati;NA;O.Cr;NA;2007;NA
-Nkomati;NA;O.bulk;NA;2006;NA
-Nkomati;NA;O.Cr;NA;2006;NA
-Nkomati;NA;O.bulk;NA;2005;NA
-Northern GOK;NA;Con.Fe;NA;2019;NA
-Northern GOK;NA;Con.Fe;NA;2015;NA
-Northern GOK;NA;Con.Fe;NA;2014;NA
-Northern GOK;NA;Con.Fe;NA;2013;NA
-Northern GOK;NA;Con.Fe;NA;2012;NA
-Northern GOK;NA;Con.Fe;NA;2011;NA
-Ok Tedi;NA;Con.Cu;NA;2019;NA
-Ok Tedi;NA;Con.Cu;NA;2018;NA
-Ok Tedi;NA;Con.Cu;NA;2017;NA
-Ok Tedi;NA;Con.Cu;NA;2016;NA
-Ok Tedi;NA;Con.Cu;NA;2015;NA
-Ok Tedi;NA;Con.Cu;NA;2014;NA
-Ok Tedi;NA;Con.Cu;NA;2012;NA
-Ok Tedi;NA;Con.Cu;NA;2011;NA
-Ok Tedi;NA;Con.Cu;NA;2010;NA
-Ok Tedi;NA;Con.Cu;NA;2009;NA
-Ok Tedi;NA;Con.Cu;NA;2008;NA
-Ok Tedi;NA;Con.Cu;NA;2006;NA
-Ok Tedi;NA;Con.Cu;NA;2005;NA
-Ok Tedi;NA;Con.Cu;NA;2004;NA
-Ok Tedi;NA;Con.Cu;NA;2003;NA
-Ok Tedi;NA;Con.Cu;NA;2002;NA
-Onca Puma;NA;O.Ni;NA;2018;NA
-Orlovsky;NA;NA;NA;2019;NA
-Orlovsky;NA;NA;NA;2018;NA
-Orlovsky;NA;NA;NA;2017;NA
-Orlovsky;NA;NA;NA;2016;NA
-Orlovsky;NA;NA;NA;2015;NA
-Orlovsky;NA;NA;NA;2014;NA
-Orlovsky;NA;NA;NA;2013;NA
-Orlovsky;NA;NA;NA;2012;NA
-Orlovsky;NA;NA;NA;2011;NA
-Orlovsky;NA;NA;NA;2010;NA
-Orlovsky;NA;NA;NA;2009;NA
-Orlovsky;NA;NA;NA;2008;NA
-Orlovsky;NA;NA;NA;2007;NA
-Pena Colorada;NA;O.Fe;NA;2019;NA
-Pena Colorada;NA;O.Fe;NA;2018;NA
-Pena Colorada;NA;O.Fe;NA;2017;NA
-Pena Colorada;NA;O.Fe;NA;2016;NA
-Pena Colorada;NA;O.Fe;NA;2015;NA
-Pena Colorada;NA;O.Fe;NA;2014;NA
-Pena Colorada;NA;O.Fe;NA;2013;NA
-Pena Colorada;NA;O.Fe;NA;2012;NA
-Pena Colorada;NA;O.Fe;NA;2011;NA
-Pena Colorada;NA;Con.Fe;NA;2010;NA
-Pena Colorada;NA;Con.Fe;NA;2009;NA
-Pena Colorada;NA;Con.Fe;NA;2008;NA
-Penasquito;NA;O.sul;NA;2016;NA
-Penasquito;NA;O.oxi;NA;2016;NA
-Penasquito;NA;O.sul;NA;2015;NA
-Penasquito;NA;O.oxi;NA;2015;NA
-Penasquito;NA;O.sul;NA;2014;NA
-Penasquito;NA;O.oxi;NA;2014;NA
-Penasquito;NA;O.sul;NA;2013;NA
-Penasquito;NA;O.oxi;NA;2013;NA
-Penasquito;NA;O.sul;NA;2012;NA
-Penasquito;NA;O.oxi;NA;2012;NA
-Penasquito;NA;O.sul;NA;2011;NA
-Penasquito;NA;O.oxi;NA;2011;NA
-Penasquito;NA;O.sul;NA;2010;NA
-Penasquito;NA;O.oxi;NA;2010;NA
-Phoenix;NA;NA;Open pit;2018;NA
-Phoenix;NA;NA;Open pit;2017;NA
-Phoenix;NA;NA;Open pit;2016;NA
-Phoenix;NA;NA;Open pit;2015;NA
-Phoenix;NA;NA;Open pit;2014;NA
-Phoenix;NA;NA;Open pit;2013;NA
-Phoenix;NA;NA;Open pit;2012;NA
-Phoenix;NA;NA;Open pit;2011;NA
-Phoenix;NA;NA;Open pit;2010;NA
-Phoenix;NA;NA;Open pit;2009;NA
-Phoenix;NA;NA;Open pit;2008;NA
-Phoenix;NA;NA;Open pit;2007;NA
-Pinto Valley;NA;Con.Cu;NA;2019;NA
-Pinto Valley;NA;Con.Cu;NA;2018;NA
-Pinto Valley;NA;Con.Cu;NA;2017;NA
-Pinto Valley;NA;Con.Mo;NA;2017;NA
-Pinto Valley;NA;Con.Cu;NA;2016;NA
-Pinto Valley;NA;Con.Mo;NA;2016;NA
-Pinto Valley;NA;Con.Cu;NA;2015;NA
-Pinto Valley;NA;Con.Mo;NA;2015;NA
-Pinto Valley;NA;Con.Cu;NA;2014;NA
-Pinto Valley;NA;Con.Mo;NA;2014;NA
-Pinto Valley;NA;Con.Cu;NA;2009;NA
-Pinto Valley;NA;Con.Cu;NA;2008;NA
-Prijedor;NA;O.Fe;NA;2019;NA
-Prijedor;NA;O.Fe;NA;2018;NA
-Prijedor;NA;O.Fe;NA;2017;NA
-Prijedor;NA;O.Fe;NA;2016;NA
-Prijedor;NA;O.Fe;NA;2015;NA
-Prijedor;NA;O.Fe;NA;2014;NA
-Prijedor;NA;O.Fe;NA;2013;NA
-Prijedor;NA;O.Fe;NA;2012;NA
-Prijedor;NA;O.Fe;NA;2011;NA
-Prijedor;NA;Con.Fe;NA;2010;NA
-Prijedor;NA;Con.Fe;NA;2009;NA
-Prijedor;NA;Con.Fe;NA;2008;NA
-Prominent Hill;NA;O.bulk;Underground;2019;NA
-Prominent Hill;NA;O.bulk;NA;2018;NA
-Prominent Hill;NA;O.bulk;NA;2017;NA
-Prominent Hill;NA;O.bulk;NA;2016;NA
-Prominent Hill;NA;O.bulk;NA;2015;NA
-Prominent Hill;NA;O.bulk;NA;2014;NA
-Prominent Hill;NA;O.bulk;NA;2013;NA
-Prominent Hill;NA;O.bulk;NA;2012;NA
-Prominent Hill;NA;O.bulk;NA;2011;NA
-Prominent Hill;NA;O.bulk;NA;2010;NA
-Prominent Hill;NA;O.bulk;NA;2009;NA
-Puna;Pirquitas;O.bulk;NA;2017;NA
-Puna;Pirquitas;O.bulk;NA;2016;NA
-Puna;Pirquitas;O.bulk;NA;2015;NA
-Puna;Pirquitas;O.bulk;NA;2014;NA
-Puna;Pirquitas;O.bulk;NA;2013;NA
-Puna;Pirquitas;O.bulk;NA;2012;NA
-Puna;Pirquitas;O.bulk;NA;2011;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2019;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2019;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2019;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2019;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2018;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2018;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2018;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2018;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2017;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2017;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2017;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2017;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2016;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2016;NA
-Rajpura Dariba;Rajpura Dariba;Con.bulk;Underground;2016;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2016;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2016;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2015;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2015;NA
-Rajpura Dariba;Rajpura Dariba;Con.bulk;Underground;2015;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2015;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2015;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2014;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2014;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2014;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2014;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2013;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2013;NA
-Rajpura Dariba;Rajpura Dariba;Con.bulk;Underground;2013;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2013;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2013;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2012;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2012;NA
-Rajpura Dariba;Rajpura Dariba;Con.bulk;Underground;2012;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2012;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2012;NA
-Rajpura Dariba;Rajpura Dariba;Con.Zn;Underground;2011;NA
-Rajpura Dariba;Rajpura Dariba;Con.Pb;Underground;2011;NA
-Rajpura Dariba;Rajpura Dariba;Con.bulk;Underground;2011;NA
-Rajpura Dariba;Sindesar Khurd;Con.Zn;Underground;2011;NA
-Rajpura Dariba;Sindesar Khurd;Con.Pb;Underground;2011;NA
-Rajpura Dariba;Sindesar Khurd;Con.bulk;Underground;2011;NA
-Rajpura Dariba;NA;Con.Zn;Underground;2010;NA
-Rajpura Dariba;NA;Con.Pb;Underground;2010;NA
-Rajpura Dariba;NA;Con.bulk;Underground;2010;NA
-Rajpura Dariba;NA;Con.Zn;Underground;2009;NA
-Rajpura Dariba;NA;Con.Pb;Underground;2009;NA
-Rajpura Dariba;NA;Con.bulk;Underground;2009;NA
-Rajpura Dariba;NA;Con.Zn;Underground;2008;NA
-Rajpura Dariba;NA;Con.Pb;Underground;2008;NA
-Rajpura Dariba;NA;Con.Zn;Underground;2007;NA
-Rajpura Dariba;NA;Con.Pb;Underground;2007;NA
-Rajpura Dariba;NA;Con.Zn;Underground;2006;NA
-Rajpura Dariba;NA;Con.Pb;Underground;2006;NA
-Rampura Agucha;NA;Con.Zn;Underground;2019;NA
-Rampura Agucha;NA;Con.Pb;Underground;2019;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2018;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2018;NA
-Rampura Agucha;NA;Con.Zn;Underground;2018;NA
-Rampura Agucha;NA;Con.Pb;Underground;2018;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2017;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2017;NA
-Rampura Agucha;NA;Con.Zn;Underground;2017;NA
-Rampura Agucha;NA;Con.Pb;Underground;2017;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2016;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2016;NA
-Rampura Agucha;NA;Con.Zn;Underground;2016;NA
-Rampura Agucha;NA;Con.Pb;Underground;2016;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2015;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2015;NA
-Rampura Agucha;NA;Con.Zn;Underground;2015;NA
-Rampura Agucha;NA;Con.Pb;Underground;2015;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2014;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2014;NA
-Rampura Agucha;NA;Con.Zn;Underground;2014;NA
-Rampura Agucha;NA;Con.Pb;Underground;2014;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2013;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2013;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2012;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2012;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2011;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2011;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2010;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2010;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2009;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2009;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2008;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2008;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2007;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2007;NA
-Rampura Agucha;NA;Con.Zn;Open pit;2006;NA
-Rampura Agucha;NA;Con.Pb;Open pit;2006;NA
-Red Dog;NA;Con.Zn;NA;2009;NA
-Red Dog;NA;Con.Pb;NA;2009;NA
-Red Dog;NA;Con.Zn;NA;2008;NA
-Red Dog;NA;Con.Pb;NA;2008;NA
-Renison;NA;O.Sn;Underground;2020;NA
-Renison;NA;O.Sn;Underground;2019;NA
-Renison;NA;O.Sn;Underground;2018;NA
-Renison;NA;O.Sn;Underground;2017;NA
-Renison;NA;O.Sn;Underground;2016;NA
-Renison;NA;O.Sn;Underground;2015;NA
-Renison;NA;O.Sn;Underground;2014;NA
-Renison;NA;O.Sn;Underground;2013;NA
-Renison;NA;O.Sn;Underground;2012;NA
-Renison;NA;O.Sn;NA;2008;NA
-Renison;NA;O.Sn;NA;2007;NA
-Rochester;NA;O.bulk;NA;2019;heap leaching
-Rochester;NA;O.bulk;NA;2018;heap leaching
-Rochester;NA;O.bulk;NA;2017;heap leaching
-Rochester;NA;O.bulk;NA;2016;heap leaching
-Rochester;NA;O.bulk;NA;2015;heap leaching
-Rochester;NA;O.bulk;NA;2014;heap leaching
-Rochester;NA;O.bulk;NA;2013;heap leaching
-Rochester;NA;O.bulk;NA;2012;heap leaching
-Rochester;NA;O.bulk;NA;2011;heap leaching
-Rochester;NA;O.bulk;NA;2010;heap leaching
-Rochester;NA;O.bulk;NA;2009;heap leaching
-Rochester;NA;O.bulk;NA;2008;heap leaching
-Rochester;NA;O.bulk;NA;2007;heap leaching
-Rochester;NA;O.bulk;NA;2006;heap leaching
-Rochester;NA;O.bulk;NA;2005;heap leaching
-Rochester;NA;O.bulk;NA;2004;heap leaching
-Rochester;NA;O.bulk;NA;2003;heap leaching
-Rochester;NA;O.bulk;NA;2002;heap leaching
-Rochester;NA;O.bulk;NA;2001;heap leaching
-Rochester;NA;O.bulk;NA;2000;heap leaching
-Rosebery;NA;O.bulk;NA;2011;NA
-Rosebery;NA;O.bulk;NA;2010;NA
-San Julian;Veins;NA;NA;2018;NA
-San Julian;Disseminated;NA;NA;2018;NA
-San Julian;Veins;NA;NA;2017;NA
-San Julian;Disseminated;NA;NA;2017;NA
-Saucito;NA;NA;Underground;2018;NA
-Saucito;NA;NA;Underground;2017;NA
-Saucito;NA;NA;Underground;2016;NA
-Saucito;NA;NA;Underground;2015;NA
-Saucito;NA;NA;Underground;2014;NA
-Saucito;NA;NA;Underground;2013;NA
-Saucito;NA;NA;Underground;2012;NA
-Saucito;NA;NA;Underground;2011;NA
-Saucito;NA;NA;Underground;2010;NA
-Sepon;NA;O.Cu;NA;2011;NA
-Sepon;NA;O.Au;NA;2011;NA
-Sepon;NA;O.Cu;NA;2010;NA
-Sepon;NA;O.Au;NA;2010;NA
-Shahuindo;NA;O.bulk;NA;2019;NA
-Sierra Rutile;NA;O.bulk;NA;2019;NA
-Sierra Rutile;NA;O.bulk;NA;2018;NA
-Sierra Rutile;NA;O.bulk;NA;2017;NA
-Siguiri;NA;O.Au;Open pit;2005;NA
-Soledad-Dipolos;NA;NA;Open pit;2013;NA
-Soledad-Dipolos;NA;NA;Open pit;2012;NA
-Soledad-Dipolos;NA;NA;Open pit;2011;NA
-Soledad-Dipolos;NA;NA;Open pit;2010;NA
-Southern GOK;NA;Con.Fe;NA;2018;NA
-Southern GOK;NA;Con.Fe;NA;2017;NA
-Stobie;NA;O.bulk;NA;2019;NA
-Stobie;NA;O.bulk;NA;2018;NA
-Stoilensky;NA;O.Fe;NA;2019;NA
-Stoilensky;NA;O.Fe;NA;2018;NA
-Stoilensky;NA;O.Fe;NA;2017;NA
-Stoilensky;NA;O.Fe;NA;2016;NA
-Stoilensky;NA;O.Fe;NA;2015;NA
-Stoilensky;NA;O.Fe;NA;2014;NA
-Stoilensky;NA;Con.Fe;NA;2013;NA
-Stoilensky;NA;Con.Fe;NA;2012;NA
-Stoilensky;NA;O.Fe;NA;2011;NA
-Stoilensky;NA;O.Fe;NA;2010;NA
-Tara;NA;NA;Underground;2018;NA
-Tara;NA;Con.Zn;NA;2018;NA
-Tara;NA;Con.Pb;NA;2018;NA
-Tara;NA;NA;Underground;2017;NA
-Tara;NA;Con.Zn;NA;2017;NA
-Tara;NA;Con.Pb;NA;2017;NA
-Tara;NA;NA;Underground;2016;NA
-Tara;NA;Con.Zn;NA;2016;NA
-Tara;NA;Con.Pb;NA;2016;NA
-Tara;NA;NA;Underground;2015;NA
-Tara;NA;Con.Zn;NA;2015;NA
-Tara;NA;Con.Pb;NA;2015;NA
-Tara;NA;NA;Underground;2014;NA
-Tara;NA;Con.Zn;NA;2014;NA
-Tara;NA;Con.Pb;NA;2014;NA
-Tara;NA;NA;Underground;2013;NA
-Tara;NA;Con.Zn;NA;2013;NA
-Tara;NA;Con.Pb;NA;2013;NA
-Tara;NA;NA;Underground;2012;NA
-Tara;NA;Con.Zn;NA;2012;NA
-Tara;NA;Con.Pb;NA;2012;NA
-Tara;NA;NA;Underground;2011;NA
-Tara;NA;Con.Zn;NA;2011;NA
-Tara;NA;Con.Pb;NA;2011;NA
-Tara;NA;NA;Underground;2010;NA
-Tara;NA;Con.Zn;NA;2010;NA
-Tara;NA;Con.Pb;NA;2010;NA
-Tara;NA;NA;Underground;2009;NA
-Tara;NA;Con.Zn;NA;2009;NA
-Tara;NA;Con.Pb;NA;2009;NA
-Tara;NA;NA;Underground;2008;NA
-Tara;NA;Con.Zn;NA;2008;NA
-Tara;NA;Con.Pb;NA;2008;NA
-Tara;NA;NA;Underground;2007;NA
-Tara;NA;Con.Zn;NA;2007;NA
-Tara;NA;Con.Pb;NA;2007;NA
-Tara;NA;NA;Underground;2006;NA
-Tara;NA;Con.Zn;NA;2006;NA
-Tara;NA;Con.Pb;NA;2006;NA
-Tara;NA;NA;Underground;2005;NA
-Tara;NA;Con.Zn;NA;2005;NA
-Tara;NA;Con.Pb;NA;2005;NA
-Tara;NA;NA;Underground;2004;NA
-Tara;NA;Con.Zn;NA;2004;NA
-Tara;NA;Con.Pb;NA;2004;NA
-Tara;NA;NA;Underground;2003;NA
-Tara;NA;Con.Zn;NA;2003;NA
-Tara;NA;Con.Pb;NA;2003;NA
-Tara;NA;NA;Underground;2002;NA
-Tara;NA;Con.Zn;NA;2002;NA
-Tara;NA;Con.Pb;NA;2002;NA
-Tara;NA;NA;Underground;2001;NA
-Tara;NA;Con.Zn;NA;2001;NA
-Tara;NA;Con.Pb;NA;2001;NA
-Tara;NA;NA;Underground;2000;NA
-Tara;NA;Con.Zn;NA;2000;NA
-Tara;NA;Con.Pb;NA;2000;NA
-Telfer;NA;NA;NA;2018;NA
-Telfer;NA;NA;NA;2017;NA
-Telfer;NA;NA;NA;2016;NA
-Telfer;NA;NA;NA;2015;NA
-Telfer;NA;NA;NA;2014;NA
-Telfer;NA;NA;NA;2013;NA
-Telfer;NA;NA;NA;2012;NA
-Thalanga;NA;O.bulk;NA;2020;NA
-Thalanga;NA;O.bulk;NA;2019;NA
-Thalanga;NA;O.bulk;NA;2018;NA
-Thalanga;NA;O.bulk;NA;2012;NA
-Thalanga;NA;Con.Zn;NA;2012;NA
-Thalanga;NA;Con.Pb;NA;2012;NA
-Thalanga;NA;Con.Cu;NA;2012;NA
-Thalanga;NA;O.bulk;NA;2009;NA
-Thalanga;NA;O.bulk;NA;2007;NA
-Tiandeng;NA;O.Mn;Open pit;2019;NA
-Tiandeng;NA;Con.MnO;NA;2018;NA
-Tiandeng;NA;O.Mn;Open pit;2018;NA
-Tiandeng;NA;O.Mn;Open pit;2017;NA
-Tiandeng;NA;O.Mn;Open pit;2016;NA
-Tiandeng;NA;O.Mn;Open pit;2015;NA
-Tiandeng;NA;O.Mn;Open pit;2014;NA
-Tiandeng;NA;O.Mn;Open pit;2013;NA
-Tiandeng;NA;O.Mn;Open pit;2012;NA
-Timmins West & Bell Creek;NA;O.bulk;NA;2019;NA
-Toquepala;NA;O.bulk;Open pit;2019;NA
-Toquepala;NA;O.bulk;Open pit;2018;NA
-Toquepala;NA;O.bulk;Open pit;2017;NA
-Toquepala;NA;O.bulk;Open pit;2016;NA
-Toquepala;NA;O.bulk;Open pit;2015;NA
-Toquepala;NA;O.bulk;Open pit;2014;NA
-Toquepala;NA;O.bulk;Open pit;2013;NA
-Toquepala;NA;O.bulk;Open pit;2012;NA
-Toquepala;NA;O.bulk;Open pit;2011;NA
-Toquepala;NA;O.bulk;Open pit;2010;NA
-Toquepala;NA;O.bulk;Open pit;2009;NA
-Toquepala;NA;O.bulk;Open pit;2008;NA
-Toquepala;NA;O.bulk;Open pit;2007;NA
-Toquepala;NA;O.bulk;Open pit;2006;NA
-Toquepala;NA;O.bulk;Open pit;2005;NA
-Toquepala;NA;Con.Cu;Open pit;2004;NA
-Toquepala;NA;Con.Cu;Open pit;2003;NA
-Toquepala;NA;Con.Cu;Open pit;2002;NA
-Tritton;NA;O.Cu;NA;2020;NA
-Tritton;NA;Oth.cuce;NA;2020;NA
-Tritton;NA;O.Cu;NA;2019;NA
-Tritton;NA;Oth.cuce;NA;2019;NA
-Tritton;NA;O.Cu;NA;2018;NA
-Tritton;NA;Oth.cuce;NA;2018;NA
-Tritton;NA;O.Cu;NA;2017;NA
-Tritton;NA;Oth.cuce;NA;2017;NA
-Tritton;NA;O.Cu;NA;2016;NA
-Tritton;NA;Oth.cuce;NA;2016;NA
-Tritton;NA;O.Cu;NA;2015;NA
-Tritton;NA;Oth.cuce;NA;2015;NA
-Tritton;NA;O.Cu;NA;2014;NA
-Tritton;NA;Oth.cuce;NA;2014;NA
-Tritton;NA;O.Cu;NA;2013;NA
-Tritton;NA;Oth.cuce;NA;2013;NA
-Tritton;NA;O.Cu;NA;2012;NA
-Tritton;NA;Oth.cuce;NA;2012;NA
-Tritton;NA;O.Cu;NA;2011;NA
-Tritton;NA;Oth.cuce;NA;2011;NA
-Tritton;NA;O.Cu;NA;2010;NA
-Tritton;NA;O.Cu;NA;2009;NA
-Tritton;NA;O.Cu;NA;2008;NA
-Tritton;NA;O.Cu;NA;2007;NA
-Tritton;NA;O.Cu;NA;2006;NA
-Tulawaka;NA;O.Au;Underground;2010;NA
-Tulawaka;NA;O.Au;Underground;2009;NA
-Two Rivers;NA;Con.Cr;NA;2019;NA
-Two Rivers;NA;Con.Cr;NA;2018;NA
-Two Rivers;NA;Con.Cr;NA;2017;NA
-Two Rivers;NA;Con.Cr;NA;2016;NA
-Two Rivers;NA;Con.Cr;NA;2015;NA
-Two Rivers;NA;Con.Cr;NA;2014;NA
-Veladero;NA;NA;NA;2018;NA
-Veladero;NA;NA;NA;2017;NA
-Waihi;NA;O.Au;Open pit;2013;NA
-Waihi;NA;O.Au;Underground;2013;NA
-Western Range Project;NA;O.Fe;NA;2019;NA
-Western Range Project;NA;O.Fe;NA;2018;NA
-Western Range Project;NA;O.Fe;NA;2017;NA
-Western Range Project;NA;O.Fe;NA;2016;NA
-Western Range Project;NA;O.Fe;NA;2015;NA
-Western Range Project;NA;O.Fe;NA;2014;NA
-Western Range Project;NA;O.Fe;NA;2013;NA
-Western Range Project;NA;O.Fe;NA;2012;NA
-Western Range Project;NA;O.Fe;NA;2011;NA
-Wharf;NA;NA;NA;2014;NA
-Wharf;NA;NA;NA;2013;NA
-Wharf;NA;NA;NA;2012;NA
-Wharf;NA;NA;NA;2011;NA
-Wharf;NA;NA;NA;2010;NA
-Wharf;NA;NA;NA;2009;NA
-Wharf;NA;NA;NA;2008;NA
-Wharf;NA;NA;NA;2007;NA
-Wharf;NA;NA;NA;2006;NA
-Wharf;NA;NA;NA;2005;NA
-Wharf;NA;NA;NA;2004;NA
-Wharf;NA;NA;NA;2003;NA
-Wharf;NA;NA;NA;2002;NA
-Wharf;NA;NA;NA;2001;NA
-Wharf;NA;NA;NA;2000;NA
-Yanacocha;NA;O.Au;Open pit;2019;NA
-Yanacocha;NA;O.Au;Underground;2019;NA
-Yanacocha;NA;O.Au;Open pit;2018;NA
-Yanacocha;NA;O.Au;Open pit;2017;NA
-Yanacocha;NA;O.Au;Open pit;2016;NA
-Yanacocha;NA;O.Au;Open pit;2015;NA
-Yanacocha;NA;O.Au;Open pit;2014;NA
-Yanacocha;NA;O.Au;Open pit;2013;NA
-Yanacocha;NA;O.Au;Open pit;2012;NA
-Yanacocha;NA;O.Au;Open pit;2011;NA
-Yanacocha;NA;O.Au;Open pit;2010;NA
-Yanacocha;NA;O.Au;Open pit;2009;NA
-Yanacocha;NA;O.Au;Open pit;2008;NA
-Yanacocha;NA;O.Au;Open pit;2007;NA
-Zawar;NA;Con.Zn;Underground;2019;NA
-Zawar;NA;Con.Pb;Underground;2019;NA
-Zawar;NA;Con.Zn;Underground;2018;NA
-Zawar;NA;Con.Pb;Underground;2018;NA
-Zawar;NA;Con.bulk;Underground;2018;NA
-Zawar;NA;Con.Zn;Underground;2017;NA
-Zawar;NA;Con.Pb;Underground;2017;NA
-Zawar;NA;Con.bulk;Underground;2017;NA
-Zawar;NA;Con.bulk;Underground;2016;NA
-Zawar;NA;Con.bulk;Underground;2015;NA
-Zawar;NA;Con.bulk;Underground;2014;NA
-Zawar;NA;Con.bulk;Underground;2013;NA
-Zawar;NA;Con.bulk;Underground;2012;NA
-Zawar;NA;Con.bulk;Underground;2011;NA
-Zawar;NA;Con.bulk;Underground;2010;NA
-Zawar;NA;Con.Zn;Underground;2009;NA
-Zawar;NA;Con.Pb;Underground;2009;NA
-Zawar;NA;Con.bulk;Underground;2009;NA
-Zawar;NA;Con.Zn;Underground;2008;NA
-Zawar;NA;Con.Pb;Underground;2008;NA
-Zawar;NA;Con.Zn;Underground;2007;NA
-Zawar;NA;Con.Pb;Underground;2007;NA
-Zawar;NA;Con.Zn;Underground;2006;NA
-Zawar;NA;Con.Pb;Underground;2006;NA
+mine_fac;year;sub_site;min_ore_con;type_mining;mine_processing
+Antas;2019;NA;O.bulk;Underground;NA
+Antas;2019;NA;Con.Cu;NA;NA
+Antas;2018;NA;O.bulk;NA;NA
+Antas;2018;NA;Con.Cu;NA;NA
+Bald Mountain;2018;NA;O.Au;NA;heap leaching
+Bald Mountain;2017;NA;O.Au;NA;heap leaching
+Bald Mountain;2016;NA;O.Au;NA;heap leaching
+Broken Hill;2008;NA;O.Ag;NA;NA
+Broken Hill;2007;NA;O.Ag;NA;NA
+Broken Hill;2006;NA;O.Ag;NA;NA
+Buenavista;2019;NA;O.bulk;Open pit;NA
+Buenavista;2018;NA;O.bulk;Open pit;NA
+Buenavista;2017;NA;O.bulk;Open pit;NA
+Buenavista;2016;NA;O.bulk;Open pit;NA
+Buenavista;2015;NA;O.bulk;Open pit;NA
+Buenavista;2014;NA;O.bulk;Open pit;NA
+Buenavista;2013;NA;O.bulk;Open pit;NA
+Buenavista;2012;NA;O.bulk;Open pit;NA
+Buenavista;2011;NA;O.bulk;Open pit;NA
+Buenavista;2008;NA;O.bulk;Open pit;NA
+Buenavista;2007;NA;O.bulk;Open pit;NA
+Buenavista;2006;NA;O.bulk;Open pit;NA
+Buenavista;2005;NA;O.bulk;Open pit;NA
+Carlin;2018;NA;O.Au;Open pit;NA
+Carlin;2018;NA;O.Au;Underground;NA
+Carlin;2017;NA;O.Au;Open pit;NA
+Carlin;2017;NA;O.Au;Underground;NA
+Carlin;2016;NA;O.Au;Open pit;NA
+Carlin;2016;NA;O.Au;Underground;NA
+Carlin;2015;NA;O.Au;Open pit;NA
+Carlin;2015;NA;O.Au;Underground;NA
+Carlin;2014;NA;O.Au;Open pit;NA
+Carlin;2014;NA;O.Au;Underground;NA
+Centinela;2011;Esperanza;Con.Cu;NA;NA
+Collahuasi;2017;NA;O.sul;NA;NA
+Collahuasi;2015;NA;O.oxi;NA;heap leaching
+Collahuasi;2014;NA;O.oxi;NA;heap leaching
+Collahuasi;2013;NA;O.oxi;NA;heap leaching
+Collahuasi;2012;NA;O.sul;NA;NA
+Collahuasi;2012;NA;O.oxi;NA;heap leaching
+Collahuasi;2011;NA;O.sul;NA;NA
+Collahuasi;2011;NA;O.oxi;NA;heap leaching
+Collahuasi;2010;NA;O.sul;NA;NA
+Collahuasi;2010;NA;O.oxi;NA;heap leaching
+Collahuasi;2009;NA;O.sul;NA;NA
+Collahuasi;2009;NA;O.oxi;NA;heap leaching
+Collahuasi;2008;NA;O.sul;NA;NA
+Collahuasi;2008;NA;O.oxi;NA;heap leaching
+Collahuasi;2007;NA;O.sul;NA;NA
+Collahuasi;2007;NA;O.oxi;NA;heap leaching
+Collahuasi;2006;NA;O.sul;NA;NA
+Collahuasi;2006;NA;O.oxi;NA;heap leaching
+Collahuasi;2005;NA;O.sul;NA;NA
+Collahuasi;2005;NA;O.oxi;NA;heap leaching
+Collahuasi;2004;NA;O.sul;NA;NA
+Collahuasi;2004;NA;O.oxi;NA;heap leaching
+Collahuasi;2003;NA;O.sul;NA;NA
+Collahuasi;2003;NA;O.oxi;NA;heap leaching
+Cracow;2007;NA;O.Au;NA;NA
+Cracow;2006;NA;O.Au;NA;NA
+Cracow;2005;NA;O.Au;NA;NA
+Cripple Creek & Victor;2019;NA;O.Au;Open pit;NA
+Cripple Creek & Victor;2018;NA;O.Au;Open pit;NA
+Cripple Creek & Victor;2017;NA;O.Au;Open pit;NA
+Cripple Creek & Victor;2016;NA;O.Au;Open pit;NA
+Cuajone;2019;NA;O.bulk;Open pit;NA
+Cuajone;2018;NA;O.bulk;Open pit;NA
+Cuajone;2017;NA;O.bulk;Open pit;NA
+Cuajone;2016;NA;O.bulk;Open pit;NA
+Cuajone;2015;NA;O.bulk;Open pit;NA
+Cuajone;2014;NA;O.bulk;Open pit;NA
+Cuajone;2013;NA;O.bulk;Open pit;NA
+Cuajone;2012;NA;O.bulk;Open pit;NA
+Cuajone;2011;NA;O.bulk;Open pit;NA
+Cuajone;2010;NA;O.bulk;Open pit;NA
+Cuajone;2009;NA;O.bulk;Open pit;NA
+Cuajone;2008;NA;O.bulk;Open pit;NA
+Cuajone;2007;NA;O.bulk;Open pit;NA
+Cuajone;2006;NA;O.bulk;Open pit;NA
+Cuajone;2005;NA;O.bulk;Open pit;NA
+DeGrussa;2013;NA;O.bulk;NA;NA
+Edikan;2014;NA;NA;NA;NA
+Edikan;2013;NA;NA;NA;NA
+Edikan;2012;NA;NA;NA;NA
+El Soldado;2012;NA;O.sul;NA;NA
+El Soldado;2012;NA;O.oxi;NA;heap leaching
+El Soldado;2011;NA;O.sul;NA;NA
+El Soldado;2011;NA;O.oxi;NA;heap leaching
+El Soldado;2010;NA;O.sul;NA;NA
+El Soldado;2010;NA;O.oxi;NA;heap leaching
+El Soldado;2009;NA;O.sul;NA;NA
+El Soldado;2009;NA;O.oxi;NA;heap leaching
+El Soldado;2008;NA;O.sul;NA;NA
+El Soldado;2008;NA;O.oxi;NA;heap leaching
+El Soldado;2007;NA;O.sul;NA;NA
+El Soldado;2007;NA;O.oxi;NA;heap leaching
+El Soldado;2006;NA;O.sul;NA;NA
+El Soldado;2006;NA;O.oxi;NA;heap leaching
+El Soldado;2005;NA;O.sul;NA;NA
+El Soldado;2005;NA;O.oxi;NA;heap leaching
+El Soldado;2004;NA;O.sul;NA;NA
+El Soldado;2004;NA;O.oxi;NA;heap leaching
+El Soldado;2003;NA;O.sul;NA;NA
+El Soldado;2003;NA;O.oxi;NA;heap leaching
+Fort Knox;2018;NA;O.Au;NA;heap leaching
+Fort Knox;2017;NA;O.Au;NA;heap leaching
+Fort Knox;2016;NA;O.Au;NA;heap leaching
+Fort Knox;2015;NA;O.Au;NA;heap leaching
+Fort Knox;2014;NA;O.Au;NA;heap leaching
+Fort Knox;2013;NA;O.Au;NA;heap leaching
+Fort Knox;2012;NA;O.Au;NA;heap leaching
+Fort Knox;2011;NA;O.Au;NA;heap leaching
+Fort Knox;2010;NA;O.Au;NA;heap leaching
+Gualcamayo;2016;NA;O.Au;NA;leaching
+Gualcamayo;2015;NA;O.Au;NA;leaching
+Gualcamayo;2014;NA;O.Au;NA;leaching
+Gualcamayo;2013;NA;O.Au;NA;leaching
+Gualcamayo;2012;NA;O.Au;NA;leaching
+Gualcamayo;2011;NA;O.Au;NA;leaching
+Gualcamayo;2010;NA;O.Au;NA;leaching
+Gualcamayo;2009;NA;O.Au;NA;leaching
+IMMSA - Santa Eulalia;2011;NA;NA;NA;NA
+Itabira;2004;Caue;O.Fe;Open pit;NA
+Itabira;2004;Conceicao;O.Fe;Open pit;NA
+Itabira;2003;Caue;O.Fe;Open pit;NA
+Itabira;2003;Conceicao;O.Fe;Open pit;NA
+Itabira;2002;Caue;O.Fe;Open pit;NA
+Itabira;2002;Conceicao;O.Fe;Open pit;NA
+Itabira;2001;Caue;O.Fe;Open pit;NA
+Itabira;2001;Conceicao;O.Fe;Open pit;NA
+Itabira;2000;Caue;O.Fe;Open pit;NA
+Itabira;2000;Conceicao;O.Fe;Open pit;NA
+Kansanshi;2010;NA;O.sul;NA;NA
+Kansanshi;2010;NA;O.oxi;NA;NA
+Kansanshi;2009;NA;O.sul;NA;NA
+Kansanshi;2009;NA;O.oxi;NA;NA
+Kansanshi;2008;NA;O.sul;NA;NA
+Kansanshi;2008;NA;O.oxi;NA;NA
+Kansanshi;2007;NA;O.sul;NA;NA
+Kansanshi;2007;NA;O.oxi;NA;NA
+Kansanshi;2006;NA;O.sul;NA;NA
+Kansanshi;2006;NA;O.oxi;NA;NA
+Kansanshi;2005;NA;O.sul;NA;NA
+Kansanshi;2005;NA;O.oxi;NA;NA
+Kevitsa;2018;NA;Con.Cu;NA;NA
+Kevitsa;2018;NA;Con.Ni;NA;NA
+Kevitsa;2017;NA;Con.Cu;NA;NA
+Kevitsa;2017;NA;Con.Ni;NA;NA
+La Caridad;2019;NA;O.bulk;Open pit;NA
+La Caridad;2018;NA;O.bulk;Open pit;NA
+La Caridad;2017;NA;O.bulk;Open pit;NA
+La Caridad;2016;NA;O.bulk;Open pit;NA
+La Caridad;2015;NA;O.bulk;Open pit;NA
+La Caridad;2014;NA;O.bulk;Open pit;NA
+La Caridad;2013;NA;O.bulk;Open pit;NA
+La Caridad;2012;NA;O.bulk;Open pit;NA
+La Caridad;2011;NA;O.bulk;Open pit;NA
+La Caridad;2010;NA;O.bulk;Open pit;NA
+La Caridad;2009;NA;O.bulk;Open pit;NA
+La Caridad;2008;NA;O.bulk;Open pit;NA
+La Caridad;2007;NA;O.bulk;Open pit;NA
+La Caridad;2006;NA;O.bulk;Open pit;NA
+La Caridad;2005;NA;O.bulk;Open pit;NA
+Long Canyon;2018;NA;O.Au;Open pit;leaching
+Long Canyon;2017;NA;O.Au;Open pit;leaching
+Long Canyon;2016;NA;O.Au;Open pit;leaching
+Los Bronces;2012;Confluencia;O.Cu;NA;NA
+Los Bronces;2012;Las Tortolas;O.Cu;NA;NA
+Los Bronces;2011;Las Tortolas;O.Cu;NA;NA
+Los Bronces;2011;Confluencia;O.Cu;NA;NA
+Los Bronces;2010;Las Tortolas;NA;NA;NA
+Los Bronces;2009;Las Tortolas;NA;NA;NA
+Los Bronces;2008;Las Tortolas;NA;NA;NA
+Los Bronces;2007;Las Tortolas;NA;NA;NA
+Los Bronces;2006;Las Tortolas;NA;NA;NA
+Los Bronces;2005;Las Tortolas;NA;NA;NA
+Los Bronces;2004;Las Tortolas;NA;NA;NA
+Los Bronces;2003;Las Tortolas;NA;NA;NA
+Los Pelambres;2011;NA;Con.Cu;NA;NA
+Los Pelambres;2010;NA;Con.Cu;NA;NA
+Los Pelambres;2009;NA;Con.Cu;NA;NA
+Los Pelambres;2008;NA;Con.Cu;NA;NA
+Los Pelambres;2007;NA;Con.Cu;NA;NA
+Los Pelambres;2006;NA;Con.Cu;NA;NA
+Los Pelambres;2005;NA;Con.Cu;NA;NA
+Los Pelambres;2004;NA;Con.Cu;NA;NA
+Los Pelambres;2003;NA;Con.Cu;NA;NA
+Los Pelambres;2002;NA;Con.Cu;NA;NA
+Los Pelambres;2001;NA;Con.Cu;NA;NA
+Los Pelambres;2000;NA;Con.Cu;NA;NA
+Mantos Blancos;2012;NA;O.oxi;NA;NA
+Mantos Blancos;2012;NA;O.Cu;NA;NA
+Mantos Blancos;2012;NA;O.sul;NA;NA
+Mantos Blancos;2011;NA;O.sul;NA;NA
+Mantos Blancos;2011;NA;O.oxi;NA;NA
+Mantos Blancos;2011;NA;O.Cu;NA;NA
+Mantos Blancos;2010;NA;O.sul;NA;NA
+Mantos Blancos;2010;NA;O.oxi;NA;NA
+Mantos Blancos;2010;NA;O.Cu;NA;NA
+Mantos Blancos;2009;NA;O.sul;NA;NA
+Mantos Blancos;2009;NA;O.oxi;NA;NA
+Mantos Blancos;2009;NA;O.Cu;NA;NA
+Mantos Blancos;2008;NA;O.sul;NA;NA
+Mantos Blancos;2008;NA;O.oxi;NA;NA
+Mantos Blancos;2008;NA;O.Cu;NA;NA
+Mantos Blancos;2007;NA;O.sul;NA;NA
+Mantos Blancos;2007;NA;O.oxi;NA;NA
+Mantos Blancos;2007;NA;O.Cu;NA;NA
+Mantos Blancos;2006;NA;O.sul;NA;NA
+Mantos Blancos;2006;NA;O.oxi;NA;NA
+Mantos Blancos;2006;NA;O.Cu;NA;NA
+Mantos Blancos;2005;NA;O.sul;NA;NA
+Mantos Blancos;2005;NA;O.oxi;NA;NA
+Mantos Blancos;2005;NA;O.Cu;NA;NA
+Mantos Blancos;2004;NA;O.sul;NA;NA
+Mantos Blancos;2004;NA;O.oxi;NA;NA
+Mantos Blancos;2004;NA;O.Cu;NA;NA
+Mantos Blancos;2003;NA;O.sul;NA;NA
+Mantos Blancos;2003;NA;O.oxi;NA;NA
+Mantos Blancos;2003;NA;O.Cu;NA;NA
+Mantoverde;2015;NA;O.oxi;NA;NA
+Mantoverde;2015;NA;O.Cu;NA;NA
+Mantoverde;2014;NA;O.oxi;NA;NA
+Mantoverde;2014;NA;O.Cu;NA;NA
+Mantoverde;2013;NA;O.oxi;NA;NA
+Mantoverde;2013;NA;O.Cu;NA;NA
+Mantoverde;2012;NA;O.oxi;NA;NA
+Mantoverde;2012;NA;O.Cu;NA;NA
+Mantoverde;2011;NA;O.oxi;NA;NA
+Mantoverde;2011;NA;O.Cu;NA;NA
+Mantoverde;2010;NA;O.oxi;NA;NA
+Mantoverde;2010;NA;O.Cu;NA;NA
+Mantoverde;2009;NA;O.oxi;NA;NA
+Mantoverde;2009;NA;O.Cu;NA;NA
+Mantoverde;2008;NA;O.oxi;NA;NA
+Mantoverde;2008;NA;O.Cu;NA;NA
+Mantoverde;2007;NA;O.oxi;NA;NA
+Mantoverde;2007;NA;O.Cu;NA;NA
+Mantoverde;2006;NA;O.oxi;NA;NA
+Mantoverde;2006;NA;O.Cu;NA;NA
+Mantoverde;2005;NA;O.oxi;NA;NA
+Mantoverde;2005;NA;O.Cu;NA;NA
+Mantoverde;2004;NA;O.oxi;NA;NA
+Mantoverde;2004;NA;O.Cu;NA;NA
+Mantoverde;2003;NA;O.oxi;NA;NA
+Mantoverde;2003;NA;O.Cu;NA;NA
+Maricunga;2016;NA;O.Au;NA;NA
+Maricunga;2015;NA;O.Au;NA;NA
+Maricunga;2014;NA;O.Au;NA;NA
+Maricunga;2013;NA;O.Au;NA;NA
+Maricunga;2012;NA;O.Au;NA;NA
+Maricunga;2011;NA;O.Au;NA;NA
+Maricunga;2010;NA;O.Au;NA;NA
+Maricunga;2009;NA;O.Au;NA;NA
+Maricunga;2008;NA;O.Au;NA;NA
+Maricunga;2007;NA;O.Au;NA;NA
+Maricunga;2006;NA;O.Au;NA;NA
+Maricunga;2005;NA;O.Au;NA;NA
+Mount Keith;2004;NA;Con.Ni;NA;NA
+Mount Keith;2003;NA;Con.Ni;NA;NA
+Mount Keith;2002;NA;Con.Ni;NA;NA
+Penasquito;2016;NA;O.sul;NA;NA
+Penasquito;2016;NA;O.oxi;NA;NA
+Penasquito;2015;NA;O.sul;NA;NA
+Penasquito;2015;NA;O.oxi;NA;NA
+Penasquito;2014;NA;O.sul;NA;NA
+Penasquito;2014;NA;O.oxi;NA;NA
+Penasquito;2013;NA;O.sul;NA;NA
+Penasquito;2013;NA;O.oxi;NA;NA
+Penasquito;2012;NA;O.sul;NA;NA
+Penasquito;2012;NA;O.oxi;NA;NA
+Penasquito;2011;NA;O.sul;NA;NA
+Penasquito;2011;NA;O.oxi;NA;NA
+Penasquito;2010;NA;O.sul;NA;NA
+Penasquito;2010;NA;O.oxi;NA;NA
+Pinto Valley;2009;NA;Con.Cu;NA;NA
+Pinto Valley;2008;NA;Con.Cu;NA;NA
+Rochester;2019;NA;O.bulk;NA;heap leaching
+Rochester;2018;NA;O.bulk;NA;heap leaching
+Rochester;2017;NA;O.bulk;NA;heap leaching
+Rochester;2016;NA;O.bulk;NA;heap leaching
+Rochester;2015;NA;O.bulk;NA;heap leaching
+Rochester;2014;NA;O.bulk;NA;heap leaching
+Rochester;2013;NA;O.bulk;NA;heap leaching
+Rochester;2012;NA;O.bulk;NA;heap leaching
+Rochester;2011;NA;O.bulk;NA;heap leaching
+Rochester;2007;NA;O.bulk;NA;heap leaching
+Rochester;2006;NA;O.bulk;NA;heap leaching
+Rochester;2005;NA;O.bulk;NA;heap leaching
+Round Mountain;2018;NA;O.Au;NA;heap leaching
+Round Mountain;2017;NA;O.Au;NA;heap leaching
+Round Mountain;2016;NA;O.Au;NA;heap leaching
+Round Mountain;2015;NA;O.Au;NA;heap leaching
+Round Mountain;2014;NA;O.Au;NA;heap leaching
+Round Mountain;2013;NA;O.Au;NA;heap leaching
+Round Mountain;2012;NA;O.Au;NA;heap leaching
+Round Mountain;2011;NA;O.Au;NA;heap leaching
+Tara;2018;NA;NA;Underground;NA
+Tara;2018;NA;Con.Zn;NA;NA
+Tara;2018;NA;Con.Pb;NA;NA
+Tara;2017;NA;NA;Underground;NA
+Tara;2017;NA;Con.Zn;NA;NA
+Tara;2017;NA;Con.Pb;NA;NA
+Tara;2016;NA;NA;Underground;NA
+Tara;2016;NA;Con.Zn;NA;NA
+Tara;2016;NA;Con.Pb;NA;NA
+Tara;2015;NA;NA;Underground;NA
+Tara;2015;NA;Con.Zn;NA;NA
+Tara;2015;NA;Con.Pb;NA;NA
+Tara;2014;NA;NA;Underground;NA
+Tara;2014;NA;Con.Zn;NA;NA
+Tara;2014;NA;Con.Pb;NA;NA
+Tara;2013;NA;NA;Underground;NA
+Tara;2013;NA;Con.Zn;NA;NA
+Tara;2013;NA;Con.Pb;NA;NA
+Tara;2012;NA;NA;Underground;NA
+Tara;2012;NA;Con.Zn;NA;NA
+Tara;2012;NA;Con.Pb;NA;NA
+Tara;2011;NA;NA;Underground;NA
+Tara;2011;NA;Con.Zn;NA;NA
+Tara;2011;NA;Con.Pb;NA;NA
+Tara;2010;NA;NA;Underground;NA
+Tara;2010;NA;Con.Zn;NA;NA
+Tara;2010;NA;Con.Pb;NA;NA
+Tara;2009;NA;NA;Underground;NA
+Tara;2009;NA;Con.Zn;NA;NA
+Tara;2009;NA;Con.Pb;NA;NA
+Tara;2008;NA;NA;Underground;NA
+Tara;2008;NA;Con.Zn;NA;NA
+Tara;2008;NA;Con.Pb;NA;NA
+Tara;2007;NA;NA;Underground;NA
+Tara;2007;NA;Con.Zn;NA;NA
+Tara;2007;NA;Con.Pb;NA;NA
+Tara;2006;NA;NA;Underground;NA
+Tara;2006;NA;Con.Zn;NA;NA
+Tara;2006;NA;Con.Pb;NA;NA
+Tara;2005;NA;NA;Underground;NA
+Tara;2005;NA;Con.Zn;NA;NA
+Tara;2005;NA;Con.Pb;NA;NA
+Tara;2004;NA;NA;Underground;NA
+Tara;2004;NA;Con.Zn;NA;NA
+Tara;2004;NA;Con.Pb;NA;NA
+Tara;2003;NA;NA;Underground;NA
+Tara;2003;NA;Con.Zn;NA;NA
+Tara;2003;NA;Con.Pb;NA;NA
+Tara;2002;NA;NA;Underground;NA
+Tara;2002;NA;Con.Zn;NA;NA
+Tara;2002;NA;Con.Pb;NA;NA
+Tara;2001;NA;NA;Underground;NA
+Tara;2001;NA;Con.Zn;NA;NA
+Tara;2001;NA;Con.Pb;NA;NA
+Tara;2000;NA;NA;Underground;NA
+Tara;2000;NA;Con.Zn;NA;NA
+Tara;2000;NA;Con.Pb;NA;NA
+Tasiast;2018;NA;O.Au;NA;heap leaching
+Tasiast;2017;NA;O.Au;NA;heap leaching
+Tasiast;2016;NA;O.Au;NA;heap leaching
+Tasiast;2015;NA;O.Au;NA;heap leaching
+Tasiast;2014;NA;O.Au;NA;heap leaching
+Tasiast;2013;NA;O.Au;NA;heap leaching
+Tasiast;2012;NA;O.Au;NA;heap leaching
+Tasiast;2011;NA;O.Au;NA;heap leaching
+Tasiast;2010;NA;O.Au;NA;heap leaching
+Toquepala;2019;NA;O.bulk;Open pit;NA
+Toquepala;2018;NA;O.bulk;Open pit;NA
+Toquepala;2017;NA;O.bulk;Open pit;NA
+Toquepala;2016;NA;O.bulk;Open pit;NA
+Toquepala;2015;NA;O.bulk;Open pit;NA
+Toquepala;2014;NA;O.bulk;Open pit;NA
+Toquepala;2013;NA;O.bulk;Open pit;NA
+Toquepala;2012;NA;O.bulk;Open pit;NA
+Toquepala;2011;NA;O.bulk;Open pit;NA
+Toquepala;2010;NA;O.bulk;Open pit;NA
+Toquepala;2009;NA;O.bulk;Open pit;NA
+Toquepala;2008;NA;O.bulk;Open pit;NA
+Toquepala;2007;NA;O.bulk;Open pit;NA
+Toquepala;2006;NA;O.bulk;Open pit;NA
+Toquepala;2005;NA;O.bulk;Open pit;NA
+Toquepala;2004;NA;Con.Cu;Open pit;NA
+Toquepala;2003;NA;Con.Cu;Open pit;NA
+Toquepala;2002;NA;Con.Cu;Open pit;NA
+Tujuh Bukit;2019;NA;O.Au;NA;heap leaching
+Tujuh Bukit;2018;NA;O.Au;NA;heap leaching
+Tujuh Bukit;2017;NA;O.Au;NA;heap leaching
+Wetar;2018;NA;O.Cu;NA;heap leaching
+Yanacocha;2019;NA;O.Au;Open pit;NA
+Yanacocha;2019;NA;O.Au;Underground;NA

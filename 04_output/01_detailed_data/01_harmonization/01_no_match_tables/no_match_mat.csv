@@ -1,6 +1,9 @@
 sheet;variable;material
 minerals_ores_conce;min_ore_con;High grade gold ore
 minerals_ores_conce;min_ore_con;Low grade gold ore
+minerals_ores_conce;min_ore_con;Hard coal
+minerals_ores_conce;min_ore_con;Brown coal
+minerals_ores_conce;min_ore_con;Anthracite
 commodities;min_ore_con;Low grade gold ore
 transport;product;Alumina hydrate
 transport;product;Anode slime
@@ -10,10 +13,13 @@ transport;product;Finished steel products
 transport;product;Steel products
 transport;product;Ferroniobium
 transport;product;Mixed Sulphide
-capacity_reserves;minerals_and_ores;Iron Ore
+transport;product;Semi-soft coking coal
+capacity_reserves;minerals_and_ores;6E PGM
+capacity_reserves;minerals_and_ores;Chromium(III) oxide
 capacity_reserves;minerals_and_ores;Chromitite
 capacity_reserves;minerals_and_ores;Stockpiles
-capacity_reserves;commodity;6E PGM
+capacity_reserves;minerals_and_ores;Hard coal
+capacity_reserves;minerals_and_ores;Brown coal
 capacity_reserves;commodity;Chromium(III) oxide
 capacity_reserves;commodity;Primary aluminium
 capacity_reserves;commodity;Anode carbon

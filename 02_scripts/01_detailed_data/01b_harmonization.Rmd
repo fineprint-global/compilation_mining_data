@@ -137,8 +137,12 @@ datatable(nr_rows, rownames = FALSE, caption = "Number of data rows per sheet")
 
 # create no_match table for countries
 no_match_country <- tibble(
-  country = setdiff(detailed$general$country, source_country_ids$sheet_country)
-  ) %>% 
+  country = setdiff(
+    detailed$general$country, 
+    source_country_ids %>%
+      filter(source_cat == "detailed") %>%
+      select(source_country)
+    )) %>% 
   filter(!is.na(country)) %>% 
   distinct()
 
@@ -152,7 +156,8 @@ datatable(no_match_country, rownames = FALSE, caption = "Missing source_country 
 
 # check for double entries in source_mat_ids
 double_source_cou <- source_country_ids %>%
-  group_by(sheet_country) %>%
+  filter(source_cat == "detailed") %>%
+  group_by(source_country) %>%
   summarise(n = n()) %>%
   filter(n > 1)
 
@@ -191,15 +196,21 @@ for (i in 1:nrow(sel_col)) {
       distinct() %>%
       filter(!is.na(.)) %>%
       pull()
-  )
+    )
 
   source_materials <- source_materials %>%
     dplyr::union(., a)
   
-}
+  }
 
 # material_ids entries not yet in material_id table (or not relevant for allocation)
-no_match_mat <- source_materials %>% filter(!(material %in% (source_mat_ids %>% filter(source_cat == "detailed") %>% pull(source_material_id))))
+no_match_mat <- source_materials %>% 
+  filter(!(material %in% (source_mat_ids %>% 
+                            filter(source_cat == "detailed") %>% 
+                            pull(source_material_id)
+                          )
+           )
+         )
 
 # save no_match table as csv
 write_delim(no_match_mat, "./04_output/01_detailed_data/01_harmonization/01_no_match_tables/no_match_mat.csv", delim = ";")
@@ -211,6 +222,7 @@ datatable(no_match_mat, rownames = FALSE, caption = "Missing source_material ent
 
 # check for double entries in source_mat_ids
 double_source_mat <- source_mat_ids %>%
+  filter(source_cat == "detailed") %>%
   group_by(source_material_id) %>%
   summarise(n = n()) %>%
   filter(n > 1)
@@ -258,18 +270,25 @@ for (i in 1:nrow(sel_col)) {
 }
 
 # source_unit_id entries not yet in source_unit_id table (or not relevant for allocation)
-no_match_unit <- source_units %>% filter(!(unit %in% source_unit_ids$source_unit))
+no_match_unit <- source_units %>%
+  filter(!(unit %in% (source_unit_ids %>% 
+                            filter(source_cat == "detailed") %>% 
+                            pull(source_unit)
+                          )
+           )
+         )
 
 # save no_match table as csv
 write_delim(no_match_unit, "./04_output/01_detailed_data/01_harmonization/01_no_match_tables/no_match_unit.csv", delim = ";")
 
 # table for Rmd output
-datatable(no_match_unit, rownames = FALSE, caption = "Missing source_unit entries")
+datatable(no_match_unit, rownames = FALSE, caption = "Missing source_unit_id entries")
 
 
 
 # check for double entries in source_unit_ids
 double_source_unit <- source_unit_ids %>%
+  filter(source_cat == "detailed") %>%
   group_by(source_unit) %>%
   summarise(n = n()) %>%
   filter(n > 1)
@@ -595,7 +614,14 @@ general <- detailed$general
 # left join table with alphanumiso, select alphanumiso and put it at the proper position
 general <- general %>%
   add_column(
-    general %>% left_join(., source_country_ids %>% select(sheet_country, alphanumiso), by = c("country" = "sheet_country")) %>% select(alphanumiso),
+    general %>% 
+      left_join(., 
+                source_country_ids %>%
+                  filter(source_cat == "detailed") %>%
+                  select(source_country, alphanumiso), 
+                by = c("country" = "source_country")
+                ) %>% 
+      select(alphanumiso),
     .after = "country"
   )
 
@@ -628,8 +654,8 @@ for (i in 1:nrow(sel_col)) {
     left_join(.,
               source_mat_ids %>%
                 filter(source_cat == "detailed") %>%
-                select(source_material_id, material_id), by=setNames(nm=variable_name,
-                                                                  "source_material_id")
+                select(source_material_id, material_id),
+              by=setNames(nm=variable_name, "source_material_id")
               ) %>%
     mutate(!!variable_name := material_id) %>%
     select(-material_id)

@@ -1,4 +1,5 @@
 sheet;variable;sub_site
+minerals_ores_conce;sub_site;Sayano-Partizanskiy
 capacity_reserves;sub_site;Goldstrike Open Pit
 capacity_reserves;sub_site;Loulo
 capacity_reserves;sub_site;Corrego do Sitio complex
@@ -36,3 +37,14 @@ capacity_reserves;sub_site;Nchwaning Seam 2
 capacity_reserves;sub_site;Gloria Seam 1
 capacity_reserves;sub_site;Steelpoort Chromitite Seam
 capacity_reserves;sub_site;Stockpiles and Tailings
+capacity_reserves;sub_site;Kusan dan Girimulya
+capacity_reserves;sub_site;Sebamban
+capacity_reserves;sub_site;Batulaki
+capacity_reserves;sub_site;Pasopati
+capacity_reserves;sub_site;IMM
+capacity_reserves;sub_site;TCM
+capacity_reserves;sub_site;BEK
+capacity_reserves;sub_site;KTD
+capacity_reserves;sub_site;JBG
+capacity_reserves;sub_site;Narrabi North
+capacity_reserves;sub_site;Narrabi South

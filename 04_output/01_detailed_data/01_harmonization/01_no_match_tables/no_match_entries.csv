@@ -1,1 +1,8 @@
 variable;entry
+type_mining;Open cut
+type_mining;Open Cut
+waste_type;Waste
+waste_type;Stripped topsoil
+waste_type;Coarse reject
+waste_type;Fine reject (tailings)
+waste_type;Tailings
