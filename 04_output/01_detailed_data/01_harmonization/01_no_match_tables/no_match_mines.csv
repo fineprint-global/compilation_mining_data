@@ -1,7 +1,5 @@
 sheet;variable;mine_fac
-minerals_ores_conce;mine_fac;MICARE Unit Mines
-minerals_ores_conce;mine_fac;AMVEST-Fola Complex
 transport;mine_fac;Penn Ridge
-capacity_reserves;mine_fac;MICARE Unit Mines
 capacity_reserves;mine_fac;Penn Ridge
 other_info;mine_fac;PT Bukit Enim Energi (BEE)
+other_info;mine_fac;Narrabi

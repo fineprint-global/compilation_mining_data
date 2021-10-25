@@ -1,8 +1,14 @@
 sheet;variable;unit
+general;unit_surface_area;square km
+general;unit_concession_area;square km
 minerals_ores_conce;unit;Kst
 commodities;unit;ozt
 commodities;unit;kozt
 commodities;unit;Kozt
 commodities;unit;million troy ounces
+capacity_reserves;reserves_mineral_unit;billion tons
 waste;unit;million cubic meters
 waste;unit;cubic meters
+waste;unit;kbcm
+waste;unit;million bcm
+waste;unit;cm

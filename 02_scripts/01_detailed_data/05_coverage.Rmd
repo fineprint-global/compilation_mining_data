@@ -161,7 +161,7 @@ datatable(nr_min_fac_by_cou, rownames = FALSE, caption = "Number of mines per co
 
 # export figure for number of mines per country
 
-pdf(file = "./detailed_data/04_output/05_coverage/01_general/mines_per_country.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/mines_per_country.pdf",   
     width = 16, 
     height = 8) 
 
@@ -225,7 +225,7 @@ nr_mine_by_mat_plot <- left_join(nr_mine_by_mat, select(mat_ids, material_id, ma
 nr_mine_by_mat_plot$material_name <- coalesce(nr_mine_by_mat_plot$material_name, nr_mine_by_mat_plot$material_id)
 nr_mine_by_mat_plot <- nr_mine_by_mat_plot %>% mutate(material_name = replace(material_name, material_name == "F.stc", "Steam coal"))
 
-pdf(file = "./detailed_data/04_output/05_coverage/01_general/mines_per_material.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/mines_per_material.pdf",   
     width = 16, 
     height = 8) 
 
@@ -719,7 +719,7 @@ cov_plot_materials <- filter(cov_plot, min_ore_con %in% c("Me.Ag", "Me.Au",
                                                        "O.Al", "O.Fe")) #most materials (with at least meaningful coverage)
 
 # specify where the pdf with figures for global coverage should be put out
-pdf(file = "./detailed_data/04_output/05_coverage/01_general/coverage_global.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_global.pdf",   
     width = 16, 
     height = 8) 
 
@@ -790,7 +790,7 @@ cov_plot_national <- cov_plot_national %>%
 ```{r , echo = FALSE, message = FALSE}
 
 # specify where the pdf with figures for national coverages should be put out
-pdf(file = "./detailed_data/04_output/05_coverage/01_general/coverage_national.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_national.pdf",   
     width = 16, 
     height = 8) 
 
