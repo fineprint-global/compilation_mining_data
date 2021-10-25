@@ -1,4 +1,4 @@
 # Ignore
-
 *.rds
 *.RDS
+general_georeferenced.gpkg

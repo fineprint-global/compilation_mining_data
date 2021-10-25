@@ -142,7 +142,9 @@ regions_mines <- rbind(regions, mines_general_wo_coords) %>%
   select(c("mine_fac", "country", "state", "region", "province", "district", "sector", "location_municipality"))
 
 
+# temporary step: write sheet general to intermediate files in order to use it in other scripts
+st_write(rbind(general_output, regions_mines), "./03_intermediate/01_detailed_data/general_georeferenced.gpkg")
 
 
-# this has to return TRUE
+# this has to return TRUE 
 nrow(general) == nrow(general_output)

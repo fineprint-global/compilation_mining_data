@@ -2,31 +2,33 @@
 
 library(tidyverse)
 library(xlsx)
-library(stringr)
 
 ### read files and load data
 
 ## harmonized data file (detailed data)
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
-
+general <- st_read("./03_intermediate/01_detailed_data/general_georeferenced.gpkg")
 
 ## select only the mines that have coal as commodity produced
 sheet_min <- detailed$minerals_ores_conce %>% 
-  filter(., type_mineral %in% c("Coal mined", "Clean coal")) %>% 
+  filter(., type_mineral == "Clean coal") %>% 
   select(c(mine_fac, type_mineral, min_ore_con, year, unit, value, amount_sold, comment, source_id))
+
+# add the variable mine_id to sheet_min (in this case it is just identical to mine_fac)
+sheet_min$mine_id <- sheet_min$mine_fac
+sheet_min <- relocate(sheet_min, mine_id, .before = "mine_fac")
 
 # get list of all mines that produce coal and combine it with list of mines that are only entered in sheet general to produce coal, 
 # but which do not have production
 mine_list <- unique(sheet_min$mine_fac)
-mine_list_general <- detailed$general[grepl(c("coal|lignite"), detailed$general$commodities_products, ignore.case = TRUE),]
+mine_list_general <- general[grepl(c("coal|lignite"), general$commodities_products, ignore.case = TRUE),]
 mine_list <- union(mine_list, mine_list_general$mine_fac)
 
 
-general <- detailed$general %>% filter(., mine_fac %in% mine_list)
-coords_before <- sum(!is.na(general$longitude))
-
-sub_sites <- detailed$sub_sites %>% filter(., mine_fac %in% mine_list)
-
+general <- general %>% 
+  filter(., mine_fac %in% mine_list) %>% 
+  filter(., is.na(sub_site)) #filter out sub_sites (as production is aggregated anyway)
+  
 waste <- detailed$waste %>% 
   filter(., mine_fac %in% mine_list) %>%
   select(!c(commodity, production_share))
@@ -38,44 +40,18 @@ reserves <- detailed$capacity_reserves %>%
   select(!c(processing_capacity_year,	processing_capacity_unit,	processing_capacity_value, reserves_share,
             grade_unit,	grade, reserves_commodity_unit, reserves_commodity_value))
 
-
-## compile two large excel sheets:
-## one which describes the mines in general, which is a combination of sheet_general and sheet_sub_sites
-## the second which describes production, reserves, waste, and other info (possibly do this sheet in the future? not yet implemented!!)
-
-#first, create a sheet describing the mine in general.
-#there should be a unique row for each mine_fac (aggregated), but also for each sub_site.
-#therefore, mine_fac and sub_site together form the unique primary key
-#an empty (NA) value in sub_site indicates that the mine as a whole (aggregated) is referred to.
-
-#first, create a column "sub_site" which is empty for the sheet general
-general <- add_column(general, sub_site = NA, .after = "mine_fac")
-
-#then, bind the sheet general and sheet_sub_sites "beneath" each other
-general <- bind_rows(general, sub_sites)
-
-# the only column that has a different naming in the two sheets but refers to the same is:
-# mining_facility_types (in sheet_general) and mine_types (in sheet_sub_sites).
-# therefore, they are put together into one column, named mining_facility_types
-general$mining_facility_types <- coalesce(general$mining_facility_types, general$mine_types)
-general <- select(general, -mine_types)
-
-# now as described above, the column mine_fac and sub_site together act as the primary key.
-# to simplify, a new column mine_id is created, which simply is the two strings bound together. 
-# this leads to the (aggregated) mine always having its original mine_fac string as mine_id, while sub_sites have 
-# their mine_id as a composite of mine_fac and sub_site. The columns mine_fac and sub_site will be kept in order to easily
-# identify which parent mine_fac a sub_site belongs to.
-general$mine_id <- paste(general$mine_fac, general$sub_site, sep = " ")
-general <- relocate(general, mine_id, .before = "mine_fac")
-general$mine_id <- gsub(pattern = " NA", replacement = "", general$mine_id) #cleaning
-coords_after <- sum(!is.na(general$longitude))
-
-#check how many coordinates got added by the addition of sub_sites
-coords_after - coords_before
+#join production with coordinates from sheet general
+coal_production <- merge(sheet_min, select(general, mine_id, country, coord_is_na, geom), by = "mine_id")
 
 
-write.xlsx(data.frame(general), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="general", row.names=FALSE, showNA=FALSE)
-write.xlsx(data.frame(sheet_min), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="sheet_min", append=TRUE, row.names=FALSE, showNA=FALSE)
+# write sheet general as geopackage
+st_write(coal_production, "./04_output/01_detailed_data/07_other/coal_production_georeferenced.gpkg", append = FALSE)
+
+# write sheet general as geopackage
+st_write(general, "./04_output/01_detailed_data/07_other/general_coal.gpkg", append = FALSE)
+
+#write production data as excel file
+write.xlsx(data.frame(sheet_min), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="sheet_min", row.names=FALSE, showNA=FALSE)
 write.xlsx(data.frame(reserves), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="reserves", append=TRUE, row.names=FALSE, showNA=FALSE)
 write.xlsx(data.frame(waste), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="waste", append=TRUE, row.names=FALSE, showNA=FALSE)
 write.xlsx(data.frame(other_info), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="other_info", append=TRUE, row.names=FALSE, showNA=FALSE)
