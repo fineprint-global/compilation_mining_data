@@ -12,8 +12,23 @@ library(sp)
 
 # read files and load data
 
-# shapefiles (read in GADM package)
+# download global shapefiles for different sub-national levels from the GADM geopackage
 
+if (!file.exists("./01_input/01_data/01_detailed_data/GADM/gadm36_levels.gpkg")){
+  if (!file.exists("./01_input/01_data/01_detailed_data/GADM/gadm36_levels_gpkg.zip")){
+    timeout <- getOption('timeout')
+    options(timeout=600) # 10 min
+    download.file("https://biogeo.ucdavis.edu/data/gadm3.6/gadm36_levels_gpkg.zip", destfile = "./01_input/01_data/01_detailed_data/GADM/gadm36_levels_gpkg.zip")
+    options(timeout=timeout)
+  }
+  unzip("./01_input/01_data/01_detailed_data/GADM/gadm36_levels_gpkg.zip", files = "gadm36_levels.gpkg", exdir = "./01_input/01_data/01_detailed_data/GADM")
+}
+
+# read in the downloaded GADM file
+file <- "./01_input/01_data/01_detailed_data/GADM/gadm36_levels.gpkg/gadm36_levels.gpkg"
+
+# Explore layers
+sf::st_layers(file)
 
 # harmonized data file (detailed data)
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
@@ -118,13 +133,16 @@ nrow(mines_processing) == nrow(general_output) + nrow(mines_general_wo_coords)
 
 ### georeferencing of regions and mines that don't have coordinates ------------
 
-# first, create a column with strings that specify in which polygons the mine or region is
-# each of the strings should match one or more polygons of the root classification
-regions_mines <- rbind(regions, mines_general_wo_coords)
-
 # create output list of mines that have production (in sheet_min or sheet_com) and are not georeferenced
+write.xlsx(data.frame(regions_mines), file="./04_output/01_detailed_data/07_other/mines_regions_wo_coordinates", row.names=FALSE, showNA=FALSE)
 
-#write.xlsx(data.frame(general), file="./detailed_data/04_output/07_other/coal_tables.xlsx", sheetName="general", row.names=FALSE, showNA=FALSE)
+# create a column with strings that specify in which polygons the mine or region is
+# each of the strings should match one polygon
+regions_mines <- rbind(regions, mines_general_wo_coords) %>%
+  select(c("mine_fac", "country", "state", "region", "province", "district", "sector", "location_municipality"))
+
+
+
 
 # this has to return TRUE
 nrow(general) == nrow(general_output)
