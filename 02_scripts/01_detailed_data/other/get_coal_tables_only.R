@@ -41,8 +41,7 @@ reserves <- detailed$capacity_reserves %>%
             grade_unit,	grade, reserves_commodity_unit, reserves_commodity_value))
 
 #join production with coordinates from sheet general
-coal_production <- merge(sheet_min, select(general, mine_id, country, coord_is_na, geom), by = "mine_id")
-
+coal_production <- merge(sheet_min, select(general, mine_id, country, alphanumiso, commodities_products, mining_facility_types, coord_is_na, geom), by = "mine_id")
 
 # write sheet general as geopackage
 st_write(coal_production, "./04_output/01_detailed_data/07_other/coal_production_georeferenced.gpkg", append = FALSE)
@@ -50,9 +49,9 @@ st_write(coal_production, "./04_output/01_detailed_data/07_other/coal_production
 # write sheet general as geopackage
 st_write(general, "./04_output/01_detailed_data/07_other/general_coal.gpkg", append = FALSE)
 
-#write production data as excel file
-write.xlsx(data.frame(sheet_min), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="sheet_min", row.names=FALSE, showNA=FALSE)
-write.xlsx(data.frame(reserves), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="reserves", append=TRUE, row.names=FALSE, showNA=FALSE)
-write.xlsx(data.frame(waste), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="waste", append=TRUE, row.names=FALSE, showNA=FALSE)
-write.xlsx(data.frame(other_info), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="other_info", append=TRUE, row.names=FALSE, showNA=FALSE)
+# # write production data as excel file
+# write.xlsx(data.frame(sheet_min), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="sheet_min", row.names=FALSE, showNA=FALSE)
+# write.xlsx(data.frame(reserves), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="reserves", append=TRUE, row.names=FALSE, showNA=FALSE)
+# write.xlsx(data.frame(waste), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="waste", append=TRUE, row.names=FALSE, showNA=FALSE)
+# write.xlsx(data.frame(other_info), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="other_info", append=TRUE, row.names=FALSE, showNA=FALSE)
 

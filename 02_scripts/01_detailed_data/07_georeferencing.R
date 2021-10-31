@@ -1,3 +1,4 @@
+# DESCRIPTION:
 # assign points, multipoints or shapefiles to each mine in sheet_general
 # mines which have no sub_sites, and have exact coordinates, will have the type point (exact) assigned
 # mines which have sub_sites with coordinates will have the type multipoint (exact) assigned
@@ -6,34 +7,26 @@
 # such a shapefile can be, for example, the shapefile of a district, a shapefile of several districts combined, or the shapefile of a state
 
 library(xlsx)
+library(stringr)
 library(tidyverse)
 library(sf)
 library(sp)
 
-# read files and load data
 
-# download global shapefiles for different sub-national levels from the GADM geopackage
 
-if (!file.exists("./01_input/01_data/01_detailed_data/GADM/gadm36_levels.gpkg")){
-  if (!file.exists("./01_input/01_data/01_detailed_data/GADM/gadm36_levels_gpkg.zip")){
-    timeout <- getOption('timeout')
-    options(timeout=600) # 10 min
-    download.file("https://biogeo.ucdavis.edu/data/gadm3.6/gadm36_levels_gpkg.zip", destfile = "./01_input/01_data/01_detailed_data/GADM/gadm36_levels_gpkg.zip")
-    options(timeout=timeout)
-  }
-  unzip("./01_input/01_data/01_detailed_data/GADM/gadm36_levels_gpkg.zip", files = "gadm36_levels.gpkg", exdir = "./01_input/01_data/01_detailed_data/GADM")
-}
-
-# read in the downloaded GADM file
-file <- "./01_input/01_data/01_detailed_data/GADM/gadm36_levels.gpkg/gadm36_levels.gpkg"
-
-# Explore layers
-sf::st_layers(file)
+# read files and load data -----------------------------------------------------
 
 # harmonized data file (detailed data)
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
 general <- detailed$general
 sub_sites <- detailed$sub_sites
+
+# Geodata from GADM
+
+# load function on which this script depends
+source("./02_scripts/00_functions/split_columns.R")
+
+
 
 # bind the sheets general and subsites together --------------------------------
 
@@ -69,26 +62,22 @@ general.sf <- st_as_sf(x = general,
                                coords = c("longitude", "latitude"),
                                crs = "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 
-# filter out regions
-regions <- filter(general.sf, mine_or_processing == "Region")
 
-# filter out mines and processing (everything except regions and companies)
-mines_processing <- filter(general.sf, mine_or_processing != "Region|Company")
 
 ### georeferencing of mines and processing--------------------------------------
 
 # further divide mines and processing into mines_general and mines_sub_sites
 # the reason being that mines_general can be multipoints, while mines_sub_sites cannot
-mines_general <- filter(mines_processing, is.na(sub_site))
-mines_sub_sites <- filter(mines_processing, !is.na(sub_site))
+mines_general <- filter(general.sf, is.na(sub_site))
+mines_sub_sites <- filter(general.sf, !is.na(sub_site))
 
 ## mines_sub_sites ----------
-# create the output data.frame and add mines_sub_sites
+# create the output dataframe and add mines_sub_sites (Think about this again if I want to add mines_sub_sites to GENERAL output)
 general_output <- mines_sub_sites
 
 ## mines_general ----------
 # mines that do have sub_sites with coordinates
-mines_general_w_multipoints_list <- filter(mines_sub_sites, coord_is_na == F)$mine_fac %>% unique()
+mines_general_w_multipoints_list <- filter(mines_sub_sites, coord_is_na == FALSE)$mine_fac %>% unique()
 mines_general_w_multipoints <- mines_general %>%
   filter(mine_fac %in% mines_general_w_multipoints_list)
 
@@ -108,7 +97,6 @@ nrow(mines_general_wo_multipoints) + nrow(mines_general_w_multipoints) +
 general_output <- rbind(general_output, mines_general_wo_multipoints)
 
 # for those mines_general that have sub_sites with coordinates (mines_general_w_multipoints), create multipoints with all sub_sites
-
 for(mine in mines_general_w_multipoints_list){
   
   #select a particular mine with all its sub_sites that have coordinates
@@ -127,24 +115,67 @@ for(mine in mines_general_w_multipoints_list){
 # add mines with updated multipoints (mines_general_w_multipoints) to general_output
 general_output <- rbind(general_output, mines_general_w_multipoints)
 
-# this has to return TRUE
-nrow(mines_processing) == nrow(general_output) + nrow(mines_general_wo_coords)
 
 
 ### georeferencing of regions and mines that don't have coordinates ------------
-
-# create output list of mines that have production (in sheet_min or sheet_com) and are not georeferenced
-write.xlsx(data.frame(regions_mines), file="./04_output/01_detailed_data/07_other/mines_regions_wo_coordinates", row.names=FALSE, showNA=FALSE)
-
-# create a column with strings that specify in which polygons the mine or region is
-# each of the strings should match one polygon
-regions_mines <- rbind(regions, mines_general_wo_coords) %>%
-  select(c("mine_fac", "country", "state", "region", "province", "district", "sector", "location_municipality"))
+mwoc <- as.data.frame(select(mines_general_wo_coords, c(2,5:12)))
+mwoc <- select(mwoc, -geometry)
 
 
-# temporary step: write sheet general to intermediate files in order to use it in other scripts
-st_write(rbind(general_output, regions_mines), "./03_intermediate/01_detailed_data/general_georeferenced.gpkg")
+first_split <- split_columns(mwoc, ";") #split by ";" 
+
+second_split <- split_columns(first_split, ",") #split by "," 
+
+#create dataframe of unique regions in the detailed data set
+detailed_regions <- second_split %>% 
+  mutate(across(where(is.character), str_trim)) %>%
+  mutate(., GID_0 = substr(alphanumiso, 1,3), .after = location_municipality) %>% 
+  select(-1) %>% 
+  distinct() %>% 
+  arrange(country)
+
+
+# add missing regions to the WU_GADM_concordance table file, which links regions to geometries from the GADM package
+if (file.exists("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.xlsx")){
+  
+  regions_geometries_concordance <- read.xlsx2("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.xlsx", 1) %>% as.data.frame()
+  
+  missing_rows <- anti_join(detailed_regions, regions_geometries_concordance, 
+            by = c("country", "state", "region", "province", "district", "sector", "location_municipality"))
+  
+  if (nrow(missing_rows) > 0) {
+    
+    #add GID cols
+    GID <- data.frame(matrix(ncol = 4, nrow = nrow(missing_rows)))
+    colnames(GID) <- c("GID_1", "GID_2", "GID_3", "GID_4")
+    missing_rows <- cbind(missing_rows, GID)
+    regions_geometries_concordance <- rbind(regions_geometries_concordance, missing_rows) %>% arrange(., country, state, district, location_municipality)
+    
+    write.xlsx2(regions_geometries_concordance, "./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.xlsx", row.names = FALSE, showNA = FALSE)
+    print(c((nrow(missing_rows)), " Rows added"))
+    
+    } else {print("No new regions added")}
+
+  } else {
+    
+  # create columns where the GID will be
+  GID <- data.frame(matrix(ncol = 4, nrow = nrow(detailed_regions)))
+  colnames(GID) <- c( "GID_1", "GID_2", "GID_3", "GID_4")
+  
+  #cbind them together
+  regions_geometries_concordance <- cbind(detailed_regions, GID) %>% arrange(., country, state, district, location_municipality)
+
+  write.xlsx2(regions_geometries_concordance, "./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.xlsx", row.names = FALSE, showNA = FALSE)
+  print("New file created")
+}
+
+# join the polygons to mines and regions without coordinates via the concordance table
+
+
+# bind general_output and mines_with_polygons together
 
 
 # this has to return TRUE 
 nrow(general) == nrow(general_output)
+
+# write to intermediate folder a copy of the sheet general with the geometries included
