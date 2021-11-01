@@ -29,10 +29,7 @@ if (!file.exists("./01_input/06_geodata/GADM_levels_combined.csv")){
   
   # read in the downloaded GADM file
   file <- "./01_input/06_geodata/gadm36_levels.gpkg"
-  
-  # Explore layers
-  sf::st_layers(file)
-  
+
   # Import GeoPackage
   data <- src_sqlite(file)
   

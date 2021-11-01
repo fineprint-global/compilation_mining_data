@@ -26,8 +26,8 @@ mine_list <- union(mine_list, mine_list_general$mine_fac)
 
 
 general <- general %>% 
-  filter(., mine_fac %in% mine_list) %>% 
-  filter(., is.na(sub_site)) #filter out sub_sites (as production is aggregated anyway)
+  filter(., mine_fac %in% mine_list) 
+
   
 waste <- detailed$waste %>% 
   filter(., mine_fac %in% mine_list) %>%
@@ -41,7 +41,7 @@ reserves <- detailed$capacity_reserves %>%
             grade_unit,	grade, reserves_commodity_unit, reserves_commodity_value))
 
 #join production with coordinates from sheet general
-coal_production <- merge(sheet_min, select(general, mine_id, country, alphanumiso, commodities_products, mining_facility_types, coord_is_na, geom), by = "mine_id")
+coal_production <- merge(sheet_min, select(general, mine_id, country, alphanumiso, commodities_products, mining_facility_types, geom), by = "mine_id")
 
 # write sheet general as geopackage
 st_write(coal_production, "./04_output/01_detailed_data/07_other/coal_production_georeferenced.gpkg", append = FALSE)

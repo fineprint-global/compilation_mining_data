@@ -1,0 +1,132 @@
+country;alphanumiso;state;region;province;district;sector;location_municipality;GID_0;GID_1;GID_2;GID_3;GID_4
+Argentina;ARG032;NA;NA;NA;NA;NA;NA;ARG;NA;NA;NA;NA
+Australia;AUS036;New South Wales;NA;NA;NA;NA;Muswellbrook;AUS;AUS.5_1;AUS.5.95_1;NA;NA
+Australia;AUS036;New South Wales;NA;NA;NA;NA;Singleton;AUS;AUS.5_1;AUS.5.118_1;NA;NA
+Australia;AUS036;Western Australia;NA;NA;NA;NA;Collie;AUS;AUS.11_1;AUS.11.27_1;NA;NA
+Australia;AUS036;Western Australia;Pilbara;NA;NA;NA;NA;AUS;AUS.11_1;NA;NA;NA
+Australia;AUS036;NA;NA;NA;NA;NA;NA;AUS;NA;NA;NA;NA
+Brazil;BRA076;NA;Goias;NA;Niquelandia;NA;NA;BRA;BRA.9_1;BRA.9.155_1;NA;NA
+Brazil;BRA076;NA;NA;NA;NA;NA;NA;BRA;NA;NA;NA;NA
+China;CHN156;Fujian;NA;NA;Wuping;NA;NA;CHN;CHN.4_1;CHN.4.2_1;CHN.4.2.5_1;NA
+China;CHN156;Fujian;NA;NA;NA;NA;NA;CHN;CHN.4_1;NA;NA;NA
+China;CHN156;Gansu;NA;NA;Lanzhou;NA;NA;CHN;CHN.5_1;CHN.5.7_1;NA;NA
+China;CHN156;Gansu;NA;NA;NA;NA;NA;CHN;CHN.5_1;NA;NA;NA
+China;CHN156;Guangxi;NA;NA;Daxin;NA;NA;CHN;CHN.7_1;CHN.7.3_1;CHN.7.3.2_1;NA
+China;CHN156;Guangxi;NA;NA;Jingxi;NA;NA;CHN;CHN.7_1;CHN.7.1_1;CHN.7.1.3_1;NA
+China;CHN156;Guangxi;NA;NA;Tiandeng;NA;NA;CHN;CHN.7_1;CHN.7.3_1;CHN.7.3.7_1;NA
+China;CHN156;Guizhou;NA;NA;Qingzhen;NA;NA;CHN;CHN.8_1;CHN.8.3_1;CHN.8.3.3_1;NA
+China;CHN156;Guizhou;NA;NA;Zunyi;NA;NA;CHN;CHN.8_1;CHN.8.9_1;NA;NA
+China;CHN156;Guizhou;NA;NA;NA;NA;NA;CHN;CHN.8_1;NA;NA;NA
+China;CHN156;Henan;NA;NA;Hebi;NA;NA;CHN;CHN.12_1;CHN.12.2_1;NA;NA
+China;CHN156;Henan;NA;NA;Jiaozuo;NA;NA;CHN;CHN.12_1;CHN.12.3_1;NA;NA
+China;CHN156;Henan;NA;NA;Luoyang;NA;NA;CHN;CHN.12_1;CHN.12.7_1;NA;NA
+China;CHN156;Henan;NA;NA;Luoyang city;NA;NA;CHN;CHN.12_1;CHN.12.7_1;CHN.12.7.3_1;NA
+China;CHN156;Henan;NA;NA;Pingdingshan;NA;NA;CHN;CHN.12_1;CHN.12.9_1;NA;NA
+China;CHN156;Henan;NA;NA;Sanmenxia;NA;NA;CHN;CHN.12_1;CHN.12.11_1;NA;NA
+China;CHN156;Henan;NA;NA;Yongcheng city;NA;NA;CHN;CHN.12_1;CHN.12.12_1;CHN.12.12.7_1;NA
+China;CHN156;Henan;NA;NA;Zhengzhou;NA;NA;CHN;CHN.12_1;CHN.12.16_1;NA;NA
+China;CHN156;Henan;NA;NA;NA;NA;NA;CHN;CHN.12_1;NA;NA;NA
+China;CHN156;Inner Mongolia;NA;NA;Ordos City;Dongsheng;NA;CHN;CHN.19_1;CHN.19.7_1;CHN.19.7.2_1;NA
+China;CHN156;Inner Mongolia;NA;NA;Ordos City;Yijinhuoluoqi;NA;CHN;CHN.19_1;CHN.19.7_1;CHN.19.7.3_1;NA
+China;CHN156;Inner Mongolia;NA;NA;Ordos City;NA;NA;CHN;CHN.19_1;NA;NA;NA
+China;CHN156;Inner Mongolia;NA;NA;NA;NA;NA;CHN;CHN.19_1;NA;NA;NA
+China;CHN156;Jiangsu;NA;NA;NA;NA;NA;CHN;CHN.15_1;NA;NA;NA
+China;CHN156;Jinagsu;NA;NA;NA;NA;NA;CHN;NA;NA;NA;NA
+China;CHN156;Liaoning;NA;NA;NA;NA;NA;CHN;CHN.18_1;NA;NA;NA
+China;CHN156;Qinghai;NA;NA;NA;NA;NA;CHN;CHN.21_1;NA;NA;NA
+China;CHN156;Shaanxi;NA;NA;Baishui County;NA;NA;CHN;CHN.22_1;CHN.22.6_1;CHN.22.6.1_1;NA
+China;CHN156;Shaanxi;NA;NA;Chengcheng County;NA;NA;CHN;CHN.22_1;CHN.22.6_1;CHN.22.6.2_1;NA
+China;CHN156;Shaanxi;NA;NA;Han;NA;NA;CHN;NA;NA;NA;NA
+China;CHN156;Shaanxi;NA;NA;Heyang County;NA;NA;CHN;CHN.22_1;CHN.22.6_1;CHN.22.6.6_1;NA
+China;CHN156;Shaanxi;NA;NA;Xianyang;Changwu County;NA;CHN;CHN.22_1;CHN.22.8_1;CHN.22.8.2_1;NA
+China;CHN156;Shaanxi;NA;NA;Xianyang;Bin County;NA;CHN;CHN.22_1;CHN.22.8_1;CHN.22.8.1_1;NA
+China;CHN156;Shaanxi;NA;NA;Yan'an;Huangling County;NA;CHN;CHN.22_1;CHN.22.9_1;CHN.22.9.4_1;NA
+China;CHN156;Shaanxi;NA;NA;Yaozhou District;NA;NA;CHN;CHN.22_1;CHN.22.5_1;NA;NA
+China;CHN156;Shaanxi;NA;NA;Yintai District;NA;NA;CHN;CHN.22_1;CHN.22.5_1;NA;NA
+China;CHN156;Shaanxi;NA;NA;Yulin;Hengshan County;NA;CHN;CHN.22_1;CHN.22.10_1;CHN.22.10.3_1;NA
+China;CHN156;Shaanxi;NA;NA;Yulin;Yuyang District;NA;CHN;CHN.22_1;CHN.22.10_1;CHN.22.10.11_1;NA
+China;CHN156;Shaanxi;NA;NA;Yulin;Fugu County;NA;CHN;CHN.22_1;CHN.22.10_1;CHN.22.10.2_1;NA
+China;CHN156;Shaanxi;NA;NA;Yulin;Shenmu County;NA;CHN;CHN.22_1;CHN.22.10_1;CHN.22.10.8_1;NA
+China;CHN156;Shaanxi;NA;NA;NA;NA;NA;CHN;CHN.22_1;NA;NA;NA
+China;CHN156;Shandong;NA;NA;Yanzhou city;NA;NA;CHN;CHN.23_1;CHN.23.6_1;CHN.23.6.9_1;NA
+China;CHN156;Shandong;NA;NA;NA;NA;NA;CHN;CHN.23_1;NA;NA;NA
+China;CHN156;Shanxi;NA;NA;LÃ¼liang;NA;Xiaoyi;CHN;NA;NA;NA;NA
+China;CHN156;Shanxi;NA;NA;Lvliang;NA;NA;CHN;CHN.25_1;CHN.25.6_1;NA;NA
+China;CHN156;Shanxi;NA;NA;Lüliang;NA;Xiaoyi;CHN;CHN.25_1;CHN.25.6_1;CHN.25.6.11_1;NA
+China;CHN156;Shanxi;NA;NA;Xing County;NA;Watangzhen;CHN;CHN.25_1;CHN.25.6_1;CHN.25.6.12_1;NA
+China;CHN156;Shanxi;NA;NA;Yangquan;NA;NA;CHN;CHN.25_1;CHN.25.10_1;NA;NA
+China;CHN156;Shanxi;NA;NA;NA;NA;NA;CHN;CHN.25_1;NA;NA;NA
+China;CHN156;Sichuan;NA;NA;Chongqing;NA;NA;CHN;CHN.26_1;CHN.26.2_1;CHN.26.2.3_1;NA
+China;CHN156;Xinjiang;NA;NA;Wuqia;NA;NA;CHN;CHN.28_1;CHN.28.11_1;CHN.28.11.4_1;NA
+China;CHN156;Xinjiang;NA;NA;NA;NA;NA;CHN;CHN.28_1;NA;NA;NA
+China;CHN156;Yunnan;NA;NA;Yuxi;NA;Huaning;CHN;CHN.30_1;CHN.30.15_1;CHN.30.15.3_1;NA
+China;CHN156;NA;NA;NA;NA;NA;NA;CHN;NA;NA;NA;NA
+Colombia;COL170;Antioquia;NA;NA;San Roque;NA;Providencia;COL;COL.2_1;COL.2.98_1;NA;NA
+Colombia;COL170;Antioquia;NA;NA;San Roque;NA;San Jose del Nus;COL;COL.2_1;COL.2.98_1;NA;NA
+Colombia;COL170;Antioquia;NA;NA;NA;NA;JericÃ³;COL;NA;NA;NA;NA
+Colombia;COL170;Antioquia;NA;NA;NA;NA;Jericó;COL;COL.2_1;COL.2.61_1;NA;NA
+France;FRA250;Occitanie;NA;NA;Hautes-PyrÃ©nÃ©es;NA;Lannemezan;FRA;NA;NA;NA;NA
+France;FRA250;Occitanie;NA;NA;Hautes-Pyrénées;NA;Lannemezan;FRA;FRA.11_1;FRA.11.7_1;FRA.11.7.2_1;FRA.11.7.2.6_1
+Gabon;GAB266;Moyen-Ogooue;NA;NA;NA;NA;Ndjole;GAB;GAB.3_1;GAB.3.1_1;NA;NA
+Indonesia;IDN360;Kalimantan Tengah;NA;NA;East Barito Regency;NA;NA;IDN;IDN.14_1;IDN.14.2_1;NA;NA
+Indonesia;IDN360;Kalimantan Tengah;NA;NA;North Barito Regency;NA;NA;IDN;IDN.14_1;IDN.14.3_1;NA;NA
+Indonesia;IDN360;Kalimantan Timur;NA;NA;Berau Regency;NA;Gurimbang;IDN;IDN.15_1;IDN.15.2_1;IDN.15.2.8_1;IDN.15.2.8.3_1
+Indonesia;IDN360;Kalimantan Timur;NA;NA;East Kutai Regency;Muara Wahau;NA;IDN;IDN.15_1;NA;NA;NA
+Indonesia;IDN360;Kalimantan Timur;NA;NA;Kutai Kertanegara Regency;NA;NA;IDN;IDN.15_1;IDN.15.7_1;IDN.15.7.11_1;NA
+Indonesia;IDN360;South Kalimantan;NA;NA;Kotabaru Regency;NA;Sarongga;IDN;IDN.13_1;IDN.13.9_1;IDN.13.9.3_1;IDN.13.9.3.6_1
+Indonesia;IDN360;South Sumatra;NA;NA;Muara Enim Regency;Muara Enim;NA;IDN;IDN.31_1;IDN.31.5_1;IDN.31.5.10_1;NA
+Indonesia;IDN360;South Sumatra;NA;NA;NA;NA;Tanjung Enim;IDN;IDN.31_1;IDN.31.5_1;IDN.31.5.6_1;IDN.31.5.6.5_1
+Indonesia;IDN360;NA;NA;NA;Kotabaru Regency;NA;Sarongga;IDN;NA;NA;NA;NA
+Indonesia;IDN360;NA;NA;NA;NA;NA;NA;IDN;NA;NA;NA;NA
+Kazakhstan;KAZ398;NA;NA;NA;NA;NA;NA;KAZ;NA;NA;NA;NA
+Mexico;MEX484;Chihuahua;NA;NA;NA;NA;NA;MEX;MEX.6_1;NA;NA;NA
+Mexico;MEX484;Guerrero;NA;NA;NA;NA;NA;MEX;MEX.12_1;NA;NA;NA
+Mexico;MEX484;San Luis Potosi;NA;NA;NA;NA;NA;MEX;MEX.24_1;NA;NA;NA
+Mexico;MEX484;Sonora;NA;NA;NA;NA;NA;MEX;MEX.26_1;NA;NA;NA
+Mexico;MEX484;Zacatecas;NA;NA;NA;NA;NA;MEX;MEX.32_1;NA;NA;NA
+Mexico;MEX484;NA;NA;NA;NA;NA;NA;MEX;NA;NA;NA;NA
+Russia;RUS643;Chelyabinsk Oblast;NA;NA;NA;NA;Chelyabinsk;RUS;RUS.11_1;RUS.11.8_1;NA;NA
+Russia;RUS643;Kemerovo;NA;NA;NA;NA;NA;RUS;RUS.27_1;NA;NA;NA
+Russia;RUS643;Leningrad Oblast;NA;NA;NA;NA;Volkhov;RUS;RUS.38_1;RUS.38.29_1;NA;NA
+South Africa;ZAF710;NA;NA;NA;NA;NA;NA;ZAF;NA;NA;NA;NA
+United States;USA840;Florida;NA;NA;NA;NA;NA;USA;USA.10_1;NA;NA;NA
+United States;USA840;Georgia;NA;NA;NA;NA;NA;USA;USA.11_1;NA;NA;NA
+United States;USA840;Illinois;NA;NA;Franklin;NA;Sesser;USA;NA;NA;NA;NA
+United States;USA840;Illinois;NA;NA;Franklin ;NA;Sesser;USA;USA.14_1;USA.14.28_1;NA;NA
+United States;USA840;Illinois;NA;NA;NA;NA;Sesser;USA;NA;NA;NA;NA
+United States;USA840;Kentucky;Western Kentucky;NA;Henderson County;NA;NA;USA;USA.18_1;USA.18.51_1;NA;NA
+United States;USA840;Kentucky;NA;NA;Muhlenberg County;NA;NA;USA;USA.18_1;USA.18.89_1;NA;NA
+United States;USA840;Kentucky;NA;NA;Pike;NA;NA;USA;USA.18_1;USA.18.98_1;NA;NA
+United States;USA840;Ohio;NA;NA;Athens County;NA;NA;USA;USA.36_1;USA.36.5_1;NA;NA
+United States;USA840;Ohio;NA;NA;Belmont County;NA;NA;USA;USA.36_1;USA.36.7_1;NA;NA
+United States;USA840;Ohio;NA;NA;Columbiana County;NA;NA;USA;USA.36_1;USA.36.15_1;NA;NA
+United States;USA840;Ohio;NA;NA;Coshocton County;NA;NA;USA;USA.36_1;USA.36.16_1;NA;NA
+United States;USA840;Ohio;NA;NA;Guernsey;NA;Cumberland;USA;NA;NA;NA;NA
+United States;USA840;Ohio;NA;NA;Guernsey ;NA;Cumberland;USA;USA.36_1;USA.36.30_1;NA;NA
+United States;USA840;Ohio;NA;NA;Guernsey County;NA;NA;USA;USA.36_1;USA.36.30_1;NA;NA
+United States;USA840;Ohio;NA;NA;Harrison county;NA;Cadiz;USA;USA.36_1;USA.36.34_1;NA;NA
+United States;USA840;Ohio;NA;NA;Morgan County;NA;NA;USA;USA.36_1;USA.36.59_1;NA;NA
+United States;USA840;Ohio;NA;NA;Muskingum County;NA;NA;USA;USA.36_1;USA.36.61_1;NA;NA
+United States;USA840;Ohio;NA;NA;Noble County;NA;NA;USA;USA.36_1;USA.36.62_1;NA;NA
+United States;USA840;Ohio;NA;NA;Perry County;NA;NA;USA;USA.36_1;USA.36.65_1;NA;NA
+United States;USA840;Ohio;NA;NA;Stark County;NA;NA;USA;USA.36_1;USA.36.77_1;NA;NA
+United States;USA840;Ohio;NA;NA;Tuscarawas County;NA;NA;USA;USA.36_1;USA.36.80_1;NA;NA
+United States;USA840;Ohio;NA;NA;NA;NA;Cumberland;USA;NA;NA;NA;NA
+United States;USA840;Virgina;NA;NA;Buchanan;NA;Rowe;USA;NA;NA;NA;NA
+United States;USA840;Virgina;NA;NA;Buchanan;NA;NA;USA;USA.47_1;USA.47.17_1;NA;NA
+United States;USA840;Virgina;NA;NA;Buchanan ;NA;Rowe;USA;USA.47_1;USA.47.17_1;NA;NA
+United States;USA840;Virgina;NA;NA;Dickenson;NA;NA;USA;USA.47_1;USA.47.36_1;NA;NA
+United States;USA840;Virgina;NA;NA;Tazewell;NA;NA;USA;USA.47_1;USA.47.123_1;NA;NA
+United States;USA840;Virgina;NA;NA;NA;NA;Rowe;USA;NA;NA;NA;NA
+United States;USA840;West Virgina;NA;NA;Logan County;NA;NA;USA;USA.49_1;USA.49.23_1;NA;NA
+United States;USA840;West Virgina;NA;NA;McDowell;NA;NA;USA;USA.49_1;USA.49.27_1;NA;NA
+United States;USA840;West Virgina;NA;NA;Mingo County;NA;NA;USA;USA.49_1;USA.49.30_1;NA;NA
+United States;USA840;West Virgina;NA;NA;Mingo County;NA;NA;USA;USA.49_1;USA.49.30_1;NA;NA
+United States;USA840;West Virgina;NA;NA;Raleigh;NA;NA;USA;USA.49_1;USA.49.41_1;NA;NA
+United States;USA840;West Virgina;NA;NA;Randolph;NA;NA;USA;USA.49_1;USA.49.42_1;NA;NA
+United States;USA840;West Virgina;NA;NA;Upshur;NA;NA;USA;USA.49_1;USA.49.49_1;NA;NA
+United States;USA840;West Virginia;NA;NA;Ohio;NA;West Liberty;USA;USA.49_1;USA.49.35_1;NA;NA
+United States;USA840;West Virginia;NA;NA;NA;NA;West Liberty;USA;NA;NA;NA;NA
+United States;USA840;Wyoming;NA;NA;Carbon County;NA;NA;USA;USA.51_1;USA.51.4_1;NA;NA
+United States;USA840;NA;NA;NA;Harrison county;NA;Cadiz;USA;NA;NA;NA;NA
+United States;USA840;NA;NA;NA;Mingo County;NA;NA;USA;NA;NA;NA;NA
