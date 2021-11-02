@@ -10,6 +10,8 @@ library(readxl)
 library(tidyverse)
 library(sf)
 library(sp)
+library(RSQLite)
+
 
 
 
@@ -89,7 +91,7 @@ mines_sub_sites <- filter(general.sf, !is.na(sub_site))
 ################################################################################
 
 # create geopackage output. sub_sites can be written to output as they are, since they cannot be multipoints
-st_write(mines_sub_sites, "./03_intermediate/01_detailed_data/sub_sites_georeferenced.gpkg")
+st_write(mines_sub_sites, "./03_intermediate/01_detailed_data/sub_sites_georeferenced.gpkg", append = FALSE)
 
 
 
@@ -216,8 +218,8 @@ nrow(filter(mines_wo_georeference, is.na(GID_0))) == 0
 mines_wo_georeference <- mines_wo_georeference %>% mutate(GID_5 = NA)
 
 # construct output df 
-mines_wo_georeference_output <- data.frame(matrix(ncol = 2, nrow = 0))
-colnames(mines_wo_georeference_output) <- c("mine_fac", "geom")
+mines_wo_georeference_output <- data.frame(matrix(ncol = 3, nrow = 0))
+colnames(mines_wo_georeference_output) <- c("mine_fac", "geom", "GADM_level")
 
 # loop over levels and join the geometries form GADM to the mines without coordinates
 for(lvl in 0:4){
@@ -237,22 +239,26 @@ for(lvl in 0:4){
   
   # join
   curr_mines <- left_join(curr_mines, curr_GADM)
-  print(head(curr_mines))
-  
+
   # cleaning
   curr_mines <- curr_mines %>% select(., mine_fac, geom)
+  
+  #adding the level of the geometry
+  GADM_level <- rep(lvl, nrow(curr_mines))
+  curr_mines <- cbind(curr_mines, GADM_level)
 
   # append to output dataframe
   mines_wo_georeference_output <- rbind(mines_wo_georeference_output, curr_mines)
   
   print(c("level ", lvl, " joined"))
+  
 }
 
 
 # aggregate polygons per mine
 mines_wo_georeference_union <- mines_wo_georeference_output %>% 
   group_by(mine_fac) %>%
-  summarize(geometry = st_union(geom))
+  summarize(geometry = st_union(geom), level = min(level))
 
 
 # this has to return TRUE
@@ -265,7 +271,18 @@ mines_wo_georeference_final <- left_join(st_drop_geometry(mines_general_wo_coord
 #set coord_is_na to FALSE, as these mines just got georeferenced
 mines_wo_georeference_final$coord_is_na <- FALSE
 
+# before rbinding, the general output has to be assigned the column "level", 
+# specifying the GADM level of the polygon. As all other mines have points or Multipoints,
+# they get assigned the level "NA"
+GADM_level <- rep(NA, nrow(general_output))
+general_output <- general_output %>% cbind(., GADM_level)
+
+# rbind to general output
 general_output <- rbind(general_output, mines_wo_georeference_final)
+
+# cleaning
+general_output <- general_output %>% 
+  select(-sub_site)
 
 # this has to return TRUE 
 nrow(filter(general, is.na(sub_site))) == nrow(general_output)
@@ -277,9 +294,17 @@ st_write(general_output, "./03_intermediate/01_detailed_data/general_georeferenc
 # checking and visualization of data
 
 #should return only POINT, MULTIPOINT, POLYGON, MULTIPOLYGON
-st_geometry_type(general_output$geometry) %>% unique()
-
-pl <- general_output %>% filter(st_geometry_type(geometry) == "POINT")
-plot(pl$geometry)
-
+# st_geometry_type(general_output$geometry) %>% unique()
+# 
+# 
+# 
+# st_geometry_type(general_output$geometry) %>% print(n=1500)
+# 
+# pl <- general_output %>% filter(st_geometry_type(geometry) == "POINT")
+# plot(pl$geometry)
+# 
+# 
+# a <- st_read("./03_intermediate/01_detailed_data/general_georeferenced.gpkg")
+# head(a)
+# st_geometry_type(a$geom) %>% unique()
 

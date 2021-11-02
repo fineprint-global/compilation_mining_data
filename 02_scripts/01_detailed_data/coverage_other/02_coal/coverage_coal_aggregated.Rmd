@@ -75,6 +75,8 @@ nat_acc <- nat_acc %>%
   group_by(alphanumiso, year) %>% 
   summarize(value = sum(value))
 
+#write intermediate output for national accounts only related to coal, with all coal categories aggregated
+write.csv(nat_acc, file = "./04_output/01_detailed_data/05_coverage/02_coal/nat_acc_coal.csv", row.names = FALSE)
 
 # include country_ids in sheet_min
 agg_min <- sheet_min %>%
@@ -198,6 +200,7 @@ ggplot(coal_cov_plot, aes(x=year, y=share, group=global_or_wo_china)) +
   ylim(0, 1)
 
 ```
+
 
 ```{r , echo = FALSE, message = FALSE}
 

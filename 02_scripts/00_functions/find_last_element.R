@@ -15,6 +15,6 @@ find_last_element <- function(list, row, col, max_cols){
     
   } else {
     if(max_cols <=1){return(1)}
-    check_last_element(list, row, col, max_cols - 1)
+    find_last_element(list, row, col, max_cols - 1)
   }
 }
