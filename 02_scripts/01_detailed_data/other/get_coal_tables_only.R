@@ -2,6 +2,8 @@
 
 library(tidyverse)
 library(xlsx)
+library(sf)
+library(sp)
 
 ### read files and load data
 
@@ -12,7 +14,9 @@ general <- st_read("./03_intermediate/01_detailed_data/general_georeferenced.gpk
 ## select only the mines that have coal as commodity produced
 sheet_min <- detailed$minerals_ores_conce %>% 
   filter(., type_mineral == "Clean coal") %>% 
-  select(c(mine_fac, type_mineral, min_ore_con, year, unit, value, amount_sold, comment, source_id))
+  select(c(mine_fac, type_mineral, min_ore_con, year, unit, value, comment, source_id)) %>% 
+  group_by(mine_fac, type_mineral, min_ore_con, year) %>% 
+  summarize(value = sum(value))
 
 
 # get list of all mines that produce coal and combine it with list of mines that are only entered in sheet general to produce coal, 
@@ -42,7 +46,6 @@ write_delim(sheet_min, "./04_output/01_detailed_data/07_other/coal_production_ge
 
 # write sheet general as geopackage
 st_write(general, "./04_output/01_detailed_data/07_other/general_coal.gpkg", append = FALSE)
-
 
 # # write other sheets (reserves, waste, other_info) to excel if needed
 # write.xlsx(data.frame(reserves), file="./04_output/01_detailed_data/07_other/coal_tables.xlsx", sheetName="reserves", append=TRUE, row.names=FALSE, showNA=FALSE)

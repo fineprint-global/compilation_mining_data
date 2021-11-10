@@ -254,11 +254,17 @@ for(lvl in 0:4){
   
 }
 
-
 # aggregate polygons per mine
 mines_wo_georeference_union <- mines_wo_georeference_output %>% 
   group_by(mine_fac) %>%
-  summarize(geometry = st_union(geom), level = min(level))
+  summarize(geometry = st_union(geom), GADM_level = min(GADM_level))
+
+
+# keep record of whether polygons were aggregated in the previous step (by st_union)
+# and if so, how many polygons there were originally
+nr_features <- mines_wo_georeference_output %>% count(mine_fac)
+nr_features <- nr_features %>% rename(., n_features = n)
+mines_wo_georeference_union <- mines_wo_georeference_union %>% left_join(., nr_features, by = "mine_fac")
 
 
 # this has to return TRUE
@@ -271,11 +277,12 @@ mines_wo_georeference_final <- left_join(st_drop_geometry(mines_general_wo_coord
 #set coord_is_na to FALSE, as these mines just got georeferenced
 mines_wo_georeference_final$coord_is_na <- FALSE
 
-# before rbinding, the general output has to be assigned the column "level", 
-# specifying the GADM level of the polygon. As all other mines have points or Multipoints,
-# they get assigned the level "NA"
+# before rbinding, the general output has to be assigned the columns "GADM_level" and n_features, 
+# specifying the GADM level of the polygon and the number of combined polygons.
+# As all other mines have points or Multipoints, they get assigned the level "NA"
 GADM_level <- rep(NA, nrow(general_output))
-general_output <- general_output %>% cbind(., GADM_level)
+n_features <- rep(NA, nrow(general_output))
+general_output <- general_output %>% cbind(., GADM_level) %>% cbind(., n_features)
 
 # rbind to general output
 general_output <- rbind(general_output, mines_wo_georeference_final)
