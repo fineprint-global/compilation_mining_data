@@ -2,3 +2,4 @@
 *.rds
 *.RDS
 general_georeferenced.gpkg
+sub_sites_georeferenced.gpkg
