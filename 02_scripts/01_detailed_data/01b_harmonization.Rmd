@@ -138,13 +138,17 @@ datatable(nr_rows, rownames = FALSE, caption = "Number of data rows per sheet")
 # create no_match table for countries
 no_match_country <- tibble(
   country = setdiff(
-    detailed$general$country, 
+    detailed$general$country %>%
+      tibble() %>% 
+      rename("country" = "."), 
     source_country_ids %>%
       filter(source_cat == "detailed") %>%
-      select(source_country)
+      select(source_country) %>% 
+      rename("country" = "source_country")
     )) %>% 
   filter(!is.na(country)) %>% 
   distinct()
+
 
 # save no_match table as csv
 write_delim(no_match_country, "./04_output/01_detailed_data/01_harmonization/01_no_match_tables/no_match_country.csv", delim = ";")
@@ -277,6 +281,7 @@ no_match_unit <- source_units %>%
                           )
            )
          )
+
 
 # save no_match table as csv
 write_delim(no_match_unit, "./04_output/01_detailed_data/01_harmonization/01_no_match_tables/no_match_unit.csv", delim = ";")
