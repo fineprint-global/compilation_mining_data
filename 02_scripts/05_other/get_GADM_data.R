@@ -3,6 +3,9 @@ library(sf)
 library(sp)
 library(RSQLite)
 
+# create folder where geodata will be stored
+dir.create("./01_input/06_geodata", showWarnings = TRUE, recursive = TRUE)
+
 ########################################################################################
 # download global shapefiles for different sub-national levels from the GADM geopackage
 ########################################################################################
