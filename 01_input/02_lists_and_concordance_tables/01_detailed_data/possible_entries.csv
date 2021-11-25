@@ -12,6 +12,8 @@ type_mining;Open pit;Open pit
 type_mining;Underground;Underground
 type_mining;Surface;Open pit
 type_mining;Open Pit;Open pit
+type_mining;Open cut;Open pit
+type_mining;Open Cut;Open pit
 type_mining;Leaching;Leaching
 type_mining;Heap leach;Heap leaching
 type_mining;Open pit, Underground;Open pit, Underground
@@ -47,12 +49,17 @@ type_facility;Coke oven;Coke oven
 type_facility;Rod plant;Rod plant
 waste_type;Waste rock;Waste rock
 waste_type;Waste Rock;Waste rock
+waste_type;Waste;Waste rock
 waste_type;Overburden;Waste rock
+waste_type;Stripped topsoil;Waste rock
 waste_type;Development waste;Waste rock
 waste_type;Raisebore waste;Waste rock
 waste_type;Waste mined;Waste rock
 waste_type;Waste material mined;Waste rock
 waste_type;Dry tailings;Dry tailings
 waste_type;Tailings and Sludge;Tailings
+waste_type;Coarse reject;Tailings
+waste_type;Fine reject (tailings);Tailings
+waste_type;Tailings;Tailings
 waste_type;Acid produced;Acid produced
 waste_type;Surplus acid;Surplus acid

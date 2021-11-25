@@ -7,6 +7,7 @@ detailed;hectars;ha;area
 detailed;sq. km;sq.km;area
 detailed;square kilometer;sq.km;area
 detailed;square kilometers;sq.km;area
+detailed;square km;sq.km;area
 detailed;%;pct;grade
 detailed;carats per tonne;ct/t;grade
 detailed;g/t;g/t;grade
@@ -55,8 +56,11 @@ detailed;kilotonnes;Kt;mass
 detailed;Klbs;Klb;mass
 detailed;koz;Koz;mass
 detailed;Koz;Koz;mass
+detailed;kozt;Kozt;mass
+detailed;Kozt;Kozt;mass
 detailed;kt;Kt;mass
 detailed;Kt;Kt;mass
+detailed;Kst;Kst;mass
 detailed;ktonnes;Kt;mass
 detailed;ktpa;Kt;mass
 detailed;kwmt;Kwmt;mass
@@ -75,6 +79,8 @@ detailed;Million metric tons per year.;Mt;mass
 detailed;million net tons;st;mass
 detailed;million ounces;Moz;mass
 detailed;Million ounces;Moz;mass
+detailed;million troy ounces;Mozt;mass
+detailed;Million troy ounces;Mozt;mass
 detailed;million pounds;Mlb;mass
 detailed;million recoverable metric tons;Mt;mass
 detailed;million recoverable pounds;Mlb;mass
@@ -93,6 +99,7 @@ detailed;millions lbs;Mlb;mass
 detailed;millions of pounds;Mlb;mass
 detailed;Millions of tonnes;Mt;mass
 detailed;millions of tons;Mt;mass
+detailed;billion tons;Gt;mass
 detailed;Mlb;Mlb;mass
 detailed;Moz;Moz;mass
 detailed;Mt;Mt;mass
@@ -103,6 +110,7 @@ detailed;mtu m;mtu;mass
 detailed;ounces;oz;mass
 detailed;ounces (000);Koz;mass
 detailed;oz;oz;mass
+detailed;ozt;ozt;mass
 detailed;pounds;lb;mass
 detailed;pounds million;Mlb;mass
 detailed;short tons;st;mass
@@ -139,7 +147,12 @@ detailed;WMT;wmt;mass
 detailed;wmt;wmt;mass
 detailed;bank cubic meters;bcm;volume
 detailed;Bank cubic metres;bcm;volume
+detailed;million cubic meters;Mcm;volume
+detailed;cubic meters;cm;volume
+detailed;cm;cm;volume
 detailed;bcm;bcm;volume
 detailed;thousand bcm;Kbcm;volume
+detailed;kbcm;Kbcm;volume
 detailed;Mbcm;Mbcm;volume
+detailed;million bcm;Mbcm;volume
 detailed;million litres;Ml;volume

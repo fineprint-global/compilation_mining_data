@@ -3,9 +3,11 @@ detailed;2E PGM;Me.pgm
 detailed;4E;Me.pgm
 detailed;4E Grade;Me.pgm
 detailed;6E Grade;Me.pgm
+detailed;6E PGM;Me.pgm
 detailed;Acid;
 detailed;Ag;Me.Ag
 detailed;Alumina;Me.Al2O3
+detailed;Al2O3;Me.Al2O3
 detailed;Aluminium;Me.Al
 detailed;Aluminium fluoride;Me.AlF3
 detailed;Aluminum;Me.Al
@@ -136,6 +138,7 @@ detailed;Saprolite;O.bulk
 detailed;Saprolite Ore;O.bulk
 detailed;Selenium;Me.Se
 detailed;Silica;Nm.SiO2
+detailed;SiO2;Nm.SiO2
 detailed;Silver;Me.Ag
 detailed;Silver in concentrate;Con.Ag
 detailed;Silver ore;O.Ag
@@ -188,7 +191,9 @@ detailed;Tin;Me.Sn
 detailed;thermal coal;F.stc
 detailed;Thermal coal;F.stc
 detailed;hard coking coal;F.coc
+detailed;Hard coal;F.coc
 detailed;coking coal;F.coc
+detailed;Semi-soft coking coal;F.coc
 detailed;coal;F.coal
 detailed;semi-soft choking coal;F.coc
 detailed;Copper (in sulphate);Me.Cu
@@ -241,7 +246,9 @@ detailed;Sintering ore;O.Fe
 detailed;Iron ore lumps;Con.Fe
 detailed;Bituminous coal;F.obc
 detailed;Long flame coal;F.obc
+detailed;Anthracite;F.ant
 detailed;Lignite;F.lig
+detailed;Brown coal;F.lig
 detailed;Lead Oxide;O.oxi
 detailed;Copper Oxide;O.oxi
 detailed;PCI Metallurgical coal;F.coc
