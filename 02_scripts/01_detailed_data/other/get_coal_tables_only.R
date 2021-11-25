@@ -42,7 +42,7 @@ reserves <- detailed$capacity_reserves %>%
 
 
 # write sheet general as geopackage
-write_delim(sheet_min, "./04_output/01_detailed_data/07_other/coal_production_georeferenced.csv", delim = ";")
+write_delim(sheet_min, "./04_output/01_detailed_data/07_other/coal_production.csv", delim = ",")
 
 # write sheet general as geopackage
 st_write(general, "./04_output/01_detailed_data/07_other/general_coal.gpkg", append = FALSE)
