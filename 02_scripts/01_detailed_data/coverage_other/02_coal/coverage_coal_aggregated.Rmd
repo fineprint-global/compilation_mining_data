@@ -76,7 +76,7 @@ nat_acc <- nat_acc %>%
   summarize(value = sum(value))
 
 #write intermediate output for national accounts only related to coal, with all coal categories aggregated
-write.csv(nat_acc, file = "./04_output/01_detailed_data/05_coverage/02_coal/nat_acc_coal.csv", row.names = FALSE)
+write_delim(nat_acc, file = "./04_output/02_country_specific/nat_acc_coal.csv", delim =",")
 
 # include country_ids in sheet_min
 agg_min <- sheet_min %>%
