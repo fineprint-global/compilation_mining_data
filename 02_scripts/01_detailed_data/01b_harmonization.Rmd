@@ -151,7 +151,9 @@ no_match_country <- tibble(
 
 
 # save no_match table as csv
+if(nrow(no_match_country)>0){
 write_delim(no_match_country, "./04_output/01_detailed_data/01_harmonization/01_no_match_tables/no_match_country.csv", delim = ";")
+}
 
 # table for Rmd output
 datatable(no_match_country, rownames = FALSE, caption = "Missing source_country entries")
