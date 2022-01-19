@@ -145,7 +145,8 @@ no_match_country <- tibble(
       filter(source_cat == "detailed") %>%
       select(source_country) %>% 
       rename("country" = "source_country")
-    )) %>% 
+    ) %>%
+    pull(country)) %>% 
   filter(!is.na(country)) %>% 
   distinct()
 

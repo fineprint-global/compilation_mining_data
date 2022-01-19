@@ -10,6 +10,10 @@ detailed <- read_rds("./03_intermediate/01_detailed_data/aggregated.rds")
 # list of columns
 sheets_columns <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/sheets_columns.csv", delim = ";")
 
+# source IDs
+source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
+
+
 
 # sheets
 sheet_min <- detailed$minerals_ores_conce
@@ -91,6 +95,11 @@ sheet_min <- sheet_min %>%
 
 ## Gap filling (values) for sheet_min ---------------------
 
+
+# save temporary object to compare below which values are estimated
+temp_cols <- sheet_min
+
+
 # use amount_sold where value = NA in sheet_min
 sheet_min <- sheet_min %>% 
   mutate(
@@ -131,6 +140,29 @@ sheet_min <- sheet_min %>%
       filter(!(type_mineral %in% c("Ore processed", "Concentrate")))
   )
 
+
+
+## adjust sources in sheet
+
+# get all column names for join except for estimated column (i.e. value)
+col_names <- names(sheet_min)[!names(sheet_min) %in% c("value")]
+
+# include former values in sheet
+# check if current values are different (and therefore estimated)
+# add info on estimation to source
+sheet_min <- sheet_min %>%
+  left_join(
+    temp_cols,
+    by = all_of(col_names),
+    suffix = c("", "_check")
+  ) %>%
+  mutate(
+    source = ifelse(
+      !is.na(value) & is.na(value_check),
+      paste0(source, " ; ", "Estimate (value)"),
+      source
+    )) %>%
+  select(-value_check)
 
 
 
@@ -175,6 +207,10 @@ sheet_min <- sheet_min %>%
 
 
 ## Gap filling (values) for sheet_com ---------------------
+
+
+# save temporary object to compare below which values/grades are estimated
+temp_cols <- sheet_com
 
 
 # use amount_sold where value = NA in sheet_com
@@ -232,6 +268,84 @@ sheet_com <- sheet_com %>%
   mutate(value = ifelse(is.na(value) & !is.na(metal_payable), metal_payable, value))
 
 
+
+## adjust sources in sheet
+
+# get all column names for join except for estimated column (i.e. value/grade)
+col_names <- names(sheet_com)[!names(sheet_com) %in% c("value", "grade")]
+
+# include former values/grades in sheet
+# check if current values/grades are different (and therefore estimated)
+# add info on estimation to source
+sheet_com <- sheet_com %>%
+  left_join(
+    temp_cols,
+    by = all_of(col_names),
+    suffix = c("", "_check")
+  ) %>%
+  mutate(
+    source = ifelse(
+      !is.na(value) & is.na(value_check),
+      paste0(source, " ; ", "Estimate (value)"),
+      source
+    )) %>%
+  mutate(
+    source = ifelse(
+      !is.na(grade) & is.na(grade_check),
+      paste0(source, " ; ", "Estimate (grade)"),
+      source
+    )) %>%
+  select(-value_check)
+
+
+
+
+## adjust source_ids and include again
+
+# sources of current sheets
+sources <- sheet_min %>%
+  distinct(source, source_url) %>%
+  union(.,
+        sheet_com %>%
+          distinct(source, source_url)
+        )
+
+# get new sources
+new_sources <- setdiff(sources, source_ids %>% select(source, source_url))
+
+# get the highest number from current source_ids
+last_nr <- source_ids$source_id %>% substr(., 5, 8) %>% as.integer() %>% max()
+
+# provide new sources with ids
+if(nrow(new_sources) > 0) {
+  new_sources <- new_sources %>%
+    mutate(source_id = paste0(
+      "det_",
+      seq(last_nr + 1, last_nr + nrow(new_sources), by=1)
+    )
+    )
+  
+  source_ids <- source_ids %>%
+    union(., new_sources)
+  
+}
+
+
+
+# replace sources with respective new IDs in both sheets
+sheet_min <- sheet_min %>%
+  left_join(., source_ids) %>%
+  select(-source, -source_url)
+
+sheet_com <- sheet_com %>%
+  left_join(., source_ids) %>%
+  select(-source, -source_url)
+
+
+
+# save new source_ids
+write_delim(source_ids, "./01_input/02_lists_and_concordance_tables/source_ids.csv",
+            delim = ";", na = "")
 
 
 
