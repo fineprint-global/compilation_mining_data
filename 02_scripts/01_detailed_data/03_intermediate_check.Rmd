@@ -13,6 +13,10 @@ library(knitr)
 library(kableExtra)
 library(rlang)
 library(scales)
+
+# clear R environment
+rm(list = ls())
+
 ```
 
 <br> 

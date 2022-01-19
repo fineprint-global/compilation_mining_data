@@ -3,6 +3,10 @@
 library(tidyverse)
 library(rlang)
 
+# clear R environment
+rm(list = ls())
+
+
 ## read files
 # harmonized data file
 detailed <- read_rds("./03_intermediate/01_detailed_data/aggregated.rds")

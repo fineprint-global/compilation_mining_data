@@ -27,6 +27,10 @@ library(readxl)
 library(knitr)
 library(rlang)
 library(DT)
+
+# clear R environment
+rm(list = ls())
+
 ```
 
 <br> 

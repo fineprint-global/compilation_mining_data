@@ -16,6 +16,9 @@ library(rlang)
 library(scales)
 library(DT)
 
+# clear R environment
+rm(list = ls())
+
 ```
 
 <br> 

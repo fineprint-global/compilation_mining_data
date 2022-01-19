@@ -1,6 +1,10 @@
 library(tidyverse)
 library(readxl)
 
+# clear R environment
+rm(list = ls())
+
+
 ## read input tables
 
 # list of supposed column order

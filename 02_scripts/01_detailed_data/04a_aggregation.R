@@ -2,6 +2,8 @@
 
 library(tidyverse)
 
+# clear R environment
+rm(list = ls())
 
 
 ## read files and define tables --------------
