@@ -8,8 +8,9 @@
   ##### Fill gaps
   ##### Create overview for coverage
   ##### Compile estimation factors for IRP database
+  ##### Produce final data output
+  ##### Additional scripts
   
-
 
 
 # Check if the necessary packages are installed and if not install them, then load them
@@ -90,14 +91,58 @@ rmarkdown::render("./02_scripts/01_detailed_data/05_coverage.Rmd",
 
 
 
-## Comparison of data coverage against national accounts with respective HTML output for COAL
-## (html output is saved in `./04_output/01_detailed_data/coverage/coverage_coal`)
+## Produce final data output
 wd <- getwd()
-rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/02_coal/coverage_coal_aggregated.Rmd",
+rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
                   knit_root_dir = wd, 
-                  output_dir = "./04_output/01_detailed_data/05_coverage/02_coal/", 
-                  intermediates_dir = "./04_output/01_detailed_data/05_coverage/02_coal/",
-                  output_file = paste0("coverage_coal_", substr(Sys.time(), 1, 10),".html")
+                  output_dir = "./04_output/01_detailed_data/08_final_data", 
+                  intermediates_dir = "./04_output/01_detailed_data/08_final_data",
+                  output_file = paste0("final_data_", substr(Sys.time(), 1, 10),".html")
 )
 
+
+#### Additional scripts -----------
+
+ 
+
+# ## Georeferencing of all mines
+# source("./02_scripts/01_detailed_data/07_georeferencing.R")
+# 
+# 
+# ## Comparison of data coverage against national accounts with respective HTML output for COAL
+# wd <- getwd()
+# rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/02_coal/coverage_coal_aggregated.Rmd",
+#                   knit_root_dir = wd, 
+#                   output_dir = "./04_output/01_detailed_data/05_coverage/02_coal/", 
+#                   intermediates_dir = "./04_output/01_detailed_data/05_coverage/02_coal/",
+#                   output_file = paste0("coverage_coal_", substr(Sys.time(), 1, 10),".html")
+# )
+# 
+# ## Coverage for TOTAL MATERIAL
+# wd <- getwd()
+# rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/04_total_material/coverage_total_material.Rmd",
+#                   knit_root_dir = wd, 
+#                   output_dir = "./04_output/01_detailed_data/05_coverage/04_total_material/", 
+#                   intermediates_dir = "./04_output/01_detailed_data/05_coverage/04_total_material/",
+#                   output_file = paste0("coverage_total_material", substr(Sys.time(), 1, 10),".html")
+# )
+# 
+# 
+# ## Comparison of data coverage against national accounts for ONLY ONE COUNTRY
+# #Brazil
+# wd <- getwd()
+# rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/06_by_country/coverage_brazil.Rmd",
+#                   knit_root_dir = wd, 
+#                   output_dir = "./04_output/01_detailed_data/05_coverage/", 
+#                   intermediates_dir = "./04_output/01_detailed_data/05_coverage/",
+#                   output_file = paste0("coverage_brazil", substr(Sys.time(), 1, 10),".html")
+# )
+# 
+# 
+# ## Plotting the spatial coverage
+# source("./02_scripts/01_detailed_data/07_georeferencing.R")
+# 
+# 
+# ## producing coal tables only
+# source("./02_scripts/01_detailed_data/other/get_coal_tables_only.R")
 

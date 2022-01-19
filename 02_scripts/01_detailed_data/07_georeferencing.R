@@ -37,15 +37,19 @@ source("./02_scripts/00_functions/split_columns.R")
 
 
 
+
+
 ################################################################################
 # bind the sheets general and subsites together
 ################################################################################
 
 #first, create a column "sub_site" which is empty for the sheet general
-general <- add_column(general, sub_site = NA, .after = "mine_fac")
+general <- add_column(general, sub_site = NA, .after = "mine_other_names")
 
-#then, bind the sheet general and sheet_sub_sites "beneath" each other
+
+#then, bind the sheet general and sheet_sub_sites below each other
 general <- bind_rows(general, sub_sites)
+
 
 # the only column that has a different naming in the two sheets but refers to the same is:
 # mining_facility_types (in sheet_general) and mine_types (in sheet_sub_sites).
@@ -53,20 +57,22 @@ general <- bind_rows(general, sub_sites)
 general$mining_facility_types <- coalesce(general$mining_facility_types, general$mine_types)
 general <- select(general, -mine_types)
 
-# now as described above, the column mine_fac and sub_site together act as the primary key.
-# to simplify, a new column mine_id is created, which simply is the two strings bound together. 
-# this leads to the (aggregated) mine always having its original mine_fac string as mine_id, while sub_sites have 
-# their mine_id as a composite of mine_fac and sub_site. The columns mine_fac and sub_site will be kept in order to easily
-# identify which parent mine_fac a sub_site belongs to.
-general$mine_id <- paste(general$mine_fac, general$sub_site, sep = " ")
-general <- relocate(general, mine_id, .before = "mine_fac")
-general$mine_id <- gsub(pattern = " NA", replacement = "", general$mine_id) #cleaning
+
+#create new column mine_id
+general <- general %>% 
+  arrange(mine_fac) %>% 
+  group_by(mine_fac) %>% 
+    mutate(mine_id = str_c("WUD", str_pad(dplyr::cur_group_id(), width = 5, pad = "0"))) %>%
+  group_by(mine_id) %>% 
+    mutate(mine_id = str_c(mine_id, ".", str_pad(row_number()-1, width = 2, pad = "0", "left"))) %>% 
+  relocate(mine_id, .before = mine_fac)
+
 
 # If there are NA values in the latitude or longitute, add a column to keep information
 general$coord_is_na <- ifelse(is.na(general$longitude), TRUE, FALSE)
-
 general_w_coords <- general %>% filter(., coord_is_na == FALSE)
 general_wo_coords <- general %>% filter(., coord_is_na == TRUE)
+
 
 # convert their coordinates into sf objects
 general_w_coords.sf <- st_as_sf(x = general_w_coords, 
@@ -79,19 +85,13 @@ general_wo_coords.sf <- st_as_sf(x = select(general_wo_coords, -latitude, -longi
 
 general.sf <- rbind(general_w_coords.sf, general_wo_coords.sf)
 
+
 # divide  mines and processing into mines_general and mines_sub_sites again
 # the reason is that mines_general can be multipoints, while mines_sub_sites cannot
 mines_general <- filter(general.sf, is.na(sub_site))
 mines_sub_sites <- filter(general.sf, !is.na(sub_site))
 
 
-
-################################################################################
-# georeferencing of sub_sites
-################################################################################
-
-# create geopackage output. sub_sites can be written to output as they are, since they cannot be multipoints
-st_write(mines_sub_sites, "./03_intermediate/01_detailed_data/sub_sites_georeferenced.gpkg", append = FALSE)
 
 
 
@@ -104,17 +104,21 @@ mines_general_w_multipoints_list <- filter(mines_sub_sites, coord_is_na == FALSE
 mines_general_w_multipoints <- mines_general %>%
   filter(mine_fac %in% mines_general_w_multipoints_list)
 
+
 # mines that do not have sub_sites with coordinates, but have coordinates in sheet general
 mines_general_wo_multipoints <- mines_general %>%
   filter(!(mine_fac %in% mines_general_w_multipoints_list) & coord_is_na == FALSE)
+
 
 # mines that do not have sub_sites with coordinate and do not have coordinates in sheet general
 mines_general_wo_coords <- mines_general %>%
   filter(!(mine_fac %in% mines_general_w_multipoints_list) & coord_is_na == TRUE)
 
+
 # this has to return TRUE
 nrow(mines_general_wo_multipoints) + nrow(mines_general_w_multipoints) +
   nrow(mines_general_wo_coords) == nrow(mines_general)
+
 
 # mines that do not have sub_sites with coordinates can just be added to general_output
 general_output <- mines_general_wo_multipoints
@@ -131,14 +135,18 @@ for(mine in mines_general_w_multipoints_list){
     st_combine() #combines the points to multipoint
   
   #replace the original point of the (general) mine with the multipoint
-  mines_general_w_multipoints[mines_general_w_multipoints$mine_id == mine,]$geometry <- multipoint
+  mines_general_w_multipoints[mines_general_w_multipoints$mine_fac == mine & is.na(mines_general_w_multipoints$sub_site),]$geometry <- multipoint
   
   # set the column coord_is_na to FALSE, as now this mine has coordinates
-  mines_general_w_multipoints[mines_general_w_multipoints$mine_id == mine,]$coord_is_na <- FALSE
+  mines_general_w_multipoints[mines_general_w_multipoints$mine_fac == mine & is.na(mines_general_w_multipoints$sub_site),]$coord_is_na <- FALSE
 }
 
+
 # add mines with updated multipoints (mines_general_w_multipoints) to general_output
-general_output <- rbind(general_output, mines_general_w_multipoints)
+general_output <- bind_rows(general_output, mines_general_w_multipoints)
+
+
+
 
 
 ################################################################################
@@ -146,13 +154,17 @@ general_output <- rbind(general_output, mines_general_w_multipoints)
 # have coordinates in sheet_general or sheet_sub_sites
 ################################################################################
 
-mwoc <- as.data.frame(select(mines_general_wo_coords, c(2,5:12)))
+mwoc <- mines_general_wo_coords %>% 
+  select(mine_fac, country, alphanumiso, state, region, province, district, sector, location_municipality) %>% 
+  as.data.frame()
+
 mwoc <- select(mwoc, -geometry)
+mwoc %>% names()
 
 # split the regions into separate rows according to logic of the split_columns function
 first_split <- split_columns(mwoc, ";") #split by ";" 
-
 second_split <- split_columns(first_split, ",") #split by "," 
+
 
 #cleaning
 second_split <- second_split %>% 
@@ -160,12 +172,16 @@ second_split <- second_split %>%
   mutate_all(na_if,"") %>% #replace "" with NA values
   as_tibble()
   
+
 #create dataframe of unique regions in the detailed data set
 detailed_regions <- second_split %>% 
   mutate(., GID_0 = substr(alphanumiso, 1,3), .after = location_municipality) %>% 
   select(-1) %>% 
   distinct() %>% 
   arrange(country)
+
+
+
 
 # add missing regions to the WU_GADM_concordance table file, which links regions to geometries from the GADM package
 if (file.exists("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv")){
@@ -187,7 +203,7 @@ if (file.exists("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_
     write_delim(WU_GADM_concordance, "./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv", delim = ";")
     print(c((nrow(missing_rows)), "Rows added"))
     
-    } else {print("No new regions added")}
+    } else {print("No new regions added, file did not change")}
 
   } else {
     
@@ -203,6 +219,7 @@ if (file.exists("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_
   
 }
 
+
 # join the polygons to mines via the concordance table
 WU_GADM_concordance <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv", delim = ";" )
 
@@ -211,15 +228,19 @@ mines_wo_georeference <- left_join(second_split, WU_GADM_concordance,
                                    by = c("country", "alphanumiso", "state", "region", "province", 
                                           "district", "sector", "location_municipality"))
 
+
 #this should return TRUE
 nrow(filter(mines_wo_georeference, is.na(GID_0))) == 0
+
 
 # insert additonal row when level is level 4 to circumvent lvl + 1 throwing error in the loop below
 mines_wo_georeference <- mines_wo_georeference %>% mutate(GID_5 = NA)
 
+
 # construct output df 
 mines_wo_georeference_output <- data.frame(matrix(ncol = 3, nrow = 0))
 colnames(mines_wo_georeference_output) <- c("mine_fac", "geom", "GADM_level")
+
 
 # loop over levels and join the geometries form GADM to the mines without coordinates
 for(lvl in 0:4){
@@ -254,6 +275,7 @@ for(lvl in 0:4){
   
 }
 
+
 # aggregate polygons per mine
 mines_wo_georeference_union <- mines_wo_georeference_output %>% 
   group_by(mine_fac) %>%
@@ -270,32 +292,47 @@ mines_wo_georeference_union <- mines_wo_georeference_union %>% left_join(., nr_f
 # this has to return TRUE
 nrow(mines_general_wo_coords) == nrow(mines_wo_georeference_union)
 
+
 # bind general_output and mines_with_polygons together
 mines_wo_georeference_final <- left_join(st_drop_geometry(mines_general_wo_coords), 
                                          mines_wo_georeference_union, by = "mine_fac") %>% st_as_sf()
 
+
 #set coord_is_na to FALSE, as these mines just got georeferenced
 mines_wo_georeference_final$coord_is_na <- FALSE
 
-# before rbinding, the general output has to be assigned the columns "GADM_level" and n_features, 
-# specifying the GADM level of the polygon and the number of combined polygons.
-# As all other mines have points or Multipoints, they get assigned the level "NA"
-GADM_level <- rep(NA, nrow(general_output))
-n_features <- rep(NA, nrow(general_output))
-general_output <- general_output %>% cbind(., GADM_level) %>% cbind(., n_features)
 
-# rbind to general output
-general_output <- rbind(general_output, mines_wo_georeference_final)
+# add to general output
+general_output <- bind_rows(general_output, mines_wo_georeference_final)
 
-# cleaning
+
+
+# cleaning and sorting
 general_output <- general_output %>% 
-  select(-sub_site)
+  select(-sub_site, -sub_site_other_name, -coord_is_na) %>% 
+  arrange(mine_id)
 
-# this has to return TRUE 
+
+# CHECK: this has to return TRUE 
 nrow(filter(general, is.na(sub_site))) == nrow(general_output)
+nrow(general_output) + nrow(mines_sub_sites) == nrow(general)
 
-# write to intermediate folder a copy of the sheet general with the geometries included
-st_write(general_output, "./03_intermediate/01_detailed_data/general_georeferenced.gpkg", append = FALSE)
+################################################################################
+# export final data
+################################################################################
+
+# export sheet_general as geopackage with geometries
+st_write(general_output, "./03_intermediate/01_detailed_data/sheet_general/general.gpkg", append = FALSE)
+
+# export sheet_sub_sites as geopackage with coordinates as POINT
+st_write(mines_sub_sites %>% 
+           relocate(sub_site_other_name, .after = sub_site) %>%
+           select(-coord_is_na) %>%
+           arrange(mine_id),
+         "./03_intermediate/01_detailed_data/sheet_general/sub_sites.gpkg", append = FALSE)
+
+
+
 
 
 # checking and visualization of data
