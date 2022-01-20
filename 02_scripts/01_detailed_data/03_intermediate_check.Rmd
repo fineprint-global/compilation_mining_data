@@ -13,6 +13,10 @@ library(knitr)
 library(kableExtra)
 library(rlang)
 library(scales)
+
+# clear R environment
+rm(list = ls())
+
 ```
 
 <br> 
@@ -197,6 +201,41 @@ DT::datatable(dupli)
 
 <br> 
 
+#### Rows which are apparently double counting 
+
+```{r, echo = FALSE, message = FALSE}
+
+### check for double counting of data points
+  ### (i.e. double entries across all relevant columns)
+  ### mostly due to recording from different sources
+
+double_min <- sheet_min %>%
+  group_by(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(sheet_min)
+
+# table for Rmd output
+DT::datatable(double_min, rownames = FALSE, caption = "Apparent double entries in minerals sheet")
+
+
+double_com <- sheet_com %>%
+  group_by(mine_fac, sub_site, min_ore_con, year, mine_processing, commodity) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(sheet_min)
+
+# table for Rmd output
+DT::datatable(double_com, rownames = FALSE, caption = "Apparent double entries in commodities sheet")
+
+
+
+```
+
+<br> 
+
 ```{r , echo = FALSE, message = FALSE}
 
 ### check values per mine/material for one year vs next to check for potential typos, i.e. outliers in time series
@@ -212,14 +251,6 @@ DT::datatable(dupli)
 ```{r, echo = FALSE, message = FALSE}
 
 ### check for double counting between ores and concentrates
-
-
-```
-
-<br> 
-
-```{r}
-
 
 
 ```

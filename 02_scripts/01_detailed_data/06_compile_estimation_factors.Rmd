@@ -18,6 +18,9 @@ library(knitr)
 library(kableExtra)
 library(viridis)
 
+# clear R environment
+rm(list = ls())
+
 ```
 
 

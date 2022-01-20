@@ -13,6 +13,9 @@ library(tidyverse)
 library(rlang)
 library(DT)
 
+# clear R environment
+rm(list = ls())
+
 ```
 
 
