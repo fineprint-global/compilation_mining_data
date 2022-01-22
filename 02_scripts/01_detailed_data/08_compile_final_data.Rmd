@@ -15,13 +15,15 @@ editor_options:
 
 ### Read In data
 ```{r , echo = FALSE, message = FALSE} 
+
+# clear R environment
+rm(list = ls())
+
 library(sf)
 
 # read in sheet_min and sheet_com
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
 
-#read in converted data to get sheet_coal including sub_sites
-converted <- read_rds("./03_intermediate/01_detailed_data/all_tables_converted.rds")
 
 # read in sheet_general
 sheet_general <- st_read("./03_intermediate/01_detailed_data/sheet_general/general.gpkg")
@@ -38,8 +40,14 @@ source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.
 
 ### compilation of final data for sheet_general and sheet_sub_sites
 ```{r , echo = FALSE, message = FALSE} 
+
+# only set this variable to true if sheet_general, sheet_sub_sites, sheet_general_sub_sites should be exported.
+# the export of these sheets takes much time, thus it is only enabled when needed.
+export_general = FALSE
+
 # modify data 
 
+  
 # sheet_general
 sheet_general <- sheet_general %>% 
   rename(surface_area_sq_km = surface_area,
@@ -71,88 +79,42 @@ datatable(head(sheet_general %>% st_drop_geometry()), rownames = FALSE, caption 
 datatable(head(sheet_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_sub_sites")
 datatable(head(sheet_general_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general_sub_sites")
 
+if(export_general == TRUE) {
+  
+  # create the directory for storing sheet_general
+  dir.create("./04_output/01_detailed_data/08_final_data/general_sub_sites/", showWarnings = FALSE, recursive = TRUE)
+  
+  
+  # export sheet_general as geopackage
+  st_write(sheet_general, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.gpkg", append = FALSE)
+  
+  # export sheet_sub_sites as geopackage
+  st_write(sheet_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.gpkg", append = FALSE)
+  
+  # export sheet_general_sub_sites as geopackage
+  st_write(sheet_general_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.gpkg", append = FALSE)
+  
+  # export sheet_general as CSV
+  write_csv(sheet_general %>% 
+              st_drop_geometry() %>% 
+              select(-GADM_level, -n_features), 
+            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.csv", na = "")
+  
+  # export sheet_sub_sites as CSV
+  write_csv(sheet_sub_sites %>% 
+              st_drop_geometry(),
+            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.csv", na = "")
+  
+  # export sheet_general_sub_sites as CSV
+  write_csv(sheet_general_sub_sites %>% 
+              st_drop_geometry() %>% 
+              select(-GADM_level, -n_features), 
+            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.csv", na = "")
+}
 
-# create the directory for storing sheet_general
-dir.create("./04_output/01_detailed_data/08_final_data/general_sub_sites/", showWarnings = FALSE, recursive = TRUE)
-
-
-# export sheet_general as geopackage
-st_write(sheet_general, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.gpkg", append = FALSE)
-
-# export sheet_sub_sites as geopackage
-st_write(sheet_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.gpkg", append = FALSE)
-
-# export sheet_general_sub_sites as geopackage
-st_write(sheet_general_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.gpkg", append = FALSE)
-
-# export sheet_general as CSV
-write_csv(sheet_general %>% 
-            st_drop_geometry() %>% 
-            select(-GADM_level, -n_features), 
-          "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.csv", na = "")
-
-# export sheet_sub_sites as CSV
-write_csv(sheet_sub_sites %>% 
-            st_drop_geometry(),
-          "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.csv", na = "")
-
-# export sheet_general_sub_sites as CSV
-write_csv(sheet_general_sub_sites %>% 
-            st_drop_geometry() %>% 
-            select(-GADM_level, -n_features), 
-          "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.csv", na = "")
-
-```
-
-<br>
-
-### gap filling for sheet_coal
-```{r , echo = FALSE, message = FALSE}
-# get sheet_coal with sub_sites from the converted data
-sheet_coal <- converted$minerals_ores_conce %>% 
-  filter(type_mineral %in% c("Coal mined", "Clean coal"))
-
-# the following code in this chunk is copied from 04b_gap_filling.R
-# sheet_coal is loaded from all_tables_converted.rds, i.e. gaps are not filled yet
-# the reason is that in this form, sub_sites are still included for coal. 
-
-# mine_fac/year with "Coal mined" or "Clean coal"
-coal_mined <- sheet_coal %>%
-  filter(type_mineral == "Coal mined") %>%
-  distinct(mine_fac, year)
-
-coal_clean <- sheet_coal %>%
-  filter(type_mineral == "Clean coal") %>%
-  distinct(mine_fac, year)
-
-# mines with reported coal mined for a year, but no Clean coal for that year
-mine_list <- setdiff(coal_mined, coal_clean)
-
-# add "Clean coal" where not reported
-sheet_coal <- sheet_coal %>% 
-  union(
-    mine_list %>%
-      left_join(sheet_coal %>% filter(type_mineral == "Coal mined")) %>%
-      mutate(type_mineral = "Clean coal")
-  )
-
-# mines with reported Clean coal, but no coal mined for that year
-mine_list <- setdiff(coal_clean, coal_mined)
-
-# add "Coal mined" where not reported
-sheet_coal <- sheet_coal %>% 
-  union(
-    mine_list %>%
-      left_join(sheet_coal %>% filter(type_mineral == "Clean coal")) %>%
-      mutate(type_mineral = "Coal mined")
-  )
-
-# use amount_sold where value = NA in sheet_min
-sheet_coal <- sheet_coal %>% 
-  mutate(
-    value = ifelse(is.na(value) & !is.na(amount_sold), amount_sold, value))
 
 ```
+
 
 <br>
 
@@ -175,13 +137,8 @@ for (i in c(5,6,8,9)){
     relocate(mine_id, .before = mine_fac)
 }
 
-
-# 
-detailed$capacity_reserves <- left_join(detailed$capacity_reserves, ids_mine_fac_only, by = "mine_fac")
-
-
 # for the sheet_coal, it can also be joined by mine_fac and sub_site
-sheet_coal <- left_join(sheet_coal, ids, by = c("mine_fac", "sub_site"))
+sheet_coal <- left_join(detailed$coal, ids, by = c("mine_fac", "sub_site"))
 
 
 # the sheet_min and sheet_com can only be joined with mine_fac, and also only with IDs referring to mine_fac, not sub_site.
@@ -189,14 +146,15 @@ sheet_min <- left_join(detailed$minerals_ores_conce, ids_mine_fac_only, by = "mi
 sheet_com <- left_join(detailed$commodities, ids_mine_fac_only, by = "mine_fac")
 
 
-# similar to sheet_min and sheet_com, as sheet_capacity_reserves is aggregated to mine_fac.  
-sheet_cap <- left_join(detailed$capacity_reserves, ids_mine_fac_only, by = "mine_fac")
+# similar to sheet_min and sheet_com, as sheet_cap and sheet_res are aggregated to mine_fac.
+sheet_cap <- left_join(detailed$capacity, ids_mine_fac_only, by = "mine_fac")
+sheet_res <- left_join(detailed$reserves, ids_mine_fac_only, by = "mine_fac")
 
 
 # delete variables, they do not add value, as it should be at 100%, in tonnes, and in ppm.
 # also round values to appropriate digit
 sheet_coal <- sheet_coal %>% 
-  select(-production_share, -unit, -grade_unit, -no_estimation, -all_metals_overall_grade, -mine_processing) %>% 
+  select(-production_share, -unit, -mine_processing) %>% 
   relocate(mine_id, .before = mine_fac) %>% 
   rename(value_tonnes = value, 
          amount_sold_tonnes = amount_sold) %>%
@@ -204,7 +162,6 @@ sheet_coal <- sheet_coal %>%
   arrange(mine_id, year, type_mineral) 
 
 sheet_min <- sheet_min %>% 
-  filter(., !(type_mineral %in% c("Coal mined", "Clean coal"))) %>%
   select(-production_share, -unit, -grade_unit, -no_estimation) %>% 
   relocate(mine_id, .before = mine_fac) %>% 
   rename(value_tonnes = value,
@@ -330,10 +287,10 @@ sheet_min_com3 <- sheet_min_com3 %>%
 
 
 # checking if the reporting periods match for all entries joined
-filter(sheet_production2, !is.na(value_min_tonnes) & !is.na(value_com_tonnes)
+filter(sheet_min_com3, !is.na(value_tonnes_min) & !is.na(value_tonnes_com)
        & !is.na(reporting_period_min) & is.na(reporting_period_com)) %>% nrow() == 0
 
-filter(sheet_production2, !is.na(value_min_tonnes) & !is.na(value_com_tonnes)
+filter(sheet_min_com3, !is.na(value_tonnes_min) & !is.na(value_tonnes_com)
        & is.na(reporting_period_min) & !is.na(reporting_period_com)) %>% nrow() == 0
 
 
@@ -445,7 +402,6 @@ write_csv(sheet_transport, "./04_output/01_detailed_data/08_final_data/other_she
 
 # construct sheet_capacity
 sheet_capacity <- sheet_cap %>%
-  filter(!is.na(processing_capacity_value)) %>%
   select(mine_id, minerals_and_ores, commodity, processing_capacity_year, processing_capacity_value, source_id, comment) %>% 
   rename(value_tonnes = processing_capacity_value,
          year = processing_capacity_year) %>% 
@@ -453,11 +409,10 @@ sheet_capacity <- sheet_cap %>%
 
 
 # construct sheet_reserves
-sheet_reserves <- sheet_cap %>%
-  filter(is.na(processing_capacity_value)) %>%
-  select(mine_id, minerals_and_ores, commodity, type_mining, reserves_year, 
+sheet_reserves <- sheet_res %>%
+  select(mine_id, minerals_and_ores, commodity, reserves_year, 
          reserves_mineral_value, reserves_commodity_value, grade, 
-         recovery_id, metallurgical_recovery, source_id, comment) %>% 
+         source_id, comment) %>% 
   rename(year = reserves_year,
          mineral_value_tonnes = reserves_mineral_value,
          commodity_value_tonnes = reserves_commodity_value,
