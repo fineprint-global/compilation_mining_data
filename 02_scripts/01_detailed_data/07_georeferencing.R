@@ -12,6 +12,8 @@ library(sf)
 library(sp)
 library(RSQLite)
 
+# clear R environment
+rm(list = ls())
 
 
 
