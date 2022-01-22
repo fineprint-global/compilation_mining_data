@@ -21,14 +21,17 @@ source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.
 
 # sheets
 sheet_min <- detailed$minerals_ores_conce
+sheet_coal <- detailed$coal
 sheet_com <- detailed$commodities
+sheet_cap <- detailed$capacity
+sheet_res <- detailed$reserves
 
 
 
 
 
 ## add duplicates for type_mineral in sheet_min -----------------
-  ## e.g. "Ore processed" from "Ore mined" and vice versa (+ same for coal)
+  ## e.g. "Ore processed" from "Ore mined" and vice versa (+ same for coal in sheet_coal)
 
 # mine_fac/year with "Ore mined" or "Ore processed"
 ore_mined <- sheet_min %>%
@@ -63,11 +66,11 @@ sheet_min <- sheet_min %>%
 
 
 # mine_fac/year with "Coal mined" or "Clean coal"
-coal_mined <- sheet_min %>%
+coal_mined <- sheet_coal %>%
   filter(type_mineral == "Coal mined") %>%
   distinct(mine_fac, year)
 
-coal_clean <- sheet_min %>%
+coal_clean <- sheet_coal %>%
   filter(type_mineral == "Clean coal") %>%
   distinct(mine_fac, year)
 
@@ -75,10 +78,10 @@ coal_clean <- sheet_min %>%
 mine_list <- setdiff(coal_mined, coal_clean)
 
 # add "Clean coal" where not reported
-sheet_min <- sheet_min %>% 
+sheet_coal <- sheet_coal %>% 
   union(
     mine_list %>%
-      left_join(sheet_min %>% filter(type_mineral == "Coal mined")) %>%
+      left_join(sheet_coal %>% filter(type_mineral == "Coal mined")) %>%
       mutate(type_mineral = "Clean coal")
   )
 
@@ -86,10 +89,10 @@ sheet_min <- sheet_min %>%
 mine_list <- setdiff(coal_clean, coal_mined)
 
 # add "Coal mined" where not reported
-sheet_min <- sheet_min %>% 
+sheet_coal <- sheet_coal %>% 
   union(
     mine_list %>%
-      left_join(sheet_min %>% filter(type_mineral == "Clean coal")) %>%
+      left_join(sheet_coal %>% filter(type_mineral == "Clean coal")) %>%
       mutate(type_mineral = "Coal mined")
   )
 
@@ -106,6 +109,11 @@ temp_cols <- sheet_min
 
 # use amount_sold where value = NA in sheet_min
 sheet_min <- sheet_min %>% 
+  mutate(
+    value = ifelse(is.na(value) & !is.na(amount_sold), amount_sold, value))
+
+# same for sheet_coal: use amount_sold where value = NA in sheet_min
+sheet_coal <- sheet_coal %>% 
   mutate(
     value = ifelse(is.na(value) & !is.na(amount_sold), amount_sold, value))
 
@@ -310,10 +318,19 @@ sheet_com <- sheet_com %>%
 sources <- sheet_min %>%
   distinct(source, source_url) %>%
   union(.,
+        sheet_coal %>%
+          distinct(source, source_url)) %>% 
+  union(.,
         sheet_com %>%
-          distinct(source, source_url)
-        )
-
+          distinct(source, source_url)) %>% 
+  union(.,
+        sheet_cap %>%
+          distinct(source, source_url)) %>%   
+  union(.,
+        sheet_res %>%
+          distinct(source, source_url)) 
+  
+  
 # get new sources
 new_sources <- setdiff(sources, source_ids %>% select(source, source_url))
 
@@ -345,6 +362,17 @@ sheet_com <- sheet_com %>%
   left_join(., source_ids) %>%
   select(-source, -source_url)
 
+sheet_coal <- sheet_coal %>%
+  left_join(., source_ids) %>%
+  select(-source, -source_url)
+
+sheet_cap <- sheet_cap %>%
+  left_join(., source_ids) %>%
+  select(-source, -source_url)
+
+sheet_res <- sheet_res %>%
+  left_join(., source_ids) %>%
+  select(-source, -source_url)
 
 
 # save new source_ids
@@ -358,11 +386,13 @@ write_delim(source_ids, "./01_input/02_lists_and_concordance_tables/source_ids.c
 # include sheets again in list
 detailed$minerals_ores_conce <- sheet_min
 detailed$commodities <- sheet_com
+detailed$coal <- sheet_coal
+detailed$capacity <- sheet_cap
+detailed$reserves <- sheet_res
 
 
 # save data
 write_rds(detailed, "./03_intermediate/01_detailed_data/gaps_filled.rds")
-
 
 
 
