@@ -18,8 +18,13 @@ source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.
 
 
 # sheets
-sheet_min <- detailed$minerals_ores_conce
+# from here on, sheet_coal will be separated from sheet_min
+sheet_min <- detailed$minerals_ores_conce %>% 
+  filter(!(type_mineral %in% c("Coal mined", "Clean coal")))
+sheet_coal <- detailed$minerals_ores_conce %>% 
+  filter(type_mineral %in% c("Coal mined", "Clean coal")) 
 sheet_com <- detailed$commodities
+sheet_cap_res <- detailed$capacity_reserves
 
 
 
@@ -97,7 +102,6 @@ sheet_com <- sheet_com %>%
 
 
 
-
 ## sheet_min ---------------
 
 # include sources again (otherwise won't be aggregated properly if different sources are present)
@@ -160,9 +164,203 @@ sheet_min <- sheet_min %>%
 
 
 
+
+
+## sheet_coal ---------------
+
+# include sources again (otherwise won't be aggregated properly if different sources are present)
+# (source_ids will only be included after gap filling again, because they have to be adjusted there again)
+sheet_coal <- sheet_coal %>%
+  left_join(source_ids) %>%
+  select(-source_id)
+
+# fill all units with "t" even if NA, otherwise it won't aggregate
+# (no issue, because units already converted)
+sheet_coal <- sheet_coal %>%
+  mutate(unit = "t")
+
+# drop unnecessary columns of sheet_coal
+# grade and grade_unit do not have a meaning in sheet_coal
+sheet_coal <- sheet_coal %>%
+  select(-grade_unit, -all_metals_overall_grade)
+
+
+# define columns by which to aggregate (i.e. excluding those which are to be aggregated)
+col_names <- names(sheet_coal)[!names(sheet_coal) %in% c("type_mining", "value", "amount_sold", "source", "source_url", "comment")]
+
+# aggregate
+# similar to sheet_min above, but without two-step approach as no grade is present and thus nothing has to be weighted
+sheet_coal <- sheet_coal %>%
+  group_by(across(all_of(col_names))) %>%
+  summarise(
+    value = if(all(is.na(value))) NA else sum(value, na.rm = TRUE),
+    amount_sold = if(all(is.na(amount_sold))) NA else sum(amount_sold, na.rm = TRUE),
+    source = paste(unique(source), collapse = " ; "),
+    source_url = paste(unique(source_url), collapse = " ; "),
+    comment = paste(unique(comment), collapse = " ; ")
+  ) %>% ungroup() %>% 
+  mutate(
+    comment = ifelse(
+      comment == "NA",
+      NA,
+      comment
+    )
+  )
+
+
+
+
+
+
+
+
+
+## sheet_capacity_reserves ---------------
+
+
+# include sources again (otherwise won't be aggregated properly if different sources are present)
+# (source_ids will only be included after gap filling again, because they have to be adjusted there again)
+sheet_cap_res <- sheet_cap_res %>%
+  left_join(source_ids) %>%
+  select(-source_id)
+
+
+# fill all units with "t" and grade units with "ppm", even if NA, otherwise it won't aggregate
+# (no issue, because units already converted)
+sheet_cap_res <- sheet_cap_res %>%
+  mutate(
+    processing_capacity_unit = "tpa",
+    reserves_mineral_unit = "t",
+    reserves_commodity_unit = "t",
+    grade_unit = "ppm"
+  )
+
+
+# drop variables which will not be published and make aggregation difficult
+sheet_cap_res <- sheet_cap_res %>% 
+  select(-recovery_id, -metallurgical_recovery)
+
+
+#split sheet_cap again in sheet_cap and sheet_res 
+sheet_res <- sheet_cap_res %>% 
+  filter(is.na(processing_capacity_value)) %>% 
+  select(-processing_capacity_year, -processing_capacity_unit, -processing_capacity_value)
+
+
+
+sheet_cap <- sheet_cap_res %>% 
+  filter(!is.na(processing_capacity_value)) %>% 
+  select(mine_fac, sub_site, minerals_and_ores, commodity, processing_capacity_year,
+         processing_capacity_unit, processing_capacity_value, source, source_url, comment)
+
+
+
+
+## start with sheet_cap
+
+# define columns by which to aggregate (i.e. excluding those which are to be aggregated)
+col_names <- names(sheet_cap)[!names(sheet_cap) %in% 
+                                c("sub_site", "processing_capacity_value", "source", "source_url", "comment")]
+
+
+# aggregate
+sheet_cap <- sheet_cap %>%
+  group_by(across(all_of(col_names))) %>%
+  summarise(
+    processing_capacity_value = sum(processing_capacity_value, na.rm = TRUE),
+    source = paste(unique(source), collapse = " ; "),
+    source_url = paste(unique(source_url), collapse = " ; "),
+    comment = paste(unique(comment), collapse = " ; ")
+  ) %>%
+  ungroup() %>% 
+  mutate(
+    comment = ifelse(
+      comment == "NA",
+      NA,
+      comment
+    )
+  )
+
+
+
+## sheet_res
+
+# define columns by which to aggregate (i.e. excluding those which are to be aggregated)
+col_names <- names(sheet_res)[!names(sheet_res) %in% 
+                                c("sub_site", "type_mining", "reserves_mineral_value", "reserves_commodity_value", 
+                                  "grade", "source", "source_url", "comment")]
+
+# aggregate
+# three-step approach, because grade first is weighted based on value of reserves_mineral_value, 
+# if NA, then grade is weighted based on value of reserves_commodity_value,
+# if also NA, then grade is calculated with mean function. 
+
+sheet_res <- sheet_res %>%
+  filter(!is.na(reserves_mineral_value)) %>%
+  group_by(across(all_of(col_names))) %>% #1. group by 
+  summarise(
+    grade = if(all(is.na(grade))) NA else weighted.mean(x = grade, w = reserves_mineral_value, na.rm = TRUE),
+    reserves_mineral_value = sum(reserves_mineral_value, na.rm = TRUE),
+    reserves_commodity_value = sum(reserves_commodity_value, na.rm = TRUE),
+    source = paste(unique(source), collapse = " ; "),
+    source_url = paste(unique(source_url), collapse = " ; "),
+    comment = paste(unique(comment), collapse = " ; ")
+  ) %>%
+  ungroup() %>%
+  union(.,
+        sheet_res %>%
+          select(-sub_site, -type_mining) %>%
+          filter(is.na(reserves_mineral_value) & !is.na(reserves_commodity_value))
+  ) %>%
+  group_by(across(all_of(col_names))) %>% #2. group by
+  summarise(
+    grade = if(all(is.na(grade))) NA else weighted.mean(x = grade, w = reserves_commodity_value, na.rm = TRUE),
+    reserves_mineral_value = sum(reserves_mineral_value, na.rm = TRUE),
+    reserves_commodity_value = sum(reserves_commodity_value, na.rm = TRUE),
+    source = paste(unique(source), collapse = " ; "),
+    source_url = paste(unique(source_url), collapse = " ; "),
+    comment = paste(unique(comment), collapse = " ; ")
+  ) %>%
+  ungroup() %>%
+  union(.,
+        sheet_res %>%
+          select(-sub_site, -type_mining) %>%
+          filter(is.na(reserves_mineral_value) & is.na(reserves_commodity_value))
+  ) %>%
+  group_by(across(all_of(col_names))) %>% #3. group by
+  summarise(
+    grade = if(all(is.na(grade))) NA else mean(grade, na.rm = TRUE),
+    reserves_mineral_value = sum(reserves_mineral_value, na.rm = TRUE),
+    reserves_commodity_value = sum(reserves_commodity_value, na.rm = TRUE),
+    source = paste(unique(source), collapse = " ; "),
+    source_url = paste(unique(source_url), collapse = " ; "),
+    comment = paste(unique(comment), collapse = " ; ")
+  ) %>%
+  ungroup() %>%
+  mutate(
+    comment = ifelse(
+      comment == "NA",
+      NA,
+      comment
+    )
+  )
+
+
+
+
+
+
+
+
 # include sheets again in list
 detailed$minerals_ores_conce <- sheet_min
 detailed$commodities <- sheet_com
+
+# include new sheets in list
+detailed$coal <- sheet_coal
+detailed$capacity <- sheet_cap
+detailed$reserves <- sheet_res
+
 
 
 # save data
