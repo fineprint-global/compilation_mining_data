@@ -32,7 +32,6 @@ getwd()
 source("./02_scripts/01_detailed_data/01a_harmonization_pre-check.R", print.eval = TRUE)
 
 
-
 ## Harmonization
  ## with results on non-fitting variables (html output is saved in `./04_output/01_detailed_data/01_harmonization/`)
 wd <- getwd()
@@ -91,6 +90,16 @@ rmarkdown::render("./02_scripts/01_detailed_data/05_coverage.Rmd",
 
 
 
+## Georeferencing of all mines
+wd <- getwd()
+rmarkdown::render("./02_scripts/01_detailed_data/07_georeferencing.Rmd",
+                  knit_root_dir = wd,
+                  output_dir = "./04_output/01_detailed_data/07_other",
+                  intermediates_dir = "./04_output/01_detailed_data/07_other",
+                  output_file = "georeferencing.html"
+)
+
+
 ## Produce final data output
 wd <- getwd()
 rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
@@ -104,11 +113,6 @@ rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
 #### Additional scripts -----------
 
  
-
-# ## Georeferencing of all mines
-# source("./02_scripts/01_detailed_data/07_georeferencing.R")
-# 
-# 
 # ## Comparison of data coverage against national accounts with respective HTML output for COAL
 # wd <- getwd()
 # rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/02_coal/coverage_coal_aggregated.Rmd",
