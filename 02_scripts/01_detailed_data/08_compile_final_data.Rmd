@@ -6,8 +6,8 @@ editor_options:
 ---
 
 ###### In this script, the final data output is prepared.
-###### 1. sheet_general with general information is compiled and exported
-###### 1.1 column mine_id is added to all sheets
+###### 1. column mine_id is added to all sheets
+###### 1.1 sheet_general with general information is compiled and exported
 ###### 2. Four formats for sheet_min and sheet_com are exported
 ###### 3. Other sheets are exported
 
@@ -20,6 +20,8 @@ editor_options:
 rm(list = ls())
 
 library(sf)
+library(tidyverse)
+library(DT)
 
 # read in sheet_min and sheet_com
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
@@ -34,97 +36,19 @@ source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.
 
 ```
 
-<br>
-
-# 1. sheet_general with general information is compiled and exported
-
-### compilation of final data for sheet_general and sheet_sub_sites
-```{r , echo = FALSE, message = FALSE} 
-
-# only set this variable to true if sheet_general, sheet_sub_sites, sheet_general_sub_sites should be exported.
-# the export of these sheets takes much time, thus it is only enabled when needed.
-export_general = FALSE
-
-# modify data 
-
-  
-# sheet_general
-sheet_general <- sheet_general %>% 
-  rename(surface_area_sq_km = surface_area,
-         concession_area_sq_km = claim_concession_area) %>% 
-  select(-unit_surface_area, -unit_concession_area, -certification_scheme) %>% 
-  mutate_at(c("concession_area_sq_km", "surface_area_sq_km"), round, digits = 4) %>% 
-  arrange(mine_id)
-
-
-# sheet_sub_sites
-sheet_sub_sites <- sheet_sub_sites %>% 
-  rename(surface_area_sq_km = surface_area,
-         concession_area_sq_km = claim_concession_area) %>% 
-  select(-mine_fac, -mine_other_names, -country, -alphanumiso, -state, -region, -province, -district, -sector, -location_municipality, 
-         -unit_surface_area, -unit_concession_area, -certification_scheme) %>% 
-  mutate_at(c("concession_area_sq_km", "surface_area_sq_km"), round, digits = 4) %>% 
-  arrange(mine_id)
-
-
-# sheet_general_sub_sites
-sheet_general_sub_sites <- sheet_general %>% 
-  bind_rows(., sheet_sub_sites) %>% 
-  relocate(c(sub_site, sub_site_other_name), .after = mine_fac) %>% 
-  arrange(mine_id)
-
-
-# datatable for Rmd output
-datatable(head(sheet_general %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general")
-datatable(head(sheet_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_sub_sites")
-datatable(head(sheet_general_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general_sub_sites")
-
-if(export_general == TRUE) {
-  
-  # create the directory for storing sheet_general
-  dir.create("./04_output/01_detailed_data/08_final_data/general_sub_sites/", showWarnings = FALSE, recursive = TRUE)
-  
-  
-  # export sheet_general as geopackage
-  st_write(sheet_general, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.gpkg", append = FALSE)
-  
-  # export sheet_sub_sites as geopackage
-  st_write(sheet_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.gpkg", append = FALSE)
-  
-  # export sheet_general_sub_sites as geopackage
-  st_write(sheet_general_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.gpkg", append = FALSE)
-  
-  # export sheet_general as CSV
-  write_csv(sheet_general %>% 
-              st_drop_geometry() %>% 
-              select(-GADM_level, -n_features), 
-            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.csv", na = "")
-  
-  # export sheet_sub_sites as CSV
-  write_csv(sheet_sub_sites %>% 
-              st_drop_geometry(),
-            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.csv", na = "")
-  
-  # export sheet_general_sub_sites as CSV
-  write_csv(sheet_general_sub_sites %>% 
-              st_drop_geometry() %>% 
-              select(-GADM_level, -n_features), 
-            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.csv", na = "")
-}
-
-
-```
-
 
 <br>
 
-# 1.1 column mine_id is added to all sheets
+# 1. column mine_id is added to all sheets
 ### Add mine_id to all sheets, rename variables and round columns 
 ```{r , echo = FALSE, message = FALSE}
 
-ids <- sheet_general_sub_sites %>% 
-  select(mine_id, mine_fac, sub_site) %>% 
-  st_drop_geometry()
+ids <- sheet_general %>%
+  select(mine_id, mine_fac) %>% 
+  st_drop_geometry() %>% 
+  bind_rows(sheet_sub_sites %>% 
+              select(mine_id, mine_fac, sub_site) %>% 
+              st_drop_geometry())
 
 ids_mine_fac_only <- sheet_general %>% 
   select(mine_id, mine_fac) %>% 
@@ -179,10 +103,106 @@ sheet_com <- sheet_com %>%
          grade_ppm = grade, 
          yield_ppm = yield) %>%
   mutate_at(c("value_tonnes", "amount_sold_tonnes", "metal_payable_tonnes"), round, digits = 3) %>% 
-  mutate_at(c("grade_ppm", "yield_ppm"), round, digits = 6) %>% 
+  mutate_at(c("grade_ppm", "yield_ppm"), round, digits = 6) %>%
   arrange(mine_id, year, commodity)
 
 ```
+
+<br>
+
+# 1.1 sheet_general with general information is compiled and exported
+
+### compilation of final data for sheet_general and sheet_sub_sites
+```{r , echo = FALSE, message = FALSE} 
+
+# only set this variable to true if sheet_general, sheet_sub_sites, sheet_general_sub_sites should be exported.
+# the export of these sheets takes much time, thus it is only enabled when needed.
+export_general = FALSE
+
+# modify data 
+
+  
+# sheet_general
+sheet_general <- sheet_general %>% 
+  rename(surface_area_sq_km = surface_area,
+         concession_area_sq_km = claim_concession_area,
+         mine_name = mine_fac,
+         facility_type = mine_or_processing,
+         facility_equipment = mining_facility_types) %>% 
+  mutate(iso_alpha_3 = substr(alphanumiso, 1,3),
+         iso_numeric = substr(alphanumiso, 4,6)) %>% 
+  relocate(c(iso_alpha_3, iso_numeric), .after = alphanumiso) %>% 
+  # unselect regional variables, as the location of the mine 
+  # will be provided either by coordinates or GADM codes
+  select(-alphanumiso, -state, -region, -province, -district, -sector, -location_municipality, 
+         -unit_surface_area, -unit_concession_area, -certification_scheme) %>% 
+  mutate_at(c("concession_area_sq_km", "surface_area_sq_km"), round, digits = 4) %>% 
+  arrange(mine_id)
+
+
+# sheet_sub_sites
+sheet_sub_sites <- sheet_sub_sites %>% 
+  rename(surface_area_sq_km = surface_area,
+         concession_area_sq_km = claim_concession_area,
+         mine_name = mine_fac, 
+         sub_site_name = sub_site,
+         facility_type = mine_or_processing, 
+         facility_equipment = mining_facility_types) %>% 
+  select(-mine_other_names, -country, -alphanumiso, -state, -region, -province, 
+         -district, -sector, -location_municipality, 
+         -unit_surface_area, -unit_concession_area, -certification_scheme) %>% 
+  mutate_at(c("concession_area_sq_km", "surface_area_sq_km"), round, digits = 4) %>% 
+  arrange(mine_id)
+
+
+# sheet_general_sub_sites
+sheet_general_sub_sites <- sheet_general %>% 
+  bind_rows(., sheet_sub_sites) %>% 
+  relocate(c(sub_site_name, sub_site_other_name), .after = mine_name) %>% 
+  arrange(mine_id)
+
+
+# datatable for Rmd output
+datatable(head(sheet_general %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general")
+datatable(head(sheet_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_sub_sites")
+datatable(head(sheet_general_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general_sub_sites")
+
+if(export_general == TRUE) {
+  
+  # create the directory for storing sheet_general
+  dir.create("./04_output/01_detailed_data/08_final_data/general_sub_sites/", showWarnings = FALSE, recursive = TRUE)
+  
+  
+  # export sheet_general as geopackage
+  st_write(sheet_general, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.gpkg", append = FALSE)
+  
+  # export sheet_sub_sites as geopackage
+  st_write(sheet_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.gpkg", append = FALSE)
+  
+  # export sheet_general_sub_sites as geopackage
+  st_write(sheet_general_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.gpkg", append = FALSE)
+  
+  # export sheet_general as CSV
+  write_csv(sheet_general %>% 
+              st_drop_geometry() %>% 
+              select(-GADM_level, -n_features), 
+            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.csv", na = "")
+  
+  # export sheet_sub_sites as CSV
+  write_csv(sheet_sub_sites %>% 
+              st_drop_geometry(),
+            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.csv", na = "")
+  
+  # export sheet_general_sub_sites as CSV
+  write_csv(sheet_general_sub_sites %>% 
+              st_drop_geometry() %>% 
+              select(-GADM_level, -n_features), 
+            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.csv", na = "")
+}
+
+
+```
+
 
 <br>
 
@@ -363,7 +383,7 @@ sheet_processing <- detailed$processing %>%
   rename(process_input_value_tonnes = process_input_value,
          process_output_value_tonnes = process_output_value, 
          grade_ppm = grade, 
-         amount_sold_tonnes = amount_sold) %>% 
+         amount_sold_tonnes = amount_sold) %>%
   arrange(mine_id, year, process_output)
 
 
