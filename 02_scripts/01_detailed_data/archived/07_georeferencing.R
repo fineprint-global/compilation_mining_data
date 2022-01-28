@@ -42,7 +42,7 @@ source("./02_scripts/00_functions/split_columns.R")
 
 
 ################################################################################
-# bind the sheets general and subsites together
+# bind the sheets general and subsites together and create mine_id
 ################################################################################
 
 #first, create a column "sub_site" which is empty for the sheet general
@@ -244,7 +244,7 @@ mines_wo_georeference_output <- data.frame(matrix(ncol = 3, nrow = 0))
 colnames(mines_wo_georeference_output) <- c("mine_fac", "geom", "GADM_level")
 
 
-# loop over levels and join the geometries form GADM to the mines without coordinates
+# loop over levels and join the geometries from GADM to the mines without coordinates
 for(lvl in 0:4){
   
   # load in correct level of the GADM dataset
@@ -264,7 +264,7 @@ for(lvl in 0:4){
   curr_mines <- left_join(curr_mines, curr_GADM)
 
   # cleaning
-  curr_mines <- curr_mines %>% select(., mine_fac, geom)
+  curr_mines <- curr_mines %>% select(., mine_fac, geom, GID_0, GID_1, GID_2, GID_3, GID_4)
   
   #adding the level of the geometry
   GADM_level <- rep(lvl, nrow(curr_mines))
@@ -281,7 +281,13 @@ for(lvl in 0:4){
 # aggregate polygons per mine
 mines_wo_georeference_union <- mines_wo_georeference_output %>% 
   group_by(mine_fac) %>%
-  summarize(geometry = st_union(geom), GADM_level = min(GADM_level))
+  summarize(geometry = st_union(geom), 
+            GADM_level = min(GADM_level),
+            GID_0 = paste(unique(GID_0), collapse = " ; "),
+            GID_1 = paste(unique(GID_1), collapse = " ; "),
+            GID_2 = paste(unique(GID_2), collapse = " ; "),
+            GID_3 = paste(unique(GID_3), collapse = " ; "),
+            GID_4 = paste(unique(GID_4), collapse = " ; "))
 
 
 # keep record of whether polygons were aggregated in the previous step (by st_union)
