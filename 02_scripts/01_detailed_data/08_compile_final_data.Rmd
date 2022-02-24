@@ -6,12 +6,13 @@ editor_options:
 ---
 
 ###### In this script, the final data output is prepared.
-###### 1. column mine_id is added to all sheets
-###### 1.1 sheet_general with general information is compiled and exported
-###### 2. Four formats for sheet_min and sheet_com are exported
-###### 3. Other sheets are exported
-
-
+###### 1. Add column mine_id to all remaining sheets
+###### 2. Prepare sheet_general_sub_sites by combining the sheets general and sub_sites
+###### 3. Select, rename, and arrange and round variables
+###### 4. Insert join id (called minerals_id) to sheet commodities
+###### 5. Export the final data in final format
+###### 6. Validation
+###### 7. Export final data in other formats
 
 ### Read In data
 ```{r , echo = FALSE, message = FALSE} 
@@ -23,24 +24,26 @@ library(sf)
 library(tidyverse)
 library(DT)
 
-# read in sheet_min and sheet_com
+# read in production information
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
-
 
 # read in sheet_general
 sheet_general <- st_read("./03_intermediate/01_detailed_data/sheet_general/general.gpkg")
 sheet_sub_sites <- st_read("./03_intermediate/01_detailed_data/sheet_general/sub_sites.gpkg")
 
-# read in source IDs
+# read in source_ids, material_ids, unit_ids
 source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
+material_ids <- read_delim("./01_input/02_lists_and_concordance_tables/material_ids.csv", delim = ";")
+unit_ids <- read_delim("./01_input/02_lists_and_concordance_tables/unit_ids.csv", delim = ";")
+
+# read in final data structure
+structure <- read_csv("./01_input/02_lists_and_concordance_tables/01_detailed_data/final_data_structure.csv")
 
 ```
 
-
 <br>
 
-# 1. column mine_id is added to all sheets
-### Add mine_id to all sheets, rename variables and round columns 
+# 1. Add column mine_id to all remaining sheets
 ```{r , echo = FALSE, message = FALSE}
 
 ids <- sheet_general %>%
@@ -55,436 +58,349 @@ ids_mine_fac_only <- sheet_general %>%
   st_drop_geometry()
 
 
-# for the sheets processing, transport, capacity_reserves, waste, and other info, it can be joined by mine_fac and sub_site
-for (i in c(5,6,8,9)){
+# for the sheets processing, transport, capacity_reserves, waste, other_info and coal, it can be joined by mine_fac and sub_site
+for (i in c(5,6,8,9,11)){
   detailed[[i]] <- left_join(detailed[[i]], ids, by = c("mine_fac", "sub_site")) %>%
     relocate(mine_id, .before = mine_fac)
 }
 
-# for the sheet_coal, it can also be joined by mine_fac and sub_site
-sheet_coal <- left_join(detailed$coal, ids, by = c("mine_fac", "sub_site"))
+# for the sheets minerals_ores_conce, commodities it can be joined by mine_fac
+for (i in c(3,4,12,13)){
+  detailed[[i]] <- left_join(detailed[[i]], ids_mine_fac_only, by = c("mine_fac")) %>%
+    relocate(mine_id, .before = mine_fac)
+}
+```
+
+<br>
+
+# 2. Prepare sheet_general_sub_sites by combining the sheets general and sub_sites
+```{r , echo = FALSE, message = FALSE}
+general_combined <- list(
+  sheet_general %>% tibble(),
+  sheet_sub_sites %>% tibble())
+
+i = 1
+for(sheet_name in c("general", "sub_sites")) {
+  
+  detailed[[i]] <- general_combined[[i]] %>% 
+    # select cols/variables kept in final data only
+    select(structure %>% 
+             filter(sheet == sheet_name & final_keep_variable == "yes") %>% 
+             select(variable) %>% 
+             pull()) %>% 
+    # rename the cols/variables
+    rename_with( ~ (structure %>%
+                           filter(sheet == sheet_name & final_keep_variable == "yes") %>% 
+                           select(final_name_variable) %>% 
+                           pull())) %>% 
+    # relocate cols/variables in correct order 
+    relocate(structure %>%
+               filter(sheet == sheet_name & final_keep_variable == "yes") %>% 
+               arrange(order_cols) %>% 
+               select(final_name_variable) %>% 
+               pull()) %>% 
+    # arrange rows in correct order
+    arrange(across(all_of(structure %>%
+                            filter(sheet == sheet_name & final_keep_variable == "yes") %>% 
+                            filter(!(is.na(order_rows))) %>% 
+                            arrange(order_rows) %>% 
+                            select(final_name_variable) %>%
+                            pull()))
+            )
+  
+  i = i + 1
+}
 
 
-# the sheet_min and sheet_com can only be joined with mine_fac, and also only with IDs referring to mine_fac, not sub_site.
-sheet_min <- left_join(detailed$minerals_ores_conce, ids_mine_fac_only, by = "mine_fac")
-sheet_com <- left_join(detailed$commodities, ids_mine_fac_only, by = "mine_fac")
+# create sheet_general_sub_sites
+detailed$general_sub_sites <- bind_rows(detailed$general, detailed$sub_sites) %>% 
+  arrange("facility_id")
 
-
-# similar to sheet_min and sheet_com, as sheet_cap and sheet_res are aggregated to mine_fac.
-sheet_cap <- left_join(detailed$capacity, ids_mine_fac_only, by = "mine_fac")
-sheet_res <- left_join(detailed$reserves, ids_mine_fac_only, by = "mine_fac")
-
-
-# delete variables, they do not add value, as it should be at 100%, in tonnes, and in ppm.
-# also round values to appropriate digit
-sheet_coal <- sheet_coal %>% 
-  select(-production_share, -unit, -mine_processing) %>% 
-  relocate(mine_id, .before = mine_fac) %>% 
-  rename(value_tonnes = value, 
-         amount_sold_tonnes = amount_sold) %>%
-  mutate_at(c("value_tonnes", "amount_sold_tonnes"), round) %>% 
-  arrange(mine_id, year, type_mineral) 
-
-sheet_min <- sheet_min %>% 
-  select(-production_share, -unit, -grade_unit, -no_estimation) %>% 
-  relocate(mine_id, .before = mine_fac) %>% 
-  rename(value_tonnes = value,
-         amount_sold_tonnes = amount_sold,
-         all_metals_overall_grade_ppm = all_metals_overall_grade) %>%
-  mutate_at(c("value_tonnes", "amount_sold_tonnes"), round) %>% 
-  arrange(mine_id, year, type_mineral)
-
-sheet_com <- sheet_com %>% 
-  select(-production_share, -unit, -grade_or_yield_unit, -no_estimation) %>% 
-  relocate(mine_id, .before = mine_fac) %>% 
-  rename(value_tonnes = value,
-         amount_sold_tonnes = amount_sold,
-         metal_payable_tonnes = metal_payable,
-         grade_ppm = grade, 
-         yield_ppm = yield) %>%
-  mutate_at(c("value_tonnes", "amount_sold_tonnes", "metal_payable_tonnes"), round, digits = 3) %>% 
-  mutate_at(c("grade_ppm", "yield_ppm"), round, digits = 6) %>%
-  arrange(mine_id, year, commodity)
 
 ```
 
 <br>
 
-# 1.1 sheet_general with general information is compiled and exported
+# 3. Select, rename, and arrange and round variables
+```{r , echo = FALSE, message = FALSE}
 
-### compilation of final data for sheet_general and sheet_sub_sites
-```{r , echo = FALSE, message = FALSE} 
+#get indices of sheets in the list detailed which should be modified
+sheet_numbers <- match(
+  structure %>% 
+    filter(final_keep_sheet == "yes") %>% 
+    select(sheet) %>% 
+    unique() %>% 
+    pull(),
+  detailed %>% 
+    names())
 
-# only set this variable to true if sheet_general, sheet_sub_sites, sheet_general_sub_sites should be exported.
-# the export of these sheets takes much time, thus it is only enabled when needed.
-export_general = FALSE
-
-# modify data 
-
+#loop over the selected sheets and convert according to final data structure
+for(sheet_nr in sheet_numbers){
   
-# sheet_general
-sheet_general <- sheet_general %>% 
-  rename(surface_area_sq_km = surface_area,
-         concession_area_sq_km = claim_concession_area,
-         mine_name = mine_fac,
-         facility_type = mine_or_processing,
-         facility_equipment = mining_facility_types) %>% 
-  mutate(iso_alpha_3 = substr(alphanumiso, 1,3),
-         iso_numeric = substr(alphanumiso, 4,6)) %>% 
-  relocate(c(iso_alpha_3, iso_numeric), .after = alphanumiso) %>% 
-  # unselect regional variables, as the location of the mine 
-  # will be provided either by coordinates or GADM codes
-  select(-alphanumiso, -state, -region, -province, -district, -sector, -location_municipality, 
-         -unit_surface_area, -unit_concession_area, -certification_scheme) %>% 
-  mutate_at(c("concession_area_sq_km", "surface_area_sq_km"), round, digits = 4) %>% 
-  arrange(mine_id)
+  curr_sheet_name <- detailed[sheet_nr] %>% names()
+  detailed[[sheet_nr]] <- detailed[[sheet_nr]] %>% 
+    # select cols/variables kept in final data only
+    select(structure %>% 
+             filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
+             select(variable) %>% 
+             pull()) %>% 
+    # rename the cols/variables
+    rename_with( ~ (structure %>%
+                           filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
+                           select(final_name_variable) %>% 
+                           pull())) %>% 
+    # relocate cols/variables in correct order 
+    relocate(structure %>%
+               filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
+               arrange(order_cols) %>% 
+               select(final_name_variable) %>% 
+               pull()) %>% 
+    # arrange rows in correct order
+    arrange(across(all_of(structure %>%
+                            filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
+                            filter(!(is.na(order_rows))) %>% 
+                            arrange(order_rows) %>% 
+                            select(final_name_variable) %>% 
+                            pull()))) %>% 
+    # round if necessary (1. time)
+    mutate_at(structure %>% 
+                filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
+                filter(round_cycle == 1) %>% 
+                select(final_name_variable) %>% 
+                pull(),
+              round, 
+              digits = (structure %>% 
+                          filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>%
+                          filter(round_cycle == 1) %>%
+                          select(round_digits) %>% 
+                          unique() %>% 
+                          as.numeric())
+              ) %>% 
+    # round if necessary (2. time)
+    mutate_at(structure %>% 
+              filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
+              filter(round_cycle == 2) %>% 
+              select(final_name_variable) %>% 
+              pull(),
+            round, 
+            digits = (structure %>% 
+                        filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>%
+                        filter(round_cycle == 2) %>%
+                        select(round_digits) %>% 
+                        unique() %>% 
+                        as.numeric())
+            )
 
+    # create unique id corresponding to the row-number 
+  # not for table general, as there the facility_id is the primary key
+  if(curr_sheet_name != "general_sub_sites") {
+    detailed[[sheet_nr]] <- detailed[[sheet_nr]] %>% 
+      add_column(id = 1:nrow(detailed[[sheet_nr]]), .before = "facility_id")
+  }
 
-# sheet_sub_sites
-sheet_sub_sites <- sheet_sub_sites %>% 
-  rename(surface_area_sq_km = surface_area,
-         concession_area_sq_km = claim_concession_area,
-         mine_name = mine_fac, 
-         sub_site_name = sub_site,
-         facility_type = mine_or_processing, 
-         facility_equipment = mining_facility_types) %>% 
-  select(-mine_other_names, -country, -alphanumiso, -state, -region, -province, 
-         -district, -sector, -location_municipality, 
-         -unit_surface_area, -unit_concession_area, -certification_scheme) %>% 
-  mutate_at(c("concession_area_sq_km", "surface_area_sq_km"), round, digits = 4) %>% 
-  arrange(mine_id)
-
-
-# sheet_general_sub_sites
-sheet_general_sub_sites <- sheet_general %>% 
-  bind_rows(., sheet_sub_sites) %>% 
-  relocate(c(sub_site_name, sub_site_other_name), .after = mine_name) %>% 
-  arrange(mine_id)
-
-
-# datatable for Rmd output
-datatable(head(sheet_general %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general")
-datatable(head(sheet_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_sub_sites")
-datatable(head(sheet_general_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general_sub_sites")
-
-if(export_general == TRUE) {
-  
-  # create the directory for storing sheet_general
-  dir.create("./04_output/01_detailed_data/08_final_data/general_sub_sites/", showWarnings = FALSE, recursive = TRUE)
-  
-  
-  # export sheet_general as geopackage
-  st_write(sheet_general, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.gpkg", append = FALSE)
-  
-  # export sheet_sub_sites as geopackage
-  st_write(sheet_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.gpkg", append = FALSE)
-  
-  # export sheet_general_sub_sites as geopackage
-  st_write(sheet_general_sub_sites, "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.gpkg", append = FALSE)
-  
-  # export sheet_general as CSV
-  write_csv(sheet_general %>% 
-              st_drop_geometry() %>% 
-              select(-GADM_level, -n_features), 
-            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general.csv", na = "")
-  
-  # export sheet_sub_sites as CSV
-  write_csv(sheet_sub_sites %>% 
-              st_drop_geometry(),
-            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_sub_sites.csv", na = "")
-  
-  # export sheet_general_sub_sites as CSV
-  write_csv(sheet_general_sub_sites %>% 
-              st_drop_geometry() %>% 
-              select(-GADM_level, -n_features), 
-            "./04_output/01_detailed_data/08_final_data/general_sub_sites/sheet_general_sub_sites.csv", na = "")
+  print(c("Sheet", curr_sheet_name, "done"))
 }
 
 
 ```
 
-
 <br>
 
-# 2. Four formats for sheet_min and sheet_com are exported
-
-### Format 1: sheet_mineral_coal, sheet_commodity
+# 4. Insert join id (called id_minerals) to sheet commodities
 ```{r , echo = FALSE, message = FALSE}
 
-### insert joining ID tbd.
-
-
-# reorder columns
-sheet_min_coal1 <- sheet_min %>%
-  bind_rows(sheet_coal) %>%
-  select(mine_id, year, type_mineral, min_ore_con, value_tonnes, amount_sold_tonnes, all_metals_overall_grade_ppm, 
-         mine_processing, reporting_period, source_id, comment)
-
-
-sheet_com1 <- sheet_com %>%
-  select(mine_id, year, min_ore_con, commodity, value_tonnes, grade_ppm, recovery_rate, yield_ppm, amount_sold_tonnes, 
-         metal_payable_tonnes, mine_processing, reporting_period, source_id, comment) 
-
-
-# datatable for Rmd output
-datatable(head(sheet_min_coal1), rownames = FALSE, caption = "sheet_min_coal1")
-datatable(head(sheet_com1), rownames = FALSE, caption = "sheet_com1")
-
-
-# export the sheets
-dir.create("./04_output/01_detailed_data/08_final_data/format_1", showWarnings = FALSE, recursive = TRUE)
-write_csv(sheet_min_coal1, "./04_output/01_detailed_data/08_final_data/format_1/sheet_minerals_coal.csv", na = "")
-write_csv(sheet_com1, "./04_output/01_detailed_data/08_final_data/format_1/sheet_commodities.csv", na = "")
-
-```
-
-<br>
-
-### Format 2: sheet_coal, sheet_mineral, sheet_commodity
-```{r , echo = FALSE, message = FALSE}
-
-### insert joining ID tbd.
-
-
-# reorder columns and modify names 
-sheet_coal2 <- sheet_coal %>% 
-  select(mine_id, year, type_mineral, min_ore_con, value_tonnes, amount_sold_tonnes, reporting_period, source_id, comment) 
-
-
-sheet_min2 <- sheet_min %>%
-  select(mine_id, year, type_mineral, min_ore_con, value_tonnes, amount_sold_tonnes, all_metals_overall_grade_ppm, 
-         mine_processing, reporting_period, source_id, comment)
-
-
-# datatable for Rmd output
-datatable(head(sheet_coal2), rownames = FALSE, caption = "sheet_coal2")
-datatable(head(sheet_min2), rownames = FALSE, caption = "sheet_min2")
-datatable(head(sheet_com1), rownames = FALSE, caption = "sheet_com1")
-
-
-# export the sheets
-dir.create("./04_output/01_detailed_data/08_final_data/format_2", showWarnings = FALSE, recursive = TRUE)
-write_csv(sheet_coal2, "./04_output/01_detailed_data/08_final_data/format_2/sheet_coal.csv", na = "")
-write_csv(sheet_min2, "./04_output/01_detailed_data/08_final_data/format_2/sheet_minerals.csv", na = "")
-write_csv(sheet_com1, "./04_output/01_detailed_data/08_final_data/format_2/sheet_commodities.csv", na = "") #sheet_com is the same as in format 1, just copy it
-
-```
-
-<br>
-
-### Format 3: sheet_coal, sheet_mineral_commodity
-```{r , echo = FALSE, message = FALSE}
-
-# join sheet_min and sheet_com where it is possible and it makes sense (i.e. where type_mineral is "Ore processed" or "Concentrate")
-sheet_min_com3 <- full_join(
-  sheet_min %>% 
-    filter((type_mineral %in% c("Ore processed", "Concentrate"))), # exclude where type_mining is "Ore mined" or "NM mineral"
-  sheet_com, 
-  by = c("mine_id", "min_ore_con", "year", "mine_processing"), 
-  suffix = c("_min", "_com")
+commodities_joined <- left_join(
+  detailed$commodities,
+  detailed$minerals_ores_conce %>% 
+    filter((type %in% c("Ore processed", "Concentrate"))), # exclude where type_mining is "Ore mined" or "NM mineral"
+  by = c("facility_id", "material", "year", "mine_processing", "reporting_period"), 
+  suffix = c("_commodities", "_minerals")
 )
 
 
-# cleaning 
-### the treatment of sources is likely to be changed
-### add that if the sources are equivalent, just keep one entry
-sheet_min_com3 <- sheet_min_com3 %>% 
-  unite("source_id1", c(source_id_com, source_id_min), sep = "; ", na.rm = TRUE, remove = TRUE) 
+detailed$commodities <- detailed$commodities %>% 
+  left_join(commodities_joined %>% 
+              select(id_commodities, id_minerals),
+            by = c("id" = "id_commodities"))
 
-
-# add again the remaining rows (only rows with "Ore mined and NM mineral"). 
-sheet_min_com3 <- bind_rows(
-  sheet_min_com3, 
-  sheet_min %>% 
-    filter(!(type_mineral %in% c("Ore processed", "Concentrate")))) # equivalent to: filter(type_mineral %in% c("Ore mined", "NM mineral"))
-
-
-# cleaning
-### the treatment of sources is likely to be changed
-### add that if the sources are equivalent, just keep one entry
-sheet_min_com3 <- sheet_min_com3 %>% 
-  unite("source_ids", c(source_id1, source_id), sep = "; ", na.rm = TRUE, remove = TRUE)
-
-
-# checking if the reporting periods match for all entries joined
-filter(sheet_min_com3, !is.na(value_tonnes_min) & !is.na(value_tonnes_com)
-       & !is.na(reporting_period_min) & is.na(reporting_period_com)) %>% nrow() == 0
-
-filter(sheet_min_com3, !is.na(value_tonnes_min) & !is.na(value_tonnes_com)
-       & is.na(reporting_period_min) & !is.na(reporting_period_com)) %>% nrow() == 0
-
-
-
-# reorder columns and rows
-sheet_min_com3 <- sheet_min_com3 %>% 
-  select(mine_id, year, type_mineral, min_ore_con, value_tonnes_min, amount_sold_tonnes_min, commodity, value_tonnes_com, 
-         amount_sold_tonnes_com, grade_ppm, recovery_rate, yield_ppm, #up to here are the most important variables
-         all_metals_overall_grade_ppm, metal_payable_tonnes, mine_processing, source_ids, reporting_period_min, reporting_period_com, 
-         comment_min, comment_com) %>%
-  arrange(mine_id, year, type_mineral) # arranges rows by mine name, year, and type_mineral descending
-
-
-# datatable for Rmd output
-datatable(head(sheet_coal2), rownames = FALSE, caption = "sheet_coal2")
-datatable(head(sheet_min_com3), rownames = FALSE, caption = "sheet_min_com3")
-
-
-# export the sheets
-dir.create("./04_output/01_detailed_data/08_final_data/format_3", showWarnings = FALSE, recursive = TRUE)
-write_csv(sheet_coal2, "./04_output/01_detailed_data/08_final_data/format_3/sheet_coal.csv", na = "")
-write_csv(sheet_min_com3, "./04_output/01_detailed_data/08_final_data/format_3/sheet_minerals_commodities.csv", na = "")
 
 ```
 
 <br>
 
-### Format 4:  sheet_mineral_coal_commodity
+# 5. Create tables source_ids, material_ids, unit_ids 
 ```{r , echo = FALSE, message = FALSE}
+# source_ids does not change
 
-sheet_min_coal_com4 <- bind_rows(sheet_min_com3, sheet_coal2) %>% 
-  arrange(mine_id, year, type_mineral)
+unit_ids <- unit_ids %>%
+  select(-wu_former) %>% 
+  rename(unit_category = unit_cat)
 
-
-datatable(head(sheet_min_coal_com4), rownames = FALSE, caption = "sheet_min_coal_com4")
-
-
-# export the sheet
-dir.create("./04_output/01_detailed_data/08_final_data/format_4", showWarnings = FALSE, recursive = TRUE)
-write_csv(sheet_min_coal_com4, "./04_output/01_detailed_data/08_final_data/format_4/sheet_minerals_coal_commodities.csv", na = "")
-
-```
-
-
-<br>
-
-# 3. Other sheets are exported
-
-# export of source_ids
-```{r , echo = FALSE, message = FALSE}
-source_ids <- source_ids %>% 
-  rename(sources = source, 
-         source_urls = source_url)
-
-datatable(head(source_ids), rownames = FALSE, caption = "source_ids")
-
-# export the sheet
-dir.create("./04_output/01_detailed_data/08_final_data/other_sheets", showWarnings = FALSE, recursive = TRUE)
-write_csv(source_ids, "./04_output/01_detailed_data/08_final_data/other_sheets/source_ids.csv", na = "")
+material_ids <- material_ids %>% 
+  select(material_id, material_name, material_category, material_category_2) %>% 
+  rename(material = material_id)
 
 ```
 
 <br>
 
-# export of sheet_processing
+# 6. Validation
 ```{r , echo = FALSE, message = FALSE}
 
-sheet_processing <- detailed$processing %>% 
-  select(-mine_fac, -sub_site, -process_input_unit, -process_output_unit, -grade_unit, -production_share, -metal_payable) %>% 
-  rename(process_input_value_tonnes = process_input_value,
-         process_output_value_tonnes = process_output_value, 
-         grade_ppm = grade, 
-         amount_sold_tonnes = amount_sold) %>%
-  arrange(mine_id, year, process_output)
+# 1. check if there are NA values where none can be
 
+na_tables <- list()
 
-datatable(head(sheet_processing), rownames = FALSE, caption = "source_ids")
+#loop over the selected sheets and convert according to final data structure
+i = 1
+for(sheet_nr in sheet_numbers){
+  
+  curr_sheet_name <- detailed[sheet_nr] %>% names()
+  
+  complete_cases <- detailed[[sheet_nr]] %>% 
+    # select cols/variables where no na is allowed
+    select(structure %>%
+             filter(sheet == curr_sheet_name & na_allowed == "no") %>% 
+             select(final_name_variable) %>% 
+             pull()) %>% 
+    # check if an NA value exists in the remaining dataframe
+    complete.cases()
+  
+  if(length(unique(complete_cases)) == 1 & unique(complete_cases) == TRUE) {
+    print(paste0("Sheet ", curr_sheet_name, " is complete"))
+  } else {
+    print(paste0("Warning: Sheet ", curr_sheet_name, " is NOT complete and contains NA values where none are allowed!"))
+     na_tables[[i]] <- detailed[[sheet_nr]][complete_cases == FALSE,] %>% 
+           select(structure %>%
+             filter(sheet == curr_sheet_name & na_allowed == "no") %>% 
+             select(final_name_variable) %>% 
+             pull()) %>% 
+       left_join(detailed$general_sub_sites %>% select(facility_id, facility_name)) %>% 
+       relocate(facility_name, .after = facility_id)
+     i = i+1
+  }
+}
 
+# you have to manually check how many items the na_tables list has 
+# uncomment them to display data table on Rmd output
+# length(na_tables)
+# datatable(na_tables[[1]])
+# datatable(na_tables[[2]])
+# datatable(na_tables[[3]])
+# datatable(na_tables[[4]])
+# datatable(na_tables[[5]])
+# datatable(na_tables[[6]])
 
-# export the sheet
-write_csv(source_ids, "./04_output/01_detailed_data/08_final_data/other_sheets/sheet_processing.csv", na = "")
 
 ```
 
 <br>
 
-# export of sheet_transport
+# 7. Export the final data in final format
 ```{r , echo = FALSE, message = FALSE}
 
-sheet_transport <- detailed$transport %>% 
-  select(-mine_fac, -sub_site, -unit) %>% 
-  rename(value_tonnes = value,
-         export = "export?") %>%
-  arrange(mine_id, year, product)
+# create the directory for storing final data
+dir.create("./04_output/01_detailed_data/08_final_data/final_format/", showWarnings = FALSE, recursive = TRUE)
 
+# table general is separate, as it is exported as a geopackage
+st_write(detailed$general_sub_sites, "./04_output/01_detailed_data/08_final_data/final_format/general.gpkg", 
+          append = FALSE)
 
-datatable(head(sheet_transport), rownames = FALSE, caption = "source_ids")
+#loop over rest of the sheets in detailed and export as CSVs
+for(sheet_nr in sheet_numbers[-length(sheet_numbers)]){
+  
+  #define current sheet name
+  curr_sheet_name <- detailed[sheet_nr] %>% names()
+  print(curr_sheet_name)
+  print(detailed[[sheet_nr]])
+  
+  #create data table in markdown
+  datatable(head(detailed[[sheet_nr]], rownames = FALSE, caption = curr_sheet_name))
 
+  #create output path
+  final_sheet_name <- structure %>% 
+    filter(sheet == curr_sheet_name) %>% 
+    select(final_name_sheet) %>% 
+    unique() %>% 
+    pull()
+  
+  path <- paste0("./04_output/01_detailed_data/08_final_data/final_format/", final_sheet_name, ".csv")
+  
+  #export
+  write_csv(detailed[[sheet_nr]], path, na = "")
 
-# export the sheet
-write_csv(sheet_transport, "./04_output/01_detailed_data/08_final_data/other_sheets/sheet_transport.csv", na = "")
+}
+
+# export source_ids, material_ids, unit_ids
+write_csv(source_ids, "./04_output/01_detailed_data/08_final_data/final_format/source_ids.csv", na = "")
+write_csv(material_ids, "./04_output/01_detailed_data/08_final_data/final_format/material_ids.csv", na = "")
+write_csv(unit_ids, "./04_output/01_detailed_data/08_final_data/final_format/unit_ids.csv", na = "")
+
 
 ```
 
 <br>
 
-# export of sheet_capacity_reserves (split it up into sheet_capacity and sheet_reserves)
+# 8. Export final data in other formats
 ```{r , echo = FALSE, message = FALSE}
-
-# construct sheet_capacity
-sheet_capacity <- sheet_cap %>%
-  select(mine_id, minerals_and_ores, commodity, processing_capacity_year, processing_capacity_value, source_id, comment) %>% 
-  rename(value_tonnes = processing_capacity_value,
-         year = processing_capacity_year) %>% 
-  arrange(mine_id, year, commodity, minerals_and_ores)
-
-
-# construct sheet_reserves
-sheet_reserves <- sheet_res %>%
-  select(mine_id, minerals_and_ores, commodity, reserves_year, 
-         reserves_mineral_value, reserves_commodity_value, grade, 
-         source_id, comment) %>% 
-  rename(year = reserves_year,
-         mineral_value_tonnes = reserves_mineral_value,
-         commodity_value_tonnes = reserves_commodity_value,
-         grade_ppm = grade) %>% 
-  arrange(mine_id, year, commodity, minerals_and_ores)
-
-
-datatable(head(sheet_capacity), rownames = FALSE, caption = "source_ids")
-datatable(head(sheet_reserves), rownames = FALSE, caption = "source_ids")
-
-
-# export the sheet
-write_csv(sheet_capacity, "./04_output/01_detailed_data/08_final_data/other_sheets/sheet_capacity.csv", na = "")
-write_csv(sheet_reserves, "./04_output/01_detailed_data/08_final_data/other_sheets/sheet_reserves.csv", na = "")
+# 
+# # create the directory for storing other formats
+# dir.create("./04_output/01_detailed_data/08_final_data/other_formats/", showWarnings = FALSE, recursive = TRUE)
 
 ```
 
 <br>
 
-# export of sheet_waste
-```{r , echo = FALSE, message = FALSE}
-
-sheet_waste <- detailed$waste %>% 
-  select(-mine_fac, -sub_site, -unit, -production_share) %>% 
-  rename(value_tonnes = value) %>% 
-  arrange(mine_id, year, mineral, commodity)
-
-
-datatable(head(sheet_transport), rownames = FALSE, caption = "source_ids")
-
-
-# export the sheet
-write_csv(sheet_transport, "./04_output/01_detailed_data/08_final_data/other_sheets/sheet_ownership.csv", na = "")
+# 9. Export sheet_general, sheet_sub_sites separately
+```{r , echo = FALSE, message = FALSE} 
+# 
+# # datatable for Rmd output
+# datatable(head(detailed$general %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general")
+# datatable(head(detailed$sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_sub_sites")
+# datatable(head(detailed$general_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general_sub_sites")
+# 
+# if(export_general == TRUE) {
+#   
+#   # create the directory for storing sheet_general
+#   dir.create("./04_output/01_detailed_data/08_final_data/other_formats/general/", showWarnings = FALSE, recursive = TRUE)
+#   
+#   
+#   # export sheet_general as geopackage
+#   st_write(detailed$general, "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_general.gpkg", append = FALSE)
+#   
+#   # export sheet_sub_sites as geopackage
+#   st_write(detailed$sub_sites, "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_sub_sites.gpkg", append = FALSE)
+#   
+#   
+#   # export sheet_general as CSV
+#   write_csv(detailed$general %>% 
+#               st_drop_geometry() %>% 
+#               select(-GADM_level, -n_features), 
+#             "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_general.csv", na = "")
+#   
+#   # export sheet_sub_sites as CSV
+#   write_csv(detailed$sub_sites %>% 
+#               st_drop_geometry(),
+#             "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_sub_sites.csv", na = "")
+#   
+#   # export sheet_general_sub_sites as CSV
+#   write_csv(detailed$general_sub_sites %>% 
+#               st_drop_geometry() %>% 
+#               select(-GADM_level, -n_features), 
+#             "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_general_sub_sites.csv", na = "")
+# }
+# 
 
 ```
-
 
 <br>
 
-# export of sheet_ownership
+# 10. Table Mineral + Coal
 ```{r , echo = FALSE, message = FALSE}
-
-sheet_waste <- detailed$other_info %>% 
-  select(-mine_fac, -sub_site) %>% 
-  arrange(mine_id, year, owners)
-
-
-datatable(head(sheet_waste), rownames = FALSE, caption = "source_ids")
-
-
-# export the sheet
-write_csv(sheet_waste, "./04_output/01_detailed_data/08_final_data/other_sheets/sheet_ownership.csv", na = "")
+# 
+# #table with minerals and coal 
+# sheet_min_coal <- bind_rows(detailed$minerals_ores_conce, detailed$coal)
+# datatable(head(sheet_min_coal), rownames = FALSE, caption = "sheet_min_coal")
+# write_csv(sheet_min_coal, "./04_output/01_detailed_data/08_final_data/other_formats/minerals_coal.csv", na = "")
 
 ```
-
