@@ -300,8 +300,8 @@ sheet_res <- sheet_res %>%
   group_by(across(all_of(col_names))) %>% #1. group by 
   summarise(
     grade = if(all(is.na(grade))) NA else weighted.mean(x = grade, w = reserves_mineral_value, na.rm = TRUE),
-    reserves_mineral_value = sum(reserves_mineral_value, na.rm = TRUE),
-    reserves_commodity_value = sum(reserves_commodity_value, na.rm = TRUE),
+    reserves_mineral_value = if(all(is.na(reserves_mineral_value))) NA else sum(reserves_mineral_value, na.rm = TRUE),
+    reserves_commodity_value = if(all(is.na(reserves_commodity_value))) NA else sum(reserves_commodity_value, na.rm = TRUE),
     source = paste(unique(source), collapse = " ; "),
     source_url = paste(unique(source_url), collapse = " ; "),
     comment = paste(unique(comment), collapse = " ; ")
@@ -315,8 +315,8 @@ sheet_res <- sheet_res %>%
   group_by(across(all_of(col_names))) %>% #2. group by
   summarise(
     grade = if(all(is.na(grade))) NA else weighted.mean(x = grade, w = reserves_commodity_value, na.rm = TRUE),
-    reserves_mineral_value = sum(reserves_mineral_value, na.rm = TRUE),
-    reserves_commodity_value = sum(reserves_commodity_value, na.rm = TRUE),
+    reserves_mineral_value = if(all(is.na(reserves_mineral_value))) NA else sum(reserves_mineral_value, na.rm = TRUE),
+    reserves_commodity_value = if(all(is.na(reserves_commodity_value))) NA else sum(reserves_commodity_value, na.rm = TRUE),
     source = paste(unique(source), collapse = " ; "),
     source_url = paste(unique(source_url), collapse = " ; "),
     comment = paste(unique(comment), collapse = " ; ")
@@ -330,8 +330,8 @@ sheet_res <- sheet_res %>%
   group_by(across(all_of(col_names))) %>% #3. group by
   summarise(
     grade = if(all(is.na(grade))) NA else mean(grade, na.rm = TRUE),
-    reserves_mineral_value = sum(reserves_mineral_value, na.rm = TRUE),
-    reserves_commodity_value = sum(reserves_commodity_value, na.rm = TRUE),
+    reserves_mineral_value = if(all(is.na(reserves_mineral_value))) NA else sum(reserves_mineral_value, na.rm = TRUE),
+    reserves_commodity_value = if(all(is.na(reserves_commodity_value))) NA else sum(reserves_commodity_value, na.rm = TRUE),
     source = paste(unique(source), collapse = " ; "),
     source_url = paste(unique(source_url), collapse = " ; "),
     comment = paste(unique(comment), collapse = " ; ")
@@ -346,6 +346,9 @@ sheet_res <- sheet_res %>%
   )
 
 
+#cleaning
+sheet_res$comment <- sheet_res$comment %>%
+  str_replace("; NA|NA ;|NA | NA|NA", "")
 
 
 
