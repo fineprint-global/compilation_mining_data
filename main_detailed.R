@@ -104,8 +104,8 @@ rmarkdown::render("./02_scripts/01_detailed_data/07_georeferencing.Rmd",
 wd <- getwd()
 rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
                   knit_root_dir = wd, 
-                  output_dir = "./04_output/01_detailed_data/08_final_data", 
-                  intermediates_dir = "./04_output/01_detailed_data/08_final_data",
+                  output_dir = "./04_output/01_detailed_data/08_final_data/markdown", 
+                  intermediates_dir = "./04_output/01_detailed_data/08_final_data/markdown",
                   output_file = paste0("final_data_", substr(Sys.time(), 1, 10),".html")
 )
 
