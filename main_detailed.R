@@ -144,7 +144,7 @@ rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
 # 
 # 
 # ## Plotting the spatial coverage
-# source("./02_scripts/01_detailed_data/07_georeferencing.R")
+# source("./02_scripts/01_detailed_data/coverage_other/03_spatial/coverage_coordinates.R")
 # 
 # 
 # ## producing coal tables only
