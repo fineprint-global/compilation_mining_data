@@ -23,6 +23,7 @@ rm(list = ls())
 library(sf)
 library(tidyverse)
 library(DT)
+library(RSQLite)
 
 # read in production information
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
@@ -32,12 +33,11 @@ sheet_general <- st_read("./03_intermediate/01_detailed_data/sheet_general/gener
 sheet_sub_sites <- st_read("./03_intermediate/01_detailed_data/sheet_general/sub_sites.gpkg")
 
 # read in source_ids, material_ids, unit_ids
-source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
-material_ids <- read_delim("./01_input/02_lists_and_concordance_tables/material_ids.csv", delim = ";")
-unit_ids <- read_delim("./01_input/02_lists_and_concordance_tables/unit_ids.csv", delim = ";")
+source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";", show_col_types = FALSE)
+material_ids <- read_delim("./01_input/02_lists_and_concordance_tables/material_ids.csv", delim = ";", show_col_types = FALSE)
 
 # read in final data structure
-structure <- read_csv("./01_input/02_lists_and_concordance_tables/01_detailed_data/final_data_structure.csv")
+structure <- read_csv("./01_input/02_lists_and_concordance_tables/01_detailed_data/final_data_structure.csv", show_col_types = FALSE)
 
 ```
 
@@ -69,6 +69,8 @@ for (i in c(3,4,12,13)){
   detailed[[i]] <- left_join(detailed[[i]], ids_mine_fac_only, by = c("mine_fac")) %>%
     relocate(mine_id, .before = mine_fac)
 }
+
+
 ```
 
 <br>
@@ -156,12 +158,16 @@ for(sheet_nr in sheet_numbers){
                select(final_name_variable) %>% 
                pull()) %>% 
     # arrange rows in correct order
+    # for this, first insert temporary variable consisting of the first 8 characters of facility_id (excluding sub_sites)
     arrange(across(all_of(structure %>%
                             filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
                             filter(!(is.na(order_rows))) %>% 
                             arrange(order_rows) %>% 
                             select(final_name_variable) %>% 
-                            pull()))) %>% 
+                            pull()))) %>%
+    mutate(temp_id = substr(facility_id, 1, 8)) %>%
+    arrange(temp_id) %>% 
+    select(-temp_id) %>%
     # round if necessary (1. time)
     mutate_at(structure %>% 
                 filter(sheet == curr_sheet_name & final_keep_variable == "yes") %>% 
@@ -189,9 +195,11 @@ for(sheet_nr in sheet_numbers){
                         select(round_digits) %>% 
                         unique() %>% 
                         as.numeric())
-            )
+            ) %>% 
+    # replace unnecessary newlines
+    mutate(across(where(is.character), str_replace_all, "[\r\n]" , ""))
 
-    # create unique id corresponding to the row-number 
+  # create unique id corresponding to the row-number 
   # not for table general, as there the facility_id is the primary key
   if(curr_sheet_name != "general_sub_sites") {
     detailed[[sheet_nr]] <- detailed[[sheet_nr]] %>% 
@@ -200,7 +208,6 @@ for(sheet_nr in sheet_numbers){
 
   print(c("Sheet", curr_sheet_name, "done"))
 }
-
 
 ```
 
@@ -223,32 +230,29 @@ detailed$commodities <- detailed$commodities %>%
               select(id_commodities, id_minerals),
             by = c("id" = "id_commodities"))
 
-
 ```
 
 <br>
 
 # 5. Create tables source_ids, material_ids, unit_ids 
 ```{r , echo = FALSE, message = FALSE}
-# source_ids does not change
-
-unit_ids <- unit_ids %>%
-  select(-wu_former) %>% 
-  rename(unit_category = unit_cat)
+source_ids <- source_ids %>% 
+  rename(sources = source, 
+         source_urls = source_url)
 
 material_ids <- material_ids %>% 
-  select(material_id, material_name, material_category, material_category_2) %>% 
-  rename(material = material_id)
+  filter(!(is.na(material_id))) %>%
+  select(material_id, material_name, material_category, material_category_2)
+
 
 ```
 
 <br>
 
 # 6. Validation
+
+# 6.1 Validation: check for NA Values where none can be
 ```{r , echo = FALSE, message = FALSE}
-
-# 1. check if there are NA values where none can be
-
 na_tables <- list()
 
 #loop over the selected sheets and convert according to final data structure
@@ -291,6 +295,29 @@ for(sheet_nr in sheet_numbers){
 # datatable(na_tables[[5]])
 # datatable(na_tables[[6]])
 
+```
+
+<br>
+
+# 6.2 Validation: Display graphical summaries to check for outliers/incorrect data
+```{r , echo = FALSE, message = FALSE}
+# 1. plot histogram value_tonnes for several tables
+# ggplot(data = detailed$minerals_ores_conce, aes(x = value_tonnes)) + 
+#   geom_histogram(bins = 100)
+# 
+# detailed$minerals_ores_conce %>% 
+#   left_join(detailed$general_sub_sites %>% select(facility_id, facility_name)) %>% 
+#   relocate(facility_name, .after = facility_id) %>% 
+#   arrange(value_tonnes %>% desc) %>% 
+#   head()
+
+```
+
+<br>
+
+# 6.3 Validation: validate with SQL schema provided by PGModeler
+```{r , echo = FALSE, message = FALSE}
+
 
 ```
 
@@ -300,23 +327,25 @@ for(sheet_nr in sheet_numbers){
 ```{r , echo = FALSE, message = FALSE}
 
 # create the directory for storing final data
-dir.create("./04_output/01_detailed_data/08_final_data/final_format/", showWarnings = FALSE, recursive = TRUE)
+dir.create("./04_output/01_detailed_data/08_final_data/final_format_txt/", showWarnings = FALSE, recursive = TRUE)
+dir.create("./04_output/01_detailed_data/08_final_data/final_format_csv/", showWarnings = FALSE, recursive = TRUE)
 
-# table general is separate, as it is exported as a geopackage
-st_write(detailed$general_sub_sites, "./04_output/01_detailed_data/08_final_data/final_format/general.gpkg", 
+# table general is separate, as it is exported as a geopackage (TXT)
+st_write(detailed$general_sub_sites %>% st_as_sf(), "./04_output/01_detailed_data/08_final_data/final_format_txt/general.gpkg", 
           append = FALSE)
 
-#loop over rest of the sheets in detailed and export as CSVs
+# table general is separate, as it is exported as a geopackage (CSV)
+st_write(detailed$general_sub_sites %>% st_as_sf(), "./04_output/01_detailed_data/08_final_data/final_format_csv/general.gpkg", 
+          append = FALSE)
+
+#loop over rest of the sheets in detailed and export as TXT and CSV
 for(sheet_nr in sheet_numbers[-length(sheet_numbers)]){
   
   #define current sheet name
   curr_sheet_name <- detailed[sheet_nr] %>% names()
-  print(curr_sheet_name)
-  print(detailed[[sheet_nr]])
+  # print(curr_sheet_name)
+  # print(detailed[[sheet_nr]])
   
-  #create data table in markdown
-  datatable(head(detailed[[sheet_nr]], rownames = FALSE, caption = curr_sheet_name))
-
   #create output path
   final_sheet_name <- structure %>% 
     filter(sheet == curr_sheet_name) %>% 
@@ -324,18 +353,30 @@ for(sheet_nr in sheet_numbers[-length(sheet_numbers)]){
     unique() %>% 
     pull()
   
-  path <- paste0("./04_output/01_detailed_data/08_final_data/final_format/", final_sheet_name, ".csv")
+  path_txt <- paste0("./04_output/01_detailed_data/08_final_data/final_format_txt/", final_sheet_name, ".txt")
+  path_csv <- paste0("./04_output/01_detailed_data/08_final_data/final_format_csv/", final_sheet_name, ".csv")
+
+  #export txt
+  write_delim(detailed[[sheet_nr]], 
+              file = path_txt, 
+              na = "", 
+              delim = "\t")
   
-  #export
-  write_csv(detailed[[sheet_nr]], path, na = "")
+  #export csv
+  write_csv(detailed[[sheet_nr]], 
+              file = path_csv, 
+              na = "")
+  
 
 }
 
-# export source_ids, material_ids, unit_ids
-write_csv(source_ids, "./04_output/01_detailed_data/08_final_data/final_format/source_ids.csv", na = "")
-write_csv(material_ids, "./04_output/01_detailed_data/08_final_data/final_format/material_ids.csv", na = "")
-write_csv(unit_ids, "./04_output/01_detailed_data/08_final_data/final_format/unit_ids.csv", na = "")
+# export source_ids, material_ids, unit_ids as TXT files
+write_delim(source_ids, "./04_output/01_detailed_data/08_final_data/final_format_txt/source_ids.txt", na = "", delim = "\t")
+write_delim(material_ids, "./04_output/01_detailed_data/08_final_data/final_format_txt/material_ids.txt", na = "", delim = "\t")
 
+# export source_ids, material_ids, unit_ids as CSV files
+write_csv(source_ids, "./04_output/01_detailed_data/08_final_data/final_format_csv/source_ids.csv", na = "")
+write_csv(material_ids, "./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv", na = "")
 
 ```
 
@@ -343,9 +384,9 @@ write_csv(unit_ids, "./04_output/01_detailed_data/08_final_data/final_format/uni
 
 # 8. Export final data in other formats
 ```{r , echo = FALSE, message = FALSE}
-# 
-# # create the directory for storing other formats
-# dir.create("./04_output/01_detailed_data/08_final_data/other_formats/", showWarnings = FALSE, recursive = TRUE)
+
+# create the directory for storing other formats
+dir.create("./04_output/01_detailed_data/08_final_data/other_formats/", showWarnings = FALSE, recursive = TRUE)
 
 ```
 
@@ -353,54 +394,23 @@ write_csv(unit_ids, "./04_output/01_detailed_data/08_final_data/final_format/uni
 
 # 9. Export sheet_general, sheet_sub_sites separately
 ```{r , echo = FALSE, message = FALSE} 
+
+# export sheet_general_sub_sites as TXT
+write_delim(detailed$general_sub_sites %>%
+            select(-geom),
+          "./04_output/01_detailed_data/08_final_data/other_formats/general.txt", na = "", delim = "\t")
+
+# export sheet_general_sub_sites as CSV
+write_csv(detailed$general_sub_sites %>%
+            select(-geom),
+          "./04_output/01_detailed_data/08_final_data/other_formats/general.csv", na = "")
+
+# test table general
+# general_test <- st_read("./04_output/01_detailed_data/08_final_data/final_format/general.gpkg")
 # 
-# # datatable for Rmd output
-# datatable(head(detailed$general %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general")
-# datatable(head(detailed$sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_sub_sites")
-# datatable(head(detailed$general_sub_sites %>% st_drop_geometry()), rownames = FALSE, caption = "sheet_general_sub_sites")
+# general_test$geom
 # 
-# if(export_general == TRUE) {
-#   
-#   # create the directory for storing sheet_general
-#   dir.create("./04_output/01_detailed_data/08_final_data/other_formats/general/", showWarnings = FALSE, recursive = TRUE)
-#   
-#   
-#   # export sheet_general as geopackage
-#   st_write(detailed$general, "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_general.gpkg", append = FALSE)
-#   
-#   # export sheet_sub_sites as geopackage
-#   st_write(detailed$sub_sites, "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_sub_sites.gpkg", append = FALSE)
-#   
-#   
-#   # export sheet_general as CSV
-#   write_csv(detailed$general %>% 
-#               st_drop_geometry() %>% 
-#               select(-GADM_level, -n_features), 
-#             "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_general.csv", na = "")
-#   
-#   # export sheet_sub_sites as CSV
-#   write_csv(detailed$sub_sites %>% 
-#               st_drop_geometry(),
-#             "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_sub_sites.csv", na = "")
-#   
-#   # export sheet_general_sub_sites as CSV
-#   write_csv(detailed$general_sub_sites %>% 
-#               st_drop_geometry() %>% 
-#               select(-GADM_level, -n_features), 
-#             "./04_output/01_detailed_data/08_final_data/other_formats/general/sheet_general_sub_sites.csv", na = "")
-# }
-# 
+# general_test
 
 ```
 
-<br>
-
-# 10. Table Mineral + Coal
-```{r , echo = FALSE, message = FALSE}
-# 
-# #table with minerals and coal 
-# sheet_min_coal <- bind_rows(detailed$minerals_ores_conce, detailed$coal)
-# datatable(head(sheet_min_coal), rownames = FALSE, caption = "sheet_min_coal")
-# write_csv(sheet_min_coal, "./04_output/01_detailed_data/08_final_data/other_formats/minerals_coal.csv", na = "")
-
-```
