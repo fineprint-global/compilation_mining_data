@@ -56,10 +56,6 @@ source("./02_scripts/00_functions/plot_polygons.R")
 # by default, it should be FALSE
 add_polygons = FALSE
 
-# set this variable to TRUE if GADM regions should be assigned to mines with coordinates
-# by default it should be TRUE
-add_GADM = TRUE
-
 ```
 
 
@@ -122,7 +118,6 @@ general.sf <- bind_rows(general_w_coords.sf, general_wo_coords.sf)
 mines_general <- filter(general.sf, is.na(sub_site))
 mines_sub_sites <- filter(general.sf, !is.na(sub_site))
 
-
 ```
 
 
@@ -184,106 +179,104 @@ general_output <- bind_rows(general_output, mines_general_w_multipoints)
 
 ### 3.1 assign GADM region in which the mines with coordinates are located
 ```{r , echo = FALSE, message = FALSE} 
-if (add_GADM == TRUE){
-  # create table with most detailed GADM level available for each country
-  countries <- gadm_combined %>%
-    select(GID_0) %>% 
-    unique() %>% 
-    as.vector()
+# create table with most detailed GADM level available for each country
+countries <- gadm_combined %>%
+  select(GID_0) %>% 
+  unique() %>% 
+  as.vector()
+
+max_gadm_level <- c()
+
+for(country in countries$GID_0) {
   
-  max_gadm_level <- c()
+  curr_max <- gadm_combined %>% 
+    filter(GID_0 == country) %>% 
+    select(where(~!all(is.na(.)))) %>% 
+    names() %>%
+    tail(1) %>% 
+    str_sub(., -1) %>% 
+    as.numeric()
   
-  for(country in countries$GID_0) {
-    
-    curr_max <- gadm_combined %>% 
-      filter(GID_0 == country) %>% 
-      select(where(~!all(is.na(.)))) %>% 
-      names() %>%
-      tail(1) %>% 
-      str_sub(., -1) %>% 
-      as.numeric()
-    
-    max_gadm_level <- c(max_gadm_level, curr_max)
-    
-  }
-  
-  gadm_levels <- tibble(countries$GID_0, max_gadm_level) %>% 
-    rename(GID_0 = "countries$GID_0")
-  
-  
-  # get mines and add their country's max gadm level
-  general_gadm_added <- general_output %>% 
-    mutate(GID_0 = substr(alphanumiso, 1,3)) %>% 
-    left_join(., gadm_levels, by = "GID_0") %>% 
-    select(mine_id, mine_fac, GID_0, max_gadm_level)
-  
-  
-  # loop over levels and join the geometries from GADM to the mines without coordinates
-  # and assign GIDs corresponding to GADM polygons in which the mines are located
-  # level 0 is already inluded (in GID_0)
-  for(lvl in 1:4){
-    
-    #filter mines for the correct gadm level
-    df <- general_gadm_added %>% 
-      filter(max_gadm_level == lvl) 
-    
-    # load correct level of the GADM dataset
-    curr_GADM <- st_read(file, layer = paste0("level",lvl), quiet = TRUE) %>% 
-      st_transform(., crs = st_crs(general_gadm_added)) %>% 
-      select(., starts_with("GID"))
-    
-    # get unique countries
-    # this makes the intersection process much faster, 
-    # as the points do not have to be compared to all polygons
-    countries <- df$GID_0 %>% unique
-    
-    for (country in countries){
-      temp_df <- df %>% filter(GID_0 == country)
-      temp_GADM <- curr_GADM %>% filter(GID_0 == country)
-      
-      country_output <- st_intersection(temp_df, temp_GADM)
-      
-      # export the df of this country
-      if(country == countries[1]){
-        level_output <- country_output
-      } else {
-        level_output <- bind_rows(level_output, country_output)
-      }
-      print(c("level:", lvl , "country:", country))
-    }
-    
-    
-    # export the df of this level
-    if(lvl == 1){
-      general_output_gadm <- level_output
-    } else {
-      general_output_gadm <- bind_rows(general_output_gadm, level_output)
-    }
-    
-    print(c("level ", lvl, " intersected"))
-  
-  }
-  
-  # as the mines included mines with multipoints, one mine can intersect with multiple polygons.
-  # thus they have to be summarised 
-  general_output_gadm <- general_output_gadm %>% 
-    st_drop_geometry() %>% 
-    select(mine_id, GID_0, GID_1, GID_2, GID_3, GID_4) %>%
-    group_by(mine_id) %>% 
-    summarise(
-      mine_id = unique(mine_id),
-      GID_0 = paste(unique(GID_0), collapse = " ; "),
-      GID_1 = paste(unique(GID_1), collapse = " ; "),
-      GID_2 = paste(unique(GID_2), collapse = " ; "),
-      GID_3 = paste(unique(GID_3), collapse = " ; "),
-      GID_4 = paste(unique(GID_4), collapse = " ; ")) %>% 
-    arrange(mine_id)
-  
-  # left join with general output 
-  general_output <- general_output %>% 
-    left_join(general_output_gadm, by = "mine_id")
+  max_gadm_level <- c(max_gadm_level, curr_max)
   
 }
+
+gadm_levels <- tibble(countries$GID_0, max_gadm_level) %>% 
+  rename(GID_0 = "countries$GID_0")
+
+
+# get mines and add their country's max gadm level
+general_gadm_added <- general_output %>% 
+  mutate(GID_0 = substr(alphanumiso, 1,3)) %>% 
+  left_join(., gadm_levels, by = "GID_0") %>% 
+  select(mine_id, mine_fac, GID_0, max_gadm_level)
+
+
+# loop over levels and join the geometries from GADM to the mines without coordinates
+# and assign GIDs corresponding to GADM polygons in which the mines are located
+# level 0 is already inluded (in GID_0)
+for(lvl in 1:4){
+  
+  #filter mines for the correct gadm level
+  df <- general_gadm_added %>% 
+    filter(max_gadm_level == lvl) 
+  
+  # load correct level of the GADM dataset
+  curr_GADM <- st_read(file, layer = paste0("level",lvl), quiet = TRUE) %>% 
+    st_transform(., crs = st_crs(general_gadm_added)) %>% 
+    select(., starts_with("GID"))
+  
+  # get unique countries
+  # this makes the intersection process much faster, 
+  # as the points do not have to be compared to all polygons
+  countries <- df$GID_0 %>% unique
+  
+  for (country in countries){
+    temp_df <- df %>% filter(GID_0 == country)
+    temp_GADM <- curr_GADM %>% filter(GID_0 == country)
+    
+    country_output <- st_intersection(temp_df, temp_GADM)
+    
+    # export the df of this country
+    if(country == countries[1]){
+      level_output <- country_output
+    } else {
+      level_output <- bind_rows(level_output, country_output)
+    }
+    print(c("level:", lvl , "country:", country))
+  }
+  
+  
+  # export the df of this level
+  if(lvl == 1){
+    general_output_gadm <- level_output
+  } else {
+    general_output_gadm <- bind_rows(general_output_gadm, level_output)
+  }
+  
+  print(c("level ", lvl, " intersected"))
+
+}
+
+# as the mines included mines with multipoints, one mine can intersect with multiple polygons.
+# thus they have to be summarised 
+general_output_gadm <- general_output_gadm %>% 
+  st_drop_geometry() %>% 
+  select(mine_id, GID_0, GID_1, GID_2, GID_3, GID_4) %>%
+  group_by(mine_id) %>% 
+  summarise(
+    mine_id = unique(mine_id),
+    GID_0 = paste(unique(GID_0), collapse = " ; "),
+    GID_1 = paste(unique(GID_1), collapse = " ; "),
+    GID_2 = paste(unique(GID_2), collapse = " ; "),
+    GID_3 = paste(unique(GID_3), collapse = " ; "),
+    GID_4 = paste(unique(GID_4), collapse = " ; ")) %>% 
+  arrange(mine_id)
+
+# left join with general output 
+general_output <- general_output %>% 
+  left_join(general_output_gadm, by = "mine_id")
+
 
 
 # check if any mine did not get a GADM polygon assigned
@@ -307,14 +300,13 @@ if (file.exists("./01_input/03_log_files/01_detailed_data/log_location_not_inter
                        show_col_types = FALSE)
   
   missing_rows <- anti_join(mines_without_poly, GADM_log, 
-                            by = "mine_id")
+                            by = "mine_fac")
   
   if (nrow(missing_rows) > 0) {
     
-    GADM_log <- rbind(WU_GADM_concordance, missing_rows)
+    GADM_log <- bind_rows(GADM_log, missing_rows)
     
-    write_csv(WU_GADM_concordance, "./01_input/03_log_files/01_detailed_data/log_location_not_intersecting_with_GADM.csv", 
-                show_col_types = FALSE)
+    write_csv(GADM_log, "./01_input/03_log_files/01_detailed_data/log_location_not_intersecting_with_GADM.csv")
     
     print(c((nrow(missing_rows)), "Rows added"))
     print("You have to assign the GADM regions to the polygons manually.
@@ -332,9 +324,9 @@ if (file.exists("./01_input/03_log_files/01_detailed_data/log_location_not_inter
   
 }
 
-#visualise with the function created above (adapt rownumber)
-plot_GADM_polygons(mines_without_poly_sf[4,], 1000*100)
 
+#visualise with the function created above (adapt rownumber)
+# plot_GADM_polygons(mines_without_poly_sf[4,], 1000*100)
 
 
 # join the GADM regions from log file to the mines not automatically intersecting
@@ -399,7 +391,8 @@ detailed_regions <- second_split %>%
 # add missing regions to the WU_GADM_concordance table file, which links regions to geometries from the GADM package
 if (file.exists("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv")){
   
-  WU_GADM_concordance <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv", delim = ";",
+  WU_GADM_concordance <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv", 
+                                    delim = ";",
                                     show_col_types = FALSE ) 
   
   missing_rows <- anti_join(detailed_regions, WU_GADM_concordance, 
@@ -412,7 +405,8 @@ if (file.exists("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_
     colnames(GID) <- c("GID_1", "GID_2", "GID_3", "GID_4")
     
     missing_rows <- cbind(missing_rows, GID)
-    WU_GADM_concordance <- rbind(WU_GADM_concordance, missing_rows) %>% arrange(., country, state, district, location_municipality)
+    WU_GADM_concordance <- rbind(WU_GADM_concordance, missing_rows) %>% 
+      arrange(., country, state, district, location_municipality)
     
     write_delim(WU_GADM_concordance, "./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv", 
                 delim = ";")
@@ -443,7 +437,8 @@ if (file.exists("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_
 ### 4.2.1. add GADM regions to mines without coordinates
 ```{r , echo = FALSE, message = FALSE} 
 # join the polygons to mines via the concordance table
-WU_GADM_concordance <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv", delim = ";",
+WU_GADM_concordance <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/WU_GADM_concordance.csv",
+                                  delim = ";",
                                   show_col_types = FALSE)
 
 
@@ -506,7 +501,6 @@ if(add_polygons == FALSE) {
   
 
 }
-
 
 ```
 
