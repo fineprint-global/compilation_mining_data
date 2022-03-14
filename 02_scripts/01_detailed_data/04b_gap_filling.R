@@ -400,51 +400,64 @@ write_rds(detailed, "./03_intermediate/01_detailed_data/gaps_filled.rds")
 
 
 
-# 
-# view(sheet_com)
-# view(sheet_min)
-# 
-# sheet_min %>%
-#   group_by(type_mineral) %>%
-#   summarise(n = n())
-# 
-# 
-# 
-# 
-# sheet_min %>% filter(type_mineral == "Ore processed" & !is.na(type_mining))
-# 
-# 
-# 
-# 
-# a <- sheet_min %>%
-#   group_by(type_mineral, min_ore_con, type_mining) %>%
-#   summarise(n = n())
-# 
-# view(a)
-# 
-# sheet_min %>%
-#   distinct(type_mineral, min_ore_con, type_mining)
-# 
-# 
-# 
-# a1 <- intersect(sheet_min$mine_fac, sheet_com$mine_fac)
-# 
-# a2 <- sheet_min %>% 
-#   filter(mine_fac %in% a1) %>% 
-#   filter(type_mineral == "Ore processed") %>% 
-#   distinct(mine_fac, min_ore_con, type_mining)
-# 
-# a3 <- sheet_com %>% 
-#   filter(mine_fac %in% a1) %>% 
-#   distinct(mine_fac, min_ore_con, type_mining)
-# 
-# intersect(a2, a3)
-# a <- setdiff(a2, a3)
-# view(setdiff(a3, a2))
-# 
-# 
-# 
-# 
-# 
-# 
-# 
+
+
+
+
+
+
+
+### check whether double counting was introduced during aggregation or gap filling ----
+
+  ### group twice in order to leave out those which have double entries from the same source
+
+# sheet_min
+double_min <- sheet_min %>%
+  group_by(mine_fac, type_mineral, min_ore_con, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(.,
+            sheet_min %>%
+              select(mine_fac, type_mineral, min_ore_con, year, mine_processing, source_id)) %>%
+  distinct() %>%
+  group_by(mine_fac, type_mineral, min_ore_con, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(., sheet_min) %>%
+  arrange(mine_fac, type_mineral, min_ore_con, year, mine_processing)
+
+# sheet_com
+double_com <- sheet_com %>%
+  group_by(mine_fac, min_ore_con, commodity, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(.,
+            sheet_com %>%
+              select(mine_fac, min_ore_con, commodity, year, mine_processing, source_id)) %>%
+  distinct() %>%
+  group_by(mine_fac, min_ore_con, commodity, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(., sheet_com) %>%
+  arrange(mine_fac, min_ore_con, commodity, year, mine_processing)
+
+# sheet_coal
+double_coal <- sheet_coal %>%
+  group_by(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(.,
+            sheet_coal %>%
+              select(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing, source_id)) %>%
+  distinct() %>%
+  group_by(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(., sheet_coal) %>%
+  arrange(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing)

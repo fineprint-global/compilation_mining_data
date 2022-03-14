@@ -41,6 +41,88 @@ sheet_com <- detailed$commodities
 
 <br> 
 
+#### Rows which are apparently double counting 
+
+```{r, echo = FALSE, message = FALSE}
+
+### check for double counting of data points
+  ### (i.e. double entries across all relevant columns)
+  ### mostly due to recording from different sources
+  
+  ### group twice in order to leave out those which have double entries from the same source
+
+# sheet_min
+double_min <- sheet_min %>%
+  group_by(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(.,
+    sheet_min %>%
+      select(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing, source_id)) %>%
+  distinct() %>%
+  group_by(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(., sheet_min) %>%
+  arrange(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing)
+
+# table for Rmd output
+DT::datatable(double_min, rownames = FALSE, caption = "Apparent double entries in minerals sheet")
+
+
+# sheet_com
+double_com <- sheet_com %>%
+  group_by(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(.,
+    sheet_com %>%
+      select(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, mine_processing, source_id)) %>%
+  distinct() %>%
+  group_by(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(., sheet_com) %>%
+  arrange(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, mine_processing)
+
+# table for Rmd output
+DT::datatable(double_com, rownames = FALSE, caption = "Apparent double entries in commodities sheet")
+
+
+
+### check whether the exact same entry was inserted twice from the same source
+exact_double_min <- sheet_min %>%
+  group_by(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing, value, amount_sold) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(., sheet_min) %>%
+  arrange(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing)
+
+# table for Rmd output
+DT::datatable(exact_double_min, rownames = FALSE, caption = "Exact same entry twice in minerals sheet")
+
+
+exact_double_com <- sheet_com %>%
+  group_by(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, mine_processing, value, amount_sold, metal_payable, grade) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) %>%
+  left_join(., sheet_com) %>%
+  arrange(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, mine_processing)
+
+# table for Rmd output
+DT::datatable(exact_double_min, rownames = FALSE, caption = "Exact same entry twice in commodities sheet")
+
+
+```
+
+<br> 
+
 ```{r , echo = FALSE, message = FALSE}
 ## Add duplicates for "Ore processed" from "Ore mined" and vice versa
   ## These duplicates are only for checking and do not represent the actual duplicates introduced later after aggregation (the main reason being that without prior aggregation the duplicates might potentially create false values, especially due to different sub-sites, different mining types, and different ores) -> However, for this purpose here, it seems appropriate to include it prior aggregation as proxy values without differentiating by sub_site/type_mining/type_mineral, but only mine_fac and year.
@@ -195,41 +277,6 @@ dupli <- dupli %>% select(., mine_fac, sub_site, latitude, longitude)
 
 # table for Rmd output
 DT::datatable(dupli)
-
-
-```
-
-<br> 
-
-#### Rows which are apparently double counting 
-
-```{r, echo = FALSE, message = FALSE}
-
-### check for double counting of data points
-  ### (i.e. double entries across all relevant columns)
-  ### mostly due to recording from different sources
-
-double_min <- sheet_min %>%
-  group_by(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing) %>%
-  summarise(n = n()) %>%
-  ungroup() %>%
-  filter(n > 1) %>%
-  left_join(sheet_min)
-
-# table for Rmd output
-DT::datatable(double_min, rownames = FALSE, caption = "Apparent double entries in minerals sheet")
-
-
-double_com <- sheet_com %>%
-  group_by(mine_fac, sub_site, min_ore_con, year, mine_processing, commodity) %>%
-  summarise(n = n()) %>%
-  ungroup() %>%
-  filter(n > 1) %>%
-  left_join(sheet_min)
-
-# table for Rmd output
-DT::datatable(double_com, rownames = FALSE, caption = "Apparent double entries in commodities sheet")
-
 
 
 ```
