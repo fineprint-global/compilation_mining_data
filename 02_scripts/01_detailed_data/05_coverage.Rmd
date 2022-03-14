@@ -44,7 +44,7 @@ source("./02_scripts/00_functions/lastfile.R")
 lastfile <- my_lastfile("./01_input/05_other_data/", "data_for_comparison")
 
 nat_acc <- read_delim(
-  "./01_input/05_other_data/data_for_comparison_2021-09-28.csv",
+  "./01_input/05_other_data/data_for_comparison_2022-03-14.csv",
   col_types = (cols(unit_id = "c")),
   delim = ";"
   ) %>%
@@ -238,6 +238,24 @@ ggplot(data = head(nr_mine_by_mat_plot), aes(x = reorder(material_name, -n), y =
   labs(x = "Material", y = "No. of Mines") 
 
 dev.off()
+```
+
+<br> 
+
+```{r , echo = FALSE, message = FALSE}
+
+### adjust materials which represent a specific metal, but have other material_id
+  ### in order to have proper coverage for these metals
+
+# copper cathode to copper (i.e. Oth.cuca to Me.Cu)
+sheet_com <- sheet_com %>%
+  mutate(commodity = ifelse(
+    commodity == "Oth.cuca",
+    "Me.Cu",
+    commodity
+  ))
+
+
 ```
 
 <br> 
