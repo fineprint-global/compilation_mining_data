@@ -6,13 +6,14 @@ editor_options:
 ---
 
 ###### In this script, the final data output is prepared.
-###### 1. Add column mine_id to all remaining sheets
+###### 1. Add column facility_id to all remaining sheets
 ###### 2. Prepare sheet_general_sub_sites by combining the sheets general and sub_sites
 ###### 3. Select, rename, and arrange and round variables
 ###### 4. Insert join id (called minerals_id) to sheet commodities
 ###### 5. Export the final data in final format
-###### 6. Validation
-###### 7. Export final data in other formats
+###### 6. Create table "structure", storing the structure of the database and explaining variables
+###### 7. Validation
+###### 8. Export final data in other formats
 
 ### Read In data
 ```{r , echo = FALSE, message = FALSE} 
@@ -43,31 +44,31 @@ structure <- read_csv("./01_input/02_lists_and_concordance_tables/01_detailed_da
 
 <br>
 
-# 1. Add column mine_id to all remaining sheets
+# 1. Add column facility_id to all remaining sheets
 ```{r , echo = FALSE, message = FALSE}
 
 ids <- sheet_general %>%
-  select(mine_id, mine_fac) %>% 
+  select(facility_id, mine_fac) %>% 
   st_drop_geometry() %>% 
   bind_rows(sheet_sub_sites %>% 
-              select(mine_id, mine_fac, sub_site) %>% 
+              select(facility_id, mine_fac, sub_site) %>% 
               st_drop_geometry())
 
 ids_mine_fac_only <- sheet_general %>% 
-  select(mine_id, mine_fac) %>% 
+  select(facility_id, mine_fac) %>% 
   st_drop_geometry()
 
 
 # for the sheets processing, transport, capacity_reserves, waste, other_info and coal, it can be joined by mine_fac and sub_site
 for (i in c(5,6,8,9,11)){
   detailed[[i]] <- left_join(detailed[[i]], ids, by = c("mine_fac", "sub_site")) %>%
-    relocate(mine_id, .before = mine_fac)
+    relocate(facility_id, .before = mine_fac)
 }
 
 # for the sheets minerals_ores_conce, commodities it can be joined by mine_fac
 for (i in c(3,4,12,13)){
   detailed[[i]] <- left_join(detailed[[i]], ids_mine_fac_only, by = c("mine_fac")) %>%
-    relocate(mine_id, .before = mine_fac)
+    relocate(facility_id, .before = mine_fac)
 }
 
 
@@ -209,6 +210,7 @@ for(sheet_nr in sheet_numbers){
   print(c("Sheet", curr_sheet_name, "done"))
 }
 
+
 ```
 
 <br>
@@ -244,14 +246,28 @@ material_ids <- material_ids %>%
   filter(!(is.na(material_id))) %>%
   select(material_id, material_name, material_category, material_category_2)
 
+```
+
+<br>
+
+# 6. Create table structure which stores the structure of the database and explains variables
+```{r , echo = FALSE, message = FALSE}
+
+all_variables <- structure %>% 
+  select(final_name_sheet, final_name_variable, description, supposed_type, example_entry, references_table) %>%
+  filter(!(is.na(description))) %>%
+  rename(table = final_name_sheet,
+         variable = final_name_variable,
+         example = example_entry,
+         type = supposed_type)
 
 ```
 
 <br>
 
-# 6. Validation
+# 7. Validation
 
-# 6.1 Validation: check for NA Values where none can be
+# 7.1 Validation: check for NA Values where they are allowed
 ```{r , echo = FALSE, message = FALSE}
 na_tables <- list()
 
@@ -299,7 +315,7 @@ for(sheet_nr in sheet_numbers){
 
 <br>
 
-# 6.2 Validation: Display graphical summaries to check for outliers/incorrect data
+# 7.2 Validation: Display graphical summaries to check for outliers/incorrect data
 ```{r , echo = FALSE, message = FALSE}
 # 1. plot histogram value_tonnes for several tables
 # ggplot(data = detailed$minerals_ores_conce, aes(x = value_tonnes)) + 
@@ -315,7 +331,7 @@ for(sheet_nr in sheet_numbers){
 
 <br>
 
-# 6.3 Validation: validate with SQL schema provided by PGModeler
+# 7.3 Validation: validate with SQL schema provided by PGModeler
 ```{r , echo = FALSE, message = FALSE}
 
 
@@ -323,7 +339,7 @@ for(sheet_nr in sheet_numbers){
 
 <br>
 
-# 7. Export the final data in final format
+# 8. Export the final data in final format
 ```{r , echo = FALSE, message = FALSE}
 
 # create the directory for storing final data
@@ -378,11 +394,14 @@ write_delim(material_ids, "./04_output/01_detailed_data/08_final_data/final_form
 write_csv(source_ids, "./04_output/01_detailed_data/08_final_data/final_format_csv/source_ids.csv", na = "")
 write_csv(material_ids, "./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv", na = "")
 
+# export variable descriptions
+write_csv(all_variables, "./04_output/01_detailed_data/08_final_data/variables_descriptions.csv", na = "")
+
 ```
 
 <br>
 
-# 8. Export final data in other formats
+# 8.1 Export final data in other formats
 ```{r , echo = FALSE, message = FALSE}
 
 # create the directory for storing other formats
