@@ -94,6 +94,8 @@ DT::datatable(double_com, rownames = FALSE, caption = "Apparent double entries i
 
 
 
+
+
 ### check whether the exact same entry was inserted twice from the same source
 exact_double_min <- sheet_min %>%
   group_by(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing, value, amount_sold) %>%
@@ -117,6 +119,31 @@ exact_double_com <- sheet_com %>%
 
 # table for Rmd output
 DT::datatable(exact_double_min, rownames = FALSE, caption = "Exact same entry twice in commodities sheet")
+
+
+### double counting check INCLUDING double entries of the same source
+### Comment: This does not necessarily mean that all entries of this output tables must be corrected, but some.
+
+# sheet_min
+double_min_incl_same_source <- sheet_min %>%
+  group_by(mine_fac, sub_site, type_mineral, min_ore_con, type_mining, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1)
+
+# table for Rmd output
+DT::datatable(double_min_incl_same_source, rownames = FALSE, caption = "Double entries INCLUDING from the same source in minerals sheet")
+
+
+# sheet_com
+double_com_incl_same_source <- sheet_com %>%
+  group_by(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, mine_processing) %>%
+  summarise(n = n()) %>%
+  ungroup() %>%
+  filter(n > 1) 
+
+# table for Rmd output
+DT::datatable(double_com_incl_same_source, rownames = FALSE, caption = "Double entries INCLUDING from the same source in commodities sheet")
 
 
 ```
