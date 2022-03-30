@@ -29,6 +29,7 @@ rm(list = ls())
 
 ## harmonized data file
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
+detailed_converted <- read_rds("./03_intermediate/01_detailed_data/all_tables_converted.rds") #this is needed to get number of sources really used
 
 # sheets from detailed data
 general <- detailed$general
@@ -216,6 +217,27 @@ nr_mine_by_mat <- sheet_min %>%
 
 # table for Rmd output
 datatable(nr_mine_by_mat, rownames = FALSE, caption = "Number of mines per material")
+
+
+# nr of sources really used (as nrow of source_ids is inaccurate, some might not be used any more)
+unique_sources <- c()
+
+for(sheet_number in c(1:length(detailed_converted))){
+  
+  print(sheet_number)
+  
+  temp_sources <- detailed_converted[[sheet_number]]$source_id %>%
+    unique()
+  
+  not_incl <- setdiff(temp_sources, unique_sources)
+  
+  unique_sources <- c(unique_sources, not_incl)
+  
+}
+
+
+# print for Rmd output
+print(cat("Number of sources that were really used: ", length(unique_sources)))
 ```
 
 <br> 
