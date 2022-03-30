@@ -1,3 +1,4 @@
+library(mapview)
 
 #function for plotting the mines not intersecting with GADM regions
 plot_GADM_polygons <- function(df_row, buffer_input) {
