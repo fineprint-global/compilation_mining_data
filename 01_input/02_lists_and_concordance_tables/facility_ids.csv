@@ -1,0 +1,2376 @@
+facility_id,mine_fac,sub_site
+WUD00001.00,777,
+WUD00002.00,A Narrain,
+WUD00003.00,Absaloka,
+WUD00004.00,Abyz,
+WUD00005.00,Achinsk Alumina Refinery,
+WUD00006.00,Acindar,
+WUD00007.00,AGA Mineracao,
+WUD00007.01,AGA Mineracao,Cuiaba
+WUD00007.02,AGA Mineracao,Lamego
+WUD00007.03,AGA Mineracao,Corrego do Sitio 1
+WUD00007.04,AGA Mineracao,Corrego do Sitio 2
+WUD00008.00,Aguablanca,
+WUD00009.00,Ahafo,
+WUD00009.01,Ahafo,Ahafo South
+WUD00009.02,Ahafo,Ahafo North
+WUD00010.00,AHMSA Monclova Steel Plant,
+WUD00010.01,AHMSA Monclova Steel Plant,AHMSA Monclova Steel Plant 1
+WUD00010.02,AHMSA Monclova Steel Plant,AHMSA Monclova Steel Plant 2
+WUD00011.00,Air Quality,
+WUD00012.00,Airly,
+WUD00013.00,Aitik,
+WUD00014.00,Akbastau,
+WUD00015.00,Aktogay,
+WUD00016.00,Akyem,
+WUD00017.00,Al Ba’itha,
+WUD00018.00,Alamo Dorado,
+WUD00019.00,Albras,
+WUD00020.00,Alexievskaya,
+WUD00021.00,Aljustrel,
+WUD00022.00,Alma,
+WUD00023.00,Alouette,
+WUD00024.00,Alpamarca,
+WUD00024.01,Alpamarca,Rio Pallanga
+WUD00024.02,Alpamarca,Alpamarca
+WUD00024.03,Alpamarca,Romina-Puagjanca
+WUD00025.00,Alpart,
+WUD00026.00,ALSCON Aluminium Smelter,
+WUD00027.00,Altar,
+WUD00028.00,Altonorte,
+WUD00029.00,Alucam,
+WUD00030.00,Alumar,
+WUD00031.00,Alumbrera,
+WUD00032.00,Alunorte,
+WUD00033.00,Amandelbult,
+WUD00034.00,Amapa,
+WUD00035.00,Ambatovy,
+WUD00036.00,Amona,
+WUD00037.00,Amonate,
+WUD00038.00,Amurugol AO,
+WUD00038.01,Amurugol AO,Erkovetskiy
+WUD00038.02,Amurugol AO,Severo-Vostochniy
+WUD00039.00,AMVEST Fola Complex,
+WUD00040.00,AMVEST Terry Eagle Complex,
+WUD00041.00,Andina,
+WUD00042.00,Andorinhas,
+WUD00043.00,Andrade,
+WUD00044.00,Anglesey,
+WUD00045.00,Anglo American other coal mines South Africa,
+WUD00046.00,Angul Aluminium Smelter,
+WUD00047.00,Angus Place,
+WUD00048.00,Antamina,
+WUD00049.00,Antapaccay,
+WUD00049.01,Antapaccay,Tintaya
+WUD00049.02,Antapaccay,Coroccohuayco
+WUD00050.00,Antapite,
+WUD00051.00,Antas,
+WUD00052.00,Antelope,
+WUD00053.00,Antonovskaya,
+WUD00054.00,Antucoya,
+WUD00055.00,Anyuan,
+WUD00055.01,Anyuan,Anyuan
+WUD00055.02,Anyuan,Zhuanlongwan
+WUD00056.00,Araxa,
+WUD00057.00,Araxa CBBM,
+WUD00058.00,ArcelorMittal Bremen,
+WUD00059.00,ArcelorMittal Cleveland,
+WUD00060.00,ArcelorMittal Duisburg steel plant,
+WUD00061.00,ArcelorMittal Gipuzkoa,
+WUD00061.01,ArcelorMittal Gipuzkoa,Olaberria
+WUD00061.02,ArcelorMittal Gipuzkoa,Bergara
+WUD00061.03,ArcelorMittal Gipuzkoa,Zumarraga
+WUD00062.00,ArcelorMittal Hamburg steel plant,
+WUD00063.00,ArcelorMittal Tubarao,
+WUD00064.00,ArcelorMittal Warszawa steel plant,
+WUD00065.00,Arch of West Virginia,
+WUD00066.00,Arch of Wyoming,
+WUD00067.00,Argyle,
+WUD00068.00,Arnot,
+WUD00069.00,Artemyevsky,
+WUD00070.00,Arvida,
+WUD00070.01,Arvida,Arvida AP60
+WUD00071.00,Asam-Asam,
+WUD00072.00,Ashele,
+WUD00073.00,Atansore,
+WUD00074.00,Atasu,
+WUD00075.00,Atlantic Copper,
+WUD00076.00,Aughinish Alumina,
+WUD00077.00,Australia Sands,
+WUD00078.00,Avdiivka Coke,
+WUD00079.00,Aviles and Gijon steel plant,
+WUD00080.00,Awaso,
+WUD00081.00,Azovstal,
+WUD00082.00,Azul,
+WUD00083.00,Baal Bone,
+WUD00084.00,Bagdad,
+WUD00085.00,Baie Comeau Aluminium Smelter,
+WUD00086.00,Bakan,
+WUD00086.01,Bakan,Bakan
+WUD00086.02,Bakan,North Lanut
+WUD00087.00,Balangan,
+WUD00087.01,Balangan,PT Semesta Centramas (SCM)
+WUD00087.02,Balangan,PT Laskar Semesta Alam (LSA)
+WUD00087.03,Balangan,PT Paramitha Cipta Sarana (PCS)
+WUD00088.00,Bald Mountain,
+WUD00089.00,Balkhash Smelter,
+WUD00090.00,Bangun Olahsarana Sukses,
+WUD00091.00,Bank,
+WUD00092.00,Bao Vista,
+WUD00093.00,Baorixile Mines,
+WUD00094.00,Baotou Aluminum,
+WUD00095.00,Baotou Mines,
+WUD00095.01,Baotou Mines,Shuiquan
+WUD00095.02,Baotou Mines,Adaohai
+WUD00095.03,Baotou Mines,Lijiahao
+WUD00096.00,Baralaba,
+WUD00097.00,Barbacena Ferroalloys plant,
+WUD00098.00,Barberton,
+WUD00098.01,Barberton,Fairview
+WUD00098.02,Barberton,Sheba
+WUD00098.03,Barberton,Consort
+WUD00099.00,Barneys Canyon,
+WUD00100.00,Barro Alto,
+WUD00101.00,Barsingsar,
+WUD00102.00,Baruun Noyon Uul,
+WUD00103.00,Barzasskoye tovarischestvo,
+WUD00104.00,Batu Hijau,
+WUD00105.00,Batulicin,
+WUD00106.00,Bauxite Company of Guyana,
+WUD00106.01,Bauxite Company of Guyana,Linden
+WUD00106.02,Bauxite Company of Guyana,Kwakwani
+WUD00106.03,Bauxite Company of Guyana,Ituni
+WUD00107.00,Bayovar,
+WUD00108.00,Bayside,
+WUD00109.00,Bear Run,
+WUD00110.00,Beatrix,
+WUD00111.00,Beauharnois,
+WUD00112.00,Becancour,
+WUD00113.00,Beckley,
+WUD00114.00,Beeshoek,
+WUD00115.00,Beisu,
+WUD00116.00,Belfast,
+WUD00117.00,Bell Bay,
+WUD00118.00,Belmont,
+WUD00119.00,Belousovsky,
+WUD00120.00,Beltana,
+WUD00121.00,Belval and Differdange steel plant,
+WUD00122.00,Bembele,
+WUD00123.00,Benga,
+WUD00124.00,Bengalla,
+WUD00125.00,Berezovskaya,
+WUD00125.01,Berezovskaya,Pervomayskaya
+WUD00126.00,Berezovskiy,
+WUD00127.00,Bergsöe,
+WUD00128.00,Beulah,
+WUD00129.00,Bharat Coking Coal Limited,
+WUD00129.01,Bharat Coking Coal Limited,Barora
+WUD00129.02,Bharat Coking Coal Limited,Block II
+WUD00129.03,Bharat Coking Coal Limited,Govindpur
+WUD00129.04,Bharat Coking Coal Limited,Katras
+WUD00129.05,Bharat Coking Coal Limited,Sijua
+WUD00129.06,Bharat Coking Coal Limited,Kusunda
+WUD00129.07,Bharat Coking Coal Limited,PB Area
+WUD00129.08,Bharat Coking Coal Limited,WJ Area
+WUD00129.09,Bharat Coking Coal Limited,Bastacolla
+WUD00129.10,Bharat Coking Coal Limited,Lodna
+WUD00129.11,Bharat Coking Coal Limited,EJ Area
+WUD00129.12,Bharat Coking Coal Limited,Canch/Victoria
+WUD00130.00,Bibiani,
+WUD00131.00,Big Mountain,
+WUD00132.00,Big Sky,
+WUD00133.00,Bingham Canyon,
+WUD00134.00,Binungan,
+WUD00134.01,Binungan,Site Binungan
+WUD00134.02,Binungan,Site Binungan 2
+WUD00134.03,Binungan,Binungan
+WUD00135.00,Birch River,
+WUD00136.00,Birchtree,
+WUD00137.00,Birdwell/Miller Creek,
+WUD00138.00,Black Mesa,
+WUD00139.00,Black Mountain,
+WUD00139.01,Black Mountain,Black Mountain
+WUD00139.02,Black Mountain,Gamsberg
+WUD00140.00,Black Rock,
+WUD00141.00,Black Thunder,
+WUD00141.01,Black Thunder,Black Thunder
+WUD00141.02,Black Thunder,Jacobs Ranch
+WUD00142.00,Blacksville,
+WUD00143.00,Blackwater,
+WUD00144.00,Blair Athol,
+WUD00145.00,Bleomhoek,
+WUD00146.00,Bloom Lake,
+WUD00147.00,Blue Ridge,
+WUD00148.00,Bluegrass,
+WUD00148.01,Bluegrass,Freedom
+WUD00148.02,Bluegrass,Patriot
+WUD00149.00,Bocaina,
+WUD00150.00,Bodai-Daldali,
+WUD00151.00,Boddington,
+WUD00152.00,Boffa,
+WUD00153.00,Bogatyr,
+WUD00154.00,Boggabri,
+WUD00155.00,Bogoslovsk,
+WUD00156.00,Bokoni,
+WUD00157.00,Bolivar,
+WUD00158.00,Bolshevik,
+WUD00159.00,Bonikro,
+WUD00160.00,Bosjesspruit,
+WUD00161.00,Boxitogorsk Alumina Refinery,
+WUD00162.00,Boyne Island,
+WUD00163.00,Bozshakol,
+WUD00164.00,Bozymchak,
+WUD00165.00,Bracemac-McLeod,
+WUD00166.00,Brandspruit,
+WUD00167.00,Bratsk Aluminium Smelter,
+WUD00168.00,Breapampa,
+WUD00169.00,Broadlea,
+WUD00170.00,Broadmeadow,
+WUD00171.00,Brocks Creek,
+WUD00172.00,Broken Hill,
+WUD00173.00,BRPM,
+WUD00174.00,Brunswick,
+WUD00175.00,Bryansky,
+WUD00176.00,Buchanan,
+WUD00177.00,Buckingham,
+WUD00178.00,Buenavista,
+WUD00179.00,Bulga,
+WUD00180.00,Bulyanhulu,
+WUD00181.00,Burbanks,
+WUD00181.01,Burbanks,Coogee
+WUD00181.02,Burbanks,Wattle Dam
+WUD00182.00,Burns Harbor,
+WUD00183.00,Burnstone,
+WUD00184.00,Burton,
+WUD00185.00,Buruktal,
+WUD00186.00,Buzwagi,
+WUD00187.00,Bwana,
+WUD00188.00,Bystrinsky GOK,
+WUD00188.01,Bystrinsky GOK,Verkhneildikansky
+WUD00188.02,Bystrinsky GOK,Bystrinsky-2
+WUD00189.00,Caballo,
+WUD00190.00,Cadia,
+WUD00190.01,Cadia,Cadia Hill
+WUD00190.02,Cadia,Ridgeway
+WUD00190.03,Cadia,Cadia East
+WUD00190.04,Cadia,Cadia Valley Operations
+WUD00191.00,Cadiz,
+WUD00191.01,Cadiz,Sandy Ridge
+WUD00191.02,Cadiz,Harrison
+WUD00191.03,Cadiz,Daron
+WUD00191.04,Cadiz,Harrah
+WUD00192.00,Cagdianao,
+WUD00193.00,Cairn Hill,
+WUD00194.00,Cajati,
+WUD00195.00,Callide,
+WUD00196.00,Canadian Malartic,
+WUD00197.00,Candelaria,
+WUD00197.01,Candelaria,La Espanola
+WUD00198.00,Cannington,
+WUD00199.00,CAP Acero,
+WUD00200.00,CAP Huasco Pellet Plant,
+WUD00201.00,Capcoal,
+WUD00201.01,Capcoal,German Creek
+WUD00201.02,Capcoal,Grasstree
+WUD00202.00,Carbones del Guasare,
+WUD00203.00,Carborough Downs,
+WUD00204.00,Cardinal River,
+WUD00205.00,Carlin,
+WUD00205.01,Carlin,Gold Quarry
+WUD00205.02,Carlin,Emigrant
+WUD00205.03,Carlin,Chukar
+WUD00205.04,Carlin,Exodus
+WUD00205.05,Carlin,Pete Bajo
+WUD00205.06,Carlin,Leeville
+WUD00205.07,Carlin,Carlin East
+WUD00205.08,Carlin,Deep Post
+WUD00206.00,Carlota,
+WUD00207.00,Carmen de Andacollo,
+WUD00208.00,Carosue Dam,
+WUD00208.01,Carosue Dam,Karari
+WUD00208.02,Carosue Dam,Dervish
+WUD00209.00,Carrapateena,
+WUD00210.00,Casa de Pedra,
+WUD00210.01,Casa de Pedra,Pires
+WUD00210.02,Casa de Pedra,Engenho
+WUD00211.00,Casposo,
+WUD00212.00,Catalao,
+WUD00213.00,Catalao Phosphate,
+WUD00214.00,Cato Ridge,
+WUD00215.00,Caval Ridge,
+WUD00216.00,Cayeli,
+WUD00217.00,CBG Sangaredi,
+WUD00218.00,Cedynia Wire Rod Plant,
+WUD00219.00,CEMESA,
+WUD00220.00,Centinela,
+WUD00220.01,Centinela,Esperanza
+WUD00220.02,Centinela,El Tesoro
+WUD00221.00,Central Coalfields Limited,
+WUD00221.01,Central Coalfields Limited,Govindpur project
+WUD00221.02,Central Coalfields Limited,Kathara
+WUD00221.03,Central Coalfields Limited,Karma
+WUD00221.04,Central Coalfields Limited,Kantaghar
+WUD00221.05,Central Coalfields Limited,Religara
+WUD00221.06,Central Coalfields Limited,Birsa
+WUD00221.07,Central Coalfields Limited,Kedla
+WUD00221.08,Central Coalfields Limited,Kocp
+WUD00221.09,Central Coalfields Limited,Tapin North
+WUD00221.10,Central Coalfields Limited,BGR
+WUD00221.11,Central Coalfields Limited,Rajrappa
+WUD00221.12,Central Coalfields Limited,Piparwar
+WUD00221.13,Central Coalfields Limited,Ashoka
+WUD00221.14,Central Coalfields Limited,Amlo
+WUD00221.15,Central Coalfields Limited,Tarmi
+WUD00221.16,Central Coalfields Limited,Kargali
+WUD00221.17,Central Coalfields Limited,Amrapali
+WUD00221.18,Central Coalfields Limited,Magadh 1
+WUD00221.19,Central Coalfields Limited,Magadh 2
+WUD00221.20,Central Coalfields Limited,Giridih
+WUD00222.00,Central GOK,
+WUD00222.01,Central GOK,Hleyevatskyi
+WUD00222.02,Central GOK,Petrovskyi
+WUD00222.03,Central GOK,Artyomovskyi
+WUD00222.04,Central GOK,Ordzhonikidze
+WUD00223.00,Central Murchison Gold Project,
+WUD00223.01,Central Murchison Gold Project,Meekatharra Gold Operations
+WUD00223.02,Central Murchison Gold Project,Cue Gold Operations
+WUD00224.00,Century,
+WUD00225.00,Cerrejon,
+WUD00226.00,Cerro Bayo,
+WUD00227.00,Cerro de Pasco,
+WUD00227.01,Cerro de Pasco,Paragsha
+WUD00227.02,Cerro de Pasco,Raúl Rojas
+WUD00227.03,Cerro de Pasco,Vinchos
+WUD00227.04,Cerro de Pasco,San Sebastian
+WUD00228.00,Cerro Matoso,
+WUD00229.00,Cerro Moro,
+WUD00230.00,Cerro Negro,
+WUD00230.01,Cerro Negro,Euroka
+WUD00230.02,Cerro Negro,Mariana Central
+WUD00230.03,Cerro Negro,Mariana Norte
+WUD00230.04,Cerro Negro,Emilia
+WUD00230.05,Cerro Negro,San Marcos
+WUD00231.00,Cerro Negro Norte,
+WUD00232.00,Cerro Vanguardia,
+WUD00233.00,Cerro Verde,
+WUD00234.00,Chagres,
+WUD00235.00,Chaijiagou,
+WUD00236.00,Chain Valley,
+WUD00237.00,Chalco Chongqing Branch,
+WUD00238.00,Chalco Henan Branch,
+WUD00239.00,Chalco Qinghai Branch,
+WUD00240.00,Chalco Shandong Branch,
+WUD00241.00,Chalco Shanxi Other Mines,
+WUD00242.00,Chanderiya Smelter,
+WUD00242.01,Chanderiya Smelter,Pyrometallurgical lead-zinc smelter
+WUD00242.02,Chanderiya Smelter,First hydrometallurgical zinc smelter
+WUD00242.03,Chanderiya Smelter,Second hydrometallurgical zinc smelter
+WUD00242.04,Chanderiya Smelter,Lead smelter
+WUD00243.00,Changgou,
+WUD00244.00,Chapada,
+WUD00245.00,Chapadao,
+WUD00246.00,Charbon,
+WUD00247.00,Cheremshansky,
+WUD00248.00,Cherepovets Steel,
+WUD00249.00,Chernigovets,
+WUD00250.00,Chibuluma South,
+WUD00250.01,Chibuluma South,Chifupu
+WUD00251.00,Chifeng,
+WUD00252.00,China Coal Energy,
+WUD00253.00,Chino,
+WUD00254.00,Chirano,
+WUD00255.00,Chongli,
+WUD00256.00,Chotia,
+WUD00257.00,Chungar,
+WUD00257.01,Chungar,Animon
+WUD00257.02,Chungar,Islay
+WUD00257.03,Chungar,Islay mine processed at Cerro de Pasco
+WUD00258.00,Cienega,
+WUD00259.00,Clairton Plant,
+WUD00260.00,Clarence,
+WUD00261.00,Clermont,
+WUD00262.00,Cliffs,
+WUD00263.00,Cliffs Logan County Coal,
+WUD00263.01,Cliffs Logan County Coal,Powellton
+WUD00263.02,Cliffs Logan County Coal,Lower War Eagle
+WUD00263.03,Cliffs Logan County Coal,The Toney Fork
+WUD00264.00,Climax,
+WUD00265.00,Coal Creek,
+WUD00266.00,Coal Valley,
+WUD00267.00,Coal‑Mac,
+WUD00268.00,Coatesville,
+WUD00269.00,Cobre Las Cruces,
+WUD00270.00,Cobre Panama,
+WUD00271.00,Cockatoo Island,
+WUD00272.00,Codelco Norte,
+WUD00272.01,Codelco Norte,Chuquicamata
+WUD00272.02,Codelco Norte,Radomiro Tomic
+WUD00273.00,Codemin,
+WUD00274.00,Coermotibo and Onverdacht,
+WUD00274.01,Coermotibo and Onverdacht,Coermotibo
+WUD00274.02,Coermotibo and Onverdacht,Onverdacht
+WUD00275.00,Coleman,
+WUD00276.00,Collahuasi,
+WUD00276.01,Collahuasi,Rosario
+WUD00276.02,Collahuasi,Ujina
+WUD00277.00,Collingwood,
+WUD00278.00,Collinsville,
+WUD00279.00,Colowyo,
+WUD00280.00,Colstrip,
+WUD00281.00,Conga,
+WUD00282.00,Consolidated Murchison,
+WUD00283.00,Constancia,
+WUD00284.00,Contrecoeur steel plant,
+WUD00285.00,Cooke,
+WUD00285.01,Cooke,Cooke Shaft 1
+WUD00285.02,Cooke,Cooke Shaft 2
+WUD00285.03,Cooke,Cooke Shaft 3
+WUD00285.04,Cooke,Cooke Shaft 4
+WUD00286.00,Copebras,
+WUD00287.00,Coppabella,
+WUD00288.00,Copper Cliff North,
+WUD00289.00,Copper Cliff South,
+WUD00290.00,COR Industri Indonesia,
+WUD00291.00,Coral Bay Nickel Corporation,
+WUD00292.00,Cordero Rojo,
+WUD00293.00,Corridor G,
+WUD00293.01,Corridor G,Job 21
+WUD00293.02,Corridor G,Hill Fork
+WUD00294.00,Cortez,
+WUD00294.01,Cortez,Pipeline
+WUD00294.02,Cortez,Cortez Hills
+WUD00295.00,Corumba,
+WUD00296.00,Cosmos,
+WUD00297.00,Cowal,
+WUD00298.00,Coyote Creek,
+WUD00299.00,Cozamin,
+WUD00300.00,Cracow,
+WUD00301.00,Creighton,
+WUD00302.00,Cripple Creek & Victor,
+WUD00303.00,CRL Queensland,
+WUD00304.00,CSA,
+WUD00305.00,Cuajone,
+WUD00306.00,Cubatao,
+WUD00307.00,Cumberland River,
+WUD00308.00,Cumnock,
+WUD00309.00,Curragh,
+WUD00310.00,Cusi,
+WUD00311.00,Damanjodi Refinery,
+WUD00312.00,Darby,
+WUD00312.01,Darby,Darby Fork
+WUD00312.02,Darby,Powell Mountain
+WUD00313.00,Dariba Smelter,
+WUD00314.00,Darling Range Mines,
+WUD00314.01,Darling Range Mines,Huntly
+WUD00314.02,Darling Range Mines,Willowdale
+WUD00315.00,Darlot,
+WUD00316.00,Dartbrook,
+WUD00317.00,Datong Coal Industry,
+WUD00317.01,Datong Coal Industry,Xinzhou Kiln
+WUD00317.02,Datong Coal Industry,Meiyukou
+WUD00317.03,Datong Coal Industry,Yanzishan
+WUD00317.04,Datong Coal Industry,Silaogou
+WUD00318.00,Datun,
+WUD00318.01,Datun,Yaoqiao
+WUD00318.02,Datun,Kongzhuang
+WUD00318.03,Datun,Xuzhuang
+WUD00318.04,Datun,Longdong
+WUD00319.00,Daunia,
+WUD00320.00,Dawson,
+WUD00321.00,Daxin,
+WUD00322.00,De Bron Merriespruit,
+WUD00323.00,Debari Smelter,
+WUD00324.00,Decker,
+WUD00325.00,Deerni,
+WUD00326.00,Deflector,
+WUD00327.00,DeGrussa,
+WUD00327.01,DeGrussa,DeGrussa
+WUD00327.02,DeGrussa,Monty
+WUD00328.00,Delma,
+WUD00329.00,Denisovskiy,
+WUD00330.00,Deschambault Aluminium Smelter,
+WUD00331.00,Dian Dian,
+WUD00332.00,Diavik,
+WUD00333.00,Didipio,
+WUD00334.00,Dilworth,
+WUD00335.00,Dodge Hill,
+WUD00336.00,Dofasco Hamilton,
+WUD00337.00,Dolomit,
+WUD00338.00,Dolores,
+WUD00339.00,Dongpo,
+WUD00340.00,Donlin Creek,
+WUD00341.00,Dotiki Complex,
+WUD00342.00,Drayton,
+WUD00343.00,DRDGOLD,
+WUD00344.00,Driefontein,
+WUD00345.00,Drummond Cesar,
+WUD00345.01,Drummond Cesar,La Loma
+WUD00345.02,Drummond Cesar,El Descanso
+WUD00345.03,Drummond Cesar,Pribbenow
+WUD00346.00,DTEK Dobropolyeugol,
+WUD00346.01,DTEK Dobropolyeugol,Dobropilske
+WUD00346.02,DTEK Dobropolyeugol,Bilozerske
+WUD00347.00,DTEK Obukhovskaya,
+WUD00348.00,DTEK Pavlohradcoal,
+WUD00348.01,DTEK Pavlohradcoal,Ternivske
+WUD00348.02,DTEK Pavlohradcoal,Pavlogradske
+WUD00348.03,DTEK Pavlohradcoal,Geroiv Kosmosu
+WUD00348.04,DTEK Pavlohradcoal,Dniprovske
+WUD00348.05,DTEK Pavlohradcoal,Pershotravneve
+WUD00349.00,DTEK Rovenkyanthracite,
+WUD00349.01,DTEK Rovenkyanthracite,V. V. Vakhrushev
+WUD00349.02,DTEK Rovenkyanthracite,M. V. Frunze
+WUD00350.00,DTEK Sverdlovanthracite,
+WUD00351.00,Duck Pond,
+WUD00352.00,Dugald River,
+WUD00353.00,Dugout Canyon,
+WUD00354.00,Duketon,
+WUD00354.01,Duketon,Garden Well
+WUD00354.02,Duketon,Rosemont
+WUD00354.03,Duketon,Moolart Well
+WUD00355.00,Dunkerque,
+WUD00356.00,Dunkirk steel plant,
+WUD00357.00,Duobaoshan,
+WUD00358.00,Durnacol,
+WUD00359.00,Dvoinoye,
+WUD00360.00,Dwarsrivier,
+WUD00361.00,Dynamic Energy,
+WUD00361.01,Dynamic Energy,Job 30
+WUD00361.02,Dynamic Energy,Ben’s Creek 1 (Frontier)
+WUD00362.00,Dzhebariki-Khaya,
+WUD00363.00,Eagle,
+WUD00364.00,Eagle Pass,
+WUD00365.00,East Boulder,
+WUD00366.00,Eastern Coalfields Limited,
+WUD00366.01,Eastern Coalfields Limited,Raniganj
+WUD00366.02,Eastern Coalfields Limited,Mugma/Salanpur
+WUD00366.03,Eastern Coalfields Limited,Adra
+WUD00366.04,Eastern Coalfields Limited,Pirpainti
+WUD00366.05,Eastern Coalfields Limited,Rajmahal
+WUD00366.06,Eastern Coalfields Limited,Kalidaspur
+WUD00366.07,Eastern Coalfields Limited,Parasea
+WUD00366.08,Eastern Coalfields Limited,Patmohona
+WUD00366.09,Eastern Coalfields Limited,Bonjemehari
+WUD00366.10,Eastern Coalfields Limited,Mohanpur
+WUD00366.11,Eastern Coalfields Limited,Sonepur Bazari
+WUD00366.12,Eastern Coalfields Limited,Khottadih
+WUD00366.13,Eastern Coalfields Limited,Pandaveswar
+WUD00366.14,Eastern Coalfields Limited,Chitra
+WUD00367.00,Edgar Thomson Plant,
+WUD00368.00,Edikan,
+WUD00369.00,Edna May,
+WUD00369.01,Edna May,Marda
+WUD00369.02,Edna May,Edna May
+WUD00369.03,Edna May,Tampia
+WUD00370.00,Eisenhüttenstadt steel plant,
+WUD00371.00,Ekati,
+WUD00372.00,El Abra,
+WUD00373.00,El Algarrobo,
+WUD00373.01,El Algarrobo,Algarrobo
+WUD00373.02,El Algarrobo,Cristales
+WUD00374.00,El Arco,
+WUD00375.00,El Hatillo,
+WUD00376.00,El Penon,
+WUD00377.00,El Pilar,
+WUD00378.00,El Romeral,
+WUD00379.00,El Sauzal,
+WUD00380.00,El Segundo/Lee Ranch,
+WUD00380.01,El Segundo/Lee Ranch,El Segundo
+WUD00380.02,El Segundo/Lee Ranch,Lee Ranch
+WUD00381.00,El Soldado,
+WUD00382.00,El Teniente,
+WUD00383.00,El Volcan,
+WUD00384.00,Elang,
+WUD00385.00,Electrosteel Steels Limited,
+WUD00386.00,Eleonore,
+WUD00387.00,Elgaugol,
+WUD00388.00,Ellen,
+WUD00389.00,Emery,
+WUD00390.00,Empire,
+WUD00391.00,Endeavor,
+WUD00392.00,Energy Resources of Australia,
+WUD00393.00,Ensham,
+WUD00394.00,Ergo,
+WUD00395.00,Ernest Henry and Mount Isa,
+WUD00395.01,Ernest Henry and Mount Isa,Ernest Henry
+WUD00395.02,Ernest Henry and Mount Isa,Mount Isa
+WUD00395.03,Ernest Henry and Mount Isa,Townsville
+WUD00396.00,Escobal,
+WUD00397.00,Escondida,
+WUD00397.01,Escondida,Escondia Norte
+WUD00398.00,Eskay Creek,
+WUD00399.00,Estevan,
+WUD00399.01,Estevan,Boundary Dam
+WUD00399.02,Estevan,Bienfait
+WUD00400.00,Eurallumina,
+WUD00401.00,EVRAZ VGOK,
+WUD00401.01,EVRAZ VGOK,Magnetitovaya
+WUD00401.02,EVRAZ VGOK,Zapadny
+WUD00401.03,EVRAZ VGOK,Estuninskaya
+WUD00401.04,EVRAZ VGOK,Yuzhnaya iron ore
+WUD00402.00,Evrazruda,
+WUD00402.01,Evrazruda,Tashtagol
+WUD00402.02,Evrazruda,Gorno-Shorskaya
+WUD00402.03,Evrazruda,Kazskaya
+WUD00403.00,Extension Hill/Iron Hill,
+WUD00404.00,Exxaro Coal Central,
+WUD00404.01,Exxaro Coal Central,Dorstfontein
+WUD00404.02,Exxaro Coal Central,Forzando
+WUD00404.03,Exxaro Coal Central,Tumelo
+WUD00405.00,Fabrica,
+WUD00406.00,Fairfield Works,
+WUD00407.00,Falcondo,
+WUD00408.00,Falkirk,
+WUD00409.00,Farmersburg,
+WUD00410.00,Fazenda,
+WUD00411.00,Federal,
+WUD00412.00,Fernandinho,
+WUD00413.00,Ferrexpo Poltava Mining,
+WUD00413.01,Ferrexpo Poltava Mining,Ferrexpo Poltava Mining
+WUD00413.02,Ferrexpo Poltava Mining,Ferrexpo Yeristovo Mining
+WUD00414.00,Five Forks,
+WUD00415.00,Fjardaal Aluminium Smelter,
+WUD00416.00,Flint Ridge,
+WUD00417.00,FNI Cagdianao,
+WUD00417.01,FNI Cagdianao,CAGA 2
+WUD00417.02,FNI Cagdianao,CAGA 4
+WUD00418.00,Fort Knox,
+WUD00419.00,Fort Site,
+WUD00420.00,Fortaleza,
+WUD00421.00,Fortescue Pilbara Region,
+WUD00421.01,Fortescue Pilbara Region,Cloudbreak
+WUD00421.02,Fortescue Pilbara Region,Christmas Creek
+WUD00421.03,Fortescue Pilbara Region,Firetail
+WUD00421.04,Fortescue Pilbara Region,Kings and Queens
+WUD00421.05,Fortescue Pilbara Region,Eliwana
+WUD00422.00,Fortnum Gold Operations,
+WUD00422.01,Fortnum Gold Operations,Starlight
+WUD00422.02,Fortnum Gold Operations,Yarlarweelor
+WUD00422.03,Fortnum Gold Operations,Horseshoe - Cassidy
+WUD00422.04,Fortnum Gold Operations,Peak Hill
+WUD00423.00,Fos-sur-Mer steel plant,
+WUD00424.00,Foxleigh,
+WUD00425.00,Francisco,
+WUD00426.00,Franke,
+WUD00427.00,Freda-Rebecca,
+WUD00428.00,Freedom,
+WUD00429.00,Fresnillo,
+WUD00430.00,Friguia,
+WUD00431.00,Frontier,
+WUD00432.00,Fruta del Norte,
+WUD00433.00,Fujairah Refinery,
+WUD00434.00,Fujian Makeng,
+WUD00435.00,Fushun Aluminum,
+WUD00436.00,Gabriela Mistral,
+WUD00437.00,Galati steel plant,
+WUD00438.00,Galena,
+WUD00439.00,Galmoy,
+WUD00440.00,Gansu Hualu,
+WUD00441.00,Gaohe,
+WUD00442.00,Garpenberg,
+WUD00443.00,Garson,
+WUD00444.00,Gary Works,
+WUD00445.00,Gateway North,
+WUD00446.00,Geita,
+WUD00447.00,GEMCO,
+WUD00448.00,Genesee,
+WUD00449.00,Gent steel plant,
+WUD00450.00,Georgetown,
+WUD00451.00,Gerdau Aconorte,
+WUD00452.00,Gerdau Barao de Cocais,
+WUD00453.00,Gerdau Cambridge,
+WUD00454.00,Gerdau Cartersville,
+WUD00455.00,Gerdau Cearense,
+WUD00456.00,Gerdau Charlotte,
+WUD00457.00,Gerdau Charqueadas,
+WUD00458.00,Gerdau Contagem,
+WUD00459.00,Gerdau Cosigua,
+WUD00460.00,Gerdau Divinopolis,
+WUD00461.00,Gerdau Fort Smith,
+WUD00462.00,Gerdau Guaira,
+WUD00463.00,Gerdau Jackson - Michigan,
+WUD00464.00,Gerdau Jackson - Tennessee,
+WUD00465.00,Gerdau Manitoba - MRM,
+WUD00466.00,Gerdau Midlothian,
+WUD00467.00,Gerdau Mogi das Cruzes,
+WUD00468.00,Gerdau Monroe,
+WUD00469.00,Gerdau Ouro Branco,
+WUD00470.00,Gerdau Petersburg,
+WUD00471.00,Gerdau Pindamonhangaba,
+WUD00472.00,Gerdau Riograndense,
+WUD00473.00,Gerdau Sao Paulo,
+WUD00474.00,Gerdau Sete Lagoas,
+WUD00475.00,Gerdau St. Paul,
+WUD00476.00,Gerdau Usiba,
+WUD00477.00,Gerdau Whitby,
+WUD00478.00,Gerdau Wilton,
+WUD00479.00,Gertrude,
+WUD00480.00,Gibson Complex,
+WUD00480.01,Gibson Complex,Gibson South
+WUD00480.02,Gibson Complex,Gibson North
+WUD00481.00,Glogow metallurgical complex,
+WUD00482.00,Goedehoop,
+WUD00483.00,Goedgevonden,
+WUD00484.00,Golden Grove,
+WUD00485.00,Golden Sunlight,
+WUD00486.00,Goldex,
+WUD00487.00,Goldrush - Fourmile,
+WUD00488.00,Goldstrike,
+WUD00488.01,Goldstrike,Betze-Post
+WUD00488.02,Goldstrike,South Arturo JV
+WUD00488.03,Goldstrike,Meikle
+WUD00488.04,Goldstrike,Goldstrike Underground
+WUD00489.00,Goonyella Riverside,
+WUD00489.01,Goonyella Riverside,Goonyella
+WUD00489.02,Goonyella Riverside,Riverside
+WUD00490.00,Gosowong,
+WUD00491.00,Gove,
+WUD00492.00,Gramalote,
+WUD00493.00,Grande-Baie,
+WUD00494.00,Granite City Works,
+WUD00495.00,Granny Smith,
+WUD00496.00,Grasberg,
+WUD00497.00,Great Lakes Works,
+WUD00498.00,Great Noligwa,
+WUD00499.00,Greenbrier,
+WUD00500.00,Greens Creek,
+WUD00501.00,Greenside,
+WUD00502.00,Gregory,
+WUD00502.01,Gregory,Gregory
+WUD00502.02,Gregory,Crinum
+WUD00503.00,Griffin,
+WUD00504.00,Grootegeluk,
+WUD00505.00,Grosvenor,
+WUD00506.00,Gualcamayo,
+WUD00507.00,Guanaco and Amancaya,
+WUD00507.01,Guanaco and Amancaya,Guanaco
+WUD00507.02,Guanaco and Amancaya,Amancaya
+WUD00508.00,Guelb Moghrein,
+WUD00509.00,Guizhou,
+WUD00509.01,Guizhou,Guizhou No. 1
+WUD00509.02,Guizhou,Guizhou No. 2
+WUD00509.03,Guizhou,Baiyun Aluminium Refinery
+WUD00510.00,Guizhou Huajin Alumina,
+WUD00511.00,Guizhou Huaren Aluminium Smelter,
+WUD00512.00,Gunnedah,
+WUD00512.01,Gunnedah,Tarrawonga
+WUD00512.02,Gunnedah,Rocglen
+WUD00512.03,Gunnedah,Sunnyside
+WUD00512.04,Gunnedah,Gunnedah CHPP
+WUD00512.05,Gunnedah,Canyon
+WUD00513.00,Gurimbang,
+WUD00514.00,Guston Run,
+WUD00515.00,Hail Creek,
+WUD00516.00,Haile,
+WUD00517.00,Halls Creek,
+WUD00517.01,Halls Creek,Nicolsons
+WUD00517.02,Halls Creek,Wagtail
+WUD00518.00,Hamersley - Channar,
+WUD00519.00,Hamersley - Eastern Range,
+WUD00520.00,Hamersley Mines,
+WUD00520.01,Hamersley Mines,Brockman 2
+WUD00520.02,Hamersley Mines,Brockman 4
+WUD00520.03,Hamersley Mines,Silvergrass
+WUD00520.04,Hamersley Mines,Marandoo
+WUD00520.05,Hamersley Mines,Mount Tom Price
+WUD00520.06,Hamersley Mines,Nammuldi
+WUD00520.07,Hamersley Mines,Paraburdoo
+WUD00520.08,Hamersley Mines,Western Turner Syncline
+WUD00520.09,Hamersley Mines,Yandicoogina
+WUD00520.10,Hamersley Mines,Koodaideri
+WUD00520.11,Hamersley Mines,Turee Central
+WUD00521.00,Hamilton Complex,
+WUD00522.00,Hamilton Works,
+WUD00523.00,Haquira,
+WUD00524.00,Haridwar,
+WUD00525.00,Harjavalta,
+WUD00526.00,Haystack,
+WUD00527.00,Hazard,
+WUD00528.00,Hebi Zhong Tai,
+WUD00529.00,Hemlo,
+WUD00530.00,Henderson,
+WUD00531.00,Henty,
+WUD00532.00,Hercules,
+WUD00533.00,Herradura,
+WUD00534.00,Hibbing,
+WUD00535.00,Hidden Valley,
+WUD00536.00,Higginsville Gold Operations,
+WUD00537.00,Highland,
+WUD00538.00,Highland Valley Copper,
+WUD00539.00,Highvale,
+WUD00540.00,Hillside,
+WUD00541.00,Hinatuan,
+WUD00542.00,Hoedspruit,
+WUD00543.00,Holt-McDermott,
+WUD00544.00,Hope Downs,
+WUD00544.01,Hope Downs,Hope Downs 1
+WUD00544.02,Hope Downs,Hope Downs 4
+WUD00545.00,Hopkins Complex,
+WUD00546.00,Hotazel,
+WUD00546.01,Hotazel,Wessels
+WUD00546.02,Hotazel,Mamatwan
+WUD00547.00,Huaron,
+WUD00548.00,Huaxing,
+WUD00549.00,Humphrey,
+WUD00550.00,Hunedoara steel plant,
+WUD00551.00,Hunter Valley Operations,
+WUD00552.00,Huolinhe Holingol,
+WUD00552.01,Huolinhe Holingol,Huolinhe No. 1 North
+WUD00552.02,Huolinhe Holingol,Huolinhe No. 1 South
+WUD00552.03,Huolinhe Holingol,Zhahazhuoer
+WUD00553.00,Iduapriem,
+WUD00554.00,Illawarra,
+WUD00554.01,Illawarra,Bulli
+WUD00554.02,Illawarra,Wongawilli
+WUD00555.00,ILO,
+WUD00556.00,Iluka Florida/Georgia,
+WUD00557.00,Iluka Virginia,
+WUD00558.00,Iluka Western Australia,
+WUD00558.01,Iluka Western Australia,Cataby
+WUD00558.02,Iluka Western Australia,Narngulu
+WUD00558.03,Iluka Western Australia,Eneabba
+WUD00558.04,Iluka Western Australia,Capel
+WUD00558.05,Iluka Western Australia,Mid West
+WUD00558.06,Iluka Western Australia,South West
+WUD00559.00,Ilyich Steel,
+WUD00560.00,IMMSA - Charcas,
+WUD00560.01,IMMSA - Charcas,San Bartolo
+WUD00560.02,IMMSA - Charcas,Rey-Reina
+WUD00560.03,IMMSA - Charcas,La Aurora
+WUD00561.00,IMMSA - San Martin,
+WUD00562.00,IMMSA - Santa Barbara,
+WUD00562.01,IMMSA - Santa Barbara,San Diego
+WUD00562.02,IMMSA - Santa Barbara,Segovedad
+WUD00562.03,IMMSA - Santa Barbara,Tecolotes
+WUD00563.00,IMMSA - Santa Eulalia,
+WUD00564.00,IMMSA - Taxco,
+WUD00564.01,IMMSA - Taxco,San Antonio
+WUD00564.02,IMMSA - Taxco,Guerrero
+WUD00564.03,IMMSA - Taxco,Remedios
+WUD00565.00,Impumelelo,
+WUD00566.00,Impunzi,
+WUD00567.00,Inaglinskiy,
+WUD00568.00,Indiana Harbor,
+WUD00569.00,Ingulets GOK,
+WUD00570.00,Intalco Aluminium Smelter,
+WUD00571.00,Integra Coal,
+WUD00572.00,Inyanda,
+WUD00573.00,Ipatinga,
+WUD00574.00,Irbeysky,
+WUD00575.00,Irkutsk Aluminium Smelter,
+WUD00576.00,Iron Ore Company of Canada Labrador City,
+WUD00577.00,Iron Valley,
+WUD00578.00,Irtyshsky,
+WUD00579.00,Isaac Plains,
+WUD00580.00,ISAL,
+WUD00581.00,Ishihuinca,
+WUD00582.00,Isibonelo,
+WUD00583.00,Itabira,
+WUD00583.01,Itabira,Caue
+WUD00583.02,Itabira,Conceicao
+WUD00584.00,Itatiaiucu,
+WUD00584.01,Itatiaiucu,MUSA Oeste
+WUD00584.02,Itatiaiucu,MUSA Central
+WUD00584.03,Itatiaiucu,MUSA Leste
+WUD00584.04,Itatiaiucu,MUSA Pau de Vinho
+WUD00585.00,Itmann No. 5 Mine,
+WUD00586.00,Jabal Sayid,
+WUD00587.00,Jacinth-Ambrosia,
+WUD00588.00,Jacobina,
+WUD00589.00,Jamalco,
+WUD00589.01,Jamalco,Mount Oliphant plateau
+WUD00589.02,Jamalco,Harmons Valley
+WUD00589.03,Jamalco,Halse Hall
+WUD00590.00,Jaurdi,
+WUD00591.00,Jellinbah,
+WUD00592.00,Jerritt Canyon,
+WUD00593.00,Jewett,
+WUD00594.00,Jharsuguda Aluminium Smelter,
+WUD00595.00,Jiaozuo,
+WUD00596.00,Jiaozuo Wanfang,
+WUD00597.00,Jimblebar,
+WUD00597.01,Jimblebar,Wheelarra
+WUD00598.00,Jingtieshan,
+WUD00599.00,Jinzhong,
+WUD00600.00,Joao Monlevade,
+WUD00601.00,Jones Fork Complex,
+WUD00602.00,Jonquiere,
+WUD00602.01,Jonquiere,Jonquiere specialty plant
+WUD00602.02,Jonquiere,Jonquiere
+WUD00603.00,Julcani,
+WUD00604.00,Julietta,
+WUD00605.00,Jundee,
+WUD00606.00,Jupiter,
+WUD00607.00,Juruti,
+WUD00608.00,Justice Energy,
+WUD00608.01,Justice Energy,Job 38
+WUD00609.00,Kabanga,
+WUD00610.00,Kachkanar GOK,
+WUD00610.01,Kachkanar GOK,Glavny
+WUD00610.02,Kachkanar GOK,Zapadny
+WUD00610.03,Kachkanar GOK,Severny
+WUD00610.04,Kachkanar GOK,Yuzhny
+WUD00611.00,Kalgoorlie,
+WUD00611.01,Kalgoorlie,Fimiston
+WUD00611.02,Kalgoorlie,Mt. Charlotte
+WUD00612.00,Kalgoorlie Smelter,
+WUD00613.00,Kanawha Eagle,
+WUD00614.00,Kandalaksha Aluminium Smelter,
+WUD00615.00,Kangala,
+WUD00615.01,Kangala,Wolvenfontein
+WUD00615.02,Kangala,Middelbult
+WUD00616.00,Kangalassky,
+WUD00617.00,Kanowna Belle,
+WUD00618.00,Kansanshi,
+WUD00619.00,Karaganda,
+WUD00619.01,Karaganda,Kostenko
+WUD00619.02,Karaganda,Kuzembaeva
+WUD00619.03,Karaganda,Saranskaya
+WUD00619.04,Karaganda,Abayskaya
+WUD00619.05,Karaganda,Kazakhstanskaya
+WUD00619.06,Karaganda,Lenina
+WUD00619.07,Karaganda,Shakhtinskaya
+WUD00619.08,Karaganda,Tentekskaya
+WUD00620.00,Karagaylinskoye,
+WUD00621.00,Karakansky-South,
+WUD00622.00,Karelsky Okatysh,
+WUD00622.01,Karelsky Okatysh,Kostomuksha
+WUD00622.02,Karelsky Okatysh,Korpanga
+WUD00623.00,Karouni,
+WUD00624.00,Katanga Mining Complex,
+WUD00624.01,Katanga Mining Complex,Kamoto
+WUD00624.02,Katanga Mining Complex,KOV
+WUD00625.00,Kayad,
+WUD00626.00,Kayenta,
+WUD00627.00,Kazzinc,
+WUD00627.01,Kazzinc,Altyntau Kokshetau
+WUD00627.02,Kazzinc,Zhairem
+WUD00627.03,Kazzinc,Ust-Kamenogorsk
+WUD00627.04,Kazzinc,Tishinsky
+WUD00627.05,Kazzinc,Dolinny
+WUD00627.06,Kazzinc,Ridder-Sokolny
+WUD00627.07,Kazzinc,Shubinsky
+WUD00627.08,Kazzinc,Maleevsky
+WUD00628.00,Keetac,
+WUD00629.00,Kelian,
+WUD00630.00,Kemmerer,
+WUD00631.00,Kensington,
+WUD00631.01,Kensington,Kensington
+WUD00631.02,Kensington,Jualin
+WUD00632.00,Kentobe,
+WUD00633.00,Kestrel,
+WUD00634.00,Kettle River,
+WUD00635.00,Kevitsa,
+WUD00636.00,Keystone,
+WUD00636.01,Keystone,Mine 58
+WUD00636.02,Keystone,Mine 65
+WUD00636.03,Keystone,Pocahontas No. 11 Contour and Auger No. 2
+WUD00637.00,Khakas Aluminium Smelter,
+WUD00638.00,Khumani,
+WUD00639.00,Khutala,
+WUD00640.00,Khwezela,
+WUD00640.01,Khwezela,Kleinkopje
+WUD00640.02,Khwezela,Landau
+WUD00641.00,Kia-Shaltyr,
+WUD00642.00,Kibali,
+WUD00643.00,Kidd,
+WUD00644.00,Kideco,
+WUD00644.01,Kideco,Roto North
+WUD00644.02,Kideco,Roto South
+WUD00644.03,Kideco,Roto Middle
+WUD00644.04,Kideco,Susubang
+WUD00644.05,Kideco,Samarangau
+WUD00645.00,Kijang,
+WUD00646.00,KIM BLOK,
+WUD00647.00,Kindia,
+WUD00648.00,Kinsenda,
+WUD00649.00,Kinsevere,
+WUD00650.00,Kintap,
+WUD00651.00,Kipoi,
+WUD00652.00,Kiruna,
+WUD00653.00,Kiselevsky,
+WUD00654.00,Kitimat,
+WUD00655.00,Kittila,
+WUD00656.00,Klipspruit,
+WUD00657.00,Kloof,
+WUD00658.00,KMAruda,
+WUD00659.00,Knott County mines,
+WUD00660.00,Kokkola,
+WUD00661.00,Kolomela,
+WUD00662.00,Kolwezi,
+WUD00663.00,Komsomolets Donbassa,
+WUD00664.00,Koniambo,
+WUD00665.00,Koolan Island,
+WUD00666.00,Koolyanobbing,
+WUD00667.00,Koornfontein,
+WUD00668.00,Kopanang,
+WUD00669.00,Korba,
+WUD00670.00,Korshunov,
+WUD00671.00,Kosmurun,
+WUD00672.00,Kostromovskaya,
+WUD00672.01,Kostromovskaya,Kostromovskaya
+WUD00672.02,Kostromovskaya,Chertinskaya-Koksovaya
+WUD00673.00,Kounrad,
+WUD00674.00,Kovdorskiy GOK,
+WUD00675.00,Krasnodon Coal,
+WUD00675.01,Krasnodon Coal,Molodogvardeysk
+WUD00675.02,Krasnodon Coal,Samsonivska-Zakhidna
+WUD00675.03,Krasnodon Coal,Duvanna
+WUD00676.00,Krasnogorsky,
+WUD00677.00,Krasnoyarsk Aluminium Smelter,
+WUD00678.00,Krasnoyarskkraiugol,
+WUD00678.01,Krasnoyarskkraiugol,Sayano-Partizanskiy
+WUD00678.02,Krasnoyarskkraiugol,Abanskiy
+WUD00679.00,Kriel,
+WUD00680.00,Kroondal,
+WUD00681.00,Kryvyi Rih,
+WUD00682.00,KUBAL Aluminium Smelter,
+WUD00683.00,Kundana,
+WUD00684.00,Kupol,
+WUD00684.01,Kupol,Dvoinoye
+WUD00685.00,Kuprinsky,
+WUD00686.00,Kusheki,
+WUD00687.00,Kuzbassrazrezugol,
+WUD00687.01,Kuzbassrazrezugol,Kedrovsky
+WUD00687.02,Kuzbassrazrezugol,Mokhovsky
+WUD00687.03,Kuzbassrazrezugol,Bachatsky
+WUD00687.04,Kuzbassrazrezugol,Krasnobrodsky
+WUD00687.05,Kuzbassrazrezugol,Taldinsky
+WUD00687.06,Kuzbassrazrezugol,Kaltansky
+WUD00687.07,Kuzbassrazrezugol,Baykaimskaya
+WUD00688.00,Kwinana Alumina Refinery,
+WUD00689.00,Kylylahti,
+WUD00690.00,Kyzyl-Tash Turk,
+WUD00691.00,KZN Sands,
+WUD00692.00,La Arena,
+WUD00693.00,La Caridad,
+WUD00693.01,La Caridad,La Caridad Smelter
+WUD00693.02,La Caridad,La Caridad Refinery
+WUD00693.03,La Caridad,La Caridad Copper Rod Plant
+WUD00694.00,La Coipa,
+WUD00695.00,La Colorada,
+WUD00696.00,La India,
+WUD00697.00,La Perla,
+WUD00698.00,La Zanja,
+WUD00699.00,Lagunas Norte,
+WUD00700.00,Lake Erie Works,
+WUD00701.00,Lalor,
+WUD00701.01,Lalor,PEN 2 Deposit
+WUD00702.00,Lanjigarh Alumina Refinery,
+WUD00703.00,Lannemezan,
+WUD00704.00,Lanzhou Aluminum,
+WUD00705.00,Lapa,
+WUD00706.00,LaPlace,
+WUD00707.00,LaRonde Complex,
+WUD00707.01,LaRonde Complex,LaRonde Mine
+WUD00707.02,LaRonde Complex,LaRonde Zone 5
+WUD00708.00,Las Bambas,
+WUD00708.01,Las Bambas,"Chalcobamba
+"
+WUD00708.02,Las Bambas,Sulfobamba
+WUD00708.03,Las Bambas,Ferrobamba
+WUD00709.00,Las Truchas,
+WUD00710.00,Laterriere,
+WUD00711.00,Lati,
+WUD00712.00,Lawlers,
+WUD00713.00,Lazaro Cardenas steel plant,
+WUD00714.00,Lebedinsky GOK,
+WUD00715.00,Leer,
+WUD00716.00,Leer South/Sentinel,
+WUD00716.01,Leer South/Sentinel,Sentinel
+WUD00716.02,Leer South/Sentinel,Leer South
+WUD00717.00,Leeuwpan,
+WUD00718.00,Legnica metallurgical complex,
+WUD00719.00,Leinster,
+WUD00720.00,Lennard Shelf,
+WUD00721.00,Leonora,
+WUD00721.01,Leonora,King of the Hills
+WUD00721.02,Leonora,Gwalia
+WUD00722.00,Liancheng Branch,
+WUD00723.00,Liberty,
+WUD00724.00,Lidell,
+WUD00725.00,Lihir,
+WUD00726.00,Liliu,
+WUD00726.01,Liliu,Shaqu No.1
+WUD00726.02,Liliu,Shaqu No.2
+WUD00727.00,Line Creek,
+WUD00728.00,Lisakovsk,
+WUD00729.00,Lisheen,
+WUD00730.00,Lista Aluminium Smelter,
+WUD00731.00,Listvyazhnaya,
+WUD00732.00,LKAB Southern Division,
+WUD00732.01,LKAB Southern Division,Malmberget
+WUD00732.02,LKAB Southern Division,Svappavaara
+WUD00733.00,Lobo Marte,
+WUD00734.00,Lochaber,
+WUD00735.00,Logan County,
+WUD00736.00,Loma de Niquel,
+WUD00737.00,Lomas Bayas,
+WUD00738.00,Lone Mountain,
+WUD00739.00,Long Canyon,
+WUD00740.00,Longmen Aluminum,
+WUD00741.00,Longnan,
+WUD00742.00,Longyu,
+WUD00743.00,Lonshi,
+WUD00744.00,Los Bronces,
+WUD00744.01,Los Bronces,Las Tortolas
+WUD00744.02,Los Bronces,Confluencia
+WUD00745.00,Los Colorados,
+WUD00745.01,Los Colorados,Reject Plant
+WUD00746.00,Los Filos,
+WUD00746.01,Los Filos,Los Filos
+WUD00746.02,Los Filos,Bermejal
+WUD00747.00,Los Pelambres,
+WUD00748.00,Loulo - Gounkoto,
+WUD00748.01,Loulo - Gounkoto,Yalea
+WUD00748.02,Loulo - Gounkoto,Gara
+WUD00748.03,Loulo - Gounkoto,Gounkoto
+WUD00749.00,Lounge Lizard,
+WUD00750.00,Loveridge,
+WUD00751.00,Lubambe,
+WUD00752.00,Lubin,
+WUD00753.00,Luchegorsky,
+WUD00754.00,Lumwana,
+WUD00755.00,Luoyang,
+WUD00755.01,Luoyang,Jiagou
+WUD00755.02,Luoyang,Liangwa
+WUD00755.03,Luoyang,Qingshigou
+WUD00756.00,Luyuangou,
+WUD00757.00,Lynemouth,
+WUD00758.00,Macraes,
+WUD00758.01,Macraes,Macraes Coronation
+WUD00758.02,Macraes,Coronation North
+WUD00758.03,Macraes,Innes Mills
+WUD00758.04,Macraes,Frasers
+WUD00759.00,Mafube,
+WUD00760.00,Mahanadi Coalfields Limited,
+WUD00760.01,Mahanadi Coalfields Limited,Jagannath
+WUD00760.02,Mahanadi Coalfields Limited,Bharatpur
+WUD00760.03,Mahanadi Coalfields Limited,Hingula
+WUD00760.04,Mahanadi Coalfields Limited,Lingaraj
+WUD00760.05,Mahanadi Coalfields Limited,Kaniha
+WUD00760.06,Mahanadi Coalfields Limited,Talcher
+WUD00760.07,Mahanadi Coalfields Limited,Lakhanpur
+WUD00760.08,Mahanadi Coalfields Limited,IB Valley
+WUD00760.09,Mahanadi Coalfields Limited,Basundhara-Garjanbahal
+WUD00760.10,Mahanadi Coalfields Limited,Kulda-Garajanbahal
+WUD00760.11,Mahanadi Coalfields Limited,Orient
+WUD00760.12,Mahanadi Coalfields Limited,Lajkura
+WUD00760.13,Mahanadi Coalfields Limited,Samaleswari
+WUD00761.00,Mahoning Valley,
+WUD00762.00,Mainpat,
+WUD00763.00,Mallay,
+WUD00764.00,Maly Kuybas,
+WUD00765.00,Mamahak,
+WUD00766.00,Manantial Espejo,
+WUD00767.00,Mandalong,
+WUD00768.00,Mangoola,
+WUD00769.00,Mantos Blancos,
+WUD00770.00,Mantoverde,
+WUD00771.00,Manzanillo,
+WUD00772.00,Marathon,
+WUD00773.00,Marcapunta,
+WUD00774.00,Mariana,
+WUD00774.01,Mariana,Alegria
+WUD00774.02,Mariana,Fabrica Nova
+WUD00774.03,Mariana,Fazendao
+WUD00774.04,Mariana,Timbopeba
+WUD00774.05,Mariana,Capanema/Ouro Fino
+WUD00775.00,Maricunga,
+WUD00776.00,Marigold,
+WUD00777.00,Marlin,
+WUD00778.00,Marshall,
+WUD00779.00,Martabe,
+WUD00780.00,Martha,
+WUD00781.00,Massena West Aluminium Smelter,
+WUD00782.00,Matla,
+WUD00783.00,Maules Creek,
+WUD00784.00,MC Mining Complex,
+WUD00785.00,McArthur River,
+WUD00786.00,Meadowbank Complex,
+WUD00786.01,Meadowbank Complex,Amaruq
+WUD00787.00,Mega Centauro,
+WUD00788.00,Meigs,
+WUD00789.00,Meliadine,
+WUD00790.00,Mercedes,
+WUD00791.00,Merian,
+WUD00792.00,Merlin,
+WUD00793.00,MetCoal,
+WUD00793.01,MetCoal,Lahai
+WUD00793.02,MetCoal,Lampunut
+WUD00793.03,MetCoal,Haju
+WUD00794.00,Metropolitan,
+WUD00795.00,Mettiki Complex,
+WUD00795.01,Mettiki Complex,Mountain View
+WUD00795.02,Mettiki Complex,Mettiki (MD)
+WUD00796.00,Mexican IMMSA unit,
+WUD00797.00,Meyerton Metalloys Smelter,
+WUD00798.00,Mezhdurechenskiy,
+WUD00799.00,Mezhegey,
+WUD00800.00,Miami,
+WUD00801.00,Mianchi,
+WUD00801.01,Mianchi,Guangou
+WUD00801.02,Mianchi,Jiajiawaxi
+WUD00801.03,Mianchi,Xiangcaiwa
+WUD00802.00,Miaogou & Sanguikou,
+WUD00803.00,MICARE Unit Mines Coahuila,
+WUD00804.00,Michilla,
+WUD00805.00,Midas,
+WUD00806.00,Middelburg/Wolvekrans,
+WUD00806.01,Middelburg/Wolvekrans,Douglas
+WUD00807.00,Middleback Ranges,
+WUD00807.01,Middleback Ranges,Iron Knob
+WUD00807.02,Middleback Ranges,Ibma Scree
+WUD00807.03,Middleback Ranges,Iron Baron
+WUD00807.04,Middleback Ranges,Camel Hills
+WUD00807.05,Middleback Ranges,Iron Queen
+WUD00807.06,Middleback Ranges,North Middleback
+WUD00807.07,Middleback Ranges,Iron Warrior
+WUD00807.08,Middleback Ranges,Iron Chieftain
+WUD00807.09,Middleback Ranges,Iron Knight
+WUD00807.10,Middleback Ranges,Iron Duchess
+WUD00807.11,Middleback Ranges,Iron Duke
+WUD00808.00,Middlemount,
+WUD00809.00,Midland Trail,
+WUD00810.00,Miguel Burnier,
+WUD00810.01,Miguel Burnier,Miguel Burnier
+WUD00810.02,Miguel Burnier,Varzea do Lopes
+WUD00811.00,Mikhailovsky GOK,
+WUD00812.00,Miles Branch,
+WUD00813.00,Mill Creek,
+WUD00814.00,Millennium,
+WUD00815.00,Miller Creek Complex,
+WUD00816.00,Mimosa,
+WUD00817.00,MIMOSA Unit Mines,
+WUD00818.00,Minas Centrais,
+WUD00818.01,Minas Centrais,Agua Limpa
+WUD00818.02,Minas Centrais,Gongo Soco
+WUD00818.03,Minas Centrais,Brucutu
+WUD00818.04,Minas Centrais,Corrego do Meio
+WUD00819.00,Minas Itabirito,
+WUD00819.01,Minas Itabirito,Segredo/Joao Pereira
+WUD00819.02,Minas Itabirito,Sapecado/Galinheiro
+WUD00820.00,Minas-Rio,
+WUD00821.00,Mine 84,
+WUD00822.00,Minera Florida,
+WUD00823.00,Mingo Logan,
+WUD00824.00,Ministro Hales,
+WUD00825.00,Minntac,
+WUD00826.00,Minorca,
+WUD00826.01,Minorca,Laurentian
+WUD00826.02,Minorca,East Pits
+WUD00827.00,Minto,
+WUD00828.00,Moa Project,
+WUD00829.00,Moab Khotsong,
+WUD00830.00,Moatize,
+WUD00831.00,Modikwa,
+WUD00832.00,Mogalakwena,
+WUD00833.00,Molodenzhny,
+WUD00834.00,Mont Wright,
+WUD00834.01,Mont Wright,Fire Lake
+WUD00835.00,Montcalm,
+WUD00836.00,Moolarben,
+WUD00837.00,Moorvale,
+WUD00838.00,Mopani,
+WUD00839.00,Moranbah,
+WUD00840.00,Morenci,
+WUD00841.00,Morila,
+WUD00842.00,Morococha,
+WUD00843.00,Morrison,
+WUD00844.00,Morro da Mina,
+WUD00845.00,Morro do Felipe,
+WUD00846.00,Morro do Ouro,
+WUD00847.00,Morro Velho,
+WUD00848.00,Mosjoen Aluminium Smelter,
+WUD00849.00,Mototolo,
+WUD00850.00,Mount Arthur,
+WUD00850.01,Mount Arthur,Mount Arthur North
+WUD00850.02,Mount Arthur,Mount Arthur South
+WUD00851.00,Mount Garnet,
+WUD00851.01,Mount Garnet,Balcooma
+WUD00851.02,Mount Garnet,Maitland
+WUD00851.03,Mount Garnet,Mount Garnet
+WUD00851.04,Mount Garnet,Bald Hill
+WUD00851.05,Mount Garnet,Baal Gammon
+WUD00851.06,Mount Garnet,Griffiths Hill
+WUD00851.07,Mount Garnet,King Vol
+WUD00851.08,Mount Garnet,Montevideo
+WUD00851.09,Mount Garnet,Mungana
+WUD00851.10,Mount Garnet,Red Cap Victoria
+WUD00851.11,Mount Garnet,Vomacka
+WUD00851.12,Mount Garnet,Copper plant
+WUD00851.13,Mount Garnet,Polymetallic plant
+WUD00852.00,Mount Goldsworthy,
+WUD00852.01,Mount Goldsworthy,Yarrie
+WUD00852.02,Mount Goldsworthy,Nimingarra
+WUD00852.03,Mount Goldsworthy,Mining Area C
+WUD00853.00,Mount Keith,
+WUD00854.00,Mount Marion,
+WUD00855.00,Mount Monger,
+WUD00855.01,Mount Monger,Daisy
+WUD00855.02,Mount Monger,Mount Belches
+WUD00855.03,Mount Monger,Aldiss
+WUD00856.00,Mount Newman,
+WUD00856.01,Mount Newman,Mount Whaleback
+WUD00856.02,Mount Newman,Orebody 18
+WUD00856.03,Mount Newman,Orebody 24
+WUD00856.04,Mount Newman,Orebody 25
+WUD00856.05,Mount Newman,Orebody 29
+WUD00856.06,Mount Newman,Orebody 30
+WUD00856.07,Mount Newman,Orebody 31
+WUD00856.08,Mount Newman,Orebody 32
+WUD00856.09,Mount Newman,Orebody 35
+WUD00857.00,Mount Thorley Warkworth,
+WUD00857.01,Mount Thorley Warkworth,Mount Thorley
+WUD00857.02,Mount Thorley Warkworth,Warkworth
+WUD00858.00,Mountain Laurel,
+WUD00859.00,Mozal,
+WUD00860.00,Mponeng,
+WUD00861.00,MRN Porto Trombetas,
+WUD00862.00,Mt Cattlin,
+WUD00863.00,Mt Lyell,
+WUD00864.00,Mt Magnet,
+WUD00864.01,Mt Magnet,Vivien
+WUD00864.02,Mt Magnet,Mt Magnet
+WUD00864.03,Mt Magnet,Penny
+WUD00864.04,Mt Magnet,Kathleen Valley
+WUD00865.00,Mt Muro,
+WUD00866.00,Mt Owen/Glendell,
+WUD00867.00,Mt Sterling,
+WUD00868.00,Muhlenberg,
+WUD00869.00,Mulia/Jumbang,
+WUD00870.00,Murowa,
+WUD00871.00,Murray Basin,
+WUD00872.00,Murrin Murrin,
+WUD00873.00,Muskingum,
+WUD00874.00,Musselwhite,
+WUD00875.00,Muswellbrook,
+WUD00876.00,Mutanda,
+WUD00877.00,Myuna,
+WUD00878.00,Nadvoitsy Aluminium Smelter,
+WUD00879.00,Namakwa Sands,
+WUD00880.00,Namakwa Sands Smelter,
+WUD00881.00,Namosi,
+WUD00882.00,Nanchuan,
+WUD00883.00,Nanliang,
+WUD00884.00,Narama,
+WUD00885.00,Narrabri,
+WUD00886.00,Navachab,
+WUD00887.00,Navajo,
+WUD00888.00,Neryungrinsky,
+WUD00889.00,Neves Corvo,
+WUD00890.00,New Clydesdale,
+WUD00890.01,New Clydesdale,Roodekop
+WUD00890.02,New Clydesdale,Diepspruit
+WUD00891.00,New Denmark,
+WUD00892.00,New Lexington,
+WUD00893.00,New Vaal,
+WUD00894.00,Newlands,
+WUD00895.00,Neyveli I,
+WUD00896.00,Neyveli IA,
+WUD00897.00,Neyveli II,
+WUD00898.00,Nickel West Kwinana refinery,
+WUD00899.00,Nifty,
+WUD00900.00,Nikkelverk,
+WUD00901.00,Nikolaev Alumina,
+WUD00902.00,Nikolayevsky,
+WUD00903.00,Niquelandia,
+WUD00904.00,Nkomati,
+WUD00905.00,Noble,
+WUD00906.00,Noche Buena,
+WUD00907.00,Nooitgedacht,
+WUD00908.00,Nordenhamer Zinkhuette,
+WUD00909.00,Nornickel Kola Peninsula,
+WUD00909.01,Nornickel Kola Peninsula,Severny
+WUD00909.02,Nornickel Kola Peninsula,Kaula-Kotselvaara
+WUD00910.00,Nornickel Taimyr Peninsula,
+WUD00910.01,Nornickel Taimyr Peninsula,Oktyabrsky
+WUD00910.02,Nornickel Taimyr Peninsula,Taimyrsky
+WUD00910.03,Nornickel Taimyr Peninsula,Komsomolsky
+WUD00910.04,Nornickel Taimyr Peninsula,Skalisty
+WUD00910.05,Nornickel Taimyr Peninsula,Mayak
+WUD00910.06,Nornickel Taimyr Peninsula,Zapolyarny
+WUD00911.00,Norte Abierto,
+WUD00912.00,North Antelope Rochelle,
+WUD00913.00,North Block Complex,
+WUD00913.01,North Block Complex,Glisa
+WUD00913.02,North Block Complex,Eerstelingsfontein
+WUD00913.03,North Block Complex,Paardeplaats
+WUD00914.00,North Eastern Coalfields,
+WUD00914.01,North Eastern Coalfields,Tikak
+WUD00914.02,North Eastern Coalfields,Tirap
+WUD00914.03,North Eastern Coalfields,Tipong
+WUD00914.04,North Eastern Coalfields,Baragolai
+WUD00915.00,North Goonyella,
+WUD00916.00,North Mara,
+WUD00917.00,North Urals,
+WUD00918.00,Northern Coalfields Limited,
+WUD00918.01,Northern Coalfields Limited,Amlohri
+WUD00918.02,Northern Coalfields Limited,Bina
+WUD00918.03,Northern Coalfields Limited,Block-B
+WUD00918.04,Northern Coalfields Limited,Dudhichua
+WUD00918.05,Northern Coalfields Limited,Jayant
+WUD00918.06,Northern Coalfields Limited,Jhingurda
+WUD00918.07,Northern Coalfields Limited,Kakri
+WUD00918.08,Northern Coalfields Limited,Khadia
+WUD00918.09,Northern Coalfields Limited,Krishnashila
+WUD00918.10,Northern Coalfields Limited,Nigahi
+WUD00919.00,Northern GOK,
+WUD00919.01,Northern GOK,Annovskiy
+WUD00919.02,Northern GOK,Pervomayskiy
+WUD00920.00,Northern Star Kalgoorlie Operations,
+WUD00920.01,Northern Star Kalgoorlie Operations,Kundana
+WUD00921.00,Northfleet,
+WUD00922.00,Northparkes,
+WUD00923.00,Northshore,
+WUD00924.00,Norwich Park,
+WUD00925.00,Novokuznetsk Aluminium Smelter,
+WUD00926.00,Nueva Rosita Complex,
+WUD00927.00,NuevaUnion,
+WUD00927.01,NuevaUnion,Relincho
+WUD00927.02,NuevaUnion,La Fortuna
+WUD00928.00,Nurkazgan,
+WUD00929.00,Oak Grove,
+WUD00930.00,Oaky Creek,
+WUD00931.00,Obed Mountain,
+WUD00932.00,Obuasi,
+WUD00933.00,Odda,
+WUD00934.00,Ok Tedi,
+WUD00935.00,Oktyabrskaya,
+WUD00936.00,Olcon,
+WUD00937.00,Olympic Dam,
+WUD00938.00,Olzherassky,
+WUD00939.00,Ombilin,
+WUD00940.00,Onca Puma,
+WUD00941.00,Optimum,
+WUD00942.00,Orcopampa,
+WUD00943.00,Orlovsky,
+WUD00944.00,Osbourne,
+WUD00945.00,Oskol Electrometallurgical Plant,
+WUD00946.00,Ostrava steel plant,
+WUD00947.00,Ouro Preto Ferroalloys plant,
+WUD00948.00,Ovoid,
+WUD00949.00,Oyu Tolgoi,
+WUD00949.01,Oyu Tolgoi,Hugo Dummett North
+WUD00949.02,Oyu Tolgoi,Hugo Dummett North Extension
+WUD00950.00,Paddington,
+WUD00951.00,Paint Creek,
+WUD00951.01,Paint Creek,Samples
+WUD00952.00,Paintearth,
+WUD00953.00,Palabora,
+WUD00954.00,Palmarejo,
+WUD00954.01,Palmarejo,Guadalupe
+WUD00954.02,Palmarejo,Independencia
+WUD00954.03,Palmarejo,La Nacion
+WUD00955.00,Pampa Norte,
+WUD00955.01,Pampa Norte,Spence
+WUD00955.02,Pampa Norte,Cerro Colorado
+WUD00956.00,Panchpatmali,
+WUD00957.00,Panther,
+WUD00958.00,Pantnagar,
+WUD00959.00,Paracatu,
+WUD00960.00,Paragominas,
+WUD00961.00,Paranam,
+WUD00962.00,Paraopeba,
+WUD00962.01,Paraopeba,Jangada
+WUD00962.02,Paraopeba,Corrego do Feijao
+WUD00962.03,Paraopeba,Capao Xavier
+WUD00962.04,Paraopeba,Mar Azul
+WUD00963.00,Pascua-Lama,
+WUD00964.00,Patos de Minas,
+WUD00965.00,Pattiki Complex,
+WUD00966.00,Paulsens,
+WUD00967.00,PBS Coal,
+WUD00968.00,Peace River Coal,
+WUD00969.00,Peak Downs,
+WUD00970.00,Pena Colorada,
+WUD00971.00,Penasquito,
+WUD00971.01,Penasquito,Penasco
+WUD00971.02,Penasquito,Chile Colorado
+WUD00972.00,Pend Oreille,
+WUD00973.00,Penjom,
+WUD00974.00,Pennsylvania Mining Complex,
+WUD00974.01,Pennsylvania Mining Complex,Bailey Prep plant
+WUD00974.02,Pennsylvania Mining Complex,Bailey
+WUD00974.03,Pennsylvania Mining Complex,Enlow Fork
+WUD00974.04,Pennsylvania Mining Complex,Harvey
+WUD00975.00,Peranap,
+WUD00976.00,Pering,
+WUD00977.00,Perkasa Inakakerta,
+WUD00978.00,Pervomaysky,
+WUD00979.00,Petorca,
+WUD00980.00,Phil's Creek,
+WUD00981.00,Phoenix,
+WUD00981.01,Phoenix,Phoenix
+WUD00981.02,Phoenix,Lone Tree
+WUD00982.00,Pierina,
+WUD00983.00,Pilares,
+WUD00984.00,Pingdingshan,
+WUD00984.01,Pingdingshan,Ruzhou
+WUD00985.00,Pingdingshan Tianan Coal,
+WUD00985.01,Pingdingshan Tianan Coal,Tianan No.1
+WUD00985.02,Pingdingshan Tianan Coal,Tianan No.2
+WUD00985.03,Pingdingshan Tianan Coal,Tianan No.3
+WUD00985.04,Pingdingshan Tianan Coal,Tianan No.4
+WUD00985.05,Pingdingshan Tianan Coal,Tianan No.5
+WUD00985.06,Pingdingshan Tianan Coal,Tianan No.6
+WUD00985.07,Pingdingshan Tianan Coal,Tianan No.7
+WUD00985.08,Pingdingshan Tianan Coal,Tianan No.8
+WUD00985.09,Pingdingshan Tianan Coal,Tianan No.9
+WUD00985.10,Pingdingshan Tianan Coal,Tianan No.10
+WUD00985.11,Pingdingshan Tianan Coal,Tianan No.11
+WUD00985.12,Pingdingshan Tianan Coal,Tianan No.12
+WUD00985.13,Pingdingshan Tianan Coal,Tianan No.13
+WUD00985.14,Pingdingshan Tianan Coal,Xiangshan
+WUD00985.15,Pingdingshan Tianan Coal,Wuzhai
+WUD00985.16,Pingdingshan Tianan Coal,Cheonan Chaochuan
+WUD00985.17,Pingdingshan Tianan Coal,Pingbao
+WUD00986.00,Pingguo,
+WUD00986.01,Pingguo,Pinggou East
+WUD00986.02,Pingguo,Pinggou North
+WUD00986.03,Pingguo,Dashan Aluminium Refinery
+WUD00987.00,Pingshuo,
+WUD00987.01,Pingshuo,Antaibao
+WUD00987.02,Pingshuo,Anjialing
+WUD00987.03,Pingshuo,Jingdong
+WUD00988.00,Pinjarra Alumina Refinery,
+WUD00989.00,Pinnacle Complex,
+WUD00989.01,Pinnacle Complex,Pinnacle
+WUD00989.02,Pinnacle Complex,Green Ridge
+WUD00990.00,Pinos Altos,
+WUD00990.01,Pinos Altos,Creston Mascota
+WUD00990.02,Pinos Altos,Pinos Altos
+WUD00991.00,Pinto Valley,
+WUD00992.00,Pit Bajau Bulungan Kaltara,
+WUD00993.00,Plainfield,
+WUD00994.00,Platinum Mile,
+WUD00995.00,Plutonic,
+WUD00996.00,Pocos de Caldas,
+WUD00997.00,Pogo,
+WUD00998.00,Point Lisas,
+WUD00999.00,Poitrel,
+WUD01000.00,Polkowice-Sieroszowice,
+WUD01000.01,Polkowice-Sieroszowice,Polkowice
+WUD01000.02,Polkowice-Sieroszowice,Radwanice Wschód
+WUD01000.03,Polkowice-Sieroszowice,Sieroszowice
+WUD01000.04,Polkowice-Sieroszowice,Gaworzyce
+WUD01001.00,Polosukhinskaya,
+WUD01002.00,Pomalaa,
+WUD01003.00,Pongkor and Cibaliung,
+WUD01003.01,Pongkor and Cibaliung,Pongkor
+WUD01003.02,Pongkor and Cibaliung,Cibaliung
+WUD01004.00,Poondano,
+WUD01005.00,Poplar River,
+WUD01006.00,Poracota,
+WUD01007.00,Porcupine,
+WUD01007.01,Porcupine,Hollinger
+WUD01007.02,Porcupine,Hoyle pond
+WUD01008.00,Porgera,
+WUD01009.00,Portland Aluminium Smelter,
+WUD01010.00,POSMAC,
+WUD01011.00,Presidente Vargas Steelworks,
+WUD01012.00,Prijedor,
+WUD01013.00,Princeton,
+WUD01014.00,Prokopyevsky,
+WUD01015.00,Prominent Hill,
+WUD01015.01,Prominent Hill,Malu
+WUD01015.02,Prominent Hill,Ankata
+WUD01016.00,PT Adaro Indonesia,
+WUD01016.01,PT Adaro Indonesia,Paringin
+WUD01016.02,PT Adaro Indonesia,Tutupan
+WUD01016.03,PT Adaro Indonesia,Wara
+WUD01017.00,PT Adimitra Baratama Nusantara,
+WUD01018.00,PT Alusentosa,
+WUD01019.00,PT Antang Gunung Meratus,
+WUD01019.01,PT Antang Gunung Meratus,Block 1
+WUD01019.02,PT Antang Gunung Meratus,Block 2
+WUD01019.03,PT Antang Gunung Meratus,Block 3
+WUD01019.04,PT Antang Gunung Meratus,Block 4
+WUD01019.05,PT Antang Gunung Meratus,Block 5
+WUD01019.06,PT Antang Gunung Meratus,Block 6
+WUD01020.00,PT Atlas Resources Tbk,
+WUD01020.01,PT Atlas Resources Tbk,Mutara Hub
+WUD01020.02,PT Atlas Resources Tbk,Kukar Hub Borneo Minerals
+WUD01020.03,PT Atlas Resources Tbk,Kukar Hub Alhasanie
+WUD01020.04,PT Atlas Resources Tbk,Berau Hub
+WUD01020.05,PT Atlas Resources Tbk,Kubar Hub Diva Kencana Borneo
+WUD01020.06,PT Atlas Resources Tbk,Kubar Hub Karya Borneo Agung
+WUD01020.07,PT Atlas Resources Tbk,Oku Hub Hanson Energy Bataraja
+WUD01020.08,PT Atlas Resources Tbk,Oku Hub Ogan Energy
+WUD01020.09,PT Atlas Resources Tbk,Oku Hub Anugrah Energy
+WUD01020.10,PT Atlas Resources Tbk,Papua Hub Karya Manunggal
+WUD01020.11,PT Atlas Resources Tbk,Papua Inti Energi
+WUD01021.00,PT Baramulti Suksessarana Tbk,
+WUD01022.00,PT Barasentosa Lestari,
+WUD01023.00,PT Batubara Bukit Kendi,
+WUD01024.00,PT Bhakti Energi Persada,
+WUD01025.00,PT Bharinto Ekatama,
+WUD01026.00,PT Borneo Indobara,
+WUD01027.00,PT Bukit Enim Energi,
+WUD01028.00,PT Central Omega Resources Tbk,
+WUD01028.01,PT Central Omega Resources Tbk,PT Mulia Pacifc Resources
+WUD01028.02,PT Central Omega Resources Tbk,PT Itamatra Nusantara
+WUD01028.03,PT Central Omega Resources Tbk,Bumi Konawe Abadi
+WUD01028.04,PT Central Omega Resources Tbk,PT Mega Buana Resources
+WUD01029.00,PT Gunungbayan Pratamacoal,
+WUD01029.01,PT Gunungbayan Pratamacoal,Block 1
+WUD01029.02,PT Gunungbayan Pratamacoal,Block 2
+WUD01030.00,PT Indominco Mandiri,
+WUD01030.01,PT Indominco Mandiri,Block 1
+WUD01030.02,PT Indominco Mandiri,CPP4
+WUD01031.00,PT Indomining,
+WUD01032.00,PT Insani Baraperkasa,
+WUD01032.01,PT Insani Baraperkasa,Blok G Pinang
+WUD01033.00,PT Internasional Prima Coal,
+WUD01033.01,PT Internasional Prima Coal,Bantuas
+WUD01033.02,PT Internasional Prima Coal,Tabalong
+WUD01034.00,PT Jorong Barutama Greston,
+WUD01035.00,PT Kalmin,
+WUD01036.00,PT Kaltim Prima Coal,
+WUD01036.01,PT Kaltim Prima Coal,Bengalon
+WUD01036.02,PT Kaltim Prima Coal,Sangatta
+WUD01037.00,PT Karya Usaha Pertiwi,
+WUD01038.00,PT Kitadin,
+WUD01038.01,PT Kitadin,Tandung Mayang
+WUD01038.02,PT Kitadin,Embalut
+WUD01039.00,PT Mahakam Sumber Jaya,
+WUD01040.00,PT Mitrabara Adiperdana Tbk,
+WUD01040.01,PT Mitrabara Adiperdana Tbk,PT Mitrabara Adiperdana Tbk
+WUD01040.02,PT Mitrabara Adiperdana Tbk,PT Baradinamika Mudasukses
+WUD01041.00,PT Multi Tambangjaya Utama,
+WUD01042.00,PT Mustika Indah Permai,
+WUD01043.00,PT Santan Batubara,
+WUD01044.00,PT Smelting,
+WUD01045.00,PT Triaryani,
+WUD01046.00,PT Trisensa Mineral Utama,
+WUD01047.00,PT Trisula Kencana Sakti,
+WUD01048.00,PT Trubaindo Coal Mining,
+WUD01048.01,PT Trubaindo Coal Mining,Block 1
+WUD01048.02,PT Trubaindo Coal Mining,Blok 2 Barat Sim 3000
+WUD01049.00,PT Tuah Turangga Agung,
+WUD01049.01,PT Tuah Turangga Agung,PT Asmin Bara Bronang
+WUD01049.02,PT Tuah Turangga Agung,PT Telen Orbit Prima
+WUD01049.03,PT Tuah Turangga Agung,PT Kadya Caraka Mulia
+WUD01049.04,PT Tuah Turangga Agung,PT Suprabari Mapanindo Mineral
+WUD01049.05,PT Tuah Turangga Agung,PT Prima Multi Mineral
+WUD01049.06,PT Tuah Turangga Agung,PT Duta Nurcahya
+WUD01050.00,PT Visitama,
+WUD01051.00,Pucarrajo,
+WUD01052.00,Pueblo Viejo,
+WUD01052.01,Pueblo Viejo,Moore
+WUD01052.02,Pueblo Viejo,Monte Negro
+WUD01053.00,Puna,
+WUD01053.01,Puna,Pirquitas
+WUD01053.02,Puna,Chinchillas
+WUD01054.00,Punitaqui,
+WUD01055.00,Pyhäsalmi,
+WUD01056.00,Quebrada Blanca,
+WUD01057.00,Quebradona,
+WUD01058.00,Queensland Alumina,
+WUD01059.00,Quellaveco,
+WUD01060.00,Quiruvilca,
+WUD01061.00,Rajpura Dariba,
+WUD01061.01,Rajpura Dariba,Sindesar Khurd
+WUD01061.02,Rajpura Dariba,Rajpura Dariba
+WUD01062.00,Rampura Agucha,
+WUD01063.00,Ras Al Khair Refinery,
+WUD01064.00,Raspadskaya,
+WUD01064.01,Raspadskaya,Raspadskaya
+WUD01064.02,Raspadskaya,Razrez Raspadsky
+WUD01064.03,Raspadskaya,MUK-96
+WUD01064.04,Raspadskaya,Raspadskaya-Koksovaya
+WUD01065.00,Raven,
+WUD01066.00,Ravensthorpe,
+WUD01067.00,Ravenswood,
+WUD01068.00,Ravensworth Complex,
+WUD01069.00,Rawhide,
+WUD01070.00,Rawhide Coal,
+WUD01071.00,Recuperada,
+WUD01072.00,Red Dog,
+WUD01073.00,Red Hills,
+WUD01074.00,Red Lake,
+WUD01074.01,Red Lake,Red Lake
+WUD01074.02,Red Lake,Campbell
+WUD01074.03,Red Lake,Cochenour
+WUD01075.00,Red River,
+WUD01076.00,Reed,
+WUD01077.00,Reefton,
+WUD01077.01,Reefton,Globe Progress
+WUD01077.02,Reefton,General Gordon
+WUD01077.03,Reefton,Souvenir
+WUD01078.00,Reko Diq,
+WUD01079.00,Remington,
+WUD01079.01,Remington,Stockburg 2
+WUD01079.02,Remington,Deskins
+WUD01080.00,Rend Lake,
+WUD01081.00,Renison,
+WUD01081.01,Renison,Renison
+WUD01081.02,Renison,Mt Bischoff
+WUD01082.00,Riestpruit,
+WUD01083.00,Rio Capim,
+WUD01084.00,Rio Grande,
+WUD01085.00,Rio Tinto Kennecott,
+WUD01086.00,Rio Tuba,
+WUD01087.00,Riola/Vermilion Grove,
+WUD01088.00,River View Complex,
+WUD01089.00,Riverdale,
+WUD01090.00,Robe River,
+WUD01090.01,Robe River,Robe Valley
+WUD01090.02,Robe River,Robe Valley - Mesa A
+WUD01090.03,Robe River,West Angelas
+WUD01091.00,Robinson,
+WUD01092.00,Robinson Run,
+WUD01093.00,Rochester,
+WUD01094.00,Rocklick,
+WUD01094.01,Rocklick,Rocklick
+WUD01094.02,Rocklick,Harris
+WUD01095.00,Rolleston,
+WUD01096.00,Rönnskär,
+WUD01097.00,Rosebery,
+WUD01098.00,Rosemont,
+WUD01099.00,Rosh Pinah,
+WUD01100.00,Rössing,
+WUD01101.00,Round Mountain,
+WUD01102.00,Ruashi,
+WUD01103.00,Ruby Hill,
+WUD01104.00,Rudna,
+WUD01105.00,Rustenburg,
+WUD01105.01,Rustenburg,Waterval
+WUD01105.02,Rustenburg,Khuseleka 1
+WUD01105.03,Rustenburg,Khuseleka 2
+WUD01105.04,Rustenburg,Thembelani
+WUD01106.00,Sadiola,
+WUD01107.00,Safford,
+WUD01107.01,Safford,Lone Star
+WUD01108.00,Saint-Jean-de-Maurienne,
+WUD01109.00,Sakhara,
+WUD01110.00,Sakura Ferroalloys,
+WUD01111.00,Salek,
+WUD01112.00,Salobo,
+WUD01113.00,Salvador,
+WUD01114.00,Samarco,
+WUD01115.00,Sambarata,
+WUD01116.00,San Andres,
+WUD01117.00,San Bartolome,
+WUD01118.00,San Ciprian Refinery,
+WUD01119.00,San Dimas,
+WUD01120.00,San Jose,
+WUD01121.00,San Juan,
+WUD01122.00,San Juan de Nieva,
+WUD01123.00,San Julian,
+WUD01123.01,San Julian,Veins
+WUD01123.02,San Julian,Disseminated
+WUD01124.00,San Luis Potosi Complex,
+WUD01124.01,San Luis Potosi Complex,San Luis Potosi Smelter
+WUD01124.02,San Luis Potosi Complex,San Luis Potosi Refinery
+WUD01125.00,San Manuel,
+WUD01126.00,San Martin,
+WUD01127.00,San Miguel,
+WUD01128.00,San Vicente,
+WUD01129.00,Sandstone,
+WUD01130.00,Sanmenxia,
+WUD01131.00,Santo Domingo,
+WUD01132.00,Sao Francisco,
+WUD01133.00,Sao Luis Iron Ore Pellet Operation,
+WUD01134.00,Saraji,
+WUD01135.00,Sarongga,
+WUD01136.00,Sasol Sigma,
+WUD01136.01,Sasol Sigma,Mooikraal
+WUD01136.02,Sasol Sigma,Moholo
+WUD01137.00,Satui,
+WUD01138.00,Saucito,
+WUD01139.00,Savage,
+WUD01140.00,Savuka,
+WUD01141.00,Sayak,
+WUD01142.00,Sayanogorsk Aluminium Smelter,
+WUD01143.00,Seabee,
+WUD01143.01,Seabee,Seabee
+WUD01143.02,Seabee,Santoy
+WUD01143.03,Seabee,Porky
+WUD01144.00,Sebree,
+WUD01145.00,Sebree - Onton Complex,
+WUD01146.00,Selbaie,
+WUD01147.00,Selian,
+WUD01148.00,Senakin,
+WUD01149.00,Seneca,
+WUD01150.00,Sentinel,
+WUD01151.00,Sepon,
+WUD01152.00,Serra Azul,
+WUD01153.00,Serra Grande,
+WUD01154.00,Serra Leste,
+WUD01155.00,Serra Norte,
+WUD01155.01,Serra Norte,N4W
+WUD01155.02,Serra Norte,N4E
+WUD01155.03,Serra Norte,N5
+WUD01155.04,Serra Norte,N5-W
+WUD01155.05,Serra Norte,N5E
+WUD01155.06,Serra Norte,N5E-N
+WUD01155.07,Serra Norte,Carajas
+WUD01156.00,Serra Sul,
+WUD01157.00,Sertao Mineracao LTDA,
+WUD01158.00,Seruyung,
+WUD01159.00,Sestao steel plant,
+WUD01160.00,Shaanxi Binhuang Mining Area,
+WUD01160.01,Shaanxi Binhuang Mining Area,Binchang mining area
+WUD01160.02,Shaanxi Binhuang Mining Area,Huangling mining area
+WUD01161.00,Shaanxi North Shaanxi Mining Area,
+WUD01162.00,Shaanxi Weibei Mining Area,
+WUD01162.01,Shaanxi Weibei Mining Area,Jiaoping
+WUD01162.02,Shaanxi Weibei Mining Area,Tongchuan
+WUD01162.03,Shaanxi Weibei Mining Area,Pubai
+WUD01162.04,Shaanxi Weibei Mining Area,Chenghe
+WUD01162.05,Shaanxi Weibei Mining Area,Han
+WUD01163.00,Shahta No. 12,
+WUD01164.00,Shahuindo,
+WUD01165.00,Shandong Huayu,
+WUD01166.00,Shanggong,
+WUD01167.00,Shanxi Huasheng,
+WUD01168.00,Shanxi Lu'an Mines,
+WUD01168.01,Shanxi Lu'an Mines,Wangzhuang
+WUD01168.02,Shanxi Lu'an Mines,Changcun
+WUD01168.03,Shanxi Lu'an Mines,Yuwu
+WUD01168.04,Shanxi Lu'an Mines,Zhangcun
+WUD01168.05,Shanxi Lu'an Mines,Wuyang
+WUD01168.06,Shanxi Lu'an Mines,Luning
+WUD01168.07,Shanxi Lu'an Mines,Licun
+WUD01169.00,Shanxi New Material,
+WUD01170.00,Shanxi Zhongrun Aluminium,
+WUD01171.00,Shatyrkul,
+WUD01172.00,Shawinigan,
+WUD01173.00,Sheerness,
+WUD01174.00,Shendong Mines,
+WUD01174.01,Shendong Mines,Bulianta
+WUD01174.02,Shendong Mines,Daliuta-Huojitu
+WUD01174.03,Shendong Mines,Yujialiang
+WUD01174.04,Shendong Mines,Shangwan
+WUD01174.05,Shendong Mines,Halagou
+WUD01174.06,Shendong Mines,Baode
+WUD01174.07,Shendong Mines,Shigetai
+WUD01174.08,Shendong Mines,Wulanmulun
+WUD01174.09,Shendong Mines,Jinjie
+WUD01174.10,Shendong Mines,Bu’erta
+WUD01174.11,Shendong Mines,Wanli
+WUD01174.12,Shendong Mines,Liuta
+WUD01174.13,Shendong Mines,Cuncaota No. 1
+WUD01174.14,Shendong Mines,Cuncaota No. 2
+WUD01174.15,Shendong Mines,Huangyuchuan
+WUD01174.16,Shendong Mines,Tanggonggou
+WUD01174.17,Shendong Mines,Other Shendong Mines
+WUD01175.00,Shengli Mines,
+WUD01176.00,Shenhua Baotou Coal Chemical Refinery,
+WUD01177.00,Shestaki,
+WUD01178.00,Shila-Paula,
+WUD01178.01,Shila-Paula,Shila
+WUD01178.02,Shila-Paula,Paula
+WUD01179.00,Shilawusu,
+WUD01180.00,Shoal Creek,
+WUD01181.00,Shoemaker,
+WUD01182.00,Shondoni,
+WUD01183.00,Shuguang,
+WUD01184.00,Shuiyindong,
+WUD01185.00,Siana,
+WUD01186.00,Sibenergougol,
+WUD01187.00,Sibirginsky,
+WUD01188.00,Sierra Gorda,
+WUD01189.00,Sierra Rutile,
+WUD01190.00,Sierrita,
+WUD01191.00,Siguiri,
+WUD01192.00,Silvassa,
+WUD01193.00,Silvertip,
+WUD01194.00,Simandou,
+WUD01195.00,Simberi,
+WUD01195.01,Simberi,Sorowar
+WUD01196.00,Simoes Filho Ferroalloys plant,
+WUD01197.00,Sinclair,
+WUD01198.00,Sino Iron,
+WUD01199.00,Sishen,
+WUD01200.00,Sissingue,
+WUD01201.00,Skorpion,
+WUD01202.00,Skyline,
+WUD01203.00,Smederevo,
+WUD01204.00,Sohar,
+WUD01205.00,Soledad-Dipolos,
+WUD01206.00,Somerville,
+WUD01206.01,Somerville,Somerville North
+WUD01206.02,Somerville,Somerville South
+WUD01206.03,Somerville,Somerville Central
+WUD01207.00,Soral,
+WUD01208.00,Sorowako,
+WUD01209.00,Sossego,
+WUD01210.00,South Eastern Coalfields Limited,
+WUD01210.01,South Eastern Coalfields Limited,Chirimiri
+WUD01210.02,South Eastern Coalfields Limited,Baikunthpur
+WUD01210.03,South Eastern Coalfields Limited,Bisrampur
+WUD01210.04,South Eastern Coalfields Limited,Hasdeo
+WUD01210.05,South Eastern Coalfields Limited,Bhatgaon
+WUD01210.06,South Eastern Coalfields Limited,Jamuna
+WUD01210.07,South Eastern Coalfields Limited,Sohagpur
+WUD01210.08,South Eastern Coalfields Limited,Johilla
+WUD01210.09,South Eastern Coalfields Limited,Korba
+WUD01210.10,South Eastern Coalfields Limited,Kusmunda
+WUD01210.11,South Eastern Coalfields Limited,Dipka
+WUD01210.12,South Eastern Coalfields Limited,Gevra
+WUD01210.13,South Eastern Coalfields Limited,Raigarh
+WUD01210.14,South Eastern Coalfields Limited,Korea
+WUD01210.15,South Eastern Coalfields Limited,Driver
+WUD01210.16,South Eastern Coalfields Limited,Kurasia
+WUD01210.17,South Eastern Coalfields Limited,Amadand
+WUD01210.18,South Eastern Coalfields Limited,Kurja
+WUD01210.19,South Eastern Coalfields Limited,Bijuri
+WUD01210.20,South Eastern Coalfields Limited,Baherabandh
+WUD01210.21,South Eastern Coalfields Limited,Bhadra
+WUD01210.22,South Eastern Coalfields Limited,Kotma
+WUD01210.23,South Eastern Coalfields Limited,Atul Bhardwaaj
+WUD01210.24,South Eastern Coalfields Limited,Dhanpuri
+WUD01210.25,South Eastern Coalfields Limited,Amlai
+WUD01211.00,South Hallsville No. 1,
+WUD01212.00,South Kalgoorlie,
+WUD01213.00,South Stock,
+WUD01214.00,South Walker Creek,
+WUD01215.00,Southern Cross,
+WUD01215.01,Southern Cross,Copperhead
+WUD01215.02,Southern Cross,Corinthian
+WUD01215.03,Southern Cross,Frasers South
+WUD01215.04,Southern Cross,Marvel Loch
+WUD01215.05,Southern Cross,Nevoria
+WUD01216.00,Southern GOK,
+WUD01217.00,Southern Iron,
+WUD01218.00,Southern West Virginia Resources,
+WUD01219.00,Southstock,
+WUD01220.00,Spinifex Ridge,
+WUD01221.00,Spitzkop,
+WUD01222.00,Spring Creek,
+WUD01223.00,Springvale,
+WUD01224.00,Stagdok,
+WUD01225.00,Steelton,
+WUD01226.00,Stepnoy,
+WUD01227.00,Stillwater,
+WUD01228.00,Stobie,
+WUD01229.00,Stoilensky,
+WUD01230.00,Storliden,
+WUD01231.00,Stratford Duralie,
+WUD01232.00,Sudbury Integrated Nickel Operations,
+WUD01232.01,Sudbury Integrated Nickel Operations,Fraser
+WUD01232.02,Sudbury Integrated Nickel Operations,Nickel Rim South
+WUD01232.03,Sudbury Integrated Nickel Operations,Raglan
+WUD01233.00,SUEK Buryatia,
+WUD01233.01,SUEK Buryatia,Nikolsky
+WUD01233.02,SUEK Buryatia,Tugnuisky
+WUD01234.00,SUEK Kemerovo,
+WUD01234.01,SUEK Kemerovo,Kamyshansky
+WUD01234.02,SUEK Kemerovo,Kirov
+WUD01234.03,SUEK Kemerovo,Komsomolets
+WUD01234.04,SUEK Kemerovo,Polysaevskaya
+WUD01234.05,SUEK Kemerovo,Ruban
+WUD01234.06,SUEK Kemerovo,Taldinskaya-Zapadnaya 1
+WUD01234.07,SUEK Kemerovo,Taldinskaya-Zapadnaya 2
+WUD01234.08,SUEK Kemerovo,Yalevsky
+WUD01234.09,SUEK Kemerovo,Zarechny
+WUD01235.00,SUEK Khabarovsk,
+WUD01235.01,SUEK Khabarovsk,Bureinsky
+WUD01235.02,SUEK Khabarovsk,Pravoberezhny
+WUD01235.03,SUEK Khabarovsk,Severnaya
+WUD01236.00,SUEK Khakassia,
+WUD01236.01,SUEK Khakassia,Abakansky
+WUD01236.02,SUEK Khakassia,Chernogorsky
+WUD01236.03,SUEK Khakassia,Izykhsky
+WUD01236.04,SUEK Khakassia,Vostochno-Beisky
+WUD01236.05,SUEK Khakassia,Khakasskaya
+WUD01237.00,SUEK Krasnoyarsk,
+WUD01237.01,SUEK Krasnoyarsk,Berezovsky
+WUD01237.02,SUEK Krasnoyarsk,Borodinsky
+WUD01237.03,SUEK Krasnoyarsk,Nazarovsky
+WUD01238.00,SUEK Primorye,
+WUD01238.01,SUEK Primorye,Nekkovy
+WUD01238.02,SUEK Primorye,Novoshakhtinskoye
+WUD01239.00,SUEK Zabaikalye,
+WUD01239.01,SUEK Zabaikalye,Apsatsky
+WUD01239.02,SUEK Zabaikalye,Kharanorsky
+WUD01239.03,SUEK Zabaikalye,Vostochny
+WUD01240.00,Sufco,
+WUD01241.00,Sukari,
+WUD01242.00,Sukha Balka,
+WUD01242.01,Sukha Balka,Yubileynaya
+WUD01242.02,Sukha Balka,Frunze
+WUD01243.00,Sunrise Dam,
+WUD01244.00,Sycamore and Imperial,
+WUD01244.01,Sycamore and Imperial,Sycamore No. 2
+WUD01244.02,Sycamore and Imperial,Imperial
+WUD01244.03,Sycamore and Imperial,Sycamore No. 1
+WUD01244.04,Sycamore and Imperial,Sago
+WUD01245.00,Syferfontein,
+WUD01246.00,Tabang Project,
+WUD01246.01,Tabang Project,Fajar Sakti Prima
+WUD01246.02,Tabang Project,Bara Tabang
+WUD01246.03,Tabang Project,Brian Anjat Sentosa
+WUD01247.00,Taca Taca,
+WUD01248.00,Taganito,
+WUD01249.00,Taganito HPAL Nickel Corporation,
+WUD01250.00,Tahmoor,
+WUD01251.00,Tajo Norte,
+WUD01252.00,Talabira,
+WUD01253.00,Taldybulak Levoberezhny,
+WUD01254.00,Tallering Peak,
+WUD01255.00,Tambomayo,
+WUD01256.00,Tanami,
+WUD01257.00,Tanjung Enim,
+WUD01257.01,Tanjung Enim,Air Laya
+WUD01257.02,Tanjung Enim,Muara Tiga Besar
+WUD01257.03,Tanjung Enim,Banko Barat & Tengah
+WUD01257.04,Tanjung Enim,"Banjarsari, Kungkilan, Bunian, Arahan Utara, Arahan Selatan"
+WUD01258.00,Tantahuatay,
+WUD01259.00,Tapira,
+WUD01260.00,Taquari-Vassouras,
+WUD01261.00,Tara,
+WUD01262.00,Taranto steel plant,
+WUD01263.00,Tarong,
+WUD01264.00,Tashan,
+WUD01265.00,Tasiast,
+WUD01266.00,Tau Lekoa,
+WUD01267.00,TauTona,
+WUD01268.00,Tayan,
+WUD01269.00,Teguh Sinarabadi and Firman Ketaun Perkasa,
+WUD01269.01,Teguh Sinarabadi and Firman Ketaun Perkasa,Teguh Sinarabadi
+WUD01269.02,Teguh Sinarabadi and Firman Ketaun Perkasa,Firman Ketaun Perkasa
+WUD01270.00,Telfer,
+WUD01271.00,TEMCO,
+WUD01272.00,Temirtau steel plant,
+WUD01273.00,Tenke Fungurume,
+WUD01274.00,Thabazimbi,
+WUD01275.00,Thalanga,
+WUD01275.01,Thalanga,Far West
+WUD01275.02,Thalanga,Liontown
+WUD01276.00,The Boliden Area,
+WUD01276.01,The Boliden Area,Renström
+WUD01276.02,The Boliden Area,Kristineberg
+WUD01276.03,The Boliden Area,Kankberg
+WUD01276.04,The Boliden Area,Maurliden
+WUD01277.00,Thompson,
+WUD01278.00,Thunderbox,
+WUD01278.01,Thunderbox,Thunderbox
+WUD01278.02,Thunderbox,Rainbow
+WUD01278.03,Thunderbox,Otto Bore
+WUD01278.04,Thunderbox,Kailis
+WUD01278.05,Thunderbox,Bannockburn
+WUD01278.06,Thunderbox,Waterloo
+WUD01279.00,Tia Maria,
+WUD01280.00,Tianchi,
+WUD01281.00,Tiandeng,
+WUD01282.00,Tilden,
+WUD01283.00,Timan,
+WUD01284.00,Timmins West & Bell Creek,
+WUD01284.01,Timmins West & Bell Creek,Timmins West
+WUD01284.02,Timmins West & Bell Creek,Bell Creek
+WUD01285.00,Tiwai Point,
+WUD01286.00,Tohono,
+WUD01287.00,Tomago,
+WUD01288.00,Tomusinsky,
+WUD01289.00,Tongon,
+WUD01290.00,Toquepala,
+WUD01291.00,Totten,
+WUD01292.00,Touquoy,
+WUD01292.01,Touquoy,Beaver Dam
+WUD01292.02,Touquoy,Fifteen Mile Stream
+WUD01292.03,Touquoy,Cochrane Hill
+WUD01293.00,Trail Operations,
+WUD01294.00,Tres Valles,
+WUD01295.00,Tritton,
+WUD01295.01,Tritton,Tritton
+WUD01295.02,Tritton,Murrawombie
+WUD01295.03,Tritton,Avoca Tank
+WUD01295.04,Tritton,Girilambone
+WUD01296.00,Tropicana,
+WUD01297.00,Tselentis,
+WUD01298.00,Tshikondeni,
+WUD01299.00,Tuhup,
+WUD01299.01,Tuhup,Kohong
+WUD01299.02,Tuhup,Telakon
+WUD01300.00,Tujuh Bukit,
+WUD01301.00,Tulawaka,
+WUD01302.00,Tunnel Ridge Complex,
+WUD01302.01,Tunnel Ridge Complex,Prep plant
+WUD01302.02,Tunnel Ridge Complex,Portal 16
+WUD01303.00,Tuscarawas,
+WUD01304.00,Tusky,
+WUD01305.00,Tuticorin,
+WUD01306.00,Tweefontein,
+WUD01307.00,Twentymile,
+WUD01308.00,Twin Creeks Operation,
+WUD01308.01,Twin Creeks Operation,Twin Creeks Mine
+WUD01308.02,Twin Creeks Operation,Turquoise Ridge
+WUD01309.00,Twistdraai Thubelisha,
+WUD01310.00,Two Rivers,
+WUD01311.00,Tyrone,
+WUD01312.00,U. S. Steel Kosice,
+WUD01313.00,Ubuntu,
+WUD01314.00,Uchucchacua,
+WUD01315.00,Ulan,
+WUD01316.00,Union Reefs,
+WUD01317.00,United,
+WUD01318.00,United Coal Company,
+WUD01318.01,United Coal Company,Wellmore Coal Company
+WUD01318.02,United Coal Company,Pocahontas Coal Company
+WUD01318.03,United Coal Company,Affinity Coal Complex
+WUD01318.04,United Coal Company,Carter Roag Coal Company
+WUD01319.00,United Taconite,
+WUD01320.00,Unki,
+WUD01321.00,Ural Steel,
+WUD01322.00,Urals Works,
+WUD01323.00,Urucum,
+WUD01324.00,V.I. Lenina,
+WUD01325.00,Vale New Caledonia,
+WUD01326.00,Vale Oman Pellet Operation,
+WUD01327.00,Vale Tubarao,
+WUD01327.01,Vale Tubarao,Tubarao 1 and 2
+WUD01327.02,Vale Tubarao,Tubarao 3
+WUD01327.03,Vale Tubarao,Tubarao 4
+WUD01327.04,Vale Tubarao,Tubarao 5 and 6
+WUD01327.05,Vale Tubarao,Tubarao 7
+WUD01327.06,Vale Tubarao,Tubarao 8
+WUD01328.00,Valesul,
+WUD01329.00,Vargem Grande,
+WUD01329.01,Vargem Grande,Tamandua
+WUD01329.02,Vargem Grande,Capitao do Mato
+WUD01329.03,Vargem Grande,Aboboras
+WUD01330.00,Vedanta Goa mines,
+WUD01330.01,Vedanta Goa mines,Codli
+WUD01330.02,Vedanta Goa mines,Sonshi
+WUD01330.03,Vedanta Goa mines,Bicholim
+WUD01330.04,Vedanta Goa mines,Surla
+WUD01331.00,Veladero,
+WUD01332.00,Ventanas,
+WUD01333.00,Vergenoeg,
+WUD01334.00,Viking,
+WUD01334.01,Viking,Corning
+WUD01334.02,Viking,Knot
+WUD01335.00,Vindex,
+WUD01336.00,Vinogradovsky,
+WUD01337.00,Vinton,
+WUD01338.00,Viper,
+WUD01339.00,Vizag,
+WUD01340.00,Volgograd Aluminium Smelter,
+WUD01341.00,Volkhov Aluminium Smelter,
+WUD01342.00,Vorkutaugol,
+WUD01342.01,Vorkutaugol,Vorkutinskoye
+WUD01342.02,Vorkutaugol,Vorgashorskoye
+WUD01342.03,Vorkutaugol,Yunyaginskoe
+WUD01343.00,VP-8,
+WUD01344.00,Vygenhoek,
+WUD01345.00,Wabush,
+WUD01346.00,Wafi-Golpu,
+WUD01346.01,Wafi-Golpu,Golpu
+WUD01346.02,Wafi-Golpu,Wafi
+WUD01346.03,Wafi-Golpu,Nambonga
+WUD01347.00,Wagerup Alumina Refinery,
+WUD01348.00,Wahana Baratama,
+WUD01349.00,Waifu,
+WUD01350.00,Waihi,
+WUD01350.01,Waihi,Favona
+WUD01350.02,Waihi,Trio
+WUD01350.03,Waihi,Correnso
+WUD01350.04,Waihi,Martha
+WUD01351.00,Wambo,
+WUD01352.00,Warrick Aluminium Smelter,
+WUD01353.00,Warrior Complex,
+WUD01354.00,Watagan,
+WUD01354.01,Watagan,Ashton
+WUD01354.02,Watagan,Austar
+WUD01354.03,Watagan,Donaldson
+WUD01355.00,Weipa,
+WUD01355.01,Weipa,Amrun
+WUD01355.02,Weipa,East Weipa and Andoom
+WUD01356.00,Wells,
+WUD01357.00,Wenatchee Aluminium Smelter,
+WUD01358.00,Wenyu,
+WUD01359.00,Werris Creek,
+WUD01360.00,West Elk,
+WUD01361.00,West Wallsend,
+WUD01362.00,Western Allegheny,
+WUD01363.00,Western Coalfields Limited,
+WUD01363.01,Western Coalfields Limited,Damua
+WUD01363.02,Western Coalfields Limited,Ghodawari
+WUD01363.03,Western Coalfields Limited,Moari
+WUD01363.04,Western Coalfields Limited,Barkuhi
+WUD01363.05,Western Coalfields Limited,Umreth
+WUD01363.06,Western Coalfields Limited,Parasia
+WUD01363.07,Western Coalfields Limited,Urdhan
+WUD01363.08,Western Coalfields Limited,Thisgora
+WUD01363.09,Western Coalfields Limited,Mandla South
+WUD01363.10,Western Coalfields Limited,Kamptee
+WUD01363.11,Western Coalfields Limited,Inder
+WUD01363.12,Western Coalfields Limited,Gondegaon
+WUD01363.13,Western Coalfields Limited,Bhanegaon
+WUD01363.14,Western Coalfields Limited,Singhori
+WUD01363.15,Western Coalfields Limited,Patansaongi
+WUD01363.16,Western Coalfields Limited,Silwara
+WUD01363.17,Western Coalfields Limited,MakaDhokda
+WUD01363.18,Western Coalfields Limited,Majri
+WUD01363.19,Western Coalfields Limited,Wani North
+WUD01363.20,Western Coalfields Limited,Neeljai 2
+WUD01363.21,Western Coalfields Limited,Ghughus
+WUD01363.22,Western Coalfields Limited,Ghonsa
+WUD01363.23,Western Coalfields Limited,Mungoli
+WUD01363.24,Western Coalfields Limited,Penganga
+WUD01363.25,Western Coalfields Limited,Sector 4
+WUD01363.26,Western Coalfields Limited,Bhatadi
+WUD01363.27,Western Coalfields Limited,Padmapur
+WUD01363.28,Western Coalfields Limited,Mahakali
+WUD01363.29,Western Coalfields Limited,Nandgaon
+WUD01363.30,Western Coalfields Limited,Chandrapur
+WUD01363.31,Western Coalfields Limited,Ballarpur
+WUD01363.32,Western Coalfields Limited,Sasti
+WUD01363.33,Western Coalfields Limited,Pauni
+WUD01363.34,Western Coalfields Limited,Sakhari
+WUD01364.00,Western Range Project,
+WUD01364.01,Western Range Project,Mount Tokadeh
+WUD01364.02,Western Range Project,Mount Gangra
+WUD01364.03,Western Range Project,Mount Yuelliton
+WUD01365.00,Westside,
+WUD01366.00,Wetar,
+WUD01367.00,Wharf,
+WUD01368.00,Whim Creek,
+WUD01368.01,Whim Creek,Whim Creek
+WUD01368.02,Whim Creek,Mons Cupri
+WUD01369.00,Whitewood,
+WUD01370.00,Wild Boar,
+WUD01371.00,Wildcat Hills/Cottage Grove,
+WUD01371.01,Wildcat Hills/Cottage Grove,Wildcat Hills
+WUD01371.02,Wildcat Hills/Cottage Grove,Cottage Grove
+WUD01371.03,Wildcat Hills/Cottage Grove,Willow Lake
+WUD01372.00,Wilkie Creek,
+WUD01373.00,Wilpinjong,
+WUD01374.00,Wiluna,
+WUD01374.01,Wiluna,Wiluna
+WUD01374.02,Wiluna,Regent
+WUD01374.03,Wiluna,Matilda
+WUD01374.04,Wiluna,Lake Way
+WUD01374.05,Wiluna,Galaxy
+WUD01375.00,Windalco,
+WUD01375.01,Windalco,Ewarton
+WUD01375.02,Windalco,Kirkvine
+WUD01376.00,Windsor,
+WUD01377.00,Wodgina,
+WUD01378.00,Worsley,
+WUD01379.00,Wulagen,
+WUD01380.00,Xiaoguan,
+WUD01380.01,Xiaoguan,Xiaoguan
+WUD01380.02,Xiaoguan,Xinmi
+WUD01380.03,Xiaoguan,Gongyi
+WUD01380.04,Xiaoguan,Dengfeng
+WUD01381.00,Xiaoyi,
+WUD01382.00,Xinghua Technology,
+WUD01383.00,Xinji Mining Area,
+WUD01383.01,Xinji Mining Area,Xinji No.1
+WUD01383.02,Xinji Mining Area,Xinji No.2
+WUD01383.03,Xinji Mining Area,Liuzhuang
+WUD01383.04,Xinji Mining Area,Kouzidong
+WUD01384.00,Xinjiang Jinbao,
+WUD01385.00,Xuchang,
+WUD01386.00,Yabulu,
+WUD01387.00,Yakovlevskiy,
+WUD01388.00,Yanacocha,
+WUD01388.01,Yanacocha,La Quinua
+WUD01388.02,Yanacocha,Yanacocha
+WUD01388.03,Yanacocha,Carachugo
+WUD01388.04,Yanacocha,Maqui Maqui
+WUD01389.00,Yancoal International,
+WUD01389.01,Yancoal International,Cameby Downs
+WUD01389.02,Yancoal International,Premier
+WUD01390.00,Yandi,
+WUD01391.00,Yangcun,
+WUD01392.00,Yangquan,
+WUD01393.00,Yankuang metallurgic coke plant,
+WUD01394.00,Yanzhou Shandong Area,
+WUD01394.01,Yanzhou Shandong Area,Nantun
+WUD01394.02,Yanzhou Shandong Area,Xinglongzhuang
+WUD01394.03,Yanzhou Shandong Area,Baodian
+WUD01394.04,Yanzhou Shandong Area,Dongtan
+WUD01394.05,Yanzhou Shandong Area,Jining No. 2
+WUD01394.06,Yanzhou Shandong Area,Jining No. 3
+WUD01395.00,Yarrabee,
+WUD01396.00,Yarwun,
+WUD01397.00,Yatela,
+WUD01398.00,Yauli,
+WUD01398.01,Yauli,San Cristobal
+WUD01398.02,Yauli,Carahuacra
+WUD01398.03,Yauli,Carahuacra Norte Pit
+WUD01398.04,Yauli,Andaychagua
+WUD01398.05,Yauli,Ticlio
+WUD01398.06,Yauli,Toldorumi
+WUD01399.00,Yauricocha,
+WUD01399.01,Yauricocha,Mina Central
+WUD01399.02,Yauricocha,Esperanza
+WUD01399.03,Yauricocha,Cachi-Cachi
+WUD01399.04,Yauricocha,Mascota
+WUD01399.05,Yauricocha,Cuye
+WUD01399.06,Yauricocha,Cuerpos Pequeños
+WUD01400.00,Yenakiieve Steel,
+WUD01401.00,Yilgarn Project,
+WUD01401.01,Yilgarn Project,Carina
+WUD01401.02,Yilgarn Project,J4
+WUD01401.03,Yilgarn Project,J5
+WUD01401.04,Yilgarn Project,Bungalbin East
+WUD01402.00,Yintai Inner Mongolia,
+WUD01402.01,Yintai Inner Mongolia,Suancigou
+WUD01402.02,Yintai Inner Mongolia,Nalinmiao No. 2 Mine
+WUD01402.03,Yintai Inner Mongolia,Nalinmiao No. 1 Mine
+WUD01402.04,Yintai Inner Mongolia,Hongjingta No. 1 Mine
+WUD01402.05,Yintai Inner Mongolia,Kaida
+WUD01402.06,Yintai Inner Mongolia,Dadijing
+WUD01402.07,Yintai Inner Mongolia,Baoshan
+WUD01402.08,Yintai Inner Mongolia,Tongda
+WUD01402.09,Yintai Inner Mongolia,Chengyi
+WUD01402.10,Yintai Inner Mongolia,Talahao
+WUD01403.00,Yixingzhai,
+WUD01404.00,Yubileyno-Snegirikhinsky,
+WUD01405.00,Yueyang,
+WUD01406.00,Yunnan Huaxi,
+WUD01407.00,Yuzhkuzbassugol,
+WUD01407.01,Yuzhkuzbassugol,Alardinskaya
+WUD01407.02,Yuzhkuzbassugol,Essaulskaya
+WUD01407.03,Yuzhkuzbassugol,Osinnikovskaya
+WUD01407.04,Yuzhkuzbassugol,Uskovskaya
+WUD01407.05,Yuzhkuzbassugol,Yerunakovskaya-VIII
+WUD01408.00,Yuzhnaya,
+WUD01409.00,Zafranal,
+WUD01410.00,Zaldivar,
+WUD01411.00,Zaporizhia Coke,
+WUD01412.00,Zaporizhstal,
+WUD01413.00,Zaporozhye Alumina Refinery,
+WUD01414.00,Zaragoza steel plant,
+WUD01415.00,Zarechnaya,
+WUD01416.00,Zawar,
+WUD01416.01,Zawar,Mochia
+WUD01416.02,Zawar,Balaria
+WUD01416.03,Zawar,Zawar Mala
+WUD01416.04,Zawar,Baroi
+WUD01417.00,Zenica steel plant,
+WUD01418.00,Zeravshan,
+WUD01418.01,Zeravshan,Jilau
+WUD01418.02,Zeravshan,Taror
+WUD01418.03,Zeravshan,Khirskhona
+WUD01418.04,Zeravshan,Olympic mines
+WUD01419.00,Zhaolou,
+WUD01420.00,Zhengzhou Institute,
+WUD01421.00,Zhezkazgan Annensky,
+WUD01422.00,Zhezkazgan East and West,
+WUD01422.01,Zhezkazgan East and West,Zhezkazgan West
+WUD01422.02,Zhezkazgan East and West,Zhezkazgan East
+WUD01423.00,Zhezkazgan North,
+WUD01424.00,Zhezkazgan Smelter,
+WUD01425.00,Zhezkazgan South and Stepnoy,
+WUD01425.01,Zhezkazgan South and Stepnoy,Zhezkazgan South
+WUD01425.02,Zhezkazgan South and Stepnoy,Zhezkazgan Stepnoy
+WUD01426.00,Zhezkazgan Zhomart,
+WUD01427.00,Zhongzhou Aluminum,
+WUD01428.00,Zhunge’er Mines,
+WUD01428.01,Zhunge’er Mines,Heidaigou
+WUD01428.02,Zhunge’er Mines,Ha’erwusu
+WUD01429.00,Zibulo,
+WUD01430.00,Zijinshan,
+WUD01431.00,Zincor,
+WUD01432.00,Zinkgruvan,
+WUD01433.00,Zondernaam,
+WUD01434.00,Zululand Anthracite Collieries,
+WUD01435.00,Zunyi,
+WUD01436.00,Las Bambas,Chalcobamba

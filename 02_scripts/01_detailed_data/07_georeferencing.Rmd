@@ -7,7 +7,7 @@ editor_options:
 
 
 ###### In this script, mines are georeferenced 
-##### 1. Creation of mine_id
+##### 1. Assignment of facility_ids
 ##### 2. Conversion of sheet_general to sf objects
 ##### 3. georeferencing of mines that have coordinates in sheet_general or sheet_sub_sites
 ##### 3.1 assign GADM codes (GIDs) to mines with coords by intersecting coordinates with GADM Polygons
@@ -33,6 +33,9 @@ library(mapview)
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
 general <- detailed$general
 sub_sites <- detailed$sub_sites
+
+# read facility_ids log table
+facility_ids <- read_csv("./01_input/02_lists_and_concordance_tables/facility_ids.csv")
 
 # Import Geodata from GADM
 source("./02_scripts/05_other/get_GADM_data.R")
@@ -61,7 +64,7 @@ add_polygons = FALSE
 
 <br>
 
-### 1. Creation of mine_id
+### 1. Assignment of facility_id
 ```{r , echo = FALSE, message = FALSE} 
 
 # create sheet containing all mines and sub-sites
@@ -74,15 +77,106 @@ general <- bind_rows(general, sub_sites)
 general$mining_facility_types <- coalesce(general$mining_facility_types, general$mine_types)
 general <- select(general, -mine_types)
 
+# needed for check later
+general_before <- general
 
-#create new column mine_id
-general <- general %>% 
-  arrange(mine_fac) %>% 
-  group_by(mine_fac) %>% 
-    mutate(mine_id = str_c("WUD", str_pad(dplyr::cur_group_id(), width = 5, pad = "0"))) %>%
-  group_by(mine_id) %>% 
-    mutate(mine_id = str_c(mine_id, ".", str_pad(row_number()-1, width = 2, pad = "0", "left"))) %>% 
-  relocate(mine_id, .before = mine_fac)
+
+if (file.exists("./01_input/02_lists_and_concordance_tables/facility_ids.csv")){
+  
+  new_facilities <- general %>% 
+     left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
+     filter(facility_id %>% is.na())
+  
+  #Case when new facilities need a new facility_id
+  if(nrow(new_facilities) > 0) {
+    
+    # assign already existing facility_ids to corresponding facilities
+    general_w_existing_fac_id <- general %>%
+      arrange(mine_fac) %>%
+      left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
+      relocate(facility_id, .before = mine_fac) %>% 
+      filter(!(facility_id %>% is.na()))
+    
+    
+    # assign new facility_ids to new facilities without facility_id
+    last_nr <- facility_ids$facility_id %>% substr(., 4, 8) %>% as.integer() %>% max()
+    
+    general_wo_existing_fac_id <- general %>% 
+      arrange(mine_fac) %>%
+      left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
+      relocate(facility_id, .before = mine_fac) %>%
+      filter(facility_id %>% is.na()) %>%
+      arrange(mine_fac) %>%
+      group_by(mine_fac) %>% 
+        mutate(facility_id = str_c("WUD", str_pad(dplyr::cur_group_id() + last_nr, width = 5, pad = "0"))) %>%
+      group_by(facility_id) %>% 
+        mutate(facility_id = str_c(facility_id, ".", str_pad(row_number()-1, width = 2, pad = "0", "left"))) %>% 
+      relocate(facility_id, .before = mine_fac)
+    
+    
+    # add the new facility_ids to the facility_ids.csv file 
+    facility_ids <- facility_ids %>% bind_rows(general_wo_existing_fac_id %>%
+                                                 select(facility_id, mine_fac, sub_site))
+    
+    write_csv(facility_ids, "./01_input/02_lists_and_concordance_tables/facility_ids.csv", na = "")
+    
+    
+    # create table general which now has all facility ids assigned
+    general <- bind_rows(general_w_existing_fac_id, general_wo_existing_fac_id)
+    
+  
+  # check that general has the same number of rows as before the assignment of facility_ids
+  if(nrow(general) != nrow(general_before)){
+    
+    print(setdiff(general %>%
+                    select(mine_fac, sub_site),
+                  general_before %>%
+                    select(mine_fac, sub_site)))
+    
+    print(setdiff(general_before %>%
+                    select(mine_fac, sub_site),
+                  general %>%
+                    select(mine_fac, sub_site)))
+    
+    # check for duplicated names
+    print(general_before %>% 
+            filter(duplicated(general_before %>% select(mine_fac, sub_site)) == TRUE))
+    
+    stop(cat("The assignment of facility_ids caused the table general (nrow: ", nrow(general), ") to have more or less rows than it should have (nrow:", nrow(general_before), ")"))
+  } 
+    
+    
+  # Case when all facilities can be supplied with a facility_id from the file facility_ids.csv  
+  } else {
+    
+    general <- general %>%
+      arrange(mine_fac) %>%
+      left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
+      relocate(facility_id, .before = mine_fac)
+    
+  }
+  
+  
+} else {
+  
+  # create new facility_id for all facilities
+  general <- general %>% 
+    arrange(mine_fac) %>% 
+    group_by(mine_fac) %>% 
+      mutate(facility_id = str_c("WUD", str_pad(dplyr::cur_group_id(), width = 5, pad = "0"))) %>%
+    group_by(facility_id) %>% 
+      mutate(facility_id = str_c(facility_id, ".", str_pad(row_number()-1, width = 2, pad = "0", "left"))) %>% 
+    relocate(facility_id, .before = mine_fac)
+  
+  
+  # Create new file facility_ids.csv with all facility_ids from mine-level data
+  facility_ids <- general %>% 
+    select(facility_id, mine_fac, sub_site)
+  
+  write_csv(facility_ids, "./01_input/02_lists_and_concordance_tables/facility_ids.csv", na = "")
+
+}
+
 
 ```
 
@@ -209,7 +303,7 @@ gadm_levels <- tibble(countries$GID_0, max_gadm_level) %>%
 general_gadm_added <- general_output %>% 
   mutate(GID_0 = substr(alphanumiso, 1,3)) %>% 
   left_join(., gadm_levels, by = "GID_0") %>% 
-  select(mine_id, mine_fac, GID_0, max_gadm_level)
+  select(facility_id, mine_fac, GID_0, max_gadm_level)
 
 
 # loop over levels and join the geometries from GADM to the mines without coordinates
@@ -262,20 +356,20 @@ for(lvl in 1:4){
 # thus they have to be summarised 
 general_output_gadm <- general_output_gadm %>% 
   st_drop_geometry() %>% 
-  select(mine_id, GID_0, GID_1, GID_2, GID_3, GID_4) %>%
-  group_by(mine_id) %>% 
+  select(facility_id, GID_0, GID_1, GID_2, GID_3, GID_4) %>%
+  group_by(facility_id) %>% 
   summarise(
-    mine_id = unique(mine_id),
+    facility_id = unique(facility_id),
     GID_0 = paste(unique(GID_0), collapse = " ; "),
     GID_1 = paste(unique(GID_1), collapse = " ; "),
     GID_2 = paste(unique(GID_2), collapse = " ; "),
     GID_3 = paste(unique(GID_3), collapse = " ; "),
     GID_4 = paste(unique(GID_4), collapse = " ; ")) %>% 
-  arrange(mine_id)
+  arrange(facility_id)
 
 # left join with general output 
 general_output <- general_output %>% 
-  left_join(general_output_gadm, by = "mine_id")
+  left_join(general_output_gadm, by = "facility_id")
 
 
 
@@ -283,7 +377,7 @@ general_output <- general_output %>%
 # if so, assign manually
 mines_without_poly_sf <- general_output %>% 
   filter(GID_1 %>% is.na()) %>% 
-  select(mine_id, mine_fac, alphanumiso, geometry, GID_1, GID_2, GID_3, GID_4) %>% 
+  select(facility_id, mine_fac, alphanumiso, geometry, GID_1, GID_2, GID_3, GID_4) %>% 
   mutate(GID_0 = substr(alphanumiso, 1,3), .before = "GID_1") %>% 
   left_join(gadm_levels, by = "GID_0")
 
@@ -332,8 +426,8 @@ if (file.exists("./01_input/03_log_files/01_detailed_data/log_location_not_inter
 # join the GADM regions from log file to the mines not automatically intersecting
 general_output <- general_output %>% 
   left_join(GADM_log %>% 
-              select(mine_id, GID_1, GID_2, GID_3, GID_4), 
-            by = c("mine_id")) %>% 
+              select(facility_id, GID_1, GID_2, GID_3, GID_4), 
+            by = c("facility_id")) %>% 
   mutate(GID_1 = ifelse(is.na(GID_1.x), GID_1.y, GID_1.x),
          GID_2 = ifelse(is.na(GID_2.x), GID_2.y, GID_2.x),
          GID_3 = ifelse(is.na(GID_3.x), GID_3.y, GID_3.x),
@@ -342,7 +436,7 @@ general_output <- general_output %>%
 
 # # check 1
 # general_output2 %>%
-#   filter(mine_id == "WUD00114.00") %>%
+#   filter(facility_id == "WUD00114.00") %>%
 #   select(GID_1, GID_2, GID_3, GID_4)
 #
 # # check 2
@@ -492,7 +586,7 @@ if(add_polygons == FALSE) {
   # cleaning and sorting
   general_output <- general_output %>% 
     select(-sub_site, -sub_site_other_name, -coord_is_na) %>% 
-    arrange(mine_id)
+    arrange(facility_id)
   
   
   # CHECK: this has to return TRUE 
@@ -598,7 +692,7 @@ if(add_polygons == TRUE) {
   # cleaning and sorting
   general_output <- general_output %>% 
     select(-sub_site, -sub_site_other_name, -coord_is_na) %>% 
-    arrange(mine_id)
+    arrange(facility_id)
   
   
   # CHECK: this has to return TRUE 
@@ -622,7 +716,7 @@ if(general_output %>%
 
 <br>
 
-### 5. Export final data
+### 5. Export data
 ```{r , echo = FALSE, message = FALSE} 
 
 if (add_polygons == TRUE) {
@@ -641,7 +735,7 @@ if (add_polygons == TRUE) {
 st_write(mines_sub_sites %>% 
            relocate(sub_site_other_name, .after = sub_site) %>%
            select(-coord_is_na) %>%
-           arrange(mine_id),
+           arrange(facility_id),
          "./03_intermediate/01_detailed_data/sheet_general/sub_sites.gpkg", append = FALSE)
 
 ```
