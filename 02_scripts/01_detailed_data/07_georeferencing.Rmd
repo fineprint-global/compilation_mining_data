@@ -77,85 +77,163 @@ general <- bind_rows(general, sub_sites)
 general$mining_facility_types <- coalesce(general$mining_facility_types, general$mine_types)
 general <- select(general, -mine_types)
 
+# just for testing purposes
+# general <- general %>%
+#   arrange(mine_fac) %>%
+#   slice(1001:2000)
+
 # needed for check later
 general_before <- general
 
 
 if (file.exists("./01_input/02_lists_and_concordance_tables/facility_ids.csv")){
   
-  new_facilities <- general %>% 
-     left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
-     filter(facility_id %>% is.na())
+  # 1. assign existing facility_ids to the corresponding facilities and sub-sites
+  general_w_fac_id <- general %>%
+    arrange(mine_fac) %>%
+    left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
+    relocate(facility_id, .before = mine_fac) %>% 
+    filter(!(facility_id %>% is.na()))
   
-  #Case when new facilities need a new facility_id
-  if(nrow(new_facilities) > 0) {
+  
+  # check if there are facilities without allocated facility_ids
+  general_wo_fac_id <- general %>% 
+    left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
+    filter(facility_id %>% is.na()) %>% 
+    select(-facility_id)
+  
+  if (nrow(general_wo_fac_id) > 0 ) {
     
-    # assign already existing facility_ids to corresponding facilities
-    general_w_existing_fac_id <- general %>%
-      arrange(mine_fac) %>%
-      left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
-      relocate(facility_id, .before = mine_fac) %>% 
-      filter(!(facility_id %>% is.na()))
+    # 2. assign new facility_ids to new entries, if necessary
+    
+    # 2.1. handle cases where new sub-sites of already existing parent facilities are introduced
+    # they should have the first five digits of the parent facility, with a new unique two-digit ending
+    facilities_with_parent_id <- facility_ids$mine_fac %>% unique()
+
+    general_wo_fac_id_1 <- general_wo_fac_id %>% 
+      filter(mine_fac %in% facilities_with_parent_id)
+    
+    if (nrow(general_wo_fac_id_1) > 0) {
+        
+      # assign parent's facility id
+      general_wo_fac_id_1 <- general_wo_fac_id_1 %>% 
+        left_join(facility_ids %>% 
+                    mutate(facility_id = substr(facility_id, 1, 8)) %>%
+                    select(-sub_site) %>% 
+                    unique(), by = "mine_fac") %>% 
+        relocate(facility_id, .before = mine_fac)
+      
+      
+      # assign new ending
+      general_wo_fac_id_1_temp <- tibble()
+        
+      for(row_nr in (1:nrow(general_wo_fac_id_1))) {
+        
+        row <- general_wo_fac_id_1[row_nr,]
+        
+        # get last sub-site number of this facility
+        last_sub_nr <- facility_ids %>% 
+          bind_rows(general_wo_fac_id_1_temp) %>% 
+          filter(mine_fac == row$mine_fac) %>%
+          select(facility_id) %>% 
+          mutate(facility_id = substr(facility_id, 10,11)) %>%
+          unlist() %>%
+          as.vector() %>%
+          as.integer() %>%
+          max()
+        
+        # paste last two digits to facility id
+        row <- row %>% 
+          mutate(facility_id = str_c(facility_id, ".", str_pad(last_sub_nr + 1, width = 2, pad = "0", "left")))
+        
+        general_wo_fac_id_1_temp <- general_wo_fac_id_1_temp %>% 
+          bind_rows(row)
+        
+      }
+      
+      # replace original object with version with added facility_ids with correct ending
+      general_wo_fac_id_1 <- general_wo_fac_id_1_temp
+      
+    }
     
     
-    # assign new facility_ids to new facilities without facility_id
-    last_nr <- facility_ids$facility_id %>% substr(., 4, 8) %>% as.integer() %>% max()
+    # 2.2. handle cases where new facilities and sub-sites need new facility_ids
+    general_wo_fac_id_2 <- general_wo_fac_id %>% 
+      filter(!(mine_fac %in% facilities_with_parent_id))
     
-    general_wo_existing_fac_id <- general %>% 
-      arrange(mine_fac) %>%
-      left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
-      relocate(facility_id, .before = mine_fac) %>%
-      filter(facility_id %>% is.na()) %>%
-      arrange(mine_fac) %>%
-      group_by(mine_fac) %>% 
-        mutate(facility_id = str_c("WUD", str_pad(dplyr::cur_group_id() + last_nr, width = 5, pad = "0"))) %>%
-      group_by(facility_id) %>% 
-        mutate(facility_id = str_c(facility_id, ".", str_pad(row_number()-1, width = 2, pad = "0", "left"))) %>% 
-      relocate(facility_id, .before = mine_fac)
+    if(nrow(general_wo_fac_id_2) > 0) {
+      
+      last_nr <- facility_ids$facility_id %>% substr(., 4, 8) %>% as.integer() %>% max()
+      
+      general_wo_fac_id_2 <- general_wo_fac_id_2 %>%
+        arrange(mine_fac) %>%
+        group_by(mine_fac) %>% 
+          mutate(facility_id = str_c("WUD", str_pad(dplyr::cur_group_id() + last_nr, width = 5, pad = "0"))) %>%
+        ungroup() %>%
+        group_by(facility_id) %>% 
+          mutate(facility_id = str_c(facility_id, ".", str_pad(row_number() - 1, width = 2, pad = "0", "left"))) %>%
+        ungroup() %>%
+        relocate(facility_id, .before = mine_fac)
+      
+    }
+    
+    # 3. combine all entries that got a new facility_id assigned
+    if (nrow(general_wo_fac_id_1) > 0 & nrow(general_wo_fac_id_2) > 0){
+      general_wo_fac_id <- general_wo_fac_id_1 %>% 
+        bind_rows(general_wo_fac_id_2) %>% 
+        arrange(facility_id)
+      
+    } else if (nrow(general_wo_fac_id_1) > 0) {
+      general_wo_fac_id <- general_wo_fac_id_1 %>%
+        arrange(facility_id)
+      
+    } else if (nrow(general_wo_fac_id_2) > 0) {
+      general_wo_fac_id <- general_wo_fac_id_2 %>%
+        arrange(facility_id)
+    }
     
     
-    # add the new facility_ids to the facility_ids.csv file 
-    facility_ids <- facility_ids %>% bind_rows(general_wo_existing_fac_id %>%
-                                                 select(facility_id, mine_fac, sub_site))
+    # 4. add the new facility_ids to the facility_ids.csv file 
+    facility_ids <- facility_ids %>% 
+      bind_rows(general_wo_fac_id %>%
+                  select(facility_id, mine_fac, sub_site))
     
     write_csv(facility_ids, "./01_input/02_lists_and_concordance_tables/facility_ids.csv", na = "")
     
     
-    # create table general which now has all facility ids assigned
-    general <- bind_rows(general_w_existing_fac_id, general_wo_existing_fac_id)
-    
+    # 5. create table general which now has all facility_ids assigned
+    general <- bind_rows(general_w_fac_id, general_wo_fac_id) %>%
+      arrange(facility_id)
+    print("New facility_ids were added to the existing file facility_ids.csv")
+
   
-  # check that general has the same number of rows as before the assignment of facility_ids
-  if(nrow(general) != nrow(general_before)){
+    # 6. check that general has the same number of rows as before the assignment of facility_ids
+    if(nrow(general) != nrow(general_before)){
+      
+      print(setdiff(general %>%
+                      select(mine_fac, sub_site),
+                    general_before %>%
+                      select(mine_fac, sub_site)))
+      
+      print(setdiff(general_before %>%
+                      select(mine_fac, sub_site),
+                    general %>%
+                      select(mine_fac, sub_site)))
+      
+      # duplicated names
+      print(general_before %>% 
+              filter(duplicated(general_before %>% select(mine_fac, sub_site)) == TRUE))
+      
+      stop(cat("The assignment of facility_ids caused the table general (nrow: ", nrow(general), 
+               ") to have more or less rows than it should have (nrow:", nrow(general_before), ")"))
+    }
     
-    print(setdiff(general %>%
-                    select(mine_fac, sub_site),
-                  general_before %>%
-                    select(mine_fac, sub_site)))
     
-    print(setdiff(general_before %>%
-                    select(mine_fac, sub_site),
-                  general %>%
-                    select(mine_fac, sub_site)))
-    
-    # check for duplicated names
-    print(general_before %>% 
-            filter(duplicated(general_before %>% select(mine_fac, sub_site)) == TRUE))
-    
-    stop(cat("The assignment of facility_ids caused the table general (nrow: ", nrow(general), ") to have more or less rows than it should have (nrow:", nrow(general_before), ")"))
-  } 
-    
-    
-  # Case when all facilities can be supplied with a facility_id from the file facility_ids.csv  
   } else {
     
-    general <- general %>%
-      arrange(mine_fac) %>%
-      left_join(facility_ids, by = c("mine_fac", "sub_site")) %>% 
-      relocate(facility_id, .before = mine_fac)
-    
+    general <- general_w_fac_id
+    print("All facility_ids were allocated from the file facility_ids.csv, no new facility_ids were added")
   }
-  
   
 } else {
   
@@ -164,16 +242,19 @@ if (file.exists("./01_input/02_lists_and_concordance_tables/facility_ids.csv")){
     arrange(mine_fac) %>% 
     group_by(mine_fac) %>% 
       mutate(facility_id = str_c("WUD", str_pad(dplyr::cur_group_id(), width = 5, pad = "0"))) %>%
+    ungroup() %>% 
     group_by(facility_id) %>% 
       mutate(facility_id = str_c(facility_id, ".", str_pad(row_number()-1, width = 2, pad = "0", "left"))) %>% 
+    ungroup() %>%
     relocate(facility_id, .before = mine_fac)
-  
+
   
   # Create new file facility_ids.csv with all facility_ids from mine-level data
   facility_ids <- general %>% 
     select(facility_id, mine_fac, sub_site)
   
   write_csv(facility_ids, "./01_input/02_lists_and_concordance_tables/facility_ids.csv", na = "")
+  print("New facility_ids.csv file created")
 
 }
 
