@@ -75,6 +75,17 @@ source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.
 
 if(exists("gen_cov")) rm(gen_cov)
 
+
+# calculate nr of sources really used (as nrow of source_ids is inaccurate, some might not be used any more)
+unique_sources <- c()
+for(sheet_number in c(1:length(detailed_converted))){
+  temp_sources <- detailed_converted[[sheet_number]]$source_id %>%
+    unique()
+  not_incl <- setdiff(temp_sources, unique_sources)
+  unique_sources <- c(unique_sources, not_incl)
+}
+
+
 gen_cov <- tibble(Indicator = NA, Amount = NA) %>% 
   filter(!is.na(Amount)) %>%
   mutate(Indicator = as.character(Indicator), Amount = as.numeric(Amount))
@@ -112,6 +123,10 @@ gen_cov <- gen_cov %>%
   union(., tibble(
     Indicator = "Number of sources",
     Amount = source_ids %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of sources really used",
+    Amount = unique_sources %>% length()
   ))
 
 
@@ -219,25 +234,6 @@ nr_mine_by_mat <- sheet_min %>%
 datatable(nr_mine_by_mat, rownames = FALSE, caption = "Number of mines per material")
 
 
-# nr of sources really used (as nrow of source_ids is inaccurate, some might not be used any more)
-unique_sources <- c()
-
-for(sheet_number in c(1:length(detailed_converted))){
-  
-  print(sheet_number)
-  
-  temp_sources <- detailed_converted[[sheet_number]]$source_id %>%
-    unique()
-  
-  not_incl <- setdiff(temp_sources, unique_sources)
-  
-  unique_sources <- c(unique_sources, not_incl)
-  
-}
-
-
-# print for Rmd output
-print(cat("Number of sources that were really used: ", length(unique_sources)))
 ```
 
 <br> 

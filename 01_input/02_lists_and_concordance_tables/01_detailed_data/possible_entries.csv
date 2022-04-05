@@ -8,31 +8,31 @@ type_mineral;Coal;Coal mined
 type_mineral;Clean coal;Clean coal
 type_mineral;NM mineral;NM mineral
 type_mineral;NM mineral ore;NM mineral ore
-type_mining;Open pit;Open pit
+type_mining;Open pit;Surface
 type_mining;Underground;Underground
-type_mining;Surface;Open pit
-type_mining;Open Pit;Open pit
-type_mining;Open cut;Open pit
-type_mining;Open Cut;Open pit
+type_mining;Surface;Surface
+type_mining;Open Pit;Surface
+type_mining;Open cut;Surface
+type_mining;Open Cut;Surface
 type_mining;Leaching;Leaching
 type_mining;Heap leach;Heap leaching
 type_mining;Open pit, Underground;Open pit, Underground
 type_mining;Dump leach;Dump leaching
 type_mining;Dump leaching;Dump leaching
-type_mining;Underground, Open pit;Underground, Open pit
+type_mining;Underground, Open pit;Underground, Surface
 type_mining;Stockpiles;Stockpiles
 type_mining;-;
-type_mining;Open Pits;Open pit
+type_mining;Open Pits;Surface
 type_mining;underground;Underground
 type_mining;Leach;Leaching
 type_mining;Autoclave;Autoclave
 type_mining;Heap Leach;Heap leaching
-type_mining;Open Pit, Underground;Open pit, Underground
+type_mining;Open Pit, Underground;Surface, Underground
 type_mining;Leach Pad;Leach pad
 type_mining;Leach pad;Leach pad
-type_mining;Open pit and Underground;Open pit, Underground
+type_mining;Open pit and Underground;Surface, Underground
 type_mining;Dump leach ore;Dump leaching
-type_mining;Underground, Surface;Underground, Open pit
+type_mining;Underground, Surface;Underground, Surface
 type_mining;Undergrpund;Underground
 type_mining;Flotation;Flotation
 type_mining;Dump Leach;Dump leaching

@@ -28,7 +28,6 @@ path <- "./01_input/01_data/01_detailed_data/detailed_data_mining.xlsx"
 
 detailed <- path %>%
   excel_sheets() %>%
-  setdiff(., c("non-fitting_info_commodities", "environmental_concerns")) %>%
   set_names() %>% 
   map(~ read_excel(path = path, sheet = .x, na = c("", "-", "NA")))
 
