@@ -1,6 +1,6 @@
 ### Retrieval of EIA data
+  
   # Via API of EIA (please note: key needed)
-  # Key: eed697fbab825de21d1f1c08c56e63cf
   # API documentation: https://www.eia.gov/opendata/commands.php
 
 
@@ -18,12 +18,9 @@ library(tidyverse)
 rm(list = ls())
 
 
-
-# # read data which has been downloaded so far (to exclude from query, and for check)
-# eia_coal_1 <- read_rds(paste0("./country-specific/data_retrieval/eia/eia_2021-10-18.rds"))
-# 
-# eia_coal_1_series_ids <- eia_coal_1 %>%
-#   distinct(series_id)
+# set environment variables
+  # i.e. API key
+readRenviron("./02_scripts/02_country_specific/eia/.Renviron")
 
 
 
@@ -44,7 +41,7 @@ if(exists("eia_coal_values")) rm(eia_coal_values)
 
 # retrieve child categories for given category from API
   # i.e. in this case for all availables states
-url <- paste0("https://api.eia.gov/category/?api_key=eed697fbab825de21d1f1c08c56e63cf&category_id=", cat_id)
+url <- paste0("https://api.eia.gov/category/?api_key=", Sys.getenv("eia_api_key"), "&category_id=", cat_id)
 
 category_ids_1 <- fromJSON(url)
 
