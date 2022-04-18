@@ -1,10 +1,14 @@
-####### Gap filling based on commodity production values, grades, ore production values
+####### Gap filling based on commodity production values & grades & ore production values (+ partly recovery rates)
+
+
 
 library(tidyverse)
 library(rlang)
 
+
 # clear R environment
 rm(list = ls())
+
 
 
 ## read files
@@ -30,8 +34,11 @@ sheet_res <- detailed$reserves
 
 
 
+
+
 ## add duplicates for type_mineral in sheet_min -----------------
   ## e.g. "Ore processed" from "Ore mined" and vice versa (+ same for coal in sheet_coal)
+
 
 # mine_fac/year with "Ore mined" or "Ore processed"
 ore_mined <- sheet_min %>%
@@ -41,6 +48,7 @@ ore_mined <- sheet_min %>%
 ore_proc <- sheet_min %>%
   filter(type_mineral == "Ore processed") %>%
   distinct(mine_fac, year)
+
 
 # mines with reported ore mined for a year, but no ore processed for that year
 mine_list <- setdiff(ore_mined, ore_proc)
@@ -56,13 +64,14 @@ sheet_min <- sheet_min %>%
 # mines with reported ore processed, but no ore mined for that year
 mine_list <- setdiff(ore_proc, ore_mined)
 
-# Add "Ore mined" where not reported
+# add "Ore mined" where not reported
 sheet_min <- sheet_min %>% 
   union(
     mine_list %>%
       left_join(sheet_min %>% filter(type_mineral == "Ore processed")) %>%
       mutate(type_mineral = "Ore mined")
   )
+
 
 
 # mine_fac/year with "Coal mined" or "Clean coal"
@@ -73,6 +82,7 @@ coal_mined <- sheet_coal %>%
 coal_clean <- sheet_coal %>%
   filter(type_mineral == "Clean coal") %>%
   distinct(mine_fac, year)
+
 
 # mines with reported coal mined for a year, but no Clean coal for that year
 mine_list <- setdiff(coal_mined, coal_clean)
@@ -100,11 +110,15 @@ sheet_coal <- sheet_coal %>%
 
 
 
+
+
+
 ## Gap filling (values) for sheet_min ---------------------
 
 
 # save temporary object to compare below which values are estimated
 temp_cols <- sheet_min
+
 
 
 # use amount_sold where value = NA in sheet_min
@@ -116,6 +130,7 @@ sheet_min <- sheet_min %>%
 sheet_coal <- sheet_coal %>% 
   mutate(
     value = ifelse(is.na(value) & !is.na(amount_sold), amount_sold, value))
+
 
 
 # join with sheet_com and estimate missing values
@@ -154,7 +169,8 @@ sheet_min <- sheet_min %>%
 
 
 
-## adjust sources in sheet
+
+## adjust sources in sheet ----
 
 # get all column names for join except for estimated column (i.e. value)
 col_names <- names(sheet_min)[!names(sheet_min) %in% c("value")]
@@ -182,47 +198,13 @@ sheet_min <- sheet_min %>%
 
 
 
-# ## remove double counting created due to several ore values for each commodity per mine
-#   # i.e. use average of ores estimated based on value.com and grade
-# 
-# # define columns by which to aggregate (i.e. excluding those which are to be aggregated)
-# col_names <- names(sheet_min)[!names(sheet_min) %in% c("value", "amount_sold", "all_metals_overall_grade")]
-# 
-# # aggregate
-# # similar to sheet_com above
-# sheet_min <- sheet_min %>%
-#   filter(!is.na(value)) %>%
-#   group_by(across(all_of(col_names))) %>%
-#   summarise(
-#     all_metals_overall_grade = if(all(is.na(all_metals_overall_grade))) NA else weighted.mean(x = all_metals_overall_grade, w = value, na.rm = TRUE),
-#     value = if(all(is.na(value))) NA else mean(value, na.rm = TRUE),
-#     amount_sold = if(all(is.na(amount_sold))) NA else mean(amount_sold, na.rm = TRUE)
-#   ) %>%
-#   ungroup() %>%
-#   union(.,
-#         sheet_min %>%
-#           filter(is.na(value))
-#   ) %>%
-#   group_by(across(all_of(col_names))) %>%
-#   summarise(
-#     all_metals_overall_grade = if(all(is.na(all_metals_overall_grade))) NA else mean(all_metals_overall_grade, na.rm = TRUE),
-#     value = if(all(is.na(value))) NA else mean(value, na.rm = TRUE),
-#     amount_sold = if(all(is.na(amount_sold))) NA else mean(amount_sold, na.rm = TRUE)
-#   ) %>%
-#   ungroup()
-
-
-
-
-
-
-
 
 ## Gap filling (values) for sheet_com ---------------------
 
 
 # save temporary object to compare below which values/grades are estimated
 temp_cols <- sheet_com
+
 
 
 # use amount_sold where value = NA in sheet_com
@@ -281,7 +263,8 @@ sheet_com <- sheet_com %>%
 
 
 
-## adjust sources in sheet
+
+## adjust sources in sheet ----
 
 # get all column names for join except for estimated column (i.e. value/grade)
 col_names <- names(sheet_com)[!names(sheet_com) %in% c("value", "grade")]
@@ -312,7 +295,7 @@ sheet_com <- sheet_com %>%
 
 
 
-## adjust source_ids and include again
+## adjust source_ids and include again ----
 
 # sources of current sheets
 sources <- sheet_min %>%

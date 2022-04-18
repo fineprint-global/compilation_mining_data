@@ -1,6 +1,7 @@
 ### Description: This function reads in the last modified/saved file in a given folder
-# with a specific pattern (filenamepattern) 
-# from a given directory (directory)
+  
+  # with a specific pattern (filenamepattern) 
+  # from a given directory (directory)
 
 my_lastfile <- function(directory, filenamepattern){
 

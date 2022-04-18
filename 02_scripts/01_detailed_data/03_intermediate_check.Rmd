@@ -25,7 +25,6 @@ rm(list = ls())
 
 ## read files
 
-## read files
 # harmonized and converted data file
 detailed <- read_rds("./03_intermediate/01_detailed_data/all_tables_converted.rds")
 
@@ -119,6 +118,8 @@ exact_double_com <- sheet_com %>%
 
 # table for Rmd output
 DT::datatable(exact_double_min, rownames = FALSE, caption = "Exact same entry twice in commodities sheet")
+
+
 
 
 ### double counting check INCLUDING double entries of the same source
@@ -273,7 +274,7 @@ write_delim(non_fit, "./04_output/01_detailed_data/03_intermediate_check/non_fit
 DT::datatable(non_fit)  
 
 
-# comment: maybe exclude those from sheet_min (just for the check) which are not Oxide ores and at the same time have also a concentrate production reported (e.g. sulphide ore resulting in concentrate) ??? because then content is likely provided for concentrate already
+# comment: possible additional option would be to exclude those from sheet_min (just for the check) which are not oxide ores and at the same time have also a concentrate production reported (e.g. sulphide ore resulting in concentrate) -> because then content is likely provided for concentrate
 
 
 ```
@@ -311,27 +312,17 @@ DT::datatable(dupli)
 <br> 
 
 ```{r , echo = FALSE, message = FALSE}
+### possible additional check: check values per mine/material for one year vs next to check for potential typos, i.e. outliers in time series
 
-### check values per mine/material for one year vs next to check for potential typos, i.e. outliers in time series
-
-
-# table for Rmd output
-# DT::datatable()  
 
 ```
 
 <br> 
 
 ```{r, echo = FALSE, message = FALSE}
-
-### check for double counting between ores and concentrates
+### possible additional check: check for double counting between ores and concentrates
 
 
 ```
 
 <br> 
-
-```{r}
-
-```
-

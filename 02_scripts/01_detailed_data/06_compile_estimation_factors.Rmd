@@ -231,41 +231,6 @@ for (i in list_comm) {
 
   nr_colour <- nrow(est_fac_all %>% filter(commodity == i) %>% distinct(alphanumiso))
 
-  # print(
-  #   ggplot(
-  #     est_fac_all %>% filter(commodity == i),
-  #     aes(x = year, y = ratio_ore_per_met, group = alphanumiso)) +
-  #     labs(title = i, y = "Ore-to-metal ratio (t/t)") +
-  #     geom_line(aes(color = alphanumiso)) +
-  #     scale_color_manual(values=viridis_pal()(nr_colour)) +
-  #     scale_y_continuous(
-  #       breaks = pretty_breaks(n=6),
-  #       expand = c(0, 0)) +
-  #     theme_minimal()
-  # )
-
-
-  # a[[i]] <- est_fac_all %>%
-  #     filter(commodity == i) %>%
-  #     ggplot2::ggplot(aes(x = year, y = ratio_ore_per_met, color = alphanumiso)) +
-  #     ggseas::stat_index(index.ref = 1) +
-  #     scale_colour_manual(values=viridis_pal()(nr_colour)) +
-  #     theme_minimal() +
-  #     theme(
-  #       title = element_text(colour="#444444"),
-  #       plot.margin = margin(t = 40, b = 30, l = 30),
-  #       legend.title = element_blank()
-  #     ) +
-  #     ggtitle(i) +
-  #     xlab("Time") +
-  #     ylab("Ore-to-metal ratio (t/t)")
-  # 
-  #   a[[i]] <- plotly::ggplotly(a[[i]]) %>%
-  #     plotly::layout(legend = list(orientation = "v", yanchor = "center", y = 0.5)) %>%
-  #     plotly::config(displaylogo = FALSE, modeBarButtonsToRemove = list('toImage')) %>%
-  #     htmlwidgets::onRender("function(e1, t){ checkOverlap(); }")
-
-
   a[[i]] <- est_fac_all %>%
     filter(commodity == i) %>%
     plotly::plot_ly(

@@ -1,4 +1,12 @@
-###### Checking data in terms of plausibility of values
+###### Aggregate several data tables
+
+  ### to allow for gap filling later (otherwise not possible due to differences in detail between sheet_min and sheet_com)
+
+  ### sheet_com
+  ### sheet_min
+    ### separating sheet_coal from here on
+  ### capacity_reserves -> separating both
+
 
 library(tidyverse)
 
@@ -368,12 +376,6 @@ detailed$reserves <- sheet_res
 
 # save data
 write_rds(detailed, "./03_intermediate/01_detailed_data/aggregated.rds")
-
-
-
-
-
-
 
 
 

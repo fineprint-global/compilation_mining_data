@@ -85,13 +85,6 @@ detailed <- path %>%
 
 print(paste("Number of warnings during loading of excel file: ", length(warnings())))
 
-## archived code of reading excel sheets
-# detailed <- lapply(excel_sheets(path), read_excel, 
-#                    path = path,
-#                    col_types = type_list[[.x]]
-#                    )
-# names(detailed) <- excel_sheets(path)
-
 ```
 
 <br> 
@@ -947,14 +940,6 @@ sheet_min <- sheet_min %>%
   )
   )
 
-# # Adjust type_mineral -> make NA = processed ore
-# detailed$minerals_ores_conce <- detailed$minerals_ores_conce %>%
-#   mutate(type_mineral = ifelse(
-#     is.na(type_mineral),
-#     "Ore processed",
-#     type_mineral
-#   )
-#   )
 
 
 detailed$minerals_ores_conce <- sheet_min
