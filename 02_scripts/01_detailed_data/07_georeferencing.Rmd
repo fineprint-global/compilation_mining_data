@@ -34,10 +34,7 @@ detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
 general <- detailed$general
 sub_sites <- detailed$sub_sites
 
-# read facility_ids log table
-facility_ids <- read_csv("./01_input/02_lists_and_concordance_tables/facility_ids.csv")
-
-# Import Geodata from GADM
+# Import Geodata from GADM if necessary
 source("./02_scripts/05_other/get_GADM_data.R")
 
 file <- "./01_input/06_geodata/gadm36_levels.gpkg"
@@ -88,6 +85,9 @@ general_before <- general
 
 if (file.exists("./01_input/02_lists_and_concordance_tables/facility_ids.csv")){
   
+  # read facility_ids log table
+  facility_ids <- read_csv("./01_input/02_lists_and_concordance_tables/facility_ids.csv")
+
   # 1. assign existing facility_ids to the corresponding facilities and sub-sites
   general_w_fac_id <- general %>%
     arrange(mine_fac) %>%
@@ -168,7 +168,7 @@ if (file.exists("./01_input/02_lists_and_concordance_tables/facility_ids.csv")){
       general_wo_fac_id_2 <- general_wo_fac_id_2 %>%
         arrange(mine_fac) %>%
         group_by(mine_fac) %>% 
-          mutate(facility_id = str_c("WUD", str_pad(dplyr::cur_group_id() + last_nr, width = 5, pad = "0"))) %>%
+          mutate(facility_id = str_c("COM", str_pad(dplyr::cur_group_id() + last_nr, width = 5, pad = "0"))) %>%
         ungroup() %>%
         group_by(facility_id) %>% 
           mutate(facility_id = str_c(facility_id, ".", str_pad(row_number() - 1, width = 2, pad = "0", "left"))) %>%
@@ -241,7 +241,7 @@ if (file.exists("./01_input/02_lists_and_concordance_tables/facility_ids.csv")){
   general <- general %>% 
     arrange(mine_fac) %>% 
     group_by(mine_fac) %>% 
-      mutate(facility_id = str_c("WUD", str_pad(dplyr::cur_group_id(), width = 5, pad = "0"))) %>%
+      mutate(facility_id = str_c("COM", str_pad(dplyr::cur_group_id(), width = 5, pad = "0"))) %>%
     ungroup() %>% 
     group_by(facility_id) %>% 
       mutate(facility_id = str_c(facility_id, ".", str_pad(row_number()-1, width = 2, pad = "0", "left"))) %>% 
@@ -387,7 +387,7 @@ general_gadm_added <- general_output %>%
   select(facility_id, mine_fac, GID_0, max_gadm_level)
 
 
-# loop over levels and join the geometries from GADM to the mines without coordinates
+# loop over levels and join the geometries from GADM to the mines with coordinates
 # and assign GIDs corresponding to GADM polygons in which the mines are located
 # level 0 is already inluded (in GID_0)
 for(lvl in 1:4){
@@ -433,6 +433,8 @@ for(lvl in 1:4){
 
 }
 
+
+
 # as the mines included mines with multipoints, one mine can intersect with multiple polygons.
 # thus they have to be summarised 
 general_output_gadm <- general_output_gadm %>% 
@@ -445,8 +447,10 @@ general_output_gadm <- general_output_gadm %>%
     GID_1 = paste(unique(GID_1), collapse = " ; "),
     GID_2 = paste(unique(GID_2), collapse = " ; "),
     GID_3 = paste(unique(GID_3), collapse = " ; "),
-    GID_4 = paste(unique(GID_4), collapse = " ; ")) %>% 
+    GID_4 = paste(unique(GID_4), collapse = " ; ")) %>%
   arrange(facility_id)
+
+
 
 # left join with general output 
 general_output <- general_output %>% 
@@ -507,8 +511,8 @@ if (file.exists("./01_input/03_log_files/01_detailed_data/log_location_not_inter
 # join the GADM regions from log file to the mines not automatically intersecting
 general_output <- general_output %>% 
   left_join(GADM_log %>% 
-              select(facility_id, GID_1, GID_2, GID_3, GID_4), 
-            by = c("facility_id")) %>% 
+              select(mine_fac, GID_1, GID_2, GID_3, GID_4), 
+            by = c("mine_fac")) %>% 
   mutate(GID_1 = ifelse(is.na(GID_1.x), GID_1.y, GID_1.x),
          GID_2 = ifelse(is.na(GID_2.x), GID_2.y, GID_2.x),
          GID_3 = ifelse(is.na(GID_3.x), GID_3.y, GID_3.x),
@@ -517,12 +521,14 @@ general_output <- general_output %>%
 
 # # check 1
 # general_output2 %>%
-#   filter(facility_id == "WUD00114.00") %>%
+#   filter(facility_id == "COM00114.00") %>%
 #   select(GID_1, GID_2, GID_3, GID_4)
 #
 # # check 2
 # general_output$GID_1 %>% is.na() %>% unique()
 
+# # check 3
+# general_output[general_output$GID_1 %>% is.na(),]
 
 ```
 
