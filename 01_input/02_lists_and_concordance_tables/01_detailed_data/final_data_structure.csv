@@ -48,6 +48,7 @@ sub_sites,mining_facility_types,text,,,,original,no,yes,,facility_equipment,7,,,
 sub_sites,source_id,text,,,,original,no,yes,,source_id,15,,,,
 sub_sites,comment,text,,,,original,no,yes,,comment,16,,,,
 sub_sites,geom,geom,,,,original,no,yes,,geom,14,,,,
+minerals_ores_conce,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,minerals,id,,,,,
 minerals_ores_conce,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,minerals,facility_id,1,1,,,no
 minerals_ores_conce,mine_fac,text,,,,original,yes,no,minerals,,,,,,
 minerals_ores_conce,sub_site,text,,,,original,yes,no,minerals,,,,,,
@@ -68,6 +69,7 @@ minerals_ores_conce,source_id,text,ID that uniquely identifies the sources this 
 minerals_ores_conce,comment,text,Comment,Ore processed estimated by taking daily ore throughput times 365,,original,yes,yes,minerals,comment,11,,,,
 minerals_ores_conce,no_estimation,text,,,,original,yes,no,minerals,,,,,,
 minerals_ores_conce,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,minerals,reporting_period,9,,,,
+commodities,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,commodities,id,,,,,
 commodities,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,commodities,facility_id,1,1,,,no
 commodities,mine_fac,text,,,,original,yes,no,commodities,,,,,,
 commodities,sub_site,text,,,,original,yes,no,commodities,,,,,,
@@ -91,6 +93,8 @@ commodities,source_id,text,ID that uniquely identifies the sources this data poi
 commodities,comment,text,Comment,Total production 2001 (Kt): 34 (regular period) + 9 (commissioning period in Q2) = 43Kt,,original,yes,yes,commodities,comment,14,,,,
 commodities,no_estimation,text,,,,original,yes,no,commodities,,,,,,
 commodities,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,commodities,reporting_period,12,,,,
+commodities,,numeric,Foreign key to join table minerals with table commodities,384,minerals,derived,yes,no,commodities,minerals_id,,,,,
+processing,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,processing,id,,,,,
 processing,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,processing,facility_id,1,1,,,no
 processing,mine_fac,text,,,,original,yes,no,processing,,,,,,
 processing,sub_site,text,,,,original,yes,no,processing,,,,,,
@@ -114,6 +118,7 @@ processing,source_url,text,,,,original,yes,no,processing,,,,,,
 processing,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,processing,source_id,14,,,,no
 processing,comment,text,,,,original,yes,yes,processing,comment,15,,,,
 processing,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,processing,reporting_period,13,,,,
+transport,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,transport,id,,,,,
 transport,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,transport,facility_id,1,1,,,no
 transport,mine_fac,text,,,,original,yes,no,transport,,,,,,
 transport,sub_site,text,,,,original,yes,no,transport,,,,,,
@@ -151,7 +156,8 @@ capacity_reserves,metallurgical_recovery,numeric,,,,original,no,no,,,,,,,
 capacity_reserves,source,text,,,,original,no,no,,,,,,,
 capacity_reserves,source_url,text,,,,original,no,no,,,,,,,
 capacity_reserves,comment,text,,,,original,no,no,,,,,,,
-waste,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",,general,derived,yes,yes,waste,facility_id,1,1,,,no
+waste,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,waste,id,,,,,
+waste,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,waste,facility_id,1,1,,,no
 waste,mine_fac,text,,,,original,yes,no,waste,,,,,,
 waste,sub_site,text,,,,original,yes,no,waste,,,,,,
 waste,waste_type,text,Type of waste,Overburden,,original,yes,yes,waste,waste_type,4,4,,,
@@ -170,6 +176,7 @@ waste,source_url,text,,,,original,yes,no,waste,,,,,,
 waste,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,waste,source_id,12,,,,no
 waste,comment,text,Comment,"Numbers were reported on a 60% basis, so numbers for total material were approximated by taking numbers from report / 0.6",,original,yes,yes,waste,comment,13,,,,
 waste,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,waste,reporting_period,11,,,,
+other_info,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,ownership,id,,,,,
 other_info,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,ownership,facility_id,1,1,,,no
 other_info,mine_fac,text,,,,original,yes,no,ownership,,,,,,
 other_info,sub_site,text,,,,original,yes,no,ownership,,,,,,
@@ -190,7 +197,8 @@ water_input,recycled_percentage,numeric,,,,original,no,no,,,,,,,
 water_input,source,text,,,,original,no,no,,,,,,,
 water_input,source_url,text,,,,original,no,no,,,,,,,
 water_input,comment,text,,,,original,no,no,,,,,,,
-coal,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",,general,derived,yes,yes,coal,facility_id,1,1,,,no
+coal,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,coal,id,,,,,
+coal,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,coal,facility_id,1,1,,,no
 coal,mine_fac,text,,,,derived,yes,no,coal,,,,,,
 coal,sub_site,text,,,,derived,yes,no,coal,,,,,,
 coal,type_mineral,text,"Type of material stream. Possible entries: Coal mined, Clean coal",Coal mined,,derived,yes,yes,coal,type,3,3,,,no
@@ -207,6 +215,7 @@ coal,source_id,text,ID that uniquely identifies the sources this data point is b
 coal,comment,text,Comment,"Production numbers in equity share. Tarrawonga is only owned 70%, while the other mines are owned 100%. Thus total production numbers are likely to be higher than the given ones.",,derived,yes,yes,coal,comment,9,,,,
 coal,no_estimation,text,,,,derived,yes,no,coal,,,,,,
 coal,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,derived,yes,yes,coal,reporting_period,7,,,,
+capacity,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,capacity,id,,,,,
 capacity,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,capacity,facility_id,1,1,,,no
 capacity,mine_fac,text,,,,derived,yes,no,capacity,,,,,,
 capacity,sub_site,text,,,,derived,yes,no,capacity,,,,,,
@@ -217,6 +226,7 @@ capacity,processing_capacity_unit,text,,,,derived,yes,no,capacity,,,,,,
 capacity,processing_capacity_value,numeric,"Mass of material input or output capacity. If a value for „commodity“ is available, value_tpa states the output capacity of this commodity. If only a value for „material“ is available, value_tpa states the input capacity of this material. In tonnes per year (tonnes per annum)",25000,,derived,yes,yes,capacity,value_tpa,5,,,,no
 capacity,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,capacity,source_id,6,,,,no
 capacity,comment,text,Comment,245000 + 325000,,derived,yes,yes,capacity,comment,7,,,,
+reserves,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,reserves,id,,,,,
 reserves,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,reserves,facility_id,1,1,,,no
 reserves,mine_fac,text,,,,derived,yes,no,reserves,,,,,,
 reserves,sub_site,text,,,,derived,yes,no,reserves,,,,,,
@@ -260,3 +270,13 @@ general_sub_sites,GID_1,text,Key to connect facility to GADM regions,ZAF.5_1,GAD
 general_sub_sites,GID_2,text,Key to connect facility to GADM regions,ZAF.5.5_1,GADM,derived,yes,yes,general,GID_2,18,,,,
 general_sub_sites,GID_3,text,Key to connect facility to GADM regions,ZAF.5.5.6_1,GADM,derived,yes,yes,general,GID_3,19,,,,
 general_sub_sites,GID_4,text,Key to connect facility to GADM regions,ZAF.5.5.6.9_1,GADM,derived,yes,yes,general,GID_4,20,,,,
+source_ids,source_id,text,Unique ID for each source,det_1001,,derived,no,no,source_ids,source_id,1,,,,no
+source_ids,sources,text,Names of the source publications or websites,Anglo American plc (2015) Annual Report 2014,,derived,no,no,source_ids,sources,2,,,,no
+source_ids,source_urls,text,URLs of the source publications or websites,https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2015/aa-ar14-interactive-final.pdf,,derived,no,no,source_ids,source_urls,3,,,,no
+material_ids,material_id,text,ID that uniquely identifies materials,O.Al,,derived,no,no,material_ids,material_id,1,,,,no
+material_ids,material_name,text,Name of the material,Bauxite,,derived,no,no,material_ids,material_name,2,,,,no
+material_ids,material_category,text,"Category of the material. Categories: mineral, commodity, other_product, ff_mineral, ff_commodity",mineral,,derived,no,no,material_ids,material_category,3,,,,no
+material_ids,material_category_2,text,"Secondary category of the material, more detailed that material_category",metal ore,,derived,no,no,material_ids,material_category_2,4,,,,no
+material_ids,material_id_agg,text,ID that uniquely identifies a bundle of materials,Me.pgm,,derived,no,no,material_ids,material_id_agg,5,,,,no
+material_ids,material_name_agg,text,Name of the bundle of materials,PGM,,derived,no,no,material_ids,material_name_agg,6,,,,no
+material_ids,materials_contained,text,"Specifies the materials contained in the bundle of materials. Only applicable, if material_category is „aggregate“",Me.Ir; Me.Os; Me.Pd; Me.Pt; Me.Rh; Me.Ru,,derived,no,no,material_ids,materials_contained,7,,,,no
