@@ -1,0 +1,124 @@
+---
+title: "Coverage of Final Data"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+###### In this script, various coverages are calculated with the final data
+
+
+
+
+### Read In data
+```{r , echo = FALSE, message = FALSE} 
+
+# clear R environment
+rm(list = ls())
+
+library(tidyverse)
+library(sf)
+
+# read harmonized data file (detailed data)
+general <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/general.gpkg") %>%
+  as_tibble()
+
+detailed <- read_rds("./04_output/01_detailed_data/08_final_data/other_formats/detailed_final.rds")
+
+```
+
+
+### coverage of table general
+```{r , echo = FALSE, message = FALSE} 
+
+# code copied from 05_coverage.Rmd
+if(exists("gen_cov")) rm(gen_cov)
+
+
+gen_cov <- tibble(Indicator = NA, Amount = NA) %>% 
+  filter(!is.na(Amount)) %>%
+  mutate(Indicator = as.character(Indicator), Amount = as.numeric(Amount))
+
+gen_cov <- gen_cov %>%
+  union(., tibble(
+    Indicator = "Number of facilities + sub-sites",
+    Amount = general %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities",
+    Amount = general %>% distinct(facility_name) %>% na.omit() %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of sub-sites",
+    Amount = general  %>% 
+      filter(!is.na(sub_site_name)) %>% 
+      distinct(facility_name, sub_site_name) %>% 
+      nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities with at least one coordinate",
+    Amount = sum(!(general %>% 
+      filter(is.na(sub_site_name)) %>%
+      st_as_sf() %>%
+      st_is_empty()))
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities with no coordinates",
+    Amount = general %>% 
+      filter(is.na(sub_site_name)) %>%
+      st_as_sf() %>%
+      st_is_empty() %>% 
+      sum()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities with POINT geometry",
+    Amount = general %>% 
+      filter(is.na(sub_site_name),
+             !(geom %>% st_is_empty()), 
+             geom %>% lengths() == 2) %>%
+      nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities with MULTIPOINT geometry",
+    Amount = general %>% 
+      filter(is.na(sub_site_name),
+             !(geom %>% st_is_empty()), 
+             geom %>% lengths() > 2) %>%
+      nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities of type Mine",
+    Amount = general %>%
+      filter(facility_type == "Mine") %>% 
+      nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities of type Smelter",
+    Amount = general %>%
+      filter(facility_type == "Smelter") %>% 
+      nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities of type Refinery",
+    Amount = general %>%
+      filter(facility_type == "Refinery") %>% 
+      nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities of type Other (mixed forms + company + region)",
+    Amount = general %>%
+      filter(!(facility_type %in% c("Mine", "Smelter", "Refinery"))) %>% 
+      nrow()
+  ))
+
+
+# table for Rmd output
+datatable(gen_cov, rownames = FALSE, caption = "General coverage final data")
+
+```
+
+
+
+
+

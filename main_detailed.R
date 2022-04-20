@@ -149,4 +149,14 @@ rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
 # 
 # ## producing coal tables only
 # source("./02_scripts/01_detailed_data/other/get_coal_tables_only.R")
-
+#
+#
+# Produce final data coverage (i.e. coverage calculated based on the final data set)
+# wd <- getwd()
+# rmarkdown::render("./02_scripts/01_detailed_data/09_coverage_final_data.Rmd",
+#                   knit_root_dir = wd,
+#                   output_dir = "./04_output/01_detailed_data/05_coverage/",
+#                   intermediates_dir = "./04_output/01_detailed_data/05_coverage/",
+#                   output_file = paste0("coverage_final_data", substr(Sys.time(), 1, 10),".html")
+# )
+# 
