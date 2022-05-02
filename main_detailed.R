@@ -14,7 +14,7 @@
 
 
 # Check if the necessary packages are installed and if not install them, then load them
-req_packages <- c("tidyverse", "readxl", "scales", "knitr", "kableExtra", "viridis", "rlang", "DT")
+req_packages <- c("tidyverse", "readxl", "scales", "knitr", "kableExtra", "viridis", "rlang", "DT", "patchwork", "sf", "ggplot2")
 req_packages <- req_packages[!req_packages %in% installed.packages()]
 lapply(req_packages, install.packages)
 
@@ -110,6 +110,17 @@ rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
 )
 
 
+## Calculate Coverages based on final data output
+## this includes coverage of all commodities and spatial coverage (coordinates)
+## html output is saved in `./04_output/01_detailed_data/05_coverage/`)
+wd <- getwd()
+rmarkdown::render("./02_scripts/01_detailed_data/09_coverage_final_data.Rmd",
+                  knit_root_dir = wd,
+                  output_dir = "./04_output/01_detailed_data/05_coverage/",
+                  intermediates_dir = "./04_output/01_detailed_data/05_coverage/",
+                  output_file = paste0("coverage_final_data", substr(Sys.time(), 1, 10),".html")
+)
+
 #### Additional scripts -----------
 
  
@@ -152,11 +163,5 @@ rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
 #
 #
 # Produce final data coverage (i.e. coverage calculated based on the final data set)
-# wd <- getwd()
-# rmarkdown::render("./02_scripts/01_detailed_data/09_coverage_final_data.Rmd",
-#                   knit_root_dir = wd,
-#                   output_dir = "./04_output/01_detailed_data/05_coverage/",
-#                   intermediates_dir = "./04_output/01_detailed_data/05_coverage/",
-#                   output_file = paste0("coverage_final_data", substr(Sys.time(), 1, 10),".html")
-# )
-# 
+
+
