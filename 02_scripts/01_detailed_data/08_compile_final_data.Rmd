@@ -116,10 +116,8 @@ for(sheet_name in c("general", "sub_sites")) {
 
 # create sheet_general_sub_sites
 detailed$general_sub_sites <- bind_rows(detailed$general, detailed$sub_sites) %>% 
-  
   # rearrange
   arrange("facility_id") %>% 
-  
   # relocate cols/variables in correct order 
   relocate(structure %>%
              filter(sheet == "general_sub_sites" & final_keep_variable == "yes") %>% 
@@ -138,12 +136,13 @@ detailed$general_sub_sites <- bind_rows(detailed$general, detailed$sub_sites) %>
 #get indices of sheets in the list detailed which should be modified
 sheet_numbers <- match(
   structure %>% 
-    filter(final_keep_sheet == "yes") %>% 
+    filter(final_keep_sheet == "yes" & sheet != "general_sub_sites") %>% 
     select(sheet) %>% 
     unique() %>% 
     pull(),
   detailed %>% 
     names())
+
 
 #loop over the selected sheets and convert according to final data structure
 for(sheet_nr in sheet_numbers){
