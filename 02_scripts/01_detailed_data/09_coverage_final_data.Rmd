@@ -8,7 +8,7 @@ editor_options:
 ---
 
 
-> In this script all coverages are calculated, based on the final data files
+> In this file, all coverages are calculated, based on the final data files
 
 Structure: 
 
@@ -24,7 +24,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # install.packages(c("rgeos","rgdal"))
 # install.packages(c("rnaturalearth", "rnaturalearthdata"))
-#install.packages("ggpubr")
+# install.packages("ggpubr")
+# install.packages("ggsci")
+library(ggsci)
 library(tidyverse)
 library(sf)
 library(ggplot2)
@@ -39,7 +41,7 @@ library(gridExtra)
 library(rlang)
 library(scales)
 library(DT)
-
+library(viridis)
 
 # clear R environment
 rm(list = ls())
@@ -82,9 +84,10 @@ nat_acc <- read_delim(
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
 
-#read table material_ids and source_ids
+#read table material_ids and source_ids and facility_ids
 mat_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv")
 source_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/source_ids.csv")
+fac_ids <- read_csv("./01_input/02_lists_and_concordance_tables/facility_ids.csv")
 
 ```
 
@@ -122,28 +125,21 @@ sheet_min <- sheet_min %>%
   filter(!(type %in% c("Ore processed"))) %>%
   select(facility_id, year, material, value_tonnes)
 
-
 # get concentrate production of mines and years where only iron concentrate was produced
-con.fe_prod_only <- sheet_min %>% 
-  filter(material %in% c("O.Fe", "Con.Fe")) %>% 
-  group_by(facility_id, year) %>% 
+con.fe_prod_only <- sheet_min %>%
+  filter(material %in% c("O.Fe", "Con.Fe")) %>%
+  group_by(facility_id, year) %>%
   summarize(material = paste0(unique(material), collapse = ";"),
-            value_tonnes = sum(value_tonnes)) %>% 
-  ungroup() %>% 
-  filter(material == "Con.Fe") %>% 
+            value_tonnes = sum(value_tonnes)) %>%
+  ungroup() %>%
+  filter(material == "Con.Fe") %>%
   mutate(material = "O.Fe")
 
-# insert iron concentrate as iron ore, ONLY for mines and years where no iron ore production is reported
-sheet_min <- sheet_min %>% 
-  filter(material != "Con.Fe") %>% 
-  bind_rows(con.fe_prod_only)
-  
 
-# group by material, to aggregate production by materials that were renamed above
-sheet_min <- sheet_min %>% 
-  group_by(facility_id, year, material) %>% 
-  summarize(value_tonnes = sum(value_tonnes)) %>% 
-  ungroup()
+# insert iron concentrate as iron ore, ONLY for mines and years where no iron ore production is reported
+sheet_min <- sheet_min %>%
+  filter(material != "Con.Fe") %>%
+  bind_rows(con.fe_prod_only)
 
 ```
 
@@ -253,6 +249,7 @@ cov_by_country <- cov_by_country %>%
     is.na(GID_0) |
     is.na(material) |
     is.na(value_nat) |
+    is.na(value_det) |
     is.na(share)
     )) %>% 
   left_join(., mat_ids %>% select(material_id, material_name), #join material names
@@ -269,7 +266,7 @@ cov_by_country <- cov_by_country %>%
 nat_acc_global <- nat_acc %>% 
   group_by(material, year) %>% 
   summarize(value = sum(value)) %>% 
-  ungroup() 
+  ungroup()
 
 cov_global <- cov_by_country_before_cleaning %>% 
   group_by(year, material) %>% 
@@ -300,6 +297,43 @@ cov_global <- cov_global %>%
   filter(!( #clean
     is.na(material) |
     is.na(value_nat) |
+    is.na(value_det) |
+    is.na(share)
+    )) %>% 
+  left_join(., mat_ids %>% select(material_id, material_name), #join material names
+            by = c("material" ="material_id")) %>% 
+  mutate(material_name = ifelse(material_name == "Coal (unspecified)", "Coal", material_name)) #rename coal entries
+
+
+```
+
+### Preparation of comprehensive Coverage data file WITHOUT CHINA (global)
+```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+
+# prepare global production of materials from national accounts
+nat_acc_global_wo_china <- nat_acc %>% 
+  filter(GID_0 != "CHN") %>%
+  group_by(material, year) %>% 
+  summarize(value = sum(value)) %>% 
+  ungroup()
+
+cov_global_wo_china <- cov_by_country_before_cleaning %>%
+  filter(GID_0 != "CHN") %>%
+  group_by(year, material) %>% 
+  summarize(value = sum(value_det)) %>%
+  ungroup() %>% 
+  left_join(nat_acc_global_wo_china,
+            by = c("material", "year"),
+            suffix = c("_det", "_nat"))
+
+
+# calculate share and clean
+cov_global_wo_china <- cov_global_wo_china %>% 
+  mutate(share = value_det / value_nat) %>%  #calculate share
+  filter(!( #clean
+    is.na(material) |
+    is.na(value_nat) |
+    is.na(value_det) |
     is.na(share)
     )) %>% 
   left_join(., mat_ids %>% select(material_id, material_name), #join material names
@@ -336,98 +370,6 @@ world <- world %>%
 
 ```
 
-### Determine primary commodity and facility type for every facility
-```{r , echo = FALSE, message = FALSE, warning = FALSE} 
-
-# get all commodities that are produced for every mine
-unique_min <- detailed$minerals_ores_conce %>%
-  group_by(facility_id) %>%
-  summarize(material_ids = material %>% unique()) %>%
-  ungroup() %>% 
-  filter(!(material_ids %in% "O.bulk")) # filter out entries with bulk ore and concentrate, as it does not help in specifing the primary material
-
-unique_com <- detailed$commodities %>% 
-  group_by(facility_id) %>%
-  summarize(material_ids = commodity %>% unique()) %>%
-  ungroup()
-
-unique_coal <- detailed$coal %>% 
-  group_by(facility_id) %>%
-  summarize(material_ids = material %>% unique()) %>%
-  ungroup() 
-
-unique_all <- bind_rows(unique_min, unique_com, unique_coal) %>% 
-  group_by(facility_id) %>%
-  summarize(materials_produced = paste(unique(material_ids), collapse = "; ")) %>%
-  ungroup() %>% 
-  arrange(facility_id)
-
-
-# add column materials_produced to table general
-general_sf <- general_sf %>% 
-  left_join(unique_all, by = "facility_id")
-
-
-# define materials which can be included and CAN NOT be included in materials_produced to belong to a category primary_material
-coal_ids <- c(aggregate_mat_ids("material_category_2", "coal & peat", mat_ids), "F.stc")
-
-iron_ids <- c("O.Fe", "Me.Fe", "Con.Fe", "Con.FeN", "Oth.sif")
-not_iron_ids <- c("O.FeS", "O.FeTiO3", "O.TiO2", "Me.Cu", "Me.Au", "O.Zr", "O.leu") %>% paste(., collapse = "|")
-
-aluminium_ids <- c("O.Al", "Me.Al2O3")
-
-gold_ids <- c("O.Au", "Me.Au", "Con.Au")
-not_gold_ids <- other_mat_ids(gold_ids, mat_ids)
-
-copper_ids <- c("O.Cu", "Me.Cu", "Con.Cu", "Oth.Cuca", "Oth.Cuce")
-
-pgm_ids <- c(aggregate_mat_ids("material_id_agg", "Me.pgm", mat_ids), 
-             "O.pgm", "Me.pgm", "Con.pgm")
-not_pgm_ids <- other_mat_ids(pgm_ids, mat_ids)
-
-polymetallic_ids <- c(aggregate_mat_ids("material_category_2", "metal ore", mat_ids), 
-                      aggregate_mat_ids("material_category_2", "metal", mat_ids),
-                      aggregate_mat_ids("material_category_2", "metal compound", mat_ids))
-
-
-
-general_sf <- general_sf %>% 
-  mutate(primary_commodity = case_when(grepl("Refinery|Smelter", facility_type) & 
-                                         !(grepl("Mine", facility_type)) ~ "Processing",
-                                       grepl(paste(coal_ids, collapse = "|"), materials_produced) ~ "Coal",
-                                       grepl(paste(iron_ids, collapse = "|"), materials_produced) &
-                                         !(grepl(not_iron_ids, materials_produced)) ~ "Iron",
-                                       grepl(paste(aluminium_ids, collapse = "|"), materials_produced) ~ "Aluminium",
-                                       grepl(paste(gold_ids, collapse = "|"), materials_produced) &
-                                         !(grepl(not_gold_ids, materials_produced)) ~ "Gold",
-                                       grepl(paste(pgm_ids, collapse = "|"), materials_produced) &
-                                         !(grepl(not_pgm_ids, materials_produced)) ~ "PGM",
-                                       grepl(paste(polymetallic_ids, collapse = "|"), materials_produced) ~ "Other (poly)-metallic",
-                                       TRUE ~ "Other mine"))
-
-# create a separate dataframe where copper mines are a distinct category
-general_sf_copper <- general_sf %>% 
-  mutate(primary_commodity = ifelse(grepl(paste(copper_ids, collapse = "|"), materials_produced), "Copper", primary_commodity))
-  
-
-# checking
-
-# check how many entries per category
-# general_sf %>%
-#   st_drop_geometry() %>%
-#   group_by(primary_commodity) %>%
-#   summarize(n())
-
-# check what unique combinations of commodities correspond to one category primary commodity
-# general_sf %>% 
-#   st_drop_geometry() %>% 
-#   filter(primary_commodity == "Other (poly)-metallic") %>% 
-#   select(materials_produced) %>% 
-#   pull() %>%
-#   unique()
-
-```
-
 # Produce coverage data tables
 
 ## Coverage of table general (data tables)
@@ -447,6 +389,15 @@ for(sheet_number in c(1:length(detailed_converted))){
   unique_sources <- c(unique_sources, not_incl)
 }
 
+#calculate nr. of materials for which production was reported
+distinct_materials <- sheet_min %>% distinct(material) %>% 
+  bind_rows(sheet_com %>% distinct(commodity) %>% 
+              rename(material = commodity)) %>%
+  bind_rows(sheet_coal%>% distinct(material)) %>% 
+  rename(material_id = material) %>% 
+  left_join(mat_ids)
+
+
 # set up tibble for data table output
 gen_cov <- tibble(Indicator = NA, Amount = NA) %>% 
   filter(!is.na(Amount)) %>%
@@ -463,8 +414,27 @@ gen_cov <- gen_cov %>%
   )) %>%
   union(., tibble(
     Indicator = "Number of materials (w/o processing)",
-    Amount = (sheet_min %>% distinct(material) %>% nrow()) +
-      (sheet_com %>% distinct(commodity) %>% nrow())
+    Amount = nrow(distinct_materials)
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of materials (w/o processing): Of which metal ores",
+    Amount = distinct_materials %>% 
+      filter(material_category_2 %in% c("metal ore")) %>% nrow() 
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of materials (w/o processing): Of which concentrates",
+    Amount = distinct_materials %>% 
+      filter(material_category_2 %in% c("ore concentrate")) %>% nrow() 
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of materials (w/o processing): Of which metals",
+    Amount = distinct_materials %>% 
+      filter(material_category_2 %in% c("metal")) %>% nrow() 
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of materials (w/o processing): Of which coal",
+    Amount = distinct_materials %>% 
+      filter(material_category_2 %in% c("coal & peat")) %>% nrow()  
   )) %>%
   union(., tibble(
     Indicator = "Number of years",
@@ -605,7 +575,7 @@ nr_min_fac_by_cou <- general %>%
   arrange(desc(n))
   
 # table for Rmd output
-datatable(nr_min_fac_by_cou, rownames = FALSE, caption = "Number of mines per country")
+datatable(nr_min_fac_by_cou, rownames = FALSE, caption = "Number of facilities per country")
 
 
 
@@ -655,7 +625,7 @@ datatable(nr_mine_by_mat, rownames = FALSE, caption = "Number of mines per mater
 
 ## Coverage of Materials by country (data tables)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
-
+# coverage table for markdown
 cov_by_country_table <- cov_by_country %>% 
   mutate(share = percent(share, accuracy = 1)) %>%
   select(-value_det, -value_nat) %>%
@@ -671,7 +641,7 @@ cov_by_country_table <- cov_by_country %>%
 datatable(cov_by_country_table, rownames = FALSE, caption = "Relative coverage by material and country")
 
 
-## get coverages above 100%
+### get coverages above 100%
 
 # filter for shares >100%
 exc_cov <- cov_by_country %>%
@@ -688,27 +658,35 @@ exc_cov_mines <- exc_cov %>%
   left_join(., 
             production %>% select(GID_0, material, year, facility_id, value_tonnes)
             ) %>%
-  arrange(GID_0, material, year, desc(value_tonnes))
+  arrange(GID_0, material, year, desc(value_tonnes)) %>% 
+  left_join(fac_ids %>% select(facility_id, mine_fac), by = "facility_id")
 
 
 # use tempory tibble and loop to get respective mines into one string
-  # (shorter options didn't work somehow)
+  # (shorter options didn't work)
 
-temp_t <- tibble(GID_0 = "chr", material = "chr", year = 1, mines = "chr") %>% 
+temp_t <- tibble(GID_0 = "chr", material = "chr", year = 1, mines = "chr", mine_names = "chr") %>% 
   filter(mines != "chr")
 
 for (i in 1:nrow(exc_cov)) {
   
   a <- exc_cov[i,] %>% select(GID_0, material, year)
   
-  mine_str <- a %>%
+  fac_id_str <- a %>%
     left_join(exc_cov_mines) %>%
     distinct(facility_id) %>%
     pull() %>%
     paste0(collapse = ", ")
   
+  mine_name_str <- a %>%
+    left_join(exc_cov_mines) %>%
+    distinct(mine_fac) %>%
+    pull() %>%
+    paste0(collapse = ", ")
+  
   temp_t <- temp_t %>%
-    union(., a %>% mutate(mines = mine_str))
+    union(., a %>% mutate(mines = fac_id_str,
+                          mine_names = mine_name_str))
   
 }
 
@@ -717,8 +695,23 @@ exc_cov <- exc_cov %>%
 
 # table for Rmd output
 datatable(exc_cov, rownames = FALSE, caption = "Coverages which are >100% for sheets coal, minerals, commodities. ")
-# possibly join here the mine name to the facility_id
-# possibly insert method to split this into sheets coal, minerals, commodities.
+
+
+# table for Rmd output with coverage > 120% only
+exc_cov_120 <- exc_cov %>% 
+  mutate(share2 = share %>% # convert share to numeric again 
+           substr(1, nchar(share)-1) %>%
+           str_replace_all(., fixed(" "), "") %>%
+           as.numeric()) %>% 
+  select(-share) %>% 
+  rename(share = share2) %>% 
+  relocate(share, .after = value_nat) %>% 
+  filter(share > 120) %>%
+  arrange(desc(share)) %>%
+  mutate(share = percent(share/100, accuracy = 1))
+
+
+datatable(exc_cov_120, rownames = FALSE, caption = "Coverages which are >120% for sheets coal, minerals, commodities. ")
 
 ```
 
@@ -740,6 +733,34 @@ datatable(cov_global_table, rownames = FALSE, caption = "Relative global coverag
 
 ```
 
+## Export data table with global and national coverages
+```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+
+# export coverage table as csv and pdf (pdf is created in separate markdown file)
+cov_by_country_table_output <- cov_by_country %>%
+  mutate(share = round(share, digits = 2)) %>%
+  select(GID_0, country, year, material, material_name, share) %>%
+  arrange(year) %>% 
+  pivot_wider(., names_from = year, values_from = share) %>% 
+  arrange(GID_0)
+
+cov_global_table_output <- cov_global %>% 
+  mutate(share = round(share, digits = 2),
+         country = "Global") %>%
+  select(country, year, material, material_name, share) %>%
+  arrange(year) %>% 
+  pivot_wider(., names_from = year, values_from = share)
+
+cov_table_output <- cov_global_table_output %>% 
+  bind_rows(cov_by_country_table_output) %>% 
+  mutate(across(everything(na_if(., Inf))))
+
+# write csv
+write_csv(cov_table_output,
+          file = "./04_output/01_detailed_data/05_coverage/01_general/coverage.csv",
+          na = "")
+
+```
 
 
 ## Data rows not included in coverage (data tables)
@@ -834,7 +855,7 @@ for(group in groups) {
 }
 
 # specify path and export figures
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_global.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/global/coverage_global_linecharts.pdf",   
     width = 16, 
     height = 8)
 
@@ -871,7 +892,7 @@ heatmap_materials$material_name <- factor(heatmap_materials$material_name,
 
 
 
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_global_heatmap.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/global/coverage_global_heatmap.pdf",   
     width = 16, 
     height = 8)
 
@@ -885,7 +906,7 @@ dev.off()
 
 ```
 
-## Global coverage (line chart tiles)
+## Global coverage (area chart tiles)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
 ## build tile chart with 9 coverage figures
 area_plot_ids <- c("F.coal", "O.Fe", "O.Al", "Me.Cu", "Me.Au", "Me.Mo", "Me.Ni", "Me.Pb", "Me.Zn")
@@ -902,7 +923,7 @@ area_plot_data <- cov_global %>%
   mutate(across(material_name, factor, levels = area_plot_names))
   
 
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_global_area.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/global/coverage_global_area.pdf",   
     width = 16, 
     height = 8)
 
@@ -911,7 +932,7 @@ ggplot(area_plot_data,
   geom_area(color = "steelblue", fill = "steelblue", alpha = 0.6) + 
   scale_x_continuous(limits=c(2000, 2018), breaks = c(seq(2000, 2018, 5), 2018), expand = c(0, 0)) +
   scale_y_continuous(limits=c(0, 1), breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
-  ylab("Share of global production covered") + 
+  ylab("Share of global extraction covered") + 
   xlab("Year") + 
   theme_minimal() + 
   theme(
@@ -926,6 +947,144 @@ ggplot(area_plot_data,
     strip.text = element_text(size = 15)
       ) + 
   facet_wrap(~ material_name)
+
+dev.off()
+
+```
+
+## Global coverage WITHOUT CHINA (area chart tiles)
+```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+## build tile chart with 9 coverage figures
+area_plot_ids <- c("F.coal", "O.Fe", "O.Al", "Me.Cu", "Me.Au", "Me.Mo", "Me.Ni", "Me.Pb", "Me.Zn")
+area_plot_names <- tibble(material = area_plot_ids) %>% 
+  left_join(cov_global %>% 
+              select(material, material_name) %>% 
+              distinct()) %>% 
+  select(material_name) %>% 
+  pull()
+
+
+area_plot_data_wo_china <- cov_global_wo_china %>% 
+  filter(material %in% area_plot_ids) %>% 
+  mutate(across(material_name, factor, levels = area_plot_names))
+  
+
+# define labels
+dat_text1 <- tibble(label = c("", "excl. China", rep("", 7)),
+                   material_name = factor(area_plot_names, levels = area_plot_names))
+
+dat_text2 <- tibble(label = c("", "incl. China", rep("", 7)),
+                   material_name = factor(area_plot_names, levels = area_plot_names))
+
+# define output path
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/global/coverage_global_area_wo_china.pdf",   
+    width = 16, 
+    height = 8)
+
+ggplot() + 
+  geom_area(data = area_plot_data_wo_china, 
+            mapping = aes(x = year, y = share, group = material_name), 
+            color = "black", 
+            fill = "steelblue", 
+            alpha = 0.4,
+            size = 0.2) +
+  geom_area(data = area_plot_data, 
+            mapping = aes(x = year, y = share, group = material_name),
+            color = "black", 
+            fill = "steelblue1", 
+            alpha = 0.4,
+            size = 0.2) + 
+  scale_x_continuous(limits=c(2000, 2018), breaks = c(seq(2000, 2018, 5), 2018), expand = c(0, 0)) +
+  scale_y_continuous(limits=c(0, 1), breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
+  ylab("Share of global extraction covered") + 
+  xlab("Year") + 
+  theme_minimal() + 
+  theme(
+    panel.border = element_rect(fill = NA, color = "black"),
+    panel.grid.minor.x = element_blank(),
+    panel.spacing.x = unit(10, "mm"), 
+    plot.margin = margin(t = 3,
+                         b = 3,
+                         r = 8,
+                         l = 3,
+                         unit = "mm"),
+    strip.text = element_text(size = 15)
+      ) + 
+  facet_wrap(~ material_name) + 
+  geom_text(data = dat_text1,
+            mapping = aes(x = 2012, y = 0.55, label = label),
+            size = 4) +
+  geom_text(data = dat_text2,
+            mapping = aes(x = 2010, y = 0.23, label = label),
+            size = 4)
+
+dev.off()
+
+```
+
+## National coverages (area chart tiles)
+```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+countries <- c("USA", "AUS", "CHN", "BRA", "ZAF", "RUS", "CHL", "PER", "IDN", "IND")
+countries_names <- tibble(GID_0 = countries) %>% 
+  left_join(cov_by_country %>% 
+              select(GID_0, country) %>% 
+              distinct()) %>% 
+  select(country) %>% 
+  pull() %>% 
+  as.vector()
+
+#clean and filter for only the top commodities
+area_plot_nat_ids <-  c("F.coal", "O.Fe", "O.Al", "Me.Cu", "Me.Au", "Me.Mo", "Me.Ni", "Me.Pb", "Me.Zn")
+area_plot_nat_names <- tibble(material = area_plot_nat_ids) %>% 
+  left_join(cov_global %>% 
+              select(material, material_name) %>% 
+              distinct()) %>% 
+  select(material_name) %>% 
+  pull()
+
+area_plot_nat_data <- cov_by_country %>% 
+  filter(GID_0 %in% countries) %>% 
+  filter(material %in% area_plot_nat_ids) %>% 
+  mutate(across(material_name, factor, levels = area_plot_nat_names))
+
+
+plot_list <- list()
+
+for (i in c(1:length(countries))) {
+  country <- countries[i]
+  country_name <- countries_names[i]
+  
+  p <- ggplot(area_plot_nat_data %>% filter(GID_0 == !!country), 
+         aes(x = year, y = share, group = material_name)) + 
+    geom_area(color = "steelblue", fill = "steelblue", alpha = 0.6) + 
+    scale_x_continuous(limits=c(2000, 2018), breaks = c(seq(2000, 2018, 5), 2018), expand = c(0, 0)) +
+    scale_y_continuous(limits=c(0, 1), breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
+    ylab("Share of global extraction covered") + 
+    xlab("Year") + 
+    ggtitle(country_name) +
+    theme_minimal() + 
+    theme(
+      panel.border = element_rect(fill = NA, color = "black"),
+      panel.grid.minor.x = element_blank(),
+      panel.spacing.x = unit(10, "mm"), 
+      plot.margin = margin(t = 3,
+                           b = 3,
+                           r = 8,
+                           l = 3,
+                           unit = "mm"),
+      strip.text = element_text(size = 15)
+        ) + 
+    facet_wrap(~ material_name)
+
+  plot_list[[i]] <- p
+  
+}
+
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_national_area_charts.pdf",   
+    width = 16, 
+    height = 8)
+
+plot_list
 
 dev.off()
 
@@ -959,15 +1118,14 @@ for (i in c(1:length(countries))) {
 
   p <- ggplot(filter(cov_plot_national, GID_0 == !!country), aes(x=year, y=share, group=material_name)) +
     ggtitle(paste0("Coverage ", country_name)) + 
-    geom_line(aes(linetype=material_name, color=material_name), size = 1.5)+
-    geom_point(aes(color = material_name))+
+    geom_line(aes(color=material_name), size = 1.5)+
     theme(legend.position="top") + 
     ylim(0, 1)
   
   plot_list[[i]] <- p
 }
 
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_national.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_national_linecharts.pdf",   
     width = 16, 
     height = 8)
 
@@ -1038,17 +1196,37 @@ dev.off()
 ```
 
 
-## Spatial Coverage WITHOUT copper mines (Map)
+## Spatial Coverage (Map)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
 
-general_prim_com_levels <- c("Processing", "Coal", "Iron", "Aluminium", "Gold", "PGM", "Other (poly)-metallic", "Other mine")
+# include n in name of material
+general_sf_n <- general_sf %>% 
+  st_drop_geometry() %>% 
+  group_by(primary_commodity) %>% 
+  summarize(n = n())
+
+general_sf <- general_sf %>% 
+  left_join(general_sf_n, by = "primary_commodity") %>% 
+  mutate(primary_commodity_2 = paste0(primary_commodity, " (", as.character(n), ")")) %>% 
+  select(-primary_commodity, -n) %>% 
+  rename(primary_commodity = primary_commodity_2)
+
+# set order of materials as displayed in the legend
+general_prim_com_levels <- c("Coal", "Iron", "Aluminium", "Copper", "Gold", "Silver", "Nickel", "Zinc", "Other (poly)-metallic", "Other mine", "Processing")
+
+general_prim_com_levels <- tibble("primary_commodity" = general_prim_com_levels) %>% 
+  left_join(general_sf_n, by = "primary_commodity") %>% 
+  mutate(primary_commodity_2 = paste0(primary_commodity, " (", as.character(n), ")")) %>% 
+  select(primary_commodity_2) %>% 
+  pull()
+
 general_sf$primary_commodity <- factor(general_sf$primary_commodity, levels = general_prim_com_levels)
 
 # define custom colors for mines with specific primary commodities
-custom_fill <- c("cornflowerblue", "#374341", "blue", "red3", "gold", "cyan", "grey", "white")
-custom_colors <- c(rep("black", 8))
-custom_shapes <- c(23, rep(24, 7)) 
-custom_sizes <- c(1.2, rep(1.5, 7)) 
+custom_fill <- c("#374341", "blue", "red3", "#DC7F64", "gold", "#dbe4eb", "violet", "green", "cyan", "white", "cornflowerblue")
+custom_colors <- c(rep("black", length(general_prim_com_levels)))
+custom_shapes <- c(rep(24, length(general_prim_com_levels)-1), 23) 
+custom_sizes <- c(rep(1.3, length(general_prim_com_levels)-1), 1.1) 
 
 ggplot() +
   geom_sf(data = world, color = "grey", fill = "gray96", size = 0.2) +
@@ -1058,7 +1236,9 @@ ggplot() +
         fill = primary_commodity,
         color = primary_commodity,
         size = primary_commodity),
-    stroke = 0.1) + 
+    stroke = 0.1, # set size of frame around icon
+    alpha = 1 # set transparency
+    ) + 
   scale_shape_manual(values = custom_shapes, 
                      name = "Processing facilities and\nmines per primary commodity") +
   scale_fill_manual(values = custom_fill,
@@ -1087,56 +1267,6 @@ ggsave("./04_output/01_detailed_data/05_coverage/03_spatial/mine-level_data_map_
 
 ```
 
-## Spatial Coverage WITH copper mines (Map)
-```{r , echo = FALSE, message = FALSE, warning = FALSE} 
-# here copper mines are a category on their own, determined by a mine producing any form of copper
-general_prim_com_levels_copper <- c("Processing", "Coal", "Iron", "Aluminium",
-                                    "Copper", "Gold", "PGM", "Other (poly)-metallic", "Other mine")
-general_sf_copper$primary_commodity <- factor(general_sf_copper$primary_commodity, 
-                                              levels = general_prim_com_levels_copper)
-
-# define custom colors for mines with specific primary commodities
-custom_fill <- c("cornflowerblue", "#374341", "blue", "red3", "#DC7F64", "gold", "cyan", "grey", "white")
-custom_colors <- c(rep("black", 9))
-custom_shapes <- c(23, rep(24, 8)) 
-custom_sizes <- c(1.2, rep(1.5, 8)) 
-
-ggplot() +
-  geom_sf(data = world, color = "grey", fill = "gray96", size = 0.2) +
-  geom_sf(
-    data = general_sf_copper, 
-    aes(shape = primary_commodity,
-        fill = primary_commodity,
-        color = primary_commodity,
-        size = primary_commodity),
-    stroke = 0.1) + 
-  scale_shape_manual(values = custom_shapes, 
-                     name = "Processing facilities and\nmines per primary commodity") +
-  scale_fill_manual(values = custom_fill,
-                    aesthetics = c("fill"),
-                    name = "Processing facilities and\nmines per primary commodity") + 
-  scale_color_manual(values = custom_colors,
-                    aesthetics = c("color"),
-                    name = "Processing facilities and\nmines per primary commodity") + 
-  scale_size_manual(values = custom_sizes, 
-                    name = "Processing facilities and\nmines per primary commodity") +
-  theme_bw() +
-  coord_sf(crs = "+proj=latlong", expand = FALSE) + # possibility to change to "robin"
-  guides(shape = guide_legend(override.aes = list(size = 3.5))) +
-  theme(legend.position = c(0.18,0.25),
-        legend.title = element_text(),
-        legend.background = element_rect(fill = "gray96", color = "black", size = 0.3),
-        legend.key = element_rect(fill = "gray96"),
-        legend.key.size = unit(5, "mm"),
-        axis.text = element_blank(), 
-        axis.ticks = element_blank(),
-        panel.border = element_blank())
-
-
-ggsave("./04_output/01_detailed_data/05_coverage/03_spatial/mine-level_data_map_coordinates_copper.pdf", width = 16, height = 8)
-ggsave("./04_output/01_detailed_data/05_coverage/03_spatial/mine-level_data_map_coordinates_copper.png", width = 20, height = 9, dpi = 300)
-
-```
 
 ## Coverage Coal only (Heat map)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
