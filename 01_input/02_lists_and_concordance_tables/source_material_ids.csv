@@ -136,6 +136,7 @@ detailed;Rutile;O.TiO2
 detailed;S;Nm.S
 detailed;Sands;
 detailed;Saprolite;O.bulk
+detailed;Saprolite (nickel bearing);O.Ni
 detailed;Saprolite Ore;O.bulk
 detailed;Selenium;Me.Se
 detailed;Silica;Nm.SiO2
@@ -256,6 +257,7 @@ detailed;PCI Metallurgical coal;F.coc
 detailed;Copper cement;Oth.cuce
 detailed;Tin ore;O.Sn
 detailed;Limonite;O.Fe
+detailed;Limonite (nickel bearing);O.Ni
 detailed;Fluorspar ore;O.flu
 detailed;Lithium ore;O.Li
 detailed;Spodumene;O.Li
