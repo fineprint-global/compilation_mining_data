@@ -50,6 +50,8 @@ source_unit_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source
 
 source_country_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_country_ids.csv", delim = ";")
 
+country_ids <- read_delim("./01_input/02_lists_and_concordance_tables/country_ids.csv", delim = ";")
+
 poss_ent <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/possible_entries.csv", delim = ";")
 
 source_ids <- read_delim("./01_input/02_lists_and_concordance_tables/source_ids.csv", delim = ";")
@@ -629,6 +631,14 @@ general <- general %>%
       select(alphanumiso),
     .after = "country"
   )
+
+# harmonize different country names by inserting country names on alphanumiso 
+general <- general %>% 
+  select(-country) %>%
+  left_join(country_ids %>% 
+              select(alphanumiso, country),
+            by = "alphanumiso") %>% 
+  relocate(country, .before = alphanumiso)
 
 detailed$general <- general
 
