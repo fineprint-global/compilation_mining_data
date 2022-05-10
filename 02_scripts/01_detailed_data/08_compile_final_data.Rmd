@@ -30,7 +30,7 @@ library(RSQLite)
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
 
 # read in sheet_general
-sheet_general <- st_read("./03_intermediate/01_detailed_data/sheet_general/general.gpkg")
+sheet_general <- st_read("./03_intermediate/01_detailed_data/sheet_general/07a_general.gpkg")
 sheet_sub_sites <- st_read("./03_intermediate/01_detailed_data/sheet_general/sub_sites.gpkg")
 
 # read in source_ids, material_ids, unit_ids
