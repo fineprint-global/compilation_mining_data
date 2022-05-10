@@ -1,0 +1,103 @@
+mine_fac,sub_site,year,min_ore_con,commodity,dc
+Antamina,NA,2018,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2017,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2016,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2015,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2014,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2013,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2012,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2011,O.bulk,Me.Zn,dc0_1
+Antamina,NA,2010,O.bulk,Me.Zn,dc0_1
+Boddington,NA,2009,O.Au,Me.Au,dc0_1
+Burbanks,NA,2015,O.Au,Me.Au,dc0_1
+Centinela,Esperanza,2019,O.Cu,Me.Mo,dc0_1
+Centinela,Esperanza,2018,O.Cu,Me.Mo,dc0_1
+Centinela,Esperanza,2014,O.Cu,Me.Au,dc0_1
+Cusi,NA,2008,O.bulk,Me.Pb,dc0_1
+Cusi,NA,2008,O.bulk,Me.Zn,dc0_1
+Galmoy,NA,2009,O.bulk,Me.Pb,dc0_1
+Guanaco and Amancaya,NA,2014,O.bulk,Me.Au,dc0_1
+Los Pelambres,NA,2014,O.Cu,Me.Mo,dc0_1
+Minto,NA,2008,O.bulk,Me.Au,dc0_1
+Puna,NA,2018,O.bulk,Me.Pb,dc0_1
+Wharf,NA,2010,O.Au,Me.Au,dc0_1
+Wharf,NA,2009,O.Au,Me.Au,dc0_1
+Antamina,NA,2018,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2017,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2016,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2015,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2014,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2013,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2012,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2011,O.bulk,Me.Zn,dc0_2
+Antamina,NA,2010,O.bulk,Me.Zn,dc0_2
+Boddington,NA,2009,O.Au,Me.Au,dc0_2
+Burbanks,NA,2015,O.Au,Me.Au,dc0_2
+Centinela,Esperanza,2019,O.Cu,Me.Mo,dc0_2
+Centinela,Esperanza,2018,O.Cu,Me.Mo,dc0_2
+Cusi,NA,2008,O.bulk,Me.Pb,dc0_2
+Cusi,NA,2008,O.bulk,Me.Zn,dc0_2
+Didipio,NA,2019,O.Au,Me.Cu,dc0_2
+Endeavor,NA,2009,O.Ag,Me.Ag,dc0_2
+Galmoy,NA,2009,O.bulk,Me.Pb,dc0_2
+Gosowong,NA,2007,O.bulk,Me.Au,dc0_2
+Gosowong,NA,2006,O.bulk,Me.Au,dc0_2
+Gosowong,NA,2005,O.bulk,Me.Au,dc0_2
+Guanaco and Amancaya,NA,2014,O.bulk,Me.Au,dc0_2
+Guelb Moghrein,NA,2007,O.sul,Me.Cu,dc0_2
+Los Filos,NA,2008,O.Au,Me.Au,dc0_2
+Los Pelambres,NA,2014,O.Cu,Me.Mo,dc0_2
+Marlin,NA,2005,O.bulk,Me.Au,dc0_2
+Minto,NA,2008,O.bulk,Me.Au,dc0_2
+Palmarejo,NA,2016,O.bulk,Me.Au,dc0_2
+Puna,NA,2018,O.bulk,Me.Pb,dc0_2
+Red Lake,NA,2004,O.Au,Me.Au,dc0_2
+Red Lake,NA,2003,O.Au,Me.Au,dc0_2
+San Martin,NA,2005,O.Au,Me.Au,dc0_2
+Wharf,NA,2010,O.Au,Me.Au,dc0_2
+Wharf,NA,2009,O.Au,Me.Au,dc0_2
+Mt Muro,NA,2014,O.bulk,Me.Ag,dc0_2
+Aguablanca,NA,2013,O.bulk,Me.Ni,dc3
+Aguablanca,NA,2008,O.bulk,Me.Ni,dc3
+Antamina,NA,2003,O.bulk,Me.Zn,dc3
+Antamina,NA,2002,O.bulk,Me.Zn,dc3
+Bolivar,NA,2011,O.bulk,Me.Ag,dc3
+Bolivar,NA,2010,O.bulk,Me.Ag,dc3
+Candelaria,NA,2019,O.Cu,Me.Au,dc3
+Highland Valley Copper,NA,2018,O.Cu,Me.Cu,dc3
+Highland Valley Copper,NA,2001,O.Cu,Me.Cu,dc3
+Kevitsa,NA,2013,O.bulk,Me.Cu,dc3
+La Coipa,NA,2006,O.Au,Me.Ag,dc3
+Los Pelambres,NA,2018,O.Cu,Me.Mo,dc3
+Macraes,NA,2004,O.Au,Me.Au,dc3
+Mexican IMMSA unit,NA,2014,O.bulk,Me.Ag,dc3
+Minera Florida,NA,2013,O.bulk,Me.Au,dc3
+Minera Florida,NA,2013,O.bulk,Me.Ag,dc3
+Ok Tedi,NA,2019,O.Cu,Me.Au,dc3
+Ok Tedi,NA,2018,O.Cu,Me.Au,dc3
+Ok Tedi,NA,2004,O.Cu,Me.Au,dc3
+Ok Tedi,NA,2003,O.Cu,Me.Cu,dc3
+Ok Tedi,NA,2003,O.Cu,Me.Au,dc3
+Porcupine,NA,2003,O.Au,Me.Au,dc3
+Ravensthorpe,NA,2017,O.Ni,Me.Ni,dc3
+Ravensthorpe,NA,2016,O.Ni,Me.Ni,dc3
+Ravensthorpe,NA,2015,O.Ni,Me.Ni,dc3
+Ravensthorpe,NA,2014,O.Ni,Me.Ni,dc3
+Red Lake,NA,2000,O.Au,Me.Au,dc3
+San Dimas,NA,2006,O.bulk,Me.Ag,dc3
+Seabee,NA,2018,O.Au,Me.Au,dc3
+Sentinel,NA,2016,O.Cu,Me.Cu,dc3
+Wharf,NA,2007,O.Au,Me.Au,dc3
+Zinkgruvan,NA,2005,O.bulk,Me.Ag,dc3
+Centinela,Esperanza,2018,O.Cu,Me.Cu,dc3
+Centinela,Esperanza,2018,O.Cu,Me.Au,dc3
+Centinela,Esperanza,2012,O.Cu,Me.Cu,dc3
+Cerro Negro,NA,2014,O.bulk,Me.Ag,dc3
+Guanaco and Amancaya,NA,2015,O.bulk,Me.Au,dc3
+Mt Muro,NA,2006,O.bulk,Me.Ag,dc3
+Nifty,NA,2016,O.Cu,Me.Cu,dc3
+Centinela,Esperanza,2018,O.Cu,Me.Au,dc4
+Cerro Negro,NA,2014,O.bulk,Me.Ag,dc4
+Guanaco and Amancaya,NA,2015,O.bulk,Me.Au,dc4
+Mt Muro,NA,2006,O.bulk,Me.Ag,dc4
+San Dimas,NA,2005,O.bulk,Me.Ag,dc4
