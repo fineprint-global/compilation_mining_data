@@ -9,7 +9,6 @@ library(rnaturalearth)
 library(rnaturalearthdata)
 library(tidyverse)
 
-#define some things for the libraries
 theme_set(theme_bw())
 world <- ne_countries(scale = "medium", returnclass = "sf")
 class(world)
