@@ -814,7 +814,7 @@ if (add_polygons == TRUE) {
 } else {
   
   # export sheet_general as geopackage without polygons 
-  st_write(general_output, "./03_intermediate/01_detailed_data/sheet_general/general.gpkg", append = FALSE)
+  st_write(general_output, "./03_intermediate/01_detailed_data/sheet_general/07_general.gpkg", append = FALSE)
   
 }
 
