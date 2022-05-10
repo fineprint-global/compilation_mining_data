@@ -1,0 +1,58 @@
+---
+title: "Coverage table by country, material and year"
+output: pdf_document
+editor_options: 
+  chunk_output_type: console
+classoption: landscape
+geometry: margin=1cm
+header-includes:
+- \usepackage{booktabs}
+- \usepackage{longtable}
+- \usepackage{array}
+- \usepackage{multirow}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \usepackage{colortbl}
+- \usepackage{pdflscape}
+- \usepackage{tabu}
+- \usepackage{threeparttable}
+- \usepackage{threeparttablex}
+- \usepackage[normalem]{ulem}
+- \usepackage{makecell}
+- \usepackage{xcolor}
+---
+
+```{r setup, include=FALSE, error=TRUE}
+library(kableExtra)
+options(knitr.table.format = "latex")
+options(knitr.kable.NA = '')
+
+library(readr)
+```
+
+```{r , echo = FALSE, message = FALSE, warning = FALSE}
+# Read in data
+coverage <- read_csv("./04_output/01_detailed_data/05_coverage/01_general/coverage.csv")
+# read in a file that has shorter names for countries with long country names
+# add color to each coverage (similar to heatmap: https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf)
+
+# 1. without coloring
+kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>% 
+  kable_styling(latex_options = c("striped", "repeat_header"), font_size = 7) %>% 
+  column_spec(1, width = "3em") %>%
+  column_spec(2, width = "3em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(c(4:ncol(coverage)), width = "1.5em")
+
+# 2. with coloring
+# kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>% 
+#   kable_styling(latex_options = c("striped", "repeat_header"), font_size = 7) %>% 
+#   column_spec(1, width = "3em") %>%
+#   column_spec(2, width = "3em") %>%
+#   column_spec(3, width = "5em") %>%
+#   column_spec(4, width = "1.5em",
+#             background = spec_color(coverage$`2000`)) %>%
+#   column_spec(c(5:ncol(coverage)), width = "1.5em")
+
+```
+
