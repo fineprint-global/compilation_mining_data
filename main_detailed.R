@@ -77,19 +77,6 @@ source("./02_scripts/01_detailed_data/04a_aggregation.R")
 source("./02_scripts/01_detailed_data/04b_gap_filling.R")
 
 
-
-## Comparison of data coverage against national accounts with respective HTML output 
-  ## (html output is saved in `./04_output/01_detailed_data/coverage/`)
-wd <- getwd()
-rmarkdown::render("./02_scripts/01_detailed_data/05_coverage.Rmd",
-                  knit_root_dir = wd, 
-                  output_dir = "./04_output/01_detailed_data/05_coverage/01_general/", 
-                  intermediates_dir = "./04_output/01_detailed_data/05_coverage/01_general/",
-                  output_file = paste0("coverage_", substr(Sys.time(), 1, 10),".html")
-                  )
-
-
-
 ## Georeferencing of all mines
 wd <- getwd()
 rmarkdown::render("./02_scripts/01_detailed_data/07_georeferencing.Rmd",
@@ -98,6 +85,10 @@ rmarkdown::render("./02_scripts/01_detailed_data/07_georeferencing.Rmd",
                   intermediates_dir = "./04_output/01_detailed_data/07_other",
                   output_file = "georeferencing.html"
 )
+
+
+## Add primary commodity to table general
+source("./02_scripts/01_detailed_data/07a_add_primary_commodity.R")
 
 
 ## Produce final data output
@@ -112,14 +103,24 @@ rmarkdown::render("./02_scripts/01_detailed_data/08_compile_final_data.Rmd",
 
 ## Calculate Coverages based on final data output
 ## this includes coverage of all commodities and spatial coverage (coordinates)
-## html output is saved in `./04_output/01_detailed_data/05_coverage/`)
+## html output is saved in `./04_output/01_detailed_data/05_coverage/01_general`)
 wd <- getwd()
 rmarkdown::render("./02_scripts/01_detailed_data/09_coverage_final_data.Rmd",
                   knit_root_dir = wd,
-                  output_dir = "./04_output/01_detailed_data/05_coverage/",
-                  intermediates_dir = "./04_output/01_detailed_data/05_coverage/",
-                  output_file = paste0("coverage_final_data", substr(Sys.time(), 1, 10),".html")
+                  output_dir = "./04_output/01_detailed_data/05_coverage/01_general",
+                  intermediates_dir = "./04_output/01_detailed_data/05_coverage/01_general",
+                  output_file = paste0("coverage_final_data_", substr(Sys.time(), 1, 10),".html")
 )
+
+# create pdf output with coverage of final data per country, material and year
+wd <- getwd()
+rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/coverage_table.Rmd",
+                  knit_root_dir = wd,
+                  output_dir = "./04_output/01_detailed_data/05_coverage/01_general",
+                  intermediates_dir = "./04_output/01_detailed_data/05_coverage/01_general",
+                  output_file = "coverage_table.pdf"
+)
+
 
 #### Additional scripts -----------
 
