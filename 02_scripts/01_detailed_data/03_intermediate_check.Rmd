@@ -1,6 +1,8 @@
 ---
 title: "Intermediate data check"
-output: html_document
+output: 
+  html_document:
+    number_sections: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -11,8 +13,11 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-library(rlang)
+library(readxl)
 library(scales)
+library(readr)
+library(DT)
+library(ggplot2)
 
 # clear R environment
 rm(list = ls())
@@ -21,26 +26,53 @@ rm(list = ls())
 
 <br> 
 
-```{r , echo = FALSE, message = FALSE}
+```{r , echo = FALSE, message = FALSE, warning=FALSE}
 
 ## read files
+
+# original data file
+path <- "./01_input/01_data/01_detailed_data/detailed_data_mining.xlsx"
+original <- path %>%
+  excel_sheets() %>%
+  set_names() %>% 
+  map(~ read_excel(path = path, sheet = .x, na = c("", "-", "NA")))
+
+# different versions of data (after conversion/harmonization etc. )
+pre_con <- read_rds("./03_intermediate/01_detailed_data/all_tables_harmonized.rds")
+post_con <- read_rds("./03_intermediate/01_detailed_data/all_tables_converted.rds")
+conv_fac <- read_csv2("./01_input/02_lists_and_concordance_tables/source_unit_ids.csv")
 
 # harmonized and converted data file
 detailed <- read_rds("./03_intermediate/01_detailed_data/all_tables_converted.rds")
 
-# list of columns
-sheets_columns <- read_delim("./01_input/02_lists_and_concordance_tables/01_detailed_data/sheets_columns.csv", delim = ";")
+#define sheets 
+sheet_min_orig <- original$minerals_ores_conce
+sheet_com_orig <- original$commodities
+sheet_min_pre <- pre_con$minerals_ores_conce
+sheet_com_pre <- pre_con$commodities
+sheet_min_post <- post_con$minerals_ores_conce
+sheet_com_post <- post_con$commodities
+sheet_gen <- pre_con$general
+sheet_subsites <- pre_con$sub_sites
+
 
 
 # sheets
 sheet_min <- detailed$minerals_ores_conce
 sheet_com <- detailed$commodities
 
+# log file to exclude flagging of cases which have already been checked
+ratio_check_log <- read_csv("./01_input/03_log_files/01_detailed_data/ratio_check_log.csv")
+
+
+# create list filled up with cases where the data checks suggest a false entry
+flagged_cases <- list()
+
 ```
 
 <br> 
 
-#### Rows which are apparently double counting 
+# Rows which are apparently double counting 
 
 ```{r, echo = FALSE, message = FALSE}
 
@@ -223,7 +255,7 @@ sheet_min <- sheet_min %>%
 
 <br> 
 
-#### Mines which are in both tables, but are not joined
+# Mines which are in both tables, but are not joined
 
 ```{r , echo = FALSE, message = FALSE}
 ## check which rows from sheet_min would not be included in join of sheet_com, because variables don't fit
@@ -281,7 +313,7 @@ DT::datatable(non_fit)
 
 <br> 
 
-#### Mines which have the same coordinates in sheet_general and sheet_sub_sites. 
+# Mines which have the same coordinates in sheet_general and sheet_sub_sites. 
 
 ```{r, echo = FALSE, message = FALSE}
 
@@ -325,4 +357,486 @@ DT::datatable(dupli)
 
 ```
 
-<br> 
+
+# Ratio checks (formerly DC3 and DC4)
+These data checks are based on the relationship of the variables minerals_ores_conce.value vs commodities.value vs commodities.grade vs commodities.recovery_rate
+<br>
+in total, 2 ratios are calculated:
+<br>
+
+1. ratio_ore_pseudo_ore = commodities.value / (commodities.grade * commodities.recovery_rate)
+
+2. ratio_commodity_pseudo_commodity = minerals_ores_conce.value * commodities.grade * commodities.recovery_rate
+
+the sheets before and after the unit conversion are needed
+
+## prepare data 
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+
+# conditions for this data check
+# all 4 data points =! c(NA OR 0) AND commodities.mine_processing == NA AND type_mineral == "Ore processed"
+
+# only include observations that fulfill conditions mentioned above
+sheet_min_post_dc1_4 <- sheet_min_post %>%
+  filter(!is.na(value) & value != 0 & type_mineral == "Ore processed" & is.na(mine_processing))
+
+sheet_min_pre_dc1_4 <- sheet_min_pre %>%
+  filter(!is.na(value) & value != 0 & type_mineral == "Ore processed" & is.na(mine_processing))
+
+compcases_com <- sheet_com_post %>%
+  select(value, grade, recovery_rate) %>%
+  complete.cases()
+
+sheet_com_post_dc1_4 <- sheet_com_post[compcases_com,] %>%
+  filter(value != 0 & grade != 0 & recovery_rate != 0 & is.na(mine_processing))
+
+
+## calculation of first ratio: ratio_ore_pseudo_ore
+# combines sheet_min and sheet_com 
+ratio_ore <- inner_join(sheet_com_post_dc1_4, sheet_min_post_dc1_4,  
+                  by = c("mine_fac", "sub_site", "min_ore_con", "type_mining", "year"),
+                  suffix = c(".com", ".min"))
+
+# adds variables pseudo.value.min and ratio_ore_pseudo_ore
+ratio_ore <- ratio_ore %>% 
+              mutate(pseudo.value.min = value.com / (grade * 0.000001 * recovery_rate)) %>%
+              mutate(ratio_ore_pseudo_ore = value.min / pseudo.value.min)
+
+#include column unit which includes the original unit
+ratio_ore <- ratio_ore %>% 
+  left_join(sheet_min_pre_dc1_4 %>% 
+              select(mine_fac, sub_site, min_ore_con, type_mining, year, unit), 
+            by = c("mine_fac", "sub_site", "min_ore_con", "type_mining", "year"))
+  
+
+## calculation of second ratio: ratio_commodity_pseudo_commodity
+ratio_com <- inner_join(sheet_com_post_dc1_4, sheet_min_post_dc1_4,  
+                  by = c("mine_fac", "sub_site", "min_ore_con", "type_mining", "year"),
+                  suffix = c(".com", ".min"))
+
+# adds variables pseudo.value.com and ratio_commodity_pseudo_commodity
+ratio_com <- ratio_com %>% 
+              mutate(pseudo.value.com = value.min * grade * 0.000001 * recovery_rate) %>%
+              mutate(ratio_commodity_pseudo_commodity = value.com/pseudo.value.com)
+
+#include column unit which includes the original unit
+ratio_com <- ratio_com %>% 
+  left_join(sheet_com_pre %>% 
+              select(mine_fac, sub_site, min_ore_con, commodity, type_mining, year, unit), 
+            by = c("mine_fac", "sub_site", "min_ore_con", "commodity", "type_mining", "year"))
+
+print("done!")
+```
+
+
+## Visual inspection 
+### Visual inspection of the ratio ore/pseudo-ore
+
+```{r , echo = FALSE, message = FALSE} 
+datatable(ratio_ore %>% 
+            select(mine_fac, sub_site, min_ore_con, type_mining, year, 
+                   commodity, grade_or_yield_unit, grade, value.min, 
+                   pseudo.value.min, ratio_ore_pseudo_ore),
+            caption = "Full ratio_ore table")
+```
+
+Boxplot including outliers
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+boxplot(ratio_ore$ratio_ore_pseudo_ore)
+```
+
+Boxplot excluding outliers
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+boxplot(ratio_ore$ratio_ore_pseudo_ore, outline=F)
+```
+
+Histograms, untrimmed and trimmed
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+hist(ratio_ore$ratio_ore_pseudo_ore)
+
+#trimming
+ratio_ore_plot <- ratio_ore %>%
+  filter(ratio_ore_pseudo_ore > 0.7 & ratio_ore_pseudo_ore < 1.3)
+
+# create plots for the data checks with the unit errors 
+ratio_ore_plot <- ratio_ore_plot %>%
+  mutate(unit_ton = case_when(unit == "Kst" ~ "short ton", 
+                              unit == "Kt" ~ "metric ton", 
+                              unit == "Mt" ~ "metric ton", 
+                              unit == "t" ~ "metric ton",
+                              unit == "st" ~ "short ton")) 
+
+ggplot(ratio_ore_plot, aes(x=ratio_ore_pseudo_ore)) + 
+  geom_histogram(binwidth = 0.007, alpha = 0.5, color = "black")+
+  theme(legend.position = c(0.23,0.8))+ 
+  labs(x = "OP ratio")
+
+ggplot(ratio_ore_plot, aes(x=ratio_ore_pseudo_ore, color = unit_ton, fill = unit_ton)) + 
+  geom_histogram(binwidth = 0.007, alpha = 0.5)+
+  theme(legend.position = c(0.23,0.8))+ 
+  labs(x = "OP ratio")
+
+```
+
+
+```{r , echo = FALSE, message = FALSE} 
+# add the extreme outliers to flagged cases
+flagged_cases$dc0_1 <- ratio_ore %>% 
+  filter(ratio_ore_pseudo_ore > 1.2 
+         | ratio_ore_pseudo_ore < 0.8) %>%
+  anti_join(ratio_check_log) %>%
+  select(mine_fac, sub_site, min_ore_con, type_mining, year, 
+         commodity, grade_or_yield_unit, grade, value.min, 
+         pseudo.value.min, ratio_ore_pseudo_ore)
+
+# Display for which entries the unit might be entered falsely
+datatable(flagged_cases$dc0_1, caption = "Outliers with extreme ore/pseudo-ore ratios")
+
+```
+
+### Visual inspection of the ratio commodity/pseudo-commodity
+
+```{r , echo = FALSE, message = FALSE} 
+datatable(ratio_com %>% 
+            select(mine_fac, sub_site, min_ore_con, type_mining, year, commodity, grade_or_yield_unit, grade, value.com, pseudo.value.com, ratio_commodity_pseudo_commodity),
+          caption = "Full ratio_commodity table")
+```
+
+Boxplot including outliers
+```{r , echo = FALSE, message = FALSE, results = "hide"}
+boxplot(ratio_com$ratio_commodity_pseudo_commodity)
+```
+
+Boxplot excluding outliers
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+boxplot(ratio_com$ratio_commodity_pseudo_commodity, outline=F)
+```
+
+Histograms, untrimmed and trimmed
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+hist(ratio_com$ratio_commodity_pseudo_commodity)
+
+# trimming
+ratio_com_plot <- ratio_com %>%
+  filter(ratio_commodity_pseudo_commodity > 0.7 & ratio_commodity_pseudo_commodity < 1.3)
+
+
+# allocating units
+ratio_com_plot <- ratio_com_plot %>%
+  mutate(unit_ounce = case_when(unit == "Kg" ~ "other", 
+                              unit == "t" ~ "other", 
+                              unit == "Klb" ~ "other", 
+                              unit == "lb" ~ "other",
+                              unit == "Mlb" ~ "other",
+                              unit == "Kt" ~ "other",
+                              unit == "Koz" ~ "ounce",
+                              unit == "oz" ~ "ounce",
+                              unit == "Kozt" ~ "troy ounce",
+                              unit == "ozt" ~ "troy ounce"
+                              ))
+
+ggplot(ratio_com_plot, aes(x=ratio_commodity_pseudo_commodity)) + 
+  geom_histogram(binwidth = 0.007, alpha = 0.5, color = "black")+ 
+  labs(x = "CP ratio")
+
+
+ggplot(ratio_com_plot, aes(x=ratio_commodity_pseudo_commodity, color = unit_ounce, fill = unit_ounce)) + 
+  geom_histogram(binwidth = 0.007, alpha = 0.5)+ 
+  theme(legend.position = c(0.8,0.8))+ 
+  labs(x = "CP ratio")
+
+```
+
+
+```{r , echo = FALSE, message = FALSE} 
+#immediately add the extreme outliers to flagged cases
+flagged_cases$dc0_2 <- ratio_com %>% 
+  filter(ratio_commodity_pseudo_commodity > 1.2 
+         | ratio_commodity_pseudo_commodity < 0.8) %>%
+  anti_join(ratio_check_log) %>%
+  select(mine_fac, sub_site, min_ore_con, type_mining, year, commodity, grade_or_yield_unit, grade, value.com, pseudo.value.com, ratio_commodity_pseudo_commodity)
+
+# Display for which entries the unit might be entered falsely
+datatable(flagged_cases$dc0_2, caption = "Outliers with extreme commodity/pseudo-commodity ratios")
+
+```
+
+## Data check: Short ton vs Metric ton (formerly DC3)
+Check, if there are any cases where tonne was entered as unit, but actually short ton would be the correct unit. The other direction, i.e. entered short tonnes instead of metric tonnes, must not be checked, as metric tonnes is the default unit. Short tonnes are only entered, if the company report really specifies "Short tonnes".
+All cases where the ratio ore/pseudo-ore is between 1.05 and 1.15 are flagged
+The reason is that if metric tonnes are entered instead of short tonnes, the ratio is expected to be around 1.10231 (1 metric tonne = 1.10231 short tons). The actual number entered for ore_processed (which was converted in metric tonnes, but should have been converted in short tonnes) will be 10% too high 
+
+First Visual inspection of ore/pseudo ore ratio, only including data points where the unit is some form of tonnes (i.e. tonnes, t, Kt, kt, million tonnes, short tons, long tons, etc...)
+```{r , echo = FALSE, message = FALSE, results = "hide"}
+# requires sheets pre and post unit conversion
+# Additional Conditions: minerals_ores_conce.unit == c(tonnes, t, Kt, kt, million tonnes, long tons, etc...)
+
+ratio_ore_dc3 <- ratio_ore %>% 
+  filter(unit %in% c("t", "Kt", "Mt", "100Mt", "Gt"))
+
+# check out ratio_ore_dc3
+boxplot(ratio_ore_dc3$ratio_ore_pseudo_ore, outline=F)
+ratio_ore_dc3_trimmed <- ratio_ore_dc3$ratio_ore_pseudo_ore
+ratio_ore_dc3_trimmed<-ratio_ore_dc3_trimmed[ratio_ore_dc3_trimmed<1.3 & ratio_ore_dc3_trimmed>0.7]
+hist(ratio_ore_dc3_trimmed, 200) 
+
+summary(ratio_ore_dc3$ratio_ore_pseudo_ore)
+
+# flag cases for which this confusion of short tonnes for metric tonnes could be the case
+flagged_cases$dc3 <- ratio_ore_dc3 %>% 
+  filter(ratio_ore_pseudo_ore > 1.05 
+         & ratio_ore_pseudo_ore < 1.15) %>%
+  anti_join(ratio_check_log) %>%
+  select(mine_fac, sub_site, min_ore_con, type_mining, year, commodity, grade_or_yield_unit, grade, value.min, pseudo.value.min, ratio_ore_pseudo_ore)
+
+```
+
+Histogram with cases in and outside the acceptance region, and inside the data check region
+```{r , echo = FALSE, message = FALSE} 
+
+ratio_ore_dc3_plot <- ratio_ore_dc3 %>%
+  filter(ratio_ore_pseudo_ore > 0.7 & ratio_ore_pseudo_ore < 1.3)
+
+# normal grey histogram
+ggplot(ratio_ore_dc3_plot, aes(x=ratio_ore_pseudo_ore)) + 
+  geom_histogram(binwidth = 0.007, color = "black", fill = "grey")
+
+
+# group ratios 
+ratio_ore_dc3_plot <- ratio_ore_dc3_plot %>%
+  mutate(which_check = case_when(ratio_ore_pseudo_ore <  0.8  ~ "outlier",
+                                 ratio_ore_pseudo_ore >  1.2  ~ "outlier",
+                                 ratio_ore_pseudo_ore >  0.95 & ratio_ore_pseudo_ore < 1.05  ~ "acceptance region",
+                                 ratio_ore_pseudo_ore >  1.05 & ratio_ore_pseudo_ore < 1.15  ~ "might be entered falsely, tonnes instead of short tonnes",
+                                 ratio_ore_pseudo_ore >  0.8 & ratio_ore_pseudo_ore < 0.95  ~ "no DC applied, but outside accept. reg."))
+
+
+# histogram indicating acceptance and rejection region
+ggplot(ratio_ore_dc3_plot, aes(x=ratio_ore_pseudo_ore, color = which_check, fill=which_check)) + 
+  geom_histogram(binwidth = 0.005, alpha=0.5) + 
+  theme(legend.position = c(0.23,0.8))+ 
+  labs(x = "OP ratio")
+
+# Display for which entries the unit might be entered falsely
+datatable(flagged_cases$dc3, caption = "Data points which might be entered falseley, tonnes instead of short tonnes")
+
+```
+
+
+
+## Data check: troy ounce vs ounce (Formerly DC4)
+
+requires sheets pre and post unit conversion
+Additional Conditions: commodities.unit == c(ounce, koz, oz, 000 oz, etc.), AND commodities.grade_or_yield_unit == g/t (because if it is oz/t, it makes no sense to check if it is troy ounce instead of ounce, because if it were, oz/t would also likely refer to troy oz/t, thus making the four values fit together again, thus undetectable.)
+Check: If commodities.value =~= (minerals_ores_conce.value *  commodities.grade * commodities.recovery_rate) * 0.9 --> flag
+reason: if the entered.value/pseudo.value ratio is roughly 0.9, it means that the entered commodity.value is roughly 10% too small compared to the value calculated based on the other three datapoints
+this is the case if ounces instead of troy ounces is entered.
+
+First Visual inspection of commodity/pseudo-commodity ratio, only including data points where the unit is some form of ounces. 
+```{r , echo = FALSE, message = FALSE, results = "hide"}
+
+#preset the sheet_com_pre_dc4
+sheet_com_pre_dc4 <- sheet_com_pre
+
+#load the pre-conversion tibble, only where ounces or troy ounces were entered as unit
+ounce_units<-conv_fac %>% #take only the units which are converted to ounces or troy ounces
+  filter(unit_id %in% c("oz", "ozt", "Koz", "Kozt", "Moz", "Mozt")) %>%
+  select(source_unit) %>%
+  pull()
+
+#load the pre-conversion tibble, only where not oz/t or koz/t was entered as grade
+grade_units_dc4<-conv_fac %>% 
+  filter(unit_cat == "grade") %>%
+  filter(!(unit_id %in% c("oz/t", "ozt/t"))) %>%
+  select(source_unit) %>%
+  pull()
+
+# only take observations which were converted to g/t
+sheet_com_pre_dc4 <- sheet_com_pre_dc4 %>% 
+  filter(unit %in% ounce_units) %>%
+  filter(grade_or_yield_unit %in% grade_units_dc4) %>%
+  select(mine_fac, sub_site, min_ore_con, type_mining, year, commodity, grade_or_yield_unit)
+
+
+#merge the ratio_com and sheet_com_pre_dc4
+ratio_com_dc4 <- inner_join(ratio_com, sheet_com_pre_dc4,  
+                  by = c("mine_fac", "sub_site", "min_ore_con", "year", "type_mining", "commodity"), 
+                  suffix = c("ratio_com", "sheet_com_pre"))
+
+
+# check out ratio_com_dc4
+boxplot(ratio_com_dc4$ratio_commodity_pseudo_commodity, outline=F)
+ratio_com_dc4_trimmed <- ratio_com_dc4$ratio_commodity_pseudo_commodity
+ratio_com_dc4_trimmed <- ratio_com_dc4_trimmed[ratio_com_dc4_trimmed <1.3 & ratio_com_dc4_trimmed > 0.7]
+hist(ratio_com_dc4_trimmed, 200)
+
+# fill the list flagged_cases with the cases flagged by the fourth data check
+flagged_cases$dc4 <- ratio_com_dc4 %>% 
+  filter(ratio_commodity_pseudo_commodity > 0.85 
+         & ratio_commodity_pseudo_commodity <0.95) %>%
+  anti_join(ratio_check_log) %>%
+  select(mine_fac, sub_site, min_ore_con, type_mining, year, commodity, 
+         grade_unit, grade, value.com, pseudo.value.com, ratio_commodity_pseudo_commodity)
+
+
+```
+
+Histogram with cases in and outside the acceptance region, and inside the data check region
+```{r , echo = FALSE, message = FALSE} 
+
+ratio_com_dc4_plot <- ratio_com_dc4 %>%
+  filter(ratio_commodity_pseudo_commodity > 0.7 & ratio_commodity_pseudo_commodity < 1.3)
+
+
+ratio_com_dc4_plot <- ratio_com_dc4_plot %>%
+  mutate(which_check = case_when(ratio_commodity_pseudo_commodity <  0.8  ~ "outlier",
+                                 ratio_commodity_pseudo_commodity >  1.2  ~ "outlier",
+                                 ratio_commodity_pseudo_commodity >  0.95 & ratio_commodity_pseudo_commodity < 1.05  ~ "acceptance region",
+                                 ratio_commodity_pseudo_commodity >  0.85 & ratio_commodity_pseudo_commodity < 0.95  ~ "might be entered falsely, ounces instead of troy ounces",
+                                 ratio_commodity_pseudo_commodity >  0.8 & ratio_commodity_pseudo_commodity < 0.85  ~ "no check applied, but outside acceptance region",
+                                 ratio_commodity_pseudo_commodity >  1.05 & ratio_commodity_pseudo_commodity < 1.2  ~ "no check applied, but outside acceptance region"))
+
+
+
+ggplot(ratio_com_dc4_plot, aes(x=ratio_commodity_pseudo_commodity, color = which_check, fill = which_check)) + 
+  geom_histogram(binwidth = 0.005, alpha=0.5)+
+  theme(legend.position = c(0.8,0.8))+ 
+  labs(x = "CP ratio")
+
+# Display for which entries the unit might be entered falsely
+datatable(flagged_cases$dc4, caption = "Data points which might be entered falseley, ounces instead of troy ounces")
+
+```
+
+Histogram commodity/pseudo-commodity ratio by grade unit before conversion
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+
+### create the plot for dc4 that also shows which unit for HG was used (building on the code from above)
+sheet_com_pre_dc4_plot <- sheet_com_pre %>% 
+  select(mine_fac, sub_site, min_ore_con, type_mining, year, commodity, grade_or_yield_unit)
+
+# merge the ratio_com_plot and sheet_com_pre_dc4_plot
+ratio_com_plot <- left_join(ratio_com_plot, sheet_com_pre_dc4_plot,  
+                            by = c("mine_fac", "sub_site", "min_ore_con", "year", "type_mining", "commodity"), suffix = c(".ratio_com", ".sheet_com_pre"))
+
+
+ggplot(ratio_com_plot, aes(x=ratio_commodity_pseudo_commodity, color = grade_or_yield_unit.sheet_com_pre, fill = grade_or_yield_unit.sheet_com_pre)) + 
+  geom_histogram(binwidth = 0.007, alpha = 0.5)
+
+```
+
+## Other histograms: 
+
+Histogram commodity/pseudo-commodity ratio by grade unit before conversion, without the unit "percent"
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+ggplot(filter(ratio_com_plot, !grade_or_yield_unit.sheet_com_pre == "pct"), aes(x=ratio_commodity_pseudo_commodity, color = grade_or_yield_unit.sheet_com_pre, fill = grade_or_yield_unit.sheet_com_pre)) + 
+  geom_histogram(binwidth = 0.007, alpha = 0.5)
+
+```
+
+Histogram commodity/pseudo-commodity ratio by grade unit before conversion, included or not included in the data check
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+
+
+# make a histogram that only shows those with unit ounces or multiple
+ratio_com_plot_ounces <- ratio_com_plot %>% 
+  filter(!grade_or_yield_unit.sheet_com_pre == "pct") %>%
+  filter(unit %in% ounce_units) %>%
+  mutate(unit_grade = case_when(grade_or_yield_unit.sheet_com_pre == "g/t" ~ "grade given in g/t, included in DC4", 
+                                grade_or_yield_unit.sheet_com_pre == "oz/t" ~ "grade given in oz/t, not included in DC4")) 
+
+
+ggplot(ratio_com_plot_ounces, aes(x=ratio_commodity_pseudo_commodity, color = grade_or_yield_unit.sheet_com_pre, fill = grade_or_yield_unit.sheet_com_pre)) + 
+  geom_histogram(binwidth = 0.007, alpha = 0.5)
+
+ggplot(ratio_com_plot_ounces, aes(x=ratio_commodity_pseudo_commodity, color = unit_grade, fill = unit_grade)) +
+  geom_histogram(binwidth = 0.007, alpha = 0.5)+
+  theme(legend.position = c(0.75,0.8))+ 
+  labs(x = "CP ratio")
+
+```
+
+
+Export cases which were flagged by any of the ratio data checks (i.e. 0.1, 0.2, 3 or 4)
+These should, after manual checking, be either copied into the log file ratio_check_log.csv, or corrected
+```{r , echo = FALSE, message = FALSE, results = "hide"} 
+
+ratio_check_non_fit <- tibble()
+
+for(i in 1:4){
+  
+  name <- flagged_cases[i] %>% names()
+  
+  temp <- flagged_cases[[i]] %>% 
+    select(mine_fac, sub_site, year, min_ore_con, commodity) %>% 
+    mutate(dc = name)
+    
+  
+  ratio_check_non_fit <- ratio_check_non_fit %>% 
+    bind_rows(temp) %>% 
+    distinct()
+}
+
+ratio_check_non_fit <- ratio_check_non_fit %>% 
+  arrange(dc, mine_fac, desc(year))
+
+write_csv(ratio_check_non_fit, "./04_output/01_detailed_data/03_intermediate_check/ratio_check_non_fit.csv")
+
+```
+
+
+# Data check: check if production period matches info in sheet_general (formerly DC9)
+```{r , echo = FALSE, message = FALSE} 
+# General.production_start  vs minerals_ores_conce.min_ore_con 
+# Conditions:
+# Check: If year[ore mined] > general.production_end OR year[ore_mined] < general.production_start --> flag
+
+
+# extract the mines that have entries for coal 
+years_unique <- sheet_min_pre %>%
+  select(mine_fac, type_mineral, year) %>%
+  filter(type_mineral == "Ore mined" | type_mineral == "Coal mined") %>%
+  group_by(mine_fac)
+
+max_year <- summarise(years_unique, max = max(year)) 
+min_year <- summarise(years_unique, min = min(year))
+
+
+#pre-set the sheet general to only inlcude relevant variables
+sheet_gen_dc9 <- sheet_gen %>% 
+  select(mine_fac, production_start, production_end)
+
+
+# join max_year and min_year, join with sheet_gen
+production_years <- full_join(max_year, min_year, by="mine_fac")
+dc9 <- full_join(sheet_gen_dc9, production_years , by="mine_fac")
+
+
+dc9 <- dc9 %>% #check if there is production recorded before the entered production start, or after the production end
+  mutate(prod_start_true = min - production_start) %>%
+  mutate(prod_end_true = production_end - max)
+
+# return all mines where production is recorded outside of the production start and end year
+flagged_cases$dc9 <- dc9 %>% 
+  filter(prod_start_true < 0 | prod_end_true < 0 ) 
+
+# Display for which entries the unit might be entered falsely
+datatable(flagged_cases$dc9, caption = "Mines for which production was recorded outside of their indicated active years")
+
+```
+# Data check: logical error in recovery rate, can only be smaller than 1 (formerly DC10)
+```{r , echo = FALSE, message = FALSE} 
+# commodities.recovery_rate larger than 1 
+# Conditions: commodities.recovery_rate != NA AND Mine_processing == NA
+# Check: if commodities.recovery_rate > 1  --> flag
+
+flagged_cases$dc10<- sheet_com_post %>%
+  filter(is.na(mine_processing))%>%
+  filter(recovery_rate>1) %>%
+  select(mine_fac, sub_site, min_ore_con, type_mining, year, commodity, value, recovery_rate)
+
+# Display for which entries the unit might be entered falsely
+datatable(flagged_cases$dc10, caption = "Cases where recovery rate is > 100%")
+
+```
+
