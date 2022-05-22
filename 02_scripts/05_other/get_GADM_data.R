@@ -14,7 +14,7 @@ if (!file.exists("./01_input/06_geodata/gadm36_levels.gpkg")){
   if (!file.exists("./01_input/06_geodata/gadm36_levels_gpkg.zip")){
     
     timeout <- getOption('timeout')
-    options(timeout=600) # 10 min
+    options(timeout=780) # 13 min
     download.file("https://biogeo.ucdavis.edu/data/gadm3.6/gadm36_levels_gpkg.zip", destfile = "./01_input/06_geodata/gadm36_levels_gpkg.zip")
     options(timeout=timeout)
     
