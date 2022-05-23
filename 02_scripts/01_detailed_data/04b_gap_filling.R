@@ -430,17 +430,17 @@ double_com <- sheet_com %>%
 
 # sheet_coal
 double_coal <- sheet_coal %>%
-  group_by(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing) %>%
+  group_by(mine_fac, type_mineral, min_ore_con, year, mine_processing) %>%
   summarise(n = n()) %>%
   ungroup() %>%
   filter(n > 1) %>%
   left_join(.,
             sheet_coal %>%
-              select(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing, source_id)) %>%
+              select(mine_fac, type_mineral, min_ore_con, year, mine_processing, source_id)) %>%
   distinct() %>%
-  group_by(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing) %>%
+  group_by(mine_fac, type_mineral, min_ore_con, year, mine_processing) %>%
   summarise(n = n()) %>%
   ungroup() %>%
   filter(n > 1) %>%
   left_join(., sheet_coal) %>%
-  arrange(mine_fac, sub_site, type_mineral, min_ore_con, year, mine_processing)
+  arrange(mine_fac, type_mineral, min_ore_con, year, mine_processing)
