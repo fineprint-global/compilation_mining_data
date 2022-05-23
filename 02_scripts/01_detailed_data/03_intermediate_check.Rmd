@@ -313,8 +313,7 @@ DT::datatable(non_fit)
 
 <br> 
 
-# Mines which have the same coordinates in sheet_general and sheet_sub_sites. 
-
+# Mines which have coordinates in sheet_general and sheet_sub_sites (not allowed, should be either/or)
 ```{r, echo = FALSE, message = FALSE}
 
 ### check for double entries of coordinates in sheet_general and sheet_sub_sites
@@ -322,22 +321,24 @@ DT::datatable(non_fit)
 general <- detailed$general
 sub_sites <- detailed$sub_sites
 
-#first, create a column "sub_site" which is empty for the sheet general
-general <- add_column(general, sub_site = NA, .after = "mine_fac")
+dupli <- sub_sites %>% 
+  filter(mine_fac %in% (general %>% filter(!is.na(latitude)) %>% select(mine_fac) %>% pull())) %>%
+  filter(!is.na(latitude)) %>% 
+  select(mine_fac) %>% 
+  pull() %>% unique()
 
-#then, bind the sheet general and sheet_sub_sites "below" each other
-general <- bind_rows(general, sub_sites)
+print(dupli)
 
-#detect duplicate coordinates
-general <- general[!grepl(c("Smelter|Refinery"), general$mine_or_processing, ignore.case = TRUE),]
-dupli <- filter(general, !is.na(latitude))[duplicated(na.omit(general$latitude)),]
-dupli <- filter(general, latitude %in% dupli$latitude)[order(dupli$latitude),]
-dupli <- dupli %>% select(., mine_fac, sub_site, latitude, longitude)
+```
 
-
-# table for Rmd output
-DT::datatable(dupli)
-
+# Mines which have only one sub-site (not allowed)
+```{r, echo = FALSE, message = FALSE}
+print(sheet_subsites %>% 
+  group_by(mine_fac) %>% 
+  summarize(n = n()) %>% 
+  filter(n == 1) %>% 
+  select(mine_fac) %>% 
+  pull())
 
 ```
 
