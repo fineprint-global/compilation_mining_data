@@ -51,8 +51,8 @@ rm(list = ls())
 # Read in data
 ```{r , echo = FALSE, message = FALSE, results = "hide"} 
 # read final mine-level data
-general <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/general.gpkg") %>% tibble()
-general_sf <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/general.gpkg")
+general <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/facilities.gpkg") %>% tibble()
+general_sf <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/facilities.gpkg")
 
 detailed <- read_rds("./04_output/01_detailed_data/08_final_data/other_formats/detailed_final.rds")
 sheet_min <- detailed$minerals_ores_conce
@@ -85,9 +85,12 @@ world <- ne_countries(scale = "medium", returnclass = "sf")
 
 
 #read table material_ids and source_ids and facility_ids
-mat_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv")
-source_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/source_ids.csv")
-fac_ids <- read_csv("./01_input/02_lists_and_concordance_tables/facility_ids.csv")
+mat_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv", 
+                    show_col_types = FALSE)
+source_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/source_ids.csv", 
+                       show_col_types = FALSE)
+fac_ids <- read_csv("./01_input/02_lists_and_concordance_tables/facility_ids.csv", 
+                    show_col_types = FALSE)
 
 ```
 
@@ -95,25 +98,54 @@ fac_ids <- read_csv("./01_input/02_lists_and_concordance_tables/facility_ids.csv
 
 ## data for coverage shares per material
 
-### Adjustments in nat_acc
+### Preparation of nat_acc
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
-
-# convert all coal-related material ids in nat_acc to F.coal 
-coal_ids <- mat_ids %>% filter(material_category_2 == "coal & peat" & material_id != "F.pea") %>%
-  select(material_id) %>% 
-  pull()
-
-nat_acc <- nat_acc %>% 
-  mutate(material_id = ifelse(material_id %in% coal_ids, "F.coal", material_id)) %>% 
-  group_by(alphanumiso, material_id, year) %>% 
-  summarize(value = sum(value)) %>%
-  ungroup()
 
 # include GID column in nat_acc with the three-letter country code and rename
 nat_acc <- nat_acc %>% 
   mutate(GID_0 = substr(alphanumiso, 1, 3)) %>% 
-  rename(material = material_id)
-  
+  rename(material = material_id) %>% 
+  filter(!value == 0)
+
+# convert all coal-related material ids in nat_acc to F.coal 
+coal_ids <- aggregate_mat_ids("material_category_2", "coal & peat", mat_ids)
+coal_ids <- coal_ids[! coal_ids == "F.pea"] # delete peat
+coal_ids <- c(coal_ids, "F.stc") # add steam coal
+
+nat_acc <- nat_acc %>%
+  mutate(material = ifelse(
+    material %in% coal_ids,
+    "F.coal",
+    material
+  ))
+
+
+# convert all PGM related material ids
+pgm_ids <- aggregate_mat_ids("material_id_agg", "Me.pgm", mat_ids)
+nat_acc <- nat_acc %>%
+  mutate(material = ifelse(
+    material %in% pgm_ids,
+    "Me.pgm",
+    material
+  ))
+
+
+# convert all diamond related material ids 
+dia_ids <- aggregate_mat_ids("material_id_agg", "Nm.dia", mat_ids)
+nat_acc <- nat_acc %>%
+  mutate(material = ifelse(
+    material %in% dia_ids,
+    "Nm.dia",
+    material
+  ))
+
+
+# aggregate the production for the newly assigned material ids
+nat_acc <- nat_acc %>% 
+  group_by(GID_0, alphanumiso, material, year) %>% 
+  summarize(value = sum(value)) %>%
+  ungroup()
+
 ```
 
 ### Preparation of sheet Minerals (country)
@@ -145,6 +177,7 @@ sheet_min <- sheet_min %>%
 
 ### Preparation of sheet Commodities (country)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+
 # select relevant data only
 sheet_com <- sheet_com %>%
   filter(!(value_tonnes %>% is.na())) %>%
@@ -160,6 +193,23 @@ sheet_com <- sheet_com %>%
   mutate(material = ifelse(
     material == "Oth.cuca",
     "Me.Cu",
+    material
+  ))
+
+# aggregate PGM metals to category PGM
+sheet_com <- sheet_com %>%
+  mutate(material = ifelse(
+    material %in% pgm_ids,
+    "Me.pgm",
+    material
+  ))
+
+
+# convert all diamond related material ids 
+sheet_com <- sheet_com %>%
+  mutate(material = ifelse(
+    material %in% dia_ids,
+    "Nm.dia",
     material
   ))
 
@@ -189,6 +239,7 @@ sheet_coal <- sheet_coal %>%
   mutate(facility_id = paste0(substr(facility_id, 1, 9), "00")) %>% 
   group_by(facility_id, year, material) %>% 
   summarize(value_tonnes = sum(value_tonnes))
+
 
 ```
 
@@ -739,21 +790,26 @@ datatable(cov_global_table, rownames = FALSE, caption = "Relative global coverag
 # export coverage table as csv and pdf (pdf is created in separate markdown file)
 cov_by_country_table_output <- cov_by_country %>%
   mutate(share = round(share, digits = 2)) %>%
-  select(GID_0, country, year, material, material_name, share) %>%
+  select(GID_0, year, material, material_name, share) %>%
   arrange(year) %>% 
   pivot_wider(., names_from = year, values_from = share) %>% 
   arrange(GID_0)
 
 cov_global_table_output <- cov_global %>% 
   mutate(share = round(share, digits = 2),
-         country = "Global") %>%
-  select(country, year, material, material_name, share) %>%
+         GID_0 = "Global") %>%
+  select(GID_0, year, material, material_name, share) %>%
   arrange(year) %>% 
   pivot_wider(., names_from = year, values_from = share)
 
 cov_table_output <- cov_global_table_output %>% 
   bind_rows(cov_by_country_table_output) %>% 
-  mutate(across(everything(na_if(., Inf))))
+  mutate(across(everything(na_if(., Inf)))) %>% 
+  rename("Country" = GID_0,
+         "Material" = material,
+         "Material name" = material_name)
+  
+  
 
 # write csv
 write_csv(cov_table_output,
@@ -762,6 +818,14 @@ write_csv(cov_table_output,
 
 ```
 
+## Statistics where coverage is > 100%
+```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+
+nrow(cov_by_country %>% filter(share > 1.2)) / nrow(cov_by_country) 
+nrow(cov_by_country %>% filter(share > 1.000000001)) / nrow(cov_by_country) 
+
+
+```
 
 ## Data rows not included in coverage (data tables)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE}
@@ -909,7 +973,10 @@ dev.off()
 ## Global coverage (area chart tiles)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
 ## build tile chart with 9 coverage figures
-area_plot_ids <- c("F.coal", "O.Fe", "O.Al", "Me.Cu", "Me.Au", "Me.Mo", "Me.Ni", "Me.Pb", "Me.Zn")
+area_plot_ids <- c("F.coal", "O.Fe", "O.Al", 
+                   "Me.Au", "Me.Cu", "Me.Mo",  
+                   "Me.Ni", "Me.Pb", "Me.Zn")
+
 area_plot_names <- tibble(material = area_plot_ids) %>% 
   left_join(cov_global %>% 
               select(material, material_name) %>% 
@@ -952,10 +1019,13 @@ dev.off()
 
 ```
 
-## Global coverage WITHOUT CHINA (area chart tiles)
+## Global coverage EXCL CHINA (area chart tiles)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
 ## build tile chart with 9 coverage figures
-area_plot_ids <- c("F.coal", "O.Fe", "O.Al", "Me.Cu", "Me.Au", "Me.Mo", "Me.Ni", "Me.Pb", "Me.Zn")
+area_plot_ids <- c("F.coal", "O.Fe", "O.Al", 
+                   "Me.Au", "Me.Cu", "Me.Mo",  
+                   "Me.Ni", "Me.Pb", "Me.Zn")
+
 area_plot_names <- tibble(material = area_plot_ids) %>% 
   left_join(cov_global %>% 
               select(material, material_name) %>% 
@@ -963,6 +1033,9 @@ area_plot_names <- tibble(material = area_plot_ids) %>%
   select(material_name) %>% 
   pull()
 
+area_plot_data <- cov_global %>% 
+  filter(material %in% area_plot_ids) %>% 
+  mutate(across(material_name, factor, levels = area_plot_names))
 
 area_plot_data_wo_china <- cov_global_wo_china %>% 
   filter(material %in% area_plot_ids) %>% 
@@ -970,16 +1043,11 @@ area_plot_data_wo_china <- cov_global_wo_china %>%
   
 
 # define labels
-dat_text1 <- tibble(label = c("", "excl. China", rep("", 7)),
+dat_text1 <- tibble(label = c("excl. China", rep("", length(area_plot_ids)-1)),
                    material_name = factor(area_plot_names, levels = area_plot_names))
 
-dat_text2 <- tibble(label = c("", "incl. China", rep("", 7)),
+dat_text2 <- tibble(label = c("incl. China", rep("", length(area_plot_ids)-1)),
                    material_name = factor(area_plot_names, levels = area_plot_names))
-
-# define output path
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/global/coverage_global_area_wo_china.pdf",   
-    width = 16, 
-    height = 8)
 
 ggplot() + 
   geom_area(data = area_plot_data_wo_china, 
@@ -1010,15 +1078,16 @@ ggplot() +
                          unit = "mm"),
     strip.text = element_text(size = 15)
       ) + 
-  facet_wrap(~ material_name) + 
+  facet_wrap(~ material_name, nrow = 4) + 
   geom_text(data = dat_text1,
-            mapping = aes(x = 2012, y = 0.55, label = label),
+            mapping = aes(x = 2012, y = 0.435, label = label),
             size = 4) +
   geom_text(data = dat_text2,
-            mapping = aes(x = 2010, y = 0.23, label = label),
+            mapping = aes(x = 2011, y = 0.23, label = label),
             size = 4)
 
-dev.off()
+ggsave("./04_output/01_detailed_data/05_coverage/01_general/global/coverage_global_area_wo_china.png", width = 18, height = 9, dpi = 300)
+ggsave("./04_output/01_detailed_data/05_coverage/01_general/global/coverage_global_area_wo_china.pdf", width = 16, height = 8)
 
 ```
 
@@ -1045,7 +1114,8 @@ area_plot_nat_names <- tibble(material = area_plot_nat_ids) %>%
 area_plot_nat_data <- cov_by_country %>% 
   filter(GID_0 %in% countries) %>% 
   filter(material %in% area_plot_nat_ids) %>% 
-  mutate(across(material_name, factor, levels = area_plot_nat_names))
+  mutate(across(material_name, factor, levels = area_plot_nat_names),
+         share = ifelse(share > 1, 1, share))
 
 
 plot_list <- list()
@@ -1080,7 +1150,7 @@ for (i in c(1:length(countries))) {
   
 }
 
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_national_area_charts.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/national/coverage_national_area_charts.pdf",   
     width = 16, 
     height = 8)
 
@@ -1125,7 +1195,7 @@ for (i in c(1:length(countries))) {
   plot_list[[i]] <- p
 }
 
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_national_linecharts.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/national/coverage_national_linecharts.pdf",   
     width = 16, 
     height = 8)
 
@@ -1185,7 +1255,7 @@ for (i in c(1:length(countries_heatmap))) {
   plot_list[[i]] <- p
 }
 
-pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/coverage_national_heatmaps.pdf",   
+pdf(file = "./04_output/01_detailed_data/05_coverage/01_general/national/coverage_national_heatmaps.pdf",   
     width = 16, 
     height = 8)
 
