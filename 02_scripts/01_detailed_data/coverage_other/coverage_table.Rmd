@@ -32,7 +32,7 @@ library(readr)
 
 ```{r , echo = FALSE, message = FALSE, warning = FALSE}
 # Read in data
-coverage <- read_csv("./04_output/01_detailed_data/05_coverage/01_general/coverage.csv")
+coverage <- read_csv("./04_output/01_detailed_data/05_coverage/01_general/coverage.csv", show_col_types = FALSE)
 # read in a file that has shorter names for countries with long country names
 # add color to each coverage (similar to heatmap: https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf)
 
@@ -40,19 +40,36 @@ coverage <- read_csv("./04_output/01_detailed_data/05_coverage/01_general/covera
 kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>% 
   kable_styling(latex_options = c("striped", "repeat_header"), font_size = 7) %>% 
   column_spec(1, width = "3em") %>%
-  column_spec(2, width = "3em") %>%
-  column_spec(3, width = "5em") %>%
-  column_spec(c(4:ncol(coverage)), width = "1.5em")
+  column_spec(2, width = "4em") %>%
+  column_spec(3, width = "6em") %>%
+  column_spec(c(4:ncol(coverage)), width = "1.8em")
 
 # 2. with coloring
-# kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>% 
-#   kable_styling(latex_options = c("striped", "repeat_header"), font_size = 7) %>% 
-#   column_spec(1, width = "3em") %>%
-#   column_spec(2, width = "3em") %>%
-#   column_spec(3, width = "5em") %>%
-#   column_spec(4, width = "1.5em",
-#             background = spec_color(coverage$`2000`)) %>%
-#   column_spec(c(5:ncol(coverage)), width = "1.5em")
+tbl1 <- kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>%
+  kable_styling(latex_options = c("repeat_header"), font_size = 7) %>%
+  column_spec(1, width = "3em") %>%
+  column_spec(2, width = "3em") %>%
+  column_spec(3, width = "5em")# %>%
+  # column_spec(4, width = "1.5em",
+  #             background = spec_color(coverage$`2000`, alpha = 0.5))
+
+
+for (i in c(4:ncol(coverage))) {
+  
+  color_vector <- coverage[,i] %>%
+    pull()
+  color_vector[color_vector > 1] <- 1
+    
+  tbl1 <- column_spec(tbl1, i, color = "white",
+                      background = spec_color(color_vector,
+                                              option = "viridis",
+                                              end = 0.7,
+                                              na_color = "white",
+                                              alpha = 0.4))
+  
+}
+
+tbl1
 
 ```
 
