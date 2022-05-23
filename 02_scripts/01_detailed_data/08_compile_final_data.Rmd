@@ -58,14 +58,14 @@ ids_mine_fac_only <- sheet_general %>%
   select(facility_id, mine_fac) %>% 
   st_drop_geometry()
 
-# for the sheets processing, transport, capacity_reserves, waste, other_info and coal, it can be joined by mine_fac and sub_site
-for (sheet in c("processing", "transport", "capacity_reserves", "waste", "other_info", "coal")){
+# for the sheets processing, transport, capacity_reserves, waste, other_info, it can be joined by mine_fac and sub_site
+for (sheet in c("processing", "transport", "capacity_reserves", "waste", "other_info")){
   detailed[[sheet]] <- left_join(detailed[[sheet]], ids, by = c("mine_fac", "sub_site")) %>%
     relocate(facility_id, .before = mine_fac)
 }
 
-# for the sheets minerals_ores_conce, commodities, reserves, capacity it can be joined by mine_fac
-for (sheet in c("minerals_ores_conce", "commodities", "reserves", "capacity")){
+# for the sheets minerals_ores_conce, commodities, coal, reserves, capacity it can be joined by mine_fac
+for (sheet in c("minerals_ores_conce", "commodities", "coal", "reserves", "capacity")){
   detailed[[sheet]] <- left_join(detailed[[sheet]], ids_mine_fac_only, by = c("mine_fac")) %>%
     relocate(facility_id, .before = mine_fac)
 }
@@ -77,6 +77,7 @@ for (sheet in c("minerals_ores_conce", "commodities", "reserves", "capacity")){
 
 # 2. Prepare sheet_general_sub_sites by combining the sheets general and sub_sites
 ```{r , echo = FALSE, message = FALSE}
+
 general_combined <- list(
   sheet_general,
   sheet_sub_sites)
@@ -114,6 +115,14 @@ for(sheet_name in c("general", "sub_sites")) {
 }
 
 
+# fill columns country, GID_0, primary_commodity for sub-sites with the values of the parent facility
+detailed$sub_sites <- detailed$sub_sites %>% 
+  left_join(detailed$general %>% 
+              st_drop_geometry() %>% 
+              select(facility_name, country, GID_0, primary_commodity), 
+            by = "facility_name")
+
+
 # create sheet_general_sub_sites
 detailed$general_sub_sites <- bind_rows(detailed$general, detailed$sub_sites) %>% 
   # rearrange
@@ -124,6 +133,9 @@ detailed$general_sub_sites <- bind_rows(detailed$general, detailed$sub_sites) %>
              arrange(order_cols) %>% 
              select(final_name_variable) %>% 
              pull())
+
+
+
 
 
 ```
@@ -292,7 +304,7 @@ all_variables <- structure %>%
          variable = final_name_variable,
          example = example_entry,
          type = supposed_type) %>% 
-  arrange(factor(table, levels = c("general", "coal", "minerals", "commodities", "processing",
+  arrange(factor(table, levels = c("facilities", "coal", "minerals", "commodities", "processing",
                                    "transport", "reserves", "capacity", "waste", "ownership", "material_ids", "source_ids")))
 
 
@@ -383,11 +395,11 @@ dir.create("./04_output/01_detailed_data/08_final_data/final_format_txt/", showW
 dir.create("./04_output/01_detailed_data/08_final_data/final_format_csv/", showWarnings = FALSE, recursive = TRUE)
 
 # table general is separate, as it is exported as a geopackage (TXT)
-st_write(detailed$general_sub_sites %>% st_as_sf(), "./04_output/01_detailed_data/08_final_data/final_format_txt/general.gpkg", 
+st_write(detailed$general_sub_sites %>% st_as_sf(), "./04_output/01_detailed_data/08_final_data/final_format_txt/facilities.gpkg", 
           append = FALSE)
 
 # table general is separate, as it is exported as a geopackage (CSV)
-st_write(detailed$general_sub_sites %>% st_as_sf(), "./04_output/01_detailed_data/08_final_data/final_format_csv/general.gpkg", 
+st_write(detailed$general_sub_sites %>% st_as_sf(), "./04_output/01_detailed_data/08_final_data/final_format_csv/facilities.gpkg", 
           append = FALSE)
 
 #loop over rest of the sheets in detailed and export as TXT and CSV
@@ -456,15 +468,15 @@ write_rds(detailed, "./04_output/01_detailed_data/08_final_data/other_formats/de
 # export sheet_general_sub_sites as TXT
 write_delim(detailed$general_sub_sites %>%
             select(-geom),
-          "./04_output/01_detailed_data/08_final_data/other_formats/general.txt", na = "", delim = "\t")
+          "./04_output/01_detailed_data/08_final_data/other_formats/facilities.txt", na = "", delim = "\t")
 
 # export sheet_general_sub_sites as CSV
 write_csv(detailed$general_sub_sites %>%
             select(-geom),
-          "./04_output/01_detailed_data/08_final_data/other_formats/general.csv", na = "")
+          "./04_output/01_detailed_data/08_final_data/other_formats/facilities.csv", na = "")
 
 # test table general
-# general_test <- st_read("./04_output/01_detailed_data/08_final_data/final_format/general.gpkg")
+# general_test <- st_read("./04_output/01_detailed_data/08_final_data/final_format/facilities.gpkg")
 # 
 # general_test$geom
 # 
@@ -473,13 +485,16 @@ write_csv(detailed$general_sub_sites %>%
 ```
 
 
+<br>
+
+
 # 9.2 Export all tables to single geopackage file 
 ```{r , echo = FALSE, message = FALSE}
 
 # write table general to geopackage file (database)
 st_write(detailed$general_sub_sites %>% st_as_sf(),
          dsn = "./04_output/01_detailed_data/08_final_data/other_formats/mine_level_data.gpkg", 
-         layer = "general", append = FALSE)
+         layer = "facilities", append = FALSE)
 
 
 #loop over rest of the sheets in detailed and export to database
@@ -519,20 +534,19 @@ st_write(material_ids,
 
 # 9.3 Export all tables to single geopackage file, excluding facilities without coordinates
 ```{r , echo = FALSE, message = FALSE}
-# data preparation: exclude facilities without coordinates, and filter all sheets accordingly
+## data preparation: exclude facilities without coordinates, and filter all sheets accordingly
 fac_w_coord_list <- detailed$general_sub_sites %>% 
-  filter(geom %>% st_is_empty() == FALSE) %>% 
+  filter(!st_is_empty(geom)) %>% 
   st_drop_geometry() %>% 
   select(facility_id) %>% 
-  pull()
+  pull() %>% as.vector()
 
 
 # write table general to geopackage file (database)
 st_write(detailed$general_sub_sites %>% 
-           st_as_sf() %>% 
            filter(facility_id %in% fac_w_coord_list),
          dsn = "./04_output/01_detailed_data/08_final_data/other_formats/mine_level_data_georef_only.gpkg", 
-         layer = "general", append = FALSE)
+         layer = "facilities", append = FALSE)
 
 
 #loop over rest of the sheets in detailed and export to database
@@ -576,11 +590,11 @@ st_write(material_ids,
 # 
 # test_old <- st_read(
 #   "./04_output/01_detailed_data/08_final_data/other_formats/mine_level_data.gpkg",
-#   layer = "general")
+#   layer = "facilities")
 # 
 # test <- st_read(
 #   "./04_output/01_detailed_data/08_final_data/other_formats/mine_level_data_georef_only.gpkg",
-#   layer = "minerals")
+#   layer = "facilities")
 # 
 # test %>% st_geometry_type() %>% unique()
 # test %>% st_is_empty() %>% unique()
