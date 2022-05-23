@@ -124,16 +124,16 @@ rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/coverage_table.R
 
 #### Additional scripts -----------
 
- 
-# ## Comparison of data coverage against national accounts with respective HTML output for COAL
+
+## Compile Estimation factors
 # wd <- getwd()
-# rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/02_coal/coverage_coal_aggregated.Rmd",
+# rmarkdown::render("./02_scripts/01_detailed_data/06_compile_estimation_factors.Rmd",
 #                   knit_root_dir = wd, 
-#                   output_dir = "./04_output/01_detailed_data/05_coverage/02_coal/", 
-#                   intermediates_dir = "./04_output/01_detailed_data/05_coverage/02_coal/",
-#                   output_file = paste0("coverage_coal_", substr(Sys.time(), 1, 10),".html")
+#                   output_dir = "./04_output/01_detailed_data/06_est_fac", 
+#                   intermediates_dir = "./04_output/01_detailed_data/06_est_fac",
+#                   output_file = paste0("est_fac_", substr(Sys.time(), 1, 10),".html")
 # )
-# 
+
 # ## Coverage for TOTAL MATERIAL
 # wd <- getwd()
 # rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/04_total_material/coverage_total_material.Rmd",
@@ -155,14 +155,7 @@ rmarkdown::render("./02_scripts/01_detailed_data/coverage_other/coverage_table.R
 # )
 # 
 # 
-# ## Plotting the spatial coverage
-# source("./02_scripts/01_detailed_data/coverage_other/03_spatial/coverage_coordinates.R")
-# 
 # 
 # ## producing coal tables only
 # source("./02_scripts/01_detailed_data/other/get_coal_tables_only.R")
-#
-#
-# Produce final data coverage (i.e. coverage calculated based on the final data set)
-
 
