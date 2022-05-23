@@ -194,7 +194,7 @@ sheet_coal <- sheet_coal %>%
 
 
 # define columns by which to aggregate (i.e. excluding those which are to be aggregated)
-col_names <- names(sheet_coal)[!names(sheet_coal) %in% c("type_mining", "value", "amount_sold", "source", "source_url", "comment")]
+col_names <- names(sheet_coal)[!names(sheet_coal) %in% c("sub_site", "type_mining", "value", "amount_sold", "source", "source_url", "comment")]
 
 # aggregate
 # similar to sheet_min above, but without two-step approach as no grade is present and thus nothing has to be weighted
@@ -214,7 +214,6 @@ sheet_coal <- sheet_coal %>%
       comment
     )
   )
-
 
 
 
