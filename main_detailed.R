@@ -14,7 +14,7 @@
 
 
 # Check if the necessary packages are installed and if not install them, then load them
-req_packages <- c("tidyverse", "readxl", "scales", "knitr", "kableExtra", "viridis", "rlang", "DT", "patchwork", "sf", "ggplot2")
+req_packages <- c("tidyverse", "readxl", "scales", "knitr", "kableExtra", "viridis", "rlang", "DT", "patchwork", "sf", "ggplot2", "RSQLite", "rnaturalearthdata")
 req_packages <- req_packages[!req_packages %in% installed.packages()]
 lapply(req_packages, install.packages)
 
@@ -78,6 +78,8 @@ source("./02_scripts/01_detailed_data/04b_gap_filling.R")
 
 
 ## Georeferencing of all mines
+  ## (runs likely more than 1h on average computer)
+  ## (10min if GADM data has not been downloaded yet + >60min for assigning GADM regions)
 wd <- getwd()
 rmarkdown::render("./02_scripts/01_detailed_data/07_georeferencing.Rmd",
                   knit_root_dir = wd,
