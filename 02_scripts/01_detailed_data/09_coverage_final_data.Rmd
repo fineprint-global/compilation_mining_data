@@ -83,7 +83,6 @@ nat_acc <- read_delim(
 # get polygon data of the world's countries from naturalearth package
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
-
 #read table material_ids and source_ids and facility_ids
 mat_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv", 
                     show_col_types = FALSE)
@@ -560,25 +559,29 @@ gen_cov <- gen_cov %>%
   union(., tibble(
     Indicator = "Number of facilities of type Mine",
     Amount = general %>%
-      filter(facility_type == "Mine") %>% 
+      filter(is.na(sub_site_name),
+             facility_type == "Mine") %>% 
       nrow()
   )) %>%
   union(., tibble(
     Indicator = "Number of facilities of type Smelter",
     Amount = general %>%
-      filter(facility_type == "Smelter") %>% 
+      filter(is.na(sub_site_name),
+             facility_type == "Smelter") %>% 
       nrow()
   )) %>%
   union(., tibble(
     Indicator = "Number of facilities of type Refinery",
     Amount = general %>%
-      filter(facility_type == "Refinery") %>% 
+      filter(is.na(sub_site_name),
+             facility_type == "Refinery") %>% 
       nrow()
   )) %>%
   union(., tibble(
     Indicator = "Number of facilities of type Other (mixed forms + company + region)",
     Amount = general %>%
-      filter(!(facility_type %in% c("Mine", "Smelter", "Refinery"))) %>% 
+      filter(is.na(sub_site_name),
+             !(facility_type %in% c("Mine", "Smelter", "Refinery"))) %>% 
       nrow()
   ))
 
@@ -820,10 +823,65 @@ write_csv(cov_table_output,
 
 ## Statistics where coverage is > 100%
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+print("Nr of Cases where coverage is > 100%: ")
+nrow(cov_by_country %>% filter(share > 1.000000001))
 
+print("% of Cases where coverage is > 100%: ")
+nrow(cov_by_country %>% filter(share > 1)) / nrow(cov_by_country)
+
+print("% of Cases where coverage is > 105%: ")
+nrow(cov_by_country %>% filter(share > 1.05)) / nrow(cov_by_country)
+
+print("Nr of Cases where coverage is > 120%: ")
+nrow(cov_by_country %>% filter(share > 1.2))
+
+print("% of Cases where coverage is > 120%: ")
 nrow(cov_by_country %>% filter(share > 1.2)) / nrow(cov_by_country) 
-nrow(cov_by_country %>% filter(share > 1.000000001)) / nrow(cov_by_country) 
 
+print("Nr of Cases where coverage is > 200%: ")
+nrow(cov_by_country %>% filter(share > 2))
+
+print("% of Cases where coverage is > 200%: ")
+nrow(cov_by_country %>% filter(share > 2)) / nrow(cov_by_country) 
+
+
+# histogram of coverage share
+ggplot(data = cov_by_country %>% 
+         filter(share < 2) %>% 
+         mutate(share = share * 100)) +
+  geom_histogram(mapping = aes(x = share), 
+                 fill = "steelblue",
+                 color = "black", 
+                 #alpha = 0.8, 
+                 binwidth = 10) +
+  theme_minimal() + 
+  xlab("Share of national production covered [%]") + 
+  ylab("Nr. of occurrences") + 
+  theme(
+    panel.border = element_rect(fill = NA, color = "black"),
+    panel.grid.minor.x = element_blank(),
+    panel.spacing.x = unit(10, "mm"),
+    axis.text = element_text(size = 15),
+    axis.title = element_text(size = 20))
+
+
+
+ggsave("./04_output/01_detailed_data/05_coverage/01_general/national/coverage_hist.png", width = 16, height = 9, dpi = 300)
+ggsave("./04_output/01_detailed_data/05_coverage/01_general/national/coverage_hist.pdf", width = 16, height = 9)
+
+
+
+
+# histogram of coverage share by material
+ggplot(data = cov_by_country %>% 
+         filter(share < 2), 
+       groups = material_name) +
+  geom_histogram(mapping = aes(x = share, fill = material_name), 
+                 bins = 30,
+                 color = "black") + 
+  theme(legend.position = "right")
+  
+  
 
 ```
 
@@ -999,7 +1057,7 @@ ggplot(area_plot_data,
   geom_area(color = "steelblue", fill = "steelblue", alpha = 0.6) + 
   scale_x_continuous(limits=c(2000, 2018), breaks = c(seq(2000, 2018, 5), 2018), expand = c(0, 0)) +
   scale_y_continuous(limits=c(0, 1), breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
-  ylab("Share of global extraction covered") + 
+  ylab("Share of global production covered") + 
   xlab("Year") + 
   theme_minimal() + 
   theme(
@@ -1019,7 +1077,7 @@ dev.off()
 
 ```
 
-## Global coverage EXCL CHINA (area chart tiles)
+## Global coverage incl and EXCL CHINA (area chart tiles)
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
 ## build tile chart with 9 coverage figures
 area_plot_ids <- c("F.coal", "O.Fe", "O.Al", 
@@ -1046,25 +1104,25 @@ area_plot_data_wo_china <- cov_global_wo_china %>%
 dat_text1 <- tibble(label = c("excl. China", rep("", length(area_plot_ids)-1)),
                    material_name = factor(area_plot_names, levels = area_plot_names))
 
-dat_text2 <- tibble(label = c("incl. China", rep("", length(area_plot_ids)-1)),
+dat_text2 <- tibble(label = c("Global", rep("", length(area_plot_ids)-1)),
                    material_name = factor(area_plot_names, levels = area_plot_names))
 
 ggplot() + 
   geom_area(data = area_plot_data_wo_china, 
             mapping = aes(x = year, y = share, group = material_name), 
             color = "black", 
-            fill = "steelblue", 
-            alpha = 0.4,
+            fill = "#E64B35B2", 
+            alpha = 0.8, #0.4
             size = 0.2) +
   geom_area(data = area_plot_data, 
             mapping = aes(x = year, y = share, group = material_name),
             color = "black", 
-            fill = "steelblue1", 
-            alpha = 0.4,
+            fill = "#4DBBD5B2", 
+            alpha = 0.8, #0.4
             size = 0.2) + 
   scale_x_continuous(limits=c(2000, 2018), breaks = c(seq(2000, 2018, 5), 2018), expand = c(0, 0)) +
   scale_y_continuous(limits=c(0, 1), breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
-  ylab("Share of global extraction covered") + 
+  ylab("Share of production covered") + 
   xlab("Year") + 
   theme_minimal() + 
   theme(
@@ -1129,7 +1187,7 @@ for (i in c(1:length(countries))) {
     geom_area(color = "steelblue", fill = "steelblue", alpha = 0.6) + 
     scale_x_continuous(limits=c(2000, 2018), breaks = c(seq(2000, 2018, 5), 2018), expand = c(0, 0)) +
     scale_y_continuous(limits=c(0, 1), breaks = seq(0, 1, 0.25), expand = c(0, 0)) +
-    ylab("Share of global extraction covered") + 
+    ylab("Share of production covered") + 
     xlab("Year") + 
     ggtitle(country_name) +
     theme_minimal() + 
@@ -1296,10 +1354,38 @@ general_sf$primary_commodity <- factor(general_sf$primary_commodity, levels = ge
 custom_fill <- c("#374341", "blue", "red3", "#DC7F64", "gold", "#dbe4eb", "violet", "green", "cyan", "white", "cornflowerblue")
 custom_colors <- c(rep("black", length(general_prim_com_levels)))
 custom_shapes <- c(rep(24, length(general_prim_com_levels)-1), 23) 
-custom_sizes <- c(rep(1.3, length(general_prim_com_levels)-1), 1.1) 
+custom_sizes <- c(rep(1.7, length(general_prim_com_levels)-1), 1.5) 
+
+# set projection
+target_crs <- "+proj=robin" # latlong, robin, moll, laea, merc, gall, wintri, natearth
+
+# Zoom: define border points bottom left and top right (as long/lat)
+disp_win_wgs84 <- st_sfc(st_point(c(-160, -57)), 
+                         st_point(c(200, 100)),
+                         crs = 4326)
+
+disp_win_trans <- st_transform(disp_win_wgs84, crs = target_crs)
+disp_win_coord <- st_coordinates(disp_win_trans)
+
+# for checking
+ggplot() + geom_sf(data = world) + geom_sf(data = disp_win_wgs84, color = "red")
+ggplot() + 
+  geom_sf(data = st_transform(world, crs = target_crs)) + 
+  geom_sf(data = disp_win_trans, color = "red") +
+  geom_sf(data = general_sf, size = 0.5, color = "blue") + 
+  geom_abline(intercept = disp_win_coord[,'Y'][1], color = "red", slope = 0) +
+  geom_abline(intercept = disp_win_coord[,'Y'][2], color = "red", slope = 0) + 
+  geom_vline(xintercept = disp_win_coord[,'X'][1], color = "red") +
+  geom_vline(xintercept = disp_win_coord[,'X'][2], color = "red")
+
+
+
 
 ggplot() +
-  geom_sf(data = world, color = "grey", fill = "gray96", size = 0.2) +
+  geom_sf(data = st_transform(world, crs = target_crs),
+          color = "grey", 
+          fill = "gray96", 
+          size = 0.2) +
   geom_sf(
     data = general_sf, 
     aes(shape = primary_commodity,
@@ -1320,20 +1406,27 @@ ggplot() +
   scale_size_manual(values = custom_sizes, 
                     name = "Processing facilities and\nmines per primary commodity") +
   theme_bw() +
-  coord_sf(crs = "+proj=latlong", expand = FALSE) + # possibility to change to "robin"
+  coord_sf(datum = target_crs,
+           expand = FALSE, 
+           xlim = disp_win_coord[,'X'],
+           ylim = disp_win_coord[,'Y']
+           ) + 
   guides(shape = guide_legend(override.aes = list(size = 3.5))) +
-  theme(legend.position = c(0.18,0.25),
+  theme(legend.position = c(0.08,0.23),
         legend.title = element_text(),
         legend.background = element_rect(fill = "gray96", color = "black", size = 0.3),
         legend.key = element_rect(fill = "gray96"),
         legend.key.size = unit(5, "mm"),
         axis.text = element_blank(), 
         axis.ticks = element_blank(),
-        panel.border = element_blank())
+        panel.border = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
 
 
-ggsave("./04_output/01_detailed_data/05_coverage/03_spatial/mine-level_data_map_coordinates.pdf", width = 16, height = 8)
-ggsave("./04_output/01_detailed_data/05_coverage/03_spatial/mine-level_data_map_coordinates.png", width = 20, height = 9, dpi = 300)
+
+ggsave("./04_output/01_detailed_data/05_coverage/03_spatial/mine-level_data_map_coordinates.pdf", width = 3508*1.4, height = 2480, units = "px")
+ggsave("./04_output/01_detailed_data/05_coverage/03_spatial/mine-level_data_map_coordinates.png", width = 3508*1.4, height = 2480, dpi = 300, units = "px")
 
 ```
 
