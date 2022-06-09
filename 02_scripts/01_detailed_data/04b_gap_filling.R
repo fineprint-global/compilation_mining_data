@@ -217,6 +217,7 @@ sheet_com <- sheet_com %>%
   # and calculate value based on ore/grade
   # and calculate grades based on ore/value
   # mutate 3x for value: with/without recovery rate and with yield
+  # mutate 1x for recovery rate
   # mutate 2x for grade: with/with recovery rate
   # filtering NA for value.min is irrelevant, as it just replaces NA with NA anyway
 sheet_com <- sheet_com %>%
@@ -241,6 +242,11 @@ sheet_com <- sheet_com %>%
     is.na(value.com) & !is.na(yield),
     value.min * yield * 0.000001,
     value.com
+  )) %>% 
+  mutate(recovery_rate = ifelse(
+    is.na(recovery_rate) & !is.na(value.min) & !is.na(value.com) & !is.na(grade),
+    value.min / (value.com * grade * 1000000),
+    recovery_rate
   )) %>%
   mutate(grade = ifelse(
     is.na(grade) & !is.na(value.com) & !is.na(recovery_rate),
