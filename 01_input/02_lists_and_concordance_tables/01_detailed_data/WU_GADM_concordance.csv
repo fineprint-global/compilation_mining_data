@@ -48,9 +48,9 @@ China;CHN156;Shaanxi;NA;NA;Yulin;Shenmu County;NA;CHN;CHN.22_1;CHN.22.10_1;CHN.2
 China;CHN156;Shaanxi;NA;NA;NA;NA;NA;CHN;CHN.22_1;NA;NA;NA
 China;CHN156;Shandong;NA;NA;Yanzhou city;NA;NA;CHN;CHN.23_1;CHN.23.6_1;CHN.23.6.9_1;NA
 China;CHN156;Shandong;NA;NA;NA;NA;NA;CHN;CHN.23_1;NA;NA;NA
+China;CHN156;Shanxi;NA;NA;L?liang;NA;Xiaoyi;CHN;CHN.25_1;CHN.25.6_1;CHN.25.6.11_1;NA
 China;CHN156;Shanxi;NA;NA;Lüliang;NA;Xiaoyi;CHN;CHN.25_1;CHN.25.6_1;CHN.25.6.11_1;NA
 China;CHN156;Shanxi;NA;NA;Lvliang;NA;NA;CHN;CHN.25_1;CHN.25.6_1;NA;NA
-China;CHN156;Shanxi;NA;NA;L?liang;NA;Xiaoyi;CHN;CHN.25_1;CHN.25.6_1;CHN.25.6.11_1;NA
 China;CHN156;Shanxi;NA;NA;Xing County;NA;Watangzhen;CHN;CHN.25_1;CHN.25.6_1;CHN.25.6.12_1;NA
 China;CHN156;Shanxi;NA;NA;Yangquan;NA;NA;CHN;CHN.25_1;CHN.25.10_1;NA;NA
 China;CHN156;Shanxi;NA;NA;NA;NA;NA;CHN;CHN.25_1;NA;NA;NA
@@ -61,10 +61,10 @@ China;CHN156;Yunnan;NA;NA;Yuxi;NA;Huaning;CHN;CHN.30_1;CHN.30.15_1;CHN.30.15.3_1
 China;CHN156;NA;NA;NA;NA;NA;NA;CHN;NA;NA;NA;NA
 Colombia;COL170;Antioquia;NA;NA;San Roque;NA;Providencia;COL;COL.2_1;COL.2.98_1;NA;NA
 Colombia;COL170;Antioquia;NA;NA;San Roque;NA;San Jose del Nus;COL;COL.2_1;COL.2.98_1;NA;NA
-Colombia;COL170;Antioquia;NA;NA;NA;NA;Jericó;COL;COL.2_1;COL.2.61_1;NA;NA
 Colombia;COL170;Antioquia;NA;NA;NA;NA;Jeric?;COL;COL.2_1;COL.2.61_1;NA;NA
-France;FRA250;Occitanie;NA;NA;Hautes-Pyrénées;NA;Lannemezan;FRA;FRA.11_1;FRA.11.7_1;FRA.11.7.2_1;FRA.11.7.2.6_1
+Colombia;COL170;Antioquia;NA;NA;NA;NA;Jericó;COL;COL.2_1;COL.2.61_1;NA;NA
 France;FRA250;Occitanie;NA;NA;Hautes-Pyr?n?es;NA;Lannemezan;FRA;FRA.11_1;FRA.11.7_1;FRA.11.7.2_1;FRA.11.7.2.6_1
+France;FRA250;Occitanie;NA;NA;Hautes-Pyrénées;NA;Lannemezan;FRA;FRA.11_1;FRA.11.7_1;FRA.11.7.2_1;FRA.11.7.2.6_1
 Gabon;GAB266;Moyen-Ogooue;NA;NA;NA;NA;Ndjole;GAB;GAB.3_1;GAB.3.1_1;NA;NA
 Indonesia;IDN360;Kalimantan Tengah;NA;NA;East Barito Regency;NA;NA;IDN;IDN.14_1;IDN.14.2_1;NA;NA
 Indonesia;IDN360;Kalimantan Tengah;NA;NA;North Barito Regency;NA;NA;IDN;IDN.14_1;IDN.14.3_1;NA;NA
@@ -85,6 +85,9 @@ Mexico;MEX484;NA;NA;NA;NA;NA;NA;MEX;NA;NA;NA;NA
 Russia;RUS643;Chelyabinsk Oblast;NA;NA;NA;NA;Chelyabinsk;RUS;RUS.11_1;RUS.11.8_1;NA;NA
 Russia;RUS643;Kemerovo;NA;NA;NA;NA;NA;RUS;RUS.27_1;NA;NA;NA
 Russia;RUS643;Leningrad Oblast;NA;NA;NA;NA;Volkhov;RUS;RUS.38_1;RUS.38.29_1;NA;NA
+Russian Federation;RUS643;Chelyabinsk Oblast;NA;NA;NA;NA;Chelyabinsk;RUS;NA;NA;NA;NA
+Russian Federation;RUS643;Kemerovo;NA;NA;NA;NA;NA;RUS;NA;NA;NA;NA
+Russian Federation;RUS643;Leningrad Oblast;NA;NA;NA;NA;Volkhov;RUS;NA;NA;NA;NA
 South Africa;ZAF710;NA;NA;NA;NA;NA;NA;ZAF;NA;NA;NA;NA
 United States;USA840;Florida;NA;NA;NA;NA;NA;USA;USA.10_1;NA;NA;NA
 United States;USA840;Georgia;NA;NA;NA;NA;NA;USA;USA.11_1;NA;NA;NA
@@ -121,3 +124,34 @@ United States;USA840;West Virgina;NA;NA;Randolph;NA;NA;USA;USA.49_1;USA.49.42_1;
 United States;USA840;West Virgina;NA;NA;Upshur;NA;NA;USA;USA.49_1;USA.49.49_1;NA;NA
 United States;USA840;West Virginia;NA;NA;Ohio;NA;West Liberty;USA;USA.49_1;USA.49.35_1;NA;NA
 United States;USA840;Wyoming;NA;NA;Carbon County;NA;NA;USA;USA.51_1;USA.51.4_1;NA;NA
+United States of America;USA840;Florida;NA;NA;NA;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Georgia;NA;NA;NA;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Illinois;NA;NA;Franklin;NA;Sesser;USA;NA;NA;NA;NA
+United States of America;USA840;Kentucky;Western Kentucky;NA;Henderson County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Kentucky;NA;NA;Muhlenberg County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Kentucky;NA;NA;Pike;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Athens County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Belmont County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Columbiana County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Coshocton County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Guernsey;NA;Cumberland;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Guernsey County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Harrison county;NA;Cadiz;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Morgan County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Muskingum County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Noble County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Perry County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Stark County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Ohio;NA;NA;Tuscarawas County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Virgina;NA;NA;Buchanan;NA;Rowe;USA;NA;NA;NA;NA
+United States of America;USA840;Virgina;NA;NA;Buchanan;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Virgina;NA;NA;Dickenson;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;Virgina;NA;NA;Tazewell;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;West Virgina;NA;NA;Logan County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;West Virgina;NA;NA;McDowell;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;West Virgina;NA;NA;Mingo County;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;West Virgina;NA;NA;Raleigh;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;West Virgina;NA;NA;Randolph;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;West Virgina;NA;NA;Upshur;NA;NA;USA;NA;NA;NA;NA
+United States of America;USA840;West Virginia;NA;NA;Ohio;NA;West Liberty;USA;NA;NA;NA;NA
+United States of America;USA840;Wyoming;NA;NA;Carbon County;NA;NA;USA;NA;NA;NA;NA

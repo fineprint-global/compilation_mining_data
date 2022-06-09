@@ -50,11 +50,11 @@ sub_sites,source_id,text,,,,original,no,yes,,source_id,15,,,,
 sub_sites,comment,text,,,,original,no,yes,,comment,16,,,,
 sub_sites,geom,geom,,,,original,no,yes,,geom,14,,,,
 minerals_ores_conce,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,minerals,id,,,,,
-minerals_ores_conce,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,minerals,facility_id,1,1,,,no
+minerals_ores_conce,facility_id,text,"ID that uniquely identifies every mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,minerals,facility_id,1,1,,,no
 minerals_ores_conce,mine_fac,text,,,,original,yes,no,minerals,,,,,,
 minerals_ores_conce,sub_site,text,,,,original,yes,no,minerals,,,,,,
-minerals_ores_conce,type_mineral,text,"Type of material stream. Possible entries: Ore mined, Ore processed, Concentrate, NM Mineral",Ore mined,,original,yes,yes,minerals,type,3,3,,,no
-minerals_ores_conce,min_ore_con,text,Specific material type,O.Fe,material_ids,original,yes,yes,minerals,material,4,,,,no
+minerals_ores_conce,type_mineral,text,"Specifies material category and type of material stream. Possible entries: Ore mined, Ore processed, Concentrate, NM Mineral",Ore mined,,original,yes,yes,minerals,type,3,3,,,no
+minerals_ores_conce,min_ore_con,text,Specific material,O.Fe,material_ids,original,yes,yes,minerals,material,4,,,,no
 minerals_ores_conce,type_mining,text,,,,original,yes,no,minerals,,,,,,
 minerals_ores_conce,year,numeric,Year of material stream,2015,,original,yes,yes,minerals,year,2,2,,,no
 minerals_ores_conce,unit,text,,,,original,yes,no,minerals,,,,,,
@@ -69,20 +69,20 @@ minerals_ores_conce,source_url,text,,,,original,yes,no,minerals,,,,,,
 minerals_ores_conce,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,minerals,source_id,10,,,,no
 minerals_ores_conce,comment,text,Comment,Ore processed estimated by taking daily ore throughput times 365,,original,yes,yes,minerals,comment,11,,,,
 minerals_ores_conce,no_estimation,text,,,,original,yes,no,minerals,,,,,,
-minerals_ores_conce,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,minerals,reporting_period,9,,,,
+minerals_ores_conce,reporting_period,text,"Period in which the material stream occured. Always relates to the year in which the period ends (i.e. year = 2020, reporting_period = July-June → Period is July 2019 to June 2020) If nothing is specified, it is January to December.",April-March,,original,yes,yes,minerals,reporting_period,9,,,,
 commodities,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,commodities,id,,,,,
-commodities,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,commodities,facility_id,1,1,,,no
+commodities,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,commodities,facility_id,1,1,,,no
 commodities,mine_fac,text,,,,original,yes,no,commodities,,,,,,
 commodities,sub_site,text,,,,original,yes,no,commodities,,,,,,
-commodities,min_ore_con,text,Specific material type,O.Fe,material_ids,original,yes,yes,commodities,material,3,3,,,
-commodities,commodity,text,Specific commodity type,Me.Fe,material_ids,original,yes,yes,commodities,commodity,4,4,,,no
+commodities,min_ore_con,text,Specific material,O.Fe,material_ids,original,yes,yes,commodities,material,3,3,,,
+commodities,commodity,text,Specific commodity,Me.Fe,material_ids,original,yes,yes,commodities,commodity,4,4,,,no
 commodities,type_mining,text,,,,original,yes,no,commodities,,,,,,
 commodities,year,numeric,Year of material stream,2015,,original,yes,yes,commodities,year,2,2,,,no
 commodities,unit,text,,,,original,yes,no,commodities,,,,,,
 commodities,value,numeric,Mass of commodity contained in material in tonnes,10000,,original,yes,yes,commodities,value_tonnes,5,,1,3,
 commodities,grade_or_yield_unit,text,,,,original,yes,no,commodities,,,,,,
 commodities,grade,numeric,"Grade of material relating to a specific commodity, in parts per million",10,,original,yes,yes,commodities,grade_ppm,6,,2,6,
-commodities,recovery_rate,numeric,Share of commodity recovered in ore processing,"0,89",,original,yes,yes,commodities,recovery_rate,7,,2,6,
+commodities,recovery_rate,numeric,Share of commodity recovered during ore processing,"0,89",,original,yes,yes,commodities,recovery_rate,7,,2,6,
 commodities,yield,numeric,"Grade of material relating to a specific commodity multiplied by recovery rate, in parts per million","8,9",,original,yes,yes,commodities,yield_ppm,8,,2,6,
 commodities,mine_processing,text,"Type of leaching conduced at mine, if any",Heap leaching,,original,yes,yes,commodities,mine_processing,11,,,,
 commodities,amount_sold,numeric,"Mass of commodity contained in material that was sold, in tonnes",9000,,original,yes,yes,commodities,amount_sold_tonnes,9,,1,3,
@@ -93,10 +93,10 @@ commodities,source_url,text,,,,original,yes,no,commodities,,,,,,
 commodities,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,commodities,source_id,13,,,,no
 commodities,comment,text,Comment,Total production 2001 (Kt): 34 (regular period) + 9 (commissioning period in Q2) = 43Kt,,original,yes,yes,commodities,comment,14,,,,
 commodities,no_estimation,text,,,,original,yes,no,commodities,,,,,,
-commodities,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,commodities,reporting_period,12,,,,
+commodities,reporting_period,text,"Period in which the material stream occured. Always relates to the year in which the period ends (i.e. year = 2020, reporting_period = July-June → Period is July 2019 to June 2020) If nothing is specified, it is January to December.",April-March,,original,yes,yes,commodities,reporting_period,12,,,,
 commodities,,numeric,Foreign key to join table minerals with table commodities,384,minerals,derived,yes,no,commodities,minerals_id,,,,,
 processing,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,processing,id,,,,,
-processing,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,processing,facility_id,1,1,,,no
+processing,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,processing,facility_id,1,1,,,no
 processing,mine_fac,text,,,,original,yes,no,processing,,,,,,
 processing,sub_site,text,,,,original,yes,no,processing,,,,,,
 processing,type_facility,text,"Type of processing facility. Categories: Refinery, Smelter",Smelter,,original,yes,yes,processing,facility_type,2,3,,,
@@ -118,9 +118,9 @@ processing,source,text,,,,original,yes,no,processing,,,,,,
 processing,source_url,text,,,,original,yes,no,processing,,,,,,
 processing,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,processing,source_id,14,,,,no
 processing,comment,text,,,,original,yes,yes,processing,comment,15,,,,
-processing,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,processing,reporting_period,13,,,,
+processing,reporting_period,text,"Period in which the processing occured. Always relates to the year in which the period ends (i.e. year = 2020, reporting_period = July-June → Period is July 2019 to June 2020) If nothing is specified, it is January to December.",April-March,,original,yes,yes,processing,reporting_period,13,,,,
 transport,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,transport,id,,,,,
-transport,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,transport,facility_id,1,1,,,no
+transport,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,transport,facility_id,1,1,,,no
 transport,mine_fac,text,,,,original,yes,no,transport,,,,,,
 transport,sub_site,text,,,,original,yes,no,transport,,,,,,
 transport,product,text,Specific material transported,Con.Cu,material_ids,original,yes,yes,transport,product,3,3,,,
@@ -135,7 +135,7 @@ transport,source,text,,,,original,yes,no,transport,,,,,,
 transport,source_url,text,,,,original,yes,no,transport,,,,,,
 transport,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,transport,source_id,10,,,,no
 transport,comment,text,Comment,Nickel grade: 1.21%,,original,yes,yes,transport,comment,11,,,,
-transport,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,transport,reporting_period,9,,,,
+transport,reporting_period,text,"Period in which the transport occured. Always relates to the year in which the period ends (i.e. year = 2020, reporting_period = July-June → Period is July 2019 to June 2020) If nothing is specified, it is January to December.",April-March,,original,yes,yes,transport,reporting_period,9,,,,
 capacity_reserves,mine_fac,text,,,,original,no,no,,,,,,,
 capacity_reserves,sub_site,text,,,,original,no,no,,,,,,,
 capacity_reserves,minerals_and_ores,text,,,,original,no,no,,,,,,,
@@ -158,27 +158,26 @@ capacity_reserves,source,text,,,,original,no,no,,,,,,,
 capacity_reserves,source_url,text,,,,original,no,no,,,,,,,
 capacity_reserves,comment,text,,,,original,no,no,,,,,,,
 waste,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,waste,id,,,,,
-waste,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,waste,facility_id,1,1,,,no
+waste,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,waste,facility_id,1,1,,,no
 waste,mine_fac,text,,,,original,yes,no,waste,,,,,,
 waste,sub_site,text,,,,original,yes,no,waste,,,,,,
 waste,waste_type,text,Type of waste,Overburden,,original,yes,yes,waste,waste_type,4,4,,,
-waste,mineral,text,Material to which the waste relates,O.Au,material_ids,original,yes,yes,waste,material,5,3,,,
-waste,commodity,text,Commodity to which the waste relates,Me.Au,material_ids,original,yes,yes,waste,commodity,6,,,,
-waste,type_mining,text,"Mining method of the material to which the waste relates. Categories: Open pit, Underground",,,original,yes,yes,waste,type_mining,3,,,,
+waste,mineral,text,Material to which the waste stream relates,O.Au,material_ids,original,yes,yes,waste,material,5,3,,,
+waste,commodity,text,Commodity to which the waste stream relates,Me.Au,material_ids,original,yes,yes,waste,commodity,6,,,,
+waste,type_mining,text,"Mining method of the material to which the waste relates. Categories: Open pit, Underground",Open pit,,original,yes,yes,waste,type_mining,3,,,,
 waste,year,numeric,Year of waste stream,2015,,original,yes,yes,waste,year,2,2,,,no
 waste,unit,text,,,,original,yes,no,waste,,,,,,
 waste,value,numeric,Mass of waste in tonnes,5000000,,original,yes,yes,waste,value_tonnes,7,,,,
 waste,total_material,numeric,"Total material extracted of a mine, i.e. ore mined plus waste mined",7000000,,original,yes,yes,waste,total_material_tonnes,8,,,,
-waste,stripping_ratio,numeric,Ratio of how much overburden is removed for each unit of material mined,"2,16",,original,yes,yes,waste,stripping_ratio,9,,,,
-waste,waste_to_ore_ratio,numeric,Ratio of how much waste is produced for each unit of material mined,"2,98",,original,yes,yes,waste,waste_to_ore_ratio,10,,,,
+waste,stripping_ratio,numeric,Ratio of how much overburden is removed for each unit of ore mined,"2,16",,original,yes,yes,waste,stripping_ratio,9,,,,
 waste,production_share,numeric,,,,original,yes,no,waste,,,,,,
 waste,source,text,,,,original,yes,no,waste,,,,,,
 waste,source_url,text,,,,original,yes,no,waste,,,,,,
 waste,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,waste,source_id,12,,,,no
 waste,comment,text,Comment,"Numbers were reported on a 60% basis, so numbers for total material were approximated by taking numbers from report / 0.6",,original,yes,yes,waste,comment,13,,,,
-waste,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,original,yes,yes,waste,reporting_period,11,,,,
+waste,reporting_period,text,"Period in which the material stream occured. Always relates to the year in which the period ends (i.e. year = 2020, reporting_period = July-June → Period is July 2019 to June 2020) If nothing is specified, it is January to December.",April-March,,original,yes,yes,waste,reporting_period,11,,,,
 other_info,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,ownership,id,,,,,
-other_info,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,ownership,facility_id,1,1,,,no
+other_info,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,ownership,facility_id,1,1,,,no
 other_info,mine_fac,text,,,,original,yes,no,ownership,,,,,,
 other_info,sub_site,text,,,,original,yes,no,ownership,,,,,,
 other_info,owners,text,"Owners of the facility, with their ownership in brackets","African Rainbow Minerals Ltd. (50%), Assore Ltd. (50%)",,original,yes,yes,ownership,owners,3,,,,
@@ -186,7 +185,7 @@ other_info,operators,text,Operators of the facility,Assmang Proprietary Ltd.,,or
 other_info,year,numeric,Year for which the ownership shares and operator applies,2015,,original,yes,yes,ownership,year,2,2,,,no
 other_info,source,text,,,,original,yes,no,ownership,,,,,,
 other_info,source_url,text,,,,original,yes,no,ownership,,,,,,
-other_info,source_id,text,ID that uniquely identifies the sources this data point is based on,,source_ids,derived,yes,yes,ownership,source_id,5,,,,no
+other_info,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,ownership,source_id,5,,,,no
 other_info,comment,text,Comment,sold on 31 July 2013,,original,yes,yes,ownership,comment,6,,,,
 water_input,mine_fac,text,,,,original,no,no,,,,,,,
 water_input,sub_site,text,,,,original,no,no,,,,,,,
@@ -199,9 +198,8 @@ water_input,source,text,,,,original,no,no,,,,,,,
 water_input,source_url,text,,,,original,no,no,,,,,,,
 water_input,comment,text,,,,original,no,no,,,,,,,
 coal,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,coal,id,,,,,
-coal,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,coal,facility_id,1,1,,,no
+coal,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,coal,facility_id,1,1,,,no
 coal,mine_fac,text,,,,derived,yes,no,coal,,,,,,
-coal,sub_site,text,,,,derived,yes,no,coal,,,,,,
 coal,type_mineral,text,"Type of material stream. Possible entries: Coal mined, Clean coal",Coal mined,,derived,yes,yes,coal,type,3,3,,,no
 coal,min_ore_con,text,Specific product transported,F.stc,material_ids,derived,yes,yes,coal,material,4,,,,no
 coal,mine_processing,text,,,,derived,yes,no,coal,,,,,,
@@ -212,12 +210,12 @@ coal,amount_sold,numeric,Mass of material sold in tonnes,2500000,,derived,yes,ye
 coal,production_share,numeric,,,,derived,yes,no,coal,,,,,,
 coal,source,text,,,,derived,yes,no,coal,,,,,,
 coal,source_url,text,,,,derived,yes,no,coal,,,,,,
-coal,source_id,text,ID that uniquely identifies the sources this data point is based on,,source_ids,derived,yes,yes,coal,source_id,8,,,,no
+coal,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,coal,source_id,8,,,,no
 coal,comment,text,Comment,"Production numbers in equity share. Tarrawonga is only owned 70%, while the other mines are owned 100%. Thus total production numbers are likely to be higher than the given ones.",,derived,yes,yes,coal,comment,9,,,,
 coal,no_estimation,text,,,,derived,yes,no,coal,,,,,,
-coal,reporting_period,text,Reporting period or financial year specified in the source document,April-March,,derived,yes,yes,coal,reporting_period,7,,,,
+coal,reporting_period,text,"Period in which the coal stream occured. Always relates to the year in which the period ends (i.e. year = 2020, reporting_period = July-June → Period is July 2019 to June 2020) If nothing is specified, it is January to December.",April-March,,derived,yes,yes,coal,reporting_period,7,,,,
 capacity,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,capacity,id,,,,,
-capacity,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,capacity,facility_id,1,1,,,no
+capacity,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,capacity,facility_id,1,1,,,no
 capacity,mine_fac,text,,,,derived,yes,no,capacity,,,,,,
 capacity,sub_site,text,,,,derived,yes,no,capacity,,,,,,
 capacity,minerals_and_ores,text,Material to which the capacity relates,O.Al,material_ids,derived,yes,yes,capacity,material,3,3,,,
@@ -228,7 +226,7 @@ capacity,processing_capacity_value,numeric,"Mass of material input or output cap
 capacity,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,capacity,source_id,6,,,,no
 capacity,comment,text,Comment,245000 + 325000,,derived,yes,yes,capacity,comment,7,,,,
 reserves,,numeric,"Unique ID for each row, running integer",1,,derived,yes,no,reserves,id,,,,,
-reserves,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,reserves,facility_id,1,1,,,no
+reserves,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,reserves,facility_id,1,1,,,no
 reserves,mine_fac,text,,,,derived,yes,no,reserves,,,,,,
 reserves,sub_site,text,,,,derived,yes,no,reserves,,,,,,
 reserves,minerals_and_ores,text,Specific material type,O.Fe,material_ids,derived,yes,yes,reserves,material,3,3,,,
@@ -248,30 +246,30 @@ reserves,source,text,,,,derived,yes,no,reserves,,,,,,
 reserves,source_url,text,,,,derived,yes,no,reserves,,,,,,
 reserves,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,reserves,source_id,8,,,,no
 reserves,comment,text,Comment,30.9 (probable) + 16.3 (proven),,derived,yes,yes,reserves,comment,9,,,,
-general_sub_sites,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,general,derived,yes,yes,general,facility_id,1,1,,,no
-general_sub_sites,facility_name,text,Name of the facility,Central Murchison Gold Project,,derived,yes,yes,general,facility_name,2,,,,no
-general_sub_sites,facility_other_names,text,Other names of the facility,"CMGP, Big Bell Gold Operations Pty Ltd",,derived,yes,yes,general,facility_other_names,3,,,,
-general_sub_sites,sub_site_name,text,Name of the sub-site,Kostenko,,derived,yes,yes,general,sub_site_name,4,,,,
-general_sub_sites,sub_site_other_names,text,Other names of the sub-site,Stakhanovskaya,,derived,yes,yes,general,sub_site_other_names,5,,,,
-general_sub_sites,country,text,Country where the facility is located in,Indonesia,,derived,yes,yes,general,country,16,,,,
-general_sub_sites,surface_area_sq_km,numeric,Surface area of the facility in square kilometers,"14,34",,derived,yes,yes,general,surface_area_sq_km,14,,1,4,
-general_sub_sites,concession_area_sq_km,numeric,Concession area of the facility in square kilometers,"135,9718",,derived,yes,yes,general,concession_area_sq_km,15,,1,4,
-general_sub_sites,facility_type,text,"Type of the facility. Possible entries: Mine, Smelter, Refinery, Company, Region, and combinations thereof","Mine, Smelter, Refinery",,derived,yes,yes,general,facility_type,6,,,,no
-general_sub_sites,commodities_products,text,"Materials, commodities, products produced by this facility","Gold, Copper, Silver",,derived,yes,yes,general,commodities_products,7,,,,
-general_sub_sites,primary_commodity,text,Primary commodity produced by a mine. Determined by economic value of commodities produced,Iron,,derived,yes,yes,general,primary_commodity,8,,,,
-general_sub_sites,facility_equipment,text,Equipment present at this facility,"Open pit, SX-EW plant",,derived,yes,yes,general,facility_equipment,9,,,,
-general_sub_sites,production_start,numeric,Year in which production at this facility started,2007,,derived,yes,yes,general,production_start,10,,,,
-general_sub_sites,production_end,numeric,Year in which production at this facility ended,2018,,derived,yes,yes,general,production_end,11,,,,
-general_sub_sites,activity_status,text,Activity status of the facility,inactive,,derived,yes,yes,general,activity_status,12,,,,
-general_sub_sites,activity_status_year,numeric,Year for which the activity status applies,2020,,derived,yes,yes,general,activity_status_year,13,,,,
-general_sub_sites,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,general,source_id,22,,,,no
-general_sub_sites,comment,text,Comment,Not to be mistaken for the Kalgoorlie Smelter,,derived,yes,yes,general,comment,23,,,,
-general_sub_sites,geom,geom,"Geometry of the mine, either of type POINT, MULTIPOINT, or empty.",not applicable,,derived,yes,yes,general,geom,24,,,,
-general_sub_sites,GID_0,text,Key to connect facility to GADM regions,ZAF,GADM,derived,yes,yes,general,GID_0,17,,,,
-general_sub_sites,GID_1,text,Key to connect facility to GADM regions,ZAF.5_1,GADM,derived,yes,yes,general,GID_1,18,,,,
-general_sub_sites,GID_2,text,Key to connect facility to GADM regions,ZAF.5.5_1,GADM,derived,yes,yes,general,GID_2,19,,,,
-general_sub_sites,GID_3,text,Key to connect facility to GADM regions,ZAF.5.5.6_1,GADM,derived,yes,yes,general,GID_3,20,,,,
-general_sub_sites,GID_4,text,Key to connect facility to GADM regions,ZAF.5.5.6.9_1,GADM,derived,yes,yes,general,GID_4,21,,,,
+general_sub_sites,facility_id,text,"ID that uniquely identifies each mine, processing facility, and sub-site",WUD00001.00,facilities,derived,yes,yes,facilities,facility_id,1,1,,,no
+general_sub_sites,facility_name,text,Name of the facility,Central Murchison Gold Project,,derived,yes,yes,facilities,facility_name,2,,,,no
+general_sub_sites,facility_other_names,text,Other names of the facility,"CMGP, Big Bell Gold Operations Pty Ltd",,derived,yes,yes,facilities,facility_other_names,3,,,,
+general_sub_sites,sub_site_name,text,Name of the sub-site,Kostenko,,derived,yes,yes,facilities,sub_site_name,4,,,,
+general_sub_sites,sub_site_other_names,text,Other names of the sub-site,Stakhanovskaya,,derived,yes,yes,facilities,sub_site_other_names,5,,,,
+general_sub_sites,country,text,Country in which the facility or sub-site is located,Indonesia,,derived,yes,yes,facilities,country,16,,,,
+general_sub_sites,surface_area_sq_km,numeric,"Surface area of the facility or sub-site, in square kilometers","14,34",,derived,yes,yes,facilities,surface_area_sq_km,14,,1,4,
+general_sub_sites,concession_area_sq_km,numeric,Concession area of the facility or sub-site in square kilometers,"135,9718",,derived,yes,yes,facilities,concession_area_sq_km,15,,1,4,
+general_sub_sites,facility_type,text,"Type of the facility. Possible entries: Mine, Smelter, Refinery, Company, Region, and combinations thereof","Mine, Smelter, Refinery",,derived,yes,yes,facilities,facility_type,6,,,,no
+general_sub_sites,commodities_products,text,"Materials, commodities, products produced by this facility","Gold, Copper, Silver",,derived,yes,yes,facilities,commodities_products,8,,,,
+general_sub_sites,primary_commodity,text,Primary commodity produced by a mine. Determined by economic value of commodities produced,Iron,,derived,yes,yes,facilities,primary_commodity,7,,,,
+general_sub_sites,facility_equipment,text,Equipment present at this facility,"Open pit, SX-EW plant",,derived,yes,yes,facilities,facility_equipment,9,,,,
+general_sub_sites,production_start,numeric,Year in which production at this facility started,2007,,derived,yes,yes,facilities,production_start,10,,,,
+general_sub_sites,production_end,numeric,Year in which production at this facility ended,2018,,derived,yes,yes,facilities,production_end,11,,,,
+general_sub_sites,activity_status,text,Activity status of the facility,inactive,,derived,yes,yes,facilities,activity_status,12,,,,
+general_sub_sites,activity_status_year,numeric,Year for which the activity status relates,2020,,derived,yes,yes,facilities,activity_status_year,13,,,,
+general_sub_sites,source_id,text,ID that uniquely identifies the sources this data point is based on,det_1001,source_ids,derived,yes,yes,facilities,source_id,22,,,,no
+general_sub_sites,comment,text,Comment,Not to be mistaken for the Kalgoorlie Smelter,,derived,yes,yes,facilities,comment,23,,,,
+general_sub_sites,geom,geom,"Geometry of the mine, either of type POINT, MULTIPOINT, or empty.",not applicable,,derived,yes,yes,facilities,geom,24,,,,
+general_sub_sites,GID_0,text,Key to map facility to GADM regions,ZAF,GADM,derived,yes,yes,facilities,GID_0,17,,,,
+general_sub_sites,GID_1,text,Key to map facility to GADM regions,ZAF.5_1,GADM,derived,yes,yes,facilities,GID_1,18,,,,
+general_sub_sites,GID_2,text,Key to map facility to GADM regions,ZAF.5.5_1,GADM,derived,yes,yes,facilities,GID_2,19,,,,
+general_sub_sites,GID_3,text,Key to map facility to GADM regions,ZAF.5.5.6_1,GADM,derived,yes,yes,facilities,GID_3,20,,,,
+general_sub_sites,GID_4,text,Key to map facility to GADM regions,ZAF.5.5.6.9_1,GADM,derived,yes,yes,facilities,GID_4,21,,,,
 source_ids,source_id,text,Unique ID for each source,det_1001,,derived,no,no,source_ids,source_id,1,,,,no
 source_ids,sources,text,Names of the source publications or websites,Anglo American plc (2015) Annual Report 2014,,derived,no,no,source_ids,sources,2,,,,no
 source_ids,source_urls,text,URLs of the source publications or websites,https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2015/aa-ar14-interactive-final.pdf,,derived,no,no,source_ids,source_urls,3,,,,no

@@ -150,7 +150,6 @@ waste;unit;text;unit_id;;;;
 waste;value;numeric;;;unit;waste_type;production_share
 waste;total_material;numeric;;;unit;;production_share
 waste;stripping_ratio;numeric;;;;;
-waste;waste_to_ore_ratio;numeric;;;;;
 waste;production_share;numeric;;;;;
 waste;source;text;source;no;;;
 waste;source_url;text;;no;;;

@@ -14,7 +14,7 @@
 
 
 # Check if the necessary packages are installed and if not install them, then load them
-req_packages <- c("tidyverse", "readxl", "scales", "knitr", "kableExtra", "viridis", "rlang", "DT", "patchwork", "sf", "ggplot2", "RSQLite", "rnaturalearthdata")
+req_packages <- c("tidyverse", "readxl", "writexl", "scales", "knitr", "kableExtra", "viridis", "rlang", "DT", "patchwork", "sf", "ggplot2", "RSQLite", "rnaturalearthdata")
 req_packages <- req_packages[!req_packages %in% installed.packages()]
 lapply(req_packages, install.packages)
 

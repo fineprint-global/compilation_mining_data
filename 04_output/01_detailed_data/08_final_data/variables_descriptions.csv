@@ -1,0 +1,139 @@
+table,variable,description,type,example,references_table
+facilities,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+facilities,facility_name,Name of the facility,text,Central Murchison Gold Project,
+facilities,facility_other_names,Other names of the facility,text,"CMGP, Big Bell Gold Operations Pty Ltd",
+facilities,sub_site_name,Name of the sub-site,text,Kostenko,
+facilities,sub_site_other_names,Other names of the sub-site,text,Stakhanovskaya,
+facilities,country,Country where the facility is located in,text,Indonesia,
+facilities,surface_area_sq_km,Surface area of the facility in square kilometers,numeric,"14,34",
+facilities,concession_area_sq_km,Concession area of the facility in square kilometers,numeric,"135,9718",
+facilities,facility_type,"Type of the facility. Possible entries: Mine, Smelter, Refinery, Company, Region, and combinations thereof",text,"Mine, Smelter, Refinery",
+facilities,commodities_products,"Materials, commodities, products produced by this facility",text,"Gold, Copper, Silver",
+facilities,primary_commodity,Primary commodity produced by a mine. Determined by economic value of commodities produced,text,Iron,
+facilities,facility_equipment,Equipment present at this facility,text,"Open pit, SX-EW plant",
+facilities,production_start,Year in which production at this facility started,numeric,2007,
+facilities,production_end,Year in which production at this facility ended,numeric,2018,
+facilities,activity_status,Activity status of the facility,text,inactive,
+facilities,activity_status_year,Year for which the activity status applies,numeric,2020,
+facilities,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+facilities,comment,Comment,text,Not to be mistaken for the Kalgoorlie Smelter,
+facilities,geom,"Geometry of the mine, either of type POINT, MULTIPOINT, or empty.",geom,not applicable,
+facilities,GID_0,Key to connect facility to GADM regions,text,ZAF,GADM
+facilities,GID_1,Key to connect facility to GADM regions,text,ZAF.5_1,GADM
+facilities,GID_2,Key to connect facility to GADM regions,text,ZAF.5.5_1,GADM
+facilities,GID_3,Key to connect facility to GADM regions,text,ZAF.5.5.6_1,GADM
+facilities,GID_4,Key to connect facility to GADM regions,text,ZAF.5.5.6.9_1,GADM
+coal,id,"Unique ID for each row, running integer",numeric,1,
+coal,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+coal,type,"Type of material stream. Possible entries: Coal mined, Clean coal",text,Coal mined,
+coal,material,Specific product transported,text,F.stc,material_ids
+coal,year,Year of material stream,numeric,2015,
+coal,value_tonnes,Mass of material stream in tonnes,numeric,3000000,
+coal,amount_sold_tonnes,Mass of material sold in tonnes,numeric,2500000,
+coal,source_id,ID that uniquely identifies the sources this data point is based on,text,,source_ids
+coal,comment,Comment,text,"Production numbers in equity share. Tarrawonga is only owned 70%, while the other mines are owned 100%. Thus total production numbers are likely to be higher than the given ones.",
+coal,reporting_period,Reporting period or financial year specified in the source document,text,April-March,
+minerals,id,"Unique ID for each row, running integer",numeric,1,
+minerals,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+minerals,type,"Type of material stream. Possible entries: Ore mined, Ore processed, Concentrate, NM Mineral",text,Ore mined,
+minerals,material,Specific material type,text,O.Fe,material_ids
+minerals,year,Year of material stream,numeric,2015,
+minerals,value_tonnes,Mass of material stream in tonnes,numeric,100000,
+minerals,overall_grade_ppm,"Overall grade of all commodities contained in an ore or concentrate combined, in parts per million",numeric,"1,1",
+minerals,mine_processing,"Type of leaching conduced at mine, if any",text,Heap leaching,
+minerals,amount_sold_tonnes,Mass of material sold in tonnes,numeric,90000,
+minerals,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+minerals,comment,Comment,text,Ore processed estimated by taking daily ore throughput times 365,
+minerals,reporting_period,Reporting period or financial year specified in the source document,text,April-March,
+commodities,id,"Unique ID for each row, running integer",numeric,1,
+commodities,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+commodities,material,Specific material type,text,O.Fe,material_ids
+commodities,commodity,Specific commodity type,text,Me.Fe,material_ids
+commodities,year,Year of material stream,numeric,2015,
+commodities,value_tonnes,Mass of commodity contained in material in tonnes,numeric,10000,
+commodities,grade_ppm,"Grade of material relating to a specific commodity, in parts per million",numeric,10,
+commodities,recovery_rate,Share of commodity recovered in ore processing,numeric,"0,89",
+commodities,yield_ppm,"Grade of material relating to a specific commodity multiplied by recovery rate, in parts per million",numeric,"8,9",
+commodities,mine_processing,"Type of leaching conduced at mine, if any",text,Heap leaching,
+commodities,amount_sold_tonnes,"Mass of commodity contained in material that was sold, in tonnes",numeric,9000,
+commodities,metal_payable_tonnes,"Mass of commodity contained in material after a deduction of a share specified by buyer of material, in tonnes",numeric,8000,
+commodities,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+commodities,comment,Comment,text,Total production 2001 (Kt): 34 (regular period) + 9 (commissioning period in Q2) = 43Kt,
+commodities,reporting_period,Reporting period or financial year specified in the source document,text,April-March,
+commodities,minerals_id,Foreign key to join table minerals with table commodities,numeric,384,minerals
+processing,id,"Unique ID for each row, running integer",numeric,1,
+processing,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+processing,facility_type,"Type of processing facility. Categories: Refinery, Smelter",text,Smelter,
+processing,year,Year of processing,numeric,2015,
+processing,input,Input materials,text,Copper concentrate,
+processing,input_value_tonnes,Mass of input materials in tonnes,numeric,120000,
+processing,output,Output materials,text,Copper anode,
+processing,output_value_tonnes,Mass of output materials in tonnes,numeric,40000,
+processing,grade_ppm,Grade of input material in parts per million,numeric,300000,
+processing,recovery_rate,Share of output material recovered from output material contained in input material,numeric,"0,95",
+processing,amount_sold_tonnes,"Mass of output material sold, in tonnes",numeric,35000,
+processing,metal_payable_tonnes,"Mass of output material contained in input material after a deduction of a share specified by the processing facility’s operator, in tonnes",numeric,30000,
+processing,incl_purchased,"For mines with on-site processing facilities, specifying if third party material is included in the processing. Categories: yes, no",text,no,
+processing,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+processing,reporting_period,Reporting period or financial year specified in the source document,text,April-March,
+transport,id,"Unique ID for each row, running integer",numeric,1,
+transport,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+transport,product,Specific material transported,text,Con.Cu,material_ids
+transport,transport_to,Destination of transport,text,Port of Geraldton,
+transport,transport_by,Mode of transport,text,Truck,
+transport,export,"Specifies if material is exported. Categories: Yes, No",text,yes,
+transport,export_to,Destination of exported product,text,"Europe, Asia",
+transport,year,Year of material stream,numeric,2015,
+transport,value_tonnes,"Mass of material transported, in tonnes",numeric,50000,
+transport,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+transport,comment,Comment,text,Nickel grade: 1.21%,
+transport,reporting_period,Reporting period or financial year specified in the source document,text,April-March,
+reserves,id,"Unique ID for each row, running integer",numeric,1,
+reserves,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+reserves,material,Specific material type,text,O.Fe,material_ids
+reserves,commodity,Specific commodity type,text,Me.Fe,material_ids
+reserves,year,Year of recorded reserves,numeric,2015,
+reserves,mineral_value_tonnes,"Mass of material reserves, in tonnes",numeric,500000000,
+reserves,commodity_value_tonnes,"Mass of commodity contained in material reserves, in tonnes",numeric,150000000,
+reserves,grade_ppm,"Grade of material reserves, relating to the stated commodity, in parts per million",numeric,400000,
+reserves,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+reserves,comment,Comment,text,30.9 (probable) + 16.3 (proven),
+capacity,id,"Unique ID for each row, running integer",numeric,1,
+capacity,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+capacity,material,Material to which the capacity relates,text,O.Al,material_ids
+capacity,commodity,Commodity to which the capacity relates,text,Me.Al2O3,material_ids
+capacity,year,Year of recorded capacity,numeric,2015,
+capacity,value_tpa,"Mass of material input or output capacity. If a value for „commodity“ is available, value_tpa states the output capacity of this commodity. If only a value for „material“ is available, value_tpa states the input capacity of this material. In tonnes per year (tonnes per annum)",numeric,25000,
+capacity,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+capacity,comment,Comment,text,245000 + 325000,
+waste,id,"Unique ID for each row, running integer",numeric,1,
+waste,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+waste,waste_type,Type of waste,text,Overburden,
+waste,material,Material to which the waste relates,text,O.Au,material_ids
+waste,commodity,Commodity to which the waste relates,text,Me.Au,material_ids
+waste,type_mining,"Mining method of the material to which the waste relates. Categories: Open pit, Underground",text,,
+waste,year,Year of waste stream,numeric,2015,
+waste,value_tonnes,Mass of waste in tonnes,numeric,5000000,
+waste,total_material_tonnes,"Total material extracted of a mine, i.e. ore mined plus waste mined",numeric,7000000,
+waste,stripping_ratio,Ratio of how much overburden is removed for each unit of material mined,numeric,"2,16",
+waste,waste_to_ore_ratio,Ratio of how much waste is produced for each unit of material mined,numeric,"2,98",
+waste,source_id,ID that uniquely identifies the sources this data point is based on,text,det_1001,source_ids
+waste,comment,Comment,text,"Numbers were reported on a 60% basis, so numbers for total material were approximated by taking numbers from report / 0.6",
+waste,reporting_period,Reporting period or financial year specified in the source document,text,April-March,
+ownership,id,"Unique ID for each row, running integer",numeric,1,
+ownership,facility_id,"ID that uniquely identifies each mine, processing facility, and sub-site",text,WUD00001.00,facilities
+ownership,owners,"Owners of the facility, with their ownership in brackets",text,"African Rainbow Minerals Ltd. (50%), Assore Ltd. (50%)",
+ownership,operators,Operators of the facility,text,Assmang Proprietary Ltd.,
+ownership,year,Year for which the ownership shares and operator applies,numeric,2015,
+ownership,source_id,ID that uniquely identifies the sources this data point is based on,text,,source_ids
+ownership,comment,Comment,text,sold on 31 July 2013,
+material_ids,material_id,ID that uniquely identifies materials,text,O.Al,
+material_ids,material_name,Name of the material,text,Bauxite,
+material_ids,material_category,"Category of the material. Categories: mineral, commodity, other_product, ff_mineral, ff_commodity",text,mineral,
+material_ids,material_category_2,"Secondary category of the material, more detailed that material_category",text,metal ore,
+material_ids,material_id_agg,ID that uniquely identifies a bundle of materials,text,Me.pgm,
+material_ids,material_name_agg,Name of the bundle of materials,text,PGM,
+material_ids,materials_contained,"Specifies the materials contained in the bundle of materials. Only applicable, if material_category is „aggregate“",text,Me.Ir; Me.Os; Me.Pd; Me.Pt; Me.Rh; Me.Ru,
+source_ids,source_id,Unique ID for each source,text,det_1001,
+source_ids,sources,Names of the source publications or websites,text,Anglo American plc (2015) Annual Report 2014,
+source_ids,source_urls,URLs of the source publications or websites,text,https://www.angloamerican.com/~/media/Files/A/Anglo-American-Group/PLC/investors/annual-reporting/2015/aa-ar14-interactive-final.pdf,
