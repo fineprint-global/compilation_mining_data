@@ -20,7 +20,7 @@ editor_options:
 
 
 ### Read In data
-```{r , echo = FALSE, message = FALSE} 
+```{r , echo = FALSE, message = TRUE} 
 
 # clear R environment
 rm(list = ls())
@@ -311,7 +311,7 @@ mines_sub_sites <- filter(general.sf, !is.na(sub_site))
 <br>
 
 ### 3. georeferencing of mines that have coordinates in sheet_general or sheet_sub_sites
-```{r , echo = FALSE, message = FALSE} 
+```{r , echo = FALSE, message = FALSE, warning = FALSE} 
 
 # mines that do have sub_sites with coordinates
 mines_general_w_multipoints_list <- filter(mines_sub_sites, coord_is_na == FALSE)$mine_fac %>% unique()
@@ -365,7 +365,7 @@ general_output <- bind_rows(general_output, mines_general_w_multipoints)
 <br>
 
 ### 3.1 assign GADM region in which the mines with coordinates are located
-```{r , echo = FALSE, message = FALSE} 
+```{r , echo = FALSE, message = TRUE} 
 
 
 # First, assign GADM regions from the WU_GADM_log_concordance.csv file for those facilities where it is possible
@@ -554,9 +554,10 @@ if (file.exists("./01_input/03_log_files/01_detailed_data/log_location_not_inter
 # join the GADM regions from log file to the mines not automatically intersecting
 general_output <- general_output %>% 
   left_join(GADM_log %>% 
-              select(mine_fac, GID_1, GID_2, GID_3, GID_4), 
+              select(mine_fac, GID_0, GID_1, GID_2, GID_3, GID_4), 
             by = c("mine_fac")) %>% 
-  mutate(GID_1 = ifelse(is.na(GID_1.x), GID_1.y, GID_1.x),
+  mutate(GID_0 = ifelse(is.na(GID_0.x), GID_0.y, GID_0.x),
+         GID_1 = ifelse(is.na(GID_1.x), GID_1.y, GID_1.x),
          GID_2 = ifelse(is.na(GID_2.x), GID_2.y, GID_2.x),
          GID_3 = ifelse(is.na(GID_3.x), GID_3.y, GID_3.x),
          GID_4 = ifelse(is.na(GID_4.x), GID_4.y, GID_4.x)) %>% 
@@ -564,8 +565,8 @@ general_output <- general_output %>%
 
 # # check 1
 # general_output %>%
-#   filter(facility_id == "COM00114.00") %>%
-#   select(GID_1, GID_2, GID_3, GID_4)
+#   filter(facility_id == "COM00112.00") %>%
+#   select(GID_0, GID_1, GID_2, GID_3, GID_4)
 #
 # # check 2
 # general_output$GID_1 %>% is.na() %>% unique()
