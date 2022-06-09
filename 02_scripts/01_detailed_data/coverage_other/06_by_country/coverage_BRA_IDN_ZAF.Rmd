@@ -1,0 +1,340 @@
+---
+title: "Coverage BRA, IDN, ZAF"
+output:
+  html_document: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, error=TRUE}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(rlang)
+library(scales)
+library(sf)
+library(DT)
+
+```
+
+<br> 
+
+# Read data 
+
+```{r , echo = FALSE, message = FALSE}
+general <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/facilities.gpkg") %>%
+  st_drop_geometry() %>% 
+  tibble()
+
+general <- general %>% 
+  mutate(across(where(is.factor), as.character))
+
+detailed <- read_rds("./04_output/01_detailed_data/08_final_data/other_formats/detailed_final.rds")
+
+sheet_min <- detailed$minerals_ores_conce
+sheet_com <- detailed$commodities
+sheet_coal <- detailed$coal
+
+
+sheet_min <- sheet_min %>% 
+  mutate(across(where(is.factor), as.character))
+
+sheet_com <- sheet_com %>% 
+  mutate(across(where(is.factor), as.character))
+
+sheet_coal <- sheet_coal %>% 
+  mutate(across(where(is.factor), as.character))
+
+mat_ids <- read_csv("./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv", 
+                    show_col_types = FALSE)
+
+```
+
+<br> 
+
+
+#### preparation
+
+```{r , echo = FALSE, message = FALSE}
+metal_mines <- general %>% 
+  filter(!primary_commodity %in% c("Coal", "Other mine", "Processing")) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique()
+
+coal_mines <- general %>% 
+  filter(primary_commodity == "Coal") %>% 
+  select(facility_id) %>%
+  pull() %>% 
+  unique()
+
+
+# producing metal mines in 2000
+m2000 <- sheet_min %>% 
+  filter(year == 2000) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique() %>% 
+  c(., sheet_com %>% 
+  filter(year == 2000) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique()) %>% 
+  intersect(metal_mines)
+
+
+# producing metal mines in 2018
+m2018 <- sheet_min %>% 
+  filter(year == 2018) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique() %>% 
+  c(sheet_com %>% 
+  filter(year == 2018) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique()) %>% 
+  intersect(metal_mines)
+
+# producing metal mines in 2020
+m2020 <- sheet_min %>% 
+  filter(year == 2020) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique() %>% 
+  c(sheet_com %>% 
+  filter(year == 2020) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique()) %>% 
+  intersect(metal_mines)
+
+
+# producing coal mines in 2000
+c2000 <- sheet_coal %>% 
+  filter(year == 2000) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique() %>% 
+  intersect(coal_mines)
+
+
+# producing coal mines in 2018
+c2018 <- sheet_coal %>% 
+  filter(year == 2018) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique() %>% 
+  intersect(coal_mines)
+
+
+# producing coal mines in 2020
+c2020 <- sheet_coal %>% 
+  filter(year == 2020) %>% 
+  select(facility_id) %>% 
+  pull() %>% 
+  unique() %>% 
+  intersect(coal_mines)
+
+
+```
+
+Data Tables
+
+```{r , echo = FALSE, message = FALSE}
+table_output <- list()
+countries <- c("BRA", "IDN", "ZAF")
+for(curr_country in countries){
+  
+  all_country_mines <- general %>% 
+    filter(GID_0 == curr_country) %>% 
+    select(facility_id) %>% 
+    pull()
+  
+  m2000_temp <- intersect(m2000, all_country_mines)
+  m2018_temp <- intersect(m2018, all_country_mines)
+  m2020_temp <- intersect(m2020, all_country_mines)
+  c2000_temp <- intersect(c2000, all_country_mines)
+  c2018_temp <- intersect(c2018, all_country_mines)
+  c2020_temp <- intersect(c2020, all_country_mines)
+  
+  
+  # set up tibble for data table output
+  table_output[[curr_country]] <- tibble(Indicator = NA, Amount = NA) %>% 
+    filter(!is.na(Amount)) %>%
+    mutate(Indicator = as.character(Indicator), Amount = as.character(Amount))
+  
+  
+  table_output[[curr_country]] <- table_output[[curr_country]] %>%
+    union(., tibble(
+      Indicator = "Anzahl Metall-Minen (2000)",
+      Amount = length(m2000_temp) %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "Anzahl Metall-Minen (2018)",
+      Amount = length(m2018_temp) %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "Anzahl Metall-Minen (2020)",
+      Amount = length(m2020_temp) %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "[A] Name der mengenmäßig größten Metallmine (Masse abgebautes Erz) (2018)",
+      Amount = sheet_min %>% 
+        filter(facility_id %in% m2018_temp,
+               year == 2018) %>%
+        slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+        left_join(general %>% select(facility_id, facility_name)) %>% 
+        select(facility_name) %>% pull()
+    )) %>%
+    union(., tibble(
+      Indicator = "[A] abgebautes Erz",
+      Amount = sheet_min %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(material) %>% 
+        left_join(mat_ids %>% select(material_id, material_name), by = c("material" = "material_id")) %>% 
+        select(material_name) %>% pull()
+    )) %>%
+    union(., tibble(
+      Indicator = "[A] Produktionsmenge Erz [t]",
+      Amount = sheet_min %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(value_tonnes) %>% pull() %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "[A] abgebautes Metall",
+      Amount = sheet_com %>% 
+        filter(facility_id == sheet_min %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(facility_id) %>%
+                 pull()) %>% 
+        filter(year == 2018) %>% 
+        select(commodity) %>% 
+        left_join(mat_ids %>% select(material_id, material_name), by = c("commodity" = "material_id")) %>% 
+        select(material_name) %>% pull()
+    ))  %>%
+    union(., tibble(
+      Indicator = "[A] Produktionsmenge Metall [t]",
+      Amount = sheet_com %>% 
+        filter(facility_id == sheet_min %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(facility_id) %>%
+                 pull()) %>% 
+        filter(year == 2018) %>% 
+        select(value_tonnes) %>% pull() %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "[B] Name der mengenmäßig größten Metallmine (Masse gewonnenes Metall) (2018)",
+      Amount = sheet_com %>% 
+        filter(facility_id %in% m2018_temp,
+               year == 2018) %>%
+        slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+        left_join(general %>% select(facility_id, facility_name)) %>% 
+        select(facility_name) %>% pull()
+    )) %>%
+    union(., tibble(
+      Indicator = "[B] abgebautes Erz",
+      Amount = sheet_min %>% 
+        filter(facility_id == sheet_com %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(facility_id) %>%
+                 pull()) %>% 
+        filter(year == 2018) %>% 
+        select(material) %>% 
+        left_join(mat_ids %>% select(material_id, material_name), by = c("material" = "material_id")) %>% 
+        select(material_name) %>% pull()
+    )) %>%
+    union(., tibble(
+      Indicator = "[B] Produktionsmenge Erz [t]",
+      Amount = sheet_min %>% 
+        filter(facility_id == sheet_com %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(facility_id) %>%
+                 pull()) %>% 
+        filter(year == 2018) %>% 
+        select(value_tonnes) %>% pull() %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "[B] abgebautes Metall",
+      Amount = sheet_com %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(commodity) %>% 
+        left_join(mat_ids %>% select(material_id, material_name), by = c("commodity" = "material_id")) %>% 
+        select(material_name) %>% pull()
+    ))  %>%
+    union(., tibble(
+      Indicator = "[B] Produktionsmenge Metall [t]",
+      Amount = sheet_com %>% 
+                 filter(facility_id %in% m2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(value_tonnes) %>% pull() %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "Anzahl Kohle-Minen (2000)",
+      Amount = length(c2000_temp) %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "Anzahl Kohle-Minen (2018)",
+      Amount = length(c2018_temp) %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "Anzahl Kohle-Minen (2020)",
+      Amount = length(c2020_temp) %>% as.character()
+    )) %>%
+    union(., tibble(
+      Indicator = "Name der mengenmäßig größten Kohlemine (2018)",
+      Amount = sheet_coal %>% 
+        filter(facility_id %in% c2018_temp,
+               year == 2018) %>%
+        slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+        left_join(general %>% select(facility_id, facility_name)) %>% 
+        select(facility_name) %>% pull()
+    )) %>%
+    union(., tibble(
+      Indicator = "abgebautes Kohleart",
+      Amount = sheet_coal %>% 
+                 filter(facility_id %in% c2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(material) %>% 
+        left_join(mat_ids %>% select(material_id, material_name), by = c("material" = "material_id")) %>% 
+        select(material_name) %>% pull()
+    )) %>%
+    union(., tibble(
+      Indicator = "Produktionsmenge [t]",
+      Amount = sheet_coal %>% 
+                 filter(facility_id %in% c2018_temp,
+                        year == 2018) %>%
+                 slice_max(order_by = value_tonnes, n = 1, with_ties = F) %>% 
+                 select(value_tonnes) %>% pull() %>% as.character()
+    ))
+  
+
+}
+
+# table for Rmd output
+datatable(table_output[[countries[1]]], rownames = FALSE, caption = countries[1])
+datatable(table_output[[countries[2]]], rownames = FALSE, caption = countries[2])
+datatable(table_output[[countries[3]]], rownames = FALSE, caption = countries[3])
+
+```
+
