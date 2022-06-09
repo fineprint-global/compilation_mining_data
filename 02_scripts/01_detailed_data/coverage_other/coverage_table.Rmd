@@ -37,12 +37,12 @@ coverage <- read_csv("./04_output/01_detailed_data/05_coverage/01_general/covera
 # add color to each coverage (similar to heatmap: https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf)
 
 # 1. without coloring
-kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>% 
-  kable_styling(latex_options = c("striped", "repeat_header"), font_size = 7) %>% 
-  column_spec(1, width = "3em") %>%
-  column_spec(2, width = "4em") %>%
-  column_spec(3, width = "6em") %>%
-  column_spec(c(4:ncol(coverage)), width = "1.8em")
+# kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>% 
+#   kable_styling(latex_options = c("striped", "repeat_header"), font_size = 7) %>% 
+#   column_spec(1, width = "3em") %>%
+#   column_spec(2, width = "4em") %>%
+#   column_spec(3, width = "6em") %>%
+#   column_spec(c(4:ncol(coverage)), width = "1.8em")
 
 # 2. with coloring
 tbl1 <- kbl(coverage, booktabs = T, longtable = T, caption = "Relative coverage by material and country") %>%
