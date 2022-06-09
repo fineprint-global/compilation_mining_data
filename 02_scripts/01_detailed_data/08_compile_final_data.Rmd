@@ -25,6 +25,7 @@ library(sf)
 library(tidyverse)
 library(DT)
 library(RSQLite)
+library(writexl)
 
 # read in production information
 detailed <- read_rds("./03_intermediate/01_detailed_data/gaps_filled.rds")
@@ -443,7 +444,7 @@ write_csv(source_ids, "./04_output/01_detailed_data/08_final_data/final_format_c
 write_csv(material_ids, "./04_output/01_detailed_data/08_final_data/final_format_csv/material_ids.csv", na = "")
 
 # export variable descriptions
-write_csv(all_variables, "./04_output/01_detailed_data/08_final_data/variables_descriptions.csv", na = "")
+write_xlsx(all_variables, "./04_output/01_detailed_data/08_final_data/variables_descriptions.xlsx")
 
 ```
 
