@@ -1,5 +1,9 @@
 ### Retrieval of EIA data
   
+  # PLEASE NOTE: EIA has released a new API version in 2022, which provides much better data (and apparently more data)
+    # including information on regions and sub-regions (e.g. US counties)
+    # API v1 used in this script will be deprecated from Nov 2022 onwards
+
   # Via API of EIA (please note: key needed)
   # API documentation: https://www.eia.gov/opendata/commands.php
 
@@ -54,7 +58,7 @@ category_ids_1 <- category_ids_1$category$childcategories
   # i.e. in this case for all available mines
 for (i in category_ids_1$category_id) {
   
-  url <- paste0("https://api.eia.gov/category/?api_key=eed697fbab825de21d1f1c08c56e63cf&category_id=", i)
+  url <- paste0("https://api.eia.gov/category/?api_key=", Sys.getenv("eia_api_key"), "&category_id=", i)
   
   category_ids_2 <- fromJSON(url)
   
@@ -67,7 +71,7 @@ for (i in category_ids_1$category_id) {
     # i.e. data for each mine
   for (j in category_ids_2$category_id) {
     
-    json_list <- fromJSON(paste0("https://api.eia.gov/category/?api_key=eed697fbab825de21d1f1c08c56e63cf&category_id=", j))
+    json_list <- fromJSON(paste0("https://api.eia.gov/category/?api_key=", Sys.getenv("eia_api_key"), "&category_id=", j))
     
     series_ids <- json_list$category$childseries$series_id %>%
       grep("PRODUCTION", ., value = TRUE)
@@ -85,7 +89,7 @@ for (i in category_ids_1$category_id) {
         
         
         # columns with general info (series_id, mine name incl. coal type and mining type, reporting frequency, unit)
-        json_list_2 <- fromJSON(paste0("https://api.eia.gov/series/?api_key=eed697fbab825de21d1f1c08c56e63cf&series_id=", k))
+        json_list_2 <- fromJSON(paste0("https://api.eia.gov/series/?api_key=", Sys.getenv("eia_api_key"), "&series_id=", k))
           
         general <- json_list_2[["series"]][grepl("series_id|name|units|f|copyright|source|latlon|geography", 
                                                  names(json_list_2[["series"]]))] %>%
@@ -131,9 +135,9 @@ for (i in category_ids_1$category_id) {
 
 
 # save rds
-write_rds(eia_coal_general, file = paste0("./03_intermediate/02_country-specific/eia/eia_general_raw_", substr(Sys.time(),1,10),".rds"))
+write_rds(eia_coal_general, file = paste0("./03_intermediate/02_country_specific/eia/eia_general_raw_", substr(Sys.time(),1,10),".rds"))
 
-write_rds(eia_coal_values, file = paste0("./03_intermediate/02_country-specific/eia/eia_values_raw_", substr(Sys.time(),1,10),".rds"))
+write_rds(eia_coal_values, file = paste0("./03_intermediate/02_country_specific/eia/eia_values_raw_", substr(Sys.time(),1,10),".rds"))
 
 
 

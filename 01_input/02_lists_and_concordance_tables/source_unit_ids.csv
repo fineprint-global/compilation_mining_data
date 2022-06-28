@@ -156,3 +156,9 @@ detailed;kbcm;Kbcm;volume
 detailed;Mbcm;Mbcm;volume
 detailed;million bcm;Mbcm;volume
 detailed;million litres;Ml;volume
+eia;short tons;st;mass
+peru_minem;TMF;t;mass
+peru_minem;T.M.;t;mass
+peru_minem;TLF;lt;mass
+peru_minem;Grs.f;g;mass
+peru_minem;Kg.f;Kg;mass

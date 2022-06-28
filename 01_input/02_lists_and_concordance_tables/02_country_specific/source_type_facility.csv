@@ -1,0 +1,21 @@
+source;source_facility;type_facility
+peru_minem;Refinería;Refinery
+peru_minem;Concentración;Mine
+peru_minem;Fundición;Smelter
+peru_minem;CONCENTRACIÓN;Mine
+peru_minem;REFINERÍA;Refinery
+peru_minem;;Mine
+peru_minem;3.- REFINACIÓN;Refinery
+peru_minem;- FLOTACIÓN;Mine
+peru_minem;- LIXIVIACIÓN;Mine
+peru_minem;2.- FUNDICIÓN;Smelter
+peru_minem;- FLOTACIÓN / GRAVIMETRÍA;Mine
+peru_minem;3.- FUNDICIÓN / REFINACIÓN;Refinery
+peru_minem;2.- CONCENTRACIÓN / PELLETIZACIÓN;Mine
+peru_minem;- GRAVIMETRÍA;Mine
+peru_minem;- PRECIPITACIÓN;Mine
+peru_minem;3.- REFINERÍA;Refinery
+peru_minem;FLOTACIÓN;Mine
+peru_minem;LIXIVIACIÓN;Mine
+peru_minem;PRECIPITACIÓN;Mine
+peru_minem;GRAVIMETRÍA;Mine
