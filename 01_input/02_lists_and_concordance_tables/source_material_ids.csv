@@ -311,3 +311,89 @@ snl;Tungsten;Me.W
 snl;U3O8;Me.U
 snl;Vanadium;Me.V
 snl;Zinc;Me.Zn
+eia;bituminous;F.obc
+eia;subbituminous;F.sbc
+eia;lignite;F.lig
+eia;anthracite;F.ant
+eia;Bituminous;F.obc
+eia;Subbituminous;F.sbc
+eia;Lignite;F.lig
+eia;Anthracite;F.ant
+peru_minem;Cadmio;Me.Cd
+peru_minem;Cobre;Me.Cu
+peru_minem;Estaño;Me.Sn
+peru_minem;Hierro;Me.Fe
+peru_minem;Molibdeno;Me.Mo
+peru_minem;Oro;Me.Au
+peru_minem;Plata;Me.Ag
+peru_minem;Plomo;Me.Pb
+peru_minem;Zinc;Me.Zn
+peru_minem;Tungsteno;Me.W
+peru_minem;Arsenico;Me.As
+peru_minem;Bismuto;Me.Bi
+peru_minem;Manganeso;Me.Mn
+peru_minem;CARBON ANTRACITA;F.ant
+peru_minem;CARBON BITUMINOSO;F.obc
+peru_minem;ACIDO BORICO;Me.H3BO3
+peru_minem;ARCILLA;M.poc
+peru_minem;ARENA (GRUESA/FINA);M.sag
+peru_minem;ARENISCA / CUARCITA;M.sas
+peru_minem;BARITINA;M.bar
+peru_minem;BENTONITA;M.ben
+peru_minem;BORATOS / ULEXITA;M.bor
+peru_minem;CONCHUELAS;M.mas
+peru_minem;CAL;Me.CaO
+peru_minem;CALCITA;M.cal
+peru_minem;CALIZA / DOLOMITA;M.lim
+peru_minem;CAOLIN;M.kao
+peru_minem;FELDESPATOS;M.fel
+peru_minem;MARMOL;M.mat
+peru_minem;MICA;M.mic
+peru_minem;PIZARRA;M.sla
+peru_minem;PUZOLANA;M.abr
+peru_minem;SAL COMUN;M.sal
+peru_minem;SALMUERA (LIQUIDO);
+peru_minem;SILICE;Nm.SiO2
+peru_minem;SULFATO DE CALCIO;Me.CaSO4
+peru_minem;SULFATO DE MAGNESIO;Me.MgSO4
+peru_minem;TALCO;M.tal
+peru_minem;TIZA;M.cha
+peru_minem;TRAVERTINO;M.mat
+peru_minem;CARBON GRAFITO;M.gra
+peru_minem;ARCILLA REFRACTARIA;M.fic
+peru_minem;ULEXITA;M.bor
+peru_minem;COQUINA;M.mas
+peru_minem;DIATOMITA;M.dia
+peru_minem;LIMONITAS / OCRE;M.irp
+peru_minem;PIEDRA LAJA;M.orn
+peru_minem;MICRO-SILICE;Nm.SiO2
+peru_minem;GRANITO ORNAMENTAL;M.ign
+peru_minem;GRANODIORITA ORNAMENTAL;M.ign
+peru_minem;PIEDRA POMEZ;M.abr
+peru_minem;SULFATOS;Me.SO4_nec
+peru_minem;OTROS;
+peru_minem;ARCILLAS;M.coc
+peru_minem;DIATOMITAS;M.dia
+peru_minem;GRANITO;M.ign
+peru_minem;PIEDRA (CONSTRUCCION);M.sag
+peru_minem;SAL;M.sal
+peru_minem;PIROFILITA;M.tal
+peru_minem;ONIX;M.osm
+peru_minem;GRANATE;M.osm
+peru_minem;ANDALUCITA;M.fic
+peru_minem;ANDESITA;M.ign
+peru_minem;SILICATOS;M.osm
+peru_minem;FOSFATOS;Nm.PO
+peru_minem;SILLAR;M.ign
+peru_minem;DOLOMITA;M.dol
+peru_minem;CROMITA;O.Cr
+peru_minem;ASBESTO;M.asb
+peru_minem;CADMIO;Me.Cd
+peru_minem;COBRE;Me.Cu
+peru_minem;ESTAÑO;Me.Sn
+peru_minem;HIERRO;Me.Fe
+peru_minem;MOLIBDENO;Me.Mo
+peru_minem;ORO;Me.Au
+peru_minem;PLATA;Me.Ag
+peru_minem;PLOMO;Me.Pb
+peru_minem;ZINC;Me.Zn

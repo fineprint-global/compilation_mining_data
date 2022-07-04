@@ -122,6 +122,8 @@ commodity;metal;Me.Cd;Cadmium;;;;13
 commodity;metal;Me.Cs;Caesium;;;;14
 commodity;metal;Me.Ca;Calcium;;;;
 commodity;metal compound;Me.CaCO3;Calcium carbonate;;;Me.Ca;
+commodity;metal compound;Me.CaO;Calcium oxide;;;Me.Ca;
+commodity;metal compound;Me.CaSO4;Calcium sulphate;Me.SO4_nec;Sulphates;Me.Ca;
 commodity;metal;Me.Cr;Chromium;;;;15
 commodity;metal compound;Me.Cr2O3;Chromium(III) oxide;;;Me.Cr;15
 commodity;metal;Me.Co;Cobalt;;;;16
@@ -139,8 +141,10 @@ commodity;metal;Me.Li;Lithium;;;;23
 commodity;metal compound;Me.Li2CO3;Lithium carbonate;;;Me.Li;23
 commodity;metal compound;Me.LiOH;Lithium hydroxide;;;Me.Li;23
 commodity;metal compound;Me.Li2O;Lithium oxide;;;Me.Li;23
+commodity;metal compound;Me.lic;Lithium compound n.e.c.;;;Me.Li;23
 commodity;metal;Me.Mg;Magnesium;;;;24
 commodity;metal compound;Me.MgO;Magnesium oxide;;;Me.Mg;24
+commodity;metal compound;Me.MgSO4;Magnesium sulphate;Me.SO4_nec;Sulphates;Me.Mg;
 commodity;metal;Me.Mn;Manganese;;;;25
 commodity;metal;Me.Hg;Mercury;;;;26
 commodity;metal;Me.Mo;Molybdenum;;;;27
@@ -149,7 +153,7 @@ commodity;metal;Me.Nb;Niobium;;;;29
 commodity;metal compound;Me.Nb2O5;Niobium pentoxide;;;Me.Nb;29
 commodity;metal compound;Me.KCl;Potassium chloride;;;;
 commodity;metal compound;Me.K2O;Potassium oxide;;;;86
-commodity;metal compound;Me.K2SO4;Potassium sulphate;;;;
+commodity;metal compound;Me.K2SO4;Potassium sulphate;Me.SO4_nec;Sulphates;;
 commodity;metal compound;Me.NaHCO3;Sodium bicarbonate;;;;
 commodity;metal compound;;;Me.Na_nec;Sodium compounds n.e.c.;;
 commodity;metal;Me.Ir;Iridium;Me.pgm;PGM;;30
