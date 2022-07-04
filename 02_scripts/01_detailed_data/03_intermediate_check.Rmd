@@ -165,7 +165,7 @@ double_min_incl_same_source <- sheet_min %>%
   filter(n > 1)
 
 # table for Rmd output
-DT::datatable(double_min_incl_same_source, rownames = FALSE, caption = "Double entries INCLUDING from the same source in minerals sheet")
+DT::datatable(double_min_incl_same_source, rownames = FALSE, caption = "Double entries INCLUDING from the same source in minerals sheet (Dont necessarily have to be corrected)")
 
 
 # sheet_com
@@ -176,7 +176,7 @@ double_com_incl_same_source <- sheet_com %>%
   filter(n > 1) 
 
 # table for Rmd output
-DT::datatable(double_com_incl_same_source, rownames = FALSE, caption = "Double entries INCLUDING from the same source in commodities sheet")
+DT::datatable(double_com_incl_same_source, rownames = FALSE, caption = "Double entries INCLUDING from the same source in commodities sheet (Dont necessarily have to be corrected)")
 
 
 ```
