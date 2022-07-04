@@ -102,8 +102,9 @@ mineral;non-metallic mineral;M.ver;Vermiculite;;;;316
 mineral;non-metallic mineral;M.wol;Wollastonite;;;;317
 mineral;non-metallic mineral ore;O.dig;Diamond ore, gems;O.dia;Diamond ore (unspecified);Nm.dig;74
 mineral;non-metallic mineral ore;O.dii;Diamond ore, industrial;O.dia;Diamond ore (unspecified);Nm.dii;75
+mineral;non-metallic mineral ore;O.flu;Fluorspar ore;;;M.flu;
 mineral;non-metallic mineral ore;O.gem;Gemstone-bearing mineral ore;;;Nm.gem;
-mineral;non-metallic mineral;O.nep;Nepheline syenite;;;Nm.nep;341
+mineral;non-metallic mineral ore;O.nep;Nepheline syenite;;;Nm.nep;341
 mineral;non-metallic mineral ore;O.P;Phosphate rock;;;Nm.P;85
 mineral;non-metallic mineral ore;O.FeS;Pyrite;;;Nm.S;89
 mineral;non-metallic mineral ore;O.S;Sulphur ore;;;Nm.S;89

@@ -28,6 +28,7 @@ detailed;Cathode nickel and briquettes;Me.Ni
 detailed;Chrome alloys;All.Cr
 detailed;Chrome ore;O.Cr
 detailed;Chrome concentrate;Con.Cr
+detailed;Chromium(III) oxide;Me.Cr2O3
 detailed;Co;Me.Co
 detailed;CO3;
 detailed;Coal;F.coal
@@ -98,7 +99,7 @@ detailed;Mixed ore;O.bulk
 detailed;Mixed Ore;O.bulk
 detailed;Molybdenum;Me.Mo
 detailed;Molybdenum concentrate;Con.Mo
-detailed;Nepheline ore;M.nep
+detailed;Nepheline ore;O.nep
 detailed;Ni;Me.Ni
 detailed;Nickel;Me.Ni
 detailed;Nickel and Manganese ore;O.Ni
@@ -123,6 +124,7 @@ detailed;4e PGM ore;O.pgm
 detailed;6e PGM ore;O.pgm
 detailed;Phosphate;Nm.PO
 detailed;Phosphates;Nm.PO
+detailed;Phosphorus;Nm.P
 detailed;Pig Iron;Oth.pig
 detailed;Platinum;Me.Pt
 detailed;Polymetallic Ore;O.bulk
@@ -160,6 +162,7 @@ detailed;Thermal bituminous coal;F.sbc
 detailed;Tin alloys;All.Sn
 detailed;Titanium dioxide slag;Me.TiO2
 detailed;Tungsten Trioxide;Me.WO3
+detailed;Uranium ore,O.U
 detailed;Uranium;Me.U
 detailed;Zinc;Me.Zn
 detailed;Zinc anode;Me.Zn
@@ -175,6 +178,7 @@ detailed;Zn;Me.Zn
 detailed;Gold Ore;O.Au
 detailed;Phosphate ore;O.P
 detailed;Potash;O.K2O
+detailed;Potassium chloride;Me.KCl
 detailed;Kaolin;M.kao
 detailed;Bulk concentrate;Con.bulk
 detailed;Iron concentrate;Con.Fe
@@ -237,7 +241,7 @@ detailed;Hypogene Sulphide;
 detailed;Magnetite;O.Fe
 detailed;Hematite;O.Fe
 detailed;Alumina (Aluminiumoxide);
-detailed;Reactive Silica (SiO_2);
+detailed;Reactive Silica (SiO_2);Nm.SiO2
 detailed;Steel;
 detailed;Hard coking coal;F.coc
 detailed;Sub-bituminous coal;F.sbc
@@ -272,7 +276,7 @@ detailed;Oxide gold ore low grade;O.oxi
 detailed;Lead Oxides;O.oxi
 detailed;Copper Oxides;O.oxi
 detailed;Tellurium;Me.Te
-detailed;Fluorspar;Nm.flu
+detailed;Fluorspar;M.flu
 detailed;Antimony;Me.Sb
 detailed;Li2O;Me.Li2O
 detailed;Ta2O5;Me.Ta2O5
