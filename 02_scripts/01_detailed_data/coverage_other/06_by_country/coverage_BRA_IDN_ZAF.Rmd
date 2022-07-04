@@ -26,12 +26,9 @@ library(DT)
 # Read data 
 
 ```{r , echo = FALSE, message = FALSE}
-general <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/facilities.gpkg") %>%
-  st_drop_geometry() %>% 
-  tibble()
+general <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/facilities.gpkg", stringsAsFactors = FALSE, as_tibble = TRUE) %>%
+  st_drop_geometry()
 
-general <- general %>% 
-  mutate(across(where(is.factor), as.character))
 
 detailed <- read_rds("./04_output/01_detailed_data/08_final_data/other_formats/detailed_final.rds")
 
