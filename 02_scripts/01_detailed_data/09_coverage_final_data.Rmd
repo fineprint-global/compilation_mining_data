@@ -42,6 +42,7 @@ library(rlang)
 library(scales)
 library(DT)
 library(viridis)
+library(writexl)
 
 # clear R environment
 rm(list = ls())
@@ -251,7 +252,7 @@ production <- bind_rows(sheet_min, sheet_com, sheet_coal)
 # include country ids
 production <- production %>%
   left_join(general %>%
-              select(facility_id, country, GID_0, country),
+              select(facility_id, country, GID_0),
             by = "facility_id")
 
 # check if all mines are linked to countries
@@ -390,6 +391,15 @@ cov_global_wo_china <- cov_global_wo_china %>%
             by = c("material" ="material_id")) %>% 
   mutate(material_name = ifelse(material_name == "Coal (unspecified)", "Coal", material_name)) #rename coal entries
 
+# calculate difference between including and excluding china
+cov_difference <- cov_global %>% 
+  select(year, material, share) %>% 
+  left_join(cov_global_wo_china %>% 
+              select(year, material, share),
+            by = c("year", "material"),
+            suffix = c(".glo", ".chn")) %>% 
+  mutate(diff = share.glo-share.chn) %>% 
+  arrange(diff)
 
 ```
 
@@ -445,7 +455,9 @@ distinct_materials <- sheet_min %>% distinct(material) %>%
               rename(material = commodity)) %>%
   bind_rows(sheet_coal%>% distinct(material)) %>% 
   rename(material_id = material) %>% 
-  left_join(mat_ids)
+  left_join(mat_ids) %>% 
+  relocate(c(material_id, material_name), .after = material_category_2) %>% 
+  arrange(material_category)
 
 
 # set up tibble for data table output
@@ -461,6 +473,13 @@ gen_cov <- gen_cov %>%
   union(., tibble(
     Indicator = "Number of mines / processing facilities",
     Amount = general %>% distinct(facility_name) %>% nrow()
+  )) %>%
+  union(., tibble(
+    Indicator = "Number of facilities that are mines",
+    Amount = general %>% 
+      filter(sub_site_name %>% is.na(),
+             grepl("mine", facility_type, ignore.case = TRUE)) %>% 
+      nrow()
   )) %>%
   union(., tibble(
     Indicator = "Number of materials (w/o processing)",
@@ -785,6 +804,10 @@ cov_global_table <- cov_global %>%
 # table for Rmd output
 datatable(cov_global_table, rownames = FALSE, caption = "Relative global coverage by material")
 
+
+# table for Rmd output
+datatable(cov_difference, rownames = FALSE, caption = "Difference between coverage share global and coverage share excluding China")
+
 ```
 
 ## Export data table with global and national coverages
@@ -821,6 +844,18 @@ write_csv(cov_table_output,
 
 ```
 
+## Export data table with all included materials by category
+```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+
+write_xlsx(distinct_materials %>% 
+             select(material_category, material_category_2, material_id, material_name) %>% 
+             arrange(desc(material_category), desc(material_category_2)),
+           "./04_output/01_detailed_data/05_coverage/01_general/materials_covered.xlsx")
+
+
+```
+
+
 ## Statistics where coverage is > 100%
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
 print("Nr of Cases where coverage is > 100%: ")
@@ -853,7 +888,7 @@ ggplot(data = cov_by_country %>%
                  fill = "steelblue",
                  color = "black", 
                  #alpha = 0.8, 
-                 binwidth = 10) +
+                 binwidth = 4) +
   theme_minimal() + 
   xlab("Share of national production covered [%]") + 
   ylab("Nr. of occurrences") + 
@@ -880,7 +915,86 @@ ggplot(data = cov_by_country %>%
                  bins = 30,
                  color = "black") + 
   theme(legend.position = "right")
+
+# histogram of coverage share by country (30 bins)
+ggplot(data = cov_by_country %>% 
+         filter(share < 2), 
+       groups = country) +
+  geom_histogram(mapping = aes(x = share, fill = country), 
+                 bins = 30,
+                 color = "black") + 
+  theme(legend.position = "right")
+
+# histogram of coverage share by country (100 bins)
+ggplot(data = cov_by_country %>% 
+         filter(share < 2), 
+       groups = country) +
+  geom_histogram(mapping = aes(x = share, fill = country), 
+                 bins = 100,
+                 color = "black") + 
+  theme(legend.position = "right")
+
+# histogram of coverage share between 0.95 and 1.05
+ggplot(data = cov_by_country %>% 
+         filter(share > 0.98 & share < 1.02) %>% 
+         mutate(share = share * 100)) +
+  geom_histogram(mapping = aes(x = share), 
+                 fill = "steelblue",
+                 color = "black", 
+                 #alpha = 0.8, 
+                 binwidth = 0.05) +
+  theme_minimal() + 
+  xlab("Share of national production covered [%]") + 
+  ylab("Nr. of occurrences") + 
+  theme(
+    panel.border = element_rect(fill = NA, color = "black"),
+    panel.grid.minor.x = element_blank(),
+    panel.spacing.x = unit(10, "mm"),
+    axis.text = element_text(size = 15),
+    axis.title = element_text(size = 20))
   
+
+
+print("cases between 98 and 102%")
+print(cov_by_country %>% 
+        filter(share > 0.98 & share < 1.02) %>% 
+        nrow())
+
+print("cases between 98 and 102% [in percent]")
+print(cov_by_country %>% 
+        filter(share > 0.98 & share < 1.02) %>% 
+        nrow() / nrow(cov_by_country))
+
+print("cases exactly at 100%")
+print(cov_by_country %>% 
+        filter(share == 1) %>% 
+        nrow())
+
+print("cases exactly at 100% [in percent]")
+print(cov_by_country %>% 
+        filter(share == 1) %>% 
+        nrow() / nrow(cov_by_country))
+
+
+cov_by_country %>% 
+  filter(share == 1) %>% 
+  group_by(country, material) %>% 
+  summarize(n = n(),
+            years = paste(as.character(year), collapse = ",")) %>% 
+  arrange(desc(n))
+
+cov_by_country %>% 
+  filter(share > 0.90 & share < 1.10) %>% 
+  group_by(country, material) %>% 
+  summarize(n = n(),
+            years = paste(as.character(year), collapse = ",")) %>% 
+  arrange(desc(n)) %>%
+  print(n=50) #%>% 
+  #filter(country == "Chile")
+
+
+# cov_by_country %>% 
+#   filter(country == "Peru", material == "Me.Cu")
   
 
 ```
@@ -1396,27 +1510,28 @@ ggplot() +
     alpha = 1 # set transparency
     ) + 
   scale_shape_manual(values = custom_shapes, 
-                     name = "Processing facilities and\nmines per primary commodity") +
+                     name = "Processing facilities\nand mines per\nprimary commodity") +
   scale_fill_manual(values = custom_fill,
                     aesthetics = c("fill"),
-                    name = "Processing facilities and\nmines per primary commodity") + 
+                    name = "Processing facilities\nand mines per\nprimary commodity") + 
   scale_color_manual(values = custom_colors,
                     aesthetics = c("color"),
-                    name = "Processing facilities and\nmines per primary commodity") + 
+                    name = "Processing facilities\nand mines per\nprimary commodity") + 
   scale_size_manual(values = custom_sizes, 
-                    name = "Processing facilities and\nmines per primary commodity") +
+                    name = "Processing facilities\nand mines per\nprimary commodity") +
   theme_bw() +
   coord_sf(datum = target_crs,
            expand = FALSE, 
            xlim = disp_win_coord[,'X'],
            ylim = disp_win_coord[,'Y']
            ) + 
-  guides(shape = guide_legend(override.aes = list(size = 3.5))) +
+  guides(shape = guide_legend(override.aes = list(size = 4.5))) +
   theme(legend.position = c(0.08,0.23),
-        legend.title = element_text(),
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 13),
         legend.background = element_rect(fill = "gray96", color = "black", size = 0.3),
         legend.key = element_rect(fill = "gray96"),
-        legend.key.size = unit(5, "mm"),
+        legend.key.size = unit(6, "mm"),
         axis.text = element_blank(), 
         axis.ticks = element_blank(),
         panel.border = element_blank(),
