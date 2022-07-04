@@ -866,6 +866,59 @@ wrong_comm_entries <- sheet %>%
 # table for Rmd output
 datatable(wrong_comm_entries, rownames = FALSE, caption = "Material IDs which should be in sheet 'minerals_ores_conce'")
 
+
+
+
+## For table reserves
+sheet <- detailed$capacity_reserves
+
+# Material IDs in column minerals_and_ores, which should be in column commodity
+wrong_res_entries_at_mat <- sheet %>%
+  filter(!(minerals_and_ores %in% mineral_sheet_ids) & !is.na(minerals_and_ores)) %>% 
+  select(mine_fac, sub_site, reserves_year, minerals_and_ores, commodity)
+
+# table for Rmd output
+datatable(wrong_res_entries_at_mat, rownames = FALSE, caption = "Material IDs in sheet capacity_reserves$minerals_and_ores which should be in capacity_reserves$commodity")
+
+
+# Material IDs in column commodity, which should be in column minerals_and_ores
+wrong_res_entries_at_comm <- sheet %>%
+  filter(!(commodity %in% comm_sheet_ids) & !is.na(commodity)) %>% 
+  select(mine_fac, sub_site, reserves_year, minerals_and_ores, commodity)
+
+# table for Rmd output
+datatable(wrong_res_entries_at_comm, rownames = FALSE, caption = "Material IDs in sheet capacity_reserves$commodity which should be in capacity_reserves$minerals_and_ores")
+
+
+
+
+# Entry in reserves_mineral_value but without specifying the mineral
+reserves_missing_mat <- sheet %>%
+  filter(!is.na(reserves_mineral_value) & is.na(minerals_and_ores)) %>% 
+  select(mine_fac, sub_site, reserves_year, minerals_and_ores, commodity, reserves_mineral_value, reserves_commodity_value)
+
+# table for Rmd output
+datatable(reserves_missing_mat, rownames = FALSE, caption = "Entry in reserves_mineral_value but the mineral is not specified")
+
+
+
+# Entry in reserves_commodity_value but without specifying the commodity
+reserves_missing_comm <- sheet %>%
+  filter(!is.na(reserves_commodity_value) & is.na(commodity)) %>% 
+  select(mine_fac, sub_site, reserves_year, minerals_and_ores, commodity, reserves_mineral_value, reserves_commodity_value)
+
+# table for Rmd output
+datatable(reserves_missing_comm, rownames = FALSE, caption = "Entry in reserves_commodity_value but the commodity is not specified")
+
+
+# Entry in reserves_commodity_value but without specifying the commodity
+reserves_missing_comm_grade <- sheet %>%
+  filter(!is.na(grade) & is.na(commodity)) %>% 
+  select(mine_fac, sub_site, reserves_year, minerals_and_ores, commodity, reserves_mineral_value, reserves_commodity_value)
+
+# table for Rmd output
+datatable(reserves_missing_comm_grade, rownames = FALSE, caption = "Entry in grade but the  commodity is not specified")
+
 ```
 
 <br> 
