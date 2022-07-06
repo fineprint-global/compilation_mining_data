@@ -49,7 +49,7 @@ rm(list = ls())
 
 ```
 
-# Read in data
+# Download and read data
 ```{r , echo = FALSE, message = FALSE, results = "hide"} 
 # read final mine-level data
 general <- st_read("./04_output/01_detailed_data/08_final_data/final_format_csv/facilities.gpkg") %>% tibble()
@@ -70,11 +70,14 @@ source("./02_scripts/00_functions/lastfile.R")
 source("./02_scripts/00_functions/get_other_material_ids.R")
 
 
+
+
 # read in national accounts based on UNEP IRP (2022)
-lastfile <- my_lastfile("./01_input/05_other_data/", "data_for_comparison")
+download.file("https://zenodo.org/record/6618340/files/data_for_comparison_2022-05-24.csv?download=1", 
+              "./01_input/05_other_data/data_for_comparison_2022-05-24.csv")
 
 nat_acc <- read_delim(
-  lastfile,
+  "./01_input/05_other_data/data_for_comparison_2022-05-24.csv",
   col_types = (cols(unit_id = "c")),
   delim = ";"
   ) %>%
