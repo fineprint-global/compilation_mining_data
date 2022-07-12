@@ -245,6 +245,8 @@ for (i in sel_col %>% distinct(sheet) %>% pull()) {
 }
 
 
+#create directory
+dir.create("./04_output/01_detailed_data/02_conversion/01_no_match_tables/", showWarnings = FALSE)
 
 # save no_match table as csv
 write_delim(no_match_conv_fac, "./04_output/01_detailed_data/02_conversion/01_no_match_tables/no_match_conv_fac.csv", delim = ";")

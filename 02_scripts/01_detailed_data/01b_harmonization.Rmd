@@ -218,6 +218,9 @@ no_match_mat <- source_materials %>%
            )
          )
 
+#create directory
+dir.create("./04_output/01_detailed_data/01_harmonization/01_no_match_tables/", showWarnings = FALSE)
+
 # save no_match table as csv
 write_delim(no_match_mat, "./04_output/01_detailed_data/01_harmonization/01_no_match_tables/no_match_mat.csv", delim = ";")
 
