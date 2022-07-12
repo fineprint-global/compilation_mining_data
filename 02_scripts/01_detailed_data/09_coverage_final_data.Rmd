@@ -861,11 +861,20 @@ write_xlsx(distinct_materials %>%
 
 ## Statistics where coverage is > 100%
 ```{r , echo = FALSE, message = FALSE, warning = FALSE} 
+print("Nr of all coverage cases")
+nrow(cov_by_country)
+
+print("Nr of Cases where coverage is <= 100%: ")
+nrow(cov_by_country %>% filter(share <= 1))
+
 print("Nr of Cases where coverage is > 100%: ")
 nrow(cov_by_country %>% filter(share > 1.000000001))
 
 print("% of Cases where coverage is > 100%: ")
 nrow(cov_by_country %>% filter(share > 1)) / nrow(cov_by_country)
+
+print("Nr of Cases where coverage is > 105%: ")
+nrow(cov_by_country %>% filter(share > 1.05))
 
 print("% of Cases where coverage is > 105%: ")
 nrow(cov_by_country %>% filter(share > 1.05)) / nrow(cov_by_country)
@@ -899,8 +908,8 @@ ggplot(data = cov_by_country %>%
     panel.border = element_rect(fill = NA, color = "black"),
     panel.grid.minor.x = element_blank(),
     panel.spacing.x = unit(10, "mm"),
-    axis.text = element_text(size = 15),
-    axis.title = element_text(size = 20))
+    axis.text = element_text(size = 25),
+    axis.title = element_text(size = 30))
 
 
 
