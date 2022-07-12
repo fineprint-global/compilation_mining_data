@@ -5,6 +5,7 @@ detailed;hectar;ha;area
 detailed;hectares;ha;area
 detailed;hectars;ha;area
 detailed;sq. km;sq.km;area
+detailed;sq. km.;sq.km;area
 detailed;square kilometer;sq.km;area
 detailed;square kilometers;sq.km;area
 detailed;square km;sq.km;area
@@ -18,6 +19,7 @@ detailed;kg/t;Kg/t;grade
 detailed;ounces per ton;oz/t;grade
 detailed;ounces/ton;oz/t;grade
 detailed;oz/t;oz/t;grade
+detailed;ozt/t;ozt/t;grade
 detailed;ppm;ppm;grade
 detailed;troy ounces/t;ozt/t;grade
 detailed;000 carats;Kct;mass
