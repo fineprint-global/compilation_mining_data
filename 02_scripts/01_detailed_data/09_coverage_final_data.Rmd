@@ -920,7 +920,7 @@ ggplot(data = cov_by_country %>%
     axis.text = element_text(size = 25),
     axis.title = element_text(size = 30))
 
-
+dir.create("./04_output/01_detailed_data/05_coverage/01_general/national/", showWarnings = FALSE)
 
 ggsave("./04_output/01_detailed_data/05_coverage/01_general/national/coverage_hist.png", width = 16, height = 9, dpi = 300)
 ggsave("./04_output/01_detailed_data/05_coverage/01_general/national/coverage_hist.pdf", width = 16, height = 9)
@@ -1269,7 +1269,9 @@ ggplot() +
                          r = 8,
                          l = 3,
                          unit = "mm"),
-    strip.text = element_text(size = 15)
+    strip.text = element_text(size = 17),
+    axis.title = element_text(size = 22),
+    axis.text = element_text(size = 11)
       ) + 
   facet_wrap(~ material_name, nrow = 4) + 
   geom_text(data = dat_text1,
